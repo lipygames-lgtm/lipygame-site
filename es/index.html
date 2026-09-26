@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es" class="no-js" data-loader data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=8e41053f"></script>
+  <title>Lipy Games — Estudio de juegos móviles</title>
+  <meta name="description" content="Lipy Games es un estudio brasileño de juegos móviles. Creamos Quiver: Arrow Puzzle, This Level Hates You y Nitrovenant: juegos para los minutos que se vuelven historia.">
+  <meta name="theme-color" content="#05070f">
+  <link rel="canonical" href="https://lipygame.com/es/">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Lipy Games — El mundo se pausa. Tú le das play.">
+  <meta property="og:description" content="Estudio brasileño de juegos móviles. Tres universos, 546 niveles, seis idiomas.">
+  <meta property="og:url" content="https://lipygame.com/es/">
+  <meta property="og:image" content="https://lipygame.com/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="preload" as="image" href="../assets/media/video/hero-poster.webp">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="../assets/css/home.css?v=6ec49724">
+  <script>
+    /* antes da 1ª pintura: liga o JS, decide pré-carregador / véu de chegada */
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        else if (h.hasAttribute('data-loader') && !s.getItem('lipy:visto')) h.classList.add('is-loading');
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Lipy Games",
+    "legalName": "Lipy Serviços Digitais LTDA",
+    "taxID": "65.260.227/0001-11",
+    "url": "https://lipygame.com/",
+    "logo": "https://lipygame.com/icon-512.png",
+    "email": "bluetubeoficial@gmail.com",
+    "address": { "@type": "PostalAddress", "addressCountry": "BR" }
+  }
+  </script>
+</head>
+<body class="home">
+  <!-- pré-carregador (1ª visita da sessão) -->
+  <div class="loader" aria-hidden="true">
+    <svg class="loader__curtain" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 0 Q50 0 100 0 L100 0 L0 0Z"/></svg>
+    <div class="loader__core">
+      <div class="loader__ring"></div>
+      <div class="loader__glass glass"></div>
+      <img class="loader__mark" src="../assets/media/marca/emblema.webp" width="600" height="591" alt="">
+    </div>
+    <div class="loader__count"><b>000</b><sup>%</sup></div>
+    <div class="loader__label">Lipy Games<br><b>Cargando la experiencia</b></div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Saltar al contenido</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — inicio"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Principal">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Juegos <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">Estudio</a>
+        <a href="index.html#como-criamos">Cómo creamos</a>
+        <a href="index.html#contato">Contacto</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Idioma"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../index.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/index.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/index.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/index.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/index.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/index.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Acceso anticipado <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Puzzle de flechas</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>Plataformas troll</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>Acción sobre ruedas</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menú">
+      <a href="index.html#universos">Juegos</a>
+      <a href="index.html#estudio">Estudio</a>
+      <a href="index.html#como-criamos">Cómo creamos</a>
+      <a href="index.html#lista">Acceso anticipado</a>
+      <a href="index.html#contato">Contacto</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../index.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/index.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/index.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/index.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/index.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/index.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+  <main id="conteudo">
+
+    <!-- ============ ABERTURA: o vídeo vira a tela de um celular ============ -->
+    <section class="stage" id="topo" aria-label="Intro">
+      <div class="stage__sticky">
+        <div class="stage__amb" aria-hidden="true">
+          <div class="amb" data-amb="0" style="background-image:url(../assets/media/quiver/fundo-menu.webp);--tint:rgba(255,140,20,.55)"></div>
+          <div class="amb" data-amb="1" style="background-image:url(../assets/media/tlhy/fundo-grama.webp);--tint:rgba(40,110,255,.55)"></div>
+          <div class="amb" data-amb="2" style="background-image:url(../assets/media/nitro/arte.webp);--tint:rgba(255,60,10,.55)"></div>
+          <div class="stage__words">
+            <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span>
+          </div>
+        </div>
+
+        <div class="stage__screen">
+          <video class="stage__video" muted loop playsinline autoplay preload="auto" poster="../assets/media/video/hero-poster.webp" data-preload aria-hidden="true" tabindex="-1"></video>
+          <script>
+            (function (v) {
+              var peq = innerWidth < 900 || (navigator.connection && navigator.connection.saveData);
+              var poe = function () { v.src = (document.documentElement.getAttribute('data-base') || '') + 'assets/media/video/' + (peq ? 'hero-720.mp4' : 'hero-1080.mp4'); };
+              // enquanto a raiz descobre o idioma, nada de baixar 5 MB de vídeo numa página que pode ser trocada
+              if (document.documentElement.classList.contains('is-detectando')) document.addEventListener('lipy:idioma', poe, { once: true });
+              else poe();
+              if (matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.autoplay = false; }
+            })(document.currentScript.previousElementSibling);
+          </script>
+          <div class="stage__shade" aria-hidden="true"></div>
+          <div class="stage__apps" aria-hidden="true">
+            <img class="stage__app" data-app="0" src="../assets/media/quiver/tela-rush.webp" width="720" height="1279" alt="" loading="lazy" decoding="async">
+            <img class="stage__app" data-app="1" src="../assets/media/tlhy/es/real-1.webp" width="720" height="1280" alt="" loading="lazy" decoding="async">
+            <video class="stage__app" data-app="2" muted loop playsinline preload="none" poster="../assets/media/nitro/video-abertura-poster.webp" src="../assets/media/nitro/video-abertura.mp4" tabindex="-1"></video>
+          </div>
+        </div>
+
+        <div class="stage__phone" aria-hidden="true"><i class="stage__island"></i><i class="stage__glare"></i></div>
+
+        <div class="hero">
+          <div class="wrap hero__inner">
+            <p class="eyebrow hero__eyebrow">Lipy Games · Estudio de juegos móviles · Brasil</p>
+            <h1 class="display hero__title">
+              <span class="hero__l">El mundo se pausa.</span> <span class="hero__l">Tú le das <em class="txt-warm">play.</em></span>
+            </h1>
+            <p class="lead hero__lead">Creamos juegos para los minutos que se vuelven historia: en el sofá, en el autobús, en la fila, en el “solo un nivel más” antes de dormir.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--warm" href="#universos" data-magnetic>Explora los universos <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+              <a class="btn btn--glass glass glass--pill" href="#estudio" data-magnetic>Conoce el estudio <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            </div>
+          </div>
+
+          <ul class="hud" aria-hidden="true">
+            <li class="hud__chip" style="--x:63%;--y:16%"><span class="glass glass--pill"><i class="chip__dot chip__dot--live"></i>P1 · listo</span></li>
+            <li class="hud__chip hud__chip--warm" style="--x:81%;--y:31%"><span class="glass glass--pill"><b>COMBO</b> ×4</span></li>
+            <li class="hud__chip" style="--x:72%;--y:69%"><span class="glass glass--pill"><i class="hud__heart">♥</i> +1 vida</span></li>
+            <li class="hud__chip" style="--x:86%;--y:78%"><span class="glass glass--pill">Nivel <b>12</b></span></li>
+            <li class="hud__ring" style="--x:73%;--y:24%"><span></span></li>
+          </ul>
+
+          <div class="hero__foot wrap">
+            <span class="hero__scroll"><i class="hero__phone"><i></i></i>Desliza para entrar</span>
+            <span class="hero__fim"><span class="hero__stats mono">03 universos <i></i> 546 niveles <i></i> 06 idiomas</span><button class="hero__pausa glass glass--pill" type="button" data-pausa aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg><svg class="i-toca" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg><span>Pausar video</span></button></span>
+          </div>
+        </div>
+
+        <div class="caps">
+          <div class="cap cap--intro" data-cap="0">
+            <p class="cap__big h2">Toda gran <br>experiencia cabe <br>en <span class="txt-cool">6 pulgadas.</span></p>
+            <p class="cap__side lead">Y empieza con un toque.</p>
+          </div>
+          <div class="cap" data-cap="1">
+            <div class="cap__l">
+              <span class="cap__idx mono">01 — Puzzle</span>
+              <h2 class="cap__name">Quiver</h2>
+              <span class="cap__sub">Arrow Puzzle</span>
+            </div>
+            <div class="cap__r">
+              <p class="cap__line">El placer de ver un tablero entero resolverse con un solo toque certero.</p>
+              <a class="link-arrow u-line" href="quiver.html" data-game="quiver">Entrar al universo <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </div>
+          <div class="cap" data-cap="2">
+            <div class="cap__l">
+              <span class="cap__idx mono">02 — Plataformas</span>
+              <h2 class="cap__name">This Level <br>Hates You</h2>
+            </div>
+            <div class="cap__r">
+              <p class="cap__line">La risa nerviosa de quien murió por 27.ª vez y aun así quiere volver a intentarlo.</p>
+              <a class="link-arrow u-line" href="this-level-hates-you.html" data-game="tlhy">Entrar al universo <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </div>
+          <div class="cap" data-cap="3">
+            <div class="cap__l">
+              <span class="cap__idx mono">03 — Acción</span>
+              <h2 class="cap__name cap__name--nitro"><span>Nitro</span><span>venant</span></h2>
+            </div>
+            <div class="cap__r">
+              <p class="cap__line">La adrenalina de atravesar la horda con el pulgar en el nitro.</p>
+              <a class="link-arrow u-line" href="nitrovenant.html" data-game="nitro">Entrar al universo <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <ol class="stage__dots" aria-hidden="true"><li></li><li></li><li></li></ol>
+      </div>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto section" aria-labelledby="manifesto-t">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--warm" id="manifesto-t">Manifiesto</p>
+        <p class="manifesto__txt" data-manifesto>No vendemos juegos. Vendemos ese minuto en que el mundo desaparece, el pulgar acierta y alguien a tu lado pregunta: <em>“¿me dejas probar?”</em></p>
+        <div class="manifesto__sign" data-reveal>
+          <img src="../assets/media/marca/emblema.webp" width="600" height="591" alt="" loading="lazy">
+          <span class="mono">Lipy Games<br>Estudio brasileño de juegos móviles</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ UNIVERSOS ============ -->
+    <section class="unis" id="universos" aria-labelledby="unis-t" tabindex="-1">
+      <div class="wrap unis__head">
+        <div>
+          <p class="eyebrow" data-reveal>Nuestros universos</p>
+          <h2 class="h1" id="unis-t" data-split>Tres universos.<br><span class="txt-cool">Cero repeticiones.</span></h2>
+        </div>
+        <p class="lead" data-reveal>Cada título de Lipy nace con sus propias reglas, sus propios personajes y una sensación que solo él puede dar.</p>
+      </div>
+
+      <div class="unis__list wrap">
+        <!-- Quiver -->
+        <article class="uni uni--quiver" data-vt-scope style="--c1:#ffb627;--c2:#ff6a00;--c3:#2a0f00">
+          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/quiver/capa.webp" width="1794" height="876" alt="" loading="lazy" decoding="async"></div>
+          <div class="uni__dim" aria-hidden="true"></div>
+          <div class="uni__grid">
+            <div class="uni__text">
+              <div class="uni__top">
+                <span class="uni__n mono">01</span> <span class="chip glass glass--thin glass--pill">Puzzle</span> <span class="chip chip--line">Android</span>
+              </div>
+              <a class="uni__id" href="quiver.html" data-game="quiver" data-cursor="Entrar" tabindex="-1" aria-hidden="true">
+                <img class="uni__icon" data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">
+              </a>
+              <h3 class="uni__name">Quiver<small>Arrow Puzzle</small></h3>
+              <p class="uni__tag">Una flecha. Un camino libre. Un tablero entero esperando el orden correcto.</p>
+              <ul class="uni__facts glass glass--dark">
+                <li><b>360</b><span>niveles</span></li>
+                <li><b>8</b><span>jefes</span></li>
+                <li><b>2</b><span>modos</span></li>
+              </ul>
+              <div class="uni__ctas">
+                <a class="btn btn--warm" href="quiver.html" data-game="quiver" data-magnetic>Entrar al universo <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+                <a class="store store--mini" data-store="quiver" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a>
+              </div>
+            </div>
+            <div class="uni__visual" data-float>
+              <img class="fl fl--boss" data-depth="0.4" src="../assets/media/quiver/chefe-magumbi.webp" width="941" height="550" alt="" loading="lazy">
+              <div class="phone uni__phone" data-depth="0.15"><div class="phone__screen"><img src="../assets/media/quiver/tela-rush.webp" width="720" height="1279" alt="Pantalla del modo Rush de Quiver: tablero de flechas de colores" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+              <img class="fl fl--a1" data-depth="1" src="../assets/media/quiver/ui/seta-cima-azul.webp" width="145" height="147" alt="" loading="lazy">
+              <img class="fl fl--a2" data-depth="0.7" src="../assets/media/quiver/ui/seta-dir-verde.webp" width="147" height="147" alt="" loading="lazy">
+              <img class="fl fl--a3" data-depth="1.3" src="../assets/media/quiver/ui/seta-esq-amarela.webp" width="148" height="147" alt="" loading="lazy">
+              <img class="fl fl--a4" data-depth="0.9" src="../assets/media/quiver/ui/seta-baixo-rosa.webp" width="147" height="149" alt="" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- This Level Hates You -->
+        <article class="uni uni--tlhy" data-vt-scope style="--c1:#43b0ff;--c2:#1f3fff;--c3:#040d33">
+          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/tlhy/grafico.webp" width="1024" height="500" alt="" loading="lazy" decoding="async"></div>
+          <div class="uni__dim" aria-hidden="true"></div>
+          <div class="uni__grid">
+            <div class="uni__text">
+              <div class="uni__top">
+                <span class="uni__n mono">02</span> <span class="chip glass glass--thin glass--pill">Plataformas</span> <span class="chip chip--line">Android</span>
+              </div>
+              <a class="uni__id" href="this-level-hates-you.html" data-game="tlhy" data-cursor="Entrar" tabindex="-1" aria-hidden="true">
+                <img class="uni__icon" data-vt="tlhy" src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">
+              </a>
+              <h3 class="uni__name">This Level<small>Hates You</small></h3>
+              <p class="uni__tag">La salida está justo ahí. El problema es que el nivel no te deja llegar.</p>
+              <ul class="uni__facts glass glass--dark">
+                <li><b>66</b><span>niveles</span></li>
+                <li><b>3</b><span>mundos</span></li>
+                <li><b>0</b><span>trampas repetidas</span></li>
+              </ul>
+              <div class="uni__ctas">
+                <a class="btn btn--warm" href="this-level-hates-you.html" data-game="tlhy" data-magnetic>Entrar al universo <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+                <a class="store store--mini" data-store="tlhy" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a>
+              </div>
+            </div>
+            <div class="uni__visual" data-float>
+              <img class="fl fl--door" data-depth="0.35" src="../assets/media/tlhy/porta-monstro.webp" width="144" height="239" alt="" loading="lazy">
+              <div class="phone uni__phone" data-depth="0.15"><div class="phone__screen"><img src="../assets/media/tlhy/es/real-2.webp" width="720" height="1280" alt="Pantalla de This Level Hates You: el pajarito se burla de la muerte del jugador" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+              <img class="fl fl--hero" data-depth="1.1" src="../assets/media/tlhy/g/heroi-panico.webp" width="300" height="300" alt="" loading="lazy">
+              <img class="fl fl--bird" data-depth="1.4" src="../assets/media/tlhy/passaro-a.webp" width="99" height="73" alt="" loading="lazy">
+              <img class="fl fl--ball" data-depth="0.8" src="../assets/media/tlhy/el-bola-espinhos.webp" width="400" height="395" alt="" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- Nitrovenant -->
+        <article class="uni uni--nitro" data-vt-scope style="--c1:#ff8a1a;--c2:#e8220a;--c3:#1a0400">
+          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/nitro/destaque.webp" width="1024" height="500" alt="" loading="lazy" decoding="async"></div>
+          <div class="uni__dim" aria-hidden="true"></div>
+          <div class="uni__grid">
+            <div class="uni__text">
+              <div class="uni__top">
+                <span class="uni__n mono">03</span> <span class="chip glass glass--thin glass--pill">Acción</span> <span class="chip chip--line">Android</span>
+              </div>
+              <a class="uni__id" href="nitrovenant.html" data-game="nitro" data-cursor="Entrar" tabindex="-1" aria-hidden="true">
+                <img class="uni__icon" data-vt="nitro" src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">
+              </a>
+              <h3 class="uni__name">Nitrovenant<small>Auto vs. Zombis</small></h3>
+              <p class="uni__tag">La carretera se acabó. La horda, no. Tú manejas, el auto dispara y el nitro decide el resto.</p>
+              <ul class="uni__facts glass glass--dark">
+                <li><b>120</b><span>niveles</span></li>
+                <li><b>13</b><span>vehículos</span></li>
+                <li><b>4</b><span>jefes</span></li>
+              </ul>
+              <div class="uni__ctas">
+                <a class="btn btn--warm" href="nitrovenant.html" data-game="nitro" data-magnetic>Entrar al universo <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+                <a class="store store--mini" data-store="nitro" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a>
+              </div>
+            </div>
+            <div class="uni__visual" data-float>
+              <img class="fl fl--poster" data-depth="0.3" src="../assets/media/nitro/arte.webp" width="1254" height="1254" alt="" loading="lazy">
+              <div class="phone uni__phone" data-depth="0.15"><div class="phone__screen"><video src="../assets/media/nitro/video-iniciar.mp4" poster="../assets/media/nitro/video-iniciar-poster.webp" muted loop playsinline preload="none" data-autoplay aria-label="Intro de Nitrovenant: un zombi con una llave inglesa y un auto amarillo"></video><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+              <div class="fl fl--gauge glass glass--pill" data-depth="1.2"><span>NITRO</span><b>100%</b></div>
+              <img class="fl fl--logo" data-depth="0.9" src="../assets/media/nitro/logo.webp" width="900" height="287" alt="" loading="lazy">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ BIBLIOTECA (parede de telas) ============ -->
+    <section class="wall" aria-labelledby="wall-t">
+      <div class="wall__plane" aria-hidden="true">
+        <div class="wall__row">
+          <img src="../assets/media/quiver/tela-rush.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/es/poster-3.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-magumbi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/es/real-2.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-guarda.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/quiver/tela-natal.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-magma.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-3.webp" alt="" loading="lazy" width="720" height="1279">
+        </div>
+        <div class="wall__row">
+          <img src="../assets/media/tlhy/es/poster-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-2.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-nevambi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/es/real-4.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-pit.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/quiver/tela-halloween.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-gelo.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-8.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-mapa-rush.webp" alt="" loading="lazy" width="720" height="1276">
+        </div>
+        <div class="wall__row">
+          <img src="../assets/media/nitro/mkt-1.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-angembi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/es/poster-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-6.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-mapa-classic.webp" alt="" loading="lazy" width="720" height="1276"><img src="../assets/media/tlhy/es/real-5.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-piloto.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/quiver/tela-pascoa.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/mapa-grama.webp" alt="" loading="lazy" width="720" height="1279">
+        </div>
+        <div class="wall__row">
+          <img src="../assets/media/quiver/tela-egimbi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/es/poster-6.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-patrick.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-grama.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-9.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-menu.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/es/poster-7.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/tela-mecanico.webp" alt="" loading="lazy" width="720" height="1280">
+        </div>
+      </div>
+      <div class="wall__fade" aria-hidden="true"></div>
+      <div class="wall__card glass" data-lens="aro:30,escala:60,blur:8">
+        <p class="eyebrow">Biblioteca</p>
+        <p class="wall__num"><span data-count="546">546</span></p>
+        <h2 class="h3" id="wall-t">niveles para perder la noción del tiempo.</h2>
+        <p class="wall__split mono"><span>360 · Quiver</span><span>66 · This Level Hates You</span><span>120 · Nitrovenant</span></p>
+      </div>
+    </section>
+
+    <!-- ============ O ESTÚDIO ============ -->
+    <section class="studio section" id="estudio" aria-labelledby="estudio-t" tabindex="-1">
+      <div class="wrap studio__grid">
+        <div class="studio__text">
+          <p class="eyebrow" data-reveal>El estudio</p>
+          <h2 class="h1" id="estudio-t" data-split>Somos<br><span class="txt-brand">Lipy Games.</span></h2>
+          <p class="lead" data-reveal>Un estudio brasileño de juegos móviles. Pequeño a propósito, obsesivo por naturaleza: cada nivel se diseña, se prueba y se afina hasta que parece que siempre existió.</p>
+          <p class="studio__p" data-reveal>Creemos que un buen juego para celular se entiende en tres segundos y se recuerda durante años. Por eso empezamos por la sensación —el susto, la risa, el “¡casi!”— y solo después escribimos la primera línea de código.</p>
+        </div>
+        <div class="studio__stats">
+          <div class="stat glass" data-reveal="scale"><b data-count="3" data-pad="2">03</b><span>universos<br>originales</span></div>
+          <div class="stat glass" data-reveal="scale"><b data-count="546">546</b><span>niveles<br>diseñados a mano</span></div>
+          <div class="stat glass" data-reveal="scale"><b data-count="6" data-pad="2">06</b><span>idiomas con<br>sello Lipy</span></div>
+          <div class="stat glass" data-reveal="scale"><b>100<small>%</small></b><span>jugable<br>sin internet</span></div>
+        </div>
+      </div>
+
+      <div class="wrap principles">
+        <article class="pr glass" data-reveal>
+          <svg class="pr__ic draw" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="27" r="15" pathLength="1"/><path d="M24 27V18M20 6h8M24 6v6M36 14l3-3" pathLength="1"/></svg>
+          <h3 class="h3">Se entiende en<br>3 segundos</h3>
+          <p>Si necesita manual, todavía no está listo. El primer nivel te enseña jugando.</p>
+        </article>
+        <article class="pr glass" data-reveal>
+          <svg class="pr__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l16 6v11c0 10-7 18-16 21C15 40 8 32 8 22V11l16-6Z" pathLength="1"/><path d="M17 24l5 5 10-11" pathLength="1"/></svg>
+          <h3 class="h3">Difícil,<br>pero justo</h3>
+          <p>Nada de suerte disfrazada. El juego puede ser malvado, pero nunca hace trampa.</p>
+        </article>
+        <article class="pr glass" data-reveal>
+          <svg class="pr__ic draw" viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="4" width="22" height="40" rx="5" pathLength="1"/><path d="M21 38h6M8 16c-2 3-2 7 0 10M40 16c2 3 2 7 0 10" pathLength="1"/></svg>
+          <h3 class="h3">Cabe en<br>cualquier bolsillo</h3>
+          <p>Ligero, rápido y jugable sin conexión. En el metro, en el avión o sin nada de señal.</p>
+        </article>
+        <article class="pr glass" data-reveal>
+          <svg class="pr__ic draw" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" pathLength="1"/><path d="M17 28c2 3 4 4 7 4s5-1 7-4M18 19h.01M30 19h.01M36 6l2-4M42 12l4-2" pathLength="1"/></svg>
+          <h3 class="h3">Alma en<br>cada píxel</h3>
+          <p>Jefes que provocan, pajaritos burlones, autos con nombre. Cada detalle tiene personalidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ COMO CRIAMOS (rolagem horizontal) ============ -->
+    <section class="process" id="como-criamos" aria-labelledby="proc-t" tabindex="-1">
+      <div class="process__pin">
+        <div class="wrap process__head">
+          <p class="eyebrow eyebrow--warm">Cómo creamos</p>
+          <h2 class="h1" id="proc-t">Del garabato<br>a tu <span class="txt-warm">bolsillo.</span></h2>
+        </div>
+        <div class="process__track">
+          <article class="step glass">
+            <span class="step__n">01</span>
+            <svg class="step__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M27 3L9 27h13l-3 18 20-26H26l1-16Z" pathLength="1"/></svg>
+            <h3 class="h3">Chispa</h3>
+            <p>Todo empieza con una frase. “¿Y si el nivel te odiara?” Si nos arranca una sonrisa, se convierte en prototipo.</p>
+            <span class="chip chip--line">1 frase · 1 sensación</span>
+          </article>
+          <article class="step glass">
+            <span class="step__n">02</span>
+            <svg class="step__ic draw" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="5" width="16" height="16" rx="3" pathLength="1"/><rect x="27" y="5" width="16" height="16" rx="3" pathLength="1"/><rect x="5" y="27" width="16" height="16" rx="3" pathLength="1"/><path d="M35 27v16M27 35h16" pathLength="1"/></svg>
+            <h3 class="h3">Prototipo</h3>
+            <p>En pocos días, la idea se vuelve algo jugable. Si no es divertido con cuadrados grises, no hay arte que lo salve.</p>
+            <span class="chip chip--line">Jugable en días</span>
+          </article>
+          <article class="step glass">
+            <span class="step__n">03</span>
+            <svg class="step__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4C13 4 4 12 4 22c0 7 5 10 10 8 3-1 5 1 5 4 0 4 3 6 6 6 11 0 19-8 19-18S35 4 24 4Z" pathLength="1"/><circle cx="14" cy="19" r="2.5" pathLength="1"/><circle cx="24" cy="13" r="2.5" pathLength="1"/><circle cx="34" cy="19" r="2.5" pathLength="1"/></svg>
+            <h3 class="h3">Arte &amp; alma</h3>
+            <p>Personajes, escenarios, música y chistes. Aquí es donde el juego encuentra su rostro, su voz y su acento.</p>
+            <span class="chip chip--line">Jefes con frases propias</span>
+          </article>
+          <article class="step glass">
+            <span class="step__n">04</span>
+            <svg class="step__ic draw" viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="14" width="30" height="24" rx="6" pathLength="1"/><path d="M24 14V7M20 5h8M17 25h.01M31 25h.01M18 32h12M4 22v8M44 22v8" pathLength="1"/></svg>
+            <h3 class="h3">Tortura</h3>
+            <p>Antes que tú, juegan los robots. Simulamos miles de partidas para calibrar cada reloj y garantizar que todo nivel tenga salida.</p>
+            <span class="chip chip--line">+1200 pruebas en un solo juego</span>
+          </article>
+          <article class="step glass">
+            <span class="step__n">05</span>
+            <svg class="step__ic draw" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="19" pathLength="1"/><path d="M5 24h38M24 5c6 6 8 12 8 19s-2 13-8 19c-6-6-8-12-8-19s2-13 8-19Z" pathLength="1"/></svg>
+            <h3 class="h3">Mundo</h3>
+            <p>Traducción a seis idiomas, revisión de cada texto y lanzamiento para jugadores de Brasil a Japón.</p>
+            <span class="chip chip--line">pt · en · es · hi · ja · ar</span>
+          </article>
+          <div class="process__end" aria-hidden="true"><img src="../assets/media/marca/emblema.webp" width="600" height="591" alt="" loading="lazy"></div>
+        </div>
+        <div class="process__bar wrap" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============ IDIOMAS ============ -->
+    <section class="langs" aria-label="Idiomas y tecnología">
+      <div class="marquee langs__band" data-marquee="-1" data-speed="70" aria-hidden="true">
+        <div class="marquee__track"><span>Jogar</span><i>✦</i><span>Play</span><i>✦</i><span>Jugar</span><i>✦</i><span lang="hi">खेलो</span><i>✦</i><span lang="ja">プレイ</span><i>✦</i><span lang="ar">العب</span><i>✦</i></div>
+      </div>
+      <div class="marquee langs__band langs__band--2" data-marquee="1" data-speed="50" aria-hidden="true">
+        <div class="marquee__track"><span>Sin conexión</span><i>●</i><span>Motor propio en WebGL</span><i>●</i><span>Godot 4</span><i>●</i><span>Google Play Juegos</span><i>●</i><span>Vibración háptica</span><i>●</i><span>Guardado en la nube</span><i>●</i></div>
+      </div>
+      <p class="sr-only">Nuestros juegos están disponibles en hasta seis idiomas —portugués, inglés, español, hindi, japonés y árabe—, funcionan sin internet y guardan el progreso en tu cuenta de Google Play Juegos.</p>
+    </section>
+
+    <!-- ============ LISTA LIPY: acesso antecipado ============ -->
+    <section class="vip section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap vip__grid">
+        <div class="vip__body">
+          <p class="eyebrow eyebrow--warm" data-reveal>Lista Lipy · Acceso anticipado</p>
+          <h2 class="h1" id="lista-t" data-split>Juega antes<br><span class="txt-warm">que nadie.</span></h2>
+          <p class="lead" data-reveal>Invitaciones para probar nuestros juegos en beta, un aviso el día de cada lanzamiento y las actualizaciones que valen la pena. Sin spam: solo lo que se puede jugar.</p>
+          <ul class="vip__perks" data-reveal>
+            <li><svg class="draw" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="5" pathLength="1"/><path d="M11.5 11.5 21 2M17 6l3 3M15 8l2 2" pathLength="1"/></svg><span><b>Clave beta</b>Prueba los juegos antes de su estreno</span></li>
+            <li><svg class="draw" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8Z" pathLength="1"/><path d="M10 21a2 2 0 0 0 4 0" pathLength="1"/></svg><span><b>Aviso el mismo día</b>Entérate en cuanto salgan</span></li>
+            <li><svg class="draw" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2L12 3Z" pathLength="1"/></svg><span><b>Novedades</b>Niveles, eventos y detrás de escena</span></li>
+          </ul>
+
+          <form class="signup" method="post" data-signup data-origem="home" novalidate>
+            <fieldset>
+              <legend>Quiero recibir</legend>
+              <div class="tog-list">
+                <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Pruebas beta</span></label>
+                <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Lanzamientos</span></label>
+                <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Actualizaciones</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>¿Qué universos quieres jugar primero? <small>(opcional)</small></legend>
+              <div class="gtog-list">
+                <label class="gtog"><input type="checkbox" name="j" value="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</label>
+                <label class="gtog"><input type="checkbox" name="j" value="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">This Level Hates You</label>
+                <label class="gtog"><input type="checkbox" name="j" value="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">Nitrovenant</label>
+              </div>
+            </fieldset>
+            <div class="signup__field glass">
+              <label class="sr-only" for="email-lista">Tu correo</label>
+              <input id="email-lista" type="email" name="email" autocomplete="email" inputmode="email" placeholder="tu@correo.com" required>
+              <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <button class="btn btn--warm" type="submit" data-magnetic="0.15">Unirme a la lista <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+            </div>
+            <p class="signup__msg" role="status" aria-live="polite"></p>
+            <p class="signup__legal">Al unirte, aceptas recibir correos de Lipy Games sobre pruebas, lanzamientos y novedades. Puedes darte de baja cuando quieras. Tus datos se quedan solo con Lipy: consulta la <a href="privacidade.html">política de privacidad</a>.</p>
+            <div class="signup__ok" hidden tabindex="-1">
+              <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+              <b>¡Ya estás en la lista!</b>
+              <p>Las invitaciones a las betas y los avisos de lanzamiento llegarán a <span data-ok-email></span>.</p>
+              <button type="button" data-signup-outro>Registrar otro correo</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="vip__art" data-reveal="scale">
+          <div class="vip__halo" aria-hidden="true"></div>
+          <div class="pass glass" data-tilt="9" aria-label="Lipy Pass: pase de acceso anticipado" role="img">
+            <div class="pass__foil" aria-hidden="true"></div>
+            <div class="pass__top"><img src="../assets/media/marca/emblema.webp" width="600" height="591" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+            <p class="pass__title">Acceso<br>anticipado</p>
+            <div class="pass__games">
+              <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">
+              <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">
+              <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">
+            </div>
+            <div class="pass__row">
+              <div><small>Titular</small><b data-pass-nome>¿Tú?</b></div>
+              <div><small>Nivel</small><b>VIP</b></div>
+              <div><small>Vence</small><b>Nunca</b></div>
+            </div>
+            <div class="pass__cut" aria-hidden="true"></div>
+            <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">LIPY-BETA<br>2026</span></div>
+            <div class="pass__stamp" aria-hidden="true">ACTIVADO</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="contact section" id="contato" aria-labelledby="contato-t" tabindex="-1">
+      <div class="wrap">
+        <div class="contact__card glass" data-lens="aro:34,escala:70,blur:10">
+          <div class="contact__glow" aria-hidden="true"></div>
+          <p class="eyebrow">Habla con Lipy</p>
+          <h2 class="h1" id="contato-t" data-split>¿Tienes una idea,<br>una alianza o<br>una <span class="txt-warm">historia?</span></h2>
+          <p class="lead">Publicación, alianzas, prensa o soporte de nuestros juegos: escríbenos. Cada mensaje lo lee una persona.</p>
+          <div class="contact__mail">
+            <a class="btn btn--warm contact__btn" href="mailto:bluetubeoficial@gmail.com?subject=Contato%20pelo%20site%20da%20Lipy%20Games" data-magnetic>Escribir a Lipy <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <button class="contact__copy glass glass--pill" type="button" data-copy="bluetubeoficial@gmail.com" data-cursor="Copiar"><svg aria-hidden="true"><use href="#i-copia"/></svg><span>bluetubeoficial@gmail.com</span></button>
+          </div>
+          <ul class="contact__routes">
+            <li><a href="mailto:bluetubeoficial@gmail.com?subject=Parceria%20%2F%20publica%C3%A7%C3%A3o%20%E2%80%94%20Lipy%20Games" class="route"><b>Alianzas &amp; publicación</b><span>Distribución, coproducción, marcas</span><svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="mailto:bluetubeoficial@gmail.com?subject=Imprensa%20%E2%80%94%20Lipy%20Games" class="route"><b>Prensa</b><span>Notas, entrevistas, kit de prensa</span><svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="mailto:bluetubeoficial@gmail.com?subject=Suporte%20ao%20jogador%20%E2%80%94%20Lipy%20Games" class="route"><b>Soporte al jugador</b><span>Compras, progreso, eliminación de datos</span><svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>Estudio brasileño de juegos móviles. Hecho para los minutos que se vuelven historia.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universos</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Estudio</h4>
+          <ul>
+            <li><a href="index.html#estudio">Sobre Lipy</a></li>
+            <li><a href="index.html#como-criamos">Cómo creamos</a></li>
+            <li><a href="index.html#lista">Lista Lipy (acceso anticipado)</a></li>
+            <li><a href="index.html#contato">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacidad</h4>
+          <ul>
+            <li><a href="privacidade.html">Sitio y Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Eliminar cuenta de Quiver</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — marca de <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Hecho en Brasil · Google Play es una marca de Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Volver arriba"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/es.js?v=feb5fcc8"></script>
+  <script src="../assets/js/lipy.js?v=5cf75073"></script>
+  <script src="../assets/js/home.js?v=cae20623"></script>
+</body>
+</html>

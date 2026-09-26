@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=8e41053f"></script>
+  <title>Nitrovenant: Carro vs Zumbis — Lipy Games</title>
+  <meta name="description" content="Nitrovenant é o jogo de ação da Lipy Games: atravesse hordas de zumbis, evolua sua garagem de 13 veículos, derrube 4 chefes e solte o nitro. 120 fases.">
+  <meta name="theme-color" content="#0d0503">
+  <link rel="canonical" href="https://lipygame.com/pt/nitrovenant.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/nitrovenant.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/nitrovenant.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/nitrovenant.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/nitrovenant.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/nitrovenant.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/nitrovenant.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/nitrovenant.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Nitrovenant — a estrada acabou. A horda não.">
+  <meta property="og:description" content="Atropele a horda, solte o nitro e derrube os chefes. 13 veículos, 120 fases. Em breve no Google Play.">
+  <meta property="og:url" content="https://lipygame.com/pt/nitrovenant.html">
+  <meta property="og:image" content="https://lipygame.com/og-nitro.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/nitro.css?v=bde4e475">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Nitrovenant: Carro vs Zumbis",
+    "description": "Jogo de ação: atravesse hordas de zumbis em três faixas, evolua uma garagem de 13 veículos, enfrente 4 chefes e solte o nitro. 120 fases.",
+    "genre": ["Ação", "Corrida"],
+    "gamePlatform": "Android",
+    "operatingSystem": "Android",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/nitro/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+</head>
+<body class="jogo jogo--nitro" style="--c1:#ffb13b;--c2:#ff3d1a;--c3:#0d0503;--c4:#2ad8ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — início"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Principal">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Jogos <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">Estúdio</a>
+        <a href="index.html#como-criamos">Como criamos</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Idioma"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../nitrovenant.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/nitrovenant.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/nitrovenant.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/nitrovenant.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/nitrovenant.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/nitrovenant.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Acesso antecipado <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Puzzle de setas</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>Plataforma de pegadinhas</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>Ação sobre rodas</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menu">
+      <a href="index.html#universos">Jogos</a>
+      <a href="index.html#estudio">Estúdio</a>
+      <a href="index.html#como-criamos">Como criamos</a>
+      <a href="index.html#lista">Acesso antecipado</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../nitrovenant.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/nitrovenant.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/nitrovenant.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/nitrovenant.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/nitrovenant.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/nitrovenant.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh n-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/nitro/arte.webp" width="1254" height="1254" alt=""></div>
+      <canvas class="n-vel" data-vel aria-hidden="true"></canvas>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="Você está em"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">Universos</a><i>/</i><span aria-current="page">Nitrovenant</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="nitro" src="../assets/media/nitro/icone.webp" width="512" height="512" alt="Ícone do Nitrovenant">
+            <img class="gh__logo n-logo" src="../assets/media/nitro/logo.webp" width="900" height="287" alt="Nitrovenant">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">A estrada acabou.</span><span class="l"><em class="txt-game">A horda não.</em></span></h1>
+          <p class="lead gh__lead">Você dirige. O carro atira sozinho. O resto é decidir para onde ir — e quando soltar tudo no nitro.</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">Ação</span> <span class="chip chip--line">Zumbis</span> <span class="chip chip--line">Android</span> <span class="chip chip--line">Sem cadastro</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#garagem" data-magnetic>Entrar na garagem <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="nitro" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Em breve no</small><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual" data-float>
+          <div class="phone gh__phone n-phone" data-depth="0.15"><div class="phone__screen"><video src="../assets/media/nitro/video-iniciar.mp4" poster="../assets/media/nitro/video-iniciar-poster.webp" muted loop playsinline preload="metadata" data-autoplay aria-label="Abertura do Nitrovenant: zumbi com chave inglesa e carro amarelo"></video><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+          <button class="fl n-nitro glass" type="button" data-nitro data-depth="0.6" data-cursor="Segure" aria-label="Segure para ativar o nitro">
+            <svg class="n-nitro__ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="n-nitro__fill" cx="60" cy="60" r="52" pathLength="100"/></svg>
+            <span class="n-nitro__t">NITRO</span><span class="n-nitro__p" data-nitro-p>SEGURE</span>
+          </button>
+          <span class="fl n-boost" data-boost aria-hidden="true">BOOST!</span>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>Universo 03 / 03</span><span>Segure o nitro · depois role</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">A sensação</p>
+        <p class="gi__txt" data-scrub-words>Tem um momento em que a tela enche de zumbis, o tanque azul completa e você <em>aperta o nitro</em>. Esse momento é o jogo.</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section" data-gp aria-labelledby="gp-t">
+      <div class="wrap">
+        <p class="eyebrow">Como se joga</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">Um dedo.<br><span class="txt-game">Três faixas. Nenhuma pausa.</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>Deslize para trocar de faixa.</h3>
+            <p>Para os lados, você escapa dos perigos e escolhe a linha de tiro. Para cima, salta buracos, zumbis e a onda de choque do chefe.</p>
+            <span class="chip chip--line gp__gesture">← deslize → · ↑ pula</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-horda.webp" width="720" height="1152" alt="A horda vindo pela estrada" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>Segure e a metralhadora fala.</h3>
+            <p>O carro atira sozinho com o lançador do teto. Segure o dedo na pista e a metralhadora azul entra em ação para limpar o caminho.</p>
+            <span class="chip chip--line gp__gesture">segure = metralhadora</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-pit.webp" width="720" height="1280" alt="Metralhadora contra a horda" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>Solte o NITRO.</h3>
+            <p>Imune, o carro dispara na frente e atropela tudo. A metralhadora e o nitro bebem do mesmo tanque — a escolha de quando gastar é sua.</p>
+            <span class="chip chip--line gp__gesture">tanque azul · mesmo poder</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-chefe.webp" width="720" height="1280" alt="Chefe no meio da horda" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="phone gp__phone">
+              <div class="phone__screen">
+                <img data-step="0" src="../assets/media/nitro/tela-horda.webp" width="720" height="1152" alt="A horda vindo pela estrada" loading="lazy">
+                <img data-step="1" src="../assets/media/nitro/tela-pit.webp" width="720" height="1280" alt="Metralhadora contra a horda" loading="lazy">
+                <img data-step="2" src="../assets/media/nitro/tela-chefe.webp" width="720" height="1280" alt="Chefe no meio da horda" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+              <i class="phone__island"></i>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GARAGEM 3D ============ -->
+    <section class="gar" id="garagem" aria-labelledby="gar-t" tabindex="-1">
+      <div class="gar__bg" aria-hidden="true"><img src="../assets/media/nitro/fundo-garagem.webp" width="941" height="1672" alt="" loading="lazy"></div>
+      <div class="wrap gar__head">
+        <div>
+          <p class="eyebrow">Garagem · 13 veículos</p>
+          <h2 class="h1" id="gar-t">Escolha sua <span class="txt-game">máquina.</span></h2>
+        </div>
+        <p class="lead">Do compacto Rook ao Overlord, comprando com o que você junta na pista. Cada carro muda o jogo de verdade: mais blindagem, mais dano, mais nitro. Arraste para girar.</p>
+      </div>
+      <div class="wrap gar__stage">
+        <div class="gar__info">
+          <span class="gar__n mono" data-car-n>Nº 08 / 13</span>
+          <h3 class="gar__nome" data-car-nome>Velocity</h3>
+          <span class="gar__classe mono" data-car-classe>Elétrico</span>
+          <p class="gar__preco" data-car-preco>155.000 créditos</p>
+          <p class="gar__desc" data-car-desc>Silencioso, rápido e com o lançador sempre carregado.</p>
+        </div>
+        <div class="gar__view" data-garagem data-cursor="Girar">
+          <img class="gar__plat" src="../assets/media/nitro/plataforma.webp" width="900" height="444" alt="" loading="lazy">
+          <img class="gar__fallback" src="../assets/media/nitro/tela-garagem.webp" width="720" height="1152" alt="A garagem do Nitrovenant" loading="lazy">
+          <div class="gar__load" data-car-load hidden><i></i><span class="mono">Ligando o motor…</span></div>
+        </div>
+        <div class="gar__lista" role="radiogroup" aria-label="Veículos">
+          <button type="button" role="radio" data-carro="rook" aria-checked="false"><b>Rook</b><span>Compacto</span></button>
+          <button type="button" role="radio" data-carro="fury" aria-checked="false"><b>Fury</b><span>Muscle</span></button>
+          <button type="button" role="radio" data-carro="velocity" aria-checked="true"><b>Velocity</b><span>Elétrico</span></button>
+          <button type="button" role="radio" data-carro="vortex" aria-checked="false"><b>Vortex</b><span>Super</span></button>
+          <button type="button" role="radio" data-carro="overlord" aria-checked="false"><b>Overlord</b><span>Caminhão</span></button>
+          <button type="button" role="radio" data-carro="golden" aria-checked="false"><b>Golden</b><span>Ultimate</span></button>
+          <button type="button" role="radio" data-carro="moto" aria-checked="false"><b>Blade</b><span>Moto</span></button>
+        </div>
+      </div>
+      <p class="wrap gar__nota mono">Arma, blindagem e tração sobem até 8 níveis e nunca voltam atrás · peças de míssil liberam até 10 disparos de uma vez</p>
+    </section>
+
+    <!-- ============ CHEFES ============ -->
+    <section class="chefes section" aria-labelledby="chefes-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Quatro chefes</p>
+        <h2 class="h1" id="chefes-t" data-split>Eles não esperam<br><span class="txt-game">a horda passar.</span></h2>
+        <p class="lead chefes__lead" data-reveal>Vêm no meio dela, martelando o asfalto, arremessando ferramenta e investindo na sua faixa. Da fase 10 em diante, um chefe do meio da pista se junta ao chefe final.</p>
+        <div class="chefes__grid">
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-guarda.webp" width="720" height="1280" alt="Guarda de Trânsito" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">Chefe · 01</span><h3>Guarda de Trânsito</h3><p>Apita, multa e fecha a sua faixa no pior momento.</p>
+          </article>
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-pit.webp" width="720" height="1280" alt="Especialista em Pit" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">Chefe · 02</span><h3>Especialista em Pit</h3><p>Troca pneu em dois segundos e arremessa a ferramenta em um.</p>
+          </article>
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-piloto.webp" width="720" height="1280" alt="Piloto de Elite" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">Chefe · 03</span><h3>Piloto de Elite</h3><p>Conhece cada curva da estrada. E cada um dos seus erros.</p>
+          </article>
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-mecanico.webp" width="720" height="1280" alt="Chefe Mecânico" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">Chefe · 04</span><h3>Chefe Mecânico</h3><p>A chave inglesa dele é maior que o seu carro. Quase.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CURVA DE DIFICULDADE ============ -->
+    <section class="curva section" aria-labelledby="curva-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>120 fases</p>
+        <h2 class="h1" id="curva-t" data-split>Fases que<br><span class="txt-game">não perdoam.</span></h2>
+        <div class="curva__box glass" data-curva>
+          <svg class="curva__svg" viewBox="0 0 1200 420" preserveAspectRatio="none" role="img" aria-labelledby="curva-desc">
+            <desc id="curva-desc">A dificuldade sobe ao longo das 120 fases: na fase 40 a vida de todos dobra, na 45 começa o Inferno, na 50 os kamikazes dobram, na 80 o golpe do chefe triplica e na 100 o chefe dobra de vida outra vez.</desc>
+            <defs>
+              <linearGradient id="cg" x1="0" x2="1"><stop offset="0" stop-color="#ffb13b"/><stop offset=".6" stop-color="#ff3d1a"/><stop offset="1" stop-color="#ff0a54"/></linearGradient>
+              <linearGradient id="cf" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff3d1a" stop-opacity=".35"/><stop offset="1" stop-color="#ff3d1a" stop-opacity="0"/></linearGradient>
+            </defs>
+            <g class="curva__grade"><line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="210" x2="1200" y2="210"/><line x1="0" y1="315" x2="1200" y2="315"/></g>
+            <path class="curva__area" d="M0 400 C150 395 280 380 400 330 L400 300 C430 296 450 290 500 262 C600 240 700 222 800 170 L800 120 C900 104 950 96 1000 70 L1000 34 C1080 26 1150 20 1200 14 L1200 420 L0 420Z" fill="url(#cf)"/>
+            <path class="curva__linha" d="M0 400 C150 395 280 380 400 330 L400 300 C430 296 450 290 500 262 C600 240 700 222 800 170 L800 120 C900 104 950 96 1000 70 L1000 34 C1080 26 1150 20 1200 14" fill="none" stroke="url(#cg)" stroke-width="5" stroke-linecap="round" pathLength="1"/>
+          </svg>
+          <ol class="curva__marcos">
+            <li class="is-baixo" style="--x:33.3%;--y:73%;--dy:26px"><span class="m"><b>40</b><span>A vida de todo mundo dobra</span></span></li>
+            <li class="is-hell" style="--x:37.5%;--y:68%;--dy:118px"><span class="m"><b>45</b><span>Morrer te joga no INFERNO</span></span></li>
+            <li style="--x:41.6%;--y:62%;--dy:26px"><span class="m"><b>50</b><span>Os kamikazes dobram</span></span></li>
+            <li style="--x:66.6%;--y:34%;--dy:26px"><span class="m"><b>80</b><span>O golpe do chefe triplica</span></span></li>
+            <li style="--x:83.3%;--y:12%;--dy:26px"><span class="m"><b>100</b><span>O chefe dobra de vida outra vez</span></span></li>
+          </ol>
+          <div class="curva__eixo mono" aria-hidden="true"><span>Fase 1</span><span>30</span><span>60</span><span>90</span><span>120</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INFERNO ============ -->
+    <section class="inferno" aria-labelledby="inf-t">
+      <div class="inferno__bg" aria-hidden="true"><img src="../assets/media/nitro/mkt-1.webp" width="720" height="1279" alt="" loading="lazy"></div>
+      <div class="inferno__brasas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="wrap inferno__grid">
+        <div>
+          <p class="eyebrow">Perdeu? Ainda dá</p>
+          <h2 class="inferno__t" id="inf-t" data-split>Bem-vindo<br>ao <span class="txt-game">Inferno.</span></h2>
+          <p class="lead">Da fase 45 em diante, morrer não é o fim: você cai no Inferno. Vença o chefe de lá e volta exatamente de onde parou, com tudo que tinha. Da fase 50, dá para cair duas vezes — e a segunda é um Inferno de fúria, com o dobro de zumbis.</p>
+        </div>
+        <div class="inferno__cards">
+          <img class="inferno__c1" src="../assets/media/nitro/mkt-1.webp" width="720" height="1279" alt="Arte: você precisa vencer o Inferno para sobreviver" loading="lazy" data-parallax="10">
+          <img class="inferno__c2" src="../assets/media/nitro/mkt-7.webp" width="720" height="1279" alt="Arte: consegue derrotar os chefes?" loading="lazy" data-parallax="-8">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">Telas</p>
+          <h2 class="h1" id="gg-t">Da garagem <span class="txt-game">ao asfalto.</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Filtrar telas" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">Todas</button>
+          <button role="tab" aria-selected="false" data-cat="jogo" aria-controls="gg-lista">No jogo</button>
+          <button role="tab" aria-selected="false" data-cat="loja" aria-controls="gg-lista">Artes da loja</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="Arraste">
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-horda.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-horda.webp" width="720" height="1152" alt="A horda" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>A horda</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-chefe.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-chefe.webp" width="720" height="1280" alt="Chefe na horda" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Chefe na horda</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-guarda.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-guarda.webp" width="720" height="1280" alt="Guarda de Trânsito" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Guarda de Trânsito</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-mecanico.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-mecanico.webp" width="720" height="1280" alt="Chefe Mecânico" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Chefe Mecânico</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-garagem.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-garagem.webp" width="720" height="1152" alt="Garagem" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Garagem</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-vitoria.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-vitoria.webp" width="720" height="1152" alt="Vitória" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Pista liberada</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-2.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-2.webp" width="720" height="1279" alt="Moto Blade" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Moto Blade</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-3.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-3.webp" width="720" height="1279" alt="13 veículos para evoluir" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Veículos para evoluir</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-4.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-4.webp" width="720" height="1279" alt="Zonas perigosas" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Zonas perigosas</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-5.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-5.webp" width="720" height="1279" alt="Hordas e chefes" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Hordas e chefes</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-6.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-6.webp" width="720" height="1279" alt="Neve" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Neve</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-8.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-8.webp" width="720" height="1279" alt="Deserto" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Deserto</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-9.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-9.webp" width="720" height="1279" alt="Ondas de zumbis" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Ondas de zumbis</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="Telas anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="Próximas telas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ TRILHA ============ -->
+    <section class="gm section" aria-labelledby="gm-t">
+      <div class="wrap gm__grid">
+        <div>
+          <p class="eyebrow" data-reveal>Trilha sonora</p>
+          <h2 class="h1" id="gm-t" data-split>Riffs para <span class="txt-game">acelerar.</span></h2>
+          <p class="lead" data-reveal>Guitarra pesada para a estrada e um coro infernal para quando tudo dá errado. Aperte o play (de preferência com fone).</p>
+        </div>
+        <div class="player glass" data-player data-reveal>
+          <div class="player__art"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+          <div>
+            <p class="player__now">Tocando · Nitrovenant</p>
+            <p class="player__title">Abertura</p>
+            <div class="player__row">
+              <button class="player__btn" type="button" aria-label="Tocar"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></button>
+              <div class="player__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="player__time">0:00 / 1:00</span>
+            </div>
+            <div class="player__prog" role="presentation"><i></i></div>
+          </div>
+          <div class="player__list">
+            <button type="button" data-src="../assets/media/nitro/trilha-abertura.mp3"><span class="n">01</span><span class="t">Abertura</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-speed-riff.mp3"><span class="n">02</span><span class="t">Speed Riff</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-n-speed-riff.mp3"><span class="n">03</span><span class="t">N Speed Riff</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-riff-of-dread.mp3"><span class="n">04</span><span class="t">Riff of Dread</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-inferno.mp3"><span class="n">05</span><span class="t">Inferno</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-loop-forever.mp3"><span class="n">06</span><span class="t">Loop Forever</span><span class="d">prévia</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Ficha técnica</p>
+        <h2 class="h2" id="ficha-t" data-split>Nitrovenant em números.</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>Gênero</dt><dd>Ação sobre rodas<small>Três faixas, tiro automático</small></dd></div>
+          <div><dt>Fases</dt><dd>120<small>Mais o Inferno, para quem cai</small></dd></div>
+          <div><dt>Garagem</dt><dd>13 veículos<small>12 carros e a moto Blade</small></dd></div>
+          <div><dt>Chefes</dt><dd>4<small>No meio da horda, não depois</small></dd></div>
+          <div><dt>Idiomas</dt><dd>3<small>Português · inglês · espanhol</small></dd></div>
+          <div><dt>Internet e cadastro</dt><dd>Não precisa<small>Nem e-mail, nem conta</small></dd></div>
+          <div><dt>Progresso</dt><dd>Google Play Games<small>Opcional, na sua conta Google</small></dd></div>
+          <div><dt>Preço</dt><dd>Grátis<small>Anúncios e 2 veículos opcionais</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>Onde jogar</p>
+            <h2 class="h2" id="onde-t" data-split>Jogue onde você <span class="txt-game">estiver.</span></h2>
+          </div>
+          <p class="lead" data-reveal>No celular, pela loja que você já usa — ou direto no navegador, sem instalar nada. Cada botão acende no dia em que Nitrovenant chegar àquela plataforma.</p>
+        </div>
+        <div class="onde__grupos">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Celular · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="nitro:play" aria-disabled="true" aria-label="Nitrovenant na Google Play: em breve">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="nitro:amazon" aria-disabled="true" aria-label="Nitrovenant na Amazon Appstore: em breve">
+            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="nitro:samsung" aria-disabled="true" aria-label="Nitrovenant na Galaxy Store: em breve">
+            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>Em breve</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegador · sem instalar</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="nitro:poki" aria-disabled="true" aria-label="Nitrovenant na Poki: em breve">
+            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="nitro:crazygames" aria-disabled="true" aria-label="Nitrovenant na CrazyGames: em breve">
+            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play é marca da Google LLC. Amazon, Amazon Appstore e o logo da Amazon são marcas da Amazon.com, Inc. ou de suas afiliadas. Samsung e Galaxy Store são marcas da Samsung Electronics Co., Ltd. Poki e CrazyGames são marcas de seus respectivos titulares.</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">Acesso antecipado</p>
+            <h2 class="h2" id="lista-t">Pegue a estrada <span class="txt-game">antes de todo mundo.</span></h2>
+            <p class="lead">Entre na Lista Lipy: convite para o beta, aviso no dia do lançamento do Nitrovenant e os carros e fases novos em primeira mão.</p>
+            <form class="signup" method="post" data-signup data-origem="nitro" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>Quero receber</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Testes beta</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Lançamentos</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Atualizações</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="nitro" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-nitro">Seu e-mail</label>
+                <input id="email-nitro" type="email" name="email" autocomplete="email" inputmode="email" placeholder="seu@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">Quero o beta <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">Ao entrar, você aceita receber e-mails da Lipy Games sobre testes, lançamentos e novidades. Sai quando quiser. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>Motor ligado. Você está na lista!</b>
+                <p>O convite para o beta e o aviso de lançamento vão chegar em <span data-ok-email></span>.</p>
+                <button type="button" data-signup-outro>Inscrever outro e-mail</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="Lipy Pass do Nitrovenant">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema.webp" width="600" height="591" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">Beta do<br>Nitrovenant</p>
+              <div class="pass__games"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>Piloto</small><b data-pass-nome>Você?</b></div><div><small>Nitro</small><b>100%</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">NITRO<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">ATIVADO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="De volta">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa.webp" width="1794" height="876" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">De volta ao primeiro universo · 01 / 03</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">Entrar no universo <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>Estúdio brasileiro de jogos mobile. Feito para os minutos que viram história.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universos</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Estúdio</h4>
+          <ul>
+            <li><a href="index.html#estudio">Sobre a Lipy</a></li>
+            <li><a href="index.html#como-criamos">Como criamos</a></li>
+            <li><a href="index.html#lista">Lista Lipy (acesso antecipado)</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacidade</h4>
+          <ul>
+            <li><a href="privacidade.html">Site e Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Excluir conta do Quiver</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — marca da <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Feito no Brasil · Google Play é marca da Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Voltar ao topo"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/lipy.js?v=5cf75073"></script>
+  <script src="../assets/js/jogo.js?v=7bc7d81f"></script>
+  <script src="../assets/js/nitro.js?v=aedde99b"></script>
+</body>
+</html>

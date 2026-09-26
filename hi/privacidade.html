@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="hi" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=8e41053f"></script>
+  <title>साइट और Lista Lipy की गोपनीयता — Lipy Games</title>
+  <meta name="description" content="Lipy Games साइट पर और Lista Lipy (बीटा टेस्ट, लॉन्च और अपडेट के लिए सदस्यता) में डेटा को कैसे संभालती है: हम क्या इकट्ठा करते हैं, किसलिए, कितने समय तक, और सूची कैसे छोड़ें।">
+  <meta name="theme-color" content="#05070f">
+  <link rel="canonical" href="https://lipygame.com/hi/privacidade.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/privacidade.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/privacidade.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/privacidade.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/privacidade.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/privacidade.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/privacidade.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/privacidade.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="../assets/css/legal.css?v=5f4a5152">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var v = sessionStorage.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+</head>
+<body>
+  <!--#topo-->
+  <a class="skip" href="#conteudo">सीधे कंटेंट पर जाएँ</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — होम"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="मुख्य">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">गेम्स <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">स्टूडियो</a>
+        <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+        <a href="index.html#contato">संपर्क</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="भाषा"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../privacidade.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/privacidade.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/privacidade.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/privacidade.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/privacidade.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/privacidade.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">अर्ली एक्सेस <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="मेन्यू खोलें" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>तीरों की पहेली</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>शरारतों भरा प्लेटफ़ॉर्मर</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>पहियों पर एक्शन</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="मेन्यू">
+      <a href="index.html#universos">गेम्स</a>
+      <a href="index.html#estudio">स्टूडियो</a>
+      <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+      <a href="index.html#lista">अर्ली एक्सेस</a>
+      <a href="index.html#contato">संपर्क</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../privacidade.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/privacidade.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/privacidade.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/privacidade.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/privacidade.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/privacidade.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo" class="legal">
+    <div class="wrap">
+      <header class="legal__head">
+        <p class="eyebrow">गोपनीयता</p>
+        <h1 class="h1" data-split>आपका डेटा, <span class="txt-cool">बिना किसी छिपी शर्त के।</span></h1>
+        <p class="lead">यह पेज बताता है कि Lipy Games की साइट पर और Lista Lipy में — बीटा टेस्ट, लॉन्च और अपडेट की ईमेल सूची में — आपकी जानकारी के साथ क्या होता है। हर गेम की अपनी अलग नीति है, जिसमें बताया गया है कि गेम के अंदर क्या होता है।</p>
+        <p class="legal__data" style="margin-top:24px">अंतिम अपडेट: 26 सितंबर 2026</p>
+      </header>
+
+      <div class="legal__grid">
+        <nav class="legal__toc glass" aria-label="इस पेज पर">
+          <a href="#quem">हम कौन हैं</a>
+          <a href="#site">साइट क्या सहेजती है</a>
+          <a href="#lista-dados">Lista Lipy</a>
+          <a href="#para-que">हम किसलिए उपयोग करते हैं</a>
+          <a href="#onde">डेटा कहाँ रखा जाता है</a>
+          <a href="#tempo">कितने समय तक</a>
+          <a href="#direitos">आपके अधिकार</a>
+          <a href="#sair">सूची छोड़ें</a>
+          <a href="#jogos">हर गेम की नीति</a>
+        </nav>
+
+        <article class="prosa">
+          <h2 id="quem">हम कौन हैं</h2>
+          <p><strong>Lipy Games</strong>, <strong>Lipy Serviços Digitais LTDA</strong> (CNPJ 65.260.227/0001-11) का गेम ब्रांड है। यही कंपनी यहाँ बताए गए डेटा की नियंत्रक (कंट्रोलर) है। गोपनीयता से जुड़े किसी भी विषय के लिए <a href="mailto:bluetubeoficial@gmail.com?subject=Privacidade%20%E2%80%94%20Lipy%20Games">bluetubeoficial@gmail.com</a> पर लिखें।</p>
+
+          <h2 id="site">साइट आपके डिवाइस पर क्या सहेजती है</h2>
+          <p>यह साइट विज्ञापन वाली कुकीज़ या विज़िट का विश्लेषण करने वाले टूल का उपयोग नहीं करती। यह आपके अपने ब्राउज़र के स्टोरेज में केवल ये चीज़ें सहेजती है:</p>
+          <ul>
+            <li>क्या इस विज़िट में शुरुआती एनिमेशन दिख चुका है, और पेजों के बीच कौन-सा ट्रांज़िशन दिखाना है (टैब बंद करते ही मिट जाता है);</li>
+            <li>मेन्यू के झंडे से चुनी गई आपकी भाषा और वह देश जहाँ से आप साइट खोलते हैं (केवल देश का कोड, जैसे “BR”), ताकि अगली विज़िट में साइट आपकी भाषा में खुले;</li>
+            <li>वह ईमेल जिससे आपने Lista Lipy की सदस्यता ली है, केवल इसलिए कि लौटने पर आपका पास “सक्रिय” दिखाया जा सके। यह आपके डिवाइस पर ही रहता है, और आप ब्राउज़र में इस साइट का डेटा साफ़ करके इसे मिटा सकते हैं।</li>
+          </ul>
+          <p>साइट के फ़ॉन्ट Google Fonts से आते हैं: उन्हें पहुँचाने के लिए Google के सर्वर को आपके डिवाइस का IP पता मिलता है, जैसा इस सेवा का उपयोग करने वाली किसी भी साइट पर होता है।</p>
+          <p>पहली विज़िट पर, साइट को आपकी भाषा में खोलने के लिए, आपका ब्राउज़र हमारे सर्वर (Supabase) से पूछता है कि कनेक्शन किस देश से आ रहा है। सर्वर केवल देश का वह कोड पढ़ता है जो नेटवर्क ख़ुद बताता है, और तुरंत जवाब दे देता है: यह अनुरोध न तो सहेजा जाता है और न ही आपसे जोड़ा जाता है।</p>
+
+          <h2 id="lista-dados">Lista Lipy को क्या मिलता है</h2>
+          <p>जब आप सूची से जुड़ते हैं, तो हम ये जानकारी सहेजते हैं:</p>
+          <ul>
+            <li>आपका <strong>ईमेल</strong>;</li>
+            <li>आप क्या पाना चाहते हैं (बीटा टेस्ट, लॉन्च, अपडेट) और आपने कौन-से गेम चुने;</li>
+            <li>वह पेज जहाँ से और वह भाषा जिसमें आपने सदस्यता ली, तारीख़, और कनेक्शन का <strong>अनुमानित देश</strong> (नेटवर्क द्वारा बताया गया; आपका IP पता सहेजा नहीं जाता);</li>
+            <li>दुरुपयोग रोकने के लिए, आपके IP पते से बना एक एन्क्रिप्टेड कोड (एक छद्म पहचान, न कि ख़ुद IP पता), जिसका उपयोग केवल बार-बार की सदस्यता को सीमित करने के लिए होता है और जिसे दो दिनों के भीतर मिटा दिया जाता है।</li>
+          </ul>
+          <p>हम नाम, फ़ोन नंबर, उम्र या पासवर्ड नहीं माँगते। कोई खाता बनाने की ज़रूरत नहीं है।</p>
+
+          <h2 id="para-que">हम किसलिए उपयोग करते हैं</h2>
+          <p>केवल उसी काम के लिए, जो आपने चाहा है: लॉन्च से पहले हमारे गेम टेस्ट करने के न्योते भेजना, कोई गेम स्टोर पर आने पर सूचना देना, और हमारे गेम्स से जुड़ी नई जानकारी देना। इसका क़ानूनी आधार आपकी <strong>सहमति</strong> है (Lei Geral de Proteção de Dados, LGPD — ब्राज़ील का सामान्य डेटा संरक्षण क़ानून, अनुच्छेद 7, खंड I), जिसे आप जब चाहें वापस ले सकते हैं।</p>
+          <p>हम आपकी सदस्यता की जानकारी न बेचते हैं, न किराये पर देते हैं, और न ही दूसरी कंपनियों को मार्केटिंग के लिए देते हैं।</p>
+
+          <h2 id="onde">डेटा कहाँ रखा जाता है</h2>
+          <p>यह सूची Supabase पर Lipy Games के एक डेटाबेस में रखी जाती है। Supabase एक क्लाउड सेवा है, जिसके सर्वर संयुक्त राज्य अमेरिका में हैं। इसलिए सदस्यता में डेटा का अंतरराष्ट्रीय हस्तांतरण शामिल है (LGPD, अनुच्छेद 33), जो ऐसे सेवा-प्रदाता के साथ होता है जो सुरक्षा उपाय अपनाता है और डेटा को केवल Lipy के लिए प्रोसेस करता है। सूची की टेबल तक पहुँच प्रतिबंधित है: साइट केवल कोई सदस्यता <em>जोड़</em> सकती है या उसे <em>रद्द के रूप में दर्ज</em> कर सकती है; वह सूची को कभी पढ़ नहीं सकती।</p>
+
+          <h2 id="tempo">कितने समय तक</h2>
+          <p>जब तक आपकी सदस्यता बनी रहती है। सूची छोड़ते ही ईमेल आना तुरंत बंद हो जाता है — और सुरक्षा के लिए, कोई भी उस ईमेल को साइट के ज़रिए दोबारा सूची में नहीं जोड़ सकता। अगर आप वापस आना चाहें, या चाहें कि रिकॉर्ड पूरी तरह मिटा दिया जाए, तो ऊपर दिए गए ईमेल पर अनुरोध करें।</p>
+
+          <h2 id="direitos">आपके अधिकार</h2>
+          <p>LGPD (अनुच्छेद 18) के तहत आप हमसे अनुरोध कर सकते हैं: यह पुष्टि करने का कि हमारे पास आपका डेटा है या नहीं; उस डेटा तक पहुँच, उसमें सुधार या उसे मिटाने का; यह जानने का कि हम उसे किसके साथ साझा करते हैं (क्लाउड सेवा-प्रदाता के अलावा किसी के साथ नहीं); और अपनी सहमति वापस लेने का। सूची में दर्ज ईमेल बताते हुए <a href="mailto:bluetubeoficial@gmail.com?subject=Meus%20dados%20%E2%80%94%20Lista%20Lipy">bluetubeoficial@gmail.com</a> पर लिखें। आप Autoridade Nacional de Proteção de Dados (ANPD — ब्राज़ील का राष्ट्रीय डेटा संरक्षण प्राधिकरण) में शिकायत भी दर्ज कर सकते हैं।</p>
+
+          <h2 id="sair">Lista Lipy छोड़ें</h2>
+          <div class="quadro glass">
+            <p>सूची में दर्ज अपना ईमेल लिखें। सुरक्षा के लिए, जवाब एक जैसा ही रहता है, चाहे वह ईमेल सूची में हो या नहीं।</p>
+            <form class="sair" method="post" data-sair novalidate>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-sair">सूची में दर्ज ईमेल</label>
+                <input id="email-sair" type="email" name="email" autocomplete="email" inputmode="email" placeholder="aapka@email.com" required>
+                <button class="btn btn--glass glass glass--pill" type="submit">सूची छोड़ें <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <h2 id="jogos">हर गेम की नीति</h2>
+          <p>हर गेम के अंदर क्या होता है (प्रगति, विज्ञापन, ख़रीदारी), यह उस गेम की अपनी नीति में बताया गया है:</p>
+          <ul>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver: Arrow Puzzle</a> · <a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Quiver खाता मिटाएँ</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li>This Level Hates You: गेम के लॉन्च के साथ प्रकाशित होगी।</li>
+          </ul>
+          <p>अगर यह पेज बदलता है, तो ऊपर दी गई तारीख़ भी साथ में बदल जाएगी।</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>ब्राज़ील का मोबाइल गेम स्टूडियो। उन मिनटों के लिए, जो क़िस्से बन जाते हैं।</p>
+        </div>
+        <div class="foot__col">
+          <h4>यूनिवर्स</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>स्टूडियो</h4>
+          <ul>
+            <li><a href="index.html#estudio">Lipy के बारे में</a></li>
+            <li><a href="index.html#como-criamos">हम कैसे बनाते हैं</a></li>
+            <li><a href="index.html#lista">Lista Lipy (अर्ली एक्सेस)</a></li>
+            <li><a href="index.html#contato">संपर्क</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>गोपनीयता</h4>
+          <ul>
+            <li><a href="privacidade.html">साइट और Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Quiver खाता मिटाएँ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — <strong>Lipy Serviços Digitais LTDA</strong> का ब्रांड · CNPJ 65.260.227/0001-11</p>
+        <p>ब्राज़ील में बना · Google Play, Google LLC का ट्रेडमार्क है।</p>
+        <button class="foot__up glass" type="button" data-top aria-label="ऊपर जाएँ"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/hi.js?v=4c35d3f9"></script>
+  <script src="../assets/js/lipy.js?v=5cf75073"></script>
+</body>
+</html>

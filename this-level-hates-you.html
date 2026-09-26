@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en" class="no-js" data-raiz>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="assets/js/idioma.js?v=8e41053f"></script>
+  <title>This Level Hates You — Lipy Games</title>
+  <meta name="description" content="This Level Hates You is the troll platformer from Lipy Games: the exit is right there, but the scenery lies. 66 levels, 3 worlds and not a single repeated trap.">
+  <meta name="theme-color" content="#061033">
+  <link rel="canonical" href="https://lipygame.com/this-level-hates-you.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/this-level-hates-you.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/this-level-hates-you.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/this-level-hates-you.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/this-level-hates-you.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/this-level-hates-you.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/this-level-hates-you.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/this-level-hates-you.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="This Level Hates You — the exit is right there. The level hates you.">
+  <meta property="og:description" content="66 levels of absurd traps across 3 worlds. None of them repeat. Coming soon to Google Play.">
+  <meta property="og:url" content="https://lipygame.com/this-level-hates-you.html">
+  <meta property="og:image" content="https://lipygame.com/og-tlhy.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="assets/css/tlhy.css?v=137140c1">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "This Level Hates You",
+    "description": "A one-screen platformer: the exit door is in plain sight from the start, but the scenery lies. 66 levels across 3 worlds, and no trap ever repeats.",
+    "genre": ["Plataforma", "Comédia"],
+    "gamePlatform": "Android",
+    "operatingSystem": "Android",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/tlhy/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+</head>
+<body class="jogo jogo--tlhy" style="--c1:#ffd23f;--c2:#ff4040;--c3:#061033;--c4:#3aa0ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — home"><img src="assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Main">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Games <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">Studio</a>
+        <a href="index.html#como-criamos">How we build</a>
+        <a href="index.html#contato">Contact</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Language"><img class="idioma__flag" data-idioma-flag src="assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="this-level-hates-you.html" hreflang="en" lang="en" data-lang="en"><img src="assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="pt/this-level-hates-you.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="es/this-level-hates-you.html" hreflang="es" lang="es" data-lang="es"><img src="assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="hi/this-level-hates-you.html" hreflang="hi" lang="hi" data-lang="hi"><img src="assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="ja/this-level-hates-you.html" hreflang="ja" lang="ja" data-lang="ja"><img src="assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="ar/this-level-hates-you.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Early access <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Arrow puzzle</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>Troll platformer</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>Action on wheels</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menu">
+      <a href="index.html#universos">Games</a>
+      <a href="index.html#estudio">Studio</a>
+      <a href="index.html#como-criamos">How we build</a>
+      <a href="index.html#lista">Early access</a>
+      <a href="index.html#contato">Contact</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="this-level-hates-you.html" hreflang="en" lang="en" data-lang="en"><img src="assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="pt/this-level-hates-you.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="es/this-level-hates-you.html" hreflang="es" lang="es" data-lang="es"><img src="assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="hi/this-level-hates-you.html" hreflang="hi" lang="hi" data-lang="hi"><img src="assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="ja/this-level-hates-you.html" hreflang="ja" lang="ja" data-lang="ja"><img src="assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="ar/this-level-hates-you.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="assets/media/tlhy/fundo-grama.webp" width="1080" height="2340" alt=""></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="You are here"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">Universes</a><i>/</i><span aria-current="page">This Level Hates You</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="tlhy" src="assets/media/tlhy/icone.webp" width="512" height="512" alt="This Level Hates You icon">
+            <img class="gh__logo t-logo" src="assets/media/tlhy/logo.webp" width="810" height="520" alt="This Level Hates You">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">The exit is</span><span class="l">right there.</span><span class="l"><em class="txt-game">The level hates you.</em></span></h1>
+          <p class="lead gh__lead">A one-screen platformer: the door is right there from the start, in plain sight. Easy, right? Think again. The scenery lies, and every level is a prank waiting to happen.</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">Platformer</span> <span class="chip chip--line">Comedy</span> <span class="chip chip--line">Android</span> <span class="chip chip--line">Free</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#pegadinha" data-magnetic>Try to beat a level <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="tlhy" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Coming soon to</small><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual" data-float>
+          <img class="fl t-porta" data-depth="0.4" src="assets/media/tlhy/porta-monstro.webp" width="144" height="239" alt="">
+          <img class="fl t-bola" data-depth="0.7" src="assets/media/tlhy/el-bola-corrente.webp" width="600" height="714" alt="">
+          <div class="phone gh__phone" data-depth="0.15"><div class="phone__screen"><img src="assets/media/tlhy/tela-abertura.webp" width="720" height="1279" alt="This Level Hates You title screen" ><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+          <img class="fl t-heroi" data-depth="1.2" src="assets/media/tlhy/g/heroi-panico.webp" width="300" height="300" alt="">
+          <img class="fl t-bloco" data-depth="1.4" src="assets/media/tlhy/el-bloco-q.webp" width="400" height="362" alt="">
+          <img class="fl t-passaro" data-depth="1.6" src="assets/media/tlhy/passaro-a.webp" width="99" height="73" alt="">
+          <img class="fl t-tnt" data-depth="0.9" src="assets/media/tlhy/el-tnt.webp" width="600" height="696" alt="">
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>Universe 02 / 03</span><span>Scroll if you dare</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">The feeling</p>
+        <p class="gi__txt" data-scrub-words>You’ll laugh. You’ll curse. You’ll swear you’ve got it this time. And the level will <em>lie to you again</em> — just in a brand-new way.</p>
+      </div>
+    </section>
+
+    <!-- ============ A PEGADINHA (interativa) ============ -->
+    <section class="gag section" id="pegadinha" aria-labelledby="gag-t" tabindex="-1">
+      <div class="wrap">
+        <div class="gag__head">
+          <div>
+            <p class="eyebrow">Try it</p>
+            <h2 class="h1" id="gag-t">This section <span class="txt-game">hates you too.</span></h2>
+          </div>
+          <p class="lead">Just walk to the door. What could possibly go wrong?</p>
+        </div>
+
+        <div class="gag__scene" data-gag aria-describedby="gag-status">
+          <img class="gag__bg" src="assets/media/tlhy/fundo-grama.webp" width="1080" height="2340" alt="" loading="lazy">
+          <div class="gag__hud">
+            <span class="gag__placa glass glass--pill">Level <b>1</b></span> <span class="gag__placa gag__placa--morte glass glass--pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C7 2 3 5.9 3 10.8c0 2.8 1.3 5.3 3.4 6.9V21a1 1 0 0 0 1 1h2.1v-2h1.8v2h1.4v-2h1.8v2h2.1a1 1 0 0 0 1-1v-3.3c2.1-1.6 3.4-4.1 3.4-6.9C21 5.9 17 2 12 2Zm-3.5 11.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm7 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg>Deaths <b data-gag="mortes">0</b></span>
+          </div>
+          <div class="gag__passaro" data-gag="passaro">
+            <img src="assets/media/tlhy/passaro-a.webp" width="99" height="73" alt="">
+            <p class="gag__fala" data-gag="fala" aria-hidden="true">Go on, champ.</p>
+          </div>
+          <img class="gag__bola" data-gag="bola" src="assets/media/tlhy/el-bola-corrente.webp" width="600" height="714" alt="">
+          <img class="gag__bigorna" data-gag="bigorna" src="assets/media/tlhy/traps/bigorna.webp" width="144" height="127" alt="">
+          <img class="gag__bicho" data-gag="bicho" src="assets/media/tlhy/el-bicho-chao.webp" width="700" height="477" alt="">
+          <div class="gag__chao gag__chao--a"></div>
+          <div class="gag__chao gag__chao--p" data-gag="ponte"></div>
+          <div class="gag__chao gag__chao--b"></div>
+          <img class="gag__porta" data-gag="porta" src="assets/media/tlhy/porta.webp" width="144" height="240" alt="">
+          <img class="gag__heroi" data-gag="heroi" src="assets/media/tlhy/heroi/parado.webp" width="109" height="156" alt="">
+          <img class="gag__boom" data-gag="boom" src="assets/media/tlhy/explosao.webp" width="255" height="273" alt="">
+          <div class="gag__vitoria" data-gag="vitoria" hidden><b>CLEARED!</b><span>...level 1, that is. 65 to go.</span></div>
+        </div>
+        <div class="gag__ctrl">
+          <button class="btn btn--game" type="button" data-gag="andar">Walk to the door <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></button>
+          <p class="gag__status mono" id="gag-status" aria-live="polite" data-gag="status">Attempt 1. Trust me.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section" data-gp aria-labelledby="gp-t">
+      <div class="wrap">
+        <p class="eyebrow">How to play</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">Simple to play.<br><span class="txt-game">Impossible to trust.</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>Three buttons. Zero trust.</h3>
+            <p>Move left, move right, jump. The controls are simple on purpose: the difficulty lives in the scenery — in the floor that vanishes, the cloud that shoots lightning, the door that turns into a monster.</p>
+            <span class="chip chip--line gp__gesture">← → · jump</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-1.webp" width="720" height="1280" alt="The lying tutorial" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>Died? You’re back in an instant.</h3>
+            <p>No game-over screen, no waiting. And on the next try, everything happens exactly the same way: the level doesn’t cheat, it’s just mean. Pay attention and you’ll get through.</p>
+            <span class="chip chip--line gp__gesture">instant restart</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-2.webp" width="720" height="1280" alt="The bird roasting the player after a death" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>Learn the joke. Laugh at it. Beat it.</h3>
+            <p>Every level is a new joke: setup, betrayal, death and lesson learned. There are 66 levels, and no trap ever repeats.</p>
+            <span class="chip chip--line gp__gesture">66 levels · 0 repeats</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-4.webp" width="720" height="1280" alt="66 levels, no death repeats" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="phone gp__phone">
+              <div class="phone__screen">
+                <img data-step="0" src="assets/media/tlhy/en/real-1.webp" width="720" height="1280" alt="Even the tutorial lies" loading="lazy">
+                <img data-step="1" src="assets/media/tlhy/en/real-2.webp" width="720" height="1280" alt="A bird roasts every death" loading="lazy">
+                <img data-step="2" src="assets/media/tlhy/en/real-4.webp" width="720" height="1280" alt="66 levels, no death repeats" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+              <i class="phone__island"></i>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ O CENÁRIO MENTE (baralho de pôsteres) ============ -->
+    <section class="deck section" aria-labelledby="deck-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>The scenery lies</p>
+        <h2 class="h1" id="deck-t" data-split>Nothing here is <span class="txt-game">what it seems.</span></h2>
+      </div>
+      <div class="deck__mesa" data-deck data-gallery>
+        <a class="deck__carta" href="assets/media/tlhy/en/poster-3.webp"><img src="assets/media/tlhy/en/poster-3.webp" width="720" height="1279" alt="The bridge will betray you" loading="lazy"></a>
+        <a class="deck__carta" href="assets/media/tlhy/en/poster-4.webp"><img src="assets/media/tlhy/en/poster-4.webp" width="720" height="1279" alt="The floor is gone" loading="lazy"></a>
+        <a class="deck__carta" href="assets/media/tlhy/en/poster-1.webp"><img src="assets/media/tlhy/en/poster-1.webp" width="720" height="1279" alt="Nothing here is what it seems" loading="lazy"></a>
+        <a class="deck__carta" href="assets/media/tlhy/en/poster-5.webp"><img src="assets/media/tlhy/en/poster-5.webp" width="720" height="1279" alt="Relaxed? You’re toast" loading="lazy"></a>
+        <a class="deck__carta" href="assets/media/tlhy/en/poster-6.webp"><img src="assets/media/tlhy/en/poster-6.webp" width="720" height="1279" alt="Opened it? You’re toast" loading="lazy"></a>
+        <a class="deck__carta" href="assets/media/tlhy/en/poster-7.webp"><img src="assets/media/tlhy/en/poster-7.webp" width="720" height="1279" alt="Held on? You’re toast" loading="lazy"></a>
+        <a class="deck__carta" href="assets/media/tlhy/en/poster-2.webp"><img src="assets/media/tlhy/en/poster-2.webp" width="720" height="1279" alt="You won’t make it on the first try" loading="lazy"></a>
+      </div>
+      <p class="wrap deck__nota mono">The floor turns into a mouth. The door bites. The fluffy cloud shoots lightning. A ninja shows up on your second jump. And that boulder was just waiting for you to stand still.</p>
+    </section>
+
+    <!-- ============ MUNDOS ============ -->
+    <section class="mundos section" aria-labelledby="mundos-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>3 worlds · 22 levels each</p>
+        <h2 class="h1" id="mundos-t" data-split>Three gorgeous places<br><span class="txt-game">to suffer.</span></h2>
+        <div class="mundos__grid">
+          <article class="mundo" data-reveal style="--m:#5fd35f">
+            <img class="mundo__bg" src="assets/media/tlhy/fundo-grama.webp" width="1080" height="2340" alt="" loading="lazy" data-parallax="8">
+            <div class="phone mundo__phone"><div class="phone__screen"><img src="assets/media/tlhy/tela-grama.webp" width="720" height="1279" alt="Level in Grassy Grievances" loading="lazy"></div><i class="phone__island"></i></div>
+            <div class="mundo__txt"><span class="mono">World 1</span><b>Grassy Grievances</b><p>Question blocks, suspicious bridges and a blue sky that doesn’t deserve your trust.</p></div>
+          </article>
+          <article class="mundo" data-reveal style="--m:#ff6a1a">
+            <img class="mundo__bg" src="assets/media/tlhy/fundo-magma.webp" width="1080" height="2340" alt="" loading="lazy" data-parallax="8">
+            <div class="phone mundo__phone"><div class="phone__screen"><img src="assets/media/tlhy/tela-magma.webp" width="720" height="1279" alt="Level in Molten Meltdown" loading="lazy"></div><i class="phone__island"></i></div>
+            <div class="mundo__txt"><span class="mono">World 2</span><b>Molten Meltdown</b><p>Real lava, fake lava and a volcano with a terrible sense of humor.</p></div>
+          </article>
+          <article class="mundo" data-reveal style="--m:#6fd8ff">
+            <img class="mundo__bg" src="assets/media/tlhy/fundo-gelo.webp" width="1080" height="2340" alt="" loading="lazy" data-parallax="8">
+            <div class="phone mundo__phone"><div class="phone__screen"><img src="assets/media/tlhy/tela-gelo.webp" width="720" height="1279" alt="Level in Frostbitten Fury" loading="lazy"></div><i class="phone__island"></i></div>
+            <div class="mundo__txt"><span class="mono">World 3</span><b>Frostbitten Fury</b><p>Slippery floors, icicles with bad intentions and snowmen with a past.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ELENCO ============ -->
+    <section class="elenco section" aria-labelledby="elenco-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Cast</p>
+        <h2 class="h1" id="elenco-t" data-split>You’re not alone.<br><span class="txt-game">Unfortunately.</span></h2>
+        <div class="elenco__grid">
+          <article class="ator glass" data-reveal>
+            <div class="ator__foto"><img src="assets/media/tlhy/g/heroi-parado.webp" width="300" height="360" alt="The hero in the blue hood" loading="lazy"></div>
+            <span class="mono">Protagonist</span><h3>You</h3><p>Brave, optimistic and with a totally unjustified faith in doors. Dies a lot. Tries again.</p>
+          </article>
+          <article class="ator ator--amigo glass" data-reveal>
+            <div class="ator__foto"><img class="ator__a" src="assets/media/tlhy/g/amigo-fofo.webp" width="300" height="360" alt="The cute buddy in the purple hood" loading="lazy"><img class="ator__b" src="assets/media/tlhy/g/amigo-maligno.webp" width="300" height="360" alt="" loading="lazy"></div>
+            <span class="mono">The “buddy”</span><h3>Way too cute</h3><p>Always offering to walk you to the door. Hover (or tap) and decide if you still trust him.</p>
+          </article>
+          <article class="ator glass" data-reveal>
+            <div class="ator__foto ator__foto--passaro"><img data-passaro src="assets/media/tlhy/passaro-a.webp" width="99" height="73" alt="The commentator bird" loading="lazy"></div>
+            <span class="mono">Commentator</span><h3>The bird</h3><p class="ator__fala" data-bordao>“Bridge closed for repairs! HAHAHA!”</p>
+          </article>
+          <article class="ator ator--misterio glass" data-reveal>
+            <div class="ator__foto"><img src="assets/media/tlhy/g/misterio-pose.webp" width="300" height="360" alt="Silhouette of a mysterious character" loading="lazy"><span aria-hidden="true">?</span></div>
+            <span class="mono">???</span><h3>Who did this?</h3><p>Someone built every single trap with loving care. Reach the end to find out who — the ending will get you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RECURSOS ============ -->
+    <section class="section section--tight" aria-labelledby="rec-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>And there’s more</p>
+        <h2 class="h2" id="rec-t" data-split>For those who can take <span class="txt-game">one more.</span></h2>
+        <div class="feats">
+          <article class="feat feat--wide glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="33" rx="6" pathLength="1"/><path d="M6 19h36M16 5v8M32 5v8M17 30l5 5 10-10" pathLength="1"/></svg>
+            <h3>DAILY HELL</h3>
+            <p>Three new rooms every day, the same for everyone. Keep your streak alive and earn bonus coins.</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 42V20a12 12 0 0 1 24 0v22l-4-3-4 3-4-3-4 3-4-3-4 3Z" pathLength="1"/><path d="M19 22h.01M29 22h.01" pathLength="1"/></svg>
+            <h3>The Ghost</h3><p>Stuck after one death too many? Watch a video and the Ghost shows you the way.</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l5 10 11 1.6-8 7.8 1.9 11L24 31l-9.9 5.4L16 25.4 8 17.6 19 16l5-10Z" pathLength="1"/></svg>
+            <h3>9 skins, 5 deaths</h3><p>Looks and death effects (confetti, stars, the “I Knew It!” sign). All cosmetic: nothing changes the difficulty.</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 24c4-8 9-10 14-10s10 2 14 10c-4 8-9 10-14 10s-10-2-14-10Z" pathLength="1"/><path d="M6 42L42 6" pathLength="1"/></svg>
+            <h3>Peace Treaty</h3><p>A one-time purchase removes the ads between levels forever. Nothing is random: you know exactly what you’re buying.</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="4" width="20" height="40" rx="5" pathLength="1"/><path d="M4 4l40 40" pathLength="1"/></svg>
+            <h3>Offline play</h3><p>Play on a plane, on the subway, with zero bars. Your progress is saved to your Google Play Games account.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">Screenshots</p>
+          <h2 class="h1" id="gg-t">Look closely. <span class="txt-game">Trust nothing.</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Filter screenshots" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">All</button>
+          <button role="tab" aria-selected="false" data-cat="jogo" aria-controls="gg-lista">In-game</button>
+          <button role="tab" aria-selected="false" data-cat="mundos" aria-controls="gg-lista">Worlds</button>
+          <button role="tab" aria-selected="false" data-cat="loja" aria-controls="gg-lista">Posters</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="Drag">
+          <figure class="gg__item" data-cat="jogo"><a href="assets/media/tlhy/en/real-1.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-1.webp" width="720" height="1280" alt="Even the tutorial lies" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Even the tutorial lies</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="assets/media/tlhy/en/real-2.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-2.webp" width="720" height="1280" alt="The bird roasts every death" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>The bird roasts every death</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="assets/media/tlhy/en/real-3.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-3.webp" width="720" height="1280" alt="Even the commercials are traps" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Even the commercials are traps</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="assets/media/tlhy/en/real-4.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-4.webp" width="720" height="1280" alt="The magma world" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>66 levels, no death repeats</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="assets/media/tlhy/en/real-5.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-5.webp" width="720" height="1280" alt="Never accept help from strangers" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Never accept help from strangers</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="assets/media/tlhy/en/real-6.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/real-6.webp" width="720" height="1280" alt="Map of the magma world" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>3 worlds to suffer and laugh</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/tlhy/tela-grama.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/tela-grama.webp" width="720" height="1279" alt="Grassy Grievances" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Grassy Grievances</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/tlhy/tela-magma.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/tela-magma.webp" width="720" height="1279" alt="Molten Meltdown" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Molten Meltdown</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/tlhy/tela-gelo.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/tela-gelo.webp" width="720" height="1279" alt="Frostbitten Fury" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Frostbitten Fury</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/tlhy/mapa-grama.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/mapa-grama.webp" width="720" height="1279" alt="World 1 map" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Map · World 1</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/tlhy/mapa-magma.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/mapa-magma.webp" width="720" height="1279" alt="World 2 map" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Map · World 2</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/tlhy/mapa-gelo.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/mapa-gelo.webp" width="720" height="1279" alt="World 3 map" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Map · World 3</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="assets/media/tlhy/tela-menu.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/tela-menu.webp" width="720" height="1279" alt="Main menu" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Main menu</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="assets/media/tlhy/en/poster-1.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/poster-1.webp" width="720" height="1279" alt="Poster: nothing here is what it seems" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Nothing here is what it seems</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="assets/media/tlhy/en/poster-3.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/poster-3.webp" width="720" height="1279" alt="Poster: the bridge will betray you" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>The bridge will betray you</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="assets/media/tlhy/en/poster-4.webp"><div class="phone"><div class="phone__screen"><img src="assets/media/tlhy/en/poster-4.webp" width="720" height="1279" alt="Poster: the floor is gone" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>The floor is gone</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="Previous screenshots"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="Next screenshots"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Fact sheet</p>
+        <h2 class="h2" id="ficha-t" data-split>This Level Hates You by the numbers.</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>Genre</dt><dd>Troll platformer<small>One screen, one door, a lot of lies</small></dd></div>
+          <div><dt>Levels</dt><dd>66<small>3 worlds × 22 levels</small></dd></div>
+          <div><dt>Daily</dt><dd>DAILY HELL<small>3 new rooms a day</small></dd></div>
+          <div><dt>Platform</dt><dd>Android<small>Coming soon to Google Play</small></dd></div>
+          <div><dt>Languages</dt><dd>6<small>pt · en · es · hi · ja · ar</small></dd></div>
+          <div><dt>Internet</dt><dd>Not required<small>Play anywhere</small></dd></div>
+          <div><dt>Progress</dt><dd>Google Play Games<small>New phone? Pick up where you left off</small></dd></div>
+          <div><dt>Price</dt><dd>Free<small>Ads and optional purchases</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>Where to play</p>
+            <h2 class="h2" id="onde-t" data-split>Play wherever <span class="txt-game">you are.</span></h2>
+          </div>
+          <p class="lead" data-reveal>On your phone, through the store you already use — or right in your browser, nothing to install. Each button lights up the day This Level Hates You lands on that platform.</p>
+        </div>
+        <div class="onde__grupos">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Phone · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="tlhy:play" aria-disabled="true" aria-label="This Level Hates You on Google Play: coming soon">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Coming soon</span>
+          </a>
+          <a class="plat glass" data-store="tlhy:amazon" aria-disabled="true" aria-label="This Level Hates You on Amazon Appstore: coming soon">
+            <span class="plat__logo"><img src="assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>Coming soon</span>
+          </a>
+          <a class="plat glass" data-store="tlhy:samsung" aria-disabled="true" aria-label="This Level Hates You on Galaxy Store: coming soon">
+            <span class="plat__logo"><img class="plat__gs" src="assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>Coming soon</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Browser · no install</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="tlhy:poki" aria-disabled="true" aria-label="This Level Hates You on Poki: coming soon">
+            <span class="plat__logo"><img class="plat__poki" src="assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>Coming soon</span>
+          </a>
+          <a class="plat glass" data-store="tlhy:crazygames" aria-disabled="true" aria-label="This Level Hates You on CrazyGames: coming soon">
+            <span class="plat__logo"><img class="plat__cg" src="assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>Coming soon</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play is a trademark of Google LLC. Amazon, Amazon Appstore and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates. Samsung and Galaxy Store are trademarks of Samsung Electronics Co., Ltd. Poki and CrazyGames are trademarks of their respective owners.</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">Early access</p>
+            <h2 class="h2" id="lista-t">Die before <span class="txt-game">everyone else.</span></h2>
+            <p class="lead">Join Lista Lipy for an invite to the This Level Hates You beta, a heads-up on launch day and new levels the moment they exist.</p>
+            <form class="signup" method="post" data-signup data-origem="tlhy" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>Send me</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Beta tests</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Launches</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Updates</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="tlhy" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-tlhy">Your email</label>
+                <input id="email-tlhy" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">Get the beta <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">By joining, you agree to receive emails from Lipy Games about betas, launches and news. Unsubscribe anytime. See our <a href="privacidade.html">privacy policy</a>.</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>You’re on the list! (This isn’t a trap.)</b>
+                <p>Your beta invite and launch alert will be sent to <span data-ok-email></span>.</p>
+                <button type="button" data-signup-outro>Sign up another email</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="This Level Hates You Lipy Pass">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="assets/media/marca/emblema.webp" width="600" height="591" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">This Level<br>beta</p>
+              <div class="pass__games"><img src="assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>Holder</small><b data-pass-nome>You?</b></div><div><small>Deaths</small><b>∞</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">TLHY<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">ACTIVATED</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="nitrovenant.html" data-game="nitro" data-vt-scope data-cursor="Next">
+      <div class="gn__bg" aria-hidden="true"><img src="assets/media/nitro/arte.webp" width="1254" height="1254" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">Next universe · 03 / 03</span> <span class="gn__name"><img data-vt="nitro" src="assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">Nitrovenant</span> <span class="gn__go">Enter the universe <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>A Brazilian mobile game studio. Made for the minutes that become stories.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universes</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="index.html#estudio">About Lipy</a></li>
+            <li><a href="index.html#como-criamos">How we build</a></li>
+            <li><a href="index.html#lista">Lista Lipy (early access)</a></li>
+            <li><a href="index.html#contato">Contact</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacy</h4>
+          <ul>
+            <li><a href="privacidade.html">Website and Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Delete your Quiver account</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — a brand of <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Made in Brazil · Google Play is a trademark of Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Back to top"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/CustomEase.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/textos/en.js?v=ca2bf85a"></script>
+  <script src="assets/js/lipy.js?v=5cf75073"></script>
+  <script src="assets/js/jogo.js?v=7bc7d81f"></script>
+  <script src="assets/js/tlhy.js?v=4836db2c"></script>
+</body>
+</html>

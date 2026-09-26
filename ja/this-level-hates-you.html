@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ja" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=8e41053f"></script>
+  <title>This Level Hates You — Lipy Games</title>
+  <meta name="description" content="This Level Hates You は Lipy Games のドッキリ系アクション。出口はすぐそこなのに、景色はウソつき。66ステージ、3つのワールド、そして同じワナは二度と出てきません。">
+  <meta name="theme-color" content="#061033">
+  <link rel="canonical" href="https://lipygame.com/ja/this-level-hates-you.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/this-level-hates-you.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/this-level-hates-you.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/this-level-hates-you.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/this-level-hates-you.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/this-level-hates-you.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/this-level-hates-you.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/this-level-hates-you.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="This Level Hates You — 出口はすぐそこ。ステージはキミが大嫌い。">
+  <meta property="og:description" content="3つのワールドに、理不尽なワナだらけの66ステージ。同じワナはひとつもなし。Google Play で近日公開。">
+  <meta property="og:url" content="https://lipygame.com/ja/this-level-hates-you.html">
+  <meta property="og:image" content="https://lipygame.com/og-tlhy.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=M+PLUS+1p:wght@700;800&family=Noto+Sans+JP:wght@400..700&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/tlhy.css?v=137140c1">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "This Level Hates You",
+    "description": "1画面のジャンプアクション。出口のドアは最初から見えているのに、景色はウソつき。3つのワールドに66ステージ、同じワナはひとつもありません。",
+    "genre": ["Plataforma", "Comédia"],
+    "gamePlatform": "Android",
+    "operatingSystem": "Android",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/tlhy/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+</head>
+<body class="jogo jogo--tlhy" style="--c1:#ffd23f;--c2:#ff4040;--c3:#061033;--c4:#3aa0ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">本文へスキップ</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — ホーム"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="メイン">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">ゲーム <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">スタジオ</a>
+        <a href="index.html#como-criamos">ゲームづくり</a>
+        <a href="index.html#contato">お問い合わせ</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="言語"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../this-level-hates-you.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/this-level-hates-you.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/this-level-hates-you.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/this-level-hates-you.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/this-level-hates-you.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/this-level-hates-you.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">先行アクセス <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>矢印パズル</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>ドッキリ系アクション</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>カーアクション</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="メニュー">
+      <a href="index.html#universos">ゲーム</a>
+      <a href="index.html#estudio">スタジオ</a>
+      <a href="index.html#como-criamos">ゲームづくり</a>
+      <a href="index.html#lista">先行アクセス</a>
+      <a href="index.html#contato">お問い合わせ</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../this-level-hates-you.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/this-level-hates-you.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/this-level-hates-you.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/this-level-hates-you.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/this-level-hates-you.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/this-level-hates-you.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/tlhy/fundo-grama.webp" width="1080" height="2340" alt=""></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="現在地"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">ゲームの世界</a><i>/</i><span aria-current="page">This Level Hates You</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="tlhy" src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="This Level Hates You のアイコン">
+            <img class="gh__logo t-logo" src="../assets/media/tlhy/logo.webp" width="810" height="520" alt="This Level Hates You">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">出口は</span><span class="l">すぐそこ。</span><span class="l"><em class="txt-game">ステージはキミが大嫌い。</em></span></h1>
+          <p class="lead gh__lead">1画面のジャンプアクション。出口のドアは、最初から目の前にあります。カンタンでしょ？　……と思ったら大まちがい！　景色はウソつきで、どのステージもキミを待ちかまえるドッキリです。</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">ジャンプアクション</span> <span class="chip chip--line">コメディ</span> <span class="chip chip--line">Android</span> <span class="chip chip--line">無料</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#pegadinha" data-magnetic>ステージ突破に挑戦 <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="tlhy" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>近日公開</small><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual" data-float>
+          <img class="fl t-porta" data-depth="0.4" src="../assets/media/tlhy/porta-monstro.webp" width="144" height="239" alt="">
+          <img class="fl t-bola" data-depth="0.7" src="../assets/media/tlhy/el-bola-corrente.webp" width="600" height="714" alt="">
+          <div class="phone gh__phone" data-depth="0.15"><div class="phone__screen"><img src="../assets/media/tlhy/tela-abertura.webp" width="720" height="1279" alt="This Level Hates You のタイトル画面" ><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+          <img class="fl t-heroi" data-depth="1.2" src="../assets/media/tlhy/g/heroi-panico.webp" width="300" height="300" alt="">
+          <img class="fl t-bloco" data-depth="1.4" src="../assets/media/tlhy/el-bloco-q.webp" width="400" height="362" alt="">
+          <img class="fl t-passaro" data-depth="1.6" src="../assets/media/tlhy/passaro-a.webp" width="99" height="73" alt="">
+          <img class="fl t-tnt" data-depth="0.9" src="../assets/media/tlhy/el-tnt.webp" width="600" height="696" alt="">
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>世界 02 / 03</span><span>勇気があるならスクロール</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">この感覚</p>
+        <p class="gi__txt" data-scrub-words>笑って、キレて、「今度こそ」と誓う。そしてステージは<em>またウソをつく</em>。ただし、さっきとは違うやり方で。</p>
+      </div>
+    </section>
+
+    <!-- ============ A PEGADINHA (interativa) ============ -->
+    <section class="gag section" id="pegadinha" aria-labelledby="gag-t" tabindex="-1">
+      <div class="wrap">
+        <div class="gag__head">
+          <div>
+            <p class="eyebrow">やってみよう</p>
+            <h2 class="h1" id="gag-t">このコーナーも<span class="txt-game">キミが大嫌い。</span></h2>
+          </div>
+          <p class="lead">ドアまで歩くだけ。失敗しようがないよね？</p>
+        </div>
+
+        <div class="gag__scene" data-gag aria-describedby="gag-status">
+          <img class="gag__bg" src="../assets/media/tlhy/fundo-grama.webp" width="1080" height="2340" alt="" loading="lazy">
+          <div class="gag__hud">
+            <span class="gag__placa glass glass--pill">ステージ <b>1</b></span> <span class="gag__placa gag__placa--morte glass glass--pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C7 2 3 5.9 3 10.8c0 2.8 1.3 5.3 3.4 6.9V21a1 1 0 0 0 1 1h2.1v-2h1.8v2h1.4v-2h1.8v2h2.1a1 1 0 0 0 1-1v-3.3c2.1-1.6 3.4-4.1 3.4-6.9C21 5.9 17 2 12 2Zm-3.5 11.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm7 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg>死亡回数 <b data-gag="mortes">0</b></span>
+          </div>
+          <div class="gag__passaro" data-gag="passaro">
+            <img src="../assets/media/tlhy/passaro-a.webp" width="99" height="73" alt="">
+            <p class="gag__fala" data-gag="fala" aria-hidden="true">ほら行け、チャンピオン。</p>
+          </div>
+          <img class="gag__bola" data-gag="bola" src="../assets/media/tlhy/el-bola-corrente.webp" width="600" height="714" alt="">
+          <img class="gag__bigorna" data-gag="bigorna" src="../assets/media/tlhy/traps/bigorna.webp" width="144" height="127" alt="">
+          <img class="gag__bicho" data-gag="bicho" src="../assets/media/tlhy/el-bicho-chao.webp" width="700" height="477" alt="">
+          <div class="gag__chao gag__chao--a"></div>
+          <div class="gag__chao gag__chao--p" data-gag="ponte"></div>
+          <div class="gag__chao gag__chao--b"></div>
+          <img class="gag__porta" data-gag="porta" src="../assets/media/tlhy/porta.webp" width="144" height="240" alt="">
+          <img class="gag__heroi" data-gag="heroi" src="../assets/media/tlhy/heroi/parado.webp" width="109" height="156" alt="">
+          <img class="gag__boom" data-gag="boom" src="../assets/media/tlhy/explosao.webp" width="255" height="273" alt="">
+          <div class="gag__vitoria" data-gag="vitoria" hidden><b>クリア！</b><span>…ステージ1をね。残り65。</span></div>
+        </div>
+        <div class="gag__ctrl">
+          <button class="btn btn--game" type="button" data-gag="andar">ドアまで歩く <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></button>
+          <p class="gag__status mono" id="gag-status" aria-live="polite" data-gag="status">挑戦 1回目。信じて。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section" data-gp aria-labelledby="gp-t">
+      <div class="wrap">
+        <p class="eyebrow">遊び方</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">操作はカンタン。<br><span class="txt-game">信じるのは無理。</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>ボタンは3つ。信用はゼロ。</h3>
+            <p>左右に歩いて、ジャンプ。操作はわざとシンプルにしています。むずかしさが潜んでいるのは景色の中。消える地面に、カミナリを落とす雲に、モンスターに化けるドアに。</p>
+            <span class="chip chip--line gp__gesture">← → · ジャンプ</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-1.webp" width="720" height="1280" alt="ウソつきのチュートリアル" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>やられた？　即リトライ。</h3>
+            <p>ゲームオーバー画面も、待ち時間もなし。しかも次の挑戦でも、すべてがまったく同じように起こります。ステージはズルをしない、ただイジワルなだけ。よく見れば、必ず突破できます。</p>
+            <span class="chip chip--line gp__gesture">即リトライ</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-2.webp" width="720" height="1280" alt="やられたプレイヤーをからかうことり" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>ネタを知る。笑う。突破する。</h3>
+            <p>どのステージも新しいネタ。仕込まれて、裏切られて、やられて、学ぶ。全66ステージで、同じワナは二度と出てきません。</p>
+            <span class="chip chip--line gp__gesture">66ステージ · 使い回し0</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-4.webp" width="720" height="1280" alt="66ステージ。同じやられ方はナシ" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="phone gp__phone">
+              <div class="phone__screen">
+                <img data-step="0" src="../assets/media/tlhy/ja/real-1.webp" width="720" height="1280" alt="チュートリアルもウソつき" loading="lazy">
+                <img data-step="1" src="../assets/media/tlhy/ja/real-2.webp" width="720" height="1280" alt="やられるたびに鳥がツッコむ" loading="lazy">
+                <img data-step="2" src="../assets/media/tlhy/ja/real-4.webp" width="720" height="1280" alt="66ステージ。同じやられ方はナシ" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+              <i class="phone__island"></i>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ O CENÁRIO MENTE (baralho de pôsteres) ============ -->
+    <section class="deck section" aria-labelledby="deck-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>景色はウソつき</p>
+        <h2 class="h1" id="deck-t" data-split>何ひとつ<span class="txt-game">見た目どおりじゃない。</span></h2>
+      </div>
+      <div class="deck__mesa" data-deck data-gallery>
+        <a class="deck__carta" href="../assets/media/tlhy/en/poster-3.webp"><img src="../assets/media/tlhy/en/poster-3.webp" width="720" height="1279" alt="橋はキミを裏切る" loading="lazy"></a>
+        <a class="deck__carta" href="../assets/media/tlhy/en/poster-4.webp"><img src="../assets/media/tlhy/en/poster-4.webp" width="720" height="1279" alt="地面が消えた" loading="lazy"></a>
+        <a class="deck__carta" href="../assets/media/tlhy/en/poster-1.webp"><img src="../assets/media/tlhy/en/poster-1.webp" width="720" height="1279" alt="何ひとつ見た目どおりじゃない" loading="lazy"></a>
+        <a class="deck__carta" href="../assets/media/tlhy/en/poster-5.webp"><img src="../assets/media/tlhy/en/poster-5.webp" width="720" height="1279" alt="気を抜いた？　はい、アウト" loading="lazy"></a>
+        <a class="deck__carta" href="../assets/media/tlhy/en/poster-6.webp"><img src="../assets/media/tlhy/en/poster-6.webp" width="720" height="1279" alt="開けた？　はい、アウト" loading="lazy"></a>
+        <a class="deck__carta" href="../assets/media/tlhy/en/poster-7.webp"><img src="../assets/media/tlhy/en/poster-7.webp" width="720" height="1279" alt="しがみついた？　はい、アウト" loading="lazy"></a>
+        <a class="deck__carta" href="../assets/media/tlhy/en/poster-2.webp"><img src="../assets/media/tlhy/en/poster-2.webp" width="720" height="1279" alt="一発クリアは無理" loading="lazy"></a>
+      </div>
+      <p class="wrap deck__nota mono">地面が口になる。ドアがかみつく。ふわふわの雲がカミナリを落とす。2回目のジャンプで忍者が登場。そしてあの岩は、キミが立ち止まるのをずっと待っていた。</p>
+    </section>
+
+    <!-- ============ MUNDOS ============ -->
+    <section class="mundos section" aria-labelledby="mundos-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>3ワールド · 各22ステージ</p>
+        <h2 class="h1" id="mundos-t" data-split>美しい3つの場所で、<br><span class="txt-game">存分に苦しもう。</span></h2>
+        <div class="mundos__grid">
+          <article class="mundo" data-reveal style="--m:#5fd35f">
+            <img class="mundo__bg" src="../assets/media/tlhy/fundo-grama.webp" width="1080" height="2340" alt="" loading="lazy" data-parallax="8">
+            <div class="phone mundo__phone"><div class="phone__screen"><img src="../assets/media/tlhy/tela-grama.webp" width="720" height="1279" alt="イライラ草原のステージ" loading="lazy"></div><i class="phone__island"></i></div>
+            <div class="mundo__txt"><span class="mono">ワールド 1</span><b>イライラ草原</b><p>？ブロック、あやしい橋、そして信用してはいけない青空。</p></div>
+          </article>
+          <article class="mundo" data-reveal style="--m:#ff6a1a">
+            <img class="mundo__bg" src="../assets/media/tlhy/fundo-magma.webp" width="1080" height="2340" alt="" loading="lazy" data-parallax="8">
+            <div class="phone mundo__phone"><div class="phone__screen"><img src="../assets/media/tlhy/tela-magma.webp" width="720" height="1279" alt="カッカ火山のステージ" loading="lazy"></div><i class="phone__island"></i></div>
+            <div class="mundo__txt"><span class="mono">ワールド 2</span><b>カッカ火山</b><p>本物のマグマ、ニセモノのマグマ、そしてユーモアのセンスが最悪な火山。</p></div>
+          </article>
+          <article class="mundo" data-reveal style="--m:#6fd8ff">
+            <img class="mundo__bg" src="../assets/media/tlhy/fundo-gelo.webp" width="1080" height="2340" alt="" loading="lazy" data-parallax="8">
+            <div class="phone mundo__phone"><div class="phone__screen"><img src="../assets/media/tlhy/tela-gelo.webp" width="720" height="1279" alt="ピキピキ氷河のステージ" loading="lazy"></div><i class="phone__island"></i></div>
+            <div class="mundo__txt"><span class="mono">ワールド 3</span><b>ピキピキ氷河</b><p>つるつるの地面、悪意たっぷりのつらら、そしてワケありの雪だるま。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ELENCO ============ -->
+    <section class="elenco section" aria-labelledby="elenco-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>キャスト</p>
+        <h2 class="h1" id="elenco-t" data-split>キミはひとりじゃない。<br><span class="txt-game">残念ながら。</span></h2>
+        <div class="elenco__grid">
+          <article class="ator glass" data-reveal>
+            <div class="ator__foto"><img src="../assets/media/tlhy/g/heroi-parado.webp" width="300" height="360" alt="青いフードの主人公" loading="lazy"></div>
+            <span class="mono">主人公</span><h3>キミ</h3><p>勇敢で前向き。ドアへの信頼は根拠ゼロ。よくやられる。そして、また挑む。</p>
+          </article>
+          <article class="ator ator--amigo glass" data-reveal>
+            <div class="ator__foto"><img class="ator__a" src="../assets/media/tlhy/g/amigo-fofo.webp" width="300" height="360" alt="紫のフードのかわいい「味方」" loading="lazy"><img class="ator__b" src="../assets/media/tlhy/g/amigo-maligno.webp" width="300" height="360" alt="" loading="lazy"></div>
+            <span class="mono">「味方」</span><h3>かわいすぎ</h3><p>いつも「ドアまで連れていってあげる」と近づいてくる。マウスを乗せて（またはタップして）、それでも信じるか決めよう。</p>
+          </article>
+          <article class="ator glass" data-reveal>
+            <div class="ator__foto ator__foto--passaro"><img data-passaro src="../assets/media/tlhy/passaro-a.webp" width="99" height="73" alt="実況担当のことり" loading="lazy"></div>
+            <span class="mono">実況担当</span><h3>ことり</h3><p class="ator__fala" data-bordao>「橋は工事中！アハハ！」</p>
+          </article>
+          <article class="ator ator--misterio glass" data-reveal>
+            <div class="ator__foto"><img src="../assets/media/tlhy/g/misterio-pose.webp" width="300" height="360" alt="なぞのキャラクターのシルエット" loading="lazy"><span aria-hidden="true">?</span></div>
+            <span class="mono">???</span><h3>犯人は誰？</h3><p>ワナのひとつひとつを、誰かが愛情たっぷりに作りました。その正体は、最後までたどり着いてのお楽しみ。エンディングは泣けます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RECURSOS ============ -->
+    <section class="section section--tight" aria-labelledby="rec-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>まだまだある</p>
+        <h2 class="h2" id="rec-t" data-split>まだいける人に、<span class="txt-game">もう1回。</span></h2>
+        <div class="feats">
+          <article class="feat feat--wide glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="33" rx="6" pathLength="1"/><path d="M6 19h36M16 5v8M32 5v8M17 30l5 5 10-10" pathLength="1"/></svg>
+            <h3>日替わり地獄</h3>
+            <p>毎日3つの新しいルーム。全員が同じルームに挑戦します。連続記録をキープして、コインの報酬をゲットしよう。</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 42V20a12 12 0 0 1 24 0v22l-4-3-4 3-4-3-4 3-4-3-4 3Z" pathLength="1"/><path d="M19 22h.01M29 22h.01" pathLength="1"/></svg>
+            <h3>ゴースト</h3><p>何度もやられて行き詰まった？　動画を1本見れば、ゴーストが道を教えてくれます。</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l5 10 11 1.6-8 7.8 1.9 11L24 31l-9.9 5.4L16 25.4 8 17.6 19 16l5-10Z" pathLength="1"/></svg>
+            <h3>スキン9種、やられエフェクト5種</h3><p>見た目とやられエフェクト（紙吹雪、お星さま、「やっぱりね！」の看板など）。変わるのは見た目だけで、難しさは変わりません。</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 24c4-8 9-10 14-10s10 2 14 10c-4 8-9 10-14 10s-10-2-14-10Z" pathLength="1"/><path d="M6 42L42 6" pathLength="1"/></svg>
+            <h3>平和条約</h3><p>1回買うだけで、ステージの合間の広告がずっと出なくなります。ガチャはありません。何を買うのか、いつもはっきりわかります。</p>
+          </article>
+          <article class="feat glass" data-reveal>
+            <svg class="feat__ic draw" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="4" width="20" height="40" rx="5" pathLength="1"/><path d="M4 4l40 40" pathLength="1"/></svg>
+            <h3>オフライン対応</h3><p>飛行機でも、地下鉄でも、圏外でも遊べます。進行状況は Google Play ゲームのアカウントに保存されます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">スクリーンショット</p>
+          <h2 class="h1" id="gg-t">よく見て。<span class="txt-game">でも信じるな。</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="スクリーンショットを絞り込む" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">すべて</button>
+          <button role="tab" aria-selected="false" data-cat="jogo" aria-controls="gg-lista">ゲーム画面</button>
+          <button role="tab" aria-selected="false" data-cat="mundos" aria-controls="gg-lista">ワールド</button>
+          <button role="tab" aria-selected="false" data-cat="loja" aria-controls="gg-lista">ポスター</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="ドラッグ">
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/tlhy/ja/real-1.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-1.webp" width="720" height="1280" alt="チュートリアルもウソつき" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>チュートリアルもウソつき</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/tlhy/ja/real-2.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-2.webp" width="720" height="1280" alt="やられるたびに鳥がツッコむ" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>やられるたびに鳥がツッコむ</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/tlhy/ja/real-3.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-3.webp" width="720" height="1280" alt="CMだってワナ" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>CMだってワナ</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/tlhy/ja/real-4.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-4.webp" width="720" height="1280" alt="マグマのワールド" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>66ステージ、同じやられ方はナシ</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/tlhy/ja/real-5.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-5.webp" width="720" height="1280" alt="知らない人の助けは断ろう" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>知らない人の助けは断ろう</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/tlhy/ja/real-6.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/ja/real-6.webp" width="720" height="1280" alt="マグマのワールドのマップ" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>泣いて笑える3つのワールド</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/tlhy/tela-grama.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/tela-grama.webp" width="720" height="1279" alt="イライラ草原" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>イライラ草原</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/tlhy/tela-magma.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/tela-magma.webp" width="720" height="1279" alt="カッカ火山" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>カッカ火山</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/tlhy/tela-gelo.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/tela-gelo.webp" width="720" height="1279" alt="ピキピキ氷河" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>ピキピキ氷河</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/tlhy/mapa-grama.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/mapa-grama.webp" width="720" height="1279" alt="ワールド 1 のマップ" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>マップ · ワールド 1</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/tlhy/mapa-magma.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/mapa-magma.webp" width="720" height="1279" alt="ワールド 2 のマップ" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>マップ · ワールド 2</figcaption></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/tlhy/mapa-gelo.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/mapa-gelo.webp" width="720" height="1279" alt="ワールド 3 のマップ" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>マップ · ワールド 3</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/tlhy/tela-menu.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/tela-menu.webp" width="720" height="1279" alt="タイトル画面" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>タイトル画面</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/tlhy/en/poster-1.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/en/poster-1.webp" width="720" height="1279" alt="ポスター：何ひとつ見た目どおりじゃない" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>何ひとつ見た目どおりじゃない</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/tlhy/en/poster-3.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/en/poster-3.webp" width="720" height="1279" alt="ポスター：橋はキミを裏切る" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>橋はキミを裏切る</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/tlhy/en/poster-4.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/tlhy/en/poster-4.webp" width="720" height="1279" alt="ポスター：地面が消えた" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>地面が消えた</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="前のスクリーンショット"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="次のスクリーンショット"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>基本情報</p>
+        <h2 class="h2" id="ficha-t" data-split>数字で見る This Level Hates You。</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>ジャンル</dt><dd>ドッキリ系アクション<small>1画面、ドア1つ、ウソだらけ</small></dd></div>
+          <div><dt>ステージ数</dt><dd>66<small>3ワールド × 22ステージ</small></dd></div>
+          <div><dt>デイリー</dt><dd>日替わり地獄<small>毎日3つの新ルーム</small></dd></div>
+          <div><dt>対応機種</dt><dd>Android<small>Google Play で近日公開</small></dd></div>
+          <div><dt>対応言語</dt><dd>6<small>pt · en · es · hi · ja · ar</small></dd></div>
+          <div><dt>インターネット</dt><dd>不要<small>どこでも遊べる</small></dd></div>
+          <div><dt>セーブ</dt><dd>Google Play ゲーム<small>機種変更しても続きから</small></dd></div>
+          <div><dt>価格</dt><dd>無料<small>広告・任意のアプリ内購入あり</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>プレイできる場所</p>
+            <h2 class="h2" id="onde-t" data-split>どこにいても、<span class="txt-game">プレイできる。</span></h2>
+          </div>
+          <p class="lead" data-reveal>スマホなら、いつものストアから。ブラウザなら、インストール不要でそのまま。各ボタンは、This Level Hates You がそのプラットフォームに登場した日に点灯します。</p>
+        </div>
+        <div class="onde__grupos">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>スマホ · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="tlhy:play" aria-disabled="true" aria-label="Google Play の This Level Hates You：近日公開">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>近日公開</span>
+          </a>
+          <a class="plat glass" data-store="tlhy:amazon" aria-disabled="true" aria-label="Amazon Appstore の This Level Hates You：近日公開">
+            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>近日公開</span>
+          </a>
+          <a class="plat glass" data-store="tlhy:samsung" aria-disabled="true" aria-label="Galaxy Store の This Level Hates You：近日公開">
+            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>近日公開</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>ブラウザ · インストール不要</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="tlhy:poki" aria-disabled="true" aria-label="Poki の This Level Hates You：近日公開">
+            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>近日公開</span>
+          </a>
+          <a class="plat glass" data-store="tlhy:crazygames" aria-disabled="true" aria-label="CrazyGames の This Level Hates You：近日公開">
+            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>近日公開</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play は Google LLC の商標です。Amazon、Amazon Appstore および Amazon のロゴは、Amazon.com, Inc. またはその関連会社の商標です。Samsung および Galaxy Store は Samsung Electronics Co., Ltd. の商標です。Poki および CrazyGames は、それぞれの権利者の商標です。</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">先行アクセス</p>
+            <h2 class="h2" id="lista-t">やられよう、<span class="txt-game">誰よりも先に。</span></h2>
+            <p class="lead">Lista Lipy に登録すると、This Level Hates You のベータへの招待、リリースのお知らせ、そして新ステージの情報を、できたそばからお届けします。</p>
+            <form class="signup" method="post" data-signup data-origem="tlhy" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>受け取りたいもの</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>ベータテスト</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>リリース情報</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>アップデート</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="tlhy" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-tlhy">メールアドレス</label>
+                <input id="email-tlhy" type="email" name="email" autocomplete="email" inputmode="email" placeholder="your@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">ベータに参加する <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">登録すると、テスト・リリース・最新情報に関する Lipy Games からのメールの受信に同意したことになります。配信停止はいつでもできます。詳しくは<a href="privacidade.html">プライバシーポリシー</a>をご覧ください。</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>リストに登録しました！（これはドッキリではありません。）</b>
+                <p>ベータへの招待とリリースのお知らせは <span data-ok-email></span> に届きます。</p>
+                <button type="button" data-signup-outro>別のメールアドレスを登録</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="This Level Hates You の Lipy Pass">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema.webp" width="600" height="591" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">This Level<br>ベータ</p>
+              <div class="pass__games"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>所有者</small><b data-pass-nome>あなた？</b></div><div><small>死亡回数</small><b>∞</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">TLHY<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">有効化済</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="nitrovenant.html" data-game="nitro" data-vt-scope data-cursor="次へ">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/nitro/arte.webp" width="1254" height="1254" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">次の世界 · 03 / 03</span> <span class="gn__name"><img data-vt="nitro" src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">Nitrovenant</span> <span class="gn__go">この世界へ <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>ブラジルのモバイルゲームスタジオ。思い出になる数分間のために。</p>
+        </div>
+        <div class="foot__col">
+          <h4>ゲームの世界</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>スタジオ</h4>
+          <ul>
+            <li><a href="index.html#estudio">Lipy について</a></li>
+            <li><a href="index.html#como-criamos">ゲームづくり</a></li>
+            <li><a href="index.html#lista">Lista Lipy（先行アクセス）</a></li>
+            <li><a href="index.html#contato">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>プライバシー</h4>
+          <ul>
+            <li><a href="privacidade.html">サイトと Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Quiver のアカウント削除</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — <strong>Lipy Serviços Digitais LTDA</strong> のブランド · CNPJ 65.260.227/0001-11</p>
+        <p>ブラジル生まれ · Google Play は Google LLC の商標です。</p>
+        <button class="foot__up glass" type="button" data-top aria-label="ページの先頭へ"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/ja.js?v=b723d573"></script>
+  <script src="../assets/js/lipy.js?v=5cf75073"></script>
+  <script src="../assets/js/jogo.js?v=7bc7d81f"></script>
+  <script src="../assets/js/tlhy.js?v=4836db2c"></script>
+</body>
+</html>

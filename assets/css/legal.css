@@ -1,0 +1,39 @@
+/* ==========================================================================
+   LIPY GAMES — páginas de texto (privacidade) e 404
+   ========================================================================== */
+.legal { padding: calc(var(--nav-h) + 90px) 0 120px; }
+.legal__head { max-width: 900px; }
+.legal__head .h1 { margin: 22px 0 22px; }
+.legal__data { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--txt-3); }
+.legal__grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(30px, 5vw, 80px); margin-top: 60px; align-items: start; }
+.legal__toc { position: sticky; top: calc(var(--nav-h) + 40px); --r: 22px; padding: 20px; display: grid; gap: 4px; }
+.legal__toc a { padding: 8px 12px; border-radius: 10px; font-size: 14px; color: var(--txt-2); transition: background .3s, color .3s; }
+.legal__toc a:hover { background: rgba(255, 255, 255, .07); color: var(--txt); }
+.prosa { max-width: 72ch; }
+.prosa h2 { font-family: var(--f-display); font-size: clamp(1.3rem, 2vw, 1.7rem); letter-spacing: -.02em; margin: 56px 0 16px; scroll-margin-top: calc(var(--nav-h) + 40px); }
+.prosa h2:first-child { margin-top: 0; }
+.prosa p, .prosa li { color: var(--txt-2); font-size: 16.5px; line-height: 1.75; }
+.prosa p + p { margin-top: 14px; }
+.prosa ul { display: grid; gap: 8px; margin: 14px 0; }
+.prosa li { position: relative; padding-left: 22px; }
+.prosa li::before { content: ""; position: absolute; left: 4px; top: .75em; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+.prosa strong { color: var(--txt); font-weight: 600; }
+.prosa a { color: var(--txt); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(42, 216, 255, .6); }
+.prosa .quadro { --r: 24px; padding: 24px; margin: 22px 0; }
+.sair { display: grid; gap: 12px; margin-top: 18px; }
+.sair .signup__field { max-width: 560px; }
+@media (max-width: 900px) {
+  .legal__grid { grid-template-columns: 1fr; }
+  .legal__toc { position: static; }
+}
+
+/* 404 */
+.nf { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 120px 20px 60px; }
+.nf__num { font-family: var(--f-display); font-weight: 800; font-size: clamp(7rem, 26vw, 20rem); line-height: .8; letter-spacing: -.07em; color: transparent; -webkit-text-stroke: 2px rgba(220, 235, 255, .3); }
+.nf__cena { position: relative; width: min(360px, 80vw); height: 200px; margin: -30px auto 10px; }
+.nf__cena img { position: absolute; }
+.nf__heroi { width: 120px; left: 50%; top: 0; margin-left: -60px; animation: cai 2.4s var(--ease-io) infinite; }
+.nf__buraco { position: absolute; display: block; left: 50%; bottom: 0; width: 220px; height: 34px; margin-left: -110px; border-radius: 50%; background: radial-gradient(closest-side, #000, rgba(0, 0, 0, .6) 60%, transparent); }
+@keyframes cai { 0%, 20% { transform: translateY(0) rotate(0); opacity: 1; } 70% { transform: translateY(150px) rotate(40deg) scale(.6); opacity: 0; } 100% { opacity: 0; } }
+.nf .h2 { margin: 10px 0 16px; }
+.nf .lead { margin: 0 auto 30px; }

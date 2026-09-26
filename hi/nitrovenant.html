@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="hi" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=8e41053f"></script>
+  <title>Nitrovenant: कार vs ज़ॉम्बी — Lipy Games</title>
+  <meta name="description" content="Nitrovenant, Lipy Games का एक्शन गेम है: ज़ॉम्बी के झुंडों को चीरते निकलें, 13 गाड़ियों वाला अपना गैराज अपग्रेड करें, 4 बॉस को धूल चटाएँ और नाइट्रो झोंक दें। 120 लेवल।">
+  <meta name="theme-color" content="#0d0503">
+  <link rel="canonical" href="https://lipygame.com/hi/nitrovenant.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/nitrovenant.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/nitrovenant.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/nitrovenant.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/nitrovenant.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/nitrovenant.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/nitrovenant.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/nitrovenant.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:title" content="Nitrovenant — सड़क ख़त्म। झुंड नहीं।">
+  <meta property="og:description" content="ज़ॉम्बी के झुंड को रौंद डालें, नाइट्रो झोंक दें और बॉस को धूल चटाएँ। 13 गाड़ियाँ, 120 लेवल। जल्द ही Google Play पर।">
+  <meta property="og:url" content="https://lipygame.com/hi/nitrovenant.html">
+  <meta property="og:image" content="https://lipygame.com/og-nitro.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/nitro.css?v=bde4e475">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Nitrovenant: Carro vs Zumbis",
+    "description": "एक्शन गेम: तीन लेन में ज़ॉम्बी के झुंडों को चीरते निकलें, 13 गाड़ियों वाला गैराज अपग्रेड करें, 4 बॉस से भिड़ें और नाइट्रो झोंक दें। 120 लेवल।",
+    "genre": ["Ação", "Corrida"],
+    "gamePlatform": "Android",
+    "operatingSystem": "Android",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/nitro/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+</head>
+<body class="jogo jogo--nitro" style="--c1:#ffb13b;--c2:#ff3d1a;--c3:#0d0503;--c4:#2ad8ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">सीधे कंटेंट पर जाएँ</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — होम"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="मुख्य">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">गेम्स <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">स्टूडियो</a>
+        <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+        <a href="index.html#contato">संपर्क</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="भाषा"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../nitrovenant.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/nitrovenant.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/nitrovenant.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/nitrovenant.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/nitrovenant.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/nitrovenant.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">अर्ली एक्सेस <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="मेन्यू खोलें" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>तीरों की पहेली</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>शरारतों भरा प्लेटफ़ॉर्मर</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>पहियों पर एक्शन</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="मेन्यू">
+      <a href="index.html#universos">गेम्स</a>
+      <a href="index.html#estudio">स्टूडियो</a>
+      <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+      <a href="index.html#lista">अर्ली एक्सेस</a>
+      <a href="index.html#contato">संपर्क</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../nitrovenant.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/nitrovenant.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/nitrovenant.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/nitrovenant.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/nitrovenant.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/nitrovenant.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh n-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/nitro/arte.webp" width="1254" height="1254" alt=""></div>
+      <canvas class="n-vel" data-vel aria-hidden="true"></canvas>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="आप यहाँ हैं"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">यूनिवर्स</a><i>/</i><span aria-current="page">Nitrovenant</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="nitro" src="../assets/media/nitro/icone.webp" width="512" height="512" alt="Nitrovenant का आइकन">
+            <img class="gh__logo n-logo" src="../assets/media/nitro/logo.webp" width="900" height="287" alt="Nitrovenant">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">सड़क ख़त्म।</span><span class="l"><em class="txt-game">झुंड नहीं।</em></span></h1>
+          <p class="lead gh__lead">आप ड्राइव करते हैं। कार ख़ुद फ़ायर करती है। बाक़ी बस यह तय करना है कि किधर जाना है — और कब सब कुछ नाइट्रो पर झोंक देना है।</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">एक्शन</span> <span class="chip chip--line">ज़ॉम्बी</span> <span class="chip chip--line">Android</span> <span class="chip chip--line">बिना साइन-अप</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#garagem" data-magnetic>गैराज में चलें <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="nitro" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>जल्द आ रहा है</small><b>Google Play पर</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual" data-float>
+          <div class="phone gh__phone n-phone" data-depth="0.15"><div class="phone__screen"><video src="../assets/media/nitro/video-iniciar.mp4" poster="../assets/media/nitro/video-iniciar-poster.webp" muted loop playsinline preload="metadata" data-autoplay aria-label="Nitrovenant की ओपनिंग: हाथ में रिंच लिए ज़ॉम्बी और पीली कार"></video><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+          <button class="fl n-nitro glass" type="button" data-nitro data-depth="0.6" data-cursor="दबाए रखें" aria-label="नाइट्रो चालू करने के लिए दबाए रखें">
+            <svg class="n-nitro__ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="n-nitro__fill" cx="60" cy="60" r="52" pathLength="100"/></svg>
+            <span class="n-nitro__t">NITRO</span><span class="n-nitro__p" data-nitro-p>दबाए रखें</span>
+          </button>
+          <span class="fl n-boost" data-boost aria-hidden="true">BOOST!</span>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>यूनिवर्स 03 / 03</span><span>नाइट्रो दबाए रखें · फिर स्क्रॉल करें</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">एहसास</p>
+        <p class="gi__txt" data-scrub-words>एक पल आता है, जब स्क्रीन ज़ॉम्बी से भर जाती है, नीला टैंक फ़ुल हो जाता है और आप <em>नाइट्रो दबा देते हैं</em>। यही पल असली गेम है।</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section" data-gp aria-labelledby="gp-t">
+      <div class="wrap">
+        <p class="eyebrow">कैसे खेलें</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">एक उँगली।<br><span class="txt-game">तीन लेन। कोई ब्रेक नहीं।</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>लेन बदलने के लिए स्वाइप करें।</h3>
+            <p>दाएँ-बाएँ स्वाइप करके आप ख़तरों से बचते हैं और निशाने की लाइन चुनते हैं। ऊपर स्वाइप करके गड्ढों, ज़ॉम्बी और बॉस की शॉकवेव के ऊपर से कूद जाते हैं।</p>
+            <span class="chip chip--line gp__gesture">← स्वाइप → · ↑ जंप</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-horda.webp" width="720" height="1152" alt="सड़क पर बढ़ता ज़ॉम्बी का झुंड" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>दबाए रखें, और मशीनगन बोल उठेगी।</h3>
+            <p>छत पर लगे लॉन्चर से कार ख़ुद फ़ायर करती है। सड़क पर उँगली दबाए रखें, और नीली मशीनगन रास्ता साफ़ करने में जुट जाती है।</p>
+            <span class="chip chip--line gp__gesture">दबाए रखें = मशीनगन</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-pit.webp" width="720" height="1280" alt="झुंड पर मशीनगन की बौछार" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>NITRO झोंक दें।</h3>
+            <p>अजेय बनी कार आगे फ़र्राटा भरती है और सब कुछ रौंद देती है। मशीनगन और नाइट्रो एक ही टैंक से चलते हैं — कब ख़र्च करना है, यह फ़ैसला आपका।</p>
+            <span class="chip chip--line gp__gesture">नीला टैंक · एक ही पावर</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-chefe.webp" width="720" height="1280" alt="झुंड के बीच बॉस" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="phone gp__phone">
+              <div class="phone__screen">
+                <img data-step="0" src="../assets/media/nitro/tela-horda.webp" width="720" height="1152" alt="सड़क पर बढ़ता ज़ॉम्बी का झुंड" loading="lazy">
+                <img data-step="1" src="../assets/media/nitro/tela-pit.webp" width="720" height="1280" alt="झुंड पर मशीनगन की बौछार" loading="lazy">
+                <img data-step="2" src="../assets/media/nitro/tela-chefe.webp" width="720" height="1280" alt="झुंड के बीच बॉस" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+              <i class="phone__island"></i>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GARAGEM 3D ============ -->
+    <section class="gar" id="garagem" aria-labelledby="gar-t" tabindex="-1">
+      <div class="gar__bg" aria-hidden="true"><img src="../assets/media/nitro/fundo-garagem.webp" width="941" height="1672" alt="" loading="lazy"></div>
+      <div class="wrap gar__head">
+        <div>
+          <p class="eyebrow">गैराज · 13 गाड़ियाँ</p>
+          <h2 class="h1" id="gar-t">अपनी <span class="txt-game">मशीन चुनें।</span></h2>
+        </div>
+        <p class="lead">कॉम्पैक्ट Rook से लेकर Overlord तक, सड़क पर जुटाए क्रेडिट से ख़रीदें। हर कार सच में गेम बदल देती है: ज़्यादा आर्मर, ज़्यादा डैमेज, ज़्यादा नाइट्रो। घुमाने के लिए खींचें।</p>
+      </div>
+      <div class="wrap gar__stage">
+        <div class="gar__info">
+          <span class="gar__n mono" data-car-n>नं. 08 / 13</span>
+          <h3 class="gar__nome" data-car-nome>Velocity</h3>
+          <span class="gar__classe mono" data-car-classe>इलेक्ट्रिक</span>
+          <p class="gar__preco" data-car-preco>1,55,000 क्रेडिट</p>
+          <p class="gar__desc" data-car-desc>ख़ामोश, तेज़, और लॉन्चर हमेशा लोडेड।</p>
+        </div>
+        <div class="gar__view" data-garagem data-cursor="घुमाएँ">
+          <img class="gar__plat" src="../assets/media/nitro/plataforma.webp" width="900" height="444" alt="" loading="lazy">
+          <img class="gar__fallback" src="../assets/media/nitro/tela-garagem.webp" width="720" height="1152" alt="Nitrovenant का गैराज" loading="lazy">
+          <div class="gar__load" data-car-load hidden><i></i><span class="mono">इंजन स्टार्ट हो रहा है…</span></div>
+        </div>
+        <div class="gar__lista" role="radiogroup" aria-label="गाड़ियाँ">
+          <button type="button" role="radio" data-carro="rook" aria-checked="false"><b>Rook</b><span>कॉम्पैक्ट</span></button>
+          <button type="button" role="radio" data-carro="fury" aria-checked="false"><b>Fury</b><span>मसल</span></button>
+          <button type="button" role="radio" data-carro="velocity" aria-checked="true"><b>Velocity</b><span>इलेक्ट्रिक</span></button>
+          <button type="button" role="radio" data-carro="vortex" aria-checked="false"><b>Vortex</b><span>सुपर</span></button>
+          <button type="button" role="radio" data-carro="overlord" aria-checked="false"><b>Overlord</b><span>ट्रक</span></button>
+          <button type="button" role="radio" data-carro="golden" aria-checked="false"><b>Golden</b><span>अल्टीमेट</span></button>
+          <button type="button" role="radio" data-carro="moto" aria-checked="false"><b>Blade</b><span>बाइक</span></button>
+        </div>
+      </div>
+      <p class="wrap gar__nota mono">हथियार, आर्मर और ग्रिप 8 लेवल तक अपग्रेड होते हैं और कभी नहीं घटते · मिसाइल पार्ट्स से एक साथ 10 तक शॉट अनलॉक होते हैं</p>
+    </section>
+
+    <!-- ============ CHEFES ============ -->
+    <section class="chefes section" aria-labelledby="chefes-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>चार बॉस</p>
+        <h2 class="h1" id="chefes-t" data-split>वे इंतज़ार नहीं करते<br><span class="txt-game">कि झुंड गुज़र जाए।</span></h2>
+        <p class="lead chefes__lead" data-reveal>वे झुंड के बीच से ही आते हैं — सड़क पर हथौड़े बरसाते, औज़ार फेंकते और आपकी लेन पर धावा बोलते। लेवल 10 से, बीच रास्ते का एक बॉस भी आख़िरी बॉस के साथ आ जुड़ता है।</p>
+        <div class="chefes__grid">
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-guarda.webp" width="720" height="1280" alt="ट्रैफ़िक हवलदार" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">बॉस · 01</span><h3>ट्रैफ़िक हवलदार</h3><p>सीटी बजाता है, चालान काटता है और ऐन मौक़े पर आपकी लेन बंद कर देता है।</p>
+          </article>
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-pit.webp" width="720" height="1280" alt="पिट स्टॉप उस्ताद" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">बॉस · 02</span><h3>पिट स्टॉप उस्ताद</h3><p>दो सेकंड में टायर बदलता है, और एक में औज़ार फेंक मारता है।</p>
+          </article>
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-piloto.webp" width="720" height="1280" alt="एलीट रेसर" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">बॉस · 03</span><h3>एलीट रेसर</h3><p>सड़क का हर मोड़ जानता है। और आपकी हर ग़लती भी।</p>
+          </article>
+          <article class="chefe" data-reveal>
+            <div class="phone chefe__phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-mecanico.webp" width="720" height="1280" alt="हेड मैकेनिक" loading="lazy"></div><i class="phone__island"></i></div>
+            <span class="mono">बॉस · 04</span><h3>हेड मैकेनिक</h3><p>उसका रिंच आपकी कार से भी बड़ा है। लगभग।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CURVA DE DIFICULDADE ============ -->
+    <section class="curva section" aria-labelledby="curva-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>120 लेवल</p>
+        <h2 class="h1" id="curva-t" data-split>ऐसे लेवल, जो<br><span class="txt-game">माफ़ नहीं करते।</span></h2>
+        <div class="curva__box glass" data-curva>
+          <svg class="curva__svg" viewBox="0 0 1200 420" preserveAspectRatio="none" role="img" aria-labelledby="curva-desc">
+            <desc id="curva-desc">A dificuldade sobe ao longo das 120 fases: na fase 40 a vida de todos dobra, na 45 começa o Inferno, na 50 os kamikazes dobram, na 80 o golpe do chefe triplica e na 100 o chefe dobra de vida outra vez.</desc>
+            <defs>
+              <linearGradient id="cg" x1="0" x2="1"><stop offset="0" stop-color="#ffb13b"/><stop offset=".6" stop-color="#ff3d1a"/><stop offset="1" stop-color="#ff0a54"/></linearGradient>
+              <linearGradient id="cf" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff3d1a" stop-opacity=".35"/><stop offset="1" stop-color="#ff3d1a" stop-opacity="0"/></linearGradient>
+            </defs>
+            <g class="curva__grade"><line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="210" x2="1200" y2="210"/><line x1="0" y1="315" x2="1200" y2="315"/></g>
+            <path class="curva__area" d="M0 400 C150 395 280 380 400 330 L400 300 C430 296 450 290 500 262 C600 240 700 222 800 170 L800 120 C900 104 950 96 1000 70 L1000 34 C1080 26 1150 20 1200 14 L1200 420 L0 420Z" fill="url(#cf)"/>
+            <path class="curva__linha" d="M0 400 C150 395 280 380 400 330 L400 300 C430 296 450 290 500 262 C600 240 700 222 800 170 L800 120 C900 104 950 96 1000 70 L1000 34 C1080 26 1150 20 1200 14" fill="none" stroke="url(#cg)" stroke-width="5" stroke-linecap="round" pathLength="1"/>
+          </svg>
+          <ol class="curva__marcos">
+            <li class="is-baixo" style="--x:33.3%;--y:73%;--dy:26px"><span class="m"><b>40</b><span>सबकी हेल्थ दोगुनी</span></span></li>
+            <li class="is-hell" style="--x:37.5%;--y:68%;--dy:118px"><span class="m"><b>45</b><span>मरे, तो सीधे नरक में</span></span></li>
+            <li style="--x:41.6%;--y:62%;--dy:26px"><span class="m"><b>50</b><span>कामिकाज़े दोगुने</span></span></li>
+            <li style="--x:66.6%;--y:34%;--dy:26px"><span class="m"><b>80</b><span>बॉस का वार तिगुना</span></span></li>
+            <li style="--x:83.3%;--y:12%;--dy:26px"><span class="m"><b>100</b><span>बॉस की हेल्थ फिर दोगुनी</span></span></li>
+          </ol>
+          <div class="curva__eixo mono" aria-hidden="true"><span>लेवल 1</span><span>30</span><span>60</span><span>90</span><span>120</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INFERNO ============ -->
+    <section class="inferno" aria-labelledby="inf-t">
+      <div class="inferno__bg" aria-hidden="true"><img src="../assets/media/nitro/mkt-1.webp" width="720" height="1279" alt="" loading="lazy"></div>
+      <div class="inferno__brasas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="wrap inferno__grid">
+        <div>
+          <p class="eyebrow">हार गए? अभी भी मौक़ा है</p>
+          <h2 class="inferno__t" id="inf-t" data-split><span class="txt-game">नरक</span> में<br>आपका स्वागत है।</h2>
+          <p class="lead">लेवल 45 से, मरना अंत नहीं है: आप नरक में जा गिरते हैं। वहाँ के बॉस को हराइए, और आप ठीक वहीं लौट आएँगे जहाँ रुके थे, अपना सब कुछ साथ लेकर। लेवल 50 से आप दो बार गिर सकते हैं — और दूसरी बार का नरक ग़ुस्से से खौलता है, दोगुने ज़ॉम्बी के साथ।</p>
+        </div>
+        <div class="inferno__cards">
+          <img class="inferno__c1" src="../assets/media/nitro/mkt-1.webp" width="720" height="1279" alt="आर्ट: ज़िंदा रहने के लिए आपको नरक को हराना होगा" loading="lazy" data-parallax="10">
+          <img class="inferno__c2" src="../assets/media/nitro/mkt-7.webp" width="720" height="1279" alt="आर्ट: क्या आप बॉस को हरा पाएँगे?" loading="lazy" data-parallax="-8">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">स्क्रीनशॉट</p>
+          <h2 class="h1" id="gg-t">गैराज से <span class="txt-game">सड़क तक।</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="स्क्रीनशॉट फ़िल्टर करें" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">सभी</button>
+          <button role="tab" aria-selected="false" data-cat="jogo" aria-controls="gg-lista">गेम में</button>
+          <button role="tab" aria-selected="false" data-cat="loja" aria-controls="gg-lista">स्टोर आर्ट</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="खींचें">
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-horda.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-horda.webp" width="720" height="1152" alt="ज़ॉम्बी का झुंड" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>ज़ॉम्बी का झुंड</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-chefe.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-chefe.webp" width="720" height="1280" alt="झुंड में बॉस" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>झुंड में बॉस</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-guarda.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-guarda.webp" width="720" height="1280" alt="ट्रैफ़िक हवलदार" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>ट्रैफ़िक हवलदार</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-mecanico.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-mecanico.webp" width="720" height="1280" alt="हेड मैकेनिक" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>हेड मैकेनिक</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-garagem.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-garagem.webp" width="720" height="1152" alt="गैराज" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>गैराज</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/nitro/tela-vitoria.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/tela-vitoria.webp" width="720" height="1152" alt="जीत" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>रास्ता साफ़</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-2.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-2.webp" width="720" height="1279" alt="Blade बाइक" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Blade बाइक</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-3.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-3.webp" width="720" height="1279" alt="अपग्रेड करने को 13 गाड़ियाँ" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>अपग्रेड करने को गाड़ियाँ</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-4.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-4.webp" width="720" height="1279" alt="ख़तरनाक ज़ोन" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>ख़तरनाक ज़ोन</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-5.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-5.webp" width="720" height="1279" alt="झुंड और बॉस" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>झुंड और बॉस</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-6.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-6.webp" width="720" height="1279" alt="बर्फ़" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>बर्फ़</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-8.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-8.webp" width="720" height="1279" alt="रेगिस्तान" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>रेगिस्तान</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/nitro/mkt-9.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/nitro/mkt-9.webp" width="720" height="1279" alt="ज़ॉम्बी की लहरें" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>ज़ॉम्बी की लहरें</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="पिछले स्क्रीनशॉट"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="अगले स्क्रीनशॉट"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ TRILHA ============ -->
+    <section class="gm section" aria-labelledby="gm-t">
+      <div class="wrap gm__grid">
+        <div>
+          <p class="eyebrow" data-reveal>साउंडट्रैक</p>
+          <h2 class="h1" id="gm-t" data-split>रिफ़्स, जो <span class="txt-game">रफ़्तार बढ़ा दें।</span></h2>
+          <p class="lead" data-reveal>सड़क के लिए भारी गिटार, और सब कुछ बिगड़ने पर एक शैतानी कोरस। प्ले दबाएँ (हो सके तो हेडफ़ोन लगाकर)।</p>
+        </div>
+        <div class="player glass" data-player data-reveal>
+          <div class="player__art"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+          <div>
+            <p class="player__now">अभी बज रहा है · Nitrovenant</p>
+            <p class="player__title">ओपनिंग</p>
+            <div class="player__row">
+              <button class="player__btn" type="button" aria-label="चलाएँ"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></button>
+              <div class="player__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="player__time">0:00 / 1:00</span>
+            </div>
+            <div class="player__prog" role="presentation"><i></i></div>
+          </div>
+          <div class="player__list">
+            <button type="button" data-src="../assets/media/nitro/trilha-abertura.mp3"><span class="n">01</span><span class="t">ओपनिंग</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-speed-riff.mp3"><span class="n">02</span><span class="t">Speed Riff</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-n-speed-riff.mp3"><span class="n">03</span><span class="t">N Speed Riff</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-riff-of-dread.mp3"><span class="n">04</span><span class="t">Riff of Dread</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-inferno.mp3"><span class="n">05</span><span class="t">नरक</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/nitro/trilha-loop-forever.mp3"><span class="n">06</span><span class="t">Loop Forever</span><span class="d">प्रीव्यू</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>एक नज़र में</p>
+        <h2 class="h2" id="ficha-t" data-split>आँकड़ों में Nitrovenant।</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>शैली</dt><dd>पहियों पर एक्शन<small>तीन लेन, ऑटोमैटिक फ़ायरिंग</small></dd></div>
+          <div><dt>लेवल</dt><dd>120<small>साथ में नरक, गिरने वालों के लिए</small></dd></div>
+          <div><dt>गैराज</dt><dd>13 गाड़ियाँ<small>12 कारें और Blade बाइक</small></dd></div>
+          <div><dt>बॉस</dt><dd>4<small>झुंड के बीच में, बाद में नहीं</small></dd></div>
+          <div><dt>भाषाएँ</dt><dd>3<small>पुर्तगाली · अंग्रेज़ी · स्पेनिश</small></dd></div>
+          <div><dt>इंटरनेट और साइन-अप</dt><dd>ज़रूरी नहीं<small>न ईमेल, न खाता</small></dd></div>
+          <div><dt>प्रगति</dt><dd>Google Play Games<small>वैकल्पिक, आपके Google खाते में</small></dd></div>
+          <div><dt>क़ीमत</dt><dd>मुफ़्त<small>विज्ञापन और 2 वैकल्पिक गाड़ियाँ</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>कहाँ खेलें</p>
+            <h2 class="h2" id="onde-t" data-split>जहाँ भी हों, <span class="txt-game">वहीं खेलें।</span></h2>
+          </div>
+          <p class="lead" data-reveal>फ़ोन पर, अपने जाने-पहचाने स्टोर से — या सीधे ब्राउज़र में, बिना कुछ इंस्टॉल किए। जिस दिन Nitrovenant किसी प्लेटफ़ॉर्म पर आएगा, उसी दिन उसका बटन जल उठेगा।</p>
+        </div>
+        <div class="onde__grupos">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>फ़ोन · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="nitro:play" aria-disabled="true" aria-label="Google Play पर Nitrovenant: जल्द ही">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+          <a class="plat glass" data-store="nitro:amazon" aria-disabled="true" aria-label="Amazon Appstore पर Nitrovenant: जल्द ही">
+            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+          <a class="plat glass" data-store="nitro:samsung" aria-disabled="true" aria-label="Galaxy Store पर Nitrovenant: जल्द ही">
+            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>ब्राउज़र · बिना इंस्टॉल</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="nitro:poki" aria-disabled="true" aria-label="Poki पर Nitrovenant: जल्द ही">
+            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+          <a class="plat glass" data-store="nitro:crazygames" aria-disabled="true" aria-label="CrazyGames पर Nitrovenant: जल्द ही">
+            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play, Google LLC का ट्रेडमार्क है। Amazon, Amazon Appstore और Amazon लोगो, Amazon.com, Inc. या उसकी सहयोगी कंपनियों के ट्रेडमार्क हैं। Samsung और Galaxy Store, Samsung Electronics Co., Ltd. के ट्रेडमार्क हैं। Poki और CrazyGames अपने-अपने मालिकों के ट्रेडमार्क हैं।</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">अर्ली एक्सेस</p>
+            <h2 class="h2" id="lista-t">सड़क पर उतरें, <span class="txt-game">सबसे पहले।</span></h2>
+            <p class="lead">Lista Lipy से जुड़ें: बीटा का न्योता, Nitrovenant के लॉन्च के दिन सूचना, और नई कारें और लेवल सबसे पहले।</p>
+            <form class="signup" method="post" data-signup data-origem="nitro" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>मुझे चाहिए</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>बीटा टेस्ट</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>लॉन्च</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>अपडेट</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="nitro" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-nitro">आपका ईमेल</label>
+                <input id="email-nitro" type="email" name="email" autocomplete="email" inputmode="email" placeholder="aapka@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">मुझे बीटा चाहिए <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">जुड़ने पर आप टेस्ट, लॉन्च और नई ख़बरों के बारे में Lipy Games से ईमेल पाने के लिए सहमति देते हैं। जब चाहें, लिस्ट छोड़ सकते हैं। <a href="privacidade.html">गोपनीयता नीति</a> देखें।</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>इंजन स्टार्ट। आप लिस्ट में हैं!</b>
+                <p>बीटा का न्योता और लॉन्च की सूचना <span data-ok-email></span> पर आएगी।</p>
+                <button type="button" data-signup-outro>दूसरा ईमेल जोड़ें</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="Nitrovenant का Lipy Pass">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema.webp" width="600" height="591" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">Nitrovenant<br>बीटा</p>
+              <div class="pass__games"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>ड्राइवर</small><b data-pass-nome>आप?</b></div><div><small>नाइट्रो</small><b>100%</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">NITRO<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">सक्रिय</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="वापस">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa.webp" width="1794" height="876" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">वापस पहले यूनिवर्स में · 01 / 03</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">यूनिवर्स में उतरें <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>ब्राज़ील का मोबाइल गेम स्टूडियो। उन मिनटों के लिए, जो क़िस्से बन जाते हैं।</p>
+        </div>
+        <div class="foot__col">
+          <h4>यूनिवर्स</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>स्टूडियो</h4>
+          <ul>
+            <li><a href="index.html#estudio">Lipy के बारे में</a></li>
+            <li><a href="index.html#como-criamos">हम कैसे बनाते हैं</a></li>
+            <li><a href="index.html#lista">Lista Lipy (अर्ली एक्सेस)</a></li>
+            <li><a href="index.html#contato">संपर्क</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>गोपनीयता</h4>
+          <ul>
+            <li><a href="privacidade.html">साइट और Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Quiver खाता मिटाएँ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — <strong>Lipy Serviços Digitais LTDA</strong> का ब्रांड · CNPJ 65.260.227/0001-11</p>
+        <p>ब्राज़ील में बना · Google Play, Google LLC का ट्रेडमार्क है।</p>
+        <button class="foot__up glass" type="button" data-top aria-label="ऊपर जाएँ"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/hi.js?v=4c35d3f9"></script>
+  <script src="../assets/js/lipy.js?v=5cf75073"></script>
+  <script src="../assets/js/jogo.js?v=7bc7d81f"></script>
+  <script src="../assets/js/nitro.js?v=aedde99b"></script>
+</body>
+</html>

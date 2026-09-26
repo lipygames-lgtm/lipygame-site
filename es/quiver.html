@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="es" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=8e41053f"></script>
+  <title>Quiver: Arrow Puzzle — Lipy Games</title>
+  <meta name="description" content="Quiver: Arrow Puzzle es el rompecabezas de flechas de Lipy Games: toca la flecha con el camino libre y despeja el tablero. 360 niveles, 2 modos y jefes que atacan tus piezas.">
+  <meta name="theme-color" content="#120a03">
+  <link rel="canonical" href="https://lipygame.com/es/quiver.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/quiver.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/quiver.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/quiver.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/quiver.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/quiver.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/quiver.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/quiver.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Quiver: Arrow Puzzle — una flecha, un camino libre, un chasquido.">
+  <meta property="og:description" content="360 niveles, modos Rush y Clásico, jefes que atacan el tablero. Próximamente en Google Play.">
+  <meta property="og:url" content="https://lipygame.com/es/quiver.html">
+  <meta property="og:image" content="https://lipygame.com/og-quiver.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/quiver.css?v=c992cbed">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Quiver: Arrow Puzzle",
+    "description": "Rompecabezas de flechas: toca la flecha que tiene el camino libre hasta el borde y despeja el tablero. Modos Rush y Clásico, 360 niveles y jefes.",
+    "genre": ["Puzzle", "Casual"],
+    "gamePlatform": "Android",
+    "operatingSystem": "Android",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/quiver/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+</head>
+<body class="jogo jogo--quiver" style="--c1:#ffc84a;--c2:#ff7a1a;--c3:#120a03;--c4:#2ad8ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Saltar al contenido</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — inicio"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Principal">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Juegos <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">Estudio</a>
+        <a href="index.html#como-criamos">Cómo creamos</a>
+        <a href="index.html#contato">Contacto</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Idioma"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../quiver.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/quiver.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/quiver.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/quiver.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/quiver.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/quiver.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Acceso anticipado <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Puzzle de flechas</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>Plataformas troll</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>Acción sobre ruedas</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menú">
+      <a href="index.html#universos">Juegos</a>
+      <a href="index.html#estudio">Estudio</a>
+      <a href="index.html#como-criamos">Cómo creamos</a>
+      <a href="index.html#lista">Acceso anticipado</a>
+      <a href="index.html#contato">Contacto</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../quiver.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/quiver.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/quiver.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/quiver.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/quiver.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/quiver.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/quiver/fundo-menu.webp" width="941" height="2332" alt=""></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="Estás en"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">Universos</a><i>/</i><span aria-current="page">Quiver</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="Ícono de Quiver: Arrow Puzzle">
+            <img class="gh__logo" src="../assets/media/quiver/logo.webp" width="664" height="397" alt="Quiver: Arrow Puzzle">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">Una flecha.</span><span class="l">Un camino libre.</span><span class="l"><em class="txt-game">Un chasquido.</em></span></h1>
+          <p class="lead gh__lead">El rompecabezas en el que cada toque certero manda a volar una flecha y despeja un poco más el tablero. Parece simple… hasta que el reloj aprieta y un jefe ataca tus piezas.</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">Puzzle</span> <span class="chip chip--line">Android</span> <span class="chip chip--line">Gratis</span> <span class="chip chip--line">Juega sin internet</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#experimente" data-magnetic>Jugar un nivel ahora <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="quiver" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual" data-float>
+          <img class="fl q-boss" data-depth="0.35" src="../assets/media/quiver/chefe-magumbi.webp" width="941" height="550" alt="">
+          <div class="phone gh__phone" data-depth="0.15"><div class="phone__screen"><img src="../assets/media/quiver/tela-rush.webp" width="720" height="1279" alt="Nivel del modo Rush: tablero de flechas de colores con combo ×4"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+          <img class="fl q-a1" data-depth="1.2" src="../assets/media/quiver/ui/seta-cima-azul.webp" width="145" height="147" alt="">
+          <img class="fl q-a2" data-depth="0.8" src="../assets/media/quiver/ui/seta-dir-verde.webp" width="147" height="147" alt="">
+          <img class="fl q-a3" data-depth="1.5" src="../assets/media/quiver/ui/seta-esq-amarela.webp" width="148" height="147" alt="">
+          <img class="fl q-a4" data-depth="1" src="../assets/media/quiver/ui/seta-baixo-vermelha.webp" width="147" height="147" alt="">
+          <img class="fl q-a5" data-depth="0.6" src="../assets/media/quiver/ui/seta-dir-roxa.webp" width="148" height="149" alt="">
+          <span class="fl q-combo" data-depth="1.3" aria-hidden="true">COMBO<b>×4</b></span>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>Universo 01 / 03</span><span>Desliza para jugar</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">La sensación</p>
+        <p class="gi__txt" data-scrub-words>Hay un segundo mágico en Quiver: cuando ves el orden correcto y el tablero entero <em>se deshace en cascada</em> frente a ti.</p>
+      </div>
+    </section>
+
+    <!-- ============ JOGUE AGORA ============ -->
+    <section class="qp section" id="experimente" aria-labelledby="qp-t" tabindex="-1">
+      <div class="qp__bg" aria-hidden="true"><img src="../assets/media/quiver/fundo-jogo.webp" width="941" height="2332" alt="" loading="lazy"></div>
+      <div class="wrap qp__grid">
+        <div class="qp__text">
+          <p class="eyebrow">Pruébalo ahora</p>
+          <h2 class="h1" id="qp-t" data-split>Toca la flecha con el <span class="txt-game">camino libre.</span></h2>
+          <p class="lead">Una flecha solo sale volando si no hay nada en su camino hasta el borde. Descubre el orden y despeja el tablero. El nivel se arma al instante y siempre tiene solución.</p>
+          <dl class="qp__hud">
+            <div class="glass glass--dark"><dt>Movimientos</dt><dd data-q="mov">0</dd></div>
+            <div class="glass glass--dark"><dt>Errores</dt><dd data-q="erros">0</dd></div>
+            <div class="glass glass--dark"><dt>Tiempo</dt><dd data-q="tempo">0:00</dd></div>
+          </dl>
+          <div class="qp__ctas">
+            <button class="btn btn--glass glass glass--pill" type="button" data-q="nova">Nuevo nivel <span class="btn__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg></span></button>
+          </div>
+        </div>
+        <div class="qp__stage">
+          <div class="qp__frame glass" data-lens="aro:26,escala:50,blur:4">
+            <div class="qp__board" data-q="board" role="group" aria-label="Tablero de Quiver. Toca una flecha con el camino libre hasta el borde."></div>
+            <p class="qp__combo" data-q="combo" aria-hidden="true"></p>
+            <div class="qp__win" data-q="win" hidden>
+              <div class="qp__stars" data-q="stars" aria-hidden="true"><img src="../assets/media/quiver/ui/estrela-ouro.webp" alt=""><img src="../assets/media/quiver/ui/estrela-ouro.webp" alt=""><img src="../assets/media/quiver/ui/estrela-ouro.webp" alt=""></div>
+              <b>¡Tablero despejado!</b>
+              <p data-q="resumo">Ahora imagina 360 niveles así.</p>
+              <button class="btn btn--game" type="button" data-q="denovo">Otro nivel <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></button>
+            </div>
+          </div>
+          <p class="qp__hint mono" aria-live="polite" data-q="dica">Consejo: empieza por las flechas que apuntan al borde más cercano.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MODOS ============ -->
+    <section class="modos section" aria-labelledby="modos-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Dos modos</p>
+        <h2 class="h1 modos__t" id="modos-t" data-split>Corre contra el reloj.<br><span class="txt-game">O piensa con calma.</span></h2>
+        <div class="modos__grid">
+          <article class="modo modo--rush glass" data-reveal>
+            <div class="modo__txt">
+              <span class="modo__tag">RUSH</span>
+              <h3>Contra el reloj</h3>
+              <p>200 niveles con tiempo límite. ¿Fallaste? El reloj se acelera. En los últimos segundos, cada toque se vuelve una bomba de tiempo. Y los combos encienden el modo FEVER.</p>
+              <ul class="modo__list"><li><b>200</b> niveles</li><li><b>FEVER</b> con los combos</li><li><b>Reloj</b> que se acelera</li></ul>
+            </div>
+            <div class="phone modo__phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-mapa-rush.webp" width="720" height="1276" alt="Mapa de niveles del modo Rush" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+            <img class="modo__deco" src="../assets/media/quiver/ui/cronometro.webp" width="124" height="138" alt="" loading="lazy">
+          </article>
+          <article class="modo modo--classic glass" data-reveal>
+            <div class="modo__txt">
+              <span class="modo__tag modo__tag--c">CLÁSICO</span>
+              <h3>Sin prisa</h3>
+              <p>160 niveles en 5 arenas, con corazones en lugar de reloj. Al final de cada arena, aparece un jefe para atacar tu tablero.</p>
+              <ul class="modo__list"><li><b>160</b> niveles</li><li><b>5</b> arenas</li><li><b>Corazones</b> en vez de tiempo</li></ul>
+            </div>
+            <div class="phone modo__phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-mapa-classic.webp" width="720" height="1276" alt="Mapa de niveles del modo Clásico" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+            <img class="modo__deco" src="../assets/media/quiver/ui/coracao.webp" width="82" height="74" alt="" loading="lazy">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARENAS & CHEFES ============ -->
+    <section class="arenas" id="chefes" aria-labelledby="arenas-t">
+      <div class="arenas__bgs" aria-hidden="true">
+        <img data-bg="0" src="../assets/media/quiver/fundo-magumbi.webp" width="941" height="2332" alt="" loading="lazy">
+        <img data-bg="1" src="../assets/media/quiver/fundo-nevambi.webp" width="941" height="2332" alt="" loading="lazy">
+        <img data-bg="2" src="../assets/media/quiver/fundo-egimbi.webp" width="941" height="2332" alt="" loading="lazy">
+        <img data-bg="3" src="../assets/media/quiver/fundo-angembi.webp" width="941" height="2332" alt="" loading="lazy">
+      </div>
+      <div class="wrap arenas__in">
+        <div class="arenas__head">
+          <div>
+            <p class="eyebrow">Arenas &amp; jefes</p>
+            <h2 class="h1" id="arenas-t">Cada arena termina con alguien que <span class="txt-game">odia las flechas.</span></h2>
+          </div>
+          <div class="tabs glass" role="tablist" aria-label="Jefes de las arenas" data-arenas>
+            <span class="tabs__blob" aria-hidden="true"></span>
+            <button role="tab" id="t-mag" aria-controls="p-mag" aria-selected="true">Magumbi</button>
+            <button role="tab" id="t-nev" aria-controls="p-nev" aria-selected="false">Nevambi</button>
+            <button role="tab" id="t-egi" aria-controls="p-egi" aria-selected="false">Egimbi</button>
+            <button role="tab" id="t-ang" aria-controls="p-ang" aria-selected="false">Angembi</button>
+          </div>
+        </div>
+
+        <div class="arena" id="p-mag" role="tabpanel" aria-labelledby="t-mag">
+          <div class="arena__txt">
+            <span class="arena__n mono">Arena 2 · Lava · 30 niveles</span>
+            <h3 class="arena__nome">Magumbi</h3>
+            <p class="arena__fala glass">“¡Tus flechas se van a derretir!”</p>
+            <dl class="arena__dl"><div><dt>Ataque</dt><dd>Lluvia de rocas que bloquea casillas del tablero</dd></div><div><dt>Dónde</dt><dd>Un volcán en erupción</dd></div></dl>
+          </div>
+          <img class="arena__boss" src="../assets/media/quiver/chefe-magumbi.webp" width="941" height="550" alt="Magumbi, el jefe de lava" loading="lazy">
+          <div class="phone arena__phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-magumbi.webp" width="720" height="1279" alt="Batalla contra Magumbi" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+        </div>
+        <div class="arena" id="p-nev" role="tabpanel" aria-labelledby="t-nev">
+          <div class="arena__txt">
+            <span class="arena__n mono">Arena 3 · Hielo · 35 niveles</span>
+            <h3 class="arena__nome">Nevambi</h3>
+            <p class="arena__fala glass">“Bienvenido al invierno eterno.”</p>
+            <dl class="arena__dl"><div><dt>Ataque</dt><dd>Congela tus flechas en su lugar</dd></div><div><dt>Dónde</dt><dd>Un trono de hielo en lo alto de la montaña</dd></div></dl>
+          </div>
+          <img class="arena__boss" src="../assets/media/quiver/chefe-nevambi.webp" width="941" height="640" alt="Nevambi, la reina del hielo" loading="lazy">
+          <div class="phone arena__phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-nevambi.webp" width="720" height="1279" alt="Batalla contra Nevambi" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+        </div>
+        <div class="arena" id="p-egi" role="tabpanel" aria-labelledby="t-egi">
+          <div class="arena__txt">
+            <span class="arena__n mono">Arena 4 · Desierto · 35 niveles</span>
+            <h3 class="arena__nome">Egimbi</h3>
+            <p class="arena__fala glass">“¡¿Quién se atreve a despertarme?!”</p>
+            <dl class="arena__dl"><div><dt>Ataque</dt><dd>Tormenta de arena que cubre el tablero por unos segundos</dd></div><div><dt>Dónde</dt><dd>Una tumba olvidada hace mil años</dd></div></dl>
+          </div>
+          <img class="arena__boss" src="../assets/media/quiver/chefe-egimbi.webp" width="873" height="597" alt="Egimbi, el faraón maldito" loading="lazy">
+          <div class="phone arena__phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-egimbi.webp" width="720" height="1279" alt="Batalla contra Egimbi" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+        </div>
+        <div class="arena" id="p-ang" role="tabpanel" aria-labelledby="t-ang">
+          <div class="arena__txt">
+            <span class="arena__n mono">Arena 5 · Cielo · 35 niveles · final</span>
+            <h3 class="arena__nome">Angembi</h3>
+            <p class="arena__fala glass">“Ninguna flecha alcanza el cielo.”</p>
+            <dl class="arena__dl"><div><dt>Ataque</dt><dd>Todos los anteriores, más ilusiones: piezas falsas entre las verdaderas</dd></div><div><dt>Dónde</dt><dd>Las puertas doradas, sobre las nubes</dd></div></dl>
+          </div>
+          <img class="arena__boss" src="../assets/media/quiver/chefe-angembi.webp" width="941" height="670" alt="Angembi, el jefe final" loading="lazy">
+          <div class="phone arena__phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-angembi.webp" width="720" height="1279" alt="Batalla contra Angembi" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+        </div>
+        <p class="arenas__nota mono">La vida del jefe es el progreso del nivel: cae junto con la última flecha.</p>
+      </div>
+    </section>
+
+    <!-- ============ DATAS ESPECIAIS ============ -->
+    <section class="esp section" aria-labelledby="esp-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Fechas especiales</p>
+        <h2 class="h1" id="esp-t" data-split>Cuatro fiestas.<br><span class="txt-game">Cuatro villanos disfrazados.</span></h2>
+        <div class="esp__grid">
+          <article class="esc" data-reveal style="--e:#ff3b3b">
+            <img class="esc__bg" src="../assets/media/quiver/fundo-natal.webp" width="941" height="2332" alt="" loading="lazy">
+            <img class="esc__boss" src="../assets/media/quiver/chefe-natal.webp" width="826" height="570" alt="Papá Nombi" loading="lazy">
+            <div class="esc__txt"><span class="mono">Navidad</span><b>Papá Nombi</b><p>“¡Estás en la lista de los traviesos!”</p></div>
+          </article>
+          <article class="esc" data-reveal style="--e:#b25bff">
+            <img class="esc__bg" src="../assets/media/quiver/fundo-halloween.webp" width="941" height="2332" alt="" loading="lazy">
+            <img class="esc__boss" src="../assets/media/quiver/chefe-halloween.webp" width="772" height="524" alt="Mr. Cavembi" loading="lazy">
+            <div class="esc__txt"><span class="mono">Halloween</span><b>Mr. Cavembi</b><p>Dulces, travesuras y flechas embrujadas.</p></div>
+          </article>
+          <article class="esc" data-reveal style="--e:#ff6ad5">
+            <img class="esc__bg" src="../assets/media/quiver/fundo-pascoa.webp" width="941" height="2332" alt="" loading="lazy">
+            <img class="esc__boss" src="../assets/media/quiver/chefe-pascoa.webp" width="879" height="624" alt="Bunnumbie" loading="lazy">
+            <div class="esc__txt"><span class="mono">Pascua</span><b>Bunnumbie</b><p>Un conejo que no vino a traer chocolate.</p></div>
+          </article>
+          <article class="esc" data-reveal style="--e:#3ef08a">
+            <img class="esc__bg" src="../assets/media/quiver/fundo-patrick.webp" width="941" height="2332" alt="" loading="lazy">
+            <img class="esc__boss" src="../assets/media/quiver/chefe-patrick.webp" width="815" height="591" alt="Saintombie" loading="lazy">
+            <div class="esc__txt"><span class="mono">San Patricio</span><b>Saintombie</b><p>¿Suerte? Aquí solo cuenta el orden correcto.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PODERES & EXTRAS ============ -->
+    <section class="section section--tight" aria-labelledby="pod-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Poderes &amp; extras</p>
+        <h2 class="h2" id="pod-t" data-split>Cuando el tablero se atasque, <span class="txt-game">tienes un as bajo la manga.</span></h2>
+        <div class="feats">
+          <article class="feat feat--wide glass" data-reveal>
+            <div class="poderes">
+              <figure><img src="../assets/media/quiver/ui/botao-desfazer.webp" width="130" height="142" alt="" loading="lazy"><figcaption>Deshacer</figcaption></figure>
+              <figure><img src="../assets/media/quiver/ui/botao-bomba.webp" width="133" height="139" alt="" loading="lazy"><figcaption>Explosión</figcaption></figure>
+              <figure><img src="../assets/media/quiver/ui/botao-gelo.webp" width="132" height="138" alt="" loading="lazy"><figcaption>Congelar</figcaption></figure>
+              <figure><img src="../assets/media/quiver/ui/botao-raio.webp" width="133" height="138" alt="" loading="lazy"><figcaption>Rayo</figcaption></figure>
+            </div>
+            <h3>Cuatro poderes</h3>
+            <p>Deshaz una jugada, haz explotar una zona, congela el reloj o lanza un rayo que borra la flecha que el jefe bloqueó.</p>
+          </article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/quiver/ui/cronometro.webp" width="124" height="138" alt="" loading="lazy"><h3>Desafío Relámpago</h3><p>Tres desafíos por semana, con premio: reloj ajustado, un solo corazón o un jefe fugitivo.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/quiver/ui/coroa.webp" width="109" height="101" alt="" loading="lazy"><h3>Ranking</h3><p>Mundial, de tu país y solo entre amigos. Cuenta tu mejor tiempo en cada nivel.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/quiver/ui/estrela-ouro.webp" width="46" height="41" alt="" loading="lazy"><h3>Misiones y logros</h3><p>Tres misiones al día, una por semana y medallas de bronce, plata y oro.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/quiver/ui/gema.webp" width="92" height="83" alt="" loading="lazy"><h3>Ruleta y aspectos</h3><p>Un giro gratis de ruleta al día y flechas de oro, hielo, lava, neón y arcoíris.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">Capturas</p>
+          <h2 class="h1" id="gg-t">Mira el juego <span class="txt-game">por dentro.</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Filtrar capturas" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">Todas</button>
+          <button role="tab" aria-selected="false" data-cat="jogo" aria-controls="gg-lista">Juego</button>
+          <button role="tab" aria-selected="false" data-cat="mapas" aria-controls="gg-lista">Mapas</button>
+          <button role="tab" aria-selected="false" data-cat="especiais" aria-controls="gg-lista">Especiales</button>
+          <button role="tab" aria-selected="false" data-cat="loja" aria-controls="gg-lista">Tienda</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="Arrastra">
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/quiver/tela-rush.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-rush.webp" width="720" height="1279" alt="Modo Rush con combo ×4" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Rush · combo ×4</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/quiver/tela-magumbi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-magumbi.webp" width="720" height="1279" alt="Jefe Magumbi" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Jefe · Magumbi</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/quiver/tela-nevambi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-nevambi.webp" width="720" height="1279" alt="Jefa Nevambi" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Jefa · Nevambi</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/quiver/tela-egimbi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-egimbi.webp" width="720" height="1279" alt="Jefe Egimbi" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Jefe · Egimbi</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/quiver/tela-angembi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-angembi.webp" width="720" height="1279" alt="Jefe final Angembi" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Jefe final · Angembi</figcaption></figure>
+          <figure class="gg__item" data-cat="mapas"><a href="../assets/media/quiver/tela-mapa-classic.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-mapa-classic.webp" width="720" height="1276" alt="Mapa del modo Clásico" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Mapa · Clásico</figcaption></figure>
+          <figure class="gg__item" data-cat="mapas"><a href="../assets/media/quiver/tela-mapa-rush.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-mapa-rush.webp" width="720" height="1276" alt="Mapa del modo Rush" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Mapa · Rush</figcaption></figure>
+          <figure class="gg__item" data-cat="mapas"><a href="../assets/media/quiver/mapa-magumbi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/mapa-magumbi.webp" width="720" height="1279" alt="Mapa de la arena de lava" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Arena · Lava</figcaption></figure>
+          <figure class="gg__item" data-cat="mapas"><a href="../assets/media/quiver/mapa-nevambi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/mapa-nevambi.webp" width="720" height="1276" alt="Mapa de la arena de hielo" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Arena · Hielo</figcaption></figure>
+          <figure class="gg__item" data-cat="mapas"><a href="../assets/media/quiver/mapa-egimbi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/mapa-egimbi.webp" width="720" height="1279" alt="Mapa de la arena del desierto" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Arena · Desierto</figcaption></figure>
+          <figure class="gg__item" data-cat="mapas"><a href="../assets/media/quiver/mapa-angembi.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/mapa-angembi.webp" width="720" height="1279" alt="Mapa de la arena del cielo" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Arena · Cielo</figcaption></figure>
+          <figure class="gg__item" data-cat="especiais"><a href="../assets/media/quiver/tela-natal.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-natal.webp" width="720" height="1279" alt="Especial de Navidad" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Navidad · Papá Nombi</figcaption></figure>
+          <figure class="gg__item" data-cat="especiais"><a href="../assets/media/quiver/tela-halloween.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-halloween.webp" width="720" height="1279" alt="Especial de Halloween" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Halloween · Mr. Cavembi</figcaption></figure>
+          <figure class="gg__item" data-cat="especiais"><a href="../assets/media/quiver/tela-pascoa.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-pascoa.webp" width="720" height="1279" alt="Especial de Pascua" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Pascua · Bunnumbie</figcaption></figure>
+          <figure class="gg__item" data-cat="especiais"><a href="../assets/media/quiver/tela-patrick.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-patrick.webp" width="720" height="1279" alt="Especial de San Patricio" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>San Patricio · Saintombie</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/quiver/tela-menu.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/tela-menu.webp" width="720" height="1279" alt="Menú principal" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Menú principal</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/quiver/es/loja-1.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/es/loja-1.webp" width="720" height="1279" alt="Imagen de la tienda 1" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Google Play · 1</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/quiver/es/loja-2.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/es/loja-2.webp" width="720" height="1279" alt="Imagen de la tienda 2" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Google Play · 2</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/quiver/es/loja-3.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/es/loja-3.webp" width="720" height="1279" alt="Imagen de la tienda 3" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Google Play · 3</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/quiver/es/loja-4.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/es/loja-4.webp" width="720" height="1279" alt="Imagen de la tienda 4" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Google Play · 4</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/quiver/es/loja-5.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/es/loja-5.webp" width="720" height="1279" alt="Imagen de la tienda 5" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Google Play · 5</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/quiver/es/loja-6.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/quiver/es/loja-6.webp" width="720" height="1279" alt="Imagen de la tienda 6" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Google Play · 6</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="Capturas anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="Siguientes capturas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ TRILHA ============ -->
+    <section class="gm section" aria-labelledby="gm-t">
+      <div class="wrap gm__grid">
+        <div>
+          <p class="eyebrow" data-reveal>Banda sonora</p>
+          <h2 class="h1" id="gm-t" data-split>Cada arena suena <span class="txt-game">a su manera.</span></h2>
+          <p class="lead" data-reveal>De la selva tranquila del inicio al coro dorado del jefe final: dale play y escucha un fragmento de cada pista del juego.</p>
+        </div>
+        <div class="player glass" data-player data-reveal>
+          <div class="player__art"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+          <div>
+            <p class="player__now">Sonando · Quiver</p>
+            <p class="player__title">Menú principal</p>
+            <div class="player__row">
+              <button class="player__btn" type="button" aria-label="Reproducir"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></button>
+              <div class="player__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="player__time">0:00 / 1:00</span>
+            </div>
+            <div class="player__prog" role="presentation"><i></i></div>
+          </div>
+          <div class="player__list">
+            <button type="button" data-src="../assets/media/quiver/trilha-menu.mp3"><span class="n">01</span><span class="t">Menú principal</span><span class="d">adelanto</span></button>
+            <button type="button" data-src="../assets/media/quiver/trilha-selva.mp3"><span class="n">02</span><span class="t">Primeros niveles · Selva</span><span class="d">adelanto</span></button>
+            <button type="button" data-src="../assets/media/quiver/trilha-magumbi.mp3"><span class="n">03</span><span class="t">Jefe · Magumbi</span><span class="d">adelanto</span></button>
+            <button type="button" data-src="../assets/media/quiver/trilha-nevambi.mp3"><span class="n">04</span><span class="t">Jefa · Nevambi</span><span class="d">adelanto</span></button>
+            <button type="button" data-src="../assets/media/quiver/trilha-egimbi.mp3"><span class="n">05</span><span class="t">Jefe · Egimbi</span><span class="d">adelanto</span></button>
+            <button type="button" data-src="../assets/media/quiver/trilha-angembi.mp3"><span class="n">06</span><span class="t">Jefe final · Angembi</span><span class="d">adelanto</span></button>
+            <button type="button" data-src="../assets/media/quiver/trilha-natal.mp3"><span class="n">07</span><span class="t">Especial de Navidad</span><span class="d">adelanto</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Ficha técnica</p>
+        <h2 class="h2" id="ficha-t" data-split>Quiver en números.</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>Género</dt><dd>Puzzle de flechas<small>Casual, partidas cortas</small></dd></div>
+          <div><dt>Niveles</dt><dd>360<small>200 en Rush · 160 en Clásico</small></dd></div>
+          <div><dt>Jefes</dt><dd>8<small>4 de arena · 4 de fechas especiales</small></dd></div>
+          <div><dt>Plataforma</dt><dd>Android<small>Próximamente en Google Play</small></dd></div>
+          <div><dt>Idiomas</dt><dd>6<small>pt · en · es · hi · ja · ar</small></dd></div>
+          <div><dt>Internet</dt><dd>No hace falta<small>Ranking cuando estés en línea</small></dd></div>
+          <div><dt>Progreso</dt><dd>Google Play Juegos<small>Cambias de celular y sigues</small></dd></div>
+          <div><dt>Precio</dt><dd>Gratis<small>Anuncios y compras opcionales</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>Dónde jugar</p>
+            <h2 class="h2" id="onde-t" data-split>Juega donde <span class="txt-game">estés.</span></h2>
+          </div>
+          <p class="lead" data-reveal>En el celular, desde la tienda que ya usas, o directo en el navegador, sin instalar nada. Cada botón se enciende el día en que Quiver llegue a esa plataforma.</p>
+        </div>
+        <div class="onde__grupos">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Celular · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="quiver:play" aria-disabled="true" aria-label="Quiver en Google Play: próximamente">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Muy pronto</span>
+          </a>
+          <a class="plat glass" data-store="quiver:amazon" aria-disabled="true" aria-label="Quiver en Amazon Appstore: próximamente">
+            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>Muy pronto</span>
+          </a>
+          <a class="plat glass" data-store="quiver:samsung" aria-disabled="true" aria-label="Quiver en Galaxy Store: próximamente">
+            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>Muy pronto</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegador · sin instalar</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="quiver:poki" aria-disabled="true" aria-label="Quiver en Poki: próximamente">
+            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>Muy pronto</span>
+          </a>
+          <a class="plat glass" data-store="quiver:crazygames" aria-disabled="true" aria-label="Quiver en CrazyGames: próximamente">
+            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>Muy pronto</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play es una marca de Google LLC. Amazon, Amazon Appstore y el logotipo de Amazon son marcas de Amazon.com, Inc. o de sus afiliadas. Samsung y Galaxy Store son marcas de Samsung Electronics Co., Ltd. Poki y CrazyGames son marcas de sus respectivos titulares.</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">Acceso anticipado</p>
+            <h2 class="h2" id="lista-t">Juega Quiver <span class="txt-game">antes que nadie.</span></h2>
+            <p class="lead">Únete a la Lista Lipy: invitación a la beta de Quiver, aviso el día del lanzamiento y las próximas arenas en exclusiva.</p>
+            <form class="signup" method="post" data-signup data-origem="quiver" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>Quiero recibir</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Pruebas beta</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Lanzamientos</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Actualizaciones</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="quiver" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-quiver">Tu correo</label>
+                <input id="email-quiver" type="email" name="email" autocomplete="email" inputmode="email" placeholder="tu@correo.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">Quiero la beta <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">Al unirte, aceptas recibir correos de Lipy Games sobre pruebas, lanzamientos y novedades. Puedes darte de baja cuando quieras. Consulta la <a href="privacidade.html">política de privacidad</a>.</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>¡Ya estás en la lista de Quiver!</b>
+                <p>La invitación a la beta y el aviso de lanzamiento llegarán a <span data-ok-email></span>.</p>
+                <button type="button" data-signup-outro>Registrar otro correo</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="Lipy Pass de Quiver">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema.webp" width="600" height="591" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">Beta de<br>Quiver</p>
+              <div class="pass__games"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>Titular</small><b data-pass-nome>¿Tú?</b></div><div><small>Acceso</small><b>Beta</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">QUIVER<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">ACTIVADO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="this-level-hates-you.html" data-game="tlhy" data-vt-scope data-cursor="Siguiente">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/tlhy/tela-grama.webp" width="720" height="1279" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">Siguiente universo · 02 / 03</span> <span class="gn__name"><img data-vt="tlhy" src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">This Level Hates You</span> <span class="gn__go">Entrar al universo <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>Estudio brasileño de juegos móviles. Hecho para los minutos que se vuelven historia.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universos</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Estudio</h4>
+          <ul>
+            <li><a href="index.html#estudio">Sobre Lipy</a></li>
+            <li><a href="index.html#como-criamos">Cómo creamos</a></li>
+            <li><a href="index.html#lista">Lista Lipy (acceso anticipado)</a></li>
+            <li><a href="index.html#contato">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacidad</h4>
+          <ul>
+            <li><a href="privacidade.html">Sitio y Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Eliminar cuenta de Quiver</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — marca de <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Hecho en Brasil · Google Play es una marca de Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Volver arriba"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/es.js?v=feb5fcc8"></script>
+  <script src="../assets/js/lipy.js?v=5cf75073"></script>
+  <script src="../assets/js/jogo.js?v=7bc7d81f"></script>
+  <script src="../assets/js/quiver.js?v=982b5c53"></script>
+</body>
+</html>

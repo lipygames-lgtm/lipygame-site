@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ar" class="no-js" dir="rtl" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=8e41053f"></script>
+  <title>خصوصية الموقع و Lista Lipy — Lipy Games</title>
+  <meta name="description" content="كيف تتعامل Lipy Games مع البيانات على الموقع وفي Lista Lipy (التسجيل في اختبارات بيتا والإصدارات والتحديثات): ما الذي نجمعه، ولأي غرض، ولأي مدة، وكيف تغادر القائمة.">
+  <meta name="theme-color" content="#05070f">
+  <link rel="canonical" href="https://lipygame.com/ar/privacidade.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/privacidade.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/privacidade.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/privacidade.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/privacidade.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/privacidade.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/privacidade.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/privacidade.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Alexandria:wght@500..800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
+  <link rel="stylesheet" href="../assets/css/legal.css?v=5f4a5152">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var v = sessionStorage.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+</head>
+<body>
+  <!--#topo-->
+  <a class="skip" href="#conteudo">انتقل إلى المحتوى</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — الرئيسية"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="التنقل الرئيسي">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">الألعاب <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">الاستوديو</a>
+        <a href="index.html#como-criamos">كيف نبتكر</a>
+        <a href="index.html#contato">تواصل معنا</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="اللغة"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../privacidade.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/privacidade.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/privacidade.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/privacidade.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/privacidade.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/privacidade.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">وصول مبكر <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>ألغاز السهام</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <span><b>This Level Hates You</b><small>منصات ومقالب</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <span><b>Nitrovenant</b><small>أكشن على عجلات</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="القائمة">
+      <a href="index.html#universos">الألعاب</a>
+      <a href="index.html#estudio">الاستوديو</a>
+      <a href="index.html#como-criamos">كيف نبتكر</a>
+      <a href="index.html#lista">وصول مبكر</a>
+      <a href="index.html#contato">تواصل معنا</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../privacidade.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/privacidade.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/privacidade.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/privacidade.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/privacidade.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/privacidade.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo" class="legal">
+    <div class="wrap">
+      <header class="legal__head">
+        <p class="eyebrow">الخصوصية</p>
+        <h1 class="h1" data-split>بياناتك، <span class="txt-cool">بلا بنود خفية.</span></h1>
+        <p class="lead">توضّح هذه الصفحة ما يحدث لمعلوماتك على موقع Lipy Games وفي Lista Lipy — القائمة البريدية الخاصة باختبارات بيتا والإصدارات والتحديثات. ولكل لعبة سياستها الخاصة، التي تفصّل ما يحدث داخلها.</p>
+        <p class="legal__data" style="margin-top:24px">آخر تحديث: 26 سبتمبر 2026</p>
+      </header>
+
+      <div class="legal__grid">
+        <nav class="legal__toc glass" aria-label="في هذه الصفحة">
+          <a href="#quem">من نحن</a>
+          <a href="#site">ما يحفظه الموقع</a>
+          <a href="#lista-dados">Lista Lipy</a>
+          <a href="#para-que">لأي غرض نستخدمها</a>
+          <a href="#onde">أين تُحفظ البيانات</a>
+          <a href="#tempo">مدة الاحتفاظ</a>
+          <a href="#direitos">حقوقك</a>
+          <a href="#sair">إلغاء الاشتراك</a>
+          <a href="#jogos">سياسة كل لعبة</a>
+        </nav>
+
+        <article class="prosa">
+          <h2 id="quem">من نحن</h2>
+          <p>تُعد <strong>Lipy Games</strong> العلامة التجارية للألعاب التابعة لشركة <strong>Lipy Serviços Digitais LTDA</strong>، المسجلة برقم CNPJ 65.260.227/0001-11، وهي الجهة المتحكّمة في البيانات الموضّحة هنا. لأي مسألة تتعلق بالخصوصية، راسلنا على <a href="mailto:bluetubeoficial@gmail.com?subject=Privacidade%20%E2%80%94%20Lipy%20Games">bluetubeoficial@gmail.com</a>.</p>
+
+          <h2 id="site">ما يحفظه الموقع على جهازك</h2>
+          <p>لا يستخدم الموقع ملفات تعريف الارتباط الإعلانية ولا أدوات تحليل الزيارات. ولا يحفظ سوى ما يلي، في مساحة التخزين الخاصة بمتصفحك:</p>
+          <ul>
+            <li>ما إذا كانت الرسوم المتحركة الافتتاحية قد ظهرت بالفعل في هذه الزيارة، ونوع الانتقال الذي يُعرض بين الصفحات (ويُحذف ذلك عند إغلاق علامة التبويب)؛</li>
+            <li>اللغة التي اخترتها من العلم في قائمة التنقّل، والدولة التي تتصفّح منها (رمز الدولة فقط، مثل «BR»)، لفتح الموقع بلغتك في زياراتك القادمة؛</li>
+            <li>عنوان البريد الإلكتروني الذي سجّلته في Lista Lipy، وذلك فقط لعرض بطاقتك على أنها «مُفعَّلة» عند عودتك. وتبقى هذه المعلومة على جهازك، ويمكنك حذفها بمسح بيانات الموقع من المتصفح.</li>
+          </ul>
+          <p>تُحمَّل خطوط الموقع من Google Fonts: ولتقديمها، تتلقى خوادم Google عنوان IP الخاص بجهازك، كما يحدث في أي موقع يستخدم هذه الخدمة.</p>
+          <p>في زيارتك الأولى، ولفتح الموقع بلغتك، يسأل متصفحك خادمنا (Supabase) عن الدولة التي يأتي منها الاتصال. ولا يقرأ الخادم إلا رمز الدولة الذي تحدده الشبكة نفسها، ثم يردّ فورًا: فهذا الاستعلام لا يُحفظ ولا يُربط بك.</p>
+
+          <h2 id="lista-dados">ما تتلقاه Lista Lipy</h2>
+          <p>عند انضمامك إلى القائمة، نحفظ ما يلي:</p>
+          <ul>
+            <li>عنوان <strong>بريدك الإلكتروني</strong>؛</li>
+            <li>ما تريد تلقّيه (اختبارات بيتا، والإصدارات، والتحديثات) والألعاب التي اخترتها؛</li>
+            <li>الصفحة التي سجّلت منها واللغة التي سجّلت بها، والتاريخ، و<strong>الدولة التقريبية</strong> للاتصال (كما تحددها الشبكة؛ ولا يُحفظ عنوان IP الخاص بك)؛</li>
+            <li>وللحماية من إساءة الاستخدام، رمزًا مشفّرًا مشتقًا من عنوان IP (اسمًا مستعارًا، لا العنوان نفسه)، يُستخدم فقط للحد من التسجيلات المتكررة، ويُحذف في غضون يومين كحد أقصى.</li>
+          </ul>
+          <p>لا نطلب اسمًا ولا رقم هاتف ولا عمرًا ولا كلمة مرور. ولا يوجد حساب لإنشائه.</p>
+
+          <h2 id="para-que">لأي غرض نستخدمها</h2>
+          <p>لما طلبته فقط: إرسال دعوات لتجربة ألعابنا قبل إطلاقها، وإعلامك حين تصل لعبة إلى المتاجر، وإطلاعك على مستجدات ألعابنا. والأساس القانوني هو <strong>موافقتك</strong> وفقًا للقانون العام لحماية البيانات في البرازيل (Lei Geral de Proteção de Dados – LGPD، المادة 7، البند I)، ويمكنك سحبها متى شئت.</p>
+          <p>لا نبيع بيانات اشتراكك، ولا نؤجّرها، ولا نسلّمها إلى شركات أخرى لتستخدمها في التسويق.</p>
+
+          <h2 id="onde">أين تُحفظ البيانات</h2>
+          <p>تُحفظ القائمة في قاعدة بيانات تابعة لـ Lipy Games على Supabase، وهي خدمة سحابية تقع خوادمها في الولايات المتحدة. لذلك، ينطوي التسجيل على نقل دولي للبيانات (LGPD، المادة 33)، يجري عبر مزوّد يعتمد تدابير أمنية ولا يعالج البيانات إلا لصالح Lipy. وجدول القائمة مُغلق: لا يستطيع الموقع إلا <em>إضافة</em> اشتراك أو <em>تسجيل إلغائه</em>، ولا يمكنه قراءة القائمة أبدًا.</p>
+
+          <h2 id="tempo">مدة الاحتفاظ</h2>
+          <p>طوال مدة اشتراكك. وعند مغادرتك القائمة، تتوقف الرسائل فورًا — ولدواعٍ أمنية، لا يستطيع أحد إعادة تسجيل هذا البريد الإلكتروني عبر الموقع. وإن أردت العودة، أو حذف السجل نهائيًا، فما عليك إلا أن تطلب ذلك عبر البريد الإلكتروني المذكور أعلاه.</p>
+
+          <h2 id="direitos">حقوقك</h2>
+          <p>بموجب LGPD (المادة 18)، يحق لك أن تطلب تأكيد ما إذا كنا نحتفظ ببيانات تخصك، والاطلاع عليها، وتصحيحها، وحذفها، ومعرفة الجهات التي نشاركها معها (لا أحد، باستثناء مزوّد الخدمة السحابية)، وسحب موافقتك. راسلنا على <a href="mailto:bluetubeoficial@gmail.com?subject=Meus%20dados%20%E2%80%94%20Lista%20Lipy">bluetubeoficial@gmail.com</a> مع ذكر البريد الإلكتروني المسجَّل. ويمكنك أيضًا تقديم شكوى إلى Autoridade Nacional de Proteção de Dados (ANPD)، أي الهيئة الوطنية لحماية البيانات في البرازيل.</p>
+
+          <h2 id="sair">إلغاء الاشتراك في Lista Lipy</h2>
+          <div class="quadro glass">
+            <p>أدخل البريد الإلكتروني المسجَّل. ولدواعٍ أمنية، يكون الرد نفسه سواء أكان البريد في القائمة أم لا.</p>
+            <form class="sair" method="post" data-sair novalidate>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-sair">البريد الإلكتروني المسجَّل</label>
+                <input id="email-sair" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required>
+                <button class="btn btn--glass glass glass--pill" type="submit">إلغاء الاشتراك <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <h2 id="jogos">سياسة كل لعبة</h2>
+          <p>ما يحدث داخل كل لعبة (التقدم، والإعلانات، والمشتريات) مذكور في سياستها الخاصة:</p>
+          <ul>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver: Arrow Puzzle</a> · <a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">حذف حساب Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li>لعبة This Level Hates You: تُنشر سياستها مع إطلاق اللعبة.</li>
+          </ul>
+          <p>إذا تغيّرت هذه الصفحة، يتغيّر التاريخ المذكور في أعلاها أيضًا.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>استوديو برازيلي لألعاب الجوّال. صُنع للدقائق التي تتحول إلى حكايات.</p>
+        </div>
+        <div class="foot__col">
+          <h4>العوالم</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>الاستوديو</h4>
+          <ul>
+            <li><a href="index.html#estudio">عن Lipy</a></li>
+            <li><a href="index.html#como-criamos">كيف نبتكر</a></li>
+            <li><a href="index.html#lista">Lista Lipy (وصول مبكر)</a></li>
+            <li><a href="index.html#contato">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>الخصوصية</h4>
+          <ul>
+            <li><a href="privacidade.html">الموقع و Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">حذف حساب Quiver</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — علامة تجارية لشركة <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>صُنع في البرازيل · Google Play علامة تجارية لشركة Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="العودة إلى الأعلى"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/ar.js?v=2f557638"></script>
+  <script src="../assets/js/lipy.js?v=5cf75073"></script>
+</body>
+</html>
