@@ -10,6 +10,9 @@
 
   var stage = $('.stage'), sticky = $('.stage__sticky'), screen = $('.stage__screen'), video = $('.stage__video');
   var phone = $('.stage__phone'), apps = $$('.stage__app'), ambs = $$('.amb'), words = $$('[data-word]'), caps = $$('.cap');
+  // fundos das cenas do palco (só aparecem depois de rolar): baixam depois do "load", sem disputar banda com a abertura no 4G
+  var poeFundos = function () { ambs.forEach(function (a) { var u = a.getAttribute('data-bg'); if (u) a.style.backgroundImage = 'url("' + u + '")'; }); };
+  if (document.readyState === 'complete') poeFundos(); else window.addEventListener('load', poeFundos, { once: true });
   var dots = $$('.stage__dots li'), dotsBox = $('.stage__dots');
   var heroInner = $('.hero__inner'), heroFoot = $('.hero__foot'), hud = $$('.hud > li'), shade = $('.stage__shade');
 

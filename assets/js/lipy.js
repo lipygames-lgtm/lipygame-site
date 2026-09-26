@@ -1066,7 +1066,8 @@
     var cont = $('.loader__count b', l), barra = $('.loader__bar i', l), marca = $('.loader__mark', l);
     var tarefas = [];
     var espera = function (p, max) { return Promise.race([p, new Promise(function (r) { setTimeout(r, max); })]); };
-    if (d.fonts && d.fonts.ready) tarefas.push(espera(d.fonts.ready, 3000));
+    // no celular a abertura espera menos pelas fontes (elas trocam sozinhas quando chegam)
+    if (d.fonts && d.fonts.ready) tarefas.push(espera(d.fonts.ready, TOUCH ? 1800 : 3000));
     $$('[data-preload]').forEach(function (m) {
       tarefas.push(espera(new Promise(function (r) {
         if (m.tagName === 'VIDEO') { if (m.readyState >= 3) r(); else { m.addEventListener('canplaythrough', r, { once: true }); m.addEventListener('error', r, { once: true }); } }
@@ -1082,7 +1083,8 @@
     tarefas.forEach(function (t) { t.then(function () { feito++; avanca(18 + 72 * feito / tarefas.length, 0.9); }); });
     return new Promise(function (resolve) {
       Promise.all(tarefas).then(function () {
-        var tl = gsap.timeline({ delay: 0.25 });
+        var tl = gsap.timeline({ delay: TOUCH ? 0.1 : 0.25 });
+        if (TOUCH) tl.timeScale(1.35); // celular: a mesma abertura, mais ágil (quem está no 4G tem menos paciência)
         tl.to(o, { v: 100, duration: 0.7, ease: 'power2.inOut', onUpdate: mostra })
           .to(marca, { scale: 0.86, duration: 0.5, ease: 'power2.in' })
           .to($$('.loader__count, .loader__label, .loader__ring, .loader__glass', l), { opacity: 0, duration: 0.4 }, '<')

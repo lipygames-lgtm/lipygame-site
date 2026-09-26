@@ -31,9 +31,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
-  <link rel="preload" as="image" href="../assets/media/video/hero-poster.webp">
+  <link rel="preload" as="image" href="../assets/media/video/hero-poster-movel.webp" media="(max-width: 599px)" fetchpriority="high">
+  <link rel="preload" as="image" href="../assets/media/video/hero-poster.webp" media="(min-width: 600px)" fetchpriority="high">
   <link rel="stylesheet" href="../assets/css/lipy.css?v=a0056683">
-  <link rel="stylesheet" href="../assets/css/home.css?v=6ec49724">
+  <link rel="stylesheet" href="../assets/css/home.css?v=559a3a1f">
   <script>
     /* antes da 1ª pintura: liga o JS, decide pré-carregador / véu de chegada */
     (function (h) {
@@ -68,7 +69,7 @@
     <div class="loader__core">
       <div class="loader__ring"></div>
       <div class="loader__glass glass"></div>
-      <img class="loader__mark" src="../assets/media/marca/emblema.webp" width="600" height="591" alt="">
+      <img class="loader__mark" src="../assets/media/marca/emblema-sm.webp" width="320" height="315" alt="">
     </div>
     <div class="loader__count"><b>000</b><sup>%</sup></div>
     <div class="loader__label">Lipy Games<br><b>अनुभव लोड हो रहा है</b></div>
@@ -121,15 +122,15 @@
     </div>
     <div class="mega glass" id="mega">
       <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
-        <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">
+        <img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
         <span><b>Quiver: Arrow Puzzle</b><small>तीरों की पहेली</small></span>
       </a>
       <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
-        <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">
+        <img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
         <span><b>This Level Hates You</b><small>शरारतों भरा प्लेटफ़ॉर्मर</small></span>
       </a>
       <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
-        <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">
+        <img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
         <span><b>Nitrovenant</b><small>पहियों पर एक्शन</small></span>
       </a>
     </div>
@@ -144,9 +145,9 @@
       <a href="index.html#contato">संपर्क</a>
     </nav>
     <div class="menu__games">
-      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="">Quiver</a>
-      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="">This Level</a>
-      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="">Nitrovenant</a>
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="../index.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -166,23 +167,31 @@
     <section class="stage" id="topo" aria-label="ओपनिंग">
       <div class="stage__sticky">
         <div class="stage__amb" aria-hidden="true">
-          <div class="amb" data-amb="0" style="background-image:url(../assets/media/quiver/fundo-menu.webp);--tint:rgba(255,140,20,.55)"></div>
-          <div class="amb" data-amb="1" style="background-image:url(../assets/media/tlhy/fundo-grama.webp);--tint:rgba(40,110,255,.55)"></div>
-          <div class="amb" data-amb="2" style="background-image:url(../assets/media/nitro/arte.webp);--tint:rgba(255,60,10,.55)"></div>
+          <div class="amb" data-amb="0" data-bg="../assets/media/quiver/fundo-menu.webp" style="--tint:rgba(255,140,20,.55)"></div>
+          <div class="amb" data-amb="1" data-bg="../assets/media/tlhy/fundo-grama.webp" style="--tint:rgba(40,110,255,.55)"></div>
+          <div class="amb" data-amb="2" data-bg="../assets/media/nitro/arte.webp" style="--tint:rgba(255,60,10,.55)"></div>
           <div class="stage__words">
             <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span>
           </div>
         </div>
 
         <div class="stage__screen">
-          <video class="stage__video" muted loop playsinline autoplay preload="auto" poster="../assets/media/video/hero-poster.webp" data-preload aria-hidden="true" tabindex="-1"></video>
+          <video class="stage__video" muted loop playsinline autoplay preload="auto" data-poster="../assets/media/video/hero-poster.webp" data-poster-movel="../assets/media/video/hero-poster-movel.webp" aria-hidden="true" tabindex="-1"></video>
           <script>
             (function (v) {
-              var peq = innerWidth < 900 || (navigator.connection && navigator.connection.saveData);
-              var poe = function () { v.src = (document.documentElement.getAttribute('data-base') || '') + 'assets/media/video/' + (peq ? 'hero-720.mp4' : 'hero-1080.mp4'); };
-              // enquanto a raiz descobre o idioma, nada de baixar 5 MB de vídeo numa página que pode ser trocada
-              if (document.documentElement.classList.contains('is-detectando')) document.addEventListener('lipy:idioma', poe, { once: true });
-              else poe();
+              var h = document.documentElement;
+              // celular (tela em pé, < 600 px): vídeo e capa recortados em pé, bem mais leves; tablet e computador: 1080p
+              var movel = innerWidth < 600;
+              var c = navigator.connection || {};
+              v.poster = v.getAttribute(movel ? 'data-poster-movel' : 'data-poster');
+              // "economia de dados" ou rede 2G/3G: fica só a capa, sem baixar vídeo
+              if (c.saveData || /(^|-)(2g|3g)$/.test(c.effectiveType || '')) { h.classList.add('sem-video'); v.removeAttribute('autoplay'); return; }
+              var poe = function () { v.src = (h.getAttribute('data-base') || '') + 'assets/media/video/' + (movel ? 'hero-movel.mp4' : 'hero-1080.mp4'); };
+              // o vídeo começa depois do essencial (estilos, scripts, fontes, imagens do topo): no 4G ele não disputa banda com a abertura
+              var quando = function () { if (document.readyState === 'complete') poe(); else addEventListener('load', poe, { once: true }); };
+              // enquanto a raiz descobre o idioma, nada de baixar vídeo numa página que pode ser trocada
+              if (h.classList.contains('is-detectando')) document.addEventListener('lipy:idioma', quando, { once: true });
+              else quando();
               if (matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.autoplay = false; }
             })(document.currentScript.previousElementSibling);
           </script>
@@ -290,7 +299,7 @@
       <div class="unis__list wrap">
         <!-- Quiver -->
         <article class="uni uni--quiver" data-vt-scope style="--c1:#ffb627;--c2:#ff6a00;--c3:#2a0f00">
-          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/quiver/capa.webp" width="1794" height="876" alt="" loading="lazy" decoding="async"></div>
+          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy" decoding="async"></div>
           <div class="uni__dim" aria-hidden="true"></div>
           <div class="uni__grid">
             <div class="uni__text">
@@ -569,7 +578,7 @@
           <div class="vip__halo" aria-hidden="true"></div>
           <div class="pass glass" data-tilt="9" aria-label="Lipy Pass: अर्ली एक्सेस पास" role="img">
             <div class="pass__foil" aria-hidden="true"></div>
-            <div class="pass__top"><img src="../assets/media/marca/emblema.webp" width="600" height="591" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+            <div class="pass__top"><img src="../assets/media/marca/emblema-sm.webp" width="320" height="315" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
             <p class="pass__title">अर्ली<br>एक्सेस</p>
             <div class="pass__games">
               <img src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">
@@ -664,7 +673,7 @@
   <script src="../assets/vendor/CustomEase.min.js"></script>
   <script src="../assets/vendor/lenis.min.js"></script>
   <script src="../assets/js/textos/hi.js?v=4c35d3f9"></script>
-  <script src="../assets/js/lipy.js?v=5cf75073"></script>
-  <script src="../assets/js/home.js?v=cae20623"></script>
+  <script src="../assets/js/lipy.js?v=9ff484e2"></script>
+  <script src="../assets/js/home.js?v=35bc772b"></script>
 </body>
 </html>
