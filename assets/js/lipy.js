@@ -968,6 +968,73 @@
     });
   }
 
+  /* ---------------- personagens 3D com transparência (vídeo "empilhado") ----------------
+     O MP4 traz a cor em cima e a máscara (alfa) embaixo — gerado pelo tools/midia.mjs (ALFAS). Um shader WebGL
+     junta as duas num canvas transparente: funciona em todo navegador, inclusive iPhone (WebM transparente não).
+     Uso: <video data-alfa="assets/…mp4" muted loop playsinline preload="none"></video> dentro de uma caixa com a
+     imagem parada. Só baixa perto da tela e só toca enquanto aparece; sem WebGL, com movimento reduzido ou em
+     "economia de dados", fica a imagem parada. */
+  function alfas() {
+    var vids = $$('video[data-alfa]');
+    var con = navigator.connection || {};
+    if (!vids.length || RM || con.saveData || !('IntersectionObserver' in W)) return;
+    var RVFC = 'requestVideoFrameCallback' in HTMLVideoElement.prototype;
+    var VS = 'attribute vec2 p;varying vec2 u;void main(){u=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}';
+    // cor já vem multiplicada pelo alfa (fundo preto): c <= a evita brilho de ruído da compressão
+    var FS = 'precision mediump float;uniform sampler2D t;varying vec2 u;void main(){' +
+      'float a=clamp((texture2D(t,vec2(u.x,.5+u.y*.5)).r-.03)/.94,0.,1.);' +
+      'vec3 c=min(texture2D(t,vec2(u.x,u.y*.5)).rgb,vec3(a));gl_FragColor=vec4(c,a);}';
+    vids.forEach(function (v) {
+      var caixa = v.parentNode, cv = d.createElement('canvas');
+      cv.className = 'alfa';
+      cv.setAttribute('aria-hidden', 'true');
+      var gl = cv.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false });
+      if (!gl) return;
+      var sh = function (tipo, src) { var s = gl.createShader(tipo); gl.shaderSource(s, src); gl.compileShader(s); return s; };
+      var pr = gl.createProgram();
+      gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS));
+      gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS));
+      gl.linkProgram(pr);
+      if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
+      gl.useProgram(pr);
+      gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+      var loc = gl.getAttribLocation(pr, 'p');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      caixa.appendChild(cv);
+      v.muted = true; v.loop = true; v.playsInline = true;
+      var ligado = false, pronto = false, pedido = 0;
+      var desenha = function () {
+        pedido = 0;
+        if (v.readyState >= 2 && v.videoWidth) {
+          if (cv.width !== v.videoWidth) { cv.width = v.videoWidth; cv.height = v.videoHeight / 2; gl.viewport(0, 0, cv.width, cv.height); }
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, v);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          if (!pronto) { pronto = true; caixa.classList.add('is-alfa'); }
+        }
+        if (ligado) pedido = RVFC ? v.requestVideoFrameCallback(desenha) : requestAnimationFrame(desenha);
+      };
+      var para = function () { if (pedido) { if (RVFC) v.cancelVideoFrameCallback(pedido); else cancelAnimationFrame(pedido); pedido = 0; } };
+      var liga = function () {
+        if (ligado) return;
+        if (!v.getAttribute('src')) v.src = v.getAttribute('data-alfa');
+        ligado = true;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+        para();
+        desenha();
+      };
+      var desliga = function () { ligado = false; para(); v.pause(); };
+      new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) liga(); else desliga(); }); }, { rootMargin: '200px 0px' }).observe(caixa);
+    });
+  }
+
   /* ---------------- rodapé ---------------- */
   function rodape() {
     var p = $('.foot__word');
@@ -1077,7 +1144,8 @@
     });
     var feito = 0, o = { v: 0 };
     var mostra = function () { cont.textContent = ('00' + Math.round(o.v)).slice(-3); barra.style.transform = 'scaleX(' + (o.v / 100) + ')'; };
-    gsap.to(marca, { clipPath: 'inset(0% 0 0 0)', duration: 1.4, ease: 'lipyIO', delay: 0.15 });
+    // revela de baixo para cima; o polígono passa das bordas da imagem para o brilho em volta não ficar preso num retângulo
+    gsap.to(marca, { clipPath: 'polygon(-60% -60%, 160% -60%, 160% 160%, -60% 160%)', duration: 1.4, ease: 'lipyIO', delay: 0.15, onComplete: function () { marca.style.clipPath = 'none'; } });
     var avanca = function (alvo, dur) { return gsap.to(o, { v: alvo, duration: dur, ease: 'power2.out', onUpdate: mostra, overwrite: true }); };
     avanca(18, 0.8);
     tarefas.forEach(function (t) { t.then(function () { feito++; avanca(18 + 72 * feito / tarefas.length, 0.9); }); });
@@ -1111,6 +1179,7 @@
     contadores();
     tracos();
     marquees();
+    alfas();
     lojas();
     players();
     galerias();

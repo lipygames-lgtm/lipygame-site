@@ -113,3 +113,10 @@
   .elenco__grid { grid-template-columns: 1fr; }
   .deck__mesa { height: 420px; }
 }
+
+/* elenco: personagens 3D animados (lipy.js → alfas) entram por cima da foto parada */
+.ator__foto canvas.alfa { height: 224px; width: auto; aspect-ratio: 480 / 450; filter: drop-shadow(0 20px 24px rgba(0, 0, 0, .5)); transition: opacity .6s, transform .6s var(--ease-spring); }
+.ator:hover .ator__foto canvas.alfa { transform: translateY(-8px) rotate(-3deg); }
+.ator__foto.is-alfa > img:not(.ator__b) { opacity: 0; }
+/* o "amigo" continua com a brincadeira: passar o mouse (ou tocar) revela o maligno por cima da animação */
+.ator--amigo:hover .ator__foto canvas.alfa, .ator--amigo.is-mau .ator__foto canvas.alfa { opacity: 0; }
