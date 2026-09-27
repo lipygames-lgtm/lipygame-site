@@ -88,11 +88,9 @@
   };
   setTimeout(function () { decide(doAparelho()); }, 1000);
   try {
-    fetch(SUPABASE + '/rest/v1/rpc/site_pais', {
-      method: 'POST',
-      headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json' },
-      body: '{}'
-    })
+    // GET simples (chave na URL, sem cabeçalhos): o navegador não faz a consulta prévia de CORS ("preflight"),
+    // uma ida e volta a menos — no celular isso decide se a resposta chega antes do limite de 1 s
+    fetch(SUPABASE + '/rest/v1/rpc/site_pais?apikey=' + CHAVE)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (p) {
         // guardado mesmo se chegar atrasado: vale para as próximas visitas (e para o aviso de idioma)
