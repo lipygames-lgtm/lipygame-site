@@ -635,3 +635,15 @@ html:lang(ja) body { line-break: strict; word-break: normal; overflow-wrap: anyw
 html:lang(ja) :is(h1, h2, h3, .t-display) { word-break: normal; word-break: auto-phrase; line-break: strict; overflow-wrap: normal; }
 /* rótulos em caixa alta não existem nessas escritas: letra um pouco maior para não sumir */
 html:lang(ar) .olho, html:lang(hi) .olho, html:lang(ja) .olho { font-size: 12.5px; }
+
+/* votos mais espertos: motivo do "nao funcionou", codigo suspeito (muitos "nao" em 48 h) e codigo que pode esgotar */
+.votos { flex-wrap: wrap; justify-content: flex-end; }
+.votos__motivos { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px; margin-top: 6px; }
+.votos__motivos > span { font-size: 11px; color: var(--txt-3); }
+.votos__motivos button { height: 26px; padding: 0 10px; border-radius: 999px; font-family: var(--f-mono); font-size: 11px; color: var(--txt); background: rgba(255, 90, 110, .14); box-shadow: inset 0 0 0 1px rgba(255, 90, 110, .35); }
+.votos__motivos button:hover { background: rgba(255, 90, 110, .26); }
+.cod--suspeito { box-shadow: inset 0 0 0 1px rgba(255, 90, 110, .45); }
+.cod--suspeito .cod__codigo { opacity: .7; }
+.cod__alerta { grid-column: 1 / -1; margin: 0; padding: 8px 12px; border-radius: 10px; font-size: 13px; color: #ffd0d6; background: rgba(255, 90, 110, .12); }
+.cod__limite { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; color: #ffe0a3; background: rgba(255, 182, 39, .14); }
+.cod__limite .ic { font-size: 13px; }

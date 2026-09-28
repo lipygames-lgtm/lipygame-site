@@ -34,6 +34,7 @@
       setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
     })(document.documentElement);
   </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 </head>
 <body>
   <!--#topo-->
@@ -143,6 +144,7 @@
           <a href="#quem">Quem somos</a>
           <a href="#site">O que o site guarda</a>
           <a href="#hub">Lipy Hub</a>
+          <a href="#medicao">Contagem de visitas</a>
           <a href="#lista-dados">A Lista Lipy</a>
           <a href="#para-que">Para que usamos</a>
           <a href="#onde">Onde os dados ficam</a>
@@ -157,7 +159,7 @@
           <p><strong>Lipy Games</strong> é a marca de jogos da <strong>Lipy Serviços Digitais LTDA</strong>, CNPJ 65.260.227/0001-11, que é a controladora dos dados descritos aqui. Para qualquer assunto sobre privacidade, escreva para <a href="mailto:bluetubeoficial@gmail.com?subject=Privacidade%20%E2%80%94%20Lipy%20Games">bluetubeoficial@gmail.com</a>.</p>
 
           <h2 id="site">O que o site guarda no seu aparelho</h2>
-          <p>O site não usa cookies de propaganda nem ferramentas de análise de visitas. Ele guarda apenas, no armazenamento do seu próprio navegador:</p>
+          <p>O site não usa cookies de propaganda. A contagem de visitas é feita sem cookies (veja “Contagem de visitas”, abaixo). O site guarda apenas, no armazenamento do seu próprio navegador:</p>
           <ul>
             <li>se a animação de abertura já apareceu nesta visita e qual transição mostrar entre as páginas (apagado quando você fecha a aba);</li>
             <li>o idioma que você escolheu na bandeira do menu e o país de onde você acessa (só a sigla, como “BR”), para abrir o site no seu idioma nas próximas visitas;</li>
@@ -169,10 +171,20 @@
           <h2 id="hub">Lipy Hub</h2>
           <p>O Lipy Hub é a parte do site com códigos de jogos conferidos, ferramentas e guias. Nele não existe conta, login nem cadastro.</p>
           <ul>
-            <li>No seu aparelho, o Hub guarda a região escolhida nas abas de códigos e em qual botão você tocou em cada código (“funcionou” ou “não funcionou”), para mostrar o botão aceso quando você voltar.</li>
-            <li>Quando você vota, o nosso servidor (Supabase) recebe o código votado, o voto, o <strong>país aproximado</strong> da conexão e um código cifrado derivado do endereço de conexão (um pseudônimo, não o endereço em si), usado só para contar um voto por conexão e barrar robôs. O seu endereço de IP não é guardado.</li>
+            <li>No seu aparelho, o Hub guarda a região escolhida nas abas de códigos, em qual botão você tocou em cada código (“funcionou” ou “não funcionou”), para mostrar o botão aceso quando você voltar, e um código aleatório do aparelho, que só serve para contar um voto por aparelho.</li>
+            <li>Quando você vota, o nosso servidor (Supabase) recebe o código votado, o voto, o <strong>país aproximado</strong> da conexão e um código cifrado derivado do endereço de conexão e do código aleatório do aparelho (um pseudônimo, não o endereço em si), usado só para contar um voto por aparelho e barrar robôs. O seu endereço de IP não é guardado.</li>
             <li>Os votos servem para tirar da lista, rápido, o código que parou de funcionar, e são apagados em até 60 dias. A base é o nosso legítimo interesse em manter a lista correta (LGPD, art. 7º, IX). Para retirar o seu voto, toque de novo no mesmo botão.</li>
           </ul>
+
+          <h2 id="medicao">Contagem de visitas</h2>
+          <p>Para saber quantas pessoas visitam o site e o que mais ajuda, usamos o Umami (Umami Software, Inc.), uma ferramenta de estatísticas que não usa cookies e não grava nada no seu aparelho.</p>
+          <ul>
+            <li>O que é contado: a página visitada, o site de onde você veio, o tipo de navegador, de sistema e de aparelho, o idioma e o <strong>país aproximado</strong>.</li>
+            <li>No Lipy Hub também contamos algumas ações, sem saber quem fez: copiar um código, votar, buscar, trocar de idioma e abrir a fonte oficial de um código. O termo buscado é guardado com no máximo 40 caracteres, e buscas com e-mail, link ou números longos são descartadas. Não digite dados pessoais na busca.</li>
+            <li>O seu endereço de IP serve só para calcular o país e contar a visita, e não é guardado. Os números são sempre somados: não criamos perfil, não fazemos publicidade com eles e não os cruzamos com outras bases.</li>
+            <li>Os dados ficam em servidores do Umami na União Europeia (transferência internacional, LGPD, art. 33) e são guardados por até 6 meses.</li>
+          </ul>
+          <p>A base é o nosso legítimo interesse em entender o uso do site e melhorá-lo (LGPD, art. 7º, IX), sempre na configuração mais protetiva, porque o site é usado também por adolescentes. Se o seu navegador pedir para não ser rastreado (“Do Not Track”), a visita não é contada.</p>
 
           <h2 id="lista-dados">O que a Lista Lipy recebe</h2>
           <p>Quando você entra na lista, guardamos:</p>

@@ -12,6 +12,11 @@
   var T = W.HUB_TEXTOS || {};
   var t = function (k, v) { var s = T[k] || k; if (v) s = s.replace(/\{(\w+)\}/g, function (m, n) { return v[n] != null ? v[n] : m; }); return s; };
   var guarda = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  /* medição (Umami, sem cookie; só existe se o script dele estiver na página). Mesmos nomes do GA4 depois. */
+  var JOGO = html.getAttribute('data-jogo') || '';
+  var mede = function (nome, dados) { try { if (W.umami && typeof W.umami.track === 'function') W.umami.track(nome, dados); } catch (e) {} };
+  // termo de busca sem dado pessoal: minúsculo, até 40 caracteres; com @, link ou número longo não vai
+  var termoLimpo = function (s) { s = (s || '').toLowerCase().trim().slice(0, 40); return /@|http|www\.|\d{5,}/.test(s) ? '[omitido]' : s; };
 
   /* ---------------- menu do celular ---------------- */
   var hh = $('.hh'), menu = $('.hh__menu');
@@ -26,6 +31,9 @@
   /* ---------------- troca de idioma (details): fecha ao clicar fora ou com Esc ---------------- */
   var idm = $('[data-idioma]');
   if (idm) {
+    $$('.hh__idiomas a', idm).forEach(function (a) {
+      a.addEventListener('click', function () { var para = (a.getAttribute('hreflang') || '').slice(0, 2); if (para && para !== LANG) mede('language_switch', { from_lang: LANG, to_lang: para, method: 'menu' }); });
+    });
     d.addEventListener('click', function (e) { if (idm.open && !idm.contains(e.target)) idm.open = false; });
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && idm.open) { idm.open = false; $('summary', idm).focus(); } });
   }
@@ -62,6 +70,7 @@
       copia(cod).then(function () {
         if (card) { card.classList.remove('is-copiado'); void card.offsetWidth; card.classList.add('is-copiado'); }
         if (aviso) aviso.textContent = t('Código {c} copiado', { c: cod });
+        mede('code_copy', { game: JOGO, code_status: 'active', page_lang: LANG, position: $$('[data-copiar]').indexOf(bt) + 1 });
         setTimeout(function () { if (card) card.classList.remove('is-copiado'); }, 2200);
       }, function () { if (aviso) aviso.textContent = t('Não deu para copiar. Selecione o código e copie à mão.'); });
     });
@@ -108,6 +117,33 @@
   var placar = function (box, p) {
     $('.sim b', box).textContent = p && p.sim > 0 ? p.sim : '';
     $('.nao b', box).textContent = p && p.nao > 0 ? p.nao : '';
+    // muitos "não" nas últimas 48 h (conta do servidor): o código ganha um aviso, sem sumir da lista
+    var card = box.closest('.cod'), suspeito = !!(p && p.estado === 'provavel_expirado');
+    if (!card) return;
+    card.classList.toggle('cod--suspeito', suspeito);
+    var av = $('.cod__alerta', card);
+    if (suspeito && !av) { av = d.createElement('p'); av.className = 'cod__alerta'; av.setAttribute('role', 'status'); av.textContent = t('Vários jogadores disseram que este código parou de funcionar (últimas 48 h).'); card.appendChild(av); }
+    else if (!suspeito && av) av.remove();
+  };
+  // depois de um "não funcionou": por quê? (expirou / já tinha usado / deu inválido) — ajuda a conferência a agir certo
+  var pedeMotivo = function (box, id) {
+    if ($('.votos__motivos', box)) return;
+    var m = d.createElement('span');
+    m.className = 'votos__motivos';
+    m.innerHTML = '<span></span>';
+    $('span', m).textContent = t('Por quê?');
+    [['expirado', t('Expirou')], ['ja_usei', t('Já tinha usado')], ['invalido', t('Deu inválido')]].forEach(function (op) {
+      var b = d.createElement('button');
+      b.type = 'button';
+      b.textContent = op[1];
+      b.addEventListener('click', function () {
+        m.remove();
+        if (aviso) aviso.textContent = t('Obrigado! Isso ajuda a conferir mais rápido.');
+        rpc('hub_votar', { p_chave: id, p_voto: 'nao', p_dispositivo: aparelho(), p_motivo: op[0] }).then(function (r) { if (r && r.ok) placar(box, r); });
+      });
+      m.appendChild(b);
+    });
+    box.appendChild(m);
   };
   // código aleatório deste aparelho: quem divide o IP (4G da operadora) não sobrescreve o voto do outro
   var aparelho = function () {
@@ -144,6 +180,9 @@
           box.removeAttribute('aria-busy');
           if (r && r.ok) {
             placar(box, r);
+            mede('vote', { game: id.split(':')[0], vote_value: novo === 'sim' ? 'worked' : novo === 'nao' ? 'not_worked' : 'removed', page_lang: LANG });
+            if (novo === 'nao') pedeMotivo(box, id);
+            else { var mm = $('.votos__motivos', box); if (mm) mm.remove(); }
             if (aviso) aviso.textContent = novo ? t('Obrigado! Seu voto ajuda outros jogadores.') : t('Voto retirado.');
             return;
           }
@@ -208,7 +247,18 @@
     var fecha = function () { paleta.hidden = true; d.body.style.overflow = ''; if (voltaFoco) voltaFoco.focus(); };
     $$('[data-busca]').forEach(function (b) { b.addEventListener('click', abre); });
     paleta.addEventListener('click', function (e) { if (e.target === paleta) fecha(); });
-    campo.addEventListener('input', function () { sel = 0; desenha(); });
+    // busca medida 1,5 s depois da última tecla (3+ caracteres, 1 vez por termo): termo sem resultado vira pauta
+    var buscaMedida = {}, esperaBusca = null;
+    campo.addEventListener('input', function () {
+      sel = 0; desenha();
+      clearTimeout(esperaBusca);
+      esperaBusca = setTimeout(function () {
+        var termo = termoLimpo(campo.value);
+        if (termo.length < 3 || buscaMedida[termo]) return;
+        buscaMedida[termo] = 1;
+        mede('search', { search_term: termo, results_count: $$('[role="option"]', lista).length, page_lang: LANG });
+      }, 1500);
+    });
     paleta.addEventListener('keydown', function (e) {
       var opcoes = $$('[role="option"]', lista);
       if (e.key === 'Escape') { e.preventDefault(); fecha(); }
@@ -265,4 +315,12 @@
     }, { rootMargin: '0px 0px -8% 0px' });
     rv.forEach(function (el) { io2.observe(el); });
   } else rv.forEach(function (el) { el.classList.add('is-visto'); });
+
+  /* ---------------- clique na fonte oficial (X, Discord, Roblox, Instagram…) ---------------- */
+  d.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[target="_blank"][href^="http"]');
+    if (!a) return;
+    var dominio = ''; try { dominio = new URL(a.href).hostname.replace(/^www\./, ''); } catch (err) { return; }
+    mede('source_click', { game: JOGO, source_domain: dominio, link_type: /play\.google|apps\.apple|store/.test(dominio) ? 'store' : 'official_source' });
+  });
 })();

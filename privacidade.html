@@ -34,6 +34,7 @@
       setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
     })(document.documentElement);
   </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 </head>
 <body>
   <!--#topo-->
@@ -143,6 +144,7 @@
           <a href="#quem">Who we are</a>
           <a href="#site">What the site stores</a>
           <a href="#hub">Lipy Hub</a>
+          <a href="#medicao">How we count visits</a>
           <a href="#lista-dados">Lista Lipy</a>
           <a href="#para-que">How we use it</a>
           <a href="#onde">Where the data is stored</a>
@@ -157,7 +159,7 @@
           <p><strong>Lipy Games</strong> is the games brand of <strong>Lipy Serviços Digitais LTDA</strong>, CNPJ 65.260.227/0001-11, which is the controller of the data described here. For any privacy matter, write to <a href="mailto:bluetubeoficial@gmail.com?subject=Privacidade%20%E2%80%94%20Lipy%20Games">bluetubeoficial@gmail.com</a>.</p>
 
           <h2 id="site">What the site stores on your device</h2>
-          <p>The site does not use advertising cookies or visitor analytics tools. It only stores the following in your own browser’s storage:</p>
+          <p>The site does not use advertising cookies. Visits are counted without cookies (see “How we count visits” below). The site only stores the following in your own browser’s storage:</p>
           <ul>
             <li>whether the intro animation has already played during this visit and which transition to show between pages (deleted when you close the tab);</li>
             <li>the language you selected with the flag in the menu and the country you access the site from (only its code, such as “BR”), so that the site opens in your language on future visits;</li>
@@ -169,10 +171,20 @@
           <h2 id="hub">Lipy Hub</h2>
           <p>Lipy Hub is the section of the website with checked game codes, tools and guides. It has no accounts, no login and no sign-up.</p>
           <ul>
-            <li>On your device, the Hub stores the region you selected in the code tabs and which button you tapped for each code (“it worked” or “didn’t work”), so that the button appears highlighted when you return.</li>
-            <li>When you vote, our server (Supabase) receives the code you voted on, your vote, the <strong>approximate country</strong> of the connection and an encrypted code derived from your IP address (a pseudonym, not the address itself), used solely to count one vote per connection and to block bots. Your IP address is not stored.</li>
+            <li>On your device, the Hub stores the region you selected in the code tabs; which button you tapped for each code (“it worked” or “didn’t work”), so that the button appears highlighted when you return; and a random device code, used solely to count one vote per device.</li>
+            <li>When you vote, our server (Supabase) receives the code you voted on, your vote, the <strong>approximate country</strong> of the connection and an encrypted code derived from your IP address and the random device code (a pseudonym, not the address itself), used solely to count one vote per device and to block bots. Your IP address is not stored.</li>
             <li>Votes are used to quickly remove from the list any code that has stopped working, and they are deleted within 60 days. The legal basis is our legitimate interest in keeping the list accurate (LGPD, art. 7, IX). To withdraw your vote, tap the same button again.</li>
           </ul>
+
+          <h2 id="medicao">How we count visits</h2>
+          <p>To find out how many people visit the site and what is most helpful, we use Umami (Umami Software, Inc.), an analytics tool that does not use cookies and stores nothing on your device.</p>
+          <ul>
+            <li>What is counted: the page visited, the site you came from, the type of browser, operating system and device, the language and the <strong>approximate country</strong>.</li>
+            <li>On Lipy Hub, we also count certain actions without knowing who performed them: copying a code, voting, searching, switching languages and opening a code’s official source. Search terms are stored with a maximum length of 40 characters, and searches containing an email address, a link or long numbers are discarded. Do not enter personal data when searching.</li>
+            <li>Your IP address is used only to determine the country and count the visit, and it is not stored. The figures are always aggregated: we do not create profiles, we do not use them for advertising and we do not cross-reference them with other databases.</li>
+            <li>The data is stored on Umami’s servers in the European Union (an international transfer, LGPD, art. 33) and kept for up to 6 months.</li>
+          </ul>
+          <p>The legal basis is our legitimate interest in understanding how the site is used and improving it (LGPD, art. 7, IX). We always use the most protective settings, because the site is also used by teenagers. If your browser asks not to be tracked (“Do Not Track”), your visit is not counted.</p>
 
           <h2 id="lista-dados">What Lista Lipy receives</h2>
           <p>When you join the list, we store:</p>
