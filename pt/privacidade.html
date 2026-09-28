@@ -59,6 +59,7 @@
       <nav class="nav__links" aria-label="Principal">
         <span class="nav__blob" aria-hidden="true"></span>
         <button type="button" data-mega aria-expanded="false" aria-controls="mega">Jogos <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
         <a href="index.html#estudio">Estúdio</a>
         <a href="index.html#como-criamos">Como criamos</a>
         <a href="index.html#contato">Contato</a>
@@ -103,6 +104,7 @@
   <div class="menu" id="menu" aria-hidden="true">
     <nav class="menu__links" aria-label="Menu">
       <a href="index.html#universos">Jogos</a>
+      <a href="hub/">Lipy Hub</a>
       <a href="index.html#estudio">Estúdio</a>
       <a href="index.html#como-criamos">Como criamos</a>
       <a href="index.html#lista">Acesso antecipado</a>
@@ -132,14 +134,15 @@
       <header class="legal__head">
         <p class="eyebrow">Privacidade</p>
         <h1 class="h1" data-split>Seus dados, <span class="txt-cool">sem letra miúda.</span></h1>
-        <p class="lead">Esta página explica o que acontece com as suas informações no site da Lipy Games e na Lista Lipy — a lista de e-mails de testes beta, lançamentos e atualizações. Cada jogo tem a própria política, com os detalhes do que acontece dentro dele.</p>
-        <p class="legal__data" style="margin-top:24px">Atualizada em 26 de setembro de 2026</p>
+        <p class="lead">Esta página explica o que acontece com as suas informações no site da Lipy Games (incluindo o Lipy Hub) e na Lista Lipy — a lista de e-mails de testes beta, lançamentos e atualizações. Cada jogo tem a própria política, com os detalhes do que acontece dentro dele.</p>
+        <p class="legal__data" style="margin-top:24px">Atualizada em 28 de setembro de 2026</p>
       </header>
 
       <div class="legal__grid">
         <nav class="legal__toc glass" aria-label="Nesta página">
           <a href="#quem">Quem somos</a>
           <a href="#site">O que o site guarda</a>
+          <a href="#hub">Lipy Hub</a>
           <a href="#lista-dados">A Lista Lipy</a>
           <a href="#para-que">Para que usamos</a>
           <a href="#onde">Onde os dados ficam</a>
@@ -163,6 +166,14 @@
           <p>As fontes do site vêm do Google Fonts: para entregá-las, os servidores do Google recebem o endereço de conexão do seu aparelho, como em qualquer site que usa esse serviço.</p>
           <p>Na primeira visita, para abrir o site no seu idioma, o seu navegador pergunta ao nosso servidor (Supabase) de que país vem a conexão. O servidor só lê a sigla do país que a própria rede informa e responde na hora: essa consulta não é guardada nem ligada a você.</p>
 
+          <h2 id="hub">Lipy Hub</h2>
+          <p>O Lipy Hub é a parte do site com códigos de jogos conferidos, ferramentas e guias. Nele não existe conta, login nem cadastro.</p>
+          <ul>
+            <li>No seu aparelho, o Hub guarda a região escolhida nas abas de códigos e em qual botão você tocou em cada código (“funcionou” ou “não funcionou”), para mostrar o botão aceso quando você voltar.</li>
+            <li>Quando você vota, o nosso servidor (Supabase) recebe o código votado, o voto, o <strong>país aproximado</strong> da conexão e um código cifrado derivado do endereço de conexão (um pseudônimo, não o endereço em si), usado só para contar um voto por conexão e barrar robôs. O seu endereço de IP não é guardado.</li>
+            <li>Os votos servem para tirar da lista, rápido, o código que parou de funcionar, e são apagados em até 60 dias. A base é o nosso legítimo interesse em manter a lista correta (LGPD, art. 7º, IX). Para retirar o seu voto, toque de novo no mesmo botão.</li>
+          </ul>
+
           <h2 id="lista-dados">O que a Lista Lipy recebe</h2>
           <p>Quando você entra na lista, guardamos:</p>
           <ul>
@@ -179,6 +190,7 @@
 
           <h2 id="onde">Onde os dados ficam</h2>
           <p>A lista fica num banco de dados da Lipy Games no Supabase, um serviço de nuvem com servidores nos Estados Unidos. Por isso, a inscrição envolve transferência internacional de dados (LGPD, art. 33), feita com um fornecedor que adota medidas de segurança e só processa os dados para a Lipy. A tabela da lista fica fechada: o site só consegue <em>adicionar</em> uma inscrição ou <em>marcar a saída</em>, nunca ler a lista.</p>
+          <p>Os votos do Lipy Hub ficam no mesmo banco, também fechados: o site só consegue registrar um voto e ler a soma dos votos de cada código.</p>
 
           <h2 id="tempo">Por quanto tempo</h2>
           <p>Enquanto você estiver inscrito. Ao sair da lista, você para de receber na hora — e, por segurança, ninguém consegue reinscrever esse e-mail pelo site. Se quiser voltar, ou que o registro seja apagado de vez, é só pedir pelo e-mail acima.</p>
@@ -234,6 +246,7 @@
           <ul>
             <li><a href="index.html#estudio">Sobre a Lipy</a></li>
             <li><a href="index.html#como-criamos">Como criamos</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
             <li><a href="index.html#lista">Lista Lipy (acesso antecipado)</a></li>
             <li><a href="index.html#contato">Contato</a></li>
           </ul>

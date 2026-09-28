@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lipygame.com/sitemap.xml
+Sitemap: https://lipygame.com/sitemap-hub.xml

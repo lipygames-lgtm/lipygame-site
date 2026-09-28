@@ -59,6 +59,7 @@
       <nav class="nav__links" aria-label="メイン">
         <span class="nav__blob" aria-hidden="true"></span>
         <button type="button" data-mega aria-expanded="false" aria-controls="mega">ゲーム <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
         <a href="index.html#estudio">スタジオ</a>
         <a href="index.html#como-criamos">ゲームづくり</a>
         <a href="index.html#contato">お問い合わせ</a>
@@ -103,6 +104,7 @@
   <div class="menu" id="menu" aria-hidden="true">
     <nav class="menu__links" aria-label="メニュー">
       <a href="index.html#universos">ゲーム</a>
+      <a href="hub/">Lipy Hub</a>
       <a href="index.html#estudio">スタジオ</a>
       <a href="index.html#como-criamos">ゲームづくり</a>
       <a href="index.html#lista">先行アクセス</a>
@@ -132,14 +134,15 @@
       <header class="legal__head">
         <p class="eyebrow">プライバシー</p>
         <h1 class="h1" data-split>あなたのデータ、<span class="txt-cool">隠しごとなしで。</span></h1>
-        <p class="lead">このページでは、Lipy Games のウェブサイトおよび Lista Lipy（ベータテスト、リリース、アップデートのお知らせを配信するメーリングリスト）において、お客様の情報がどのように取り扱われるかを説明します。各ゲーム内での取り扱いについては、それぞれのゲームのプライバシーポリシーで詳しく定めています。</p>
-        <p class="legal__data" style="margin-top:24px">最終更新日：2026年9月26日</p>
+        <p class="lead">このページでは、Lipy Games のウェブサイト（Lipy Hub を含む）および Lista Lipy（ベータテスト、リリース、アップデートのお知らせを配信するメーリングリスト）において、お客様の情報がどのように取り扱われるかを説明します。各ゲーム内での取り扱いについては、それぞれのゲームのプライバシーポリシーで詳しく定めています。</p>
+        <p class="legal__data" style="margin-top:24px">最終更新日：2026年9月28日</p>
       </header>
 
       <div class="legal__grid">
         <nav class="legal__toc glass" aria-label="このページの内容">
           <a href="#quem">運営者について</a>
           <a href="#site">サイトが保存する情報</a>
+          <a href="#hub">Lipy Hub</a>
           <a href="#lista-dados">Lista Lipy について</a>
           <a href="#para-que">利用目的</a>
           <a href="#onde">データの保管場所</a>
@@ -163,6 +166,14 @@
           <p>本サイトのフォントは Google Fonts を利用しています。フォントの配信にあたっては、このサービスを利用する他のサイトと同様に、Google のサーバーがお客様の端末のIPアドレスを受け取ります。</p>
           <p>初回訪問時には、サイトをお客様の言語で表示するため、お客様のブラウザが当社のサーバー（Supabase）に接続元の国を問い合わせます。サーバーはネットワーク自体から提供される国コードを読み取ってただちに応答するのみで、この問い合わせが保存されることも、お客様と紐づけられることもありません。</p>
 
+          <h2 id="hub">Lipy Hub</h2>
+          <p>Lipy Hub は、確認済みのゲームコード、ツール、ガイドを掲載する本サイト内のセクションです。アカウント、ログイン、登録の機能はありません。</p>
+          <ul>
+            <li>Hub は、コードページのタブで選択した地域と、各コードでどちらのボタン（「使えた」または「使えなかった」）をタップしたかを、お客様の端末に保存します。再訪問時に、そのボタンをハイライト表示するためです。</li>
+            <li>投票すると、当社のサーバー（Supabase）は、投票したコード、投票内容、接続元として<strong>推定される国</strong>、およびIPアドレスから生成した暗号化コード（IPアドレスそのものではなく、仮名化された値）を受け取ります。この暗号化コードは、1つの接続につき1票として集計し、ボットを排除する目的にのみ使用します。お客様のIPアドレスは保存しません。</li>
+            <li>投票は、使えなくなったコードをすばやくリストから外すために利用し、60日以内に削除します。法的根拠は、リストを正確に保つという当社の正当な利益（LGPD 第7条第IX号）です。投票を取り消すには、同じボタンをもう一度タップしてください。</li>
+          </ul>
+
           <h2 id="lista-dados">Lista Lipy が受け取る情報</h2>
           <p>リストへの登録時に、以下の情報を保存します。</p>
           <ul>
@@ -179,6 +190,7 @@
 
           <h2 id="onde">データの保管場所</h2>
           <p>リストは、米国にサーバーを置くクラウドサービス Supabase 上の Lipy Games のデータベースに保管されています。そのため、登録にはデータの国際移転（LGPD 第33条）が伴います。この移転は、セキュリティ対策を講じ、Lipy のためにのみデータを処理する事業者を通じて行われます。リストのテーブルは非公開で、サイトから行えるのは登録の<em>追加</em>と<em>配信停止の記録</em>のみであり、リストを読み取ることはできません。</p>
+          <p>Lipy Hub の投票も同じデータベースに保管され、同様に非公開です。サイトから行えるのは、投票の記録と、コードごとの投票数の合計の読み取りのみです。</p>
 
           <h2 id="tempo">保存期間</h2>
           <p>登録されている期間中、保存します。リストから退会すると、ただちに配信が停止されます。また、安全のため、そのメールアドレスをサイトから再登録することは誰にもできません。再登録や記録の完全な削除をご希望の場合は、上記のメールアドレスまでご連絡ください。</p>
@@ -234,6 +246,7 @@
           <ul>
             <li><a href="index.html#estudio">Lipy について</a></li>
             <li><a href="index.html#como-criamos">ゲームづくり</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
             <li><a href="index.html#lista">Lista Lipy（先行アクセス）</a></li>
             <li><a href="index.html#contato">お問い合わせ</a></li>
           </ul>
