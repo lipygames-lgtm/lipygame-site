@@ -63,7 +63,8 @@
 
   var vai = function (l) {
     if (!l || l === 'en' || SUPORTADOS.indexOf(l) < 0) return false;
-    location.replace(l + '/' + arquivo + location.search + location.hash);
+    // página inicial com endereço limpo: /pt/ em vez de /pt/index.html
+    location.replace(l + '/' + (arquivo === 'index.html' && location.protocol !== 'file:' ? '' : arquivo) + location.search + location.hash);
     // navegação cancelada (Esc, sem rede): a página não pode ficar invisível
     setTimeout(libera, 3000);
     return true;

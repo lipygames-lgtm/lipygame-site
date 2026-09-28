@@ -908,7 +908,9 @@
     var arquivo = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
     arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
     // caminhos a partir da raiz do site (BASE sobe das pastas de idioma até ela)
-    var destino = function (l) { return BASE + (l === 'en' ? '' : l + '/') + arquivo; };
+    // página inicial com endereço limpo (lipygame.com/ e lipygame.com/pt/); aberto direto do arquivo (file://) precisa do nome
+    var pagina = arquivo === 'index.html' && location.protocol !== 'file:' ? '' : arquivo;
+    var destino = function (l) { return BASE + (l === 'en' ? '' : l + '/') + pagina || './'; };
     var escolhe = function (l) { local.set('lipy:idioma', l); };
     $$('a[data-lang]').forEach(function (a) {
       var l = a.getAttribute('data-lang');
