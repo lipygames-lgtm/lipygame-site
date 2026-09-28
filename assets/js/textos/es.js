@@ -77,5 +77,12 @@ window.LIPY_TEXTOS.es = {
  "Dourado, raro e o topo da garagem.": "Dorado, raro y la joya del taller.",
  "Troca couraça por força bruta. O lançador já vem no corpo.": "Cambia coraza por fuerza bruta. El lanzamisiles viene integrado.",
  "Nº {n} / 13": "N.º {n} / 13",
- "Veículo em 3D. Arraste para girar.": "Vehículo en 3D. Arrastra para girar."
+ "Veículo em 3D. Arraste para girar.": "Vehículo en 3D. Arrastra para girar.",
+ "Toque ou arraste para guiar o enxame": "Toca o arrastra para guiar al enjambre",
+ "Arraste para guiar o enxame": "Arrastra para guiar al enjambre",
+ "Precisa de {n} robôs. Devore os menores primeiro.": "Requiere {n} robots. Devora primero los más pequeños.",
+ "Agora! O cubo gigante já cai.": "¡Ahora! Derriba el cubo gigante.",
+ "{n} robôs · {m} de matéria · {s} s": "{n} robots · {m} de materia · {s} s",
+ "Assimilação completa": "Asimilación completa",
+ "O cubo gigante caiu diante de {n} robôs.": "El cubo gigante cayó ante {n} robots."
 };

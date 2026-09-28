@@ -81,5 +81,12 @@ window.LIPY_TEXTOS.en = {
  "Moto": "Motorcycle",
  "Troca couraça por força bruta. O lançador já vem no corpo.": "Trades armor for brute force. The launcher comes built in.",
  "Nº {n} / 13": "No. {n} / 13",
- "Veículo em 3D. Arraste para girar.": "3D vehicle. Drag to spin."
+ "Veículo em 3D. Arraste para girar.": "3D vehicle. Drag to spin.",
+ "Toque ou arraste para guiar o enxame": "Tap or drag to guide the swarm",
+ "Arraste para guiar o enxame": "Drag to guide the swarm",
+ "Precisa de {n} robôs. Devore os menores primeiro.": "Need {n} robots. Devour the smaller ones first.",
+ "Agora! O cubo gigante já cai.": "Now! Take down the giant cube.",
+ "{n} robôs · {m} de matéria · {s} s": "{n} robots · {m} Matter · {s} s",
+ "Assimilação completa": "Assimilation complete",
+ "O cubo gigante caiu diante de {n} robôs.": "The giant cube fell to {n} robots."
 };

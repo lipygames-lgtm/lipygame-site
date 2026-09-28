@@ -1,0 +1,164 @@
+/* ==========================================================================
+   SWARMORIA — página do jogo
+   ========================================================================== */
+/* herói: laboratório + grade de energia que corre devagar */
+.sw-hero .gh__bg img { object-position: 50% 42%; filter: blur(2px) saturate(1.3) brightness(.5); }
+.sw-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  background:
+    linear-gradient(rgba(95, 240, 255, .07) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(90deg, rgba(95, 240, 255, .07) 1px, transparent 1px) 0 0 / 56px 56px;
+  -webkit-mask-image: radial-gradient(70% 70% at 70% 55%, #000 10%, transparent 75%);
+  mask-image: radial-gradient(70% 70% at 70% 55%, #000 10%, transparent 75%);
+  animation: sw-grade 14s linear infinite;
+}
+@keyframes sw-grade { to { background-position: 0 56px, 56px 0; } }
+.sw-logo { width: clamp(250px, 30vw, 460px); filter: drop-shadow(0 0 26px rgba(95, 240, 255, .35)) drop-shadow(0 16px 30px rgba(0, 0, 0, .6)); }
+.sw-visual .gh__phone { rotate: -4deg; }
+.sw-core { z-index: 3; width: clamp(90px, 9vw, 150px); left: 4%; top: 10%; filter: drop-shadow(0 0 30px rgba(95, 240, 255, .55)) drop-shadow(0 18px 24px rgba(0, 0, 0, .5)); }
+.sw-cubo { z-index: 3; width: clamp(56px, 5.6vw, 90px); right: 8%; top: 14%; rotate: 12deg; filter: drop-shadow(0 0 22px rgba(42, 123, 255, .6)); }
+.sw-cristal { z-index: 1; width: clamp(40px, 4vw, 64px); right: 18%; bottom: 34%; rotate: -16deg; filter: drop-shadow(0 0 22px rgba(164, 91, 255, .7)); }
+/* o enxame 3D marcha na frente do celular (a foto parada some quando a animação começa) */
+.sw-marcha { z-index: 4; left: -6%; right: -6%; bottom: -2%; aspect-ratio: 720 / 416; animation: none; }
+.sw-marcha > img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 22px rgba(0, 0, 0, .6)); transition: opacity .6s; }
+.sw-marcha canvas.alfa { width: 100%; height: auto; filter: drop-shadow(0 24px 22px rgba(0, 0, 0, .6)); }
+.sw-marcha.is-alfa > img, .sw-acao__v.is-alfa > img { opacity: 0; }
+
+/* ---------------- demonstração: o enxame ---------------- */
+.sw-demo__head { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 60px; align-items: end; margin-bottom: 40px; }
+.sw-demo__head .h1 { margin-top: 20px; }
+.sw-arena {
+  --r: 36px; position: relative; overflow: hidden; aspect-ratio: 16 / 8.2; min-height: 380px; cursor: crosshair; touch-action: pan-y pinch-zoom;
+  background: radial-gradient(90% 90% at 50% 50%, rgba(28, 90, 180, .22), rgba(4, 10, 28, .75) 70%);
+  user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent;
+}
+/* a grade fica no próprio canvas (o ::before da arena é o aro de vidro); z-index 1 = abaixo dos contadores e da dica */
+.sw-arena__cv {
+  position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; display: block; direction: ltr; /* números do canvas não espelham no árabe */
+  background:
+    linear-gradient(rgba(95, 240, 255, .045) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, rgba(95, 240, 255, .045) 1px, transparent 1px) 0 0 / 44px 44px;
+}
+.sw-hud { position: absolute; z-index: 2; top: 16px; inset-inline-start: 16px; display: flex; flex-wrap: wrap; gap: 8px; pointer-events: none; }
+.sw-hud__it {
+  display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto; column-gap: 10px; align-items: center;
+  padding: 8px 16px 8px 10px; border-radius: 16px; background: rgba(4, 12, 32, .72); box-shadow: inset 0 0 0 1px rgba(95, 240, 255, .28), 0 10px 26px -12px #000;
+}
+.sw-hud__it img { grid-row: span 2; width: 34px; height: 34px; object-fit: contain; }
+.sw-hud__it small { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--txt-3); line-height: 1.2; }
+.sw-hud__it b { font-family: var(--f-display); font-size: 20px; font-weight: 800; letter-spacing: -.02em; line-height: 1.05; color: #eaffff; text-shadow: 0 0 14px rgba(95, 240, 255, .7); font-variant-numeric: tabular-nums; }
+.sw-arena__dica {
+  position: absolute; z-index: 2; left: 50%; bottom: 18px; translate: -50% 0; pointer-events: none; width: max-content; max-width: calc(100% - 32px); text-align: center;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--txt-2);
+  padding: 8px 14px; border-radius: 999px; background: rgba(4, 12, 32, .6); transition: opacity .5s;
+}
+.sw-arena__dica.is-off { opacity: 0; }
+.sw-arena__fim {
+  --r: 28px; position: absolute; z-index: 3; left: 50%; top: 50%; translate: -50% -50%; width: min(88%, 380px);
+  display: grid; justify-items: center; gap: 10px; padding: 26px 24px 24px; text-align: center; cursor: default;
+}
+.sw-arena__fim[hidden] { display: none; }
+.sw-arena__fim img { width: 84px; height: auto; filter: drop-shadow(0 0 24px rgba(95, 240, 255, .7)); }
+.sw-arena__fim b { font-family: var(--f-display); font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+.sw-arena__fim span { color: var(--txt-2); font-size: 15px; }
+.sw-arena__fim .btn { margin-top: 8px; }
+
+/* ---------------- mutações ---------------- */
+.sw-mut .h1 { margin: 20px 0 22px; }
+.sw-mut .feats { grid-template-columns: repeat(3, 1fr); }
+.sw-mut .feat { position: relative; overflow: hidden; transition: translate .6s var(--ease-out); }
+.sw-mut .feat::after { content: ""; position: absolute; right: -30%; top: -40%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(95, 240, 255, .16), transparent 65%); pointer-events: none; transition: opacity .5s; opacity: .6; }
+.sw-mut .feat:hover { translate: 0 -6px; }
+.sw-mut .feat:hover::after { opacity: 1; }
+.sw-mut .feat__ic { width: 76px; height: 76px; }
+
+/* ---------------- robôs em ação ---------------- */
+.sw-acoes .h1 { margin: 20px 0 22px; }
+.sw-acoes__lead { margin-bottom: 48px; }
+.sw-acoes__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.sw-acao { --r: 28px; margin: 0; padding: 16px 16px 22px; display: grid; gap: 14px; overflow: hidden; }
+.sw-acao__v { position: relative; aspect-ratio: 360 / 304; border-radius: 20px; background: radial-gradient(70% 60% at 50% 60%, rgba(42, 123, 255, .22), transparent 70%); }
+.sw-acao__v > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .6s; }
+.sw-acao__v canvas.alfa { width: 100%; height: auto; }
+.sw-acao figcaption { display: grid; gap: 4px; padding-inline: 6px; }
+.sw-acao figcaption b { font-family: var(--f-display); font-size: 1.25rem; letter-spacing: -.02em; }
+.sw-acao figcaption span { color: var(--txt-2); font-size: 15px; }
+
+/* ---------------- caçada ao Titã ---------------- */
+.sw-titan { position: relative; overflow: hidden; isolation: isolate; padding-block: clamp(110px, 13vw, 190px); }
+.sw-titan__bg { position: absolute; inset: 0; z-index: -1; }
+.sw-titan__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: blur(20px) saturate(1.4) brightness(.42); transform: scale(1.2); }
+.sw-titan__bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 60% at 30% 50%, rgba(255, 50, 40, .22), transparent 70%), linear-gradient(180deg, var(--c3), transparent 25%, transparent 75%, var(--c3)); }
+.sw-titan__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(30px, 6vw, 100px); align-items: center; }
+.sw-titan .h1 { margin: 20px 0 22px; }
+.sw-titan__art { position: relative; display: grid; place-items: center; }
+.sw-titan__corpo { width: min(100%, 460px); height: auto; filter: drop-shadow(0 0 60px rgba(255, 60, 40, .25)) drop-shadow(0 40px 50px rgba(0, 0, 0, .7)); }
+/* mira no núcleo do peito */
+.sw-titan__alvo { position: absolute; left: 50%; top: 31%; width: clamp(70px, 8vw, 110px); aspect-ratio: 1; translate: -50% -50%; pointer-events: none; }
+.sw-titan__alvo i { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(255, 70, 50, .9); box-shadow: 0 0 20px rgba(255, 60, 40, .8), inset 0 0 16px rgba(255, 60, 40, .5); animation: sw-mira 2.2s var(--ease-out) infinite; }
+.sw-titan__alvo i + i { inset: 26%; border-style: dashed; animation: gira 6s linear infinite; }
+@keyframes sw-mira { 0% { scale: 1.6; opacity: 0; } 30% { opacity: 1; } 100% { scale: 1; opacity: .9; } }
+.sw-fases { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 34px 0 26px; }
+.sw-fases li { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 4px; padding: 16px 18px; border-radius: 20px; background: rgba(255, 255, 255, .04); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
+.sw-fases b { grid-row: span 2; font-family: var(--f-display); font-size: 1.6rem; line-height: 1; letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 1.2px rgba(255, 90, 70, .9); }
+.sw-fases span { font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; }
+.sw-fases small { color: var(--txt-2); font-size: 14px; line-height: 1.4; }
+.sw-titan__peito { --r: 24px; margin: 0; padding: 14px 14px 12px; display: grid; gap: 8px; max-width: 420px; }
+.sw-titan__peito img { width: 100%; height: auto; }
+.sw-titan__peito figcaption { font-family: var(--f-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--txt-3); text-align: center; }
+
+/* ---------------- Nexus e skins ---------------- */
+.sw-nexus__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(30px, 6vw, 100px); align-items: center; }
+.sw-nexus .h1 { margin: 20px 0 22px; }
+.sw-ramos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 34px; }
+.sw-ramos li { --r: 22px; padding: 18px 18px 20px; display: grid; gap: 6px; }
+.sw-ramos b { font-family: var(--f-display); font-size: 1.1rem; letter-spacing: -.02em; color: var(--c1); }
+.sw-ramos span { color: var(--txt-2); font-size: 14.5px; line-height: 1.45; }
+.sw-nexus__art { position: relative; display: grid; place-items: center; min-height: 520px; }
+.sw-nexus__phone { --w: clamp(230px, 20vw, 290px); rotate: 3deg; z-index: 2; }
+.sw-nexus__core { position: absolute; z-index: 1; width: 78%; max-width: 420px; opacity: .55; filter: blur(1px) drop-shadow(0 0 60px rgba(95, 240, 255, .6)); animation: sw-core 18s linear infinite; }
+@keyframes sw-core { to { rotate: 360deg; } }
+.sw-skins { margin-top: clamp(80px, 10vw, 140px); }
+.sw-skins .h2 { margin-top: 18px; }
+.sw-skins__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
+.sw-skin { --g: rgba(95, 240, 255, .35); margin: 0; display: grid; grid-template-rows: 1fr auto; align-items: end; gap: 12px; justify-items: center; text-align: center; padding: 22px 12px 20px; border-radius: 28px; background: radial-gradient(70% 55% at 50% 45%, var(--g), transparent 70%), rgba(255, 255, 255, .03); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); transition: translate .6s var(--ease-out); }
+.sw-skin--void { --g: rgba(164, 91, 255, .4); }
+.sw-skin--plasma { --g: rgba(42, 123, 255, .45); }
+.sw-skin:hover { translate: 0 -8px; }
+.sw-skin img { width: 86%; max-width: 220px; height: auto; filter: drop-shadow(0 22px 22px rgba(0, 0, 0, .55)); transition: transform .8s var(--ease-spring); }
+.sw-skin:hover img { transform: rotate(-4deg) scale(1.05); }
+.sw-skin figcaption { display: grid; gap: 2px; }
+.sw-skin b { font-family: var(--f-display); font-size: 1.15rem; letter-spacing: -.01em; }
+.sw-skin span { color: var(--txt-2); font-size: 14px; }
+
+@media (max-width: 1100px) {
+  .sw-mut .feats, .sw-acoes__grid { grid-template-columns: 1fr 1fr; }
+  .sw-skins__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .sw-demo__head, .sw-titan__grid, .sw-nexus__grid { grid-template-columns: 1fr; }
+  .sw-arena { aspect-ratio: 4 / 5; min-height: 320px; max-height: 78svh; width: 100%; }
+  .sw-titan__art { max-width: 380px; margin-inline: auto; }
+  .sw-nexus__art { min-height: 440px; }
+  .sw-core { left: 0; top: 4%; }
+  .sw-marcha { left: 10%; right: 10%; bottom: -8%; }
+}
+@media (max-width: 600px) {
+  .sw-mut .feats { grid-template-columns: 1fr; }
+  .sw-acoes__grid { gap: 10px; }
+  .sw-acao { padding: 10px 10px 16px; gap: 8px; }
+  .sw-acao figcaption span { display: none; }
+  .sw-fases, .sw-ramos { grid-template-columns: 1fr; }
+  .sw-skins__grid { gap: 10px; }
+  .sw-skin span { display: none; }
+  .sw-hud__it { padding: 6px 12px 6px 8px; }
+  .sw-hud__it img { width: 26px; height: 26px; }
+  .sw-hud__it b { font-size: 17px; }
+  .sw-arena__dica { bottom: 12px; font-size: 10px; letter-spacing: .1em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sw-hero::before, .sw-nexus__core, .sw-titan__alvo i { animation: none; }
+}
+html.no-js .sw-demo { display: none; }
+/* árabe: contadores do jogo ficam como no próprio jogo ("×12"), sem espelhar */
+[dir="rtl"] .sw-hud__it b, [dir="rtl"] .jogo--swarm .pass__row b { direction: ltr; unicode-bidi: isolate; }

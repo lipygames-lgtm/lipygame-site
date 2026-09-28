@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* ---------------- palco: vídeo → celular ---------------- */
-.stage { position: relative; height: 560vh; }
+.stage { position: relative; height: 670vh; }
 .stage__sticky {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
   --px: 0px; --py: 0px; --pw: 320px; --ph: 672px; --pr: 50px; --pad: 11px;
@@ -120,6 +120,7 @@
 .cap__name--nitro span { display: block; -webkit-background-clip: text; background-clip: text; color: transparent; }
 .cap__name--nitro span:first-child { background-image: linear-gradient(180deg, #e6fbff 10%, #2ad8ff 60%, #2170ff); }
 .cap__name--nitro span:last-child { background-image: linear-gradient(180deg, #fff1c2 10%, #ff9a1a 55%, #ff3d1a); }
+.cap__name--swarm { font-size: clamp(2rem, 3.7vw, 4.2rem); background: linear-gradient(180deg, #fff 25%, #5ff0ff 62%, #2a7bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 .stage__dots { position: absolute; right: clamp(14px, 2.4vw, 34px); top: 50%; transform: translateY(-50%); display: grid; gap: 10px; opacity: 0; }
 .stage__dots li { width: 5px; height: 30px; border-radius: 5px; background: rgba(255, 255, 255, .8); transform: scaleY(.18); opacity: .35; }
@@ -192,6 +193,16 @@
 .fl--ball { z-index: 3; width: clamp(76px, 7.6vw, 120px); right: 6%; bottom: 14%; filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .55)); }
 .fl--poster { z-index: 1; width: 74%; left: 13%; top: 7%; border-radius: 28px; rotate: 7deg; opacity: .9; box-shadow: 0 40px 80px -30px #000, 0 0 0 1px rgba(255, 255, 255, .1); animation: none; }
 .fl--logo { z-index: 3; width: clamp(200px, 20vw, 320px); left: -2%; bottom: 8%; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .6)); }
+/* SWARMORIA: Titã ao fundo, Core e cubo flutuando, enxame 3D marchando na frente (lipy.js → alfas) */
+.uni--swarm .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
+.uni--swarm .uni__bg img { object-position: 50% 40%; }
+.fl--titan { z-index: 1; height: 96%; width: auto; right: -4%; top: 2%; opacity: .85; animation: none; filter: drop-shadow(0 0 50px rgba(255, 60, 40, .25)) drop-shadow(0 30px 40px rgba(0, 0, 0, .6)); }
+.fl--core { z-index: 3; width: clamp(80px, 8vw, 130px); left: 6%; top: 12%; filter: drop-shadow(0 0 28px rgba(95, 240, 255, .6)); }
+.fl--cubo { z-index: 3; width: clamp(48px, 4.6vw, 74px); left: 20%; top: 52%; rotate: 14deg; filter: drop-shadow(0 0 20px rgba(42, 123, 255, .7)); }
+.fl--marcha { z-index: 4; left: 4%; right: 4%; bottom: 0; aspect-ratio: 720 / 416; animation: none; }
+.fl--marcha > img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 20px 20px rgba(0, 0, 0, .6)); transition: opacity .6s; }
+.fl--marcha canvas.alfa { width: 100%; height: auto; filter: drop-shadow(0 20px 20px rgba(0, 0, 0, .6)); }
+.fl--marcha.is-alfa > img { opacity: 0; }
 .fl--gauge {
   z-index: 3; right: 6%; top: 16%; width: 118px; height: 118px; --r: 50%;
   display: grid; place-content: center; text-align: center;
@@ -316,7 +327,7 @@ html.no-js .wall__row, html.rm .wall__row { transform: translateX(-20%); }
   .contact__routes { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
-  .stage { height: 480vh; }
+  .stage { height: 575vh; }
   .hero { padding-bottom: 104px; }
   .hero__title { font-size: clamp(2.5rem, 11.5vw, 4.4rem); }
   .hud > li:nth-child(1), .hud > li:nth-child(4) { display: none; }
@@ -326,9 +337,10 @@ html.no-js .wall__row, html.rm .wall__row { transform: translateX(-20%); }
   .hero__stats { display: none; }
   .hero__pausa { height: 32px; }
 
-  .cap { grid-template-columns: 1fr; grid-template-rows: 1fr var(--ph) 1fr; gap: 0; padding: calc(var(--nav-h) + 10px) 20px 18px; text-align: center; }
-  .cap__l, .cap__big { grid-row: 1; grid-column: 1; justify-self: center; align-self: end; text-align: center; padding-bottom: 14px; }
-  .cap__r, .cap__side { grid-row: 3; grid-column: 1; justify-self: center; align-self: start; text-align: center; padding-top: 14px; max-width: 34ch; }
+  /* legendas presas ao celular do palco (logo acima e logo abaixo dele), qualquer que seja a altura do texto */
+  .cap { display: block; padding: 0; text-align: center; }
+  .cap__l, .cap__big { position: absolute; left: 20px; right: 20px; bottom: calc(100% - var(--py) + 12px); justify-self: stretch; text-align: center; }
+  .cap__r, .cap__side { position: absolute; left: 20px; right: 20px; top: calc(var(--py) + var(--ph) + 14px); justify-self: stretch; margin-inline: auto; max-width: 34ch; text-align: center; }
   .cap__big { font-size: clamp(1.25rem, 6vw, 1.8rem); }
   .cap__big br { display: none; }
   .cap__idx { margin-bottom: 8px; font-size: 10px; }

@@ -78,8 +78,11 @@
     if (!stage || RM) return;
     aplicaGeo();
     window.addEventListener('resize', aplicaGeo);
-    var nitroV = apps[2] && apps[2].tagName === 'VIDEO' ? apps[2] : null;
-    var heroTocando = true, nitroTocando = false;
+    // cada jogo ocupa uma "vez" de PASSO na linha do tempo, a partir de INI
+    var N = apps.length, INI = 0.35, PASSO = 0.21;
+    // telas em vídeo (hoje, a do Nitrovenant) só tocam na vez delas
+    var vids = apps.map(function (a, i) { return a.tagName === 'VIDEO' ? { v: a, de: INI + i * PASSO - 0.02, ate: i < N - 1 ? INI + (i + 1) * PASSO + 0.02 : 99, on: false } : null; }).filter(Boolean);
+    var heroTocando = true;
 
     var tl = gsap.timeline({
       defaults: { ease: 'none' },
@@ -87,14 +90,16 @@
         trigger: stage, start: 'top top', end: 'bottom bottom', scrub: 0.8, invalidateOnRefresh: true,
         onRefresh: aplicaGeo,
         onUpdate: function (s) {
-          var p = s.progress;
-          // economiza: vídeo do herói só roda enquanto aparece; o do Nitrovenant, só na vez dele
-          var querHero = p < 0.4;
+          var t = s.progress * tl.duration();
+          // economiza: vídeo do herói só roda enquanto aparece; os das telas, só na vez de cada uma
+          var querHero = t < 0.42;
           if (querHero !== heroTocando) { heroTocando = querHero; if (querHero) tocaHero(); else video.pause(); }
-          var querNitro = p > 0.72;
-          if (nitroV && querNitro !== nitroTocando) { nitroTocando = querNitro; if (querNitro) nitroV.play().catch(function () {}); else nitroV.pause(); }
+          vids.forEach(function (x) {
+            var quer = t > x.de && t < x.ate;
+            if (quer !== x.on) { x.on = quer; if (quer) x.v.play().catch(function () {}); else x.v.pause(); }
+          });
         },
-        onLeave: function () { video.pause(); if (nitroV) nitroV.pause(); heroTocando = nitroTocando = false; },
+        onLeave: function () { video.pause(); heroTocando = false; vids.forEach(function (x) { x.v.pause(); x.on = false; }); },
         onEnterBack: function () { heroTocando = false; }
       }
     });
@@ -116,8 +121,8 @@
       .set(c0, { visibility: 'hidden' }, 0.36);
 
     // 3) um universo por vez dentro do celular
-    [0, 1, 2].forEach(function (i) {
-      var t = 0.35 + i * 0.21, cap = caps[i + 1], itens = $$('.cap__l > *, .cap__r > *', cap);
+    apps.forEach(function (app, i) {
+      var t = INI + i * PASSO, cap = caps[i + 1], itens = $$('.cap__l > *, .cap__r > *', cap);
       tl.fromTo(apps[i], { clipPath: 'inset(100% 0% 0% 0%)', scale: 1.25 }, { clipPath: 'inset(0% 0% 0% 0%)', scale: 1, duration: 0.08, ease: 'power3.inOut' }, t)
         .to(ambs[i], { opacity: 1, duration: 0.07 }, t)
         .set(words[i], { visibility: 'visible' }, t)
@@ -127,7 +132,7 @@
         .set(cap, { visibility: 'visible' }, t + 0.03)
         .fromTo(itens, { y: 60, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.012, duration: 0.06, ease: 'power2.out' }, t + 0.03);
       if (i > 0) tl.to(ambs[i - 1], { opacity: 0, duration: 0.07 }, t);
-      if (i < 2) {
+      if (i < N - 1) {
         tl.to(itens, { y: -50, opacity: 0, stagger: 0.006, duration: 0.04, ease: 'power2.in' }, t + 0.165)
           .set(cap, { visibility: 'hidden' }, t + 0.21)
           .to(words[i], { opacity: 0, duration: 0.04 }, t + 0.17)

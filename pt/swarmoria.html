@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=fe440ad8"></script>
+  <title>SWARMORIA: Consume &amp; Evolve — Lipy Games</title>
+  <meta name="description" content="SWARMORIA é o jogo de enxame da Lipy Games: guie um enxame biomecânico, devore objetos para se multiplicar, escolha mutações e desmonte Titãs gigantes. 36 fases e 3 Titãs.">
+  <meta name="theme-color" content="#040a1c">
+  <link rel="canonical" href="https://lipygame.com/pt/swarmoria.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/swarmoria.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/swarmoria.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/swarmoria.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/swarmoria.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/swarmoria.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/swarmoria.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/swarmoria.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="SWARMORIA — um robô é nada. Mil devoram o mundo.">
+  <meta property="og:description" content="Consuma, multiplique, evolua: um enxame biomecânico contra um mundo gigante. Em breve no Google Play.">
+  <meta property="og:url" content="https://lipygame.com/pt/swarmoria.html">
+  <meta property="og:image" content="https://lipygame.com/og-swarm.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=9bd8e2ec">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/swarm.css?v=d5362aef">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "SWARMORIA: Consume & Evolve",
+    "description": "Jogo de enxame em 3D: guie um enxame biomecânico, consuma objetos para se multiplicar, escolha mutações e desmonte Titãs gigantes. 36 fases, 3 mundos e 3 Titãs.",
+    "genre": ["Ação", "Casual"],
+    "gamePlatform": "Android",
+    "operatingSystem": "Android",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/swarm/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+</head>
+<body class="jogo jogo--swarm" style="--c1:#5ff0ff;--c2:#2a7bff;--c3:#040a1c;--c4:#a45bff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — início"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Principal">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Jogos <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="index.html#estudio">Estúdio</a>
+        <a href="index.html#como-criamos">Como criamos</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Idioma"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../swarmoria.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/swarmoria.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/swarmoria.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/swarmoria.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/swarmoria.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/swarmoria.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Acesso antecipado <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Puzzle de setas</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>This Level Hates You</b><small>Plataforma de pegadinhas</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Nitrovenant</b><small>Ação sobre rodas</small></span>
+      </a>
+      <a class="mega__item" href="swarmoria.html" data-game="swarm" style="--c:#2a7bff">
+        <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>SWARMORIA</b><small>Enxame que evolui</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menu">
+      <a href="index.html#universos">Jogos</a>
+      <a href="index.html#estudio">Estúdio</a>
+      <a href="index.html#como-criamos">Como criamos</a>
+      <a href="index.html#lista">Acesso antecipado</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
+      <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../swarmoria.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/swarmoria.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/swarmoria.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/swarmoria.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/swarmoria.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/swarmoria.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh sw-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/swarm/fundo-abertura.webp" width="941" height="1672" alt="" fetchpriority="high"></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="Você está em"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">Universos</a><i>/</i><span aria-current="page">SWARMORIA</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="swarm" src="../assets/media/swarm/icone.webp" width="512" height="512" alt="Ícone do SWARMORIA">
+            <img class="gh__logo sw-logo" src="../assets/media/swarm/logo.webp" width="900" height="133" alt="SWARMORIA">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">Um robô é nada.</span><span class="l"><em class="txt-game">Mil devoram o mundo.</em></span></h1>
+          <p class="lead gh__lead">Você guia o Core; o enxame vai atrás. Cada objeto desmontado vira mais robôs — até o que parecia impossível cair em segundos.</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">Enxame 3D</span> <span class="chip chip--line">Android</span> <span class="chip chip--line">Um dedo</span> <span class="chip chip--line">Partidas de 2 a 4 min</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#enxame" data-magnetic>Guiar o enxame <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="swarm" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Em breve no</small><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual sw-visual" data-float>
+          <div class="phone gh__phone" data-depth="0.15"><div class="phone__screen"><img src="../assets/media/swarm/tela-menu.webp" width="720" height="1279" alt="Menu do SWARMORIA com o Core no centro do Nexus"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+          <img class="fl sw-core" src="../assets/media/swarm/core-sm.webp" width="220" height="212" alt="" data-depth="0.6">
+          <img class="fl sw-cubo" src="../assets/media/swarm/ic-matter.webp" width="160" height="181" alt="" data-depth="0.9">
+          <img class="fl sw-cristal" src="../assets/media/swarm/ic-shard.webp" width="160" height="293" alt="" data-depth="1.2">
+          <div class="fl sw-marcha" data-depth="0.35"><img src="../assets/media/swarm/3d-enxame-poster.webp" width="720" height="416" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-enxame.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>Universo 04 / 04</span><span>Guie o enxame · depois role</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">A sensação</p>
+        <p class="gi__txt" data-scrub-words>Tem um momento em que você volta àquele objeto que antes era impossível — e o enxame <em>põe tudo abaixo em segundos</em>. Esse momento é o jogo.</p>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIMENTE: O ENXAME ============ -->
+    <section class="sw-demo section" id="enxame" aria-labelledby="enxame-t" tabindex="-1">
+      <div class="wrap sw-demo__head">
+        <div>
+          <p class="eyebrow" data-reveal>Experimente agora</p>
+          <h2 class="h1" id="enxame-t" data-split>Guie o enxame.<br><span class="txt-game">Devore tudo.</span></h2>
+        </div>
+        <p class="lead" data-reveal>Arraste (ou toque) para mover o Core. Os robôs vão atrás e desmontam o que for menor que o enxame. O cubo gigante pede 60 robôs — cresça até lá.</p>
+      </div>
+      <div class="wrap">
+        <div class="sw-arena glass" data-swarm>
+          <canvas class="sw-arena__cv" role="img" aria-label="Arena do enxame: arraste ou toque para guiar os robôs até os cubos de matéria"></canvas>
+          <div class="sw-hud" aria-hidden="true">
+            <span class="sw-hud__it"><img src="../assets/media/swarm/robo-mini.webp" width="96" height="75" alt=""><small>Enxame</small><b data-sw="n">×12</b></span> <span class="sw-hud__it"><img src="../assets/media/swarm/ic-matter.webp" width="160" height="181" alt=""><small>Matéria</small><b data-sw="m">0</b></span>
+          </div>
+          <p class="sw-arena__dica" data-sw="dica" aria-live="polite">Arraste para guiar o enxame</p>
+          <div class="sw-arena__fim glass" data-sw="fim" hidden>
+            <img src="../assets/media/swarm/core-sm.webp" width="220" height="212" alt="">
+            <b>Assimilação completa.</b>
+            <span data-sw="resumo"></span>
+            <button class="btn btn--game btn--sm" type="button" data-sw="de-novo">Jogar de novo <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section" data-gp aria-labelledby="gp-t">
+      <div class="wrap">
+        <p class="eyebrow">Como se joga</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">Consuma. Multiplique.<br><span class="txt-game">Evolua.</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>Consuma.</h3>
+            <p>Leve o enxame até um objeto menor que ele: os robôs envolvem, desmontam, e a matéria voa de volta para o Core.</p>
+            <span class="chip chip--line gp__gesture">arraste = mover · encostar = devorar</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-7.webp" width="720" height="1279" alt="Comece pequeno: consuma objetos menores para crescer" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>Multiplique.</h3>
+            <p>Cada objeto vira mais robôs. O contador sobe, e aquilo que pedia um enxame enorme de repente fica ao alcance.</p>
+            <span class="chip chip--line gp__gesture">×12 → ×126 → ×1.248</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-5.webp" width="720" height="1279" alt="Fique gigante: devore alvos maiores" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>Evolua.</h3>
+            <p>No meio da partida, três cartas de mutação aparecem. Um toque decide como o seu enxame cresce desta vez.</p>
+            <span class="chip chip--line gp__gesture">3 cartas · 1 toque</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-3.webp" width="720" height="1279" alt="Escolha mutações: combine evoluções em cada partida" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">04</span>
+            <h3>Volte mais forte.</h3>
+            <p>No fim, a matéria vai para o Nexus: upgrades que ficam para sempre e deixam a próxima partida mais explosiva.</p>
+            <span class="chip chip--line gp__gesture">Nexus · progresso permanente</span>
+            <div class="gp__shot"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-6.webp" width="720" height="1279" alt="Evolua o Nexus com upgrades permanentes" loading="lazy"></div><i class="phone__island"></i></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="phone gp__phone">
+              <div class="phone__screen">
+                <img data-step="0" src="../assets/media/swarm/loja-7.webp" width="720" height="1279" alt="Comece pequeno: consuma objetos menores para crescer" loading="lazy">
+                <img data-step="1" src="../assets/media/swarm/loja-5.webp" width="720" height="1279" alt="Fique gigante: devore alvos maiores" loading="lazy">
+                <img data-step="2" src="../assets/media/swarm/loja-3.webp" width="720" height="1279" alt="Escolha mutações: combine evoluções em cada partida" loading="lazy">
+                <img data-step="3" src="../assets/media/swarm/loja-6.webp" width="720" height="1279" alt="Evolua o Nexus com upgrades permanentes" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+              <i class="phone__island"></i>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MUTAÇÕES ============ -->
+    <section class="section sw-mut" aria-labelledby="mut-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Seis mutações</p>
+        <h2 class="h1" id="mut-t" data-split>Cada partida,<br><span class="txt-game">um enxame diferente.</span></h2>
+        <p class="lead sw-mut__lead" data-reveal>Mutações são escolhas rápidas com efeito na hora. Combine duas ou três e a mesma fase vira outro jogo.</p>
+        <div class="feats">
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/swarm/ic-replicator.webp" width="200" height="209" alt="" loading="lazy"><h3 translate="no">Replicator</h3><p>Mais robôs a cada objeto consumido. O enxame dobra de tamanho antes de você perceber.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/swarm/ic-corrosive.webp" width="200" height="223" alt="" loading="lazy"><h3 translate="no">Corrosive</h3><p>Ácido nas garras: metal desmonta muito mais rápido.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/swarm/ic-rapid.webp" width="164" height="208" alt="" loading="lazy"><h3 translate="no">Rapid</h3><p>Movimento e ataque acelerados. Para quem joga no reflexo.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/swarm/ic-armored.webp" width="200" height="232" alt="" loading="lazy"><h3 translate="no">Armored</h3><p>Carapaça reforçada: o enxame perde bem menos robôs nos perigos.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/swarm/ic-magnetic.webp" width="200" height="185" alt="" loading="lazy"><h3 translate="no">Magnetic</h3><p>Puxa a matéria de longe. Nada fica para trás.</p></article>
+          <article class="feat glass" data-reveal><img class="feat__ic" src="../assets/media/swarm/ic-salvager.webp" width="200" height="164" alt="" loading="lazy"><h3 translate="no">Salvager</h3><p>Chance de recurso extra a cada objeto que o enxame termina de desmontar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ROBÔS EM AÇÃO ============ -->
+    <section class="section sw-acoes" aria-labelledby="acoes-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>O enxame em movimento</p>
+        <h2 class="h1" id="acoes-t" data-split>Pequenos, rápidos<br><span class="txt-game">e famintos.</span></h2>
+        <p class="lead sw-acoes__lead" data-reveal>Cada robô sozinho é quase nada. Mas é cada um deles que desmonta, voa e investe — e são centenas ao mesmo tempo.</p>
+        <div class="sw-acoes__grid">
+          <figure class="sw-acao glass" data-reveal><div class="sw-acao__v"><img src="../assets/media/swarm/3d-acao-1-poster.webp" width="360" height="304" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-acao-1.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><figcaption><b>Vigia</b><span>O olho ciano varre a área atrás do próximo alvo.</span></figcaption></figure>
+          <figure class="sw-acao glass" data-reveal><div class="sw-acao__v"><img src="../assets/media/swarm/3d-acao-2-poster.webp" width="360" height="304" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-acao-2.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><figcaption><b>Avança</b><span>Seis patas e um propulsor: ninguém fica para trás.</span></figcaption></figure>
+          <figure class="sw-acao glass" data-reveal><div class="sw-acao__v"><img src="../assets/media/swarm/3d-acao-3-poster.webp" width="360" height="304" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-acao-3.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><figcaption><b>Desmonta</b><span>Garras, faíscas e um bloco a menos no mundo.</span></figcaption></figure>
+          <figure class="sw-acao glass" data-reveal><div class="sw-acao__v"><img src="../assets/media/swarm/3d-acao-4-poster.webp" width="360" height="304" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-acao-4.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><figcaption><b>Paira</b><span>Propulsores ligados para cruzar o que está no caminho.</span></figcaption></figure>
+          <figure class="sw-acao glass" data-reveal><div class="sw-acao__v"><img src="../assets/media/swarm/3d-acao-5-poster.webp" width="360" height="304" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-acao-5.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><figcaption><b>Investe</b><span>Uma arrancada, e o enxame já está em cima.</span></figcaption></figure>
+          <figure class="sw-acao glass" data-reveal><div class="sw-acao__v"><img src="../assets/media/swarm/3d-acao-6-poster.webp" width="360" height="304" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-acao-6.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><figcaption><b>Se protege</b><span>Recolhe as patas na carapaça quando o perigo chega.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TITAN HUNT ============ -->
+    <section class="sw-titan" aria-labelledby="titan-t">
+      <div class="sw-titan__bg" aria-hidden="true"><img src="../assets/media/swarm/tela-boss.webp" width="720" height="1279" alt="" loading="lazy"></div>
+      <div class="wrap sw-titan__grid">
+        <div class="sw-titan__art">
+          <img class="sw-titan__corpo" src="../assets/media/swarm/titan.webp" width="537" height="746" alt="Titã: robô gigante de armadura branca com detalhes vermelhos" loading="lazy" data-parallax="8">
+          <div class="sw-titan__alvo" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <div>
+          <p class="eyebrow">Titan Hunt</p>
+          <h2 class="h1" id="titan-t" data-split>Grande demais.<br><span class="txt-game">Até não ser mais.</span></h2>
+          <p class="lead">Três Titãs, um por mundo. No começo da luta eles parecem impossíveis. Então o enxame cresce, arranca a blindagem peça por peça e expõe o núcleo.</p>
+          <ol class="sw-fases">
+            <li><b>01</b><span>Prepare</span><small>Consuma a arena e cresça antes do primeiro ataque.</small></li>
+            <li><b>02</b><span>Desmonte</span><small>Braços, escudo e pernas têm resistência própria.</small></li>
+            <li><b>03</b><span>Sobreviva</span><small>O contra-ataque cria zonas que apagam robôs. Saia delas.</small></li>
+            <li><b>04</b><span>Devore o núcleo</span><small>Uma janela curta de dano. Aproveite cada robô.</small></li>
+          </ol>
+          <figure class="sw-titan__peito glass"><img src="../assets/media/swarm/titan-peito.webp" width="563" height="303" alt="Peito do Titã: blindado à esquerda e com o núcleo vermelho exposto à direita" loading="lazy"><figcaption>Blindagem · núcleo exposto</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEXUS E SKINS ============ -->
+    <section class="section sw-nexus" aria-labelledby="nexus-t">
+      <div class="wrap sw-nexus__grid">
+        <div>
+          <p class="eyebrow" data-reveal>Nexus</p>
+          <h2 class="h1" id="nexus-t" data-split>A base que<br><span class="txt-game">cresce com você.</span></h2>
+          <p class="lead" data-reveal>Toda partida termina no Nexus. A matéria vira upgrades permanentes — e a base muda na frente dos seus olhos: Core maior, energia correndo, áreas novas acendendo.</p>
+          <ul class="sw-ramos">
+            <li class="glass" data-reveal><b>Replicação</b><span>Comece com mais robôs e cresça mais rápido.</span></li>
+            <li class="glass" data-reveal><b>Mobilidade</b><span>Mais velocidade para mover e reagrupar.</span></li>
+            <li class="glass" data-reveal><b>Resistência</b><span>Perca menos robôs e volte mais forte.</span></li>
+            <li class="glass" data-reveal><b>Recuperação</b><span>Mais matéria e mais achados raros por partida.</span></li>
+          </ul>
+        </div>
+        <div class="sw-nexus__art" data-reveal>
+          <div class="phone sw-nexus__phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-6.webp" width="720" height="1279" alt="Tela do Nexus com upgrades de capacidade, velocidade, dano e poder do Core" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+          <img class="sw-nexus__core" src="../assets/media/swarm/core.webp" width="487" height="470" alt="" loading="lazy" data-parallax="-10">
+        </div>
+      </div>
+      <div class="wrap sw-skins">
+        <div class="sw-skins__head">
+          <p class="eyebrow" data-reveal>Skins</p>
+          <h3 class="h2" data-split>Mesmo enxame. <span class="txt-game">Outra pele.</span></h3>
+        </div>
+        <div class="sw-skins__grid">
+          <figure class="sw-skin" data-reveal><img src="../assets/media/swarm/skin-base.webp" width="360" height="428" alt="" loading="lazy"><figcaption><b translate="no">Base</b><span>Branco de fábrica, olho ciano.</span></figcaption></figure>
+          <figure class="sw-skin sw-skin--void" data-reveal><img src="../assets/media/swarm/skin-void.webp" width="360" height="439" alt="" loading="lazy"><figcaption><b translate="no">Void</b><span>Violeta e sombra.</span></figcaption></figure>
+          <figure class="sw-skin" data-reveal><img src="../assets/media/swarm/skin-nano.webp" width="360" height="449" alt="" loading="lazy"><figcaption><b translate="no">Nano</b><span>Núcleos de energia nas costas.</span></figcaption></figure>
+          <figure class="sw-skin sw-skin--plasma" data-reveal><img src="../assets/media/swarm/skin-plasma.webp" width="360" height="437" alt="" loading="lazy"><figcaption><b translate="no">Plasma</b><span>Rastro elétrico por onde passa.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">Telas</p>
+          <h2 class="h1" id="gg-t">Do laboratório <span class="txt-game">ao colosso.</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Filtrar telas" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">Todas</button>
+          <button role="tab" aria-selected="false" data-cat="jogo" aria-controls="gg-lista">No jogo</button>
+          <button role="tab" aria-selected="false" data-cat="loja" aria-controls="gg-lista">Artes da loja</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="Arraste">
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/swarm/tela-abertura.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="Abertura do SWARMORIA" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Abertura</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/swarm/tela-menu.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/tela-menu.webp" width="720" height="1279" alt="Menu com o Nexus" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Nexus</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/swarm/tela-fase2.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/tela-fase2.webp" width="720" height="1279" alt="Primeiros segundos: doze robôs no laboratório" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Laboratório</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/swarm/tela-fase.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/tela-fase.webp" width="720" height="1279" alt="O enxame já com 126 robôs devorando o laboratório" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Enxame ×126</figcaption></figure>
+          <figure class="gg__item" data-cat="jogo"><a href="../assets/media/swarm/tela-boss.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/tela-boss.webp" width="720" height="1279" alt="Enfrentando o Titã" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Contra o Titã</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/swarm/loja-1.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-1.webp" width="720" height="1279" alt="Comande a evolução" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Comande a evolução</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/swarm/loja-2.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-2.webp" width="720" height="1279" alt="Desbloqueie novos setores" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Novos setores</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/swarm/loja-3.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-3.webp" width="720" height="1279" alt="Escolha mutações" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Mutações</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/swarm/loja-4.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-4.webp" width="720" height="1279" alt="Destrua Titãs colossais" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Titãs colossais</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/swarm/loja-5.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-5.webp" width="720" height="1279" alt="Fique gigante" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Fique gigante</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/swarm/loja-6.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-6.webp" width="720" height="1279" alt="Evolua o Nexus" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Evolua o Nexus</figcaption></figure>
+          <figure class="gg__item" data-cat="loja"><a href="../assets/media/swarm/loja-7.webp"><div class="phone"><div class="phone__screen"><img src="../assets/media/swarm/loja-7.webp" width="720" height="1279" alt="Comece pequeno" loading="lazy"></div><i class="phone__island"></i></div></a><figcaption>Comece pequeno</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="Telas anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="Próximas telas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Ficha técnica</p>
+        <h2 class="h2" id="ficha-t" data-split>SWARMORIA em números.</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>Gênero</dt><dd>Enxame 3D<small>Casual e vertical, com um dedo</small></dd></div>
+          <div><dt>Modos</dt><dd>2<small>Assimilation Run e Titan Hunt</small></dd></div>
+          <div><dt>Fases</dt><dd>36<small>12 em cada mundo</small></dd></div>
+          <div><dt>Mundos</dt><dd>3<small>Laboratório, casa e loja, rua e indústria</small></dd></div>
+          <div><dt>Titãs</dt><dd>3<small>Um no fim de cada mundo</small></dd></div>
+          <div><dt>Mutações</dt><dd>6<small>Escolhidas no meio de cada partida</small></dd></div>
+          <div><dt>Idiomas</dt><dd>6<small>Português · inglês · espanhol · hindi · japonês · árabe</small></dd></div>
+          <div><dt>Preço</dt><dd>Grátis<small>Com anúncios · skins opcionais</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>Onde jogar</p>
+            <h2 class="h2" id="onde-t" data-split>Jogue onde você <span class="txt-game">estiver.</span></h2>
+          </div>
+          <p class="lead" data-reveal>No celular, pela loja que você já usa — ou direto no navegador, sem instalar nada. Cada botão acende no dia em que SWARMORIA chegar àquela plataforma.</p>
+        </div>
+        <div class="onde__grupos">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Celular · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="swarm:play" aria-disabled="true" aria-label="SWARMORIA na Google Play: em breve">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="swarm:amazon" aria-disabled="true" aria-label="SWARMORIA na Amazon Appstore: em breve">
+            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="swarm:samsung" aria-disabled="true" aria-label="SWARMORIA na Galaxy Store: em breve">
+            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>Em breve</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegador · sem instalar</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="swarm:poki" aria-disabled="true" aria-label="SWARMORIA na Poki: em breve">
+            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="swarm:crazygames" aria-disabled="true" aria-label="SWARMORIA na CrazyGames: em breve">
+            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play é marca da Google LLC. Amazon, Amazon Appstore e o logo da Amazon são marcas da Amazon.com, Inc. ou de suas afiliadas. Samsung e Galaxy Store são marcas da Samsung Electronics Co., Ltd. Poki e CrazyGames são marcas de seus respectivos titulares.</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">Acesso antecipado</p>
+            <h2 class="h2" id="lista-t">Entre no enxame <span class="txt-game">antes de todo mundo.</span></h2>
+            <p class="lead">Entre na Lista Lipy: convite para o beta, aviso no dia do lançamento do SWARMORIA e as novidades do enxame em primeira mão.</p>
+            <form class="signup" method="post" data-signup data-origem="swarm" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>Quero receber</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Testes beta</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Lançamentos</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Atualizações</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="swarm" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-swarm">Seu e-mail</label>
+                <input id="email-swarm" type="email" name="email" autocomplete="email" inputmode="email" placeholder="seu@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">Quero o beta <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">Ao entrar, você aceita receber e-mails da Lipy Games sobre testes, lançamentos e novidades. Sai quando quiser. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>Enxame ativado. Você está na lista!</b>
+                <p>O convite para o beta e o aviso de lançamento vão chegar em <span data-ok-email></span>.</p>
+                <button type="button" data-signup-outro>Inscrever outro e-mail</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="Lipy Pass do SWARMORIA">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema-sm.webp" width="320" height="278" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">Beta do<br>SWARMORIA</p>
+              <div class="pass__games"><img src="../assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>Operador</small><b data-pass-nome>Você?</b></div><div><small>Enxame</small><b>×12</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">SWARM<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">ATIVADO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="De volta">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">De volta ao primeiro universo · 01 / 04</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">Entrar no universo <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>Estúdio brasileiro de jogos mobile. Feito para os minutos que viram história.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universos</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+            <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Estúdio</h4>
+          <ul>
+            <li><a href="index.html#estudio">Sobre a Lipy</a></li>
+            <li><a href="index.html#como-criamos">Como criamos</a></li>
+            <li><a href="index.html#lista">Lista Lipy (acesso antecipado)</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacidade</h4>
+          <ul>
+            <li><a href="privacidade.html">Site e Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Excluir conta do Quiver</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — marca da <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Feito no Brasil · Google Play é marca da Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Voltar ao topo"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/lipy.js?v=d74214a9"></script>
+  <script src="../assets/js/jogo.js?v=7bc7d81f"></script>
+  <script src="../assets/js/swarm.js?v=09c9f668"></script>
+</body>
+</html>

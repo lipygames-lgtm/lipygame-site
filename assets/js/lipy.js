@@ -18,7 +18,8 @@
   var LOJA = {
     quiver: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
     tlhy: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
-    nitro: { play: null, amazon: null, samsung: null, poki: null, crazygames: null }
+    nitro: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
+    swarm: { play: null, amazon: null, samsung: null, poki: null, crazygames: null }
   };
 
   /* ------------------------------------------------------------------
@@ -52,6 +53,7 @@
     quiver: { c1: '#150a00', c2: '#b85a00', icon: 'assets/media/quiver/icone.webp' },
     tlhy: { c1: '#04103a', c2: '#2a6bff', icon: 'assets/media/tlhy/icone.webp' },
     nitro: { c1: '#120300', c2: '#c42a00', icon: 'assets/media/nitro/icone.webp' },
+    swarm: { c1: '#02091a', c2: '#1c7cff', icon: 'assets/media/swarm/icone.webp' },
     lipy: { c1: '#03050b', c2: '#12245a', icon: '' }
   };
 
@@ -904,7 +906,7 @@
   function idiomas() {
     // "/quiver" e "/quiver.html" são a mesma página no GitHub Pages
     var arquivo = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
-    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
+    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
     // caminhos a partir da raiz do site (BASE sobe das pastas de idioma até ela)
     var destino = function (l) { return BASE + (l === 'en' ? '' : l + '/') + arquivo; };
     var escolhe = function (l) { local.set('lipy:idioma', l); };
@@ -1009,12 +1011,13 @@
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
       caixa.appendChild(cv);
       v.muted = true; v.loop = true; v.playsInline = true;
-      var ligado = false, pronto = false, pedido = 0;
+      var ligado = false, pronto = false, pedido = 0, morto = false;
       var desenha = function () {
         pedido = 0;
         if (v.readyState >= 2 && v.videoWidth) {
           if (cv.width !== v.videoWidth) { cv.width = v.videoWidth; cv.height = v.videoHeight / 2; gl.viewport(0, 0, cv.width, cv.height); }
-          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, v);
+          // aberto direto do arquivo (file://), o navegador bloqueia ler o vídeo no WebGL: desiste e fica a foto
+          try { gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, v); } catch (e) { morto = true; ligado = false; v.pause(); v.removeAttribute('src'); v.load(); cv.remove(); return; }
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
           if (!pronto) { pronto = true; caixa.classList.add('is-alfa'); }
         }
@@ -1022,7 +1025,7 @@
       };
       var para = function () { if (pedido) { if (RVFC) v.cancelVideoFrameCallback(pedido); else cancelAnimationFrame(pedido); pedido = 0; } };
       var liga = function () {
-        if (ligado) return;
+        if (ligado || morto) return;
         if (!v.getAttribute('src')) v.src = v.getAttribute('data-alfa');
         ligado = true;
         var p = v.play();
@@ -1031,7 +1034,9 @@
         desenha();
       };
       var desliga = function () { ligado = false; para(); v.pause(); };
-      new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) liga(); else desliga(); }); }, { rootMargin: '200px 0px' }).observe(caixa);
+      var observa = function () { new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) liga(); else desliga(); }); }, { rootMargin: '200px 0px' }).observe(caixa); };
+      // animação que já aparece no topo (ex.: o enxame do SWARMORIA) só baixa depois do "load": no 4G não disputa banda com a abertura
+      if (d.readyState === 'complete') observa(); else W.addEventListener('load', observa, { once: true });
     });
   }
 

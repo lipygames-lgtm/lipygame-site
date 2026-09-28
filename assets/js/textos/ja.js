@@ -84,5 +84,12 @@ window.LIPY_TEXTOS.ja = {
  "Moto": "バイク",
  "Troca couraça por força bruta. O lançador já vem no corpo.": "装甲の代わりに、パワーで押し切る。ランチャーは車体に標準装備。",
  "Nº {n} / 13": "No. {n} / 13",
- "Veículo em 3D. Arraste para girar.": "3Dの車両です。ドラッグで回転できます。"
+ "Veículo em 3D. Arraste para girar.": "3Dの車両です。ドラッグで回転できます。",
+ "Toque ou arraste para guiar o enxame": "タップかドラッグで群れを導こう",
+ "Arraste para guiar o enxame": "ドラッグで群れを導こう",
+ "Precisa de {n} robôs. Devore os menores primeiro.": "ロボットが{n}体必要。まずは小さいものから喰らおう。",
+ "Agora! O cubo gigante já cai.": "今だ！　巨大キューブはもう崩せる。",
+ "{n} robôs · {m} de matéria · {s} s": "ロボット{n}体 · マター{m} · {s}秒",
+ "Assimilação completa": "同化完了",
+ "O cubo gigante caiu diante de {n} robôs.": "巨大キューブは、{n}体のロボットの前に崩れ落ちた。"
 };

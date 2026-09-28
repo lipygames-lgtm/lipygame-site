@@ -84,5 +84,12 @@ window.LIPY_TEXTOS.ar = {
  "Moto": "دراجة نارية",
  "Troca couraça por força bruta. O lançador já vem no corpo.": "تتخلى عن الدروع مقابل القوة الغاشمة. والقاذف مدمج في هيكلها.",
  "Nº {n} / 13": "رقم {n} / 13",
- "Veículo em 3D. Arraste para girar.": "نموذج 3D للمركبة. اسحب للتدوير."
+ "Veículo em 3D. Arraste para girar.": "نموذج 3D للمركبة. اسحب للتدوير.",
+ "Toque ou arraste para guiar o enxame": "اضغط أو اسحب لتقود السرب",
+ "Arraste para guiar o enxame": "اسحب لتقود السرب",
+ "Precisa de {n} robôs. Devore os menores primeiro.": "تحتاج إلى {n} روبوتًا. التهِم الأصغر أولًا.",
+ "Agora! O cubo gigante já cai.": "الآن! المكعب العملاق في متناولك.",
+ "{n} robôs · {m} de matéria · {s} s": "روبوتات: {n} · مادة: {m} · {s} ث",
+ "Assimilação completa": "اكتمل الاستيعاب",
+ "O cubo gigante caiu diante de {n} robôs.": "سقط المكعب العملاق أمام {n} من الروبوتات."
 };

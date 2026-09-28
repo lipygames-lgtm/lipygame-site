@@ -84,5 +84,12 @@ window.LIPY_TEXTOS.hi = {
  "Moto": "बाइक",
  "Troca couraça por força bruta. O lançador já vem no corpo.": "आर्मर छोड़कर कच्ची ताक़त चुनती है। लॉन्चर बॉडी में ही फ़िट है।",
  "Nº {n} / 13": "नं. {n} / 13",
- "Veículo em 3D. Arraste para girar.": "3D गाड़ी। घुमाने के लिए खींचें।"
+ "Veículo em 3D. Arraste para girar.": "3D गाड़ी। घुमाने के लिए खींचें।",
+ "Toque ou arraste para guiar o enxame": "टैप करके या खींचकर झुंड चलाएँ",
+ "Arraste para guiar o enxame": "खींचकर झुंड चलाएँ",
+ "Precisa de {n} robôs. Devore os menores primeiro.": "{n} रोबोट चाहिए। पहले छोटी चीज़ें चट करें।",
+ "Agora! O cubo gigante já cai.": "अब बारी विशाल क्यूब की!",
+ "{n} robôs · {m} de matéria · {s} s": "{n} रोबोट · {m} मैटर · {s} सेकंड",
+ "Assimilação completa": "सब कुछ निगल लिया",
+ "O cubo gigante caiu diante de {n} robôs.": "{n} रोबोटों के आगे विशाल क्यूब ढह गया।"
 };

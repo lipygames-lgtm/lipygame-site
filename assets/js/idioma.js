@@ -45,7 +45,7 @@
   };
   // página atual ("/quiver" e "/quiver.html" são a mesma no GitHub Pages)
   var arquivo = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
-  arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
+  arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
 
   W.LipyIdioma = {
     doPais: doPais,

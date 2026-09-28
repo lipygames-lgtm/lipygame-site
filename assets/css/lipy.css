@@ -254,7 +254,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(120, 170, 255, .35) transpar
 .btn--plain { padding: 0 22px; }
 
 .link-arrow { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; }
-.link-arrow svg { width: 16px; transition: transform .5s var(--ease-out); }
+.link-arrow svg { width: 16px; height: 16px; transition: transform .5s var(--ease-out); }
 .link-arrow:hover svg { transform: translateX(5px); }
 .u-line { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .5s var(--ease-out); }
 .u-line:hover { background-size: 100% 1px; }
@@ -354,9 +354,9 @@ a.store:not([aria-disabled="true"]):hover { transform: translateY(-3px); box-sha
 
 /* painel "Jogos" */
 .mega {
-  position: absolute; top: calc(100% + 10px); left: 50%; width: min(760px, calc(100vw - 28px));
+  position: absolute; top: calc(100% + 10px); left: 50%; width: min(960px, calc(100vw - 28px));
   transform: translateX(-50%); padding: 14px; --r: 26px;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
   visibility: hidden; pointer-events: none;
 }
 .mega.is-open { visibility: visible; pointer-events: auto; }
