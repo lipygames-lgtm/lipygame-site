@@ -338,6 +338,10 @@
     rv.forEach(function (el) { io2.observe(el); });
   } else rv.forEach(function (el) { el.classList.add('is-visto'); });
 
+  /* ---------------- anúncios: só existem com o AdSense ligado (hub/ANUNCIOS + hub/anuncios.json) ---------------- */
+  // só o bloco visível (o lateral some abaixo de 1100 px; bloco escondido com largura 0 dá erro no Google)
+  $$('ins.adsbygoogle').forEach(function (ins) { if (ins.offsetWidth > 0) try { (W.adsbygoogle = W.adsbygoogle || []).push({}); } catch (e) {} });
+
   /* ---------------- clique na fonte oficial (X, Discord, Roblox, Instagram…) ---------------- */
   d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[target="_blank"][href^="http"]');

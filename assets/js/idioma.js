@@ -56,7 +56,20 @@
     escolhe: function (l) { ls.set('lipy:idioma', l); }
   };
 
-  if (!h.hasAttribute('data-raiz')) return;
+  // Página com idioma no endereço aberta sem o país guardado. Acontece quando a raiz decidiu pelo idioma do aparelho
+  // porque o servidor passou de 1 s, e a troca de página cancelou a resposta (1ª consulta de um navegador "frio").
+  // Pergunta de novo, SEM redirecionar, só para guardar: vale para as próximas visitas e para o aviso de idioma.
+  if (!h.hasAttribute('data-raiz')) {
+    if (!ls.get('lipy:pais')) {
+      try {
+        fetch(SUPABASE + '/rest/v1/rpc/site_pais?apikey=' + CHAVE)
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (p) { if (typeof p === 'string' && /^[A-Z]{2}$/.test(p)) ls.set('lipy:pais', p); })
+          .catch(function () { /* sem rede: tenta na próxima página */ });
+      } catch (e) { /* navegador antigo */ }
+    }
+    return;
+  }
   var dentro = false;
   try { dentro = !!d.referrer && new URL(d.referrer).origin === location.origin; } catch (e) { /* referrer estranho */ }
   if (dentro) return;
