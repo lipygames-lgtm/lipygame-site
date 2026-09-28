@@ -15,8 +15,13 @@
   /* medição (Umami, sem cookie; só existe se o script dele estiver na página). Mesmos nomes do GA4 depois. */
   var JOGO = html.getAttribute('data-jogo') || '';
   var mede = function (nome, dados) { try { if (W.umami && typeof W.umami.track === 'function') W.umami.track(nome, dados); } catch (e) {} };
-  // termo de busca sem dado pessoal: minúsculo, até 40 caracteres; com @, link ou número longo não vai
-  var termoLimpo = function (s) { s = (s || '').toLowerCase().trim().slice(0, 40); return /@|http|www\.|\d{5,}/.test(s) ? '[omitido]' : s; };
+  // termo de busca sem dado pessoal: confere o termo INTEIRO e só depois corta em 40 caracteres.
+  // Com @, cara de link (barra, www, http, .com/.br…) ou 7+ algarismos no total (telefone, CPF) não vai.
+  var termoLimpo = function (s) {
+    s = (s || '').toLowerCase().trim();
+    if (/@|https?:|www\.|\/|\.(com|net|org|br|io|gg|me|app|info|xyz)\b/.test(s) || (s.match(/\d/g) || []).length >= 7) return '[omitido]';
+    return s.slice(0, 40);
+  };
 
   /* ---------------- menu do celular ---------------- */
   var hh = $('.hh'), menu = $('.hh__menu');
@@ -104,7 +109,7 @@
   });
 
   /* ---------------- votos "funcionou?" ----------------
-     O voto vai para o servidor (public.hub_votar: um por endereço, dá para trocar ou tirar tocando de novo) e o
+     O voto vai para o servidor (public.hub_votar: um por aparelho, dá para trocar ou tirar tocando de novo) e o
      aparelho lembra qual botão ficou aceso. O placar (últimos 14 dias) vem numa chamada só, depois do load.
      Sem data-api (protótipo no computador), fica só no aparelho. */
   var API = html.getAttribute('data-api'), CHAVE = html.getAttribute('data-api-chave');
@@ -118,7 +123,7 @@
     $('.sim b', box).textContent = p && p.sim > 0 ? p.sim : '';
     $('.nao b', box).textContent = p && p.nao > 0 ? p.nao : '';
     // muitos "não" nas últimas 48 h (conta do servidor): o código ganha um aviso, sem sumir da lista
-    var card = box.closest('.cod'), suspeito = !!(p && p.estado === 'provavel_expirado');
+    var card = box.closest('.cod'), suspeito = !!(p && p.estado === 'provavel_expirado') && !box.hasAttribute('data-permanente');
     if (!card) return;
     card.classList.toggle('cod--suspeito', suspeito);
     var av = $('.cod__alerta', card);
@@ -127,7 +132,7 @@
   };
   // depois de um "não funcionou": por quê? (expirou / já tinha usado / deu inválido) — ajuda a conferência a agir certo
   var pedeMotivo = function (box, id) {
-    if ($('.votos__motivos', box)) return;
+    if ($('.votos__motivos', box) || box.hasAttribute('data-permanente')) return;
     var m = d.createElement('span');
     m.className = 'votos__motivos';
     m.innerHTML = '<span></span>';
@@ -138,15 +143,24 @@
       b.textContent = op[1];
       b.addEventListener('click', function () {
         m.remove();
+        // só completa um "não" que já está valendo (outro voto a caminho ou trocado = ignora)
+        if (box.getAttribute('aria-busy') === 'true' || guarda.get('hub:voto:' + id) !== 'nao') return;
         if (aviso) aviso.textContent = t('Obrigado! Isso ajuda a conferir mais rápido.');
-        rpc('hub_votar', { p_chave: id, p_voto: 'nao', p_dispositivo: aparelho(), p_motivo: op[0] }).then(function (r) { if (r && r.ok) placar(box, r); });
+        box.setAttribute('aria-busy', 'true');
+        rpc('hub_votar', { p_chave: id, p_voto: 'nao', p_dispositivo: aparelho(), p_motivo: op[0] }).then(function (r) {
+          box.removeAttribute('aria-busy');
+          if (r && r.ok) placar(box, r);
+        });
       });
       m.appendChild(b);
     });
     box.appendChild(m);
   };
-  // código aleatório deste aparelho: quem divide o IP (4G da operadora) não sobrescreve o voto do outro
+  // código aleatório deste aparelho: é ele que identifica o voto (trocar de Wi-Fi para 4G não duplica nem
+  // impede tirar o voto). Sem localStorage, vale enquanto a página estiver aberta.
+  var meuAparelho = null;
   var aparelho = function () {
+    if (meuAparelho) return meuAparelho;
     var a = guarda.get('hub:aparelho');
     if (!/^[a-z0-9]{16,40}$/.test(a || '')) {
       a = '';
@@ -154,7 +168,7 @@
       for (var i = 0; i < 12; i++) a += ('0' + ((cr ? cr[i] : Math.floor(Math.random() * 256))).toString(16)).slice(-2);
       guarda.set('hub:aparelho', a);
     }
-    return a;
+    return (meuAparelho = a);
   };
   caixas.forEach(function (box) {
     var id = box.getAttribute('data-votos'), sim = $('.sim', box), nao = $('.nao', box);
@@ -167,6 +181,7 @@
     [sim, nao].forEach(function (b) {
       b.addEventListener('click', function () {
         if (box.getAttribute('aria-busy') === 'true') return; // um voto de cada vez (a ordem não embaralha)
+        var mm0 = $('.votos__motivos', box); if (mm0) mm0.remove(); // o "por quê?" era do voto anterior
         var v = b === sim ? 'sim' : 'nao', antes = guarda.get('hub:voto:' + id) || '';
         var novo = antes === v ? '' : v; // tocar de novo no mesmo botão tira o voto
         // na hora (otimista); a resposta do servidor corrige os números — ou desfaz tudo, se o voto não entrou
@@ -182,7 +197,6 @@
             placar(box, r);
             mede('vote', { game: id.split(':')[0], vote_value: novo === 'sim' ? 'worked' : novo === 'nao' ? 'not_worked' : 'removed', page_lang: LANG });
             if (novo === 'nao') pedeMotivo(box, id);
-            else { var mm = $('.votos__motivos', box); if (mm) mm.remove(); }
             if (aviso) aviso.textContent = novo ? t('Obrigado! Seu voto ajuda outros jogadores.') : t('Voto retirado.');
             return;
           }
@@ -196,11 +210,14 @@
     });
   });
   if (caixas.length && API) {
+    // em lotes de 150 (o teto do servidor): o GTA San Andreas tem 340 caixas numa página só
     var buscaPlacar = function () {
-      rpc('hub_placares', { p_chaves: caixas.map(function (b) { return b.getAttribute('data-votos'); }) }).then(function (m) {
-        // caixa com voto a caminho fica com o número do próprio voto (a resposta dele traz o placar certo)
-        if (m) caixas.forEach(function (box) { if (box.getAttribute('aria-busy') !== 'true') placar(box, m[box.getAttribute('data-votos')]); });
-      });
+      for (var ini = 0; ini < caixas.length; ini += 150) (function (lote) {
+        rpc('hub_placares', { p_chaves: lote.map(function (b) { return b.getAttribute('data-votos'); }) }).then(function (m) {
+          // caixa com voto a caminho fica com o número do próprio voto (a resposta dele traz o placar certo)
+          if (m) lote.forEach(function (box) { if (box.getAttribute('aria-busy') !== 'true') placar(box, m[box.getAttribute('data-votos')]); });
+        });
+      })(caixas.slice(ini, ini + 150));
     };
     if (d.readyState === 'complete') buscaPlacar(); else W.addEventListener('load', buscaPlacar);
   }
@@ -220,20 +237,25 @@
       var q = normal(campo.value.trim());
       var achados = (itens || []).filter(function (it) { return !q || normal(it.t + ' ' + (it.k || '') + ' ' + (it.s || '')).indexOf(q) >= 0; }).slice(0, 8);
       sel = Math.min(sel, Math.max(0, achados.length - 1));
-      lista.innerHTML = '';
-      if (!achados.length) { lista.innerHTML = '<p class="paleta__vazio">' + t('Nada encontrado. Tente o nome do jogo.') + '</p>'; return; }
+      lista.textContent = '';
+      if (!achados.length) { vazio(t('Nada encontrado. Tente o nome do jogo.')); return; }
       achados.forEach(function (it, i) {
         var a = d.createElement('a');
         a.href = base + it.u;
         a.setAttribute('role', 'option');
         a.setAttribute('aria-selected', i === sel);
-        var ic = it.i ? '<img src="' + (it.i.charAt(0) === '/' ? it.i : base + it.i) + '" width="36" height="36" alt="">' : '<span class="mono-ic" style="--c1:' + (it.c || '#2ad8ff') + ';--c2:' + (it.c2 || '#2170ff') + '">' + (it.m || '·') + '</span>';
-        a.innerHTML = ic + '<span><b></b><small></small></span>';
-        $('b', a).textContent = it.t;
-        $('small', a).textContent = it.s || '';
+        // montado por elementos (nada de texto virando HTML)
+        var ic;
+        if (it.i) { ic = d.createElement('img'); ic.src = it.i.charAt(0) === '/' ? it.i : base + it.i; ic.width = 36; ic.height = 36; ic.alt = ''; }
+        else { ic = d.createElement('span'); ic.className = 'mono-ic'; ic.style.setProperty('--c1', it.c || '#2ad8ff'); ic.style.setProperty('--c2', it.c2 || '#2170ff'); ic.textContent = it.m || '·'; }
+        var tx = d.createElement('span'), b = d.createElement('b'), sm = d.createElement('small');
+        b.textContent = it.t; sm.textContent = it.s || '';
+        tx.appendChild(b); tx.appendChild(sm);
+        a.appendChild(ic); a.appendChild(tx);
         lista.appendChild(a);
       });
     };
+    var vazio = function (msg) { var p = d.createElement('p'); p.className = 'paleta__vazio'; p.textContent = msg; lista.textContent = ''; lista.appendChild(p); };
     var abre = function () {
       voltaFoco = d.activeElement;
       paleta.hidden = false;
@@ -241,7 +263,7 @@
       campo.value = '';
       campo.focus();
       if (itens) return desenha();
-      lista.innerHTML = '<p class="paleta__vazio">' + t('Carregando…') + '</p>';
+      vazio(t('Carregando…'));
       fetch(base + 'busca.json').then(function (r) { return r.json(); }).then(function (j) { itens = j; desenha(); }, function () { itens = []; desenha(); });
     };
     var fecha = function () { paleta.hidden = true; d.body.style.overflow = ''; if (voltaFoco) voltaFoco.focus(); };

@@ -647,3 +647,4 @@ html:lang(ar) .olho, html:lang(hi) .olho, html:lang(ja) .olho { font-size: 12.5p
 .cod__alerta { grid-column: 1 / -1; margin: 0; padding: 8px 12px; border-radius: 10px; font-size: 13px; color: #ffd0d6; background: rgba(255, 90, 110, .12); }
 .cod__limite { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; color: #ffe0a3; background: rgba(255, 182, 39, .14); }
 .cod__limite .ic { font-size: 13px; }
+.cod__nota { flex-basis: 100%; font-family: var(--f-text); font-size: 12.5px; line-height: 1.5; color: var(--txt-2); }
