@@ -16,9 +16,9 @@
        crazygames CrazyGames (nav.) ex.: 'https://www.crazygames.com/game/quiver'
      ------------------------------------------------------------------ */
   var LOJA = {
-    quiver: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
-    tlhy: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
-    nitro: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
+    quiver: { play: 'https://play.google.com/store/apps/details?id=com.lipy.quiver', amazon: null, samsung: null, poki: null, crazygames: null },
+    tlhy: { play: 'https://play.google.com/store/apps/details?id=com.lipy.thislevel', amazon: null, samsung: null, poki: null, crazygames: null },
+    nitro: { play: 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant', amazon: null, samsung: null, poki: null, crazygames: null },
     swarm: { play: null, amazon: null, samsung: null, poki: null, crazygames: null }
   };
 
