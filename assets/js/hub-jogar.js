@@ -38,6 +38,7 @@
       var momento = a.getAttribute('data-baixar');
       a.href = comOrigem(a.href, momento);
       mede('play_cta_click', { momento: momento });
+      if (S) S.cliq++;
       // computador e iPhone: QR code (a Play no navegador do computador não instala no celular sozinha)
       if (!android && momento !== 'qr' && abreQr()) e.preventDefault();
       return;
@@ -46,7 +47,80 @@
   });
   if (qr) qr.addEventListener('click', function (e) { if (e.target === qr && qr.close) qr.close(); });
 
+  /* ---------- página "Jogos grátis": filtros (Em alta, Novos, categorias) e "Continue jogando" ---------- */
+  var mos = document.querySelector('[data-mosaico]');
+  if (mos) {
+    var nada = document.querySelector('[data-nada]');
+    document.querySelectorAll('[data-filtro]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = b.getAttribute('data-filtro'), vistos = 0;
+        document.querySelectorAll('[data-filtro]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        mos.querySelectorAll('.tl').forEach(function (t) {
+          var ok = f === 'todos' || (f === 'alta' && t.hasAttribute('data-alta')) || (f === 'novos' && t.hasAttribute('data-novo')) || (' ' + t.getAttribute('data-cats') + ' ').indexOf(' ' + f + ' ') >= 0;
+          t.hidden = !ok; if (ok) vistos++;
+        });
+        mos.classList.toggle('mos--filtrado', f !== 'todos');
+        if (nada) nada.hidden = vistos > 0;
+        mede('filtro', { filtro: f });
+      });
+    });
+    var jogados = [];
+    try { jogados = JSON.parse(localStorage.getItem('lipy-jogados') || '[]'); } catch (e) {}
+    var cont = document.querySelector('[data-continue]');
+    if (cont && jogados.length) {
+      var lista = cont.querySelector('.arc__continue-lista');
+      jogados.slice(0, 6).forEach(function (s) {
+        var t = mos.querySelector('.tl[data-slug="' + s + '"]');
+        if (!t) return;
+        var c = t.cloneNode(true); c.classList.remove('tl--g'); c.removeAttribute('data-alta');
+        var al = c.querySelector('.tl__alta'); if (al) al.remove();
+        lista.appendChild(c);
+      });
+      cont.hidden = !lista.children.length;
+    }
+  }
+  function anotaJogado() {
+    try {
+      var j = JSON.parse(localStorage.getItem('lipy-jogados') || '[]').filter(function (x) { return x !== slug; });
+      j.unshift(slug); localStorage.setItem('lipy-jogados', JSON.stringify(j.slice(0, 12)));
+    } catch (e) {}
+  }
+
   if (!tela) return;
+
+  /* ---------- métricas privadas da sessão (servidor/metricas-jogos.sql) ----------
+     Um código aleatório por navegador (sem dado pessoal) + uma sessão por vez que o jogo é aberto. Conta o tempo
+     JOGANDO de verdade: jogo carregado e página visível. Manda o estado a cada 30 s e ao sair da página. */
+  var html = document.documentElement, API = html.getAttribute('data-api'), CHAVE = html.getAttribute('data-api-chave');
+  var S = null, enviado = '';
+  function jogadorId() {
+    var j = null;
+    try { j = localStorage.getItem('lipy-jogador'); } catch (e) {}
+    if (!/^[0-9a-f]{16}$/.test(j || '')) {
+      j = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(8)), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+      try { localStorage.setItem('lipy-jogador', j); } catch (e) {}
+    }
+    return j;
+  }
+  function uuid() { try { return crypto.randomUUID(); } catch (e) { var h = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(16)), function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); return h.slice(0, 8) + '-' + h.slice(8, 12) + '-4' + h.slice(13, 16) + '-a' + h.slice(17, 20) + '-' + h.slice(20, 32); } }
+  function iniciaSessao() {
+    var qs = new URLSearchParams(location.search), ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '').split('.')[0] : ''; } catch (e) {}
+    S = { id: uuid(), jogador: jogadorId(), t0: Date.now(), carregou: null, seg: 0, fase: 0, vit: 0, conv: 0, cliq: 0,
+      origem: qs.get('utm_source') || (ref && ref !== 'lipygame' ? ref : 'organico'), campanha: qs.get('utm_campaign'), criativo: qs.get('utm_content') };
+  }
+  function envia(saindo) {
+    if (!S || !API || !CHAVE) return;
+    var corpo = JSON.stringify({ p_id: S.id, p_jogador: S.jogador, p_jogo: slug, p_idioma: html.getAttribute('data-lang'), p_aparelho: celular ? 'celular' : 'computador',
+      p_origem: S.origem, p_campanha: S.campanha, p_criativo: S.criativo, p_carregou_ms: S.carregou, p_segundos: S.seg, p_fase_max: S.fase, p_vitorias: S.vit, p_convites: S.conv, p_cliques: S.cliq });
+    if (corpo === enviado) return;
+    enviado = corpo;
+    try { fetch(API + '/rest/v1/rpc/jogo_sessao', { method: 'POST', keepalive: !!saindo, headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json' }, body: corpo }).catch(function () {}); } catch (e) {}
+  }
+  setInterval(function () { if (S && S.carregou != null && document.visibilityState === 'visible') S.seg++; }, 1000);
+  setInterval(function () { envia(false); }, 30000);
+  addEventListener('pagehide', function () { envia(true); });
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') envia(true); });
 
   /* ---------- convite "Continue no celular" ---------- */
   var cta = tela.querySelector('[data-cta]'), ctaTimer = 0, vitorias = 0;
@@ -58,6 +132,7 @@
     cta.querySelector('[data-baixar]').setAttribute('data-baixar', momento);
     cta.hidden = false; cta.classList.remove('is-saindo');
     mede('play_cta_view', { momento: momento });
+    if (S) S.conv++;
     clearTimeout(ctaTimer);
     ctaTimer = setTimeout(escondeCta, 14000);    // some sozinho: é convite, não obrigação
   }
@@ -68,9 +143,11 @@
   addEventListener('message', function (e) {
     if (e.origin !== location.origin || !frame || e.source !== frame.contentWindow) return;
     var d = e.data || {};
+    if (d.lipy === 'carregou' && S && S.carregou == null) { S.carregou = Date.now() - S.t0; envia(false); }
     if (d.lipy === 'fase' && !comecou) { comecou = true; mede('game_start'); }
     else if (d.lipy === 'venceu') {
       var n = +d.n || 0; vitorias++;
+      if (S) { S.vit++; S.fase = Math.max(S.fase, n); }
       mede('level_win', { fase: n });
       // 1º convite ao vencer a fase 3 (ou na 3ª vitória da visita, para quem já tinha progresso); depois, a cada 4 vitórias
       if (!guarda('lipy-cta3-' + slug) && (n >= 3 || vitorias >= 3)) { guarda('lipy-cta3-' + slug, '1'); setTimeout(function () { mostraCta('fase3'); }, 1800); }
@@ -103,6 +180,8 @@
       tela.insertBefore(frame, tela.firstChild); tela.appendChild(sair);
       tela.classList.add('is-jogando');
       mede('game_open');
+      iniciaSessao();
+      anotaJogado();
     }
     if (celular) cheia(true);
     setTimeout(function () { try { frame.focus(); } catch (e) {} }, 50);
