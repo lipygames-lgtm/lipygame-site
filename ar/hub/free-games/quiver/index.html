@@ -32,9 +32,15 @@
 <link rel="stylesheet" href="/assets/css/hub.css?v=2e44b3cb">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=5f504377">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
-<script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
+<script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
-fbq("init","1762322394989141");fbq("track","PageView");})();</script>
+fbq("init","1762322394989141");fbq("track","PageView");
+var jogo=location.pathname.replace(/\/$/,"").split("/").pop(),jogou=0,seg=0,marcas=[30,60,180];
+document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest("[data-abrir],[data-baixar]");if(!a)return;
+if(a.hasAttribute("data-abrir")){if(!jogou){jogou=1;fbq("trackCustom","Jogou",{jogo:jogo});}}
+else fbq("trackCustom","CliqueBaixar",{jogo:jogo,onde:a.getAttribute("data-baixar")});},true);
+setInterval(function(){if(!jogou||document.hidden||!marcas.length)return;seg++;if(seg>=marcas[0])fbq("trackCustom","Engajou"+marcas.shift()+"s",{jogo:jogo});},1000);
+})();</script>
 <meta name="google-adsense-account" content="ca-pub-8464565309616696">
 <script>(window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464565309616696" crossorigin="anonymous"></script>
