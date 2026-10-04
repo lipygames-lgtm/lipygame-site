@@ -1,0 +1,363 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#14212b;color:#f1f5f9;font-family:Arial,sans-serif;touch-action:none}button{font:inherit;border:0;color:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.43;cursor:default}#world,#labels,.screen,.overlay{position:absolute;inset:0;width:100%;height:100%}#world{display:block}#labels{pointer-events:none;overflow:hidden}.label{position:absolute;transform:translate(-50%,-100%);background:#162630df;border:1px solid #74e4d5;border-radius:7px;padding:3px 6px;font-size:12px;font-weight:900;white-space:nowrap;text-shadow:0 1px 2px #000}.label.bad{border-color:#fc806c;background:#682f35}.label.hp{border:0;background:#183425e8;color:#e7ffdc}.label.boss{font-size:17px;border:1px solid #f0645a}.screen{pointer-events:none;padding:20px}.screen button,.screen section{pointer-events:auto}.hidden{display:none!important}header{display:flex;justify-content:space-between;align-items:center}.eyebrow{font-size:9px;letter-spacing:2px;font-weight:700;color:#88a4b8}h1{font-style:italic;font-size:27px;letter-spacing:-1px;margin:7px 0}h1 span{color:#22d3ee}h2{font-size:36px;margin:6px 0;letter-spacing:-1px}.square{width:42px;height:42px;border-radius:12px;background:#263b48d9;font-size:24px}.balance{display:flex;align-items:center;justify-content:space-between;background:#14232bbf;border:1px solid #314852;border-radius:12px;padding:10px 14px;margin-top:15px;font-size:10px;letter-spacing:1px}.balance b{color:#f5c451;font-size:20px}.carTitle{position:absolute;top:22%;left:24px;pointer-events:none}#carCount{font-size:11px;color:#c1d0d8}.carNav{position:absolute;left:20px;right:20px;top:43%;display:flex;justify-content:space-between;align-items:center}#ownedBadge{align-self:flex-end;margin-top:100px;font-size:10px;letter-spacing:2px;background:#14232bbb;padding:6px 12px;border-radius:20px}.garageBottom{position:absolute;bottom:8px;left:18px;right:18px}.stats{display:flex;justify-content:space-between;background:#162630d9;border:1px solid #344c58;border-radius:13px;padding:12px 16px;margin-bottom:9px}.stats div{display:flex;flex-direction:column;gap:5px}.stats span{font-size:9px;color:#9cb4c0;letter-spacing:1px}.stats b{font-size:18px}.main{width:100%;padding:13px;border-radius:11px;background:#f5c451;color:#17232c;font-weight:900;font-size:13px;letter-spacing:.5px}.cyan{background:#22d3ee}.upgradeGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:9px 0}.upgradeGrid button{padding:10px 2px;border-radius:10px;background:#263a47;font-size:10px;line-height:1.6;border:1px solid #3b505c}.upgradeGrid b{display:block;color:#f5c451;font-size:12px}.levelRow{display:flex;align-items:center;justify-content:space-between;margin:9px 0;font-size:11px;letter-spacing:1px}.levelRow button{background:#263a47;border-radius:8px;width:30px;height:27px}.foot{text-align:center;color:#91a5b2;font-size:9px;margin:9px 0 3px}#race{padding:0}.adBanner{height:30px;background:#15212c;color:#93a7b5;text-align:center;font-size:9px;letter-spacing:1px;line-height:30px;border-bottom:1px solid #334752}.hud{display:flex;justify-content:space-between;padding:14px 18px 8px}.hud>div{display:flex;flex-direction:column;gap:5px}.hud span{font-size:10px;font-weight:bold;letter-spacing:2px;color:#e5f6fb}.hud strong{font-size:25px;color:#ffdd77;text-shadow:0 2px 4px #243440}.health{position:relative;background:#1a2b3bd9;height:18px;margin:0 18px;border-radius:8px;overflow:hidden}.health i{display:block;height:100%;background:#5bd898;transition:width .15s}.health span{position:absolute;inset:0;text-align:center;font-size:11px;font-weight:bold;line-height:18px;color:#fff;text-shadow:0 1px 2px #142a2b}.progress{height:3px;margin:8px 20px;background:#ffffff40}.progress i{display:block;height:100%;background:#e8dcaf}.raceInfo{display:flex;justify-content:space-between;font-size:10px;padding:0 19px;font-weight:bold;text-shadow:0 1px 3px #142633}#bossHud{text-align:center;margin:14px 30px;font-size:12px;text-shadow:0 1px 3px #16232a}#bossHud .health{height:8px;margin:6px 0}#bossFill{background:#f0645a}#bossNum{font-size:10px}.controls{position:absolute;bottom:42px;left:25px;right:25px;display:flex;justify-content:space-between;align-items:end}.steer{width:57px;height:57px;background:#192d3bc9;border:1px solid #c0e0e94d;border-radius:17px;font-size:36px}#nos{width:84px;height:84px;background:#183644;border:3px solid #466370;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 5px 20px #16273380}#nos b{font-size:23px;font-style:italic}#nos small{font-size:9px;margin-top:5px}#nos.ready{background:#22d3ee;color:#122732;border-color:#a8fbff;animation:pulse 1s infinite}@keyframes pulse{50%{box-shadow:0 0 23px #22d3ee}}.hint{position:absolute;bottom:15px;width:100%;text-align:center;font-size:10px;letter-spacing:2px;color:white;text-shadow:0 1px 3px #122732}#warning{position:absolute;top:38%;width:100%;text-align:center;color:#ffdfb1;font-weight:900;font-size:18px;text-shadow:0 2px 4px #862e20}#toast{position:absolute;z-index:9;top:30%;left:10%;width:80%;text-align:center;font-weight:bold;color:#fff;pointer-events:none;text-shadow:0 2px 5px #142732;font-size:19px;opacity:0;transition:opacity .2s}.overlay{background:#0c172bc9;display:flex;align-items:center;justify-content:center;padding:24px;z-index:10;backdrop-filter:blur(6px)}.panel{background:#192b38;border:1px solid #466171;border-radius:22px;padding:25px;max-width:400px;width:100%;box-shadow:0 20px 60px #0005;max-height:92%;overflow:auto}.panel h2{font-size:28px;margin:10px 0 18px}.panel p{color:#b6cad5;font-size:13px;line-height:1.6}.panel .main{margin-top:10px}.panel .secondary{background:#314858;color:#e6f3f9}.panel .big{font-size:40px;color:#f5c451;font-weight:900}.panel .row{display:flex;justify-content:space-between;padding:10px 0;font-size:13px;border-bottom:1px solid #395260}.panel .tag{color:#22d3ee;font-size:10px;letter-spacing:2px}.panel .notice{background:#283f4a;padding:12px;border-radius:9px;font-size:11px}.testAd{height:160px;background:linear-gradient(135deg,#315666,#172a38);display:flex;align-items:center;justify-content:center;border:1px dashed #6a929d;border-radius:14px;font-size:25px;color:#74deef;font-style:italic;font-weight:bold}.testAd small{display:block;font-size:10px;letter-spacing:2px;margin-top:10px}@media(max-height:700px){.screen{padding:12px}.balance{margin-top:5px;padding:7px 10px}.carTitle{top:20%}h2{font-size:28px}.garageBottom{bottom:5px}.stats{padding:7px 12px}.main{padding:10px}.upgradeGrid button{padding:6px 2px}.carNav{top:36%}.foot{font-size:8px}.carNav #ownedBadge{margin-top:85px}}
+
+.controls.swipeOnly{justify-content:center}.raceInfo{gap:8px}.raceInfo #weaponInfo{text-align:right;font-size:9px;max-width:65%}#race.hurt{box-shadow:inset 0 0 55px #e5524599}#warning{top:31%;font-size:14px;padding:0 20px}.label.special{border:1px solid #f7b65a;color:#fff1d4}.label{font-size:11px;padding:2px 5px}.label.hp{font-size:10px}.label.boss{font-size:15px}
+
+#nos b{font-size:20px}.stats b{font-size:16px}
+
+/* Keep the approaching road clear; compact information lives at its edges. */
+.side{position:absolute;top:16%;width:76px;padding:7px 5px;background:#14232bc9;border:1px solid #91afbf33;border-radius:10px;display:flex;flex-direction:column;gap:10px;font-size:10px;text-align:center;overflow-wrap:anywhere}.leftSide{left:5px}.rightSide{right:5px}.side strong{color:#ffdd77;font-size:16px}.side .square{align-self:center}.side .health{margin:0;height:25px}.side .health span{font-size:9px;line-height:25px}.side .progress{margin:0}.side #weaponInfo{line-height:1.8;font-size:10px}.side #terrain{font-size:9px}.adBanner{position:absolute;bottom:0;width:100%;height:22px;line-height:22px;font-size:8px}.hint{bottom:26px;font-size:9px}.controls{bottom:49px}#nos{position:relative;border:0;background:conic-gradient(#22d3ee var(--fuel,0%),#3e5566 0);isolation:isolate}#nos:before{content:'';position:absolute;inset:5px;border-radius:50%;background:#183644;z-index:-1}#nos.ready{background:#22d3ee;color:#d9fcff}#nos.ready:before{background:#125368}.label.boss{font-size:15px}
+
+/* Nitrovenant / workshop identity */
+:root{--ink:#112b36;--cyan:#43e6ed;--gold:#f3cf78}button{transition:background .16s,transform .12s,opacity .16s}button:active{transform:scale(.96)}h1{font-size:29px;letter-spacing:-1.2px}.eyebrow{color:#91b7c5;letter-spacing:2.4px}header .square{background:#203f4bdd;border:1px solid #58829544}.balance{background:linear-gradient(110deg,#13303ce8,#183745bd);border-color:#54818b66;border-radius:7px}.balance span{font-size:9px}.carTitle h2{font-size:42px;font-weight:900;letter-spacing:-1.8px;text-shadow:0 3px 18px #051b2999}.carTitle{top:21%}.carTitle .eyebrow{color:#5fe3e5}#carCount{color:#abc7d1;font-size:10px;letter-spacing:1px}.carNav{top:43%;left:14px;right:14px}.carNav .square{border-radius:50%;background:#163541bd;border:1px solid #6d99a366}#ownedBadge{font-size:9px;border:1px solid #80aab855;background:#16313ee8;letter-spacing:1.2px}.garageBottom{left:16px;right:16px}.stats{background:#15313eea;border-color:#547b8970;border-radius:9px;box-shadow:0 8px 28px #07172030}.stats b{font-variant-numeric:tabular-nums}.stats span{color:#a9c7cf}.main{border-radius:8px;background:var(--gold);box-shadow:0 4px 0 #0b242c40}.main.cyan{background:linear-gradient(110deg,#29cbdc,#65edf0);padding:16px}.upgradeGrid button{background:#193845ec;border-color:#50778666;border-radius:7px}.upgradeGrid b{color:#f1d087}.levelRow button{background:#264957}.foot{font-size:8px}.panel{background:linear-gradient(145deg,#183846,#122937);border-color:#658d9966;border-radius:15px}.panel h2{letter-spacing:-.8px}.panel .secondary{background:#294b5b}.side{background:#173541d9;backdrop-filter:blur(4px);border-color:#aac8cb55;border-radius:8px;width:73px;top:15%}.side .health{border-radius:5px}.side .health i{background:linear-gradient(90deg,#23b987,#92e3a6)}.side #weaponInfo{color:#d3ebea;font-size:9px}.controls.swipeOnly{justify-content:flex-end}.controls{left:18px;right:18px}#nos{width:82px;height:82px;box-shadow:0 5px 25px #0c28385c}#nos b{font-size:19px;letter-spacing:-.7px}#nos small{font-weight:bold;font-variant-numeric:tabular-nums}.label.hp{background:#213e38e8;border-radius:5px;font-size:9px;min-width:20px;padding:2px 4px 4px}.label.hp:after{content:'';position:absolute;bottom:0;left:0;width:var(--hp,100%);height:2px;background:#a4e291;border-radius:2px}.label.boss{font-size:15px;padding:4px 9px 7px;background:#462b2de8;border-color:#f9ae7d}.label.boss:after{height:3px;background:#ff9b6f}#toast{font-size:15px;top:33%}#warning{top:35%;font-size:13px}.adBanner{font-size:7px;letter-spacing:.5px}.hint{font-size:8px;letter-spacing:1px}
+@media(max-height:720px){.carTitle{top:20%}.carTitle h2{font-size:31px}.carNav{top:36%}.main.cyan{padding:11px}.stats{padding:7px 12px}.side{top:14%;width:65px}.side strong{font-size:14px}.controls{bottom:43px}#nos{width:70px;height:70px}.foot{font-size:7px}.garageBottom{bottom:6px}}
+
+.label.boss{z-index:2;background:#462b2d}
+
+#flash{position:fixed;inset:0;background:radial-gradient(circle at 50% 72%,#fff3c4 0%,#ff9a3c 42%,transparent 78%);opacity:0;pointer-events:none;z-index:6}
+#perf{position:fixed;left:6px;bottom:6px;z-index:7;font:11px/1.3 monospace;color:#9ff;background:#000a;padding:3px 6px;border-radius:4px;pointer-events:none;display:none}
+#raceCash{display:inline-block;transform-origin:left center;transition:transform .11s ease-out,color .11s}#raceCash.pulse{transform:scale(1.2);color:#fff3b0}
+/* Nitro de segurar: o anel em volta do botão é o tanque e fica sempre visível (enche e esvazia). */
+#nos,#nos.ready{background:conic-gradient(#35e7ff var(--fuel,0%),#2c4350 0);touch-action:none}#nos:before{inset:7px}#nos.ready{color:#d9fcff}#nos.ready:before{background:#125368}#nos.burn{box-shadow:0 0 26px #35e7ff,0 0 60px #35e7ff88;transform:scale(1.07)}#nos.burn:before{background:#1aa6c4}#race.boost{box-shadow:inset 0 0 80px #35e7ff77}#race.mg{box-shadow:inset 0 -40px 70px -30px #2a8dff66}#race.boost.hurt,#race.mg.hurt{box-shadow:inset 0 0 55px #e5524599}
+#hellBanner{position:absolute;left:0;right:0;top:24%;text-align:center;pointer-events:none;opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s;z-index:5}#hellBanner.on{opacity:1;transform:scale(1)}#hellBanner b{display:block;font-size:30px;font-style:italic;font-weight:900;letter-spacing:-.5px;color:#ffb36b;text-shadow:0 0 18px #ff4a12,0 3px 0 #4a0d04}#hellBanner span{display:block;margin-top:8px;font-size:13px;font-weight:700;color:#ffe3c9;text-shadow:0 2px 4px #300}
+#race.hellfall:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 70%,#ff6a1e55 0%,#8a1505d9 75%);animation:hellfade 1.4s ease-in forwards}@keyframes hellfade{from{opacity:0}to{opacity:1}}
+
+/* VÍDEOS DE ABERTURA (animações do dono). Ficam por cima de tudo, em tela cheia, e saem sozinhos no
+   fim ou ao toque. z-index acima do modal, senão a garagem aparece por baixo no primeiro quadro. */
+#cine{position:fixed;inset:0;background:#000;z-index:40;display:flex;align-items:center;justify-content:center}
+#cine video{width:100%;height:100%;object-fit:cover;background:#000}
+/* Enquanto nao comecou a tocar, o video fica invisivel (o fundo preto ja cobre a tela). Um <video>
+   parado e visivel ganha o BOTAO PLAY gigante do sistema, que o dono viu e nao pode acontecer. */
+#cine.carregando video,#cine.carregando #cineSkip{visibility:hidden}
+#cineSkip{position:absolute;bottom:22px;left:0;right:0;text-align:center;font:600 12px/1 system-ui,sans-serif;letter-spacing:2px;color:#ffffff9c;text-shadow:0 1px 4px #000}
+#cine.hidden{display:none}
+
+/* ===== GARAGEM COM A ARTE DO DONO (assets/ui) =====
+   O fundo e a plataforma ficam ATRÁS do canvas (entram antes dele no documento); o carro é desenhado
+   em 3D por cima deles, girando; os painéis vêm por cima de tudo. `data-tela` no body diz em que tela
+   estamos, para o fundo não aparecer durante a corrida. */
+#gbg{display:none;position:fixed;inset:0;background:#0a1017 url(ui/fundo.jpg) center/cover no-repeat;z-index:0}
+body[data-tela="g"] #gbg{display:block}
+#gbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#05090ecc 0%,#05090e33 26%,#05090e00 46%,#05090ee6 100%)}
+/* plataforma: fica sob o carro, que o motor desenha centrado um pouco abaixo do meio da tela */
+#gplat{position:absolute;left:50%;top:56.5%;width:84%;transform:translate(-50%,-50%);aspect-ratio:900/668;
+ background:url(ui/plataforma.webp) center/contain no-repeat;filter:drop-shadow(0 12px 26px #000a)}
+#world{display:block;position:relative;z-index:1}
+#garage{z-index:2}
+
+#garage header{gap:8px;align-items:center}
+#gLogo{width:47%;max-width:230px;height:auto;display:block;filter:drop-shadow(0 3px 10px #000b)}
+#garage .balance{flex:1;margin:0;border:0;border-radius:0;padding:0 12px 0 34px;height:44px;background:url(ui/barra-creditos.webp) center/100% 100% no-repeat;
+ font-size:8.5px;letter-spacing:1.2px;color:#bfe6f2;text-shadow:0 1px 2px #000}
+#garage .balance b{font-size:17px;color:#f5c451;text-shadow:0 1px 3px #000a}
+#garage #settingsBtn{width:44px;height:44px;border-radius:0;background:url(ui/botao-menu.webp) center/contain no-repeat;font-size:0}
+
+#garage .carTitle{top:15.5%;left:22px;text-shadow:0 2px 6px #000c}
+#garage .carTitle .eyebrow{color:#63dcf0;letter-spacing:4px;font-size:11px}
+#garage .carTitle h2{font-size:42px;line-height:.98;margin:2px 0 6px;font-style:italic;letter-spacing:-1px;
+ text-shadow:0 0 14px #2ec7ff66,0 3px 8px #000d}
+#garage #carCount{font-size:11px;letter-spacing:2.5px;color:#cfe3ee;border-top:1px solid #ffffff2e;padding-top:7px;display:inline-block}
+
+#garage .carNav{top:50%;left:10px;right:10px}
+#garage .carNav .square{width:54px;height:54px;border-radius:0;background:center/contain no-repeat;font-size:0}
+#garage #prevCar{background-image:url(ui/seta-esq.webp)}
+#garage #nextCar{background-image:url(ui/seta-dir.webp)}
+#garage #ownedBadge{position:absolute;left:50%;top:132px;transform:translateX(-50%);white-space:nowrap;
+ font-size:9.5px;letter-spacing:3px;color:#bfe9f5;padding:9px 40px;background:url(ui/barra-fina.webp) center/100% 100% no-repeat;text-shadow:0 1px 2px #000}
+
+#garage .garageBottom{bottom:6px;left:14px;right:14px}
+/* trio DANO / BLINDAGEM / NITRO: painel escuro com barras segmentadas, no estilo das peças */
+#garage .stats{background:#0c1a24d9;border:1px solid #2f6f86;border-radius:14px;padding:11px 8px 10px;margin-bottom:8px;
+ box-shadow:inset 0 0 22px #06131bcc,0 2px 10px #0009}
+#garage .stats div{flex:1;align-items:center;gap:3px;text-align:center}
+#garage .stats span{font-size:8px;letter-spacing:1.4px;color:#8fb6c6}
+#garage .stats b{font-size:19px;line-height:1;text-shadow:0 0 10px #2ec7ff55}
+/* Medidor de verdade: --p é o quanto do máximo este carro tem. A cor preenche até ali e o resto fica
+   apagado; a máscara é que recorta tudo em gominhos. Antes isto era só um desenho fixo, igual em
+   todos os carros. */
+#garage .stats em{display:block;width:74%;height:7px;border-radius:2px;opacity:.9;
+ background:linear-gradient(90deg,var(--c,#2ee8ff) 0 var(--p,0%),#2a4d5e var(--p,0%) 100%);
+ -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 9.5%,transparent 9.5% 12.5%);
+ mask-image:repeating-linear-gradient(90deg,#000 0 9.5%,transparent 9.5% 12.5%);
+ transition:background .25s}
+#garage .stats div:first-child em{--c:#f5a623}
+#garage .stats div:nth-child(2) em{--c:#5bd898}
+#garage .ic{width:17px;height:17px;display:block;background:center/contain no-repeat;opacity:.95}
+#garage .ic.dmg{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f5a623'%3E%3Cpath d='M12 1 9 9 2 11l6 3-2 9 6-6 6 6-2-9 6-3-7-2z'/%3E%3C/svg%3E")}
+#garage .ic.arm{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232ec7ff'%3E%3Cpath d='M12 2 4 5v7c0 5 3.4 9 8 10 4.6-1 8-5 8-10V5z'/%3E%3C/svg%3E")}
+#garage .ic.nos{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232ee8ff'%3E%3Cpath d='M9 2h6v3H9zM8 6h8l1 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z'/%3E%3C/svg%3E")}
+
+#garage #buyCar{height:52px;border-radius:0;background:url(ui/barra-equipado.webp) center/100% 100% no-repeat;
+ color:#3a2a06;font-size:14px;letter-spacing:2px;text-shadow:0 1px 0 #ffe9a6}
+#garage .upgradeGrid{gap:0;margin:8px 0;height:66px;background:url(ui/painel-upgrades.webp) center/100% 100% no-repeat;align-items:center}
+#garage .upgradeGrid button{background:none;border:0;padding:0 2px;font-size:8.5px;line-height:1.5;color:#a8c8d6;letter-spacing:.6px}
+#garage .upgradeGrid b{color:#f5c451;font-size:12px;text-shadow:0 1px 3px #000}
+#garage .levelRow{margin:8px 0;gap:6px}
+#garage .levelRow button{width:38px;height:36px;border-radius:0;background:center/contain no-repeat;font-size:0}
+#garage #prevLevel{background-image:url(ui/passo-menos.webp)}
+#garage #nextLevel{background-image:url(ui/passo-mais.webp)}
+#garage #levelName{flex:1;height:36px;line-height:36px;text-align:center;font-size:12px;letter-spacing:3px;color:#cfeaf5;
+ background:url(ui/passo-barra.webp) center/100% 100% no-repeat;text-shadow:0 1px 2px #000}
+#garage #play{height:64px;border-radius:0;background:url(ui/botao-ligar.webp) center/100% 100% no-repeat;
+ color:#04222e;font-size:19px;font-style:italic;letter-spacing:1px;text-shadow:0 1px 0 #b8f3ff}
+#garage .foot{color:#7fa0b0;letter-spacing:1.5px;font-size:8px;text-shadow:0 1px 2px #000}
+
+/* A GARAGEM SE MONTA depois do vídeo: cada peça entra deslizando, uma atrás da outra. O atraso de cada
+   uma vem do --atraso na marcação. Só roda quando o body ganha a classe "montando". */
+body.montando #garage .peca{animation:montaPeca .5s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--atraso,0s)}
+body.montando #gplat{animation:montaPlat .7s cubic-bezier(.16,1,.3,1) both}
+body.montando #world{animation:montaCarro .8s ease-out both;animation-delay:.45s}
+@keyframes montaPeca{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes montaPlat{from{opacity:0;transform:translate(-50%,-50%) scale(.6)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes montaCarro{from{opacity:0}40%{opacity:.25}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){body.montando #garage .peca,body.montando #gplat,body.montando #world{animation:none}}
+
+/* Ajustes finos depois de ver na tela: texto que quebrava linha, rótulo fora da célula da arte e a
+   faixa "na sua garagem", que estava sem lugar. */
+#garage .balance{padding:0 14px 0 30px;font-size:7.5px;letter-spacing:1px;line-height:1.15}
+#garage .balance span{max-width:78px}
+#garage .balance b{font-size:16px}
+#garage #ownedBadge{top:auto;bottom:-96px;padding:8px 34px;font-size:9px;letter-spacing:3.4px}
+#garage #buyCar{padding-left:44px;font-size:13px}
+#garage .upgradeGrid{height:72px}
+#garage .upgradeGrid button{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 4px 0 30px;text-align:left}
+#garage .upgradeGrid span{font-size:7.5px;letter-spacing:.6px;color:#9fc4d4;display:block}
+#garage .upgradeGrid b{font-size:11px;line-height:1}
+#garage .garageBottom{bottom:10px}
+#garage .foot{margin:7px 0 0}
+
+/* A tira de melhorias tem barra desenhada na própria arte e não sobra espaço para "BLINDAGEM 8/8".
+   Então as três células são montadas em CSS, no mesmo estilo do painel de cima e da arte de referência. */
+#garage .upgradeGrid{background:none;height:auto;gap:7px}
+#garage .upgradeGrid button{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+ gap:2px;height:62px;padding:22px 8px 12px;text-align:left;border-radius:12px;
+ background:#0c1a24d9;border:1px solid #2f6f86;box-shadow:inset 0 0 18px #06131bcc,0 2px 8px #0009;
+ font-size:8px;letter-spacing:.8px;color:#9fc4d4}
+#garage .upgradeGrid button b{font-size:12px;line-height:1;color:#f5c451;text-shadow:0 1px 3px #000}
+#garage .upgradeGrid button::before{content:"";position:absolute;left:8px;top:8px;width:15px;height:15px;
+ background:center/contain no-repeat;opacity:.95}
+#garage #weaponUp::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f5a623'%3E%3Cpath d='M12 1c3 3 4.5 6.5 4.5 10.5L18 14v3l-3-1.5h-6L6 17v-3l1.5-2.5C7.5 7.5 9 4 12 1zm0 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM9 18h6l-3 5z'/%3E%3C/svg%3E")}
+#garage #armorUp::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232ec7ff'%3E%3Cpath d='M12 2 4 5v7c0 5 3.4 9 8 10 4.6-1 8-5 8-10V5z'/%3E%3C/svg%3E")}
+#garage #tiresUp::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bcd6e2'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6z'/%3E%3C/svg%3E")}
+/* Oito gominhos, um por melhoria comprada: --p é quantas das 8 já foram. Antes a barra era fixa e
+   aparecia cheia mesmo com 0/8. */
+#garage .upgradeGrid button::after{content:"";position:absolute;left:8px;right:8px;bottom:7px;height:6px;border-radius:2px;opacity:.85;
+ background:linear-gradient(90deg,var(--c,#f5a623) 0 var(--p,0%),#2a4d5e var(--p,0%) 100%);
+ -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 9%,transparent 9% 12.5%);
+ mask-image:repeating-linear-gradient(90deg,#000 0 9%,transparent 9% 12.5%)}
+#garage #armorUp::after{--c:#2ec7ff}
+#garage #tiresUp::after{--c:#bcdcea}
+#garage .upgradeGrid button:disabled{opacity:.62}
+
+/* a faixa "na sua garagem" fica logo abaixo da plataforma, não dentro do painel de baixo */
+#garage #ownedBadge{top:78px;bottom:auto}
+
+/* Encaixe final, com as posições medidas na tela de 412x892: a plataforma sobe um pouco, a faixa
+   "na sua garagem" ganha a folga entre ela e o painel, e o bloco de baixo fica mais compacto. */
+#gplat{top:53.5%;width:77%}
+#garage .carNav{top:47%}
+#garage #ownedBadge{top:72px}
+#garage .stats{padding:9px 8px 8px;margin-bottom:7px}
+#garage .stats b{font-size:18px}
+#garage #buyCar{height:46px;font-size:12px}
+#garage .upgradeGrid{margin:7px 0}
+#garage .upgradeGrid button{height:58px;padding:20px 8px 15px}
+#garage .upgradeGrid button::after{bottom:5px;height:5px}
+#garage .levelRow{margin:7px 0}
+#garage .levelRow button{height:34px}
+#garage #levelName{height:34px;line-height:34px}
+#garage #play{height:60px;font-size:18px}
+
+/* regra antiga empurrava a faixa com margem; aqui ela fica presa só pela posição */
+#garage #ownedBadge{margin:0;top:98px;bottom:auto}
+#garage .balance span{max-width:96px;font-size:7px}
+
+/* O canvas NÃO pode ganhar z-index: com ele o desenho passava por cima do HUD da corrida e engolia os
+   toques. O fundo da garagem vai para trás com z-index negativo, que ainda fica acima do fundo da página. */
+#world{position:static;z-index:auto}
+#garage{z-index:auto}
+#gbg{z-index:-1;pointer-events:none}
+
+/* A cor de fundo da página precisa ficar no HTML, não no BODY: com ela no body, o fundo da garagem
+   (z-index negativo) ficava PINTADO POR BAIXO dela e a arte não aparecia. */
+html{background:#14212b}
+body{background:transparent}
+
+/* ===== correções da revisão =====
+   1. o botão ☰ estava sendo espremido pela barra de créditos: num aparelho de 360 pontos com a conta
+      cheia ele sumia da tela e as configurações ficavam inalcançáveis. */
+#garage header{gap:7px}
+#garage .balance{min-width:0;flex:1 1 auto}
+#garage #settingsBtn{flex:0 0 44px}
+#gLogo{flex:0 0 auto;width:42%;max-width:190px}
+
+/* 6. a faixa "na sua garagem" é centrada por transform, e a animação de montagem terminava em
+   transform:none — ela pulava 98px ao fim. Agora a entrada dela preserva a centralização. */
+body.montando #garage #ownedBadge{animation-name:montaBadge}
+@keyframes montaBadge{from{opacity:0;transform:translate(-50%,16px) scale(.94)}to{opacity:1;transform:translateX(-50%)}}
+
+/* 7. telas baixas: as regras novas tinham matado o ajuste de tela pequena e a faixa caía em cima do
+   botão EQUIPADO. Aqui ele volta, agora por último. */
+@media (max-height:700px){
+ #garage .carNav{top:40%}
+ #garage #ownedBadge{top:64px}
+ #garage .carTitle{top:13%}
+ #garage .carTitle h2{font-size:34px}
+ #gplat{top:47%;width:66%}
+ #garage .stats{padding:7px 6px 6px}
+ #garage .stats b{font-size:16px}
+ #garage #buyCar{height:40px}
+ #garage .upgradeGrid button{height:50px;padding:18px 6px 13px}
+ #garage #play{height:52px;font-size:16px}
+}
+
+/* rótulo das melhorias estava subindo por cima do ícone */
+#garage .upgradeGrid button{justify-content:center;padding:14px 8px 15px;gap:1px}
+#garage .upgradeGrid button::before{top:6px;left:7px;width:13px;height:13px}
+/* a plataforma é 900x444, não 900x668: a proporção errada só reservava espaço vazio */
+#gplat{aspect-ratio:900/444}
+
+/* A posição do carro na tela vem da câmera 3D e é a MESMA fração em qualquer altura de tela, então a
+   plataforma não pode mudar de lugar por tela pequena: ela afundava o carro. Só o texto aperta. */
+@media (max-height:700px){
+ #gplat{top:53.5%;width:77%;aspect-ratio:900/444}
+ #garage #ownedBadge{top:78px}
+ #garage .balance{font-size:6.5px;padding:0 10px 0 26px}
+ #garage .balance span{max-width:74px}
+ #garage .balance b{font-size:13px}
+}
+/* Em tela baixa não sobra faixa entre a plataforma e o painel: a etiqueta sai, e o próprio botão
+   EQUIPADO / COMPRAR já diz se o carro é seu. */
+@media (max-height:700px){#garage #ownedBadge{display:none}}
+
+/* ===== CONFIGURAÇÕES, no estilo da referência do dono =====
+   Linha escura com ícone à esquerda, nome no meio e interruptor laranja à direita. Os glifos são
+   desenhados aqui: a prancha de ícones veio com fundo próprio e recortá-la traria o fundo junto. */
+#modal .panel{background:linear-gradient(160deg,#10222e 0%,#0b1a24 100%);border:1px solid #3e7f97;
+ border-radius:16px;padding:16px 14px 14px;box-shadow:0 0 0 1px #0b1a2480,0 18px 50px #000a,inset 0 0 30px #061119}
+.cfgTop{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
+.cfgTop h2{font-size:24px;font-style:italic;letter-spacing:1px;margin:0;text-shadow:0 0 12px #2ec7ff55}
+.cfgVer{font-size:7px;line-height:1.5;letter-spacing:1.6px;color:#6f93a4;text-align:right;padding-top:5px}
+.cfgRow{display:flex;align-items:center;gap:10px;width:100%;padding:0 12px;height:46px;margin-bottom:7px;
+ border-radius:9px;background:linear-gradient(180deg,#16303dcc,#102632cc);border:1px solid #2f6275;
+ color:#e8f3f8;font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-align:left}
+.cfgRow:active{background:linear-gradient(180deg,#1d4051cc,#16303dcc)}
+.cfgRow span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ci{flex:0 0 21px;width:21px;height:21px;background:center/contain no-repeat;opacity:.92}
+/* interruptor */
+.sw{flex:0 0 auto;display:flex;align-items:center;gap:7px;font-size:9px;letter-spacing:1px;color:#7f9aa8;font-style:normal}
+.sw::after{content:"";width:40px;height:21px;border-radius:11px;background:#24333c;border:1px solid #3d5460;
+ box-shadow:inset 2px 0 0 0 #8fa3ad,inset 0 0 8px #0008;transition:background .15s}
+.sw.on{color:#ffb545}
+.sw.on::after{background:linear-gradient(180deg,#ffa72b,#f4830d);border-color:#ffc477;
+ box-shadow:inset -2px 0 0 0 #fff4e0,0 0 10px #ff9d2b66}
+/* barra da música */
+.lvl{flex:0 0 auto;display:flex;align-items:center;gap:8px;font-style:normal}
+.lvl b{font-size:10px;color:#ffb545;min-width:30px;text-align:right}
+.lvl s{display:block;width:74px;height:7px;border-radius:4px;text-decoration:none;
+ background:linear-gradient(90deg,#f4830d var(--p),#24333c var(--p));border:1px solid #3d5460;position:relative}
+.lvl s::after{content:"";position:absolute;top:-4px;left:var(--p);width:13px;height:13px;margin-left:-7px;
+ border-radius:50%;background:linear-gradient(180deg,#f7fbfd,#b9cdd6);border:1px solid #6d8c99;box-shadow:0 1px 3px #000a}
+/* seta de "abre outra coisa" */
+.chev{flex:0 0 12px;width:12px;height:12px;border-right:2px solid #6f9bad;border-top:2px solid #6f9bad;
+ transform:rotate(45deg);margin-right:3px}
+/* caixa de aviso */
+.cfgInfo{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;margin:10px 0;border-radius:9px;
+ background:#0e2733a8;border:1px solid #2e7d99}
+.cfgInfo p{margin:0;font-size:9.5px;line-height:1.5;color:#9fbecc;letter-spacing:.3px}
+.cfgInfo .ci{margin-top:1px}
+/* fechar */
+.cfgClose{width:100%;height:50px;margin-top:4px;border-radius:9px;font-size:16px;font-weight:900;
+ letter-spacing:3px;color:#2a1400;background:linear-gradient(180deg,#ffb23a,#ef7f0a);
+ border:1px solid #ffd089;box-shadow:0 0 18px #ff9d2b4d,inset 0 -3px 0 #c9650288}
+.cfgClose:active{background:linear-gradient(180deg,#ef7f0a,#ffb23a)}
+/* glifos */
+.ci.globo{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dff0f7' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18'/%3E%3C/svg%3E")}
+.ci.som{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dff0f7'%3E%3Cpath d='M4 9v6h4l5 4V5L8 9z'/%3E%3Cpath d='M16 8a5 5 0 0 1 0 8' stroke='%23dff0f7' stroke-width='1.8' fill='none'/%3E%3Cpath d='M18.5 5.5a9 9 0 0 1 0 13' stroke='%23dff0f7' stroke-width='1.8' fill='none'/%3E%3C/svg%3E")}
+.ci.setas{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dff0f7'%3E%3Cpath d='M12 2l3 4H9zM12 22l-3-4h6zM2 12l4-3v6zM22 12l-4 3V9z'/%3E%3Ccircle cx='12' cy='12' r='2.2'/%3E%3C/svg%3E")}
+.ci.vibra{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dff0f7' stroke-width='1.8'%3E%3Crect x='8' y='3' width='8' height='18' rx='1.6'/%3E%3Cpath d='M4 9v6M20 9v6'/%3E%3C/svg%3E")}
+.ci.perf{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dff0f7' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 12l5-4'/%3E%3C/svg%3E")}
+.ci.pulso{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dff0f7' stroke-width='1.9'%3E%3Cpath d='M2 12h4l3-7 4 14 3-7h6'/%3E%3C/svg%3E")}
+.ci.musica{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dff0f7' stroke-width='1.8'%3E%3Cpath d='M9 18V6l10-2.5V14'/%3E%3Ccircle cx='6.6' cy='18' r='2.4' fill='%23dff0f7' stroke='none'/%3E%3Ccircle cx='16.6' cy='14' r='2.4' fill='%23dff0f7' stroke='none'/%3E%3C/svg%3E")}
+.ci.video{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dff0f7' stroke-width='1.8'%3E%3Crect x='3' y='5' width='18' height='14' rx='2.4'/%3E%3Cpath d='M10 9l6 3-6 3z' fill='%23dff0f7' stroke='none'/%3E%3C/svg%3E")}
+.ci.info{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2359b4d4' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 11v6' /%3E%3Ccircle cx='12' cy='7.6' r='1.1' fill='%2359b4d4'/%3E%3C/svg%3E")}
+.ci.escudo{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dff0f7'%3E%3Cpath d='M12 2 4 5v7c0 5 3.4 9 8 10 4.6-1 8-5 8-10V5z'/%3E%3C/svg%3E")}
+.ci.perfil{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dff0f7'%3E%3Ccircle cx='10' cy='8' r='3.6'/%3E%3Cpath d='M3.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6z'/%3E%3Cpath d='M18 4v7M14.5 7.5h7' stroke='%23dff0f7' stroke-width='1.9' fill='none'/%3E%3C/svg%3E")}
+
+/* ===== TODOS OS OUTROS MENUS no mesmo estilo =====
+   Pausa, tutorial, sair, reiniciar, perfil novo, carregando e resultado usam o mesmo painel e os mesmos
+   botões: escuro com borda azul para as opções, laranja para a ação principal. Não são iguais ao de
+   configurações, mas falam a mesma língua. */
+#modal .panel h2{font-size:25px;font-style:italic;letter-spacing:1px;margin:2px 0 14px;
+ text-shadow:0 0 12px #2ec7ff55}
+#modal .panel .tag{display:block;color:#6f93a4;font-size:7.5px;letter-spacing:2.4px;margin-bottom:2px}
+#modal .panel p{color:#9fbecc;font-size:11.5px;line-height:1.6;letter-spacing:.2px}
+#modal .panel .notice{background:#0e2733a8;border:1px solid #2e7d99;border-radius:9px;padding:11px 12px;
+ font-size:9.5px;color:#9fbecc;letter-spacing:.3px}
+/* botão comum do menu: linha escura, como as de configurações */
+#modal .panel .main{width:100%;height:46px;margin:0 0 7px;padding:0 14px;border-radius:9px;
+ background:linear-gradient(180deg,#16303dcc,#102632cc);border:1px solid #2f6275;color:#e8f3f8;
+ font-size:12px;font-weight:700;letter-spacing:1.4px;box-shadow:none}
+#modal .panel .main:active{background:linear-gradient(180deg,#1d4051cc,#16303dcc)}
+/* ação principal: laranja, igual ao FECHAR */
+#modal .panel .main.cyan{height:50px;margin-top:4px;color:#2a1400;font-size:15px;font-weight:900;
+ letter-spacing:2.4px;background:linear-gradient(180deg,#ffb23a,#ef7f0a);border:1px solid #ffd089;
+ box-shadow:0 0 18px #ff9d2b4d,inset 0 -3px 0 #c9650288}
+#modal .panel .main.cyan:active{background:linear-gradient(180deg,#ef7f0a,#ffb23a)}
+#modal .panel .main:disabled{opacity:.45}
+/* barra de carregamento no mesmo tom */
+#modal .panel .progress{height:6px;margin:14px 0 4px;border-radius:4px;background:#12262f;border:1px solid #2f6275;overflow:hidden}
+#modal .panel .progress i{background:linear-gradient(90deg,#f4830d,#ffb23a);box-shadow:0 0 10px #ff9d2b66}
+/* aviso de queda no Inferno segue a mesma cara */
+#hellBanner b,#hellBanner span{text-shadow:0 0 14px #ff6a2b88,0 2px 6px #000d}
+
+/* FIM DE FASE. Fica ABAIXO do modal (z-index 10) para o resultado entrar por cima, e nao recebe
+   toque nenhum: e so pintura enquanto o carro foge na pista. */
+#outro{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+ flex-direction:column;pointer-events:none;z-index:9;text-align:center;
+ background:radial-gradient(ellipse at 50% 45%,#0000 35%,#040d14cc 100%)}
+#outro.on{display:flex}
+/* O tamanho acompanha a largura da tela: "VOCÊ VENCEU" já encostava nas bordas num aparelho de
+   412 px, e em espanhol o texto é mais longo ainda. */
+#outro b{display:block;font-size:min(12.5vw,52px);font-style:italic;font-weight:900;letter-spacing:-2px;
+ line-height:1.05;padding:0 16px;animation:outroIn .5s cubic-bezier(.16,1.2,.3,1) both}
+#outro span{display:block;margin-top:12px;font-size:12px;letter-spacing:4px;font-weight:700;
+ opacity:0;animation:outroSub .5s ease-out .28s both}
+#outro.win b{color:#ffe08a;text-shadow:0 0 28px #ffbe3caa,0 0 70px #ff9d2b66,0 4px 10px #000}
+#outro.win span{color:#9fe8f2}
+#outro.lose b{color:#ff9a86;text-shadow:0 0 28px #ff4a2caa,0 0 70px #d0261166,0 4px 10px #000}
+#outro.lose span{color:#e3a9a0}
+/* a derrota nao comemora: entra tremendo e escorrega para baixo */
+#outro.lose b{animation:outroDown .6s cubic-bezier(.3,1.3,.5,1) both}
+@keyframes outroIn{from{opacity:0;transform:scale(.55) translateY(18px);letter-spacing:14px}
+ to{opacity:1;transform:none;letter-spacing:-2px}}
+@keyframes outroDown{from{opacity:0;transform:scale(1.5) translateY(-26px)}
+ to{opacity:1;transform:none}}
+@keyframes outroSub{from{opacity:0;transform:translateY(10px)}to{opacity:.95;transform:none}}
+
+
+/* Durante a faixa de fim de fase o HUD da corrida sai de cena: os controles nao servem mais para
+   nada e o contador de vida por cima de "VOCE VENCEU" estraga o momento. */
+#race.saindo .side,#race.saindo .controls,#race.saindo .hint,#race.saindo #warning,#race.saindo #bossHud{opacity:0;transition:opacity .45s;pointer-events:none}
+/* Quem pede menos movimento no sistema recebe a faixa sem o salto de escala. */
+@media (prefers-reduced-motion:reduce){#outro b,#outro span{animation-duration:.01ms!important}}
+
+/* VEICULO PREMIUM. O cadeado e o brilho so aparecem no que ainda nao foi comprado; comprado, ele
+   ganha so o realce dourado. data-premium fica no body porque o fundo da garagem e outro elemento. */
+#garage .peca#ownedBadge{transition:background .2s,border-color .2s,color .2s}
+body[data-premium] #ownedBadge{border-color:#f5c451aa;background:#3a2a10ee;color:#ffdf9a;letter-spacing:2px}
+body[data-premium="tranca"] #ownedBadge:before{content:"\1F512\A0"}
+/* o brilho pulsa atras da plataforma, para o veiculo pago se destacar dos outros doze */
+body[data-premium]:after{content:"";position:absolute;left:50%;top:44%;width:130vw;height:52vh;
+ transform:translate(-50%,-50%);pointer-events:none;z-index:-1;
+ background:radial-gradient(ellipse at center,#f5c4512e 0%,#f5a62316 38%,#0000 68%);
+ animation:brilhoPremium 3.4s ease-in-out infinite}
+body[data-premium="tranca"]:after{background:radial-gradient(ellipse at center,#2ee8ff26 0%,#22d3ee14 38%,#0000 68%)}
+@keyframes brilhoPremium{50%{opacity:.5}}
+/* o botao de liberar nao se confunde com o de comprar com creditos */
+#garage #buyCar.premium{background:linear-gradient(110deg,#f0a81e,#ffd978 55%,#f0a81e);color:#2a1c05;
+ box-shadow:0 0 22px #f5c4515e,0 4px 0 #0b242c40}
+@media (prefers-reduced-motion:reduce){body[data-premium]:after{animation:none}}
+/* Icone de "salvar progresso": nuvem com seta para cima. */
+.ci.nuvem{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dff0f7'%3E%3Cpath d='M19.3 10.1A7 7 0 0 0 6 9a5 5 0 0 0 .5 10H19a4 4 0 0 0 .3-8zM12 11l3 3h-2v3h-2v-3H9z'/%3E%3C/svg%3E")}
+/* Icone de lembrete: sino. */
+.ci.sino{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dff0f7'%3E%3Cpath d='M12 22a2.5 2.5 0 0 0 2.5-2.5h-5A2.5 2.5 0 0 0 12 22zm7-5v-6a7 7 0 0 0-5.5-6.8V3a1.5 1.5 0 0 0-3 0v1.2A7 7 0 0 0 5 11v6l-2 2v1h18v-1z'/%3E%3C/svg%3E")}

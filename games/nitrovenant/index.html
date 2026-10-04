@@ -1,0 +1,28 @@
+<!doctype html><html><head>
+<meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"><meta name="theme-color" content="#121c28"><title>Nitrovenant</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="web.css"><link rel="icon" href="data:,"></head><body>
+<div id="nvLoad"><img src="ui/logo.webp" alt="NITROVENANT"><i><b id="nvLoadBar"></b></i></div>
+<div id="gbg"><div id="gplat"></div></div><canvas id="world"></canvas><div id="labels"></div><div id="toast"></div><div id="flash"></div><div id="cine" class="carregando"><video id="cineVid" playsinline preload="auto" disablepictureinpicture></video><span id="cineSkip"></span></div><div id="perf"></div>
+<div id="garage" class="screen">
+<header><img id="gLogo" class="peca" src="ui/logo.webp" alt="NITROVENANT">
+<div class="balance peca" style="--atraso:.08s"><span data-t="wallet">GARAGE CREDITS</span><b id="wallet">0</b></div>
+<button id="settingsBtn" class="square peca" style="--atraso:.14s"></button></header>
+<div class="carTitle peca" style="--atraso:.2s"><span id="category" class="eyebrow"></span><h2 id="carName"></h2><div id="carCount"></div></div>
+<div class="carNav"><button id="prevCar" class="square peca" style="--atraso:.26s"></button><span id="ownedBadge" class="peca" style="--atraso:.5s"></span><button id="nextCar" class="square peca" style="--atraso:.26s"></button></div>
+<section class="garageBottom">
+<div class="stats peca" style="--atraso:.32s">
+ <div><i class="ic dmg"></i><span data-t="damage">DAMAGE</span><b id="carDmg"></b><em></em></div>
+ <div><i class="ic arm"></i><span data-t="armor">ARMOR</span><b id="carHp"></b><em></em></div>
+ <div><i class="ic nos"></i><span>NITRO</span><b id="carNos"></b><em></em></div>
+</div>
+<button id="buyCar" class="main peca" style="--atraso:.38s"></button>
+<div class="upgradeGrid peca" style="--atraso:.44s"><button id="weaponUp"></button><button id="armorUp"></button><button id="tiresUp"></button></div>
+<div class="levelRow peca" style="--atraso:.5s"><button id="prevLevel"></button><span id="levelName"></span><button id="nextLevel"></button></div>
+<button id="play" class="main cyan peca" style="--atraso:.56s" data-t="drive">START ENGINE →</button>
+<p class="foot peca" style="--atraso:.62s" data-t="prototype">Offline prototype • Original cars • Simulated ads</p>
+</section></div>
+<div id="race" class="screen hidden"><div class="adBanner" data-t="banner">AD SPACE · TEST BUILD · NO LIVE ADS</div><aside class="side leftSide"><span id="stage"></span><strong id="raceCash">$0</strong><span id="weaponInfo"></span></aside><aside class="side rightSide"><button id="pauseBtn" class="square">Ⅱ</button><div class="health"><i id="healthFill"></i><span id="healthText"></span></div><div class="progress"><i id="progressFill"></i></div><span id="terrain"></span></aside><div id="warning"></div><div class="controls"><button id="left" class="steer">‹</button><button id="nos"><b>NITRO</b><small id="nosText"></small></button><button id="right" class="steer">›</button></div><div class="hint" id="swipeHint" data-t="swipe">SWIPE TO CHANGE LANES</div></div>
+<div id="modal" class="overlay hidden"><div class="panel" id="modalContent"></div></div>
+<script src="boot.js"></script>
+<script src="portal.js"></script>
+<script src="web.js" data-versao="0.19.1" data-scripts="engine.js render.js scenery.js loja.js nuvem.js sfx-data.js sfx.js audio.js music.js vendor/three.js models/index.js chars3d.js" data-main="main.js"></script>
+</body></html>

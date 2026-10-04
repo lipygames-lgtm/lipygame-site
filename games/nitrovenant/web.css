@@ -1,0 +1,219 @@
+/* AJUSTES DA VERSÃO WEB (todos os portais). Carregado SÓ pelo index.html da web, depois do style.css do jogo.
+   Nada daqui chega ao APK.
+
+   DOIS MODOS, decididos pela mesma consulta de mídia que o web.js usa:
+   - EM PÉ (todo o resto: celular em pé, janela estreita): a coluna 9:16 de sempre, exatamente como antes.
+     Os blocos em pé usam "not all and (min-aspect-ratio:1101/1000)", o contrário EXATO do deitado: com
+     "max-aspect-ratio:11/10" uma janela entre 1,1 e 1,101 (ex.: 1211x1100) ficava sem modo nenhum;
+   - DEITADO (min-aspect-ratio 1101/1000: computador, tablet deitado, celular deitado): tela inteira, pista
+     no centro com cenário dos lados, garagem em duas colunas. A interface escala com --ui (CSS zoom),
+     calculado pelo web.js a partir da altura da janela. */
+
+html{background:#05090e;height:100%}
+
+/* TELA DE CARGA: a arte e o logo aparecem na hora, enquanto os scripts e o SDK chegam. */
+#nvLoad{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ gap:30px;background:#0a1017 url(ui/fundo.jpg) center/cover no-repeat;transition:opacity .4s}
+#nvLoad::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#05090ee0 0%,#05090e80 45%,#05090ef0 100%)}
+#nvLoad img{position:relative;width:74%;max-width:380px;filter:drop-shadow(0 6px 18px #000c)}
+#nvLoad i{position:relative;display:block;width:56%;max-width:260px;height:7px;border-radius:4px;background:#12262f;
+ border:1px solid #2f6275;overflow:hidden}
+#nvLoad b{display:block;height:100%;width:3%;background:linear-gradient(90deg,#f4830d,#ffb23a);box-shadow:0 0 10px #ff9d2b66;
+ transition:width .3s}
+#nvLoad.saindo{opacity:0;pointer-events:none}
+/* Aviso com RECARREGAR (SDK do portal sem resposta; o jogo não abre em outro armazenamento). */
+#nvSemSdk{position:relative;max-width:min(86%,420px);padding:14px 16px 16px;border-radius:12px;background:#0b1a24ee;
+ border:1px solid #3e7f97;text-align:center;font:600 13px/1.5 Arial,sans-serif;color:#cfe3ee;box-shadow:0 10px 30px #000a}
+#nvSemSdk p{margin:0 0 12px}
+/* o mesmo aviso com o jogo já aberto (ex.: a conta do jogador no portal mudou) */
+#nvSemSdk.nvPorCima{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:70;width:min(86%,420px)}
+#nvSemSdk button{height:44px;padding:0 28px;border-radius:9px;border:1px solid #ffd089;background:linear-gradient(180deg,#ffb23a,#ef7f0a);
+ color:#2a1400;font:900 14px Arial,sans-serif;letter-spacing:2px;cursor:pointer}
+
+/* Sem veículo premium na tela o main.js deixa data-premium="" no body, e o seletor body[data-premium] do
+   jogo casa com valor vazio: o brilho e a borda dourada de "premium" apareciam em TODOS os carros. */
+body[data-premium=""]::after{content:none;animation:none}
+body[data-premium=""] #ownedBadge{border-color:#80aab855}
+
+/* CONFIGURAÇÕES: na web não existem Play Games (nuvem), lembretes do Android, a tela de privacidade da
+   Play nem o medidor de desenvolvimento. Vibração só faz sentido no celular. */
+#cloudSave,#privacy,#avisoToggle,#perfToggle{display:none!important}
+.nv-desktop #vibraToggle{display:none!important}
+
+/* BOTÕES DE VÍDEO PREMIADO: ícone de vídeo antes do texto (regra dos portais). */
+#modal #bonus::before,#modal #revive::before{content:"";display:inline-block;width:20px;height:15px;margin-right:9px;
+ vertical-align:-3px;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 18'%3E%3Crect x='1' y='1' width='22' height='16' rx='3.5' fill='none' stroke='%23ffd27a' stroke-width='2'/%3E%3Cpath d='M9.5 5v8l6.5-4z' fill='%23ffd27a'/%3E%3C/svg%3E")}
+#modal .nvAdblock{font-size:11px}
+
+/* DESKTOP: a dica de "deslize" vira a de teclado (#nvKeys) e o botão de pausa mostra a tecla P. */
+.nv-desktop #swipeHint{display:none!important}
+.nv-desktop #pauseBtn{position:relative;overflow:visible}
+.nv-desktop #pauseBtn::after{content:"P";position:absolute;right:-7px;bottom:-7px;min-width:17px;height:17px;padding:0 3px;
+ border-radius:4px;background:#0b1a24;border:1px solid #6fb7cc;color:#e6f6fb;font:700 10px/15px Arial,sans-serif;text-align:center}
+#nvKeys{position:absolute;left:8px;bottom:8px;transform:translateY(10px);z-index:4;opacity:0;pointer-events:none;
+ transition:opacity .4s,transform .4s;background:#0b1a24e8;border:1px solid #3e7f97;border-radius:10px;padding:7px 10px;
+ display:grid;gap:4px;width:max-content;max-width:calc(100% - 110px);box-shadow:0 8px 24px #0008;
+ font:700 10px/1.2 Arial,sans-serif;letter-spacing:1px;color:#9fd3e4}
+#nvKeys.on{opacity:1;transform:none}
+#race.saindo #nvKeys{opacity:0}
+#nvKeys div{display:flex;justify-content:space-between;align-items:center;gap:14px}
+#nvKeys b{font-weight:400;color:#cfe3ee;white-space:nowrap;letter-spacing:.5px}
+#nvKeys kbd{display:inline-block;min-width:19px;padding:2px 5px;margin-left:3px;border-radius:4px;background:#183644;
+ border:1px solid #6d99a3aa;border-bottom-width:2px;color:#fff;font:700 10px/1.25 Arial,sans-serif;text-align:center;letter-spacing:0}
+
+/* PAINÉIS em janela baixa: as Configurações não cabiam em 510 px e o FECHAR ficava fora da tela. Linhas
+   mais baixas; se ainda faltar espaço, o painel rola por dentro (sem arrastar a página junto). Vale nos
+   dois modos. */
+#modal .panel{overscroll-behavior:contain}
+@media (max-height:620px){
+ .overlay{padding:12px 16px}
+ #modal .panel{padding:12px 12px 10px;max-height:96%}
+ .cfgTop{margin-bottom:8px}
+ .cfgTop h2{font-size:20px}
+ .cfgRow{height:36px;margin-bottom:4px}
+ .cfgInfo{padding:7px 10px;margin:6px 0}
+ .cfgClose{height:42px}
+}
+
+/* ======================================================================= EM PÉ (coluna 9:16)
+   O jogo é desenhado para celular em pé; numa janela estreita ele vira uma coluna 9:16 centralizada (nunca
+   mais estreita que 360 px, para os textos caberem), e as laterais mostram a própria arte do jogo desfocada
+   e escurecida em vez de barras pretas. No celular em pé a coluna ocupa a tela toda.
+   O transform no body faz dele a "tela" dos elementos fixos (abertura, clarão, carregando): eles ficam
+   dentro da coluna em vez de vazar para as laterais. */
+@media not all and (min-aspect-ratio:1101/1000){
+ html::before{content:"";position:fixed;inset:-60px;background:#0a1017 url(ui/fundo.jpg) center/cover no-repeat;
+  filter:blur(22px) brightness(.42) saturate(1.15);pointer-events:none}
+ body{position:relative;width:min(100vw,max(360px,56.25vh));margin:0 auto;transform:translateZ(0);
+  box-shadow:0 0 0 1px #ffffff14,0 0 90px #000}
+}
+@media (max-aspect-ratio:9/16){html::before{display:none}}
+
+/* JANELA BAIXA EM PÉ. O layout do celular foi medido em telas altas: em janela baixa o painel de baixo
+   cobria o carro. Na garagem o desenho 3D sobe só o necessário para o carro e a plataforma saírem de trás
+   do painel, e o painel fica mais compacto.
+   A conta: o carro fica a 49% da altura e a plataforma a 53,5% (fração fixa da câmera); a plataforma tem
+   0,38 x a largura da coluna de altura; o painel compacto ocupa ~262 px. --sobe = quanto o desenho tem de
+   subir (zero quando já cabe). O canvas só se move na GARAGEM (data-tela="g"): na corrida ele volta ao
+   lugar. translate é a propriedade avulsa, para não brigar com a animação de montagem. */
+@media not all and (min-aspect-ratio:1101/1000){@media (max-height:760px){
+ :root{--sobe:max(0px,calc(.19 * max(360px,56.25vh) + 262px - 46.5vh))}
+ body[data-tela="g"] #world{translate:0 calc(-1 * var(--sobe))}
+ #gplat{top:calc(53.5% - var(--sobe))}
+ #garage .carNav{top:calc(49% - var(--sobe) - 27px)}
+ #garage .garageBottom{bottom:5px}
+ #garage .stats{padding:5px 6px 4px;margin-bottom:5px}
+ #garage .stats b{font-size:15px}
+ #garage .stats em{height:5px}
+ #garage #buyCar{height:34px}
+ #garage .upgradeGrid{margin:5px 0}
+ /* ícone à esquerda, centrado na altura: na versão baixa ele caía por cima do rótulo (revisão B6) */
+ #garage .upgradeGrid button{height:42px;padding:4px 6px 4px 25px}
+ #garage .upgradeGrid button::before{top:50%;left:7px;margin-top:-9px}
+ #garage .upgradeGrid button::after{left:25px;bottom:4px;height:4px}
+ #garage .levelRow{margin:5px 0}
+ #garage .levelRow button{height:28px}
+ #garage #levelName{height:28px;line-height:28px}
+ #garage #play{height:46px;font-size:15px}
+ #garage .foot{margin:3px 0 0}
+}}
+@media not all and (min-aspect-ratio:1101/1000){@media (max-height:620px){
+ #garage .carTitle{top:12.5%;left:16px}
+ #garage .carTitle .eyebrow{font-size:9px;letter-spacing:3px}
+ #garage .carTitle h2{font-size:26px;margin:1px 0 4px}
+ #garage #carCount{font-size:9px;padding-top:4px}
+}}
+
+/* ======================================================================= DEITADO
+   Todo tamanho em px aqui dentro é de uma tela de ~470 px de altura; --ui (zoom) leva isso para a janela
+   real. Percentuais continuam medidos na tela inteira. */
+@media (min-aspect-ratio:1101/1000){
+ :root{--col:318px}
+ body{width:100%;margin:0}
+ #cine video{object-fit:contain}
+
+ /* ---------- GARAGEM em duas colunas: carro grande à esquerda, painel à direita ---------- */
+ /* Fundo: a arte em pé cortada numa faixa larga (sem emenda nem espelho); por cima, sombra no alto (logo e
+    créditos) e à direita (painel). A arte larga de verdade, se o dono gerar, entra no lugar pelo web.js. */
+ #gbg{background:#0a1017 url(ui/fundo.jpg) 50% 46%/cover no-repeat}
+ #gbg::after{background:linear-gradient(180deg,#05090ed0 0%,#05090e40 22%,#05090e00 40%,#05090e00 70%,#05090ecc 100%),
+  linear-gradient(90deg,#05090e00 45%,#05090e66 72%,#05090ecc 100%)}
+ /* a plataforma acompanha o carro: posição e tamanho vêm do web.js (projeção da câmera) */
+ #gplat{left:var(--plat-x,36%);top:var(--plat-y,62%);width:var(--plat-w,46vh)}
+ #garage{zoom:var(--ui,1);padding:14px 16px}
+ #garage header{gap:8px}
+ #gLogo{flex:0 0 auto;width:210px;max-width:none;margin-right:auto}
+ #garage .balance{flex:0 0 auto;width:calc(var(--col) - 52px);height:44px;min-width:0}
+ #garage #settingsBtn{flex:0 0 44px}
+ #garage .carTitle{top:84px;left:22px}
+ #garage .carTitle .eyebrow{font-size:11px;letter-spacing:4px}
+ #garage .carTitle h2{font-size:40px;margin:2px 0 6px}
+ #garage #carCount{font-size:11px;padding-top:7px}
+ /* setas dos dois lados do carro, faixa "na sua garagem" logo abaixo da plataforma */
+ #garage .carNav{left:calc(var(--g-cx,300px) - var(--g-pw,300px) * .6 - 30px);right:auto;
+  width:calc(var(--g-pw,300px) * 1.2 + 60px);top:calc(var(--g-cy,250px) - 27px)}
+ #garage #ownedBadge{display:block;top:var(--g-faixa,150px)}
+ /* coluna da direita */
+ #garage .garageBottom{left:auto;right:16px;bottom:12px;width:var(--col)}
+ #garage .stats{padding:9px 8px 8px;margin-bottom:8px}
+ #garage .stats b{font-size:18px}
+ #garage .stats span{font-size:8.5px}
+ #garage .stats em{height:6px}
+ #garage #buyCar{height:46px;font-size:12px}
+ #garage .upgradeGrid{margin:8px 0}
+ #garage .upgradeGrid button{height:58px;padding:20px 8px 15px;font-size:8.5px}
+ #garage .upgradeGrid span{font-size:8px}
+ #garage .upgradeGrid button::before{top:6px;left:7px;margin-top:0}
+ #garage .levelRow{margin:8px 0}
+ #garage .levelRow button{height:34px}
+ #garage #levelName{height:34px;line-height:34px;font-size:12px}
+ #garage #play{height:60px;font-size:18px}
+ #garage .foot{margin:6px 0 0;font-size:8px}
+
+ /* ---------- CORRIDA: pista no centro, HUD nos cantos (por cima do cenário, nunca da pista) ---------- */
+ #race{zoom:var(--ui,1)}
+ .side{top:14px;width:136px;padding:9px 8px;gap:8px;font-size:11px}
+ .leftSide{left:14px}
+ .rightSide{right:14px}
+ .side strong{font-size:22px}
+ .side #weaponInfo{font-size:10px;line-height:1.6}
+ .side #terrain{font-size:9.5px}
+ .side .health{height:24px}
+ .side .health span{font-size:10px;line-height:24px}
+ .controls{left:16px;right:16px;bottom:16px;justify-content:flex-start}
+ .controls #left{order:0}
+ .controls #right{order:1;margin-left:10px}
+ .controls #nos{order:2;margin-left:auto;width:98px;height:98px}
+ #nos b{font-size:22px}
+ #nos small{font-size:10px}
+ #warning{top:27%;font-size:16px}
+ .hint{bottom:12px;font-size:10px}
+ /* dica de teclado no cenário da esquerda, na altura em que a pista ainda é estreita (embaixo ela abre e a
+    caixa encostaria na faixa da esquerda) */
+ #nvKeys{left:14px;bottom:auto;top:31%;max-width:none}
+ #hellBanner{top:22%}
+ #toast{zoom:var(--ui,1);top:30%}
+ #outro{zoom:var(--ui,1)}
+ #outro b{font-size:56px}
+
+ /* ---------- PAINÉIS (pausa, resultado, configurações, compra, tutorial): centrados, na escala ---------- */
+ #modal .panel{zoom:var(--ui,1);max-width:400px}
+ /* o tutorial é texto corrido: mais largo, menos alto (e com letra maior depois do encaixe na altura) */
+ #modal .panel:has(#lets){max-width:560px}
+}
+/* DEITADO E BAIXO (celular deitado, ~390 px de altura): a coluna aperta as folgas e o rodapé sai, para a
+   escala (e o texto) não precisar encolher. */
+@media (min-aspect-ratio:1101/1000) and (max-height:430px){
+ #garage{padding:10px 14px}
+ #gLogo{width:180px}
+ #garage .carTitle{top:72px}
+ #garage .garageBottom{bottom:8px}
+ #garage .stats{margin-bottom:5px}
+ #garage .upgradeGrid{margin:5px 0}
+ #garage .levelRow{margin:5px 0}
+ #garage .foot{display:none}
+ .side{top:10px}
+ .leftSide{left:10px}
+ .rightSide{right:10px}
+ .controls{bottom:10px}
+}
