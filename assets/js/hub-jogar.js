@@ -115,7 +115,8 @@
   // o Umami do site ignora o "?…" do endereço (privacidade): a origem da campanha vai num evento próprio
   try {
     var qs = new URLSearchParams(location.search);
-    if (qs.get('utm_source')) mede('campanha', { origem: qs.get('utm_source'), meio: qs.get('utm_medium') || '', campanha: qs.get('utm_campaign') || '' });
-    if (qs.get('jogar') === '1') { mede('campanha_entrada'); abrir(); }
+    if (qs.get('utm_source')) mede('campanha', { origem: qs.get('utm_source'), meio: qs.get('utm_medium') || '', campanha: qs.get('utm_campaign') || '', criativo: qs.get('utm_content') || '' });
+    // anúncio pago (utm_medium=paid/pago/cpc) também cai jogando, mesmo sem o ?jogar=1 no link
+    if (qs.get('jogar') === '1' || /^(paid|pago|cpc)$/i.test(qs.get('utm_medium') || '')) { mede('campanha_entrada', { criativo: qs.get('utm_content') || '' }); abrir(); }
   } catch (e) {}
 })();
