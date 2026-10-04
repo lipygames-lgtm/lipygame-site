@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="../assets/js/idioma.js?v=2fac4598"></script>
+  <script src="../assets/js/idioma.js?v=02c38426"></script>
   <title>Lipy Games — मोबाइल गेम स्टूडियो</title>
-  <meta name="description" content="Lipy Games ब्राज़ील का एक मोबाइल गेम स्टूडियो है। हमने Quiver: Arrow Puzzle, This Level Hates You, Nitrovenant और SWARMORIA बनाए हैं — उन मिनटों के लिए गेम, जो क़िस्से बन जाते हैं।">
+  <meta name="description" content="Lipy Games एक ब्राज़ीलियाई मोबाइल गेम स्टूडियो है। हमने Quiver: Arrow Puzzle, This Level Hates You, Nitrovenant, SWARMORIA और LEGIONTIDE बनाए हैं — ऐसे गेम जिनके कुछ मिनट कहानी बन जाते हैं।">
   <meta name="theme-color" content="#05070f">
   <link rel="canonical" href="https://lipygame.com/hi/">
   <link rel="alternate" hreflang="en" href="https://lipygame.com/">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Lipy Games">
   <meta property="og:locale" content="hi_IN">
   <meta property="og:title" content="Lipy Games — दुनिया पॉज़ पर। आप दबाते हैं प्ले।">
-  <meta property="og:description" content="ब्राज़ील का मोबाइल गेम स्टूडियो। चार यूनिवर्स, 582 लेवल, छह भाषाएँ।">
+  <meta property="og:description" content="ब्राज़ीलियाई मोबाइल गेम स्टूडियो। पाँच यूनिवर्स, 612 लेवल, छह भाषाएँ।">
   <meta property="og:url" content="https://lipygame.com/hi/">
   <meta property="og:image" content="https://lipygame.com/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -33,8 +33,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
   <link rel="preload" as="image" href="../assets/media/video/hero-poster-movel.webp" media="(max-width: 599px)" fetchpriority="high">
   <link rel="preload" as="image" href="../assets/media/video/hero-poster.webp" media="(min-width: 600px)" fetchpriority="high">
-  <link rel="stylesheet" href="../assets/css/lipy.css?v=9bd8e2ec">
-  <link rel="stylesheet" href="../assets/css/home.css?v=2ebb4ad3">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=0779ecc1">
+  <link rel="stylesheet" href="../assets/css/home.css?v=3edd586a">
   <script>
     /* antes da 1ª pintura: liga o JS, decide pré-carregador / véu de chegada */
     (function (h) {
@@ -139,6 +139,10 @@
         <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
         <span><b>SWARMORIA</b><small>इवॉल्व होता झुंड</small></span>
       </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>ब्राउज़र में सेना</small></span>
+      </a>
     </div>
   </header>
 
@@ -156,6 +160,7 @@
       <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
       <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
       <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="../index.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -179,8 +184,9 @@
           <div class="amb" data-amb="1" data-bg="../assets/media/tlhy/fundo-grama.webp" style="--tint:rgba(40,110,255,.55)"></div>
           <div class="amb" data-amb="2" data-bg="../assets/media/nitro/arte.webp" style="--tint:rgba(255,60,10,.55)"></div>
           <div class="amb" data-amb="3" data-bg="../assets/media/swarm/fundo-fase.webp" style="--tint:rgba(60,120,255,.55)"></div>
+          <div class="amb" data-amb="4" data-bg="../assets/media/legion/capa.webp" style="--tint:rgba(255,170,30,.5)"></div>
           <div class="stage__words">
-            <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span> <span data-word="3">SWARM</span>
+            <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span> <span data-word="3">SWARM</span> <span data-word="4">LEGION</span>
           </div>
         </div>
 
@@ -210,6 +216,7 @@
             <img class="stage__app" data-app="1" src="../assets/media/tlhy/hi/real-1.webp" width="720" height="1280" alt="" loading="lazy" decoding="async">
             <video class="stage__app" data-app="2" muted loop playsinline preload="none" poster="../assets/media/nitro/video-abertura-poster.webp" src="../assets/media/nitro/video-abertura.mp4" tabindex="-1"></video>
             <img class="stage__app" data-app="3" src="../assets/media/swarm/tela-fase.webp" width="720" height="1279" alt="" loading="lazy" decoding="async">
+            <img class="stage__app" data-app="4" src="../assets/media/legion/hi/retrato.webp" width="720" height="1280" alt="" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -238,7 +245,7 @@
 
           <div class="hero__foot wrap">
             <span class="hero__scroll"><i class="hero__phone"><i></i></i>स्क्रॉल करके अंदर आएँ</span>
-            <span class="hero__fim"><span class="hero__stats mono">04 यूनिवर्स <i></i> 582 लेवल <i></i> 06 भाषाएँ</span><button class="hero__pausa glass glass--pill" type="button" data-pausa aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg><svg class="i-toca" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg><span>वीडियो रोकें</span></button></span>
+            <span class="hero__fim"><span class="hero__stats mono">05 यूनिवर्स <i></i> 612 लेवल <i></i> 06 भाषाएँ</span><button class="hero__pausa glass glass--pill" type="button" data-pausa aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg><svg class="i-toca" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg><span>वीडियो रोकें</span></button></span>
           </div>
         </div>
 
@@ -288,9 +295,19 @@
               <a class="link-arrow u-line" href="swarmoria.html" data-game="swarm">यूनिवर्स में उतरें <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
             </div>
           </div>
+          <div class="cap" data-cap="5">
+            <div class="cap__l">
+              <span class="cap__idx mono">05 — सेना</span>
+              <h2 class="cap__name cap__name--legion">LEGIONTIDE</h2>
+            </div>
+            <div class="cap__r">
+              <p class="cap__line">वो जोश, जब एक गेट से सेना दोगुनी हो जाती है और एक विशाल बॉस को रौंद देती है।</p>
+              <a class="link-arrow u-line" href="legiontide.html" data-game="legion">यूनिवर्स में उतरें <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </div>
         </div>
 
-        <ol class="stage__dots" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+        <ol class="stage__dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
       </div>
     </section>
 
@@ -311,7 +328,7 @@
       <div class="wrap unis__head">
         <div>
           <p class="eyebrow" data-reveal>हमारे यूनिवर्स</p>
-          <h2 class="h1" id="unis-t" data-split>चार यूनिवर्स।<br><span class="txt-cool">दोहराव ज़ीरो।</span></h2>
+          <h2 class="h1" id="unis-t" data-split>पाँच यूनिवर्स।<br><span class="txt-cool">ज़ीरो दोहराव।</span></h2>
         </div>
         <p class="lead" data-reveal>Lipy का हर गेम अपने नियमों, अपने किरदारों और एक ऐसे एहसास के साथ जन्म लेता है, जो सिर्फ़ वही दे सकता है।</p>
       </div>
@@ -452,6 +469,40 @@
             </div>
           </div>
         </article>
+
+        <!-- LEGIONTIDE -->
+        <article class="uni uni--legion" data-vt-scope style="--c1:#ffd23f;--c2:#ff9a1a;--c3:#0a0d2c">
+          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/legion/capa-fundo.webp" width="1200" height="675" alt="" loading="lazy" decoding="async"></div>
+          <div class="uni__dim" aria-hidden="true"></div>
+          <div class="uni__grid">
+            <div class="uni__text">
+              <div class="uni__top">
+                <span class="uni__n mono">05</span> <span class="chip glass glass--thin glass--pill">सेना</span> <span class="chip chip--line">ब्राउज़र</span>
+              </div>
+              <a class="uni__id" href="legiontide.html" data-game="legion" data-cursor="अंदर चलें" tabindex="-1" aria-hidden="true">
+                <img class="uni__icon" data-vt="legion" src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy">
+              </a>
+              <h3 class="uni__name">LEGIONTIDE<small>3D सेना</small></h3>
+              <p class="uni__tag">एक सैनिक काफ़ी नहीं। सेना बने तो सैलाब बने। सही गेट चुनें, सही फ़ौज बनाएँ और विशाल बॉस को गिराएँ।</p>
+              <ul class="uni__facts glass glass--dark">
+                <li><b>30</b><span>लेवल</span></li>
+                <li><b>6</b><span>बॉस</span></li>
+                <li><b>5</b><span>सैनिक वर्ग</span></li>
+              </ul>
+              <div class="uni__ctas">
+                <a class="btn btn--warm" href="legiontide.html" data-game="legion" data-magnetic>यूनिवर्स में उतरें <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+                <a class="store store--mini" data-store="legion:crazygames" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 12.5v4.5l4-2.25z" fill="currentColor"/></svg><span><small>जल्द आ रहा है</small><b>CrazyGames पर</b></span></a>
+              </div>
+            </div>
+            <div class="uni__visual" data-float>
+              <img class="fl fl--lt-arte" data-depth="0.3" src="../assets/media/legion/capa-vertical.webp" width="720" height="1279" alt="" loading="lazy">
+              <div class="phone uni__phone" data-depth="0.15"><div class="phone__screen"><img src="../assets/media/legion/hi/retrato.webp" width="720" height="1280" alt="LEGIONTIDE की स्क्रीन: सेना कुकुरमुत्ता वन से दौड़ती हुई" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
+              <img class="fl fl--lt-giant" data-depth="1.1" src="../assets/media/legion/ic-giant.webp" width="192" height="155" alt="" loading="lazy">
+              <img class="fl fl--lt-archer" data-depth="1.4" src="../assets/media/legion/ic-archer.webp" width="192" height="187" alt="" loading="lazy">
+              <img class="fl fl--lt-coin" data-depth="0.9" src="../assets/media/legion/ic-coin.webp" width="160" height="160" alt="" loading="lazy">
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -459,24 +510,24 @@
     <section class="wall" aria-labelledby="wall-t">
       <div class="wall__plane" aria-hidden="true">
         <div class="wall__row">
-          <img src="../assets/media/quiver/tela-rush.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-3.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-1.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-magumbi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/hi/real-2.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-guarda.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/quiver/tela-natal.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/tela-boss.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-magma.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-3.webp" alt="" loading="lazy" width="720" height="1279">
+          <img src="../assets/media/quiver/tela-rush.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-3.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-1.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-magumbi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/legion/hi/retrato.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/tlhy/hi/real-2.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-guarda.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/quiver/tela-natal.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/tela-boss.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-magma.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-3.webp" alt="" loading="lazy" width="720" height="1279">
         </div>
         <div class="wall__row">
-          <img src="../assets/media/tlhy/en/poster-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-2.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-nevambi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/tela-fase.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/hi/real-4.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-pit.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/quiver/tela-halloween.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-gelo.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-8.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-mapa-rush.webp" alt="" loading="lazy" width="720" height="1276">
+          <img src="../assets/media/tlhy/en/poster-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-2.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-nevambi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/tela-fase.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/hi/real-4.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-pit.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/legion/hi/retrato-2.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/quiver/tela-halloween.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-gelo.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-8.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-mapa-rush.webp" alt="" loading="lazy" width="720" height="1276">
         </div>
         <div class="wall__row">
-          <img src="../assets/media/nitro/mkt-1.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-angembi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-6.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-mapa-classic.webp" alt="" loading="lazy" width="720" height="1276"><img src="../assets/media/tlhy/hi/real-5.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-piloto.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/swarm/tela-menu.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-pascoa.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/mapa-grama.webp" alt="" loading="lazy" width="720" height="1279">
+          <img src="../assets/media/nitro/mkt-1.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-angembi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-5.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/legion/capa-vertical.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-6.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-mapa-classic.webp" alt="" loading="lazy" width="720" height="1276"><img src="../assets/media/tlhy/hi/real-5.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/nitro/tela-piloto.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/swarm/tela-menu.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-pascoa.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/mapa-grama.webp" alt="" loading="lazy" width="720" height="1279">
         </div>
         <div class="wall__row">
-          <img src="../assets/media/quiver/tela-egimbi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-6.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-3.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-patrick.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/tela-grama.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-9.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-menu.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/tela-abertura.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-7.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/tela-mecanico.webp" alt="" loading="lazy" width="720" height="1280">
+          <img src="../assets/media/quiver/tela-egimbi.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-6.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-4.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/en/loja-3.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-patrick.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/legion/hi/retrato-3.webp" alt="" loading="lazy" width="720" height="1280"><img src="../assets/media/tlhy/tela-grama.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/mkt-9.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/quiver/tela-menu.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/swarm/tela-abertura.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/tlhy/en/poster-7.webp" alt="" loading="lazy" width="720" height="1279"><img src="../assets/media/nitro/tela-mecanico.webp" alt="" loading="lazy" width="720" height="1280">
         </div>
       </div>
       <div class="wall__fade" aria-hidden="true"></div>
       <div class="wall__card glass" data-lens="aro:30,escala:60,blur:8">
         <p class="eyebrow">लाइब्रेरी</p>
-        <p class="wall__num"><span data-count="582">582</span></p>
+        <p class="wall__num"><span data-count="612">612</span></p>
         <h2 class="h3" id="wall-t">लेवल, जिनमें वक़्त का होश ही न रहे।</h2>
-        <p class="wall__split mono"><span>360 · Quiver</span><span>66 · This Level Hates You</span><span>120 · Nitrovenant</span><span>36 · SWARMORIA</span></p>
+        <p class="wall__split mono"><span>360 · Quiver</span><span>66 · This Level Hates You</span><span>120 · Nitrovenant</span><span>36 · SWARMORIA</span><span>30 · LEGIONTIDE</span></p>
       </div>
     </section>
 
@@ -490,8 +541,8 @@
           <p class="studio__p" data-reveal>हमारा मानना है कि अच्छा मोबाइल गेम तीन सेकंड में समझ आ जाता है और सालों याद रहता है। इसलिए हम शुरुआत एहसास से करते हैं — वो झटका, वो हँसी, वो “अरे, बस रह गया!” — और कोड की पहली लाइन उसके बाद ही लिखते हैं।</p>
         </div>
         <div class="studio__stats">
-          <div class="stat glass" data-reveal="scale"><b data-count="4" data-pad="2">04</b><span>ओरिजिनल<br>यूनिवर्स</span></div>
-          <div class="stat glass" data-reveal="scale"><b data-count="582">582</b><span>हाथ से गढ़े<br>लेवल</span></div>
+          <div class="stat glass" data-reveal="scale"><b data-count="5" data-pad="2">05</b><span>ओरिजिनल<br>यूनिवर्स</span></div>
+          <div class="stat glass" data-reveal="scale"><b data-count="612">612</b><span>हाथ से बनाए<br>लेवल</span></div>
           <div class="stat glass" data-reveal="scale"><b data-count="6" data-pad="2">06</b><span>भाषाएँ, यही<br>Lipy स्टैंडर्ड</span></div>
           <div class="stat glass" data-reveal="scale"><b>100<small>%</small></b><span>बिना इंटरनेट<br>खेलने लायक</span></div>
         </div>
@@ -610,6 +661,7 @@
                 <label class="gtog"><input type="checkbox" name="j" value="tlhy"><img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">This Level Hates You</label>
                 <label class="gtog"><input type="checkbox" name="j" value="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">Nitrovenant</label>
                 <label class="gtog"><input type="checkbox" name="j" value="swarm"><img src="../assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy">SWARMORIA</label>
+                <label class="gtog"><input type="checkbox" name="j" value="legion"><img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy">LEGIONTIDE</label>
               </div>
             </fieldset>
             <div class="signup__field glass">
@@ -640,6 +692,7 @@
               <img src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">
               <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">
               <img src="../assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy">
+              <img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy">
             </div>
             <div class="pass__row">
               <div><small>धारक</small><b data-pass-nome>आप?</b></div>
@@ -691,6 +744,7 @@
             <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
             <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
             <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
           </ul>
         </div>
         <div class="foot__col">
@@ -731,7 +785,7 @@
   <script src="../assets/vendor/CustomEase.min.js"></script>
   <script src="../assets/vendor/lenis.min.js"></script>
   <script src="../assets/js/textos/hi.js?v=3b13be44"></script>
-  <script src="../assets/js/lipy.js?v=39f6c83f"></script>
+  <script src="../assets/js/lipy.js?v=dda2cbaf"></script>
   <script src="../assets/js/home.js?v=3322d279"></script>
 </body>
 </html>

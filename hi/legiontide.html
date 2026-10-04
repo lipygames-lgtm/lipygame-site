@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="hi" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=02c38426"></script>
+  <title>LEGIONTIDE — Lipy Games</title>
+  <meta name="description" content="LEGIONTIDE ब्राउज़र के लिए Lipy Games का सेना वाला गेम है: गेट चुनें, सही फ़ौज बनाएँ, विशाल बॉस गिराएँ और टापुओं पर अपना राज्य खड़ा करें। 3 क्षेत्रों में 30 लेवल।">
+  <meta name="theme-color" content="#0a0d2c">
+  <link rel="canonical" href="https://lipygame.com/hi/legiontide.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/legiontide.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/legiontide.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/legiontide.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/legiontide.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/legiontide.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/legiontide.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/legiontide.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:title" content="LEGIONTIDE — एक सैनिक काफ़ी नहीं। सेना बने तो सैलाब बने।">
+  <meta property="og:description" content="सही गेट चुनें, सही फ़ौज बनाएँ और विशाल बॉस गिराएँ। Lipy Games का ब्राउज़र गेम, जल्द आ रहा है।">
+  <meta property="og:url" content="https://lipygame.com/hi/legiontide.html">
+  <meta property="og:image" content="https://lipygame.com/og-legion.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=0779ecc1">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/legion.css?v=a7c56cd5">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "LEGIONTIDE",
+    "description": "ब्राउज़र के लिए 3D सेना वाला गेम: ऐसे गेट चुनें जो सैनिक जोड़ें और गुणा करें, हर लड़ाई में सही फ़ौज भेजें, विशाल बॉस गिराएँ और टापुओं पर राज्य खड़ा करें। 30 लेवल, 3 क्षेत्र और 6 बॉस।",
+    "genre": ["Ação", "Estratégia"],
+    "gamePlatform": "Navegador",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/legion/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
+</head>
+<body class="jogo jogo--legion" style="--c1:#ffd23f;--c2:#ff9a1a;--c3:#0a0d2c;--c4:#33d6ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">सीधे कंटेंट पर जाएँ</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — होम"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="मुख्य">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">गेम्स <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
+        <a href="index.html#estudio">स्टूडियो</a>
+        <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+        <a href="index.html#contato">संपर्क</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="भाषा"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../legiontide.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/legiontide.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/legiontide.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/legiontide.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/legiontide.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/legiontide.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">अर्ली एक्सेस <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="मेन्यू खोलें" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>तीरों की पहेली</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>This Level Hates You</b><small>शरारतों भरा प्लेटफ़ॉर्मर</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Nitrovenant</b><small>पहियों पर एक्शन</small></span>
+      </a>
+      <a class="mega__item" href="swarmoria.html" data-game="swarm" style="--c:#2a7bff">
+        <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>SWARMORIA</b><small>इवॉल्व होता झुंड</small></span>
+      </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>ब्राउज़र में सेना</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="मेन्यू">
+      <a href="index.html#universos">गेम्स</a>
+      <a href="hub/">Lipy Hub</a>
+      <a href="index.html#estudio">स्टूडियो</a>
+      <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+      <a href="index.html#lista">अर्ली एक्सेस</a>
+      <a href="index.html#contato">संपर्क</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
+      <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../legiontide.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/legiontide.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/legiontide.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/legiontide.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/legiontide.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/legiontide.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh lt-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/legion/capa.webp" width="1600" height="900" alt="" fetchpriority="high"></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="आप यहाँ हैं"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">यूनिवर्स</a><i>/</i><span aria-current="page">LEGIONTIDE</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="legion" src="../assets/media/legion/icone.webp" width="512" height="512" alt="LEGIONTIDE का आइकन">
+            <img class="gh__logo lt-logo" src="../assets/media/legion/logo.webp" width="900" height="394" alt="LEGIONTIDE">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">एक सैनिक काफ़ी नहीं।</span><span class="l"><em class="txt-game">सेना बने तो सैलाब बने।</em></span></h1>
+          <p class="lead gh__lead">सही गेट चुनें, ढालधारी, धनुर्धर, दानव और जादूगर जुटाएँ, और हर लड़ाई में सही फ़ौज भेजें। ट्रैक के आख़िर में एक विशाल बॉस इंतज़ार कर रहा है।</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">3D सेना</span> <span class="chip chip--line">ब्राउज़र</span> <span class="chip chip--line">कंप्यूटर और मोबाइल</span> <span class="chip chip--line">बिना इंस्टॉल</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#como-se-joga" data-magnetic>सेना तैयार करें <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="legion:crazygames" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 12.5v4.5l4-2.25z" fill="currentColor"/></svg><span><small>जल्द आ रहा है</small><b>CrazyGames पर</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual lt-visual" data-float>
+          <div class="tela lt-visual__tela" data-depth="0.15">
+            <div class="tela__screen">
+              <video data-lt-video="../assets/media/legion/video-jogo.mp4" poster="../assets/media/legion/video-jogo-poster.webp" muted loop playsinline preload="none" aria-label="LEGIONTIDE का एक मैच: सेना गेट से गुज़रती है, दुश्मनों से भिड़ती है और सुनहरी हो जाती है"></video>
+              <i class="phone__glare"></i>
+            </div>
+          </div>
+          <img class="fl lt-fl lt-fl--shield" src="../assets/media/legion/ic-shield.webp" width="192" height="189" alt="" data-depth="0.7">
+          <img class="fl lt-fl lt-fl--archer" src="../assets/media/legion/ic-archer.webp" width="192" height="187" alt="" data-depth="1.1">
+          <img class="fl lt-fl lt-fl--giant" src="../assets/media/legion/ic-giant.webp" width="192" height="155" alt="" data-depth="0.9">
+          <img class="fl lt-fl lt-fl--mage" src="../assets/media/legion/ic-mage.webp" width="192" height="149" alt="" data-depth="1.3">
+          <img class="fl lt-fl lt-fl--coin" src="../assets/media/legion/ic-coin.webp" width="160" height="160" alt="" data-depth="1.6">
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>यूनिवर्स 05 / 05</span><span>गेट चुनें · फिर स्क्रॉल करें</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">एहसास</p>
+        <p class="gi__txt" data-scrub-words>एक पल आता है जब सेना ×3 गेट से निकलती है, पूरा ट्रैक नीला हो जाता है — और आख़िर में खड़ा बॉस <em>अचानक छोटा लगने लगता है</em>। वही पल ये गेम है।</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section lt-gp" id="como-se-joga" data-gp aria-labelledby="gp-t" tabindex="-1">
+      <div class="wrap">
+        <p class="eyebrow">कैसे खेलें</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">चुनें। गुणा करें।<br><span class="txt-game">जीत लें।</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>गेट चुनें।</h3>
+            <p>गेट सैनिक जोड़ते हैं, गुणा करते हैं या उनका वर्ग बदल देते हैं। गिनती सिर्फ़ उनकी होती है जो अंदर से गुज़रते हैं: सेना को सही तरफ़ ले चलें।</p>
+            <span class="chip chip--line gp__gesture" translate="no">+15 · ×2 · −11 → +2</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/corrida-campos.webp" width="1280" height="720" alt="सेना दो गेट तक पहुँचती है: एक सैनिकों को धनुर्धर बना देता है, दूसरा 15 जोड़ता है" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>जालों से बच निकलें।</h3>
+            <p>हथौड़े, आरियाँ, लुढ़कती चट्टानें और तीरों की बारिश। दबाए रखें, सेना को पतली कतार में सिकोड़ें और दरार से निकल जाएँ।</p>
+            <span class="chip chip--line gp__gesture">दबाए रखें = सिकोड़ें · छोड़ें = फैलाएँ</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/corrida-gelo.webp" width="1280" height="720" alt="बर्फ़ीली चोटियों में सेना लुढ़कती चट्टान से बचती है" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>सही फ़ौज भेजें।</h3>
+            <p>हर भिड़ंत से पहले दुश्मन दिखाता है कि वह कितना बड़ा है और उसे कौन हरा सकता है। झुंड के ख़िलाफ़ जादूगर, फटने वाले कुकुरमुत्तों के ख़िलाफ़ धनुर्धर, कवचधारियों के ख़िलाफ़ दानव।</p>
+            <span class="chip chip--line gp__gesture">दुश्मन की ताक़त लड़ाई से पहले दिखती है</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/luta.webp" width="1280" height="720" alt="दुश्मनों का झुंड पास आता है और चेतावनी जादूगर माँगती है" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">04</span>
+            <h3>बॉस को गिराएँ।</h3>
+            <p>अखाड़े में बॉस का हर वार ज़मीन पर पहले से दिखता है। बचें, कमज़ोर जगह पर वार करें और सोना कई गुना करने के लिए सीढ़ियों, सोने की दीवार या तोप पर ख़त्म करें।</p>
+            <span class="chip chip--line gp__gesture">कमज़ोर जगह · आख़िरी वार</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/chefe-yeti.webp" width="1280" height="720" alt="अखाड़े में सेना येति की कमज़ोर जगह पर वार करती है" loading="lazy"></div></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="tela gp__phone">
+              <div class="tela__screen">
+                <img data-step="0" src="../assets/media/legion/hi/corrida-campos.webp" width="1280" height="720" alt="सेना दो गेट तक पहुँचती है: एक सैनिकों को धनुर्धर बना देता है, दूसरा 15 जोड़ता है" loading="lazy">
+                <img data-step="1" src="../assets/media/legion/hi/corrida-gelo.webp" width="1280" height="720" alt="बर्फ़ीली चोटियों में सेना लुढ़कती चट्टान से बचती है" loading="lazy">
+                <img data-step="2" src="../assets/media/legion/hi/luta.webp" width="1280" height="720" alt="दुश्मनों का झुंड पास आता है और चेतावनी जादूगर माँगती है" loading="lazy">
+                <img data-step="3" src="../assets/media/legion/hi/chefe-yeti.webp" width="1280" height="720" alt="अखाड़े में सेना येति की कमज़ोर जगह पर वार करती है" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TROPAS E PODERES ============ -->
+    <section class="section lt-tropas" aria-labelledby="tropas-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>सैनिक और शक्तियाँ</p>
+        <h2 class="h1" id="tropas-t" data-split>हर सैनिक,<br><span class="txt-game">एक भूमिका।</span></h2>
+        <p class="lead lt-tropas__lead" data-reveal>सेना उन सबका जोड़ है जो गेट से गुज़रे। हर वर्ग अपने अंदाज़ में लड़ता है और सही मौक़े के लिए उसके पास एक शक्ति है — कीबोर्ड पर 1 से 4 कीज़, मोबाइल पर एक टैप।</p>
+        <div class="feats">
+          <article class="feat glass lt-cl lt-cl--soldier" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-soldier.webp" width="192" height="199" alt="" loading="lazy"><h3>सैनिक</h3><p>सेना की नींव। ढेर सारे, तेज़ और हमेशा सबसे आगे।</p></article>
+          <article class="feat glass lt-cl lt-cl--shield" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-shield.webp" width="192" height="189" alt="" loading="lazy"><h3>ढालधारी</h3><p>आगे-आगे चलते हैं और दुश्मन के तीर रोकते हैं।</p><span class="lt-pw"><kbd translate="no">1</kbd>ढाल की दीवार</span></article>
+          <article class="feat glass lt-cl lt-cl--archer" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-archer.webp" width="192" height="187" alt="" loading="lazy"><h3>धनुर्धर</h3><p>भिड़ंत से पहले तीर चलाते हैं और दुश्मन की मीनारें गिराते हैं।</p><span class="lt-pw"><kbd translate="no">2</kbd>तीरों की बारिश</span></article>
+          <article class="feat glass lt-cl lt-cl--giant" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-giant.webp" width="192" height="155" alt="" loading="lazy"><h3>दानव</h3><p>बाधाएँ तोड़ते हैं और कवचधारी दुश्मनों को कुचलते हैं।</p><span class="lt-pw"><kbd translate="no">3</kbd>ज़मीन पर वार</span></article>
+          <article class="feat glass lt-cl lt-cl--mage" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-mage.webp" width="192" height="149" alt="" loading="lazy"><h3>जादूगर</h3><p>जादुई धमाके जो पूरे झुंड को एक बार में साफ़ कर देते हैं।</p><span class="lt-pw"><kbd translate="no">4</kbd>जादुई धमाका</span></article>
+          <article class="feat glass lt-cl lt-cl--gold" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-coin.webp" width="160" height="160" alt="" loading="lazy"><h3>सुनहरी सेना</h3><p>बार भरते ही पूरी फ़ौज कुछ सेकंड के लिए सुनहरी और अजेय हो जाती है।</p><span class="lt-pw"><kbd>स्पेस</kbd>सुनहरा स्पेशल</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BIOMAS E CHEFES ============ -->
+    <section class="section lt-biomas" aria-labelledby="biomas-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>क्षेत्र और बॉस</p>
+        <h2 class="h1" id="biomas-t" data-split>जीतने के लिए<br><span class="txt-game">तीन राज्य।</span></h2>
+        <p class="lead lt-biomas__lead" data-reveal>हर क्षेत्र में 10 लेवल, अपने दुश्मन और कमज़ोर जगह वाले दो बॉस हैं। आख़िरी को हराइए और वह राज्य आपका।</p>
+        <div class="lt-biomas__grid">
+          <article class="lt-bioma glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-campos.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">01 · 10 लेवल</span>
+            <h3>हरे मैदान</h3>
+            <p>जहाँ सेना सीखती है: गेट, धनुर्धरों की मीनारें और पहली शक्तियाँ।</p>
+            <ul class="lt-chefes"><li><b>क्रूर ओर्क</b></li><li><b>पत्थर गोलेम</b></li></ul>
+          </article>
+          <article class="lt-bioma glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-cogumelos.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">02 · 10 लेवल</span>
+            <h3>कुकुरमुत्ता वन</h3>
+            <p>फटने वाले कुकुरमुत्ते सेना की ओर दौड़ते हैं। धनुर्धर उन्हें दूर से गिरा देते हैं।</p>
+            <ul class="lt-chefes"><li><b>कुकुरमुत्ता राजा</b></li><li><b>वन जादूगर</b></li></ul>
+          </article>
+          <article class="lt-bioma glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-gelo.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">03 · 10 लेवल</span>
+            <h3>बर्फ़ीली चोटियाँ</h3>
+            <p>बर्फ़ीले भेड़िये किनारों से हमला करते हैं, और ट्रैक और तेज़ हो जाता है।</p>
+            <ul class="lt-chefes"><li><b>येति</b></li><li><b>बर्फ़ीला भूत</b></li></ul>
+          </article>
+          <article class="lt-bioma lt-bioma--breve glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-vulcao.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">04</span>
+            <h3>ज्वालामुखी</h3>
+            <p>चौथा राज्य नक्शे पर दिखने लगा है, अभी बंद है।</p>
+            <span class="lt-breve">जल्द ही</span>
+          </article>
+        </div>
+        <div class="lt-duelo">
+          <figure class="lt-duelo__it" data-reveal><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/chefe-golem.webp" width="1280" height="720" alt="हरे मैदान के अखाड़े में सेना पत्थर गोलेम से भिड़ती है" loading="lazy"></div></div><figcaption>पत्थर गोलेम · हरे मैदान</figcaption></figure>
+          <figure class="lt-duelo__it" data-reveal><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/corrida-cogumelos.webp" width="1280" height="720" alt="सेना कुकुरमुत्ता वन से दौड़ती हुई" loading="lazy"></div></div><figcaption>कुकुरमुत्ता वन</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ O REINO ============ -->
+    <section class="section lt-reino" aria-labelledby="reino-t">
+      <div class="wrap lt-reino__grid">
+        <div>
+          <p class="eyebrow" data-reveal>राज्य</p>
+          <h2 class="h1" id="reino-t" data-split>दो लड़ाइयों के बीच,<br><span class="txt-game">टापुओं पर बसा राज्य।</span></h2>
+          <p class="lead" data-reveal>ट्रैक का सारा सोना घर लौटता है। हर जीता हुआ राज्य पुलों से जुड़ा एक टापू बन जाता है, और हारा हुआ बॉस साथी बनकर पहरा देता है।</p>
+          <ul class="lt-ramos">
+            <li class="glass" data-reveal><b>शासक</b><span>पहली बार आने पर आप अपने राजा या रानी का राज्याभिषेक करते हैं और राज्य को नाम देते हैं।</span></li>
+            <li class="glass" data-reveal><b>निर्माण</b><span>इमारतें जो सैनिकों को ताक़तवर बनाती हैं, और कारीगर आँखों के सामने काम करते हैं।</span></li>
+            <li class="glass" data-reveal><b>लगातार सोना</b><span>गेम बंद होने पर भी राज्य सोना बनाता रहता है।</span></li>
+            <li class="glass" data-reveal><b>रक्षा</b><span>कंकालों की भीड़ चेतावनी देकर हमला करती है। मीनारों के तीरों का निशाना लगाएँ, सैनिक भेजें और दीवार की मरम्मत करें।</span></li>
+          </ul>
+        </div>
+        <div class="lt-reino__art" data-reveal>
+          <div class="tela lt-reino__tela"><div class="tela__screen"><img src="../assets/media/legion/hi/reino.webp" width="1280" height="720" alt="टापुओं पर बसा राज्य: बीच में किला और पुलों से जुड़े जीते हुए टापू" loading="lazy"><i class="phone__glare"></i></div></div>
+          <div class="tela lt-reino__mini lt-reino__mini--a"><div class="tela__screen"><img src="../assets/media/legion/hi/defesa.webp" width="1280" height="720" alt="राज्य पर हमला: कंकाल दीवार की ओर बढ़ते हुए" loading="lazy"></div></div>
+          <div class="tela lt-reino__mini lt-reino__mini--b"><div class="tela__screen"><img src="../assets/media/legion/hi/monarca.webp" width="1280" height="720" alt="शासक बनाना: राजा या रानी, नाम और रूप" loading="lazy"></div></div>
+          <img class="lt-reino__bau" src="../assets/media/legion/ic-chest-gold.webp" width="192" height="196" alt="" loading="lazy" data-parallax="-12">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRILHA ============ -->
+    <section class="gm section" aria-labelledby="gm-t">
+      <div class="wrap gm__grid">
+        <div>
+          <p class="eyebrow" data-reveal>साउंडट्रैक</p>
+          <h2 class="h1" id="gm-t" data-split>हज़ार क़दमों<br><span class="txt-game">की आवाज़।</span></h2>
+          <p class="lead" data-reveal>मेन्यू के लिए एक धुन, राज्य के लिए दूसरी और ट्रैक के लिए कई, जिन्हें गेम बारी-बारी से बजाता है। प्ले दबाएँ और हर एक का 1 मिनट का प्रीव्यू सुनें।</p>
+        </div>
+        <div class="player glass" data-player data-reveal>
+          <div class="player__art"><img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+          <div>
+            <p class="player__now">अभी बज रहा है · <span translate="no">LEGIONTIDE</span></p>
+            <p class="player__title">मेन्यू</p>
+            <div class="player__row">
+              <button class="player__btn" type="button" aria-label="चलाएँ"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></button>
+              <div class="player__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="player__time">0:00 / 1:00</span>
+            </div>
+            <div class="player__prog" role="presentation"><i></i></div>
+          </div>
+          <div class="player__list">
+            <button type="button" data-src="../assets/media/legion/trilha-menu.mp3"><span class="n">01</span><span class="t">मेन्यू</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-reino.mp3"><span class="n">02</span><span class="t">राज्य</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-corrida-1.mp3"><span class="n">03</span><span class="t">ट्रैक पर · I</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-corrida-2.mp3"><span class="n">04</span><span class="t">ट्रैक पर · II</span><span class="d">प्रीव्यू</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-corrida-3.mp3"><span class="n">05</span><span class="t">ट्रैक पर · III</span><span class="d">प्रीव्यू</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section lt-gg" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">स्क्रीनशॉट</p>
+          <h2 class="h1" id="gg-t">ट्रैक से <span class="txt-game">तख़्त तक।</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="स्क्रीनशॉट फ़िल्टर करें" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">सभी</button>
+          <button role="tab" aria-selected="false" data-cat="pista" aria-controls="gg-lista">ट्रैक पर</button>
+          <button role="tab" aria-selected="false" data-cat="reino" aria-controls="gg-lista">राज्य में</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="खींचें">
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/hi/corrida-campos.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/corrida-campos.webp" width="1280" height="720" alt="हरे मैदान में गेट" loading="lazy"></div></div></a><figcaption>हरे मैदान</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/hi/corrida-cogumelos.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/corrida-cogumelos.webp" width="1280" height="720" alt="कुकुरमुत्ता वन में गेटों का कॉम्बो" loading="lazy"></div></div></a><figcaption>कुकुरमुत्ता वन</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/hi/corrida-gelo.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/corrida-gelo.webp" width="1280" height="720" alt="बर्फ़ीली चोटियों में सेना" loading="lazy"></div></div></a><figcaption>बर्फ़ीली चोटियाँ</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/hi/luta.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/luta.webp" width="1280" height="720" alt="लड़ाई से पहले चेतावनी: दुश्मन और उसे हराने वाला सैनिक वर्ग" loading="lazy"></div></div></a><figcaption>भिड़ंत से पहले</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/hi/chefe-golem.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/chefe-golem.webp" width="1280" height="720" alt="पत्थर गोलेम से लड़ाई" loading="lazy"></div></div></a><figcaption>पत्थर गोलेम</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/hi/chefe-yeti.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/chefe-yeti.webp" width="1280" height="720" alt="येति की कमज़ोर जगह" loading="lazy"></div></div></a><figcaption>येति</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/hi/final.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/final.webp" width="1280" height="720" alt="सुनहरी सेना आख़िरी मीनार गिराती है" loading="lazy"></div></div></a><figcaption>सुनहरी सेना</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/hi/reino.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/reino.webp" width="1280" height="720" alt="टापुओं पर बसा राज्य" loading="lazy"></div></div></a><figcaption>राज्य</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/hi/defesa.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/defesa.webp" width="1280" height="720" alt="कंकालों की भीड़ से रक्षा" loading="lazy"></div></div></a><figcaption>राज्य पर हमला</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/hi/monarca.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/monarca.webp" width="1280" height="720" alt="शासक बनाना" loading="lazy"></div></div></a><figcaption>आपका शासक</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/hi/mapa.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/hi/mapa.webp" width="1280" height="720" alt="लेवल का नक्शा, ज्वालामुखी जल्द आ रहा है" loading="lazy"></div></div></a><figcaption>नक्शा</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="पिछले स्क्रीनशॉट"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="अगले स्क्रीनशॉट"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>एक नज़र में</p>
+        <h2 class="h2" id="ficha-t" data-split>आँकड़ों में LEGIONTIDE।</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>शैली</dt><dd>3D सेना<small>एक्शन और रणनीति, आड़ी स्क्रीन पर</small></dd></div>
+          <div><dt>प्लेटफ़ॉर्म</dt><dd>ब्राउज़र<small>कंप्यूटर और मोबाइल, बिना इंस्टॉल</small></dd></div>
+          <div><dt>लेवल</dt><dd>30<small>हर क्षेत्र में 10</small></dd></div>
+          <div><dt>क्षेत्र</dt><dd>3<small>मैदान, कुकुरमुत्ते और बर्फ़ · ज्वालामुखी जल्द</small></dd></div>
+          <div><dt>बॉस</dt><dd>6<small>हर क्षेत्र में दो</small></dd></div>
+          <div><dt>सैनिक वर्ग</dt><dd>5<small>4 शक्तियाँ और सुनहरी सेना</small></dd></div>
+          <div><dt>भाषाएँ</dt><dd>6<small>पुर्तगाली · अंग्रेज़ी · स्पेनिश · हिंदी · जापानी · अरबी</small></dd></div>
+          <div><dt>क़ीमत</dt><dd>मुफ़्त<small>विज्ञापन के साथ · कोई ख़रीदारी नहीं</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>कहाँ खेलें</p>
+            <h2 class="h2" id="onde-t" data-split>जहाँ भी हों, <span class="txt-game">वहीं खेलें।</span></h2>
+          </div>
+          <p class="lead" data-reveal>सीधे ब्राउज़र में, कुछ भी इंस्टॉल किए बिना — और फिर मोबाइल पर, उसी स्टोर से जो आप पहले से इस्तेमाल करते हैं। जिस दिन LEGIONTIDE किसी प्लेटफ़ॉर्म पर आएगा, उसका बटन जल उठेगा।</p>
+        </div>
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>ब्राउज़र · बिना इंस्टॉल</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="legion:poki" aria-disabled="true" aria-label="Poki पर LEGIONTIDE: जल्द ही">
+            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+          <a class="plat glass" data-store="legion:crazygames" aria-disabled="true" aria-label="CrazyGames पर LEGIONTIDE: जल्द ही">
+            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>फ़ोन · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="legion:play" aria-disabled="true" aria-label="Google Play पर LEGIONTIDE: जल्द ही">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+          <a class="plat glass" data-store="legion:amazon" aria-disabled="true" aria-label="Amazon Appstore पर LEGIONTIDE: जल्द ही">
+            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+          <a class="plat glass" data-store="legion:samsung" aria-disabled="true" aria-label="Galaxy Store पर LEGIONTIDE: जल्द ही">
+            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>जल्द ही</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play, Google LLC का ट्रेडमार्क है। Amazon, Amazon Appstore और Amazon लोगो, Amazon.com, Inc. या उसकी सहयोगी कंपनियों के ट्रेडमार्क हैं। Samsung और Galaxy Store, Samsung Electronics Co., Ltd. के ट्रेडमार्क हैं। Poki और CrazyGames अपने-अपने मालिकों के ट्रेडमार्क हैं।</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">अर्ली एक्सेस</p>
+            <h2 class="h2" id="lista-t">सेना में शामिल हों, <span class="txt-game">सबसे पहले।</span></h2>
+            <p class="lead">Lista Lipy से जुड़ें: जिस दिन LEGIONTIDE हर प्लेटफ़ॉर्म पर आए, उस दिन सूचना, और राज्य की नई ख़बरें सबसे पहले।</p>
+            <form class="signup" method="post" data-signup data-origem="legion" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>मुझे चाहिए</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>बीटा टेस्ट</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>लॉन्च</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>अपडेट</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="legion" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-legion">आपका ईमेल</label>
+                <input id="email-legion" type="email" name="email" autocomplete="email" inputmode="email" placeholder="aapka@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">मुझे सूचना दें <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">जुड़ने पर आप टेस्ट, लॉन्च और नई ख़बरों के बारे में Lipy Games से ईमेल पाने के लिए सहमति देते हैं। जब चाहें, लिस्ट छोड़ सकते हैं। <a href="privacidade.html">गोपनीयता नीति</a> देखें।</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>सेना बुला ली गई। आप लिस्ट में हैं!</b>
+                <p>लॉन्च की सूचना और राज्य की नई ख़बरें <span data-ok-email></span> पर आएँगी।</p>
+                <button type="button" data-signup-outro>दूसरा ईमेल जोड़ें</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="LEGIONTIDE का Lipy Pass">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema-sm.webp" width="320" height="278" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">बुलावा<br><span translate="no">LEGIONTIDE</span></p>
+              <div class="pass__games"><img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>शासक</small><b data-pass-nome>आप?</b></div><div><small>किला</small><b>लेवल 1</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">LEGION<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">सक्रिय</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="वापस">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">वापस पहले यूनिवर्स पर · 01 / 05</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">यूनिवर्स में उतरें <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>ब्राज़ील का मोबाइल गेम स्टूडियो। उन मिनटों के लिए, जो क़िस्से बन जाते हैं।</p>
+        </div>
+        <div class="foot__col">
+          <h4>यूनिवर्स</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+            <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>स्टूडियो</h4>
+          <ul>
+            <li><a href="index.html#estudio">Lipy के बारे में</a></li>
+            <li><a href="index.html#como-criamos">हम कैसे बनाते हैं</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
+            <li><a href="index.html#lista">Lista Lipy (अर्ली एक्सेस)</a></li>
+            <li><a href="index.html#contato">संपर्क</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>गोपनीयता</h4>
+          <ul>
+            <li><a href="privacidade.html">साइट और Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Quiver खाता मिटाएँ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — <strong>Lipy Serviços Digitais LTDA</strong> का ब्रांड · CNPJ 65.260.227/0001-11</p>
+        <p>ब्राज़ील में बना · Google Play, Google LLC का ट्रेडमार्क है।</p>
+        <button class="foot__up glass" type="button" data-top aria-label="ऊपर जाएँ"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/hi.js?v=3b13be44"></script>
+  <script src="../assets/js/lipy.js?v=dda2cbaf"></script>
+  <script src="../assets/js/jogo.js?v=721afa8f"></script>
+  <script src="../assets/js/legion.js?v=bf3f3001"></script>
+</body>
+</html>

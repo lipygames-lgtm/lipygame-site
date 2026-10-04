@@ -354,9 +354,9 @@ a.store:not([aria-disabled="true"]):hover { transform: translateY(-3px); box-sha
 
 /* painel "Jogos" */
 .mega {
-  position: absolute; top: calc(100% + 10px); left: 50%; width: min(960px, calc(100vw - 28px));
+  position: absolute; top: calc(100% + 10px); left: 50%; width: min(1080px, calc(100vw - 28px));
   transform: translateX(-50%); padding: 14px; --r: 26px;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
   visibility: hidden; pointer-events: none;
 }
 .mega.is-open { visibility: visible; pointer-events: auto; }
@@ -384,9 +384,9 @@ a.store:not([aria-disabled="true"]):hover { transform: translateY(-3px); box-sha
 }
 .menu.is-open { visibility: visible; }
 .menu__links a { display: block; font-family: var(--f-display); font-weight: 700; font-size: clamp(2.2rem, 11vw, 3.6rem); letter-spacing: -.04em; line-height: 1.12; }
-.menu__games { display: flex; gap: 12px; }
+.menu__games { display: flex; flex-wrap: wrap; gap: 12px; }
 .menu__games a { display: grid; gap: 8px; justify-items: center; font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--txt-2); text-align: center; }
-.menu__games img { width: 68px; height: 68px; border-radius: 18px; }
+.menu__games img { width: clamp(52px, 15vw, 68px); height: auto; aspect-ratio: 1; border-radius: 18px; }
 .menu__idiomas { display: flex; flex-wrap: wrap; gap: 8px; }
 .menu__idiomas a {
   display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 7px; border-radius: 999px;

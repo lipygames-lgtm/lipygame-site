@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* ---------------- palco: vídeo → celular ---------------- */
-.stage { position: relative; height: 670vh; }
+.stage { position: relative; height: 780vh; }
 .stage__sticky {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
   --px: 0px; --py: 0px; --pw: 320px; --ph: 672px; --pr: 50px; --pad: 11px;
@@ -196,6 +196,14 @@
 /* SWARMORIA: Titã ao fundo, Core e cubo flutuando, enxame 3D marchando na frente (lipy.js → alfas) */
 .uni--swarm .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
 .uni--swarm .uni__bg img { object-position: 50% 40%; }
+/* LEGIONTIDE */
+.cap__name--legion { font-size: clamp(2rem, 3.7vw, 4.2rem); background: linear-gradient(180deg, #fff 25%, #ffd23f 60%, #2f6bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uni--legion .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
+.uni--legion .uni__bg img { object-position: 50% 45%; }
+.fl--lt-arte { z-index: 1; width: 56%; left: 22%; top: 4%; border-radius: 28px; rotate: 7deg; opacity: .9; box-shadow: 0 40px 80px -30px #000, 0 0 0 1px rgba(255, 255, 255, .1); animation: none; }
+.fl--lt-giant { z-index: 3; width: clamp(80px, 8vw, 128px); left: 6%; bottom: 14%; rotate: -8deg; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .55)); }
+.fl--lt-archer { z-index: 3; width: clamp(64px, 6.4vw, 104px); right: 8%; top: 16%; rotate: 9deg; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .55)); }
+.fl--lt-coin { z-index: 3; width: clamp(44px, 4.2vw, 68px); right: 16%; bottom: 12%; filter: drop-shadow(0 0 20px rgba(255, 194, 26, .7)); }
 .fl--titan { z-index: 1; height: 96%; width: auto; right: -4%; top: 2%; opacity: .85; animation: none; filter: drop-shadow(0 0 50px rgba(255, 60, 40, .25)) drop-shadow(0 30px 40px rgba(0, 0, 0, .6)); }
 .fl--core { z-index: 3; width: clamp(80px, 8vw, 130px); left: 6%; top: 12%; filter: drop-shadow(0 0 28px rgba(95, 240, 255, .6)); }
 .fl--cubo { z-index: 3; width: clamp(48px, 4.6vw, 74px); left: 20%; top: 52%; rotate: 14deg; filter: drop-shadow(0 0 20px rgba(42, 123, 255, .7)); }
@@ -327,7 +335,7 @@ html.no-js .wall__row, html.rm .wall__row { transform: translateX(-20%); }
   .contact__routes { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
-  .stage { height: 575vh; }
+  .stage { height: 670vh; }
   .hero { padding-bottom: 104px; }
   .hero__title { font-size: clamp(2.5rem, 11.5vw, 4.4rem); }
   .hud > li:nth-child(1), .hud > li:nth-child(4) { display: none; }

@@ -19,7 +19,9 @@
     quiver: { play: 'https://play.google.com/store/apps/details?id=com.lipy.quiver', amazon: null, samsung: null, poki: null, crazygames: null },
     tlhy: { play: 'https://play.google.com/store/apps/details?id=com.lipy.thislevel', amazon: null, samsung: null, poki: null, crazygames: null },
     nitro: { play: 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant', amazon: null, samsung: null, poki: null, crazygames: null },
-    swarm: { play: null, amazon: null, samsung: null, poki: null, crazygames: null }
+    swarm: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
+    // LEGIONTIDE: enviado ao CrazyGames em 04/10/2026 (aguardando revisão) — trocar o null quando for aprovado
+    legion: { play: null, amazon: null, samsung: null, poki: null, crazygames: null }
   };
 
   /* ------------------------------------------------------------------
@@ -54,6 +56,7 @@
     tlhy: { c1: '#04103a', c2: '#2a6bff', icon: 'assets/media/tlhy/icone.webp' },
     nitro: { c1: '#120300', c2: '#c42a00', icon: 'assets/media/nitro/icone.webp' },
     swarm: { c1: '#02091a', c2: '#1c7cff', icon: 'assets/media/swarm/icone.webp' },
+    legion: { c1: '#0a0d2c', c2: '#2f6bff', icon: 'assets/media/legion/icone.webp' },
     lipy: { c1: '#03050b', c2: '#12245a', icon: '' }
   };
 
@@ -906,7 +909,7 @@
   function idiomas() {
     // "/quiver" e "/quiver.html" são a mesma página no GitHub Pages
     var arquivo = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
-    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
+    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|legiontide|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
     // caminhos a partir da raiz do site (BASE sobe das pastas de idioma até ela)
     // página inicial com endereço limpo (lipygame.com/ e lipygame.com/pt/); aberto direto do arquivo (file://) precisa do nome
     var pagina = arquivo === 'index.html' && location.protocol !== 'file:' ? '' : arquivo;

@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=02c38426"></script>
+  <title>LEGIONTIDE — Lipy Games</title>
+  <meta name="description" content="LEGIONTIDE é o jogo de legião da Lipy Games para o navegador: escolha portões, monte o exército certo, derrube chefes gigantes e erga o seu reino em ilhas. 30 fases em 3 biomas.">
+  <meta name="theme-color" content="#0a0d2c">
+  <link rel="canonical" href="https://lipygame.com/pt/legiontide.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/legiontide.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/legiontide.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/legiontide.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/legiontide.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/legiontide.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/legiontide.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/legiontide.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="LEGIONTIDE — um soldado é pouco. Uma legião vira maré.">
+  <meta property="og:description" content="Escolha os portões, monte o exército certo e derrube chefes gigantes. Um jogo de navegador da Lipy Games, em breve.">
+  <meta property="og:url" content="https://lipygame.com/pt/legiontide.html">
+  <meta property="og:image" content="https://lipygame.com/og-legion.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=0779ecc1">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/legion.css?v=a7c56cd5">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "LEGIONTIDE",
+    "description": "Jogo de legião em 3D para o navegador: escolha portões que somam e multiplicam tropas, mande o exército certo para cada luta, derrube chefes gigantes e erga um reino em ilhas. 30 fases, 3 biomas e 6 chefes.",
+    "genre": ["Ação", "Estratégia"],
+    "gamePlatform": "Navegador",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/legion/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
+</head>
+<body class="jogo jogo--legion" style="--c1:#ffd23f;--c2:#ff9a1a;--c3:#0a0d2c;--c4:#33d6ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — início"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Principal">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Jogos <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
+        <a href="index.html#estudio">Estúdio</a>
+        <a href="index.html#como-criamos">Como criamos</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Idioma"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../legiontide.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/legiontide.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/legiontide.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/legiontide.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/legiontide.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/legiontide.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Acesso antecipado <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Puzzle de setas</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>This Level Hates You</b><small>Plataforma de pegadinhas</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Nitrovenant</b><small>Ação sobre rodas</small></span>
+      </a>
+      <a class="mega__item" href="swarmoria.html" data-game="swarm" style="--c:#2a7bff">
+        <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>SWARMORIA</b><small>Enxame que evolui</small></span>
+      </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>Legião no navegador</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menu">
+      <a href="index.html#universos">Jogos</a>
+      <a href="hub/">Lipy Hub</a>
+      <a href="index.html#estudio">Estúdio</a>
+      <a href="index.html#como-criamos">Como criamos</a>
+      <a href="index.html#lista">Acesso antecipado</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
+      <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../legiontide.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/legiontide.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/legiontide.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/legiontide.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/legiontide.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/legiontide.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh lt-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/legion/capa.webp" width="1600" height="900" alt="" fetchpriority="high"></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="Você está em"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">Universos</a><i>/</i><span aria-current="page">LEGIONTIDE</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="legion" src="../assets/media/legion/icone.webp" width="512" height="512" alt="Ícone do LEGIONTIDE">
+            <img class="gh__logo lt-logo" src="../assets/media/legion/logo.webp" width="900" height="394" alt="LEGIONTIDE">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">Um soldado é pouco.</span><span class="l"><em class="txt-game">Uma legião vira maré.</em></span></h1>
+          <p class="lead gh__lead">Escolha os portões certos, junte escudeiros, arqueiros, gigantes e magos, e mande o exército certo para cada luta. No fim da pista, um chefe gigante espera.</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">Legião 3D</span> <span class="chip chip--line">Navegador</span> <span class="chip chip--line">Computador e celular</span> <span class="chip chip--line">Sem instalar</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#como-se-joga" data-magnetic>Formar a legião <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="legion:crazygames" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 12.5v4.5l4-2.25z" fill="currentColor"/></svg><span><small>Em breve no</small><b>CrazyGames</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual lt-visual" data-float>
+          <div class="tela lt-visual__tela" data-depth="0.15">
+            <div class="tela__screen">
+              <video data-lt-video="../assets/media/legion/video-jogo.mp4" poster="../assets/media/legion/video-jogo-poster.webp" muted loop playsinline preload="none" aria-label="Partida do LEGIONTIDE: a legião passa pelos portões, enfrenta inimigos e fica dourada"></video>
+              <i class="phone__glare"></i>
+            </div>
+          </div>
+          <img class="fl lt-fl lt-fl--shield" src="../assets/media/legion/ic-shield.webp" width="192" height="189" alt="" data-depth="0.7">
+          <img class="fl lt-fl lt-fl--archer" src="../assets/media/legion/ic-archer.webp" width="192" height="187" alt="" data-depth="1.1">
+          <img class="fl lt-fl lt-fl--giant" src="../assets/media/legion/ic-giant.webp" width="192" height="155" alt="" data-depth="0.9">
+          <img class="fl lt-fl lt-fl--mage" src="../assets/media/legion/ic-mage.webp" width="192" height="149" alt="" data-depth="1.3">
+          <img class="fl lt-fl lt-fl--coin" src="../assets/media/legion/ic-coin.webp" width="160" height="160" alt="" data-depth="1.6">
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>Universo 05 / 05</span><span>Escolha o portão · depois role</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">A sensação</p>
+        <p class="gi__txt" data-scrub-words>Tem um momento em que a legião passa pelo portão ×3, a pista inteira fica azul — e o chefe lá no fim <em>de repente parece pequeno</em>. Esse momento é o jogo.</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section lt-gp" id="como-se-joga" data-gp aria-labelledby="gp-t" tabindex="-1">
+      <div class="wrap">
+        <p class="eyebrow">Como se joga</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">Escolha. Multiplique.<br><span class="txt-game">Conquiste.</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>Escolha o portão.</h3>
+            <p>Portões somam, multiplicam ou trocam o tipo das tropas. Só conta quem passa por dentro: guie a legião para o lado certo.</p>
+            <span class="chip chip--line gp__gesture" translate="no">+15 · ×2 · −11 → +2</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/corrida-campos.webp" width="1280" height="720" alt="A legião chega a dois portões: um troca soldados por arqueiros, o outro soma 15" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>Passe pelas armadilhas.</h3>
+            <p>Martelos, serras, rochas rolando e chuva de flechas. Segure para apertar a formação numa coluna fina e passar pelo vão.</p>
+            <span class="chip chip--line gp__gesture">segurar = apertar · soltar = espalhar</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/corrida-gelo.webp" width="1280" height="720" alt="Nos Picos Gelados, a legião desvia de uma rocha rolando" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>Mande o exército certo.</h3>
+            <p>Antes de cada choque, o inimigo mostra o tamanho e o que o vence. Magos contra enxames, arqueiros contra cogumelos explosivos, gigantes contra blindados.</p>
+            <span class="chip chip--line gp__gesture">a força do inimigo aparece antes da luta</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/luta.webp" width="1280" height="720" alt="Um enxame inimigo se aproxima e o aviso pede magos" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">04</span>
+            <h3>Derrube o chefe.</h3>
+            <p>Na arena, todo ataque do chefe é avisado no chão. Desvie, acerte o ponto fraco e termine na escadaria, na muralha de ouro ou no canhão para multiplicar o ouro.</p>
+            <span class="chip chip--line gp__gesture">ponto fraco · golpe final</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/chefe-yeti.webp" width="1280" height="720" alt="A legião acerta o ponto fraco do Yeti na arena" loading="lazy"></div></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="tela gp__phone">
+              <div class="tela__screen">
+                <img data-step="0" src="../assets/media/legion/corrida-campos.webp" width="1280" height="720" alt="A legião chega a dois portões: um troca soldados por arqueiros, o outro soma 15" loading="lazy">
+                <img data-step="1" src="../assets/media/legion/corrida-gelo.webp" width="1280" height="720" alt="Nos Picos Gelados, a legião desvia de uma rocha rolando" loading="lazy">
+                <img data-step="2" src="../assets/media/legion/luta.webp" width="1280" height="720" alt="Um enxame inimigo se aproxima e o aviso pede magos" loading="lazy">
+                <img data-step="3" src="../assets/media/legion/chefe-yeti.webp" width="1280" height="720" alt="A legião acerta o ponto fraco do Yeti na arena" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TROPAS E PODERES ============ -->
+    <section class="section lt-tropas" aria-labelledby="tropas-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Tropas e poderes</p>
+        <h2 class="h1" id="tropas-t" data-split>Cada tropa,<br><span class="txt-game">um papel.</span></h2>
+        <p class="lead lt-tropas__lead" data-reveal>A legião é a soma de quem passou pelos portões. Cada classe luta do seu jeito e tem um poder para a hora certa — no teclado, teclas 1 a 4; no celular, um toque.</p>
+        <div class="feats">
+          <article class="feat glass lt-cl lt-cl--soldier" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-soldier.webp" width="192" height="199" alt="" loading="lazy"><h3>Soldados</h3><p>A base da legião. Muitos, rápidos e sempre na linha de frente.</p></article>
+          <article class="feat glass lt-cl lt-cl--shield" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-shield.webp" width="192" height="189" alt="" loading="lazy"><h3>Escudeiros</h3><p>Marcham na frente e seguram as flechas inimigas.</p><span class="lt-pw"><kbd translate="no">1</kbd>Muralha de Escudos</span></article>
+          <article class="feat glass lt-cl lt-cl--archer" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-archer.webp" width="192" height="187" alt="" loading="lazy"><h3>Arqueiros</h3><p>Atiram antes do choque e derrubam as torres inimigas.</p><span class="lt-pw"><kbd translate="no">2</kbd>Chuva de Flechas</span></article>
+          <article class="feat glass lt-cl lt-cl--giant" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-giant.webp" width="192" height="155" alt="" loading="lazy"><h3>Gigantes</h3><p>Quebram barreiras e esmagam inimigos blindados.</p><span class="lt-pw"><kbd translate="no">3</kbd>Pancada no Chão</span></article>
+          <article class="feat glass lt-cl lt-cl--mage" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-mage.webp" width="192" height="149" alt="" loading="lazy"><h3>Magos</h3><p>Explosões arcanas que limpam enxames de uma vez.</p><span class="lt-pw"><kbd translate="no">4</kbd>Explosão Arcana</span></article>
+          <article class="feat glass lt-cl lt-cl--gold" data-reveal><img class="feat__ic" src="../assets/media/legion/ic-coin.webp" width="160" height="160" alt="" loading="lazy"><h3>Legião Dourada</h3><p>Com a barra cheia, o exército inteiro fica dourado e invencível por alguns segundos.</p><span class="lt-pw"><kbd>Espaço</kbd>especial dourado</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BIOMAS E CHEFES ============ -->
+    <section class="section lt-biomas" aria-labelledby="biomas-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Biomas e chefes</p>
+        <h2 class="h1" id="biomas-t" data-split>Três reinos<br><span class="txt-game">para conquistar.</span></h2>
+        <p class="lead lt-biomas__lead" data-reveal>Cada bioma tem 10 fases, inimigos próprios e dois chefes com ponto fraco. Vença o último e aquele reino passa a ser seu.</p>
+        <div class="lt-biomas__grid">
+          <article class="lt-bioma glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-campos.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">01 · 10 fases</span>
+            <h3>Campos Verdes</h3>
+            <p>Onde a legião aprende: portões, torres de arqueiros e os primeiros poderes.</p>
+            <ul class="lt-chefes"><li><b>Orc Brutamontes</b></li><li><b>Golem de Pedra</b></li></ul>
+          </article>
+          <article class="lt-bioma glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-cogumelos.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">02 · 10 fases</span>
+            <h3>Floresta dos Cogumelos</h3>
+            <p>Cogumelos explosivos correm até a legião. Os arqueiros derrubam de longe.</p>
+            <ul class="lt-chefes"><li><b>Rei Cogumelo</b></li><li><b>Bruxo da Floresta</b></li></ul>
+          </article>
+          <article class="lt-bioma glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-gelo.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">03 · 10 fases</span>
+            <h3>Picos Gelados</h3>
+            <p>Lobos de gelo atacam pelas pontas, e a pista fica mais rápida.</p>
+            <ul class="lt-chefes"><li><b>Yeti</b></li><li><b>Fantasma da Nevasca</b></li></ul>
+          </article>
+          <article class="lt-bioma lt-bioma--breve glass" data-reveal>
+            <div class="lt-bioma__ceu" aria-hidden="true"><img src="../assets/media/legion/ceu-vulcao.webp" width="1200" height="300" alt="" loading="lazy"></div>
+            <span class="lt-bioma__n mono">04</span>
+            <h3>Vulcão</h3>
+            <p>O quarto reino já aparece no mapa, trancado.</p>
+            <span class="lt-breve">Em breve</span>
+          </article>
+        </div>
+        <div class="lt-duelo">
+          <figure class="lt-duelo__it" data-reveal><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/chefe-golem.webp" width="1280" height="720" alt="A legião enfrenta o Golem de Pedra na arena dos Campos Verdes" loading="lazy"></div></div><figcaption>Golem de Pedra · Campos Verdes</figcaption></figure>
+          <figure class="lt-duelo__it" data-reveal><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/corrida-cogumelos.webp" width="1280" height="720" alt="A legião corre pela Floresta dos Cogumelos" loading="lazy"></div></div><figcaption>Floresta dos Cogumelos</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ O REINO ============ -->
+    <section class="section lt-reino" aria-labelledby="reino-t">
+      <div class="wrap lt-reino__grid">
+        <div>
+          <p class="eyebrow" data-reveal>O reino</p>
+          <h2 class="h1" id="reino-t" data-split>Entre uma batalha e outra,<br><span class="txt-game">um reino em ilhas.</span></h2>
+          <p class="lead" data-reveal>Todo ouro da pista volta para casa. Cada reino conquistado vira uma ilha ligada por pontes, e o chefe vencido fica de guarda como aliado.</p>
+          <ul class="lt-ramos">
+            <li class="glass" data-reveal><b>Monarca</b><span>Na primeira visita, você coroa o seu rei ou rainha e dá nome ao reino.</span></li>
+            <li class="glass" data-reveal><b>Obras</b><span>Prédios que fortalecem as tropas, com construtores trabalhando à vista.</span></li>
+            <li class="glass" data-reveal><b>Ouro sem parar</b><span>O reino produz ouro até com o jogo fechado.</span></li>
+            <li class="glass" data-reveal><b>Defesa</b><span>Hordas de esqueletos atacam com aviso. Mire as flechas das torres, mande tropas e conserte a muralha.</span></li>
+          </ul>
+        </div>
+        <div class="lt-reino__art" data-reveal>
+          <div class="tela lt-reino__tela"><div class="tela__screen"><img src="../assets/media/legion/reino.webp" width="1280" height="720" alt="O reino em ilhas: castelo no centro e as ilhas conquistadas ligadas por pontes" loading="lazy"><i class="phone__glare"></i></div></div>
+          <div class="tela lt-reino__mini lt-reino__mini--a"><div class="tela__screen"><img src="../assets/media/legion/defesa.webp" width="1280" height="720" alt="Ataque ao reino: esqueletos avançam contra a muralha" loading="lazy"></div></div>
+          <div class="tela lt-reino__mini lt-reino__mini--b"><div class="tela__screen"><img src="../assets/media/legion/monarca.webp" width="1280" height="720" alt="Criação do monarca: rei ou rainha, nome e visual" loading="lazy"></div></div>
+          <img class="lt-reino__bau" src="../assets/media/legion/ic-chest-gold.webp" width="192" height="196" alt="" loading="lazy" data-parallax="-12">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRILHA ============ -->
+    <section class="gm section" aria-labelledby="gm-t">
+      <div class="wrap gm__grid">
+        <div>
+          <p class="eyebrow" data-reveal>Trilha sonora</p>
+          <h2 class="h1" id="gm-t" data-split>O som de<br><span class="txt-game">mil passos.</span></h2>
+          <p class="lead" data-reveal>Uma música para os menus, outra para o reino e várias para a pista, que o jogo toca em rodízio. Aperte o play e ouça uma prévia de 1 minuto de cada uma.</p>
+        </div>
+        <div class="player glass" data-player data-reveal>
+          <div class="player__art"><img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+          <div>
+            <p class="player__now">Tocando · <span translate="no">LEGIONTIDE</span></p>
+            <p class="player__title">Menu</p>
+            <div class="player__row">
+              <button class="player__btn" type="button" aria-label="Tocar"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></button>
+              <div class="player__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="player__time">0:00 / 1:00</span>
+            </div>
+            <div class="player__prog" role="presentation"><i></i></div>
+          </div>
+          <div class="player__list">
+            <button type="button" data-src="../assets/media/legion/trilha-menu.mp3"><span class="n">01</span><span class="t">Menu</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-reino.mp3"><span class="n">02</span><span class="t">Reino</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-corrida-1.mp3"><span class="n">03</span><span class="t">Na pista · I</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-corrida-2.mp3"><span class="n">04</span><span class="t">Na pista · II</span><span class="d">prévia</span></button>
+            <button type="button" data-src="../assets/media/legion/trilha-corrida-3.mp3"><span class="n">05</span><span class="t">Na pista · III</span><span class="d">prévia</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section lt-gg" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">Telas</p>
+          <h2 class="h1" id="gg-t">Da pista <span class="txt-game">ao trono.</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Filtrar telas" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">Todas</button>
+          <button role="tab" aria-selected="false" data-cat="pista" aria-controls="gg-lista">Na pista</button>
+          <button role="tab" aria-selected="false" data-cat="reino" aria-controls="gg-lista">No reino</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="Arraste">
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/corrida-campos.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/corrida-campos.webp" width="1280" height="720" alt="Portões nos Campos Verdes" loading="lazy"></div></div></a><figcaption>Campos Verdes</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/corrida-cogumelos.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/corrida-cogumelos.webp" width="1280" height="720" alt="Combo de portões na Floresta dos Cogumelos" loading="lazy"></div></div></a><figcaption>Floresta dos Cogumelos</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/corrida-gelo.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/corrida-gelo.webp" width="1280" height="720" alt="A legião nos Picos Gelados" loading="lazy"></div></div></a><figcaption>Picos Gelados</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/luta.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/luta.webp" width="1280" height="720" alt="Aviso antes da luta: o inimigo e a tropa que o vence" loading="lazy"></div></div></a><figcaption>Antes do choque</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/chefe-golem.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/chefe-golem.webp" width="1280" height="720" alt="Luta contra o Golem de Pedra" loading="lazy"></div></div></a><figcaption>Golem de Pedra</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/chefe-yeti.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/chefe-yeti.webp" width="1280" height="720" alt="Ponto fraco do Yeti" loading="lazy"></div></div></a><figcaption>Yeti</figcaption></figure>
+          <figure class="gg__item" data-cat="pista"><a href="../assets/media/legion/final.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/final.webp" width="1280" height="720" alt="A Legião Dourada derruba a última torre" loading="lazy"></div></div></a><figcaption>Legião Dourada</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/reino.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/reino.webp" width="1280" height="720" alt="O reino em ilhas" loading="lazy"></div></div></a><figcaption>O reino</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/defesa.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/defesa.webp" width="1280" height="720" alt="Defesa contra a horda de esqueletos" loading="lazy"></div></div></a><figcaption>Ataque ao reino</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/monarca.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/monarca.webp" width="1280" height="720" alt="Criação do monarca" loading="lazy"></div></div></a><figcaption>Seu monarca</figcaption></figure>
+          <figure class="gg__item" data-cat="reino"><a href="../assets/media/legion/mapa.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/legion/mapa.webp" width="1280" height="720" alt="Mapa das fases com o Vulcão em breve" loading="lazy"></div></div></a><figcaption>Mapa</figcaption></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="Telas anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="Próximas telas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Ficha técnica</p>
+        <h2 class="h2" id="ficha-t" data-split>LEGIONTIDE em números.</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>Gênero</dt><dd>Legião 3D<small>Ação e estratégia, na tela deitada</small></dd></div>
+          <div><dt>Plataforma</dt><dd>Navegador<small>Computador e celular, sem instalar</small></dd></div>
+          <div><dt>Fases</dt><dd>30<small>10 em cada bioma</small></dd></div>
+          <div><dt>Biomas</dt><dd>3<small>Campos, Cogumelos e Gelo · Vulcão em breve</small></dd></div>
+          <div><dt>Chefes</dt><dd>6<small>Dois em cada bioma</small></dd></div>
+          <div><dt>Tropas</dt><dd>5<small>4 poderes e a Legião Dourada</small></dd></div>
+          <div><dt>Idiomas</dt><dd>6<small>Português · inglês · espanhol · hindi · japonês · árabe</small></dd></div>
+          <div><dt>Preço</dt><dd>Grátis<small>Com anúncios · sem compras</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>Onde jogar</p>
+            <h2 class="h2" id="onde-t" data-split>Jogue onde você <span class="txt-game">estiver.</span></h2>
+          </div>
+          <p class="lead" data-reveal>Direto no navegador, sem instalar nada — e depois no celular, pela loja que você já usa. Cada botão acende no dia em que LEGIONTIDE chegar àquela plataforma.</p>
+        </div>
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegador · sem instalar</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="legion:poki" aria-disabled="true" aria-label="LEGIONTIDE na Poki: em breve">
+            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="legion:crazygames" aria-disabled="true" aria-label="LEGIONTIDE na CrazyGames: em breve">
+            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Celular · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="legion:play" aria-disabled="true" aria-label="LEGIONTIDE na Google Play: em breve">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="legion:amazon" aria-disabled="true" aria-label="LEGIONTIDE na Amazon Appstore: em breve">
+            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
+            <span class="plat__st" data-status>Em breve</span>
+          </a>
+          <a class="plat glass" data-store="legion:samsung" aria-disabled="true" aria-label="LEGIONTIDE na Galaxy Store: em breve">
+            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>Em breve</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play é marca da Google LLC. Amazon, Amazon Appstore e o logo da Amazon são marcas da Amazon.com, Inc. ou de suas afiliadas. Samsung e Galaxy Store são marcas da Samsung Electronics Co., Ltd. Poki e CrazyGames são marcas de seus respectivos titulares.</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">Acesso antecipado</p>
+            <h2 class="h2" id="lista-t">Entre na legião <span class="txt-game">antes de todo mundo.</span></h2>
+            <p class="lead">Entre na Lista Lipy: aviso no dia em que o LEGIONTIDE chegar a cada plataforma e as novidades do reino em primeira mão.</p>
+            <form class="signup" method="post" data-signup data-origem="legion" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>Quero receber</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Testes beta</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Lançamentos</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Atualizações</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="legion" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-legion">Seu e-mail</label>
+                <input id="email-legion" type="email" name="email" autocomplete="email" inputmode="email" placeholder="seu@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">Quero o aviso <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">Ao entrar, você aceita receber e-mails da Lipy Games sobre testes, lançamentos e novidades. Sai quando quiser. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>Legião convocada. Você está na lista!</b>
+                <p>O aviso de lançamento e as novidades do reino vão chegar em <span data-ok-email></span>.</p>
+                <button type="button" data-signup-outro>Inscrever outro e-mail</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="Lipy Pass do LEGIONTIDE">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema-sm.webp" width="320" height="278" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">Convocação<br><span translate="no">LEGIONTIDE</span></p>
+              <div class="pass__games"><img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>Monarca</small><b data-pass-nome>Você?</b></div><div><small>Castelo</small><b>nv 1</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">LEGION<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">ATIVADO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="De volta">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">De volta ao primeiro universo · 01 / 05</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">Entrar no universo <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>Estúdio brasileiro de jogos mobile. Feito para os minutos que viram história.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universos</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+            <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Estúdio</h4>
+          <ul>
+            <li><a href="index.html#estudio">Sobre a Lipy</a></li>
+            <li><a href="index.html#como-criamos">Como criamos</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
+            <li><a href="index.html#lista">Lista Lipy (acesso antecipado)</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacidade</h4>
+          <ul>
+            <li><a href="privacidade.html">Site e Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Excluir conta do Quiver</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — marca da <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Feito no Brasil · Google Play é marca da Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Voltar ao topo"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/lipy.js?v=dda2cbaf"></script>
+  <script src="../assets/js/jogo.js?v=721afa8f"></script>
+  <script src="../assets/js/legion.js?v=bf3f3001"></script>
+</body>
+</html>

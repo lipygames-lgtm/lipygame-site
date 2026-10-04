@@ -21,7 +21,7 @@
       .from('.gh__logo', { y: 30, scale: 0.85, opacity: 0, duration: 1.2, ease: 'back.out(1.5)' }, 0.35)
       .from(palavras, { yPercent: 120, rotate: 5, transformOrigin: '0 100%', duration: 1.3, stagger: 0.05 }, 0.4)
       .from('.gh__lead, .gh__meta, .gh__ctas', { y: 30, opacity: 0, duration: 1.1, stagger: 0.1, clearProps: 'opacity,transform' }, 0.75)
-      .from('.gh__phone', { yPercent: 40, rotate: 16, opacity: 0, duration: 1.6, clearProps: 'opacity' }, 0.3)
+      .from('.gh__phone, .lt-visual__tela', { yPercent: 40, rotate: 16, opacity: 0, duration: 1.6, clearProps: 'opacity' }, 0.3)
       .from('.gh__visual .fl', { scale: 0.2, opacity: 0, duration: 1.2, stagger: 0.07, ease: 'back.out(1.8)', clearProps: 'opacity' }, 0.7)
       .from('.gh__foot', { opacity: 0, duration: 1 }, 1.1);
   }

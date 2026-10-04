@@ -659,3 +659,12 @@ html:lang(ar) .olho, html:lang(hi) .olho, html:lang(ja) .olho { font-size: 12.5p
 .cod__limite { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; color: #ffe0a3; background: rgba(255, 182, 39, .14); }
 .cod__limite .ic { font-size: 13px; }
 .cod__nota { flex-basis: 100%; font-family: var(--f-text); font-size: 12.5px; line-height: 1.5; color: var(--txt-2); }
+
+/* "Podem ter expirado": codigos com status em conflito, abaixo dos ativos (mais apagados) */
+.duvidosos__t { margin-top: 32px; font-size: 18px; color: var(--txt-2); }
+.duvidosos__p { font-size: 14px; color: var(--txt-3); margin-top: 6px; }
+.cod--duvidoso { opacity: .72; }
+.cod--duvidoso:hover, .cod--duvidoso:focus-within { opacity: 1; }
+
+/* texto sem espaco (enderecos longos, codigos) nunca empurra a pagina para os lados no celular */
+.materia p, .materia li, .materia span, .sanfona__corpo { overflow-wrap: anywhere; }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="../assets/js/idioma.js?v=2fac4598"></script>
+  <script src="../assets/js/idioma.js?v=02c38426"></script>
   <title>SWARMORIA: Consume &amp; Evolve — Lipy Games</title>
   <meta name="description" content="لعبة SWARMORIA هي لعبة السرب من Lipy Games: قُد سربًا بيوميكانيكيًا، والتهِم الأجسام لتتكاثر، واختر الطفرات، وفكّك عمالقة هائلة. 36 مرحلة و3 عمالقة.">
   <meta name="theme-color" content="#040a1c">
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Alexandria:wght@500..800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
   <link rel="expect" href="#vt-alvo" blocking="render">
-  <link rel="stylesheet" href="../assets/css/lipy.css?v=9bd8e2ec">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=0779ecc1">
   <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
   <link rel="stylesheet" href="../assets/css/swarm.css?v=d5362aef">
   <script>
@@ -132,6 +132,10 @@
         <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
         <span><b>SWARMORIA</b><small>سرب يتطوّر</small></span>
       </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>فيلق في المتصفح</small></span>
+      </a>
     </div>
   </header>
 
@@ -149,6 +153,7 @@
       <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
       <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
       <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="../swarmoria.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -192,7 +197,7 @@
           <div class="fl sw-marcha" data-depth="0.35"><img src="../assets/media/swarm/3d-enxame-poster.webp" width="720" height="416" alt="" loading="lazy"><video data-alfa="../assets/media/swarm/3d-enxame.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
         </div>
       </div>
-      <div class="wrap gh__foot"><span>العالم 04 / 04</span><span>قُد السرب · ثم مرّر</span></div>
+      <div class="wrap gh__foot"><span>العالم 04 / 05</span><span>وجّه السرب · ثم مرّر</span></div>
     </section>
 
     <!-- ============ SENSAÇÃO ============ -->
@@ -526,10 +531,10 @@
     </section>
 
     <!-- ============ PRÓXIMO UNIVERSO ============ -->
-    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="عودة">
-      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+    <a class="gn" href="legiontide.html" data-game="legion" data-vt-scope data-cursor="التالي">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/legion/capa-fundo.webp" width="1200" height="675" alt="" loading="lazy"></div>
       <div class="wrap gn__in">
-        <span class="gn__k">عودة إلى العالم الأول · 01 / 04</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">ادخل العالم <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+        <span class="gn__k">العالم التالي · 05 / 05</span> <span class="gn__name"><img data-vt="legion" src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy">LEGIONTIDE</span> <span class="gn__go">ادخل العالم <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
       </div>
     </a>
   </main>
@@ -549,6 +554,7 @@
             <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
             <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
             <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
           </ul>
         </div>
         <div class="foot__col">
@@ -589,8 +595,8 @@
   <script src="../assets/vendor/CustomEase.min.js"></script>
   <script src="../assets/vendor/lenis.min.js"></script>
   <script src="../assets/js/textos/ar.js?v=fe1f0d3d"></script>
-  <script src="../assets/js/lipy.js?v=39f6c83f"></script>
-  <script src="../assets/js/jogo.js?v=7bc7d81f"></script>
+  <script src="../assets/js/lipy.js?v=dda2cbaf"></script>
+  <script src="../assets/js/jogo.js?v=721afa8f"></script>
   <script src="../assets/js/swarm.js?v=09c9f668"></script>
 </body>
 </html>

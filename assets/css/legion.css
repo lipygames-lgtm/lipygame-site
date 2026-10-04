@@ -1,0 +1,132 @@
+/* ==========================================================================
+   LEGIONTIDE — página do jogo
+   Jogo DEITADO (navegador, 16:9): as telas usam a moldura .tela em vez do celular.
+   Cores da bíblia visual do jogo: azul real #2F6BFF, ciano #33D6FF, ouro #FFC21A, índigo #1B1440.
+   ========================================================================== */
+
+/* moldura de tela deitada (monitor/notebook sem pé) */
+.tela {
+  --rt: 18px;
+  position: relative; width: 100%; padding: 7px; border-radius: var(--rt);
+  background: linear-gradient(145deg, #2c3350, #0c0f1d 30%, #070912 70%, #283050);
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .16), 0 40px 80px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(0, 0, 0, .8);
+}
+.tela__screen { position: relative; aspect-ratio: 16 / 9; border-radius: calc(var(--rt) - 7px); overflow: hidden; background: #0b0f2a; isolation: isolate; }
+.tela__screen > img, .tela__screen > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------------- herói ---------------- */
+.lt-hero .gh__bg img { object-position: 50% 40%; filter: blur(2px) saturate(1.2) brightness(.5); }
+.lt-hero::before {
+  /* brilho dourado vindo de baixo, como a Legião Dourada */
+  content: ""; position: absolute; inset: auto -10% -30% 30%; height: 70%; z-index: -1; pointer-events: none;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 194, 26, .22), transparent 70%);
+}
+.lt-logo { width: clamp(230px, 27vw, 400px); filter: drop-shadow(0 0 24px rgba(51, 214, 255, .3)) drop-shadow(0 16px 30px rgba(0, 0, 0, .6)); }
+.lt-visual { display: grid; place-items: center; }
+.lt-visual__tela { width: min(100%, 640px); rotate: -3deg; z-index: 2; }
+.lt-fl { width: clamp(64px, 6.4vw, 104px); height: auto; z-index: 3; filter: drop-shadow(0 16px 22px rgba(0, 0, 0, .55)); }
+.lt-fl--shield { left: 0; top: 14%; rotate: -8deg; }
+.lt-fl--archer { right: 2%; top: 8%; rotate: 9deg; }
+.lt-fl--giant { right: -2%; bottom: 16%; rotate: 6deg; width: clamp(76px, 7.6vw, 124px); }
+.lt-fl--mage { left: 4%; bottom: 10%; rotate: -10deg; }
+.lt-fl--coin { left: 46%; top: 6%; width: clamp(40px, 3.6vw, 60px); filter: drop-shadow(0 0 18px rgba(255, 194, 26, .7)); }
+
+/* ---------------- como se joga: a tela deitada pede mais espaço ---------------- */
+.lt-gp .gp__grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+.lt-gp .gp__phone { width: min(100%, 720px); }
+.lt-gp .gp__phone .tela__screen img { transition: opacity .7s var(--ease-out), transform 1.2s var(--ease-out); opacity: 0; transform: scale(1.06); }
+.lt-gp .gp__phone .tela__screen .is-on { opacity: 1; transform: none; }
+html.no-js .lt-gp .gp__phone [data-step="0"] { opacity: 1; transform: none; }
+.lt-gp .gp__shot { width: 100%; max-width: 560px; }
+.lt-gp .gp__dots { right: -24px; }
+
+/* ---------------- tropas ---------------- */
+.lt-tropas .h1 { margin: 20px 0 22px; }
+.lt-tropas .feats { grid-template-columns: repeat(3, 1fr); }
+.lt-cl { --g: rgba(142, 197, 255, .35); position: relative; overflow: hidden; transition: translate .6s var(--ease-out); }
+.lt-cl::after { content: ""; position: absolute; right: -30%; top: -40%; width: 75%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--g), transparent 65%); pointer-events: none; opacity: .55; transition: opacity .5s; }
+.lt-cl:hover { translate: 0 -6px; }
+.lt-cl:hover::after { opacity: 1; }
+.lt-cl--shield { --g: rgba(255, 210, 63, .32); }
+.lt-cl--archer { --g: rgba(61, 220, 106, .3); }
+.lt-cl--giant { --g: rgba(255, 138, 31, .32); }
+.lt-cl--mage { --g: rgba(163, 91, 255, .36); }
+.lt-cl--gold { --g: rgba(255, 194, 26, .45); }
+.lt-cl .feat__ic { width: 82px; height: 82px; }
+.lt-pw { margin-top: auto; display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--c1); }
+.lt-pw kbd { display: inline-grid; place-items: center; min-width: 28px; height: 28px; padding: 0 8px; border-radius: 8px; font-family: var(--f-mono); font-size: 12px; letter-spacing: 0; color: #fff; background: rgba(255, 255, 255, .08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2), 0 3px 0 rgba(0, 0, 0, .45); text-transform: none; }
+
+/* ---------------- biomas e chefes ---------------- */
+.lt-biomas .h1 { margin: 20px 0 22px; }
+.lt-biomas__lead { margin-bottom: 44px; }
+.lt-biomas__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.lt-bioma { --r: 26px; position: relative; overflow: hidden; padding: 0 22px 24px; display: flex; flex-direction: column; gap: 10px; }
+.lt-bioma__ceu { margin: 0 -22px 8px; height: 104px; position: relative; }
+.lt-bioma__ceu img { width: 100%; height: 100%; object-fit: cover; }
+.lt-bioma__ceu::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(10, 13, 44, .65)); }
+.lt-bioma__n { font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--txt-3); }
+.lt-bioma h3 { font-family: var(--f-display); font-size: clamp(1.15rem, 1.5vw, 1.4rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; }
+.lt-bioma p { color: var(--txt-2); font-size: 15px; }
+.lt-chefes { margin-top: auto; display: grid; gap: 6px; padding-top: 8px; }
+.lt-chefes li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; }
+.lt-chefes li::before { content: ""; flex: none; width: 8px; height: 8px; rotate: 45deg; border-radius: 2px; background: #ff3b4e; box-shadow: 0 0 10px rgba(255, 59, 78, .8); }
+.lt-chefes b { font-weight: 600; }
+.lt-bioma--breve .lt-bioma__ceu img { filter: grayscale(.85) brightness(.6); }
+.lt-bioma--breve h3, .lt-bioma--breve p { opacity: .7; }
+.lt-breve { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; font-family: var(--f-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--c1); background: rgba(255, 210, 63, .1); box-shadow: inset 0 0 0 1px rgba(255, 210, 63, .35); }
+.lt-breve::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c1); box-shadow: 0 0 10px var(--c1); animation: blink 2s steps(2) infinite; }
+.lt-duelo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 26px); margin-top: clamp(40px, 5vw, 64px); }
+.lt-duelo__it { margin: 0; display: grid; gap: 12px; }
+.lt-duelo__it figcaption { font-family: var(--f-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--txt-2); text-align: center; }
+
+/* ---------------- reino ---------------- */
+.lt-reino__grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(30px, 6vw, 90px); align-items: center; }
+.lt-reino .h1 { margin: 20px 0 22px; }
+.lt-ramos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 34px; }
+.lt-ramos li { --r: 22px; padding: 18px 18px 20px; display: grid; align-content: start; gap: 6px; }
+.lt-ramos b { font-family: var(--f-display); font-size: 1.1rem; letter-spacing: -.02em; color: var(--c1); }
+.lt-ramos span { color: var(--txt-2); font-size: 14.5px; line-height: 1.45; }
+.lt-reino__art { position: relative; padding-bottom: 22%; }
+.lt-reino__tela { rotate: 2deg; z-index: 1; }
+.lt-reino__mini { position: absolute; width: 44%; z-index: 2; --rt: 14px; padding: 5px; }
+.lt-reino__mini .tela__screen { border-radius: 9px; }
+.lt-reino__mini--a { left: -4%; bottom: 0; rotate: -4deg; }
+.lt-reino__mini--b { right: -2%; bottom: 4%; rotate: 5deg; }
+.lt-reino__bau { position: absolute; z-index: 3; width: clamp(64px, 7vw, 110px); height: auto; left: 44%; bottom: -4%; filter: drop-shadow(0 0 26px rgba(255, 194, 26, .55)) drop-shadow(0 16px 22px rgba(0, 0, 0, .6)); }
+
+/* ---------------- galeria (telas deitadas) ---------------- */
+.lt-gg .gg__item .tela { width: clamp(280px, 40vw, 600px); transition: transform .7s var(--ease-out); }
+.lt-gg .gg__item:hover .tela { transform: translateY(-8px) rotate(-1deg); }
+.lt-gg .gg__item a { border-radius: 18px; }
+
+/* ---------------- onde jogar: o navegador vem primeiro ---------------- */
+.onde__grupos--web { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+
+/* ---------------- responsivo ---------------- */
+@media (max-width: 1100px) {
+  .lt-tropas .feats { grid-template-columns: 1fr 1fr; }
+  .lt-biomas__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .lt-visual { height: auto; min-height: 0; padding: 26px 4% 34px; }
+  .lt-fl--shield { top: 0; }
+  .lt-fl--archer { top: -2%; }
+  .lt-fl--giant { bottom: 0; }
+  .lt-fl--mage { bottom: 2%; }
+  .lt-fl--coin { top: -4%; }
+  .lt-gp .gp__grid { grid-template-columns: 1fr; }
+  .lt-reino__grid { grid-template-columns: 1fr; }
+  .lt-reino__art { max-width: 620px; margin-inline: auto; width: 100%; }
+  .onde__grupos--web { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .lt-tropas .feats, .lt-ramos { grid-template-columns: 1fr; }
+  .lt-biomas__grid { grid-template-columns: 1fr; }
+  .lt-duelo { grid-template-columns: 1fr; }
+  .lt-fl { width: 56px; }
+  .lt-fl--giant { width: 64px; }
+  .tela { --rt: 14px; padding: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lt-breve::before { animation: none; }
+}
