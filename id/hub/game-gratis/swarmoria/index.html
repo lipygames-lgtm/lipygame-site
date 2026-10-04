@@ -39,7 +39,7 @@ var jogo=location.pathname.replace(/\/$/,"").split("/").pop(),jogou=0,seg=0,marc
 document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest("[data-abrir],[data-baixar]");if(!a)return;
 if(a.hasAttribute("data-abrir")){if(!jogou){jogou=1;fbq("trackCustom","Jogou",{jogo:jogo});}}
 else fbq("trackCustom","CliqueBaixar",{jogo:jogo,onde:a.getAttribute("data-baixar")});},true);
-var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(agora-antes,5000);antes=agora;if(!jogou||document.hidden||!marcas.length)return;seg+=passo/1000;if(seg>=marcas[0])fbq("trackCustom","Engajou"+marcas.shift()+"s",{jogo:jogo});},1000);
+var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(agora-antes,15000);antes=agora;if(!jogou||document.visibilityState==="hidden"||!marcas.length)return;seg+=passo/1000;if(seg>=marcas[0])fbq("trackCustom","Engajou"+marcas.shift()+"s",{jogo:jogo});},1000);
 })();</script>
 <meta name="google-adsense-account" content="ca-pub-8464565309616696">
 <script>(window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;</script>
