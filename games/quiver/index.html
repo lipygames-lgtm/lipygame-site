@@ -1,0 +1,191 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta name="robots" content="noindex"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://ldpccejvvzqaocyhioju.supabase.co; object-src 'none'; frame-src 'none'">
+<meta name="theme-color" content="#07111c"><title>Quiver</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="mascaras.css"></head>
+<body>
+<div id="borrado"></div>
+<div id="palco">
+
+<!-- ================= CARREGAMENTO ================= -->
+<section id="tela-carrega" class="tela ativa">
+  <div class="fundo" style="background-image:url(bg/carrega.webp)"></div>
+  <div id="carga-barra" class="a base" style="--y:1327"><div class="trilho"><div id="carga-fill"></div></div></div>
+  <div id="carga-txt" class="a base ol" style="--y:1394" data-i="carregando">CARREGANDO...</div>
+  <div id="carga-dica" class="a base" style="--y:1452"><img src="ui/lampada.webp" alt=""><div id="carga-dica-txt" class="ol" data-fit></div></div>
+  <!-- crédito do portfólio: em inglês em todos os idiomas, discreto (regra do dono para todo jogo) -->
+  <div id="carga-credito" class="a base credito ol" style="--y:1612">Developed by Lipy Games</div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section id="tela-menu" class="tela">
+  <div class="fundo" style="background-image:url(bg/menu.webp)"></div>
+  <!-- logo e blocos flutuantes: saíram do fundo para ganhar movimento (posições medidas na arte) -->
+  <div id="m-facho" class="a centro entra" style="--y:500;left:385px;width:190px;height:420px;--ea:.25s"></div>
+  <div id="m-blocos" class="a centro" style="--y:0;left:0;width:941px;height:1px">
+    <div class="bloco entra-bloco" style="left:249px;top:642px;width:150px;--r:-10deg;--t:3.1s;--d:-.4s;--ea:.30s"><img src="ui/seta-esq-laranja.webp" alt="" style="filter:hue-rotate(-30deg) saturate(1.3) drop-shadow(0 0 14px rgba(255,90,60,.55))"></div>
+    <div class="bloco entra-bloco" style="left:468px;top:580px;width:150px;--r:5deg;--t:2.7s;--d:-1.2s;--ea:.38s"><img src="ui/seta-dir-verde.webp" alt="" style="filter:drop-shadow(0 0 14px rgba(80,255,120,.5))"></div>
+    <div class="bloco entra-bloco" style="left:600px;top:694px;width:140px;--r:8deg;--t:3.4s;--d:-2s;--ea:.46s"><img src="ui/seta-cima-azul.webp" alt="" style="filter:drop-shadow(0 0 14px rgba(80,170,255,.55))"></div>
+    <div class="bloco entra-bloco" style="left:247px;top:783px;width:125px;--r:-8deg;--t:2.9s;--d:-.8s;--ea:.42s"><img src="ui/seta-baixo-rosa.webp" alt="" style="filter:hue-rotate(-38deg) saturate(1.2) drop-shadow(0 0 14px rgba(190,90,255,.55))"></div>
+    <div class="bloco grande entra-bloco" style="left:370px;top:692px;width:220px;--r:0deg;--t:2.4s;--d:0s;--ea:.52s"><img src="ui/seta-cima-ciano.webp" alt="" style="filter:hue-rotate(215deg) saturate(1.7) brightness(1.2) drop-shadow(0 0 26px rgba(255,200,60,.85))"></div>
+  </div>
+  <div id="m-faiscas" class="a centro" style="--y:560;left:250px;width:440px;height:420px"></div>
+  <div id="m-logo" class="a centro entra-logo" style="--y:148;left:172px;width:622px"><img src="ui/logo.webp" alt="Quiver Arrow Puzzle"><div class="brilho-logo"></div></div>
+  <button id="m-moedas" class="a topo pill aperta entra" style="--y:34;left:48px;width:244px;--ea:.1s"><img src="ui/pill-moedas.webp" alt=""><span class="num ol" style="left:30%;right:30%"></span><span class="mais"></span></button>
+  <button id="m-energia" class="a topo pill aperta bt-energia entra" style="--y:26;left:330px;width:250px;--ea:.15s"><img src="ui/pill-energia.webp" alt=""><span class="num ol en-num" style="left:31%;right:31%">5/5</span><span class="mais"></span><span class="en-t ol"></span></button>
+  <button id="m-config" class="a topo aperta" style="--y:26;left:813px;width:94px"><img src="ui/botao-config.webp" alt=""></button>
+  <button id="m-diario" class="a centro quad aperta entra-esq" style="--y:528;left:26px;width:152px;--ea:.55s"><img src="ui/botao-diario-sem.webp" alt=""><img id="m-diario-badge" class="badge" src="ui/badge.webp" alt=""><span class="rot ol" style="top:68%;height:21%;right:24%" data-i="diario" data-fit></span></button>
+  <button id="m-missoes" class="a centro quad aperta entra-esq" style="--y:703;left:26px;width:136px;--ea:.62s"><img src="ui/botao-missoes.webp" alt=""><img id="m-missoes-badge" class="badge some" src="ui/badge.webp" alt=""><span class="rot ol" style="top:67%;height:22%;left:10%;right:10%" data-i="missoes" data-fit></span></button>
+  <button id="m-loja" class="a centro quad aperta entra-esq" style="--y:870;left:26px;width:136px;--ea:.69s"><img src="ui/botao-loja.webp" alt=""><span class="rot ol" style="top:68%;height:21%;left:10%;right:10%" data-i="loja" data-fit></span></button>
+  <!-- DESAFIO RELÂMPAGO: só aparece com um desafio aberto (espelha o DIÁRIO, do outro lado) -->
+  <button id="m-desafio" class="a centro aperta entra-dir some" style="--y:520;left:767px;width:150px;--ea:.6s"><span class="dsf-bt"><img src="ui/raio-energia.webp" alt=""><span class="dsf-rot ol" data-i="desafio_hud" data-fit></span></span><span id="m-desafio-t" class="dsf-cont ol"></span><span class="dsf-x2 ol">x2</span></button>
+  <button id="bt-jogar" class="a centro aperta entra-pop" style="--y:975;left:189px;width:590px;--ea:.6s"><span class="respira"><img src="ui/botao-jogar.webp" alt=""><span class="t1 ct" data-i="jogar" data-fit></span><span class="t2" data-i="rush" data-fit></span><span class="brilho-bt"></span></span></button>
+  <button id="bt-classic" class="a centro aperta entra-pop" style="--y:1203;left:210px;width:520px;--ea:.7s"><img src="ui/botao-classic.webp" alt=""><span class="t1 ol" data-i="modo_classic" data-fit></span><span class="t2 ol" data-i="classic_sub" data-fit></span></button>
+  <button id="m-ranking" class="a base aperta entra-pop" style="--y:1400;left:84px;width:128px;--ea:.8s"><img src="ui/icone-ranking.webp" alt=""><img id="m-ranking-badge" class="badge-canto some" src="ui/badge.webp" alt=""></button>
+  <button id="m-skins" class="a base aperta entra-pop" style="--y:1400;left:294px;width:128px;--ea:.86s"><img src="ui/icone-skins.webp" alt=""></button>
+  <button id="m-conquistas" class="a base aperta entra-pop" style="--y:1400;left:514px;width:128px;--ea:.92s"><img src="ui/icone-conquistas.webp" alt=""><img id="m-conquistas-badge" class="badge-canto some" src="ui/badge.webp" alt=""></button>
+  <!-- era "gravar jogada": virou a ROLETA (mesmo ícone, decisão do dono) -->
+  <button id="m-gravar" class="a base aperta entra-pop" style="--y:1400;left:724px;width:128px;--ea:.98s"><img src="ui/icone-gravar.webp" alt=""><img id="m-gravar-badge" class="badge-canto some" src="ui/badge.webp" alt=""></button>
+  <div class="a base rotulo ol" style="--y:1534;left:48px;width:200px" data-i="ranking" data-fit></div>
+  <div class="a base rotulo ol" style="--y:1534;left:258px;width:200px" data-i="skins" data-fit></div>
+  <div class="a base rotulo ol" style="--y:1534;left:458px;width:240px" data-i="conquistas" data-fit></div>
+  <div class="a base rotulo ol" style="--y:1534;left:688px;width:200px" data-i="gravar" data-fit></div>
+</section>
+
+<!-- ================= FASES DO RUSH ================= -->
+<section id="tela-rush" class="tela">
+  <div class="fundo" style="background-image:url(bg/rush.webp)"></div>
+  <div id="r-grade" class="a centro" style="--y:0;left:0;width:941px;height:1672px"></div>
+  <button class="a topo aperta voltar" style="--y:26;left:26px;width:96px"><img src="ui/botao-voltar.webp" alt=""></button>
+  <button class="a topo pill aperta bt-energia" style="--y:26;left:168px;width:220px"><img src="ui/pill-energia-r.webp" alt=""><span class="num ol en-num" style="left:30%;right:30%;font-size:32px">5/5</span><span class="en-t ol"></span></button>
+  <div class="a topo pill" style="--y:30;left:412px;width:246px"><img src="ui/pill-moedas-r.webp" alt=""><span class="num ol moedas" style="left:33%;right:26%;font-size:32px"></span></div>
+  <div class="a topo pill" style="--y:27;left:680px;width:234px"><img src="ui/pill-gemas.webp" alt=""><span class="num ol gemas" style="left:38%;right:28%;font-size:32px"></span></div>
+  <!-- título sem letra (tools/titulo-rush.mjs) + o texto no idioma do jogador -->
+  <div id="r-titulo" class="a topo" style="--y:118;left:46px;width:600px"><img src="ui/titulo-rush-limpo.webp" alt="">
+    <div class="tt tt-modo" style="left:62px;top:22px;width:220px;height:66px;--h:66" data-i="titulo_modo" data-titulo data-fit></div>
+    <div class="tt tt-grande" style="left:84px;top:66px;width:372px;height:132px;--h:132" data-i="titulo_rush" data-titulo data-fit></div>
+  </div>
+  <div class="a topo" style="--y:302;left:80px;width:515px"><img src="ui/subtitulo-rush.webp" alt=""><div id="rush-sub-txt" class="centraliza ol" data-i="rush_sub" data-rich data-fit></div></div>
+  <div id="r-novas" class="a topo" style="--y:262;left:688px;width:186px"><img src="ui/caixa-novas-fases.webp" alt=""><div id="novas-txt" class="centraliza ol" data-i="novas_fases" data-rich data-fit></div></div>
+  <div id="r-mais" class="a centro" style="--y:1305;left:668px;width:252px"><img src="ui/placa-mais-fases.webp" alt=""><div id="placa-txt" class="centraliza ol" data-i="mais_fases" data-rich data-fit></div></div>
+  <div id="paginas" class="a base" style="--y:1582"></div>
+</section>
+
+<!-- ================= MAPA DO CLASSIC ================= -->
+<section id="tela-classic" class="tela">
+  <div class="fundo" style="background-image:url(bg/classic.webp)"></div>
+  <!-- ambiente vivo (atrás dos selos) -->
+  <div class="amb-luz"></div>
+  <canvas class="amb" id="amb-classic"></canvas>
+  <div id="c-mapa" class="a centro" style="--y:0;left:0;width:941px;height:1672px"></div>
+  <!-- arena fechada: quem derrotar para abrir -->
+  <div id="c-trava" class="a centro centraliza" style="--y:820;left:110px;width:721px;height:130px;display:none"><div class="tv-txt ol" data-fit></div></div>
+  <!-- trocar de arena (também dá para arrastar para o lado) -->
+  <button id="c-seta-esq" class="a centro seta-arena esq aperta" style="--y:760;left:6px"><svg viewBox="0 0 24 24" width="40" height="40"><path d="M16 3L6 12l10 9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button id="c-seta-dir" class="a centro seta-arena dir aperta" style="--y:760;left:861px"><svg viewBox="0 0 24 24" width="40" height="40"><path d="M8 3l10 9-10 9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <!-- balão do chefe: provocações que se revezam -->
+  <div id="c-balao" class="balao a centro"><div class="balao-txt" data-fit></div></div>
+  <button class="a topo aperta voltar" style="--y:26;left:26px;width:96px"><img src="ui/botao-voltar.webp" alt=""></button>
+  <button class="a topo pill aperta bt-energia" style="--y:26;left:168px;width:220px"><img src="ui/pill-energia-r.webp" alt=""><span class="num ol en-num" style="left:30%;right:30%;font-size:32px">5/5</span><span class="en-t ol"></span></button>
+  <div class="a topo pill" style="--y:30;left:412px;width:246px"><img src="ui/pill-moedas-r.webp" alt=""><span class="num ol moedas" style="left:33%;right:26%;font-size:32px"></span></div>
+  <div class="a topo pill" style="--y:27;left:680px;width:234px"><img src="ui/pill-gemas.webp" alt=""><span class="num ol gemas" style="left:38%;right:28%;font-size:32px"></span></div>
+  <!-- arena 1: peças da arte original (sem letra) com o texto do idioma por cima -->
+  <div class="so-selva a topo" style="--y:104;left:40px;width:600px"><img src="ui/titulo-classic-limpo.webp" alt="">
+    <div class="tt tt-modo" style="left:52px;top:20px;width:236px;height:84px;--h:84" data-i="titulo_modo" data-titulo data-fit></div>
+    <div class="tt tt-grande" style="left:72px;top:84px;width:470px;height:128px;--h:128" data-i="titulo_classic" data-titulo data-fit></div>
+  </div>
+  <div id="placa-classic" class="so-selva a topo centraliza" style="--y:270;left:118px;width:452px;height:104px"><div id="placa-classic-txt" class="centraliza ol" data-i="classic_placa" data-rich data-fit></div></div>
+  <div class="so-selva a topo" style="--y:126;left:640px;width:288px"><img src="ui/painel-boss.webp" alt=""><div id="boss-txt" class="centraliza ol" data-i="boss_painel" data-rich data-fit></div></div>
+  <!-- arenas 2-5: título, placa e painel já estão desenhados no FUNDO; aqui só o texto (posição em
+       arenas.js), preso ao centro como o fundo — preso ao topo, num celular comprido, fugia da arte -->
+  <div id="c-t-modo" class="so-arena a centro tt tt-modo" data-i="titulo_modo" data-titulo data-fit></div>
+  <div id="c-t-grande" class="so-arena a centro tt tt-grande" data-i="titulo_classic" data-titulo data-fit></div>
+  <div id="c-placa" class="so-arena a centro centraliza"><div class="placa-txt centraliza ol" data-i="classic_placa" data-rich data-fit></div></div>
+  <div id="c-painel" class="so-arena a centro centraliza"><div class="painel-txt centraliza ol" data-i="boss_painel" data-rich data-fit></div></div>
+  <button id="aba-rush" class="a base aba aperta" style="--y:1500"><img src="ui/botao-missoes.webp" alt=""><div class="abat"><div class="ta ol" data-i="aba_rush" data-fit></div><div class="ts ol" data-i="aba_rush_sub" data-fit></div></div></button>
+  <div id="aba-classic" class="a base aba" style="--y:1502"><img src="ui/escudo.webp" alt=""><div class="abat"><div class="ta ol" data-i="aba_classic" data-fit></div><div id="aba-classic-sub" class="ts ol" data-fit></div></div></div>
+</section>
+
+<!-- ================= JOGO ================= -->
+<section id="tela-jogo" class="tela">
+  <div class="fundo" style="background-image:url(bg/jogo.webp)"></div>
+  <div class="amb-luz"></div>
+  <div id="fever-luz"></div><div id="gelo-luz"></div><div id="urgencia"></div>
+  <div id="laser-luz" class="a centro" style="--y:486"></div>
+  <!-- chefe: recortado da tela do dono, fica atrás do tabuleiro -->
+  <div id="chefe" class="a centro" style="display:none"><img alt=""><div id="chefe-cartaz-nome" class="centraliza ol" data-fit></div></div>
+  <!-- ambiente vivo: por cima do chefe (neve caindo na frente dele), por baixo do tabuleiro -->
+  <canvas class="amb" id="amb-jogo"></canvas>
+  <div id="tabuleiro"></div>
+  <div id="hud-fase" class="a topo" style="--y:26;left:38px;width:190px"><img src="ui/hud-fase.webp" alt=""><div class="l1 ol" data-fit></div><div class="l2" data-fit></div></div>
+  <div id="hud-tempo" class="a topo" style="--y:22;left:300px;width:340px"><img src="ui/hud-tempo.webp" alt=""><div class="dig centraliza ol"></div></div>
+  <div id="barra" class="a topo" style="--y:110"><div class="trilho"><div id="barra-fill"></div></div></div>
+  <div id="vel" class="a topo ol" style="--y:118;left:692px;width:150px"></div>
+  <div id="fever-barra" class="a topo" style="--y:170"><div id="fever-fill"></div></div>
+  <div id="hud-vidas" class="a topo" style="--y:22;left:300px;width:340px"><img src="ui/hud-fase.webp" alt="" style="height:92px;width:100%"><div id="coracoes" class="a" style="inset:0"></div></div>
+  <button id="bt-pausa" class="a topo aperta" style="--y:26;left:818px;width:88px"><img src="ui/botao-pausa.webp" alt=""></button>
+  <!-- Classic: tempo da fase (conta para cima) -->
+  <div id="hud-relogio" class="a topo ol" style="--y:44;left:650px;width:158px;display:none"></div>
+  <!-- vida do chefe -->
+  <div id="chefe-hud" class="a topo" style="--y:122;left:170px;width:600px;display:none"><div class="nome ol" data-fit></div><div class="trilho"><div id="chefe-vida"></div></div></div>
+  <div id="fala" class="balao a centro"><div class="balao-txt" data-fit></div></div>
+  <div id="combo" class="a centro" style="--y:300"><div class="c1 ct" data-i="combo"></div><div class="c2 ct"></div></div>
+  <div id="aviso" class="a centro ol5" style="--y:360" data-fit></div>
+  <!-- tutorial: balão que aponta para a peça/botão (com ENTENDI e PULAR dentro dele: fora, o PULAR
+       encavalava no ENTENDI) e o anel em volta do alvo -->
+  <div id="tut-anel"></div>
+  <div id="tut" class="balao tut"><div class="balao-txt"></div><div class="tut-botoes"><button class="bt verde peq ol" id="tut-ok" data-i="entendi"></button><button id="tut-pular" class="ol" data-i="pular_tutorial"></button></div></div>
+  <button id="pw-a" class="a base pw aperta" style="--y:1432;left:170px"><img alt=""><span class="cont ol"></span></button>
+  <button id="pw-b" class="a base pw aperta" style="--y:1432;left:400px"><img alt=""><span class="cont ol"></span></button>
+  <button id="pw-c" class="a base pw aperta" style="--y:1432;left:635px"><img alt=""><span class="cont ol"></span></button>
+  <div id="pw-a-rot" class="a base pw-rot ol" style="--y:1582;left:170px" data-fit></div>
+  <div id="pw-b-rot" class="a base pw-rot ol" style="--y:1582;left:400px" data-fit></div>
+  <div id="pw-c-rot" class="a base pw-rot ol" style="--y:1582;left:635px" data-fit></div>
+</section>
+
+<!-- ================= FINAL (depois do chefe final) ================= -->
+<section id="tela-fim" class="tela">
+  <!-- bg/fim.webp = arte/ia/fim-ceu.png (o céu da luta do ANGEMBI, sem a moldura do tabuleiro) -->
+  <div class="fundo" style="background-image:url(bg/fim.webp)"></div>
+  <div class="amb-luz"></div>
+  <canvas class="amb" id="amb-fim"></canvas>
+  <div id="fim-luz" class="a centro" style="--y:240;left:170px;width:600px;height:600px"></div>
+  <div id="fim-reinos" class="a centro" style="--y:540;left:0;width:941px;height:1px"></div>
+  <div id="fim-logo" class="a centro" style="--y:450;left:290px;width:360px"><img src="ui/logo.webp" alt="Quiver"></div>
+  <div id="fim-titulo" class="a centro tt tt-grande" style="--y:890;left:50px;width:841px;height:110px;--h:110" data-i="fim_obrigado" data-titulo data-fit></div>
+  <div id="fim-msg" class="a centro ol" style="--y:1020;left:80px;width:781px;height:210px" data-i="fim_msg" data-rich data-fit></div>
+  <button id="fim-ok" class="a centro bt verde ol" style="--y:1280;left:250px;width:441px" data-i="continuar"></button>
+</section>
+
+<canvas id="fx"></canvas>
+<div id="flash"></div>
+<div id="modal"></div>
+<!-- compartilhar resultado: o cartão com a arte que o Android fotografa -->
+<div id="partilha"></div>
+<div id="toast" class="ol"></div>
+</div>
+<script src="portal.js"></script>
+<script src="config.js"></script>
+<script src="engine.js"></script>
+<script src="sessao.js"></script>
+<script src="fases.js"></script>
+<script src="desafios.js"></script>
+<script src="desafio.js"></script>
+<script src="promo/lista.js"></script>
+<script src="avisos.js"></script>
+<script src="metas.js"></script>
+<script src="rede.js"></script>
+<script src="anuncios.js"></script>
+<script src="loja.js"></script>
+<script src="nuvem.js"></script>
+<script src="arenas.js"></script>
+<script src="especiais.js"></script>
+<script src="i18n.js"></script>
+<script src="save.js"></script>
+<script src="audio.js"></script>
+<script src="musica.js"></script>
+<script src="fx.js"></script>
+<script src="ambiente-fontes.js"></script>
+<script src="ambiente.js"></script>
+<script src="main.js"></script>
+</body></html>

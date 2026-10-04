@@ -137,3 +137,9 @@
   .jg__cta small { display: none; }
 }
 .jg__h1-sub { display: block; margin-top: 10px; font-family: var(--f-text); font-weight: 600; font-size: clamp(1rem, 1.6vw, 1.25rem); letter-spacing: 0; line-height: 1.3; color: var(--txt-2); }
+
+/* jogo em pé (retrato): no palco deitado o jogo fica em pé no meio, com a capa desfocada dos lados */
+.jg__tela--retrato iframe { z-index: 1; left: 50%; width: auto; height: 100%; aspect-ratio: 9 / 16; transform: translateX(-50%); box-shadow: 0 0 0 1px var(--line-2), 0 0 60px rgba(0, 0, 0, .6); }
+.jg__tela--retrato.is-jogando .jg__capa { display: block; }
+.jg__tela--retrato.is-cheia iframe, .jg__tela--retrato:fullscreen iframe { max-width: 100%; }
+@media (max-width: 600px) { .jg__tela--retrato:not(.is-cheia) { aspect-ratio: 3 / 4; } }
