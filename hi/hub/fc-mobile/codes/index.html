@@ -28,6 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=13136944">
+<link rel="stylesheet" href="/assets/css/hub-alertas.css?v=b9b3d338">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>document.documentElement.className = 'js';</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://lipygame.com/hi/hub/"},{"@type":"ListItem","position":2,"name":"EA SPORTS FC Mobile","item":"https://lipygame.com/hi/hub/fc-mobile/"},{"@type":"ListItem","position":3,"name":"कोड","item":"https://lipygame.com/hi/hub/fc-mobile/codes/"}]}</script>
@@ -162,6 +163,22 @@
 
     <div class="aviso"><svg class="ic" aria-hidden="true"><use href="#i-escudo"/></svg><div><b>FC Points और Coins का जनरेटर जैसा कुछ नहीं होता।</b><p>अनलिमिटेड आइटम का वादा करने वाली साइटें, वीडियो और प्रोफ़ाइल आपका पासवर्ड चाहती हैं। यहाँ हर कोड के साथ दिखता है कि वो कहाँ से आया, और हम कभी लॉगिन नहीं माँगते। <a href="/hi/hub/golpes/">स्कैम कैसे पहचानें</a></p></div></div>
 
+    <section class="alerta card" aria-labelledby="alerta-fc-mobile-t">
+  <div class="alerta__topo"><span class="alerta__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></span><div><h2 id="alerta-fc-mobile-t">FC Mobile के नए कोड आने पर मुझे बताएँ</h2>
+    <p>लिस्ट में FC Mobile का नया कोड आते ही एक ईमेल, हर कोड के सोर्स के साथ। अनसब्सक्राइब करना बस एक क्लिक है।</p></div></div>
+  <form class="alerta__form" data-alerta="fc-mobile" novalidate>
+    <div class="alerta__linha">
+      <label class="sr-only" for="alerta-fc-mobile-email">आपका ईमेल</label>
+      <input id="alerta-fc-mobile-email" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="aap@email.com">
+      <button class="bt bt--luz" type="submit">मुझे बताएँ</button>
+    </div>
+    <label class="alerta__caixa"><input type="checkbox" name="idade" required><span>मेरी उम्र 13 साल या उससे ज़्यादा है</span></label>
+    <label class="alerta__caixa"><input type="checkbox" name="marketing"><span>मुझे Lipy Games की खबरें और गेम भी चाहिए</span></label>
+    <p class="alerta__letra">हम आपको कन्फ़र्म करने के लिए एक लिंक भेजेंगे: कन्फ़र्म किए बिना कुछ नहीं भेजा जाएगा। <a href="/hi/privacidade.html#alertas">प्राइवेसी पॉलिसी</a></p>
+    <p class="alerta__msg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
     <h2 id="de-onde">FC Mobile के कोड कहाँ से आते हैं</h2>
     <p>EA, FC Mobile के ऑफ़िशियल सोशल मीडिया (X, Instagram, Facebook, YouTube, Twitch और WhatsApp चैनल) पर, FC Mobile LIVE की लाइव स्ट्रीम में और प्रमोशनल इवेंट्स में कोड शेयर करती है। सितंबर 2026 के जो ऑफ़िशियल कोड हमें मिले, वो सब X पर @EASFCMOBILE से आए थे, हर बार रिडीम साइट के लिंक के साथ।</p>
     <p>ये आम तौर पर फ़ुटबॉल और गेम की नई ख़बरों के साथ आते हैं: प्रीमियर लीग (CLEANSLATE), बुंडेसलीगा (AUFGEHTS) और तुर्की की सुपर लीग (BOMBAGOL) की वापसी, और FC Mobile 27 अपडेट (27UPDATE), जो 24 सितंबर 2026 को तीसरी एनिवर्सरी वाले इवेंट के साथ आया।</p>
@@ -275,7 +292,8 @@
 </div>
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
-<script>window.HUB_TEXTOS = {"Código {c} copiado":"कोड {c} कॉपी हो गया","Não deu para copiar. Selecione o código e copie à mão.":"कॉपी नहीं हो पाया। कोड सिलेक्ट करके ख़ुद कॉपी करें।","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"कई प्लेयर्स ने बताया कि यह कोड काम करना बंद कर चुका है (पिछले 48 घंटे)।","Por quê?":"क्यों?","Expirou":"एक्सपायर हो गया","Já tinha usado":"पहले ही इस्तेमाल किया था","Deu inválido":"इनवैलिड कोड","Obrigado! Isso ajuda a conferir mais rápido.":"शुक्रिया! इससे हमें जल्दी जाँच करने में मदद मिलती है।","Obrigado! Seu voto ajuda outros jogadores.":"शुक्रिया! आपका वोट दूसरे प्लेयर्स की मदद करता है।","Voto retirado.":"वोट हटा दिया गया।","Muitos votos seguidos. Tente de novo mais tarde.":"लगातार बहुत ज़्यादा वोट। थोड़ी देर बाद फिर से कोशिश करें।","Não deu para registrar o voto agora. Tente de novo em instantes.":"अभी आपका वोट दर्ज नहीं हो पाया। थोड़ी देर में फिर से कोशिश करें।","Nada encontrado. Tente o nome do jogo.":"कुछ नहीं मिला। गेम का नाम लिखकर देखें।","Carregando…":"लोड हो रहा है…"};</script>
+<script>window.HUB_TEXTOS = {"Código {c} copiado":"कोड {c} कॉपी हो गया","Não deu para copiar. Selecione o código e copie à mão.":"कॉपी नहीं हो पाया। कोड सिलेक्ट करके ख़ुद कॉपी करें।","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"कई प्लेयर्स ने बताया कि यह कोड काम करना बंद कर चुका है (पिछले 48 घंटे)।","Por quê?":"क्यों?","Expirou":"एक्सपायर हो गया","Já tinha usado":"पहले ही इस्तेमाल किया था","Deu inválido":"इनवैलिड कोड","Obrigado! Isso ajuda a conferir mais rápido.":"शुक्रिया! इससे हमें जल्दी जाँच करने में मदद मिलती है।","Obrigado! Seu voto ajuda outros jogadores.":"शुक्रिया! आपका वोट दूसरे प्लेयर्स की मदद करता है।","Voto retirado.":"वोट हटा दिया गया।","Muitos votos seguidos. Tente de novo mais tarde.":"लगातार बहुत ज़्यादा वोट। थोड़ी देर बाद फिर से कोशिश करें।","Não deu para registrar o voto agora. Tente de novo em instantes.":"अभी आपका वोट दर्ज नहीं हो पाया। थोड़ी देर में फिर से कोशिश करें।","Nada encontrado. Tente o nome do jogo.":"कुछ नहीं मिला। गेम का नाम लिखकर देखें।","Carregando…":"लोड हो रहा है…","…":"…","Muitas tentativas desta conexão. Tente de novo daqui a 1 hora.":"इस कनेक्शन से बहुत ज़्यादा कोशिशें हुईं। 1 घंटे बाद फिर कोशिश करें।","O servidor está ocupado. Tente de novo em alguns minutos.":"सर्वर अभी बिज़ी है। कुछ मिनट बाद फिर कोशिश करें।","Não deu certo agora. Confira a sua conexão e tente de novo.":"अभी नहीं हो पाया। अपना कनेक्शन चेक करें और फिर कोशिश करें।","Digite um e-mail válido.":"सही ईमेल डालें।","Para receber os alertas, marque \"Tenho 13 anos ou mais\".":"अलर्ट पाने के लिए \"मेरी उम्र 13 साल या उससे ज़्यादा है\" पर टिक करें।","Enviando…":"भेजा जा रहा है…","Quase lá! Abra o seu e-mail e toque no link para confirmar. Sem a confirmação, nada é enviado. Não chegou? Veja a caixa de spam.":"बस थोड़ा और! अपना ईमेल खोलें और कन्फ़र्म करने के लिए लिंक पर टैप करें। कन्फ़र्म किए बिना कुछ नहीं भेजा जाएगा। ईमेल नहीं आया? स्पैम फ़ोल्डर देखें।","Este link não vale mais: já foi usado, venceu ou está incompleto. Peça o alerta de novo na página do jogo.":"यह लिंक अब वैलिड नहीं है: इसका इस्तेमाल हो चुका है, यह एक्सपायर हो गया है या अधूरा है। गेम के पेज पर जाकर फिर से अलर्ट माँगें।","Um momento…":"एक पल…","Pronto! Você vai receber um e-mail quando entrar código novo de: {jogos}.":"हो गया! इनका नया कोड आने पर आपको ईमेल मिलेगा: {jogos}।","Pronto: você não recebe mais novidades da Lipy Games. Os alertas de códigos continuam.":"हो गया: अब आपको Lipy Games की खबरें नहीं मिलेंगी। कोड अलर्ट चालू रहेंगे।","Pronto: você saiu de todos os alertas e o seu e-mail foi apagado da lista.":"हो गया: आप सभी अलर्ट से अनसब्सक्राइब हो गए हैं और आपका ईमेल लिस्ट से हटा दिया गया है।"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
+<script src="/assets/js/hub-alertas.js?v=d7de003d" defer></script>
 </body>
 </html>

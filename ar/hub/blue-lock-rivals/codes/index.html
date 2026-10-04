@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=Alexandria:wght@500..800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=13136944">
+<link rel="stylesheet" href="/assets/css/hub-alertas.css?v=b9b3d338">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>document.documentElement.className = 'js';</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://lipygame.com/ar/hub/"},{"@type":"ListItem","position":2,"name":"Blue Lock: Rivals","item":"https://lipygame.com/ar/hub/blue-lock-rivals/"},{"@type":"ListItem","position":3,"name":"الأكواد","item":"https://lipygame.com/ar/hub/blue-lock-rivals/codes/"}]}</script>
@@ -236,6 +237,22 @@
 
     <div class="aviso"><svg class="ic" aria-hidden="true"><use href="#i-escudo"/></svg><div><b>لا وجود لـ Robux مجاني ولا للفّات لا نهائية.</b><p>المواقع والفيديوهات والحسابات التي تعد بعناصر لا نهائية تريد كلمة مرورك. هنا نوضّح من أين جاء كل كود، ولا نطلب منك بيانات الدخول أبدًا. <a href="/ar/hub/golpes/">كيف تكتشف الاحتيال</a></p></div></div>
 
+    <section class="alerta card" aria-labelledby="alerta-blue-lock-rivals-t">
+  <div class="alerta__topo"><span class="alerta__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></span><div><h2 id="alerta-blue-lock-rivals-t">نبّهني إلى أكواد Blue Lock Rivals الجديدة</h2>
+    <p>رسالة بريد إلكتروني عندما يُضاف كود جديد لـ Blue Lock Rivals إلى القائمة، مع مصدر كل كود. وإلغاء الاشتراك بنقرة واحدة.</p></div></div>
+  <form class="alerta__form" data-alerta="blue-lock-rivals" novalidate>
+    <div class="alerta__linha">
+      <label class="sr-only" for="alerta-blue-lock-rivals-email">بريدك الإلكتروني</label>
+      <input id="alerta-blue-lock-rivals-email" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@email.com">
+      <button class="bt bt--luz" type="submit">نبّهني</button>
+    </div>
+    <label class="alerta__caixa"><input type="checkbox" name="idade" required><span>عمري 13 عامًا أو أكثر</span></label>
+    <label class="alerta__caixa"><input type="checkbox" name="marketing"><span>أريد أيضًا أخبار Lipy Games وألعابها</span></label>
+    <p class="alerta__letra">سنرسل إليك رابطًا للتأكيد، ولن نرسل أي شيء قبل أن تؤكد. <a href="/ar/privacidade.html#alertas">سياسة الخصوصية</a></p>
+    <p class="alerta__msg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
     <h2 id="de-onde">من أين تأتي أكواد Blue Lock: Rivals</h2>
     <p>Blue Lock: Rivals لعبة كرة قدم 5 ضد 5 على Roblox، مستوحاة من أنمي Blue Lock. تملكها مجموعة Blue Lock Rivals Unofficial Fans التي تضم أكثر من 32 مليون عضو. أُنشئت اللعبة في 26 يوليو 2024، وكانت تقترب من 5 مليارات زيارة في 28 سبتمبر 2026. ووصف اللعبة نفسه ينبّه إلى أنها من صنع معجبين وغير رسمية.</p>
     <p>تُنشر الأكواد في لوحة Trello تقدّم نفسها على أنها رسمية للعبة، في بطاقة اسمها «Codes» تفصل الأكواد الفعّالة عن المنتهية. وتذكر المواقع التي تتابع اللعبة أيضًا قناة الأكواد في Discord الرسمي (discord.gg/bluelockrivals)، ولا يمكن قراءتها إلا بحساب. ووصف اللعبة على Roblox لا يذكر أي أكواد، وروابط اللعبة الرسمية لا تظهر إلا لمن سجّل الدخول إلى Roblox. لذلك نصنّف كل كود على أنه مؤكد من مصادر مستقلة، لا على أنه رسمي.</p>
@@ -342,7 +359,8 @@
 </div>
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
-<script>window.HUB_TEXTOS = {"Código {c} copiado":"تم نسخ الكود {c}","Não deu para copiar. Selecione o código e copie à mão.":"تعذّر النسخ. حدّد الكود وانسخه يدويًا.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"أفاد عدد من اللاعبين بأن هذا الكود توقف عن العمل (خلال آخر 48 ساعة).","Por quê?":"لماذا؟","Expirou":"انتهت صلاحيته","Já tinha usado":"استخدمته من قبل","Deu inválido":"كود غير صالح","Obrigado! Isso ajuda a conferir mais rápido.":"شكرًا! هذا يساعدنا على التحقق بسرعة أكبر.","Obrigado! Seu voto ajuda outros jogadores.":"شكرًا! تصويتك يساعد اللاعبين الآخرين.","Voto retirado.":"تم إلغاء تصويتك.","Muitos votos seguidos. Tente de novo mais tarde.":"تصويتات كثيرة متتالية. حاول مرة أخرى لاحقًا.","Não deu para registrar o voto agora. Tente de novo em instantes.":"تعذّر تسجيل تصويتك الآن. حاول مرة أخرى بعد قليل.","Nada encontrado. Tente o nome do jogo.":"لا توجد نتائج. جرّب اسم اللعبة.","Carregando…":"جارٍ التحميل…"};</script>
+<script>window.HUB_TEXTOS = {"Código {c} copiado":"تم نسخ الكود {c}","Não deu para copiar. Selecione o código e copie à mão.":"تعذّر النسخ. حدّد الكود وانسخه يدويًا.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"أفاد عدد من اللاعبين بأن هذا الكود توقف عن العمل (خلال آخر 48 ساعة).","Por quê?":"لماذا؟","Expirou":"انتهت صلاحيته","Já tinha usado":"استخدمته من قبل","Deu inválido":"كود غير صالح","Obrigado! Isso ajuda a conferir mais rápido.":"شكرًا! هذا يساعدنا على التحقق بسرعة أكبر.","Obrigado! Seu voto ajuda outros jogadores.":"شكرًا! تصويتك يساعد اللاعبين الآخرين.","Voto retirado.":"تم إلغاء تصويتك.","Muitos votos seguidos. Tente de novo mais tarde.":"تصويتات كثيرة متتالية. حاول مرة أخرى لاحقًا.","Não deu para registrar o voto agora. Tente de novo em instantes.":"تعذّر تسجيل تصويتك الآن. حاول مرة أخرى بعد قليل.","Nada encontrado. Tente o nome do jogo.":"لا توجد نتائج. جرّب اسم اللعبة.","Carregando…":"جارٍ التحميل…","…":"…","Muitas tentativas desta conexão. Tente de novo daqui a 1 hora.":"محاولات كثيرة من هذا الاتصال. حاول مرة أخرى بعد ساعة واحدة.","O servidor está ocupado. Tente de novo em alguns minutos.":"الخادم مشغول. حاول مرة أخرى بعد بضع دقائق.","Não deu certo agora. Confira a sua conexão e tente de novo.":"لم ينجح الأمر الآن. تحقّق من اتصالك وحاول مرة أخرى.","Digite um e-mail válido.":"اكتب بريدًا إلكترونيًا صالحًا.","Para receber os alertas, marque \"Tenho 13 anos ou mais\".":"لتلقي التنبيهات، حدّد «عمري 13 عامًا أو أكثر».","Enviando…":"جارٍ الإرسال…","Quase lá! Abra o seu e-mail e toque no link para confirmar. Sem a confirmação, nada é enviado. Não chegou? Veja a caixa de spam.":"اقتربت! افتح بريدك الإلكتروني واضغط على الرابط للتأكيد. لن نرسل أي شيء قبل التأكيد. لم تصلك الرسالة؟ تحقّق من مجلد الرسائل غير المرغوب فيها.","Este link não vale mais: já foi usado, venceu ou está incompleto. Peça o alerta de novo na página do jogo.":"هذا الرابط لم يعد صالحًا: استُخدم من قبل، أو انتهت صلاحيته، أو أنه غير مكتمل. اطلب التنبيه مجددًا من صفحة اللعبة.","Um momento…":"لحظة واحدة…","Pronto! Você vai receber um e-mail quando entrar código novo de: {jogos}.":"تم! ستصلك رسالة بريد إلكتروني عند إضافة أكواد جديدة لـ: {jogos}.","Pronto: você não recebe mais novidades da Lipy Games. Os alertas de códigos continuam.":"تم: لن تصلك أخبار Lipy Games بعد الآن. أما تنبيهات الأكواد فمستمرة.","Pronto: você saiu de todos os alertas e o seu e-mail foi apagado da lista.":"تم: ألغيت اشتراكك في جميع التنبيهات وحُذف بريدك الإلكتروني من القائمة."};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
+<script src="/assets/js/hub-alertas.js?v=d7de003d" defer></script>
 </body>
 </html>

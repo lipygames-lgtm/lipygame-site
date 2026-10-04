@@ -23,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=13136944">
+<link rel="stylesheet" href="/assets/css/hub-alertas.css?v=b9b3d338">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>document.documentElement.className = 'js';</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://lipygame.com/pt/hub/"},{"@type":"ListItem","position":2,"name":"GTA San Andreas","item":"https://lipygame.com/pt/hub/gta-sa/"},{"@type":"ListItem","position":3,"name":"Códigos","item":"https://lipygame.com/pt/hub/gta-sa/codigos/"}]}</script>
@@ -6238,6 +6239,22 @@
 
     <div class="aviso"><svg class="ic" aria-hidden="true"><use href="#i-escudo"/></svg><div><b>Dinheiro infinito no GTA Online, &quot;GTA grátis&quot; e APK modificado são golpe.</b><p>Sites, vídeos e perfis que prometem itens infinitos querem a sua senha. Aqui cada código mostra de onde veio, e nunca pedimos login. <a href="/pt/hub/golpes/">Como reconhecer um golpe</a></p></div></div>
 
+    <section class="alerta card" aria-labelledby="alerta-gta-sa-t">
+  <div class="alerta__topo"><span class="alerta__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></span><div><h2 id="alerta-gta-sa-t">Me avise de códigos novos de GTA San Andreas</h2>
+    <p>Um e-mail quando entrar código novo de GTA San Andreas na lista, com a fonte de cada um. Para sair, basta um clique.</p></div></div>
+  <form class="alerta__form" data-alerta="gta-sa" novalidate>
+    <div class="alerta__linha">
+      <label class="sr-only" for="alerta-gta-sa-email">Seu e-mail</label>
+      <input id="alerta-gta-sa-email" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="seu@email.com">
+      <button class="bt bt--luz" type="submit">Me avise</button>
+    </div>
+    <label class="alerta__caixa"><input type="checkbox" name="idade" required><span>Tenho 13 anos ou mais</span></label>
+    <label class="alerta__caixa"><input type="checkbox" name="marketing"><span>Também quero novidades e jogos da Lipy Games</span></label>
+    <p class="alerta__letra">Enviamos um link para você confirmar: sem a confirmação, nada é enviado. <a href="/pt/privacidade.html#alertas">Política de privacidade</a></p>
+    <p class="alerta__msg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
     <h2 id="celular">GTA San Andreas no celular: qual versão aceita código</h2>
     <p>A Rockstar vende duas versões na Google Play do Brasil: a clássica, de 2013, por R$ 19,99, e a Definitive Edition, por R$ 99,50 (preços vistos em 28 de setembro de 2026).</p>
     <p>Só a Definitive Edition tem um lugar oficial para digitar códigos: Opções, aba Acessibilidade, Inserir código de trapaça. Na versão clássica, o código só entra com um teclado físico ligado ao celular.</p>
@@ -6375,5 +6392,6 @@
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
+<script src="/assets/js/hub-alertas.js?v=d7de003d" defer></script>
 </body>
 </html>

@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=13136944">
+<link rel="stylesheet" href="/assets/css/hub-alertas.css?v=b9b3d338">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>document.documentElement.className = 'js';</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://lipygame.com/pt/hub/"},{"@type":"ListItem","position":2,"name":"Blox Fruits","item":"https://lipygame.com/pt/hub/blox-fruits/"},{"@type":"ListItem","position":3,"name":"Códigos","item":"https://lipygame.com/pt/hub/blox-fruits/codigos/"}]}</script>
@@ -560,6 +561,22 @@
 
     <div class="aviso"><svg class="ic" aria-hidden="true"><use href="#i-escudo"/></svg><div><b>Robux e itens grátis não existem.</b><p>Sites, vídeos e perfis que prometem itens infinitos querem a sua senha. Aqui cada código mostra de onde veio, e nunca pedimos login. <a href="/pt/hub/golpes/">Como reconhecer um golpe</a></p></div></div>
 
+    <section class="alerta card" aria-labelledby="alerta-blox-fruits-t">
+  <div class="alerta__topo"><span class="alerta__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></span><div><h2 id="alerta-blox-fruits-t">Me avise de códigos novos de Blox Fruits</h2>
+    <p>Um e-mail quando entrar código novo de Blox Fruits na lista, com a fonte de cada um. Para sair, basta um clique.</p></div></div>
+  <form class="alerta__form" data-alerta="blox-fruits" novalidate>
+    <div class="alerta__linha">
+      <label class="sr-only" for="alerta-blox-fruits-email">Seu e-mail</label>
+      <input id="alerta-blox-fruits-email" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="seu@email.com">
+      <button class="bt bt--luz" type="submit">Me avise</button>
+    </div>
+    <label class="alerta__caixa"><input type="checkbox" name="idade" required><span>Tenho 13 anos ou mais</span></label>
+    <label class="alerta__caixa"><input type="checkbox" name="marketing"><span>Também quero novidades e jogos da Lipy Games</span></label>
+    <p class="alerta__letra">Enviamos um link para você confirmar: sem a confirmação, nada é enviado. <a href="/pt/privacidade.html#alertas">Política de privacidade</a></p>
+    <p class="alerta__msg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
     <h2 id="de-onde">De onde saem os códigos do Blox Fruits</h2>
     <p>Os primeiros códigos saíram no X oficial do jogo, mas desde 2021 a conta @BloxFruits posta só atualizações. Os códigos novos aparecem pelo Discord oficial e em ações dos criadores, como o EASTEREXP, de março de 2026.</p>
     <p>A Update 30, de 5 de setembro de 2026, saiu sem código novo. Por isso a lista quase não muda: vários códigos antigos seguem ativos.</p>
@@ -679,5 +696,6 @@
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
+<script src="/assets/js/hub-alertas.js?v=d7de003d" defer></script>
 </body>
 </html>

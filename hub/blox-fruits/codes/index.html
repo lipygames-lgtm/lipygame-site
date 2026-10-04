@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=13136944">
+<link rel="stylesheet" href="/assets/css/hub-alertas.css?v=b9b3d338">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>document.documentElement.className = 'js';</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://lipygame.com/hub/"},{"@type":"ListItem","position":2,"name":"Blox Fruits","item":"https://lipygame.com/hub/blox-fruits/"},{"@type":"ListItem","position":3,"name":"Codes","item":"https://lipygame.com/hub/blox-fruits/codes/"}]}</script>
@@ -560,6 +561,22 @@
 
     <div class="aviso"><svg class="ic" aria-hidden="true"><use href="#i-escudo"/></svg><div><b>There&#39;s no such thing as free Robux or free items.</b><p>Sites, videos, and profiles that promise infinite items want your password. Here, every code shows where it came from, and we never ask for your login. <a href="/hub/golpes/">How to spot a scam</a></p></div></div>
 
+    <section class="alerta card" aria-labelledby="alerta-blox-fruits-t">
+  <div class="alerta__topo"><span class="alerta__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></span><div><h2 id="alerta-blox-fruits-t">Get an email when new Blox Fruits codes arrive</h2>
+    <p>One email when a new Blox Fruits code joins the list, with the source for each one. Unsubscribe in one click.</p></div></div>
+  <form class="alerta__form" data-alerta="blox-fruits" novalidate>
+    <div class="alerta__linha">
+      <label class="sr-only" for="alerta-blox-fruits-email">Your email</label>
+      <input id="alerta-blox-fruits-email" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@email.com">
+      <button class="bt bt--luz" type="submit">Notify me</button>
+    </div>
+    <label class="alerta__caixa"><input type="checkbox" name="idade" required><span>I&#39;m 13 or older</span></label>
+    <label class="alerta__caixa"><input type="checkbox" name="marketing"><span>I also want news and games from Lipy Games</span></label>
+    <p class="alerta__letra">We&#39;ll send you a link to confirm. Until you confirm, we send nothing. <a href="/privacidade.html#alertas">Privacy Policy</a></p>
+    <p class="alerta__msg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
     <h2 id="de-onde">Where Blox Fruits codes come from</h2>
     <p>The first codes were posted on the game&#39;s official X account, but since 2021 @BloxFruits has only posted updates. New codes now show up on the official Discord and in promotions from the game&#39;s creators, like EASTEREXP in March 2026.</p>
     <p>Update 30, released on September 5, 2026, didn&#39;t bring any new codes. That&#39;s why the list barely changes: several old codes are still active.</p>
@@ -663,7 +680,8 @@
 </div>
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
-<script>window.HUB_TEXTOS = {"Código {c} copiado":"Code {c} copied","Não deu para copiar. Selecione o código e copie à mão.":"Couldn't copy. Select the code and copy it manually.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Several players reported that this code stopped working (last 48 hours).","Por quê?":"Why?","Expirou":"Expired","Já tinha usado":"Already used","Deu inválido":"Invalid code","Obrigado! Isso ajuda a conferir mais rápido.":"Thanks! This helps us check codes faster.","Obrigado! Seu voto ajuda outros jogadores.":"Thanks! Your vote helps other players.","Voto retirado.":"Vote removed.","Muitos votos seguidos. Tente de novo mais tarde.":"Too many votes in a row. Try again later.","Não deu para registrar o voto agora. Tente de novo em instantes.":"Couldn't save your vote right now. Try again in a moment.","Nada encontrado. Tente o nome do jogo.":"Nothing found. Try the game's name.","Carregando…":"Loading…"};</script>
+<script>window.HUB_TEXTOS = {"Código {c} copiado":"Code {c} copied","Não deu para copiar. Selecione o código e copie à mão.":"Couldn't copy. Select the code and copy it manually.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Several players reported that this code stopped working (last 48 hours).","Por quê?":"Why?","Expirou":"Expired","Já tinha usado":"Already used","Deu inválido":"Invalid code","Obrigado! Isso ajuda a conferir mais rápido.":"Thanks! This helps us check codes faster.","Obrigado! Seu voto ajuda outros jogadores.":"Thanks! Your vote helps other players.","Voto retirado.":"Vote removed.","Muitos votos seguidos. Tente de novo mais tarde.":"Too many votes in a row. Try again later.","Não deu para registrar o voto agora. Tente de novo em instantes.":"Couldn't save your vote right now. Try again in a moment.","Nada encontrado. Tente o nome do jogo.":"Nothing found. Try the game's name.","Carregando…":"Loading…","…":"…","Muitas tentativas desta conexão. Tente de novo daqui a 1 hora.":"Too many attempts from this connection. Try again in 1 hour.","O servidor está ocupado. Tente de novo em alguns minutos.":"The server is busy. Try again in a few minutes.","Não deu certo agora. Confira a sua conexão e tente de novo.":"That didn't work. Check your connection and try again.","Digite um e-mail válido.":"Enter a valid email address.","Para receber os alertas, marque \"Tenho 13 anos ou mais\".":"To get alerts, check \"I'm 13 or older\".","Enviando…":"Sending…","Quase lá! Abra o seu e-mail e toque no link para confirmar. Sem a confirmação, nada é enviado. Não chegou? Veja a caixa de spam.":"Almost there! Open your email and tap the link to confirm. Until you confirm, we send nothing. Didn't get it? Check your spam folder.","Este link não vale mais: já foi usado, venceu ou está incompleto. Peça o alerta de novo na página do jogo.":"This link is no longer valid: it was already used, expired or is incomplete. Request the alert again on the game's page.","Um momento…":"One moment…","Pronto! Você vai receber um e-mail quando entrar código novo de: {jogos}.":"Done! You'll get an email when new codes arrive for: {jogos}.","Pronto: você não recebe mais novidades da Lipy Games. Os alertas de códigos continuam.":"Done: you'll no longer get news from Lipy Games. Your code alerts continue.","Pronto: você saiu de todos os alertas e o seu e-mail foi apagado da lista.":"Done: you've unsubscribed from all alerts and your email was deleted from the list."};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
+<script src="/assets/js/hub-alertas.js?v=d7de003d" defer></script>
 </body>
 </html>
