@@ -143,3 +143,15 @@
 .jg__tela--retrato.is-jogando .jg__capa { display: block; }
 .jg__tela--retrato.is-cheia iframe, .jg__tela--retrato:fullscreen iframe { max-width: 100%; }
 @media (max-width: 600px) { .jg__tela--retrato:not(.is-cheia) { aspect-ratio: 3 / 4; } }
+.jg__qr-presente { color: var(--amber) !important; font-weight: 600; }
+.jg__video--retrato { aspect-ratio: 9 / 16; max-width: 340px; margin-inline: auto; }
+
+/* botão da Google Play na coluna da ficha (sempre visível, além do convite depois da fase 3) */
+.jg__play { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 18px; background: linear-gradient(135deg, color-mix(in srgb, var(--green) 22%, transparent), rgba(255, 255, 255, .04)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--green) 45%, transparent); transition: transform .35s var(--ease-spring); }
+.jg__play:hover { transform: translateY(-2px); }
+.jg__play > img { width: 48px; height: 48px; border-radius: 13px; flex: none; }
+.jg__play span { display: grid; gap: 2px; line-height: 1.25; }
+.jg__play small { font-size: 11.5px; color: var(--txt-3); text-transform: uppercase; letter-spacing: .08em; font-family: var(--f-mono); }
+.jg__play b { font-size: 16px; }
+.jg__play em { font-style: normal; font-size: 12.5px; color: var(--amber); margin-top: 2px; }
+@media (max-width: 600px) { .jg__loja { width: auto; padding: 0 12px; } .jg__loja span { display: inline; } }
