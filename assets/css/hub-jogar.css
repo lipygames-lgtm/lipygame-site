@@ -112,3 +112,4 @@
   .jg__loja { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .tl, .tl img, .tl__nome { transition: none; } }
+.jg__video { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; box-shadow: 0 0 0 1px var(--line-2); }
