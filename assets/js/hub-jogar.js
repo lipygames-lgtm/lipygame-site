@@ -111,4 +111,6 @@
   var bt = document.querySelector('[data-tela-cheia]');
   if (bt) bt.addEventListener('click', function () { if (!frame) abrir(); cheia(true); });
   document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement) tela.classList.remove('is-cheia'); });
+  // link de campanha (?jogar=1): quem clicou no anúncio do jogo já cai jogando (no celular, ocupando a tela)
+  try { if (new URLSearchParams(location.search).get('jogar') === '1') { mede('campanha_entrada'); abrir(); } } catch (e) {}
 })();
