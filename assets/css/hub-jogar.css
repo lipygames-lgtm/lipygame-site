@@ -109,7 +109,30 @@
   .tl--g { grid-column: span 3; grid-row: span 2; aspect-ratio: 16 / 10; }
   .jg__tela { aspect-ratio: 4 / 3; }
   .jg__telas { grid-template-columns: repeat(2, 1fr); }
-  .jg__loja { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .tl, .tl img, .tl__nome { transition: none; } }
 .jg__video { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; box-shadow: 0 0 0 1px var(--line-2); }
+
+/* ---------- "Continue no celular" (convite depois da 3ª fase) e QR code ---------- */
+.jg__cta { position: absolute; z-index: 3; left: max(12px, env(safe-area-inset-left)); bottom: max(12px, env(safe-area-inset-bottom)); width: min(460px, calc(100% - 130px)); display: flex; align-items: center; gap: 12px; padding: 10px 10px 10px 12px; border-radius: 18px; background: rgba(5, 7, 15, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 0 0 1px var(--line-2), 0 18px 40px -12px #000; animation: ctaEntra .5s var(--ease-spring); }
+.jg__cta.is-saindo { opacity: 0; transform: translateY(16px); transition: opacity .3s, transform .3s; }
+.jg__cta > img { width: 44px; height: 44px; border-radius: 12px; flex: none; }
+.jg__cta > span { display: grid; min-width: 0; line-height: 1.25; flex: 1; }
+.jg__cta b { font-size: 14.5px; }
+.jg__cta small { font-size: 12.5px; color: var(--txt-2); }
+.jg__cta .bt { height: 40px; padding: 0 16px; font-size: 14px; flex: none; }
+.jg__cta-x { width: 30px; height: 30px; border-radius: 9px; color: var(--txt-2); flex: none; }
+.jg__cta-x:hover { background: rgba(255, 255, 255, .08); }
+@keyframes ctaEntra { from { opacity: 0; transform: translateY(24px); } }
+.jg__loja .ic { font-size: 17px; }
+.jg__qr { border: 0; padding: 26px; border-radius: 24px; max-width: 340px; color: var(--txt); background: var(--ink-2); box-shadow: 0 0 0 1px var(--line-2), 0 40px 80px -20px #000; text-align: center; }
+.jg__qr::backdrop { background: rgba(2, 4, 10, .7); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.jg__qr img { width: 220px; height: 220px; margin: 0 auto 16px; border-radius: 16px; background: #fff; padding: 8px; }
+.jg__qr p { font-size: 14.5px; color: var(--txt-2); margin-bottom: 10px; }
+.jg__qr-ios { color: var(--amber) !important; }
+.jg__qr-bts { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 6px; }
+@media (max-width: 600px) {
+  .jg__loja { display: inline-flex; width: 40px; padding: 0; }
+  .jg__loja span { display: none; }
+  .jg__cta small { display: none; }
+}

@@ -9,6 +9,9 @@
   try { q = Object.fromEntries(new URLSearchParams(location.search)); } catch (e) {}
   var onMute = null;
   function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
+  // avisos para a página do Hub (mesma origem): carregou, fase (começou), venceu (n = fase vencida)
+  function avisa(o) { try { o.lipy = o.lipy || 'evento'; parent.postMessage(o, location.origin); } catch (e) {} }
+  var faseSalva = null;
   function ponte() { var a = window.LIPY_ANUNCIO; return a && typeof a.pedir === 'function' ? a : null; }
 
   window.LT_PORTAL = {
@@ -18,8 +21,12 @@
     idioma: function () { return q.lang || ''; },
     mutadoNoPortal: function () { return false; },
     aoMudo: function (f) { onMute = f; },
-    load: function (key) { return ls(key); },
-    save: function (key, v) { ls(key, v); },
+    load: function (key) { var v = ls(key); try { faseSalva = JSON.parse(v).level; } catch (e) {} return v; },
+    save: function (key, v) {
+      ls(key, v);
+      // o jogo grava o save a cada vitória com a fase seguinte: é assim que a página sabe que a fase foi vencida
+      try { var n = JSON.parse(v).level; if (typeof n === 'number') { if (faseSalva != null && n > faseSalva) avisa({ lipy: 'venceu', n: n - 1 }); faseSalva = n; } } catch (e) {}
+    },
     premiadoDisponivel: function () { var a = ponte(); return !!(a && a.premiado && a.premiado()); },
     anuncio: function (tipo) {
       // resolve true só se o anúncio terminou (prêmio só no fim); sem ponte, nunca há anúncio
@@ -31,8 +38,8 @@
         try { a.pedir(tipo, { comecou: function () { if (window.LT_onAd) window.LT_onAd(true); }, terminou: function (ok) { done(!!ok); } }); } catch (e) { done(false); }
       });
     },
-    jogando: function () {},
-    fimDaCarga: function () { try { parent.postMessage({ lipy: 'carregou' }, location.origin); } catch (e) {} },
-    alegria: function () {},
+    jogando: function (sim) { if (sim) avisa({ lipy: 'fase', n: faseSalva }); },
+    fimDaCarga: function () { avisa({ lipy: 'carregou' }); },
+    alegria: function () { avisa({ lipy: 'alegria' }); },
   };
 })();

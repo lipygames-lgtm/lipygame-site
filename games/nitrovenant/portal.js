@@ -7,6 +7,8 @@
 (function () {
   var q = {};
   try { q = Object.fromEntries(new URLSearchParams(location.search)); } catch (e) {}
+  function avisa(o) { try { parent.postMessage(o, location.origin); } catch (e) {} }
+  function fase() { try { return window.game && window.game.level; } catch (e) { return null; } }
   function ponte() { var a = window.LIPY_ANUNCIO; return a && typeof a.pedir === 'function' ? a : null; }
 
   window.NV_PORTAL = {
@@ -22,7 +24,12 @@
       try { a.pedir(tipo, { comecou: cb.comecou, terminou: function (ok) { cb.terminou(!!ok); } }); } catch (e) { cb.erro('ponte', String(e), true); }
     },
     anuncioRodando: function () { return false; },
-    fimDaCarga: function () { try { parent.postMessage({ lipy: 'carregou' }, location.origin); } catch (e) {} },
+    fimDaCarga: function () { avisa({ lipy: 'carregou' }); },
+    // eventos do motor: start = fase começou; finish = fase acabou (game.win diz se venceu)
+    evento: function (nome) {
+      if (nome === 'start') avisa({ lipy: 'fase', n: fase() });
+      else if (nome === 'finish') avisa({ lipy: window.game && window.game.win ? 'venceu' : 'perdeu', n: fase() });
+    },
     mudoSemFoco: false,
   };
 })();
