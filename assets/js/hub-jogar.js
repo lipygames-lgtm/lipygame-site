@@ -112,5 +112,10 @@
   if (bt) bt.addEventListener('click', function () { if (!frame) abrir(); cheia(true); });
   document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement) tela.classList.remove('is-cheia'); });
   // link de campanha (?jogar=1): quem clicou no anúncio do jogo já cai jogando (no celular, ocupando a tela)
-  try { if (new URLSearchParams(location.search).get('jogar') === '1') { mede('campanha_entrada'); abrir(); } } catch (e) {}
+  // o Umami do site ignora o "?…" do endereço (privacidade): a origem da campanha vai num evento próprio
+  try {
+    var qs = new URLSearchParams(location.search);
+    if (qs.get('utm_source')) mede('campanha', { origem: qs.get('utm_source'), meio: qs.get('utm_medium') || '', campanha: qs.get('utm_campaign') || '' });
+    if (qs.get('jogar') === '1') { mede('campanha_entrada'); abrir(); }
+  } catch (e) {}
 })();
