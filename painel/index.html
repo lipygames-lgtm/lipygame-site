@@ -139,6 +139,14 @@ th:first-child, td:first-child, th.esq, td.esq { text-align: left; font-family: 
     <div class="jogos" id="jogos"></div>
   </section>
 
+  <section aria-labelledby="t-diag">
+    <h2 class="pn__rotulo" id="t-diag">Diagnóstico do carregamento</h2>
+    <div class="duas">
+      <div class="bloco glass"><h3>Quem não carregou: quanto tempo ficou</h3><p class="aj">Por navegador. Separa quem saiu na hora de quem esperou e desistiu (medido desde 05/10).</p><div class="rolar"><table id="t-diag-nav"></table></div></div>
+      <div class="bloco glass"><h3>Erros dentro dos jogos</h3><p class="aj">O 1º erro de cada sessão, para achar o que impede o jogo de abrir.</p><div class="lista" id="diag-erros"></div></div>
+    </div>
+  </section>
+
   <section aria-labelledby="t-tempo">
     <h2 class="pn__rotulo" id="t-tempo">Ao longo do tempo</h2>
     <div class="duas">
@@ -272,6 +280,11 @@ th:first-child, td:first-child, th.esq, td.esq { text-align: left; font-family: 
       });
       svg.innerHTML = o;
     })();
+
+    /* diagnóstico */
+    document.getElementById('t-diag-nav').innerHTML = '<thead><tr><th class="esq">Navegador</th><th>Sessões</th><th>Carregou</th><th>Saiu 0–3 s</th><th>3–10 s</th><th>10–30 s</th><th>Esperou 30 s+</th><th>Com erro</th></tr></thead><tbody>' +
+      ((D.diag_nav || []).map(function (d) { return '<tr><td>' + esc(d.navegador) + '</td><td>' + n(d.sessoes) + '</td><td>' + nota(Math.round(100 * d.carregaram / (d.sessoes || 1)), 70, 40) + '</td><td>' + n(d.sairam_0_3s) + '</td><td>' + n(d.sairam_3_10s) + '</td><td>' + n(d.sairam_10_30s) + '</td><td>' + n(d.esperaram_30s) + '</td><td>' + n(d.com_erro) + '</td></tr>'; }).join('') || '<tr><td colspan="8">Sem dados ainda (medição nova).</td></tr>') + '</tbody>';
+    document.getElementById('diag-erros').innerHTML = (D.diag_erros || []).map(function (e) { return '<div><span>' + esc(e.erro) + '</span><span>' + n(e.n) + '× · ' + esc(e.navegador) + ' · ' + esc(nome(e.jogo)) + '</span></div>'; }).join('') || '<p class="aj">Nenhum erro registrado.</p>';
 
     /* campanhas */
     $('t-camp').innerHTML = '<thead><tr><th class="esq">Origem · criativo</th><th class="esq">Jogo</th><th>Abriu</th><th>Carregou</th><th>Jogou 30 s+</th><th>Tempo</th><th>Play</th></tr></thead><tbody>' +

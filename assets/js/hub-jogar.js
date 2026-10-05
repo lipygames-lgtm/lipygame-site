@@ -103,17 +103,23 @@
     return j;
   }
   function uuid() { try { return crypto.randomUUID(); } catch (e) { var h = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(16)), function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); return h.slice(0, 8) + '-' + h.slice(8, 12) + '-4' + h.slice(13, 16) + '-a' + h.slice(17, 20) + '-' + h.slice(20, 32); } }
+  // navegador de quem joga (o do Instagram/Facebook/TikTok é bem diferente do Chrome/Safari normal)
+  var NAVEGADOR = /Instagram/i.test(ua) ? 'instagram' : /FBAN|FBAV|FB_IAB/i.test(ua) ? 'facebook' : /musical_ly|TikTok|BytedanceWebview/i.test(ua) ? 'tiktok'
+    : /SamsungBrowser/i.test(ua) ? 'samsung' : /CriOS|Chrome/i.test(ua) ? 'chrome' : /Safari/i.test(ua) ? 'safari' : /Firefox|FxiOS/i.test(ua) ? 'firefox' : 'outro';
   function iniciaSessao() {
     var qs = new URLSearchParams(location.search), ref = '';
     try { ref = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '').split('.')[0] : ''; } catch (e) {}
     S = { id: uuid(), jogador: jogadorId(), t0: Date.now(), carregou: null, seg: 0, fase: 0, vit: 0, conv: 0, cliq: 0,
-      origem: qs.get('utm_source') || (ref && ref !== 'lipygame' ? ref : 'organico'), campanha: qs.get('utm_campaign'), criativo: qs.get('utm_content') };
+      origem: qs.get('utm_source') || (ref && ref !== 'lipygame' ? ref : 'organico'), campanha: qs.get('utm_campaign'), criativo: qs.get('utm_content'), erro: null };
+    envia(false);
+    [3000, 8000, 15000].forEach(function (ms) { setTimeout(function () { envia(true); }, ms); });
   }
   function envia(saindo) {
     if (!S || !API || !CHAVE) return;
     var corpo = JSON.stringify({ p_id: S.id, p_jogador: S.jogador, p_jogo: slug, p_idioma: html.getAttribute('data-lang'), p_aparelho: celular ? 'celular' : 'computador',
-      p_origem: S.origem, p_campanha: S.campanha, p_criativo: S.criativo, p_carregou_ms: S.carregou, p_segundos: S.seg, p_fase_max: S.fase, p_vitorias: S.vit, p_convites: S.conv, p_cliques: S.cliq });
-    if (corpo === enviado) return;
+      p_origem: S.origem, p_campanha: S.campanha, p_criativo: S.criativo, p_carregou_ms: S.carregou, p_segundos: S.seg, p_fase_max: S.fase, p_vitorias: S.vit, p_convites: S.conv, p_cliques: S.cliq,
+      p_vida_ms: Date.now() - S.t0, p_erro: S.erro, p_navegador: NAVEGADOR });
+    if (corpo === enviado && !saindo) return;
     enviado = corpo;
     try { fetch(API + '/rest/v1/rpc/jogo_sessao', { method: 'POST', keepalive: !!saindo, headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json' }, body: corpo }).catch(function () {}); } catch (e) {}
   }
@@ -145,6 +151,7 @@
     var d = e.data || {};
     if (d.lipy === 'carregou') { tiraEspera(); if (!jaPronto) { jaPronto = true; window.lipyJogou = 1; try { document.dispatchEvent(new Event('lipy:jogou')); } catch (e) {} try { document.dispatchEvent(new CustomEvent('lipy:jogo-pronto', { detail: { jogo: slug } })); } catch (e) {} } }
     if (d.lipy === 'carregou' && S && S.carregou == null) { S.carregou = Date.now() - S.t0; envia(false); }
+    if (d.lipy === 'erro' && S && !S.erro) { S.erro = String(d.msg || '').slice(0, 160); envia(true); }
     if (d.lipy === 'fase' && !comecou) { comecou = true; mede('game_start'); }
     else if (d.lipy === 'venceu') {
       var n = +d.n || 0; vitorias++;

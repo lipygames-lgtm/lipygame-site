@@ -36,5 +36,17 @@
     if (s && s.rangeCount && !campo(s.anchorNode && s.anchorNode.parentElement)) { try { s.removeAllRanges(); } catch (e) {} soltaTudo(); }
   });
   addEventListener('blur', soltaTudo);
+
+  // DIAGNÓSTICO: o 1º erro de JavaScript do jogo vai para a página do site (métricas privadas: coluna "erro").
+  // Serve para descobrir por que o jogo não carrega em algum navegador (ex.: WebGL indisponível no app do Instagram).
+  var avisouErro = false;
+  function relataErro(msg) {
+    if (avisouErro) return; avisouErro = true;
+    try { parent.postMessage({ lipy: 'erro', msg: String(msg || 'erro').slice(0, 160) }, location.origin); } catch (e) {}
+  }
+  addEventListener('error', function (e) { relataErro((e.message || (e.target && e.target.src ? 'falhou ao baixar ' + String(e.target.src).split('/').pop() : 'erro')) + (e.lineno ? ' @' + e.lineno : '')); }, true);
+  addEventListener('unhandledrejection', function (e) { relataErro('promessa: ' + (e.reason && (e.reason.message || e.reason))); });
+  // sem WebGL o jogo 3D não abre: avisa já no começo
+  try { var c = document.createElement('canvas'); if (!(c.getContext('webgl2') || c.getContext('webgl'))) relataErro('sem WebGL neste navegador'); } catch (e) {}
   document.addEventListener('visibilitychange', function () { if (document.hidden) soltaTudo(); });
 })();
