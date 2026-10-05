@@ -143,6 +143,7 @@
   addEventListener('message', function (e) {
     if (e.origin !== location.origin || !frame || e.source !== frame.contentWindow) return;
     var d = e.data || {};
+    if (d.lipy === 'carregou') tiraEspera();
     if (d.lipy === 'carregou' && S && S.carregou == null) { S.carregou = Date.now() - S.t0; envia(false); }
     if (d.lipy === 'fase' && !comecou) { comecou = true; mede('game_start'); }
     else if (d.lipy === 'venceu') {
@@ -167,6 +168,8 @@
       if ((document.fullscreenElement || document.webkitFullscreenElement) && sai) try { sai.call(document); } catch (e) {}
     }
   }
+  var espera = null;
+  function tiraEspera() { if (!espera) return; var e = espera; espera = null; e.classList.add('is-saindo'); setTimeout(function () { e.remove(); }, 400); }
   function abrir() {
     if (!frame) {
       frame = document.createElement('iframe');
@@ -178,8 +181,19 @@
       sair.type = 'button'; sair.className = 'jg__sair'; sair.textContent = '✕ ' + t('Sair');
       sair.addEventListener('click', function () { cheia(false); });
       tela.insertBefore(frame, tela.firstChild); tela.appendChild(sair);
+      // enquanto o jogo carrega: o vídeo dele rodando + 'Carregando o jogo…' (quem chega pelo anúncio vê ação na hora)
+      var vsrc = tela.getAttribute('data-video');
+      if (vsrc) {
+        espera = document.createElement('div'); espera.className = 'jg__espera';
+        espera.innerHTML = '<video muted autoplay loop playsinline preload="auto"></video><p><i></i>' + (tela.getAttribute('data-carregando') || '') + '</p>';
+        espera.querySelector('video').src = vsrc;
+        tela.appendChild(espera);
+        setTimeout(tiraEspera, 25000);
+      }
       tela.classList.add('is-jogando');
       mede('game_open');
+      // avisa o Pixel da Meta (hub.mjs): o jogo também abre sozinho no link de campanha, sem clique
+      window.lipyJogou = 1; try { document.dispatchEvent(new Event('lipy:jogou')); } catch (e) {}
       iniciaSessao();
       anotaJogado();
     }

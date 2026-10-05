@@ -30,14 +30,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
-<link rel="stylesheet" href="/assets/css/hub-jogar.css?v=1ad6c292">
+<link rel="stylesheet" href="/assets/css/hub-jogar.css?v=1b266322">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
 fbq("init","1762322394989141");fbq("track","PageView");
 var jogo=location.pathname.replace(/\/$/,"").split("/").pop(),jogou=0,seg=0,marcas=[30,60,180];
+function marca(){if(!jogou){jogou=1;fbq("trackCustom","Jogou",{jogo:jogo});}}
+document.addEventListener("lipy:jogou",marca);if(window.lipyJogou)marca();
 document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest("[data-abrir],[data-baixar]");if(!a)return;
-if(a.hasAttribute("data-abrir")){if(!jogou){jogou=1;fbq("trackCustom","Jogou",{jogo:jogo});}}
+if(a.hasAttribute("data-abrir"))marca();
 else fbq("trackCustom","CliqueBaixar",{jogo:jogo,onde:a.getAttribute("data-baixar")});},true);
 var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(agora-antes,15000);antes=agora;if(!jogou||document.visibilityState==="hidden"||!marcas.length)return;seg+=passo/1000;if(seg>=marcas[0])fbq("trackCustom","Engajou"+marcas.shift()+"s",{jogo:jogo});},1000);
 })();</script>
@@ -101,7 +103,7 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 <section class="wrap jg">
   <div class="jg__grid">
     <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/nitrovenant/?lang=en" data-nome="Nitrovenant" data-slug="nitrovenant">
+      <div class="jg__tela" data-jogo="/games/nitrovenant/?lang=en" data-nome="Nitrovenant" data-slug="nitrovenant" data-video="/assets/media/nitro/gameplay.mp4" data-carregando="Loading the game…">
         <img class="jg__capa" src="/assets/media/nitro/destaque.webp" width="1024" height="500" alt="Nitrovenant: gameplay screenshot" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Nitrovenant</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</button><small>Free · no download · no sign-up</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><span><b>Enjoying it? Keep playing on your phone</b><small>In the app, every new player gets: 5,000 coins and the Overlord car.</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" data-baixar="fase3" rel="noopener" target="_blank">Get it free</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="Close">✕</button></div>
@@ -183,6 +185,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"Code {c} copied","Não deu para copiar. Selecione o código e copie à mão.":"Couldn't copy. Select the code and copy it manually.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Several players reported that this code stopped working (last 48 hours).","Por quê?":"Why?","Expirou":"Expired","Já tinha usado":"Already used","Deu inválido":"Invalid code","Obrigado! Isso ajuda a conferir mais rápido.":"Thanks! This helps us check codes faster.","Obrigado! Seu voto ajuda outros jogadores.":"Thanks! Your vote helps other players.","Voto retirado.":"Vote removed.","Muitos votos seguidos. Tente de novo mais tarde.":"Too many votes in a row. Try again later.","Não deu para registrar o voto agora. Tente de novo em instantes.":"Couldn't save your vote right now. Try again in a moment.","Nada encontrado. Tente o nome do jogo.":"Nothing found. Try the game's name.","Carregando…":"Loading…","Sair":"Exit"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=6e2f4839" defer></script>
+<script src="/assets/js/hub-jogar.js?v=5fd9edf7" defer></script>
 </body>
 </html>
