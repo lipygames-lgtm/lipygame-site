@@ -39,7 +39,7 @@ var jogo=location.pathname.replace(/\/$/,"").split("/").pop(),jogou=0,seg=0,marc
 function marca(){if(!jogou){jogou=1;fbq("trackCustom","Jogou",{jogo:jogo});}}
 document.addEventListener("lipy:jogou",marca);if(window.lipyJogou)marca();
 document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest("[data-abrir],[data-baixar]");if(!a)return;
-if(a.hasAttribute("data-abrir"))marca();
+if(a.hasAttribute("data-abrir"))return;
 else fbq("trackCustom","CliqueBaixar",{jogo:jogo,onde:a.getAttribute("data-baixar")});},true);
 var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(agora-antes,15000);antes=agora;if(!jogou||document.visibilityState==="hidden"||!marcas.length)return;seg+=passo/1000;if(seg>=marcas[0])fbq("trackCustom","Engajou"+marcas.shift()+"s",{jogo:jogo});},1000);
 })();</script>
@@ -176,6 +176,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"Code {c} copied","Não deu para copiar. Selecione o código e copie à mão.":"Couldn't copy. Select the code and copy it manually.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Several players reported that this code stopped working (last 48 hours).","Por quê?":"Why?","Expirou":"Expired","Já tinha usado":"Already used","Deu inválido":"Invalid code","Obrigado! Isso ajuda a conferir mais rápido.":"Thanks! This helps us check codes faster.","Obrigado! Seu voto ajuda outros jogadores.":"Thanks! Your vote helps other players.","Voto retirado.":"Vote removed.","Muitos votos seguidos. Tente de novo mais tarde.":"Too many votes in a row. Try again later.","Não deu para registrar o voto agora. Tente de novo em instantes.":"Couldn't save your vote right now. Try again in a moment.","Nada encontrado. Tente o nome do jogo.":"Nothing found. Try the game's name.","Carregando…":"Loading…","Sair":"Exit"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=5fd9edf7" defer></script>
+<script src="/assets/js/hub-jogar.js?v=670e8ee3" defer></script>
 </body>
 </html>

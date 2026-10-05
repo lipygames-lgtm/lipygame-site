@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="pt-BR" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel · Lipy Games</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
+<link rel="stylesheet" href="/assets/css/hub.css">
+<style>
+/* PAINEL PRIVADO (lipygame.com/painel/): mesma cara do Lipy Hub — vidro líquido, aurora, Unbounded/Geist — com a
+   cor de cada jogo. Só abre com a chave do dono (#chave na 1ª vez; fica neste navegador). Dados: public.painel(). */
+body { --a1: #2ad8ff; --a2: #8a5cff; }
+.pn { max-width: 1240px; margin: 0 auto; padding-inline: max(16px, 3vw); padding-block: 22px 70px; display: grid; gap: 22px; }
+.pn__topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 12px 16px; --r: 22px; }
+.pn__marca { display: flex; align-items: center; gap: 14px; }
+.pn__marca img { height: 34px; width: auto; }
+.pn__marca b { font-family: var(--f-display); font-size: 1.1rem; letter-spacing: -.02em; }
+.pn__marca small { display: block; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); }
+.pn__ctrl { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.pn__ctrl button { height: 34px; padding: 0 13px; border-radius: 999px; font-size: 13.5px; font-weight: 600; color: var(--txt-2); background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1px var(--line-2); }
+.pn__ctrl button[aria-pressed="true"] { color: #02040a; background: linear-gradient(115deg, #fff, var(--a1)); box-shadow: none; }
+.pn__vivo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-mono); font-size: 12px; color: var(--txt-2); }
+.pn__vivo i { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(62, 240, 138, .16), 0 0 12px var(--green); animation: bate 1.6s ease-in-out infinite; }
+.pn__vivo.parado i { background: var(--txt-3); box-shadow: none; animation: none; }
+@keyframes bate { 50% { transform: scale(.65); opacity: .6; } }
+.pn__rotulo { font-family: var(--f-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--txt-3); margin: 0 0 10px 4px; display: flex; align-items: center; gap: 10px; }
+.pn__rotulo::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line-2), transparent); }
+
+/* AGORA */
+.ag { --r: 28px; padding: clamp(18px, 3vw, 28px); display: grid; grid-template-columns: minmax(200px, 280px) 1fr; gap: 22px; align-items: stretch; }
+.ag__total { display: grid; align-content: center; gap: 6px; padding: 8px; }
+.ag__total b { font-family: var(--f-display); font-size: clamp(3.2rem, 8vw, 5.4rem); line-height: .9; letter-spacing: -.05em; background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; font-variant-numeric: tabular-nums; }
+.ag__total span { color: var(--txt-2); font-size: 15px; }
+.ag__total small { color: var(--txt-3); font-size: 12.5px; }
+.ag__jogos { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.ag__jogo { --r: 20px; position: relative; padding: 14px; display: grid; gap: 10px; align-content: start; background: linear-gradient(160deg, color-mix(in srgb, var(--cor) 22%, transparent), rgba(255, 255, 255, .03) 70%); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cor) 38%, transparent); border-radius: 20px; transition: opacity .3s; }
+.ag__jogo.zero { opacity: .42; }
+.ag__jogo img { height: 46px; width: auto; max-width: 100%; object-fit: contain; object-position: left; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .6)); }
+.ag__jogo b { font-family: var(--f-display); font-size: 2.2rem; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.ag__jogo b small { font-family: var(--f-text); font-size: 13px; font-weight: 500; color: var(--txt-2); letter-spacing: 0; margin-left: 6px; }
+.ag__paises { font-size: 12.5px; color: var(--txt-2); min-height: 1.4em; }
+
+/* números */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.kpi { padding: 14px 16px; display: grid; gap: 3px; }
+.kpi b { font-family: var(--f-mono); font-size: 1.55rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.kpi span { font-size: 12.5px; color: var(--txt-2); }
+.kpi--alerta b { color: var(--amber); }
+
+/* por jogo */
+.jogos { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+.jc { --r: 22px; padding: 18px; display: grid; gap: 14px; }
+.jc__topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.jc__topo img { height: 40px; width: auto; max-width: 60%; object-fit: contain; object-position: left; }
+.jc__topo span { font-family: var(--f-mono); font-size: 12px; color: var(--txt-3); }
+.jc__nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 8px; }
+.jc__nums div { display: grid; gap: 1px; }
+.jc__nums b { font-family: var(--f-mono); font-size: 1.12rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.jc__nums span { font-size: 11.5px; color: var(--txt-3); }
+.funil { display: grid; gap: 6px; }
+.et { display: grid; grid-template-columns: 112px 1fr 76px; align-items: center; gap: 8px; font-size: 12.5px; }
+.et span:first-child { color: var(--txt-2); }
+.et .bar { height: 9px; border-radius: 99px; background: rgba(255, 255, 255, .06); overflow: hidden; }
+.et .bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--cor), color-mix(in srgb, var(--cor) 60%, #fff)); }
+.et b { font: 500 12px var(--f-mono); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* gráficos e tabelas */
+.bloco { --r: 22px; padding: 18px; }
+.bloco h3 { font-family: var(--f-display); font-size: 1rem; letter-spacing: -.01em; margin: 0 0 4px; }
+.bloco p.aj { color: var(--txt-3); font-size: 12.5px; margin: 0 0 12px; }
+.rolar { overflow-x: auto; }
+svg text { fill: var(--txt-3); font: 10.5px var(--f-mono); }
+.leg { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--txt-2); margin-top: 8px; }
+.leg i { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 6px; background: var(--cor); }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: right; font: 500 10.5px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--txt-3); padding: 0 10px 10px; white-space: nowrap; }
+td { text-align: right; padding: 8px 10px; border-top: 1px solid var(--line); font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+th:first-child, td:first-child, th.esq, td.esq { text-align: left; font-family: var(--f-text); }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 11.5px; font-family: var(--f-mono); }
+.pill.bom { color: var(--green); background: rgba(62, 240, 138, .12); }
+.pill.med { color: var(--amber); background: rgba(255, 182, 39, .12); }
+.pill.mau { color: var(--red); background: rgba(255, 77, 94, .12); }
+.duas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; }
+.lista { display: grid; gap: 4px; font-size: 13.5px; }
+.lista div { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line); }
+.lista div span:last-child { font-family: var(--f-mono); color: var(--txt-2); font-size: 12.5px; text-align: right; }
+.trava { max-width: 460px; margin: 12vh auto; padding: 28px; --r: 26px; display: grid; gap: 14px; text-align: center; }
+.trava img { height: 44px; margin: 0 auto; }
+.trava input { height: 46px; border-radius: 14px; padding: 0 14px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line-2); font-family: var(--f-mono); font-size: 13px; }
+.trava p { color: var(--txt-2); font-size: 14px; }
+.erro { color: var(--red); }
+@media (max-width: 860px) { .ag { grid-template-columns: 1fr; } .duas { grid-template-columns: 1fr; } }
+@media (max-width: 420px) { .jogos { grid-template-columns: 1fr; } .et { grid-template-columns: 92px 1fr 66px; } }
+@media (prefers-reduced-motion: reduce) { .pn__vivo i { animation: none; } }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<form class="trava glass" id="trava" hidden>
+  <img src="/assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games">
+  <p>Painel privado dos jogos. Cole a chave de acesso.</p>
+  <label class="sr-only" for="chave">Chave de acesso</label>
+  <input id="chave" type="password" autocomplete="off" spellcheck="false" placeholder="chave de 64 caracteres">
+  <button class="bt bt--luz" type="submit">Abrir o painel</button>
+  <p class="erro" id="trava-erro" hidden>Chave inválida. Confira e tente de novo.</p>
+</form>
+
+<main class="pn" id="painel" hidden>
+  <header class="pn__topo glass">
+    <div class="pn__marca"><img src="/assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"><div><b>Jogos grátis · painel</b><small>Privado · só para a Lipy</small></div></div>
+    <div class="pn__ctrl">
+      <span class="pn__vivo" id="vivo"><i></i><span id="vivo-txt">ao vivo</span></span>
+      <button type="button" data-dias="1" aria-pressed="false">24 h</button>
+      <button type="button" data-dias="7" aria-pressed="true">7 dias</button>
+      <button type="button" data-dias="30" aria-pressed="false">30 dias</button>
+    </div>
+  </header>
+
+  <section aria-labelledby="t-agora">
+    <h2 class="pn__rotulo" id="t-agora">Jogando agora</h2>
+    <div class="ag glass">
+      <div class="ag__total"><b id="ag-n">0</b><span>pessoas jogando agora</span><small id="ag-carregando"></small></div>
+      <div class="ag__jogos" id="ag-jogos"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-hoje">
+    <h2 class="pn__rotulo" id="t-hoje">Hoje e no período</h2>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section aria-labelledby="t-jogos">
+    <h2 class="pn__rotulo" id="t-jogos">Cada jogo</h2>
+    <div class="jogos" id="jogos"></div>
+  </section>
+
+  <section aria-labelledby="t-tempo">
+    <h2 class="pn__rotulo" id="t-tempo">Ao longo do tempo</h2>
+    <div class="duas">
+      <div class="bloco glass"><h3>Últimas 48 horas</h3><p class="aj">Jogos abertos por hora e quantos chegaram a carregar.</p><div class="rolar"><svg id="g-hora" width="100%" height="200" role="img" aria-label="Aberturas por hora"></svg></div><div class="leg"><span style="--cor:rgba(255,255,255,.22)"><i></i>abriram</span><span style="--cor:var(--a1)"><i></i>carregaram</span></div></div>
+      <div class="bloco glass"><h3>Minutos jogados por dia</h3><p class="aj">Soma de todos os jogadores (horário de Brasília).</p><div class="rolar"><svg id="g-dia" width="100%" height="200" role="img" aria-label="Minutos por dia"></svg></div><div class="leg" id="leg-dia"></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-origem">
+    <h2 class="pn__rotulo" id="t-origem">Campanhas e público</h2>
+    <div class="duas">
+      <div class="bloco glass"><h3>Campanhas e criativos</h3><p class="aj">Do clique até jogar, por origem (utm).</p><div class="rolar"><table id="t-camp"></table></div></div>
+      <div class="bloco glass"><h3>Países</h3><p class="aj">Jogadores, quanto carregou e o tempo de carga.</p><div class="lista" id="paises"></div><h3 style="margin-top:18px">Aparelhos</h3><div class="lista" id="aparelhos"></div></div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var API = 'https://ldpccejvvzqaocyhioju.supabase.co', ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkcGNjZWp2dnpxYW9jeWhpb2p1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyNjc2ODIsImV4cCI6MjEwNTg0MzY4Mn0.Usf-hgs3rAxIiFCQx7MKW41NZUufOqIsxtFcpbussDo';
+  var G = {
+    legiontide: { n: 'LEGIONTIDE', k: 'legion', c: '#ffc21a' }, nitrovenant: { n: 'Nitrovenant', k: 'nitro', c: '#ff7a1a' },
+    quiver: { n: 'Quiver', k: 'quiver', c: '#3ef08a' }, 'this-level-hates-you': { n: 'This Level Hates You', k: 'tlhy', c: '#ff4d5e' }, swarmoria: { n: 'SWARMORIA', k: 'swarm', c: '#2ad8ff' }
+  };
+  var PAIS = { BR: '🇧🇷 Brasil', MX: '🇲🇽 México', IN: '🇮🇳 Índia', EG: '🇪🇬 Egito', ID: '🇮🇩 Indonésia', US: '🇺🇸 EUA', AR: '🇦🇷 Argentina', PT: '🇵🇹 Portugal', ES: '🇪🇸 Espanha', JP: '🇯🇵 Japão', SA: '🇸🇦 Arábia Saudita', CO: '🇨🇴 Colômbia', PE: '🇵🇪 Peru', CL: '🇨🇱 Chile', NP: '🇳🇵 Nepal', PK: '🇵🇰 Paquistão', BD: '🇧🇩 Bangladesh', PH: '🇵🇭 Filipinas' };
+  var $ = function (id) { return document.getElementById(id); };
+  var n = function (x) { return (x || 0).toLocaleString('pt-BR'); };
+  var pct = function (a, b) { return b ? Math.round(100 * a / b) + '%' : '—'; };
+  var cor = function (j) { return (G[j] || {}).c || '#8d99ba'; }, nome = function (j) { return (G[j] || {}).n || j; };
+  var logo = function (j) { return G[j] ? '/assets/media/' + G[j].k + '/logo.webp' : '/assets/media/marca/logo-sm.webp'; };
+  var pais = function (p) { return PAIS[p] || p; };
+  function tempo(s) { s = s || 0; if (s < 60) return s + ' s'; if (s < 3600) return Math.round(s / 60) + ' min'; return (s / 3600).toFixed(1).replace('.', ',') + ' h'; }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function nota(v, bom, mau) { return '<span class="pill ' + (v >= bom ? 'bom' : v <= mau ? 'mau' : 'med') + '">' + v + '%</span>'; }
+
+  var chave = null, dias = 7, timer = null;
+  try { var h = location.hash.slice(1); if (/^[0-9a-f]{64}$/.test(h)) { localStorage.setItem('lipy-painel', h); history.replaceState(null, '', location.pathname); } chave = localStorage.getItem('lipy-painel'); } catch (e) {}
+
+  function pede() {
+    return fetch(API + '/rest/v1/rpc/painel', { method: 'POST', headers: { apikey: ANON, Authorization: 'Bearer ' + ANON, 'Content-Type': 'application/json' }, body: JSON.stringify({ p_chave: chave, p_dias: dias }) }).then(function (r) { return r.json(); });
+  }
+  function trava(erro) { $('painel').hidden = true; $('trava').hidden = false; $('trava-erro').hidden = !erro; }
+  $('trava').addEventListener('submit', function (e) {
+    e.preventDefault(); var v = $('chave').value.trim().toLowerCase();
+    if (!/^[0-9a-f]{64}$/.test(v)) { $('trava-erro').hidden = false; return; }
+    chave = v; try { localStorage.setItem('lipy-painel', v); } catch (x) {} atualiza();
+  });
+  document.querySelectorAll('[data-dias]').forEach(function (b) {
+    b.addEventListener('click', function () { dias = +b.getAttribute('data-dias'); document.querySelectorAll('[data-dias]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); atualiza(); });
+  });
+
+  function atualiza() {
+    if (!chave) return trava(false);
+    pede().then(function (D) {
+      if (!D) { try { localStorage.removeItem('lipy-painel'); } catch (e) {} chave = null; return trava(true); }
+      $('trava').hidden = true; $('painel').hidden = false;
+      desenha(D);
+      $('vivo').classList.remove('parado');
+      $('vivo-txt').textContent = 'ao vivo · ' + new Date(D.gerado).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }).catch(function () { $('vivo').classList.add('parado'); $('vivo-txt').textContent = 'sem conexão — tentando de novo'; });
+    clearTimeout(timer); timer = setTimeout(atualiza, 15000);
+  }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) atualiza(); });
+
+  function desenha(D) {
+    /* agora */
+    var ag = {}; D.agora.forEach(function (a) { ag[a.jogo] = a; });
+    var total = D.agora.reduce(function (s, a) { return s + a.jogando; }, 0);
+    $('ag-n').textContent = total;
+    $('ag-carregando').textContent = D.agora_carregando ? '+ ' + D.agora_carregando + ' esperando o jogo carregar' : 'ninguém esperando carregar';
+    $('ag-jogos').innerHTML = Object.keys(G).map(function (j) {
+      var a = ag[j] || { jogando: 0, lista_paises: [] };
+      return '<div class="ag__jogo' + (a.jogando ? '' : ' zero') + '" style="--cor:' + cor(j) + '"><img src="' + logo(j) + '" alt="' + esc(nome(j)) + '"><b>' + a.jogando + '<small>' + (a.jogando === 1 ? 'jogando' : 'jogando') + '</small></b><span class="ag__paises">' + (a.lista_paises || []).map(function (p) { return esc(pais(p)); }).join(' · ') + '</span></div>';
+    }).join('');
+
+    /* números */
+    var J = D.por_jogo, soma = function (k) { return J.reduce(function (s, x) { return s + (x[k] || 0); }, 0); };
+    var ab = soma('aberturas'), car = soma('carregaram'), seg = soma('segundos_total'), jog = soma('jogadores');
+    var INS = {}; (D.instalacoes || []).forEach(function (x) { INS[x.jogo] = x; });
+    var ins = { total: (D.instalacoes || []).reduce(function (s, x) { return s + x.instalaram; }, 0) };
+    var rotP = dias === 1 ? 'nas últimas 24 h' : 'em ' + dias + ' dias';
+    $('kpis').innerHTML = [
+      [n(D.hoje.jogadores), 'jogadores hoje'], [tempo(D.hoje.segundos), 'jogados hoje'],
+      [n(jog), 'jogadores ' + rotP], [tempo(seg), 'jogados ' + rotP],
+      [car ? tempo(Math.round(seg / car)) : '—', 'média por sessão que carregou'],
+      [pct(car, ab), 'abriram e o jogo carregou', car / (ab || 1) < .5],
+      [n(soma('cliques')), 'cliques em baixar na Play'],
+      [n(D.instalacoes_hoje || 0), 'instalaram o app hoje (vindos do site)'],
+      [n(ins.total), 'instalaram o app ' + rotP]
+    ].map(function (x) { return '<div class="kpi glass' + (x[2] ? ' kpi--alerta' : '') + '"><b>' + x[0] + '</b><span>' + x[1] + '</span></div>'; }).join('');
+
+    /* cada jogo */
+    var ret = {}; D.retorno.forEach(function (r) { ret[r.jogo] = r; });
+    $('jogos').innerHTML = J.map(function (j) {
+      var r = ret[j.jogo] || {}, carga = j.carga_mediana_ms ? (j.carga_mediana_ms / 1000).toFixed(1).replace('.', ',') + ' s' : '—';
+      var E = [['Abriu', j.aberturas], ['Carregou', j.carregaram], ['Jogou 30 s+', j.jogaram], ['Venceu 3 fases', j.venceram3], ['Viu o convite', j.convites], ['Clicou na Play', j.cliques], ['Instalou o app', (INS[j.jogo] || {}).instalaram || 0]];
+      return '<article class="jc glass" style="--cor:' + cor(j.jogo) + '"><div class="jc__topo"><img src="' + logo(j.jogo) + '" alt="' + esc(nome(j.jogo)) + '"><span>' + n(j.jogadores) + (j.jogadores === 1 ? ' jogador' : ' jogadores') + '</span></div>' +
+        '<div class="jc__nums"><div><b>' + tempo(j.segundos_total) + '</b><span>tempo total</span></div><div><b>' + tempo(j.media_sessao) + '</b><span>média/sessão</span></div><div><b>' + tempo(j.mediana_sessao) + '</b><span>mediana</span></div>' +
+        '<div><b>' + nota(Math.round(100 * j.carregaram / (j.aberturas || 1)), 70, 40) + '</b><span>carregou</span></div><div><b>' + carga + '</b><span>tempo de carga</span></div><div><b>' + pct(r.voltaram, r.jogadores) + '</b><span>voltou outro dia</span></div><div><b>' + n((INS[j.jogo] || {}).instalaram || 0) + '</b><span>instalaram o app</span></div><div><b>' + n((INS[j.jogo] || {}).ultimas24h || 0) + '</b><span>instalações em 24 h</span></div><div><b>' + (function (m) { var k = Object.keys(m || {}).sort(function (a, b) { return m[b] - m[a]; })[0]; return k ? esc(k) : '—'; })((INS[j.jogo] || {}).por_momento) + '</b><span>momento que mais converte</span></div></div>' +
+        '<div class="funil">' + E.map(function (e) { return '<div class="et"><span>' + e[0] + '</span><span class="bar"><i style="width:' + (j.aberturas ? Math.max(e[1] ? 1 : 0, 100 * e[1] / j.aberturas) : 0) + '%"></i></span><b>' + n(e[1]) + ' · ' + pct(e[1], j.aberturas) + '</b></div>'; }).join('') + '</div></article>';
+    }).join('') || '<p class="aj">Sem sessões neste período.</p>';
+
+    /* 48 h por hora */
+    (function () {
+      var svg = $('g-hora'), H = D.por_hora, W = Math.max(560, H.length * 14 + 50), A = 200, esq = 36, base = A - 24, topo = 10;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + A); svg.setAttribute('width', W);
+      if (!H.length) { svg.innerHTML = '<text x="10" y="100">Sem dados.</text>'; return; }
+      var max = Math.max.apply(null, H.map(function (x) { return x.aberturas; })) || 1, e = (base - topo) / max, w = (W - esq - 10) / H.length, o = '';
+      [0, .5, 1].forEach(function (f) { var y = base - f * max * e; o += '<line x1="' + esq + '" x2="' + (W - 6) + '" y1="' + y + '" y2="' + y + '" stroke="rgba(170,205,255,.12)"/><text x="' + (esq - 6) + '" y="' + (y + 3) + '" text-anchor="end">' + Math.round(f * max) + '</text>'; });
+      H.forEach(function (x, i) { var X = esq + 4 + i * w, bw = Math.max(3, w - 3);
+        o += '<rect x="' + X + '" y="' + (base - x.aberturas * e) + '" width="' + bw + '" height="' + (x.aberturas * e) + '" rx="2" fill="rgba(255,255,255,.22)"><title>' + x.hora.slice(11) + 'h: ' + x.aberturas + ' abriram</title></rect>';
+        o += '<rect x="' + X + '" y="' + (base - x.carregaram * e) + '" width="' + bw + '" height="' + (x.carregaram * e) + '" rx="2" fill="#2ad8ff"><title>' + x.carregaram + ' carregaram</title></rect>';
+        if (i % 6 === 0) o += '<text x="' + (X + bw / 2) + '" y="' + (A - 6) + '" text-anchor="middle">' + x.hora.slice(8, 10) + '/' + x.hora.slice(5, 7) + ' ' + x.hora.slice(11) + 'h</text>';
+      });
+      svg.innerHTML = o;
+    })();
+
+    /* minutos por dia */
+    (function () {
+      var svg = $('g-dia'), dd = [], por = {}, js = {};
+      D.por_dia.forEach(function (x) { if (!por[x.dia]) { por[x.dia] = {}; dd.push(x.dia); } por[x.dia][x.jogo] = x.segundos / 60; js[x.jogo] = 1; });
+      var L = Object.keys(js); $('leg-dia').innerHTML = L.map(function (j) { return '<span style="--cor:' + cor(j) + '"><i></i>' + esc(nome(j)) + '</span>'; }).join('');
+      var W = Math.max(420, dd.length * 30 + 50), A = 200, esq = 36, base = A - 24, topo = 10;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + A); svg.setAttribute('width', W);
+      if (!dd.length) { svg.innerHTML = '<text x="10" y="100">Sem dados.</text>'; return; }
+      var max = Math.max.apply(null, dd.map(function (d) { return L.reduce(function (s, j) { return s + (por[d][j] || 0); }, 0); })) || 1, e = (base - topo) / max, w = (W - esq - 10) / dd.length, o = '';
+      [0, .5, 1].forEach(function (f) { var y = base - f * max * e; o += '<line x1="' + esq + '" x2="' + (W - 6) + '" y1="' + y + '" y2="' + y + '" stroke="rgba(170,205,255,.12)"/><text x="' + (esq - 6) + '" y="' + (y + 3) + '" text-anchor="end">' + Math.round(f * max) + '</text>'; });
+      dd.forEach(function (d, i) { var X = esq + 6 + i * w, y = base, bw = Math.min(22, w - 8);
+        L.forEach(function (j) { var hh = (por[d][j] || 0) * e; if (hh > 0) { y -= hh; o += '<rect x="' + X + '" y="' + y + '" width="' + bw + '" height="' + hh + '" rx="2" fill="' + cor(j) + '"><title>' + esc(nome(j)) + ': ' + Math.round(por[d][j]) + ' min</title></rect>'; } });
+        o += '<text x="' + (X + bw / 2) + '" y="' + (A - 6) + '" text-anchor="middle">' + d.slice(8) + '/' + d.slice(5, 7) + '</text>';
+      });
+      svg.innerHTML = o;
+    })();
+
+    /* campanhas */
+    $('t-camp').innerHTML = '<thead><tr><th class="esq">Origem · criativo</th><th class="esq">Jogo</th><th>Abriu</th><th>Carregou</th><th>Jogou 30 s+</th><th>Tempo</th><th>Play</th></tr></thead><tbody>' +
+      (D.origens.map(function (o) {
+        return '<tr><td>' + esc([o.origem, o.campanha, o.criativo].filter(Boolean).join(' · ')) + '</td><td class="esq"><span style="color:' + cor(o.jogo) + '">●</span> ' + esc(nome(o.jogo)) + '</td><td>' + n(o.aberturas) + '</td><td>' + nota(Math.round(100 * o.carregaram / (o.aberturas || 1)), 70, 40) + '</td><td>' + pct(o.jogaram, o.aberturas) + '</td><td>' + tempo(o.segundos) + '</td><td>' + n(o.cliques) + '</td></tr>';
+      }).join('') || '<tr><td colspan="7">Sem dados.</td></tr>') + '</tbody>';
+    $('paises').innerHTML = D.paises.map(function (p) { return '<div><span>' + esc(pais(p.pais)) + '</span><span>' + n(p.jogadores) + ' jog. · carregou ' + pct(p.carregaram, p.aberturas) + ' · carga ' + (p.carga_ms ? (p.carga_ms / 1000).toFixed(1).replace('.', ',') + ' s' : '—') + ' · ' + tempo(p.segundos) + '</span></div>'; }).join('') || '<p class="aj">Sem dados.</p>';
+    $('aparelhos').innerHTML = D.aparelhos.map(function (a) { return '<div><span>' + esc(a.aparelho) + '</span><span>' + n(a.aberturas) + ' sessões · carregou ' + pct(a.carregaram, a.aberturas) + ' · ' + tempo(a.segundos) + '</span></div>'; }).join('') || '<p class="aj">Sem dados.</p>';
+  }
+
+  atualiza();
+})();
+</script>
+</body>
+</html>

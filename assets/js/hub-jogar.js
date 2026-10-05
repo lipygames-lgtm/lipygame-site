@@ -139,11 +139,11 @@
   function escondeCta() { if (!cta || cta.hidden) return; cta.classList.add('is-saindo'); setTimeout(function () { cta.hidden = true; }, 350); }
   if (cta) cta.querySelector('[data-fecha-cta]').addEventListener('click', escondeCta);
 
-  var comecou = false;
+  var comecou = false, jaPronto = false;  // jaPronto: o jogo apareceu na tela (evento 'lipy:jogo-pronto' para o Pixel)
   addEventListener('message', function (e) {
     if (e.origin !== location.origin || !frame || e.source !== frame.contentWindow) return;
     var d = e.data || {};
-    if (d.lipy === 'carregou') tiraEspera();
+    if (d.lipy === 'carregou') { tiraEspera(); if (!jaPronto) { jaPronto = true; window.lipyJogou = 1; try { document.dispatchEvent(new Event('lipy:jogou')); } catch (e) {} try { document.dispatchEvent(new CustomEvent('lipy:jogo-pronto', { detail: { jogo: slug } })); } catch (e) {} } }
     if (d.lipy === 'carregou' && S && S.carregou == null) { S.carregou = Date.now() - S.t0; envia(false); }
     if (d.lipy === 'fase' && !comecou) { comecou = true; mede('game_start'); }
     else if (d.lipy === 'venceu') {
@@ -193,7 +193,6 @@
       tela.classList.add('is-jogando');
       mede('game_open');
       // avisa o Pixel da Meta (hub.mjs): o jogo também abre sozinho no link de campanha, sem clique
-      window.lipyJogou = 1; try { document.dispatchEvent(new Event('lipy:jogou')); } catch (e) {}
       iniciaSessao();
       anotaJogado();
     }
