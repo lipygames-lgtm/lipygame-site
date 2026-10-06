@@ -19,7 +19,7 @@
     quiver: { play: 'https://play.google.com/store/apps/details?id=com.lipy.quiver', amazon: null, samsung: null, poki: null, crazygames: null },
     tlhy: { play: 'https://play.google.com/store/apps/details?id=com.lipy.thislevel', amazon: null, samsung: null, poki: null, crazygames: null },
     nitro: { play: 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant', amazon: null, samsung: null, poki: null, crazygames: null },
-    swarm: { play: null, amazon: null, samsung: null, poki: null, crazygames: null },
+    swarm: { play: 'https://play.google.com/store/apps/details?id=com.lipy.swarmoria', amazon: null, samsung: null, poki: null, crazygames: null },
     // LEGIONTIDE: enviado ao CrazyGames em 04/10/2026 (aguardando revisão) — trocar o null quando for aprovado
     legion: { play: null, amazon: null, samsung: null, poki: null, crazygames: null }
   };
