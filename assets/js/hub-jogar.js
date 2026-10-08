@@ -188,12 +188,13 @@
       sair.type = 'button'; sair.className = 'jg__sair'; sair.textContent = '✕ ' + t('Sair');
       sair.addEventListener('click', function () { cheia(false); });
       tela.insertBefore(frame, tela.firstChild); tela.appendChild(sair);
-      // enquanto o jogo carrega: o vídeo dele rodando + 'Carregando o jogo…' (quem chega pelo anúncio vê ação na hora)
+      // enquanto o jogo carrega: a imagem do jogo (poucos KB, já em cache) + 'Carregando o jogo…'.
+      // NÃO usar vídeo aqui: 2 MB de vídeo disputavam a banda do celular com o próprio jogo (medido em 08/10).
       var vsrc = tela.getAttribute('data-video');
       if (vsrc) {
         espera = document.createElement('div'); espera.className = 'jg__espera';
-        espera.innerHTML = '<video muted autoplay loop playsinline preload="auto"></video><p><i></i>' + (tela.getAttribute('data-carregando') || '') + '</p>';
-        espera.querySelector('video').src = vsrc;
+        espera.innerHTML = '<img alt="" decoding="async"><p><i></i>' + (tela.getAttribute('data-carregando') || '') + '</p>';
+        espera.querySelector('img').src = vsrc.replace(/gameplay\.mp4$/, 'gameplay-poster.webp');
         tela.appendChild(espera);
         setTimeout(tiraEspera, 25000);
       }
@@ -216,6 +217,8 @@
     var qs = new URLSearchParams(location.search);
     if (qs.get('utm_source')) mede('campanha', { origem: qs.get('utm_source'), meio: qs.get('utm_medium') || '', campanha: qs.get('utm_campaign') || '', criativo: qs.get('utm_content') || '' });
     // anúncio pago (utm_medium=paid/pago/cpc) também cai jogando, mesmo sem o ?jogar=1 no link
-    if (qs.get('jogar') === '1' || /^(paid|pago|cpc)$/i.test(qs.get('utm_medium') || '')) { mede('campanha_entrada', { criativo: qs.get('utm_content') || '' }); abrir(); }
+    // robôs (Google, Bing, prévia de link) NÃO abrem o jogo sozinho: seriam 30–90 MB baixados para nada
+    var robo = /bot|crawl|spider|slurp|facebookexternalhit|bingpreview|lighthouse|headless|pagespeed|preview/i.test(navigator.userAgent || '');
+    if (!robo && (qs.get('jogar') === '1' || /^(paid|pago|cpc)$/i.test(qs.get('utm_medium') || ''))) { mede('campanha_entrada', { criativo: qs.get('utm_content') || '' }); abrir(); }
   } catch (e) {}
 })();

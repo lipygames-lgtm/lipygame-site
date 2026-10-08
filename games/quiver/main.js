@@ -274,7 +274,7 @@
       setTimeout(() => { clearInterval(troca); vai('menu'); confereAviso(); iniciaRanking(); }, falta);
       // as artes das arenas carregam depois, sem segurar a abertura
       // (a arena 1 não tem chefe: sem tela de luta nem sprite)
-      for (const a of ARENAS) for (const src of [a.mapa, a.jogo, a.luta, a.sprite && a.sprite.src]) if (src) { const i = new Image(); i.src = src; }
+      setTimeout(() => { for (const a of ARENAS) for (const src of [a.mapa, a.jogo, a.luta, a.sprite && a.sprite.src]) if (src) { const i = new Image(); i.src = src; } }, 8000);
     });
   }
 
