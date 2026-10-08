@@ -39,6 +39,11 @@ h2 em{font-style:normal;font-size:11px;font-weight:800;text-transform:uppercase;
 .dl{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:520px;height:58px;border-radius:99px;font-weight:800;font-size:18px;color:#0b0f1a;background:linear-gradient(110deg,#fff,var(--a) 60%,var(--b));box-shadow:0 14px 34px -10px var(--a),inset 0 1px 0 #fff9;animation:p 2.6s ease-in-out infinite;-webkit-tap-highlight-color:transparent}
 .dl:active{transform:scale(.98)}
 .dl--web{animation:none;background:#ffffff26;color:#fff;box-shadow:inset 0 0 0 1.5px #ffffff55;height:52px;font-size:16px}
+@keyframes bob{50%{transform:translateY(7px)}}
+.sc{position:absolute;z-index:2;bottom:10px;left:50%;width:36px;height:36px;margin-left:-18px;border-radius:50%;background:#0007;box-shadow:0 0 0 1px #ffffff3a;backdrop-filter:blur(6px);display:grid;place-items:center;pointer-events:none;animation:bob 1.7s ease-in-out infinite;transition:opacity .3s}
+.rolou .sc{opacity:0}
+.dots{position:fixed;z-index:5;right:7px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px;pointer-events:none}
+.dots i{width:5px;height:5px;border-radius:50%;background:#ffffff55;transition:all .25s}.dots i.on{height:18px;border-radius:3px;background:#fff}
 @keyframes p{50%{box-shadow:0 14px 40px -4px var(--a),0 0 0 6px color-mix(in srgb,var(--a) 28%,transparent),inset 0 1px 0 #fff9}}
 .ln{font-size:12px;color:#ffffffa8;margin-top:-4px}
 .brv{font-size:13px;font-weight:700;background:#ffffff1f;border-radius:99px;padding:6px 14px}
@@ -47,45 +52,46 @@ h2 em{font-style:normal;font-size:11px;font-weight:800;text-transform:uppercase;
 .fim a{text-decoration:underline;text-underline-offset:3px;font-size:17px}
 .ios{font-size:12px;color:#ffffffb0;max-width:420px}
 [dir=rtl] .inf{flex-direction:row-reverse;text-align:right}
-@media (prefers-reduced-motion:reduce){.dl{animation:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.dl,.sc{animation:none}html{scroll-behavior:auto}}
 @media (min-width:700px){.g{padding-top:120px}.v--p img,.v--p video{max-height:100%}}</style>
 </head>
 <body>
 <header class="top"><div class="bar"><b><i>Lipy</i> Games · <span id="tt">Baixe grátis na Google Play</span></b><select id="lg" aria-label="Language"><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="id">Indonesia</option><option value="ja">日本語</option></select></div><nav class="nv"><a href="#nitrovenant" aria-label="Nitrovenant"><img src="nitrovenant-i.webp" width="40" height="40" alt=""></a><a href="#quiver" aria-label="Quiver: Arrow Puzzle"><img src="quiver-i.webp" width="40" height="40" alt=""></a><a href="#legiontide" aria-label="LEGIONTIDE"><img src="legiontide-i.webp" width="40" height="40" alt=""></a><a href="#swarmoria" aria-label="SWARMORIA"><img src="swarmoria-i.webp" width="40" height="40" alt=""></a><a href="#this-level-hates-you" aria-label="This Level Hates You"><img src="this-level-hates-you-i.webp" width="40" height="40" alt=""></a><a href="#hoparade" aria-label="Hoparade"><img src="hoparade-i.webp" width="40" height="40" alt=""></a></nav></header>
+<nav class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></nav>
 <main>
 <section class="g" id="nitrovenant" style="--a:#ff7a1a;--b:#b3122e">
 <div class="bg" style="background-image:url(nitrovenant.webp)"></div>
-<div class="v v--l"><img class="pp" src="nitrovenant.webp" width="720" height="405" alt="" fetchpriority="high"><video muted loop playsinline preload="none" data-src="nitrovenant.mp4" poster="nitrovenant.webp"></video></div>
+<div class="v v--l"><img class="pp" src="nitrovenant.webp" width="720" height="405" alt="" fetchpriority="high"><video muted loop playsinline autoplay preload="auto" data-src="nitrovenant.mp4" poster="nitrovenant.webp"></video><script>(function(v){var q=/[?&]g=([\w-]+)/.exec(location.search),c=navigator.connection;if((!q||q[1]===v.parentNode.parentNode.id)&&!(c&&c.saveData))v.src=v.getAttribute('data-src')})(document.currentScript.previousElementSibling)</script><i class="sc" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></div>
 <div class="inf"><img class="ic" src="nitrovenant-i.webp" width="56" height="56" alt=""><div><h2>Nitrovenant</h2><p data-r="nitrovenant">Carro contra zumbis em três faixas, com nitro e chefes.</p></div></div>
 <a class="dl" data-play="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" rel="noopener" data-umami-event="dl_play" data-umami-event-jogo="nitrovenant"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4-12 6.8c-.5.3-1.1.2-1.6 0Z"/><path fill="#EA4335" d="M3.6 1.8c.5-.2 1.1-.2 1.6.1l12 6.7-3.4 3.4L3.6 1.8Z"/></svg><span data-t="baixar">Baixar na Google Play</span></a><small class="ln" data-t="linha">Grátis · Android</small><a class="web" href="/hub/free-games/nitrovenant/?utm_source=instagram&amp;utm_medium=bio" data-umami-event="dl_web" data-umami-event-jogo="nitrovenant" hidden><span data-t="web">Jogar grátis no navegador</span></a>
 </section>
 <section class="g" id="quiver" style="--a:#3ef08a;--b:#2170ff">
-<div class="bg" style="background-image:url(quiver.webp)"></div>
-<div class="v v--p"><img class="pp" src="quiver.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="quiver.mp4" poster="quiver.webp"></video></div>
+<div class="bg" data-bg="quiver.webp"></div>
+<div class="v v--p"><img class="pp" data-src="quiver.webp" width="540" height="960" alt="" decoding="async"><video muted loop playsinline preload="none" data-src="quiver.mp4"></video><i class="sc" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></div>
 <div class="inf"><img class="ic" src="quiver-i.webp" width="56" height="56" alt=""><div><h2>Quiver: Arrow Puzzle</h2><p data-r="quiver">Toque na seta com caminho livre e limpe o tabuleiro.</p></div></div>
 <a class="dl" data-play="https://play.google.com/store/apps/details?id=com.lipy.quiver" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" rel="noopener" data-umami-event="dl_play" data-umami-event-jogo="quiver"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4-12 6.8c-.5.3-1.1.2-1.6 0Z"/><path fill="#EA4335" d="M3.6 1.8c.5-.2 1.1-.2 1.6.1l12 6.7-3.4 3.4L3.6 1.8Z"/></svg><span data-t="baixar">Baixar na Google Play</span></a><small class="ln" data-t="linha">Grátis · Android</small><a class="web" href="/hub/free-games/quiver/?utm_source=instagram&amp;utm_medium=bio" data-umami-event="dl_web" data-umami-event-jogo="quiver" hidden><span data-t="web">Jogar grátis no navegador</span></a>
 </section>
 <section class="g" id="legiontide" style="--a:#ffc21a;--b:#2f6bff">
-<div class="bg" style="background-image:url(legiontide.webp)"></div>
-<div class="v v--l"><img class="pp" src="legiontide.webp" width="720" height="405" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="legiontide.mp4" poster="legiontide.webp"></video></div>
+<div class="bg" data-bg="legiontide.webp"></div>
+<div class="v v--l"><img class="pp" data-src="legiontide.webp" width="720" height="405" alt="" decoding="async"><video muted loop playsinline preload="none" data-src="legiontide.mp4"></video><i class="sc" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></div>
 <div class="inf"><img class="ic" src="legiontide-i.webp" width="56" height="56" alt=""><div><h2>LEGIONTIDE</h2><p data-r="legiontide">Multiplique a legião nos portões e derrube chefes gigantes.</p></div></div>
 <a class="dl" data-play="https://play.google.com/store/apps/details?id=com.lipy.legiontide" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" rel="noopener" data-umami-event="dl_play" data-umami-event-jogo="legiontide"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4-12 6.8c-.5.3-1.1.2-1.6 0Z"/><path fill="#EA4335" d="M3.6 1.8c.5-.2 1.1-.2 1.6.1l12 6.7-3.4 3.4L3.6 1.8Z"/></svg><span data-t="baixar">Baixar na Google Play</span></a><small class="ln" data-t="linha">Grátis · Android</small><a class="web" href="/hub/free-games/legiontide/?utm_source=instagram&amp;utm_medium=bio" data-umami-event="dl_web" data-umami-event-jogo="legiontide" hidden><span data-t="web">Jogar grátis no navegador</span></a>
 </section>
 <section class="g" id="swarmoria" style="--a:#2ad8ff;--b:#8a5cff">
-<div class="bg" style="background-image:url(swarmoria.webp)"></div>
-<div class="v v--p"><img class="pp" src="swarmoria.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="swarmoria.mp4" poster="swarmoria.webp"></video></div>
+<div class="bg" data-bg="swarmoria.webp"></div>
+<div class="v v--p"><img class="pp" data-src="swarmoria.webp" width="540" height="960" alt="" decoding="async"><video muted loop playsinline preload="none" data-src="swarmoria.mp4"></video><i class="sc" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></div>
 <div class="inf"><img class="ic" src="swarmoria-i.webp" width="56" height="56" alt=""><div><h2>SWARMORIA</h2><p data-r="swarmoria">Guie o enxame, devore tudo e derrube Titãs gigantes.</p></div></div>
 <a class="dl" data-play="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" data-umami-event="dl_play" data-umami-event-jogo="swarmoria"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4-12 6.8c-.5.3-1.1.2-1.6 0Z"/><path fill="#EA4335" d="M3.6 1.8c.5-.2 1.1-.2 1.6.1l12 6.7-3.4 3.4L3.6 1.8Z"/></svg><span data-t="baixar">Baixar na Google Play</span></a><small class="ln" data-t="linha">Grátis · Android</small><a class="web" href="/hub/free-games/swarmoria/?utm_source=instagram&amp;utm_medium=bio" data-umami-event="dl_web" data-umami-event-jogo="swarmoria" hidden><span data-t="web">Jogar grátis no navegador</span></a>
 </section>
 <section class="g" id="this-level-hates-you" style="--a:#ff4d5e;--b:#8a5cff">
-<div class="bg" style="background-image:url(this-level-hates-you.webp)"></div>
-<div class="v v--p"><img class="pp" src="this-level-hates-you.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="this-level-hates-you.mp4" poster="this-level-hates-you.webp"></video></div>
+<div class="bg" data-bg="this-level-hates-you.webp"></div>
+<div class="v v--p"><img class="pp" data-src="this-level-hates-you.webp" width="540" height="960" alt="" decoding="async"><video muted loop playsinline preload="none" data-src="this-level-hates-you.mp4"></video><i class="sc" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></div>
 <div class="inf"><img class="ic" src="this-level-hates-you-i.webp" width="56" height="56" alt=""><div><h2>This Level Hates You</h2><p data-r="this-level-hates-you">A saída está logo ali. A fase te odeia.</p></div></div>
 <a class="dl" data-play="https://play.google.com/store/apps/details?id=com.lipy.thislevel" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" rel="noopener" data-umami-event="dl_play" data-umami-event-jogo="this-level-hates-you"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4-12 6.8c-.5.3-1.1.2-1.6 0Z"/><path fill="#EA4335" d="M3.6 1.8c.5-.2 1.1-.2 1.6.1l12 6.7-3.4 3.4L3.6 1.8Z"/></svg><span data-t="baixar">Baixar na Google Play</span></a><small class="ln" data-t="linha">Grátis · Android</small><a class="web" href="/hub/free-games/this-level-hates-you/?utm_source=instagram&amp;utm_medium=bio" data-umami-event="dl_web" data-umami-event-jogo="this-level-hates-you" hidden><span data-t="web">Jogar grátis no navegador</span></a>
 </section>
 <section class="g" id="hoparade" style="--a:#7bd34a;--b:#ff8a3d">
-<div class="bg" style="background-image:url(hoparade.webp)"></div>
-<div class="v v--p"><img class="pp" src="hoparade.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="hoparade.mp4" poster="hoparade.webp"></video></div>
+<div class="bg" data-bg="hoparade.webp"></div>
+<div class="v v--p"><img class="pp" data-src="hoparade.webp" width="540" height="960" alt="" decoding="async"><video muted loop playsinline preload="none" data-src="hoparade.mp4"></video></div>
 <div class="inf"><img class="ic" src="hoparade-i.webp" width="56" height="56" alt=""><div><h2>Hoparade <em data-t="novo">Novo</em></h2><p data-r="hoparade">Pule entre carros, trens e rios e leve os bichinhos para casa.</p></div></div>
 <span class="brv" data-t="breve">Em breve na Google Play</span><a class="dl dl--web" href="/hub/free-games/hoparade/?utm_source=instagram&amp;utm_medium=bio" data-umami-event="dl_web" data-umami-event-jogo="hoparade"><span data-t="web">Jogar grátis no navegador</span></a>
 </section>
@@ -106,14 +112,31 @@ var s=d.getElementById('lg');s.onchange=function(){try{localStorage.setItem('lip
 var as=d.querySelectorAll('[data-play]');for(var i=0;i<as.length;i++){var a=as[i],slug=a.parentNode.id,u=a.getAttribute('data-play');a.href=u+'&referrer='+encodeURIComponent('utm_source=instagram&utm_medium=bio&utm_campaign=downloads&utm_content='+slug);
 if(!and){var g=a.parentNode,w=g.querySelector('.web');a.hidden=true;var ln=g.querySelector('.ln');if(ln)ln.hidden=true;if(w){w.hidden=false;w.className='dl dl--web'}}}
 if(!and&&ios){var o=d.getElementById('ios');if(o)o.hidden=false}
-// vídeos: só o que está perto da tela baixa; só o que aparece toca
-var vs=d.querySelectorAll('video'),dados=navigator.connection&&navigator.connection.saveData;
-if('IntersectionObserver' in window&&!dados){var perto=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting&&!v.src){v.src=v.getAttribute('data-src')}})},{rootMargin:'100% 0px'});
-var vis=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting&&e.intersectionRatio>.6){if(v.src){var p=v.play();if(p&&p.catch)p.catch(function(){});v.classList.add('on')}}else{v.pause()}})},{threshold:[0,.6]});
-function liga(){for(var i=0;i<vs.length;i++){perto.observe(vs[i]);vis.observe(vs[i]);vs[i].addEventListener('playing',function(){this.classList.add('on')})}}
-if(d.readyState==='complete')liga();else addEventListener('load',liga)}
 // ?g=quiver abre direto no jogo do vídeo
 var q=/[?&]g=([\w-]+)/.exec(location.search);if(q){var e=d.getElementById(q[1]);if(e){h.style.scrollBehavior='auto';e.scrollIntoView();h.style.scrollBehavior=''}}
+// vídeos: o 1º já vem no HTML e começa na hora; os outros baixam UM por vez, só os que estão perto da tela, e o que aparece toca na hora
+var vs=[].slice.call(d.querySelectorAll('video')),poupa=navigator.connection&&navigator.connection.saveData,gq=/[?&]g=([w-]+)/.exec(location.search),carregando=null,perto={};
+if(vs[0]&&!vs[0].getAttribute('src')){vs[0].removeAttribute('autoplay');vs[0].preload='none'}
+var go=false,secs=[].slice.call(d.querySelectorAll('.g')),nearS={},visS={};
+function abre(x){var im=x.querySelector('img[data-src]');if(im){im.src=im.getAttribute('data-src');im.removeAttribute('data-src')}var b=x.querySelector('[data-bg]');if(b){b.style.backgroundImage='url('+b.getAttribute('data-bg')+')';b.removeAttribute('data-bg')}}
+function libera(){for(var i=0;i<secs.length;i++)if(visS[i]||(go&&nearS[i]))abre(secs[i])}
+function vai(){if(go)return;go=true;libera();prox()}
+if(!vs[0]||!vs[0].getAttribute('src'))go=true;else{vs[0].addEventListener('playing',vai);setTimeout(vai,3000)}
+function prox(){if(poupa)return;if(!go)return;if(carregando&&carregando.getAttribute('src')&&carregando.readyState<3)return;for(var i=0;i<vs.length;i++){var v=vs[i];if(!v.getAttribute('src')&&perto[i]){v.src=v.getAttribute('data-src');carregando=v;return}}}
+vs.forEach(function(v){v.addEventListener('playing',function(){v.classList.add('on')});v.addEventListener('canplay',prox)});
+if('IntersectionObserver' in window){
+var po=new IntersectionObserver(function(es){es.forEach(function(e){perto[vs.indexOf(e.target)]=e.isIntersecting});prox()},{rootMargin:'100% 0px'});
+// seções: visível = carrega a imagem já; perto = carrega depois que o 1º vídeo começa
+var ps=new IntersectionObserver(function(es){es.forEach(function(e){nearS[secs.indexOf(e.target)]=e.isIntersecting});libera()},{rootMargin:'100% 0px'});
+var pv=new IntersectionObserver(function(es){es.forEach(function(e){visS[secs.indexOf(e.target)]=e.isIntersecting});libera()},{threshold:.01});
+secs.forEach(function(x){ps.observe(x);pv.observe(x)});
+var vi=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting&&e.intersectionRatio>.6){if(!v.getAttribute('src')&&!poupa)v.src=v.getAttribute('data-src');var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:[0,.6]});
+vs.forEach(function(v){po.observe(v);vi.observe(v)});
+// bolinhas de posição (à direita) e dica de rolagem (some na primeira rolagem)
+var dots=d.querySelectorAll('.dots i');
+var pos=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=secs.indexOf(e.target);for(var k=0;k<dots.length;k++)dots[k].className=k===i?'on':''}})},{threshold:.55});
+secs.forEach(function(x){pos.observe(x)})}
+addEventListener('scroll',function(){h.classList.add('rolou')},{passive:true,once:true});
 // contagem de visitas (sem cookie), só depois de carregar
 addEventListener('load',function(){setTimeout(function(){var s=d.createElement('script');s.src='https://cloud.umami.is/script.js';s.defer=true;s.setAttribute('data-website-id','deac8e0b-6aac-49d6-945f-0a0c851fbf8a');d.head.appendChild(s)},800)})})();</script>
 </body>
