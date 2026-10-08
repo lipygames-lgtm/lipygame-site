@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="../assets/js/idioma.js?v=02c38426"></script>
+  <script src="../assets/js/idioma.js?v=da53c194"></script>
   <title>Quiver: Arrow Puzzle — Lipy Games</title>
   <meta name="description" content="Quiver: Arrow Puzzle é o quebra-cabeça de setas da Lipy Games: toque na seta com caminho livre e limpe o tabuleiro. 360 fases, 2 modos e chefes que atacam suas peças.">
   <meta name="theme-color" content="#120a03">
@@ -136,6 +136,10 @@
         <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
         <span><b>LEGIONTIDE</b><small>Legião no navegador</small></span>
       </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>Resgate de bichinhos</small></span>
+      </a>
     </div>
   </header>
 
@@ -154,6 +158,7 @@
       <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
       <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
       <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="../quiver.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -186,6 +191,7 @@
           </div>
           <div class="gh__ctas">
             <a class="btn btn--game" href="#experimente" data-magnetic>Jogar uma fase agora <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="btn btn--glass" href="hub/jogos-gratis/quiver/" data-jogar-hub>Jogar grátis no navegador <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
             <a class="store" data-store="quiver" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Em breve no</small><b>Google Play</b></span></a>
           </div>
         </div>
@@ -200,7 +206,7 @@
           <span class="fl q-combo" data-depth="1.3" aria-hidden="true">COMBO<b>×4</b></span>
         </div>
       </div>
-      <div class="wrap gh__foot"><span>Universo 01 / 05</span><span>Role para jogar</span></div>
+      <div class="wrap gh__foot"><span>Universo 01 / 06</span><span>Role para jogar</span></div>
     </section>
 
     <!-- ============ SENSAÇÃO ============ -->
@@ -503,39 +509,27 @@
             <p class="eyebrow" data-reveal>Onde jogar</p>
             <h2 class="h2" id="onde-t" data-split>Jogue onde você <span class="txt-game">estiver.</span></h2>
           </div>
-          <p class="lead" data-reveal>No celular, pela loja que você já usa — ou direto no navegador, sem instalar nada. Cada botão acende no dia em que Quiver chegar àquela plataforma.</p>
+          <p class="lead" data-reveal>Jogue grátis agora, direto no navegador, sem instalar nada. Gostou? Leve Quiver no celular, pela Google Play.</p>
         </div>
-        <div class="onde__grupos">
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegador · sem instalar</p>
+            <div class="onde__lista">
+          <a class="plat glass plat--hub is-live" href="hub/jogos-gratis/quiver/" aria-label="Jogar Quiver grátis no navegador, no Lipy Hub">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-seta"/></svg><b>Lipy Hub</b></span> <span class="plat__st">Jogar grátis</span>
+          </a>
+            </div>
+          </div>
           <div class="onde__grupo" data-reveal>
             <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Celular · Android</p>
             <div class="onde__lista">
           <a class="plat glass" data-store="quiver:play" aria-disabled="true" aria-label="Quiver na Google Play: em breve">
             <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Em breve</span>
           </a>
-          <a class="plat glass" data-store="quiver:amazon" aria-disabled="true" aria-label="Quiver na Amazon Appstore: em breve">
-            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
-            <span class="plat__st" data-status>Em breve</span>
-          </a>
-          <a class="plat glass" data-store="quiver:samsung" aria-disabled="true" aria-label="Quiver na Galaxy Store: em breve">
-            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>Em breve</span>
-          </a>
-            </div>
-          </div>
-          <div class="onde__grupo" data-reveal>
-            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegador · sem instalar</p>
-            <div class="onde__lista">
-          <a class="plat glass" data-store="quiver:poki" aria-disabled="true" aria-label="Quiver na Poki: em breve">
-            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
-            <span class="plat__st" data-status>Em breve</span>
-          </a>
-          <a class="plat glass" data-store="quiver:crazygames" aria-disabled="true" aria-label="Quiver na CrazyGames: em breve">
-            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
-            <span class="plat__st" data-status>Em breve</span>
-          </a>
             </div>
           </div>
         </div>
-        <p class="onde__legal">Google Play é marca da Google LLC. Amazon, Amazon Appstore e o logo da Amazon são marcas da Amazon.com, Inc. ou de suas afiliadas. Samsung e Galaxy Store são marcas da Samsung Electronics Co., Ltd. Poki e CrazyGames são marcas de seus respectivos titulares.</p>
+        <p class="onde__legal">Google Play é marca da Google LLC.</p>
       </div>
     </section>
 <!--/onde-->
@@ -594,7 +588,7 @@
     <a class="gn" href="this-level-hates-you.html" data-game="tlhy" data-vt-scope data-cursor="Próximo">
       <div class="gn__bg" aria-hidden="true"><img src="../assets/media/tlhy/tela-grama.webp" width="720" height="1279" alt="" loading="lazy"></div>
       <div class="wrap gn__in">
-        <span class="gn__k">Próximo universo · 02 / 05</span> <span class="gn__name"><img data-vt="tlhy" src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">This Level Hates You</span> <span class="gn__go">Entrar no universo <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+        <span class="gn__k">Próximo universo · 02 / 06</span> <span class="gn__name"><img data-vt="tlhy" src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">This Level Hates You</span> <span class="gn__go">Entrar no universo <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
       </div>
     </a>
   </main>
@@ -615,6 +609,7 @@
             <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
             <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
             <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
           </ul>
         </div>
         <div class="foot__col">
@@ -654,7 +649,7 @@
   <script src="../assets/vendor/SplitText.min.js"></script>
   <script src="../assets/vendor/CustomEase.min.js"></script>
   <script src="../assets/vendor/lenis.min.js"></script>
-  <script src="../assets/js/lipy.js?v=6f91ffce"></script>
+  <script src="../assets/js/lipy.js?v=997d1a4c"></script>
   <script src="../assets/js/jogo.js?v=721afa8f"></script>
   <script src="../assets/js/quiver.js?v=982b5c53"></script>
 </body>

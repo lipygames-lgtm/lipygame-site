@@ -43,6 +43,8 @@
       if (!android && momento !== 'qr' && abreQr()) e.preventDefault();
       return;
     }
+    var av = e.target.closest && e.target.closest('[data-avise]');
+    if (av) { mede('avise_click'); return; }
     if (e.target.closest && e.target.closest('[data-fecha-qr]')) { if (qr.close) qr.close(); else qr.removeAttribute('open'); }
   });
   if (qr) qr.addEventListener('click', function (e) { if (e.target === qr && qr.close) qr.close(); });
@@ -135,7 +137,7 @@
     var vezes = +(guarda('lipy-cta-' + slug) || 0);
     if (vezes >= 3) return;                      // no máximo 3 convites por visita
     guarda('lipy-cta-' + slug, String(vezes + 1));
-    cta.querySelector('[data-baixar]').setAttribute('data-baixar', momento);
+    var bx = cta.querySelector('[data-baixar]'); if (bx) bx.setAttribute('data-baixar', momento);
     cta.hidden = false; cta.classList.remove('is-saindo');
     mede('play_cta_view', { momento: momento });
     if (S) S.conv++;
@@ -145,11 +147,17 @@
   function escondeCta() { if (!cta || cta.hidden) return; cta.classList.add('is-saindo'); setTimeout(function () { cta.hidden = true; }, 350); }
   if (cta) cta.querySelector('[data-fecha-cta]').addEventListener('click', escondeCta);
 
+  // convite por tempo: depois de ~100 s de jogo (jogos sem fases, como o Hoparade, nunca disparam o convite de vitória)
+  var ctaTempo = +(tela.getAttribute('data-cta-tempo') || 0), ctaTempoT = 0;
+  function agendaCtaTempo() {
+    if (!ctaTempo || !cta || ctaTempoT) return;
+    ctaTempoT = setTimeout(function () { if (document.visibilityState === 'visible' && !guarda('lipy-cta3-' + slug)) { guarda('lipy-cta3-' + slug, '1'); mostraCta('tempo'); } }, ctaTempo * 1000);
+  }
   var comecou = false, jaPronto = false;  // jaPronto: o jogo apareceu na tela (evento 'lipy:jogo-pronto' para o Pixel)
   addEventListener('message', function (e) {
     if (e.origin !== location.origin || !frame || e.source !== frame.contentWindow) return;
     var d = e.data || {};
-    if (d.lipy === 'carregou') { tiraEspera(); if (!jaPronto) { jaPronto = true; window.lipyJogou = 1; try { document.dispatchEvent(new Event('lipy:jogou')); } catch (e) {} try { document.dispatchEvent(new CustomEvent('lipy:jogo-pronto', { detail: { jogo: slug } })); } catch (e) {} } }
+    if (d.lipy === 'carregou') { tiraEspera(); agendaCtaTempo(); if (!jaPronto) { jaPronto = true; window.lipyJogou = 1; try { document.dispatchEvent(new Event('lipy:jogou')); } catch (e) {} try { document.dispatchEvent(new CustomEvent('lipy:jogo-pronto', { detail: { jogo: slug } })); } catch (e) {} } }
     if (d.lipy === 'carregou' && S && S.carregou == null) { S.carregou = Date.now() - S.t0; envia(false); }
     if (d.lipy === 'erro' && S && !S.erro) { S.erro = String(d.msg || '').slice(0, 160); envia(true); }
     if (d.lipy === 'fase' && !comecou) { comecou = true; mede('game_start'); }

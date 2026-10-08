@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="facebook-domain-verification" content="e59au97mdkcdeujxgss4q535uqdoif">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="../assets/js/idioma.js?v=02c38426"></script>
+  <script src="../assets/js/idioma.js?v=da53c194"></script>
   <title>Lipy Games — मोबाइल गेम स्टूडियो</title>
-  <meta name="description" content="Lipy Games एक ब्राज़ीलियाई मोबाइल गेम स्टूडियो है। हमने Quiver: Arrow Puzzle, This Level Hates You, Nitrovenant, SWARMORIA और LEGIONTIDE बनाए हैं — ऐसे गेम जिनके कुछ मिनट कहानी बन जाते हैं।">
+  <meta name="description" content="Lipy Games ब्राज़ील का मोबाइल गेम स्टूडियो है। हमने बनाए हैं Quiver: Arrow Puzzle, This Level Hates You, Nitrovenant, SWARMORIA, LEGIONTIDE और Hoparade — ऐसे गेम जिनके मिनट यादगार कहानी बन जाते हैं।">
   <meta name="theme-color" content="#05070f">
   <link rel="canonical" href="https://lipygame.com/hi/">
   <link rel="alternate" hreflang="en" href="https://lipygame.com/">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Lipy Games">
   <meta property="og:locale" content="hi_IN">
   <meta property="og:title" content="Lipy Games — दुनिया पॉज़ पर। आप दबाते हैं प्ले।">
-  <meta property="og:description" content="ब्राज़ीलियाई मोबाइल गेम स्टूडियो। पाँच यूनिवर्स, 612 लेवल, छह भाषाएँ।">
+  <meta property="og:description" content="ब्राज़ील का मोबाइल गेम स्टूडियो। छह यूनिवर्स, 612 लेवल, छह भाषाएँ।">
   <meta property="og:url" content="https://lipygame.com/hi/">
   <meta property="og:image" content="https://lipygame.com/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@
   <link rel="preload" as="image" href="../assets/media/video/hero-poster-movel.webp" media="(max-width: 599px)" fetchpriority="high">
   <link rel="preload" as="image" href="../assets/media/video/hero-poster.webp" media="(min-width: 600px)" fetchpriority="high">
   <link rel="stylesheet" href="../assets/css/lipy.css?v=0779ecc1">
-  <link rel="stylesheet" href="../assets/css/home.css?v=3edd586a">
+  <link rel="stylesheet" href="../assets/css/home.css?v=d9ef4988">
   <script>
     /* antes da 1ª pintura: liga o JS, decide pré-carregador / véu de chegada */
     (function (h) {
@@ -145,6 +145,10 @@
         <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
         <span><b>LEGIONTIDE</b><small>ब्राउज़र में सेना</small></span>
       </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>जानवरों का बचाव</small></span>
+      </a>
     </div>
   </header>
 
@@ -163,6 +167,7 @@
       <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
       <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
       <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="../index.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -187,8 +192,9 @@
           <div class="amb" data-amb="2" data-bg="../assets/media/nitro/arte.webp" style="--tint:rgba(255,60,10,.55)"></div>
           <div class="amb" data-amb="3" data-bg="../assets/media/swarm/fundo-fase.webp" style="--tint:rgba(60,120,255,.55)"></div>
           <div class="amb" data-amb="4" data-bg="../assets/media/legion/capa.webp" style="--tint:rgba(255,170,30,.5)"></div>
+          <div class="amb" data-amb="5" data-bg="../assets/media/hopa/capa-fundo.webp" style="--tint:rgba(255,150,60,.5)"></div>
           <div class="stage__words">
-            <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span> <span data-word="3">SWARM</span> <span data-word="4">LEGION</span>
+            <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span> <span data-word="3">SWARM</span> <span data-word="4">LEGION</span> <span data-word="5">HOPA</span>
           </div>
         </div>
 
@@ -219,6 +225,7 @@
             <video class="stage__app" data-app="2" muted loop playsinline preload="none" poster="../assets/media/nitro/video-abertura-poster.webp" src="../assets/media/nitro/video-abertura.mp4" tabindex="-1"></video>
             <img class="stage__app" data-app="3" src="../assets/media/swarm/tela-fase.webp" width="720" height="1279" alt="" loading="lazy" decoding="async">
             <img class="stage__app" data-app="4" src="../assets/media/legion/hi/retrato.webp" width="720" height="1280" alt="" loading="lazy" decoding="async">
+            <img class="stage__app" data-app="5" src="../assets/media/hopa/retrato.webp" width="720" height="1280" alt="" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -247,7 +254,7 @@
 
           <div class="hero__foot wrap">
             <span class="hero__scroll"><i class="hero__phone"><i></i></i>स्क्रॉल करके अंदर आएँ</span>
-            <span class="hero__fim"><span class="hero__stats mono">05 यूनिवर्स <i></i> 612 लेवल <i></i> 06 भाषाएँ</span><button class="hero__pausa glass glass--pill" type="button" data-pausa aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg><svg class="i-toca" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg><span>वीडियो रोकें</span></button></span>
+            <span class="hero__fim"><span class="hero__stats mono">06 यूनिवर्स <i></i> 612 लेवल <i></i> 06 भाषाएँ</span><button class="hero__pausa glass glass--pill" type="button" data-pausa aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg><svg class="i-toca" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg><span>वीडियो रोकें</span></button></span>
           </div>
         </div>
 
@@ -307,9 +314,19 @@
               <a class="link-arrow u-line" href="legiontide.html" data-game="legion">यूनिवर्स में उतरें <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
             </div>
           </div>
+          <div class="cap" data-cap="6">
+            <div class="cap__l">
+              <span class="cap__idx mono">06 — परेड</span>
+              <h2 class="cap__name cap__name--hopa">Hoparade</h2>
+            </div>
+            <div class="cap__r">
+              <p class="cap__line">सही सड़क पार करने का मज़ा, और पीछे जानवरों की पूरी कतार।</p>
+              <a class="link-arrow u-line" href="hoparade.html" data-game="hopa">यूनिवर्स में उतरें <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </div>
         </div>
 
-        <ol class="stage__dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
+        <ol class="stage__dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li></ol>
       </div>
     </section>
 
@@ -330,7 +347,7 @@
       <div class="wrap unis__head">
         <div>
           <p class="eyebrow" data-reveal>हमारे यूनिवर्स</p>
-          <h2 class="h1" id="unis-t" data-split>पाँच यूनिवर्स।<br><span class="txt-cool">ज़ीरो दोहराव।</span></h2>
+          <h2 class="h1" id="unis-t" data-split>छह यूनिवर्स।<br><span class="txt-cool">कुछ भी दोहराया नहीं।</span></h2>
         </div>
         <p class="lead" data-reveal>Lipy का हर गेम अपने नियमों, अपने किरदारों और एक ऐसे एहसास के साथ जन्म लेता है, जो सिर्फ़ वही दे सकता है।</p>
       </div>
@@ -493,7 +510,7 @@
               </ul>
               <div class="uni__ctas">
                 <a class="btn btn--warm" href="legiontide.html" data-game="legion" data-magnetic>यूनिवर्स में उतरें <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
-                <a class="store store--mini" data-store="legion:crazygames" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 12.5v4.5l4-2.25z" fill="currentColor"/></svg><span><small>जल्द आ रहा है</small><b>CrazyGames पर</b></span></a>
+                <a class="store store--mini" data-store="legion" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>जल्द आ रहा है</small><b>Google Play पर</b></span></a>
               </div>
             </div>
             <div class="uni__visual" data-float>
@@ -502,6 +519,36 @@
               <img class="fl fl--lt-giant" data-depth="1.1" src="../assets/media/legion/ic-giant.webp" width="192" height="155" alt="" loading="lazy">
               <img class="fl fl--lt-archer" data-depth="1.4" src="../assets/media/legion/ic-archer.webp" width="192" height="187" alt="" loading="lazy">
               <img class="fl fl--lt-coin" data-depth="0.9" src="../assets/media/legion/ic-coin.webp" width="160" height="160" alt="" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <!-- HOPARADE -->
+        <article class="uni uni--hopa" data-vt-scope style="--c1:#ff9a3c;--c2:#7bd34a;--c3:#0c2a1a">
+          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/hopa/capa-fundo.webp" width="1200" height="675" alt="" loading="lazy" decoding="async"></div>
+          <div class="uni__dim" aria-hidden="true"></div>
+          <div class="uni__grid">
+            <div class="uni__text">
+              <div class="uni__top">
+                <span class="uni__n mono">06</span> <span class="chip glass glass--thin glass--pill">परेड</span> <span class="chip chip--line">ब्राउज़र</span>
+              </div>
+              <a class="uni__id" href="hoparade.html" data-game="hopa" data-cursor="अंदर चलें" tabindex="-1" aria-hidden="true">
+                <img class="uni__icon" data-vt="hopa" src="../assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy">
+              </a>
+              <h3 class="uni__name">Hoparade<small>कैज़ुअल 3D</small></h3>
+              <p class="uni__tag">कूदो, बचाओ और सबको घर ले चलो। सड़कें, पटरियाँ और नदियाँ पार करो, पीछे जानवरों की कतार लिए।</p>
+              <ul class="uni__facts glass glass--dark">
+                <li><b>5</b><span>दुनिया</span></li>
+                <li><b>1</b><span>फ़ार्म</span></li>
+                <li><b>6</b><span>भाषाएँ</span></li>
+              </ul>
+              <div class="uni__ctas">
+                <a class="btn btn--warm" href="hoparade.html" data-game="hopa" data-magnetic>यूनिवर्स में उतरें <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+                <a class="store store--mini" data-store="hopa" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>जल्द आ रहा है</small><b>Google Play पर</b></span></a>
+              </div>
+            </div>
+            <div class="uni__visual" data-float>
+              <img class="fl fl--hp-arte" data-depth="0.3" src="../assets/media/hopa/capa-vertical.webp" width="720" height="1080" alt="" loading="lazy">
+              <div class="phone uni__phone" data-depth="0.15"><div class="phone__screen"><img src="../assets/media/hopa/retrato.webp" width="720" height="1280" alt="लाल मफ़लर वाला खरगोश हॉपी, जानवरों की कतार के आगे कूदता हुआ" loading="lazy"><i class="phone__glare"></i></div><i class="phone__island"></i></div>
             </div>
           </div>
         </article>
@@ -529,7 +576,7 @@
         <p class="eyebrow">लाइब्रेरी</p>
         <p class="wall__num"><span data-count="612">612</span></p>
         <h2 class="h3" id="wall-t">लेवल, जिनमें वक़्त का होश ही न रहे।</h2>
-        <p class="wall__split mono"><span>360 · Quiver</span><span>66 · This Level Hates You</span><span>120 · Nitrovenant</span><span>36 · SWARMORIA</span><span>30 · LEGIONTIDE</span></p>
+        <p class="wall__split mono"><span>360 · Quiver</span><span>66 · This Level Hates You</span><span>120 · Nitrovenant</span><span>36 · SWARMORIA</span><span>30 · LEGIONTIDE</span><span>5 · Hoparade</span></p>
       </div>
     </section>
 
@@ -664,6 +711,7 @@
                 <label class="gtog"><input type="checkbox" name="j" value="nitro"><img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">Nitrovenant</label>
                 <label class="gtog"><input type="checkbox" name="j" value="swarm"><img src="../assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy">SWARMORIA</label>
                 <label class="gtog"><input type="checkbox" name="j" value="legion"><img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy">LEGIONTIDE</label>
+                <label class="gtog"><input type="checkbox" name="j" value="hopa"><img src="../assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy">Hoparade</label>
               </div>
             </fieldset>
             <div class="signup__field glass">
@@ -695,6 +743,7 @@
               <img src="../assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy">
               <img src="../assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy">
               <img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy">
+              <img src="../assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy">
             </div>
             <div class="pass__row">
               <div><small>धारक</small><b data-pass-nome>आप?</b></div>
@@ -747,6 +796,7 @@
             <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
             <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
             <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
           </ul>
         </div>
         <div class="foot__col">
@@ -787,7 +837,7 @@
   <script src="../assets/vendor/CustomEase.min.js"></script>
   <script src="../assets/vendor/lenis.min.js"></script>
   <script src="../assets/js/textos/hi.js?v=3b13be44"></script>
-  <script src="../assets/js/lipy.js?v=6f91ffce"></script>
+  <script src="../assets/js/lipy.js?v=997d1a4c"></script>
   <script src="../assets/js/home.js?v=3322d279"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="../assets/js/idioma.js?v=02c38426"></script>
+  <script src="../assets/js/idioma.js?v=da53c194"></script>
   <title>Quiver: Arrow Puzzle — Lipy Games</title>
   <meta name="description" content="لعبة Quiver: Arrow Puzzle هي لعبة ألغاز السهام من Lipy Games: اضغط على السهم ذي المسار المفتوح ونظّف الرقعة. 360 مرحلة، ووضعان، وزعماء يهاجمون قطعك.">
   <meta name="theme-color" content="#120a03">
@@ -136,6 +136,10 @@
         <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
         <span><b>LEGIONTIDE</b><small>فيلق في المتصفح</small></span>
       </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>إنقاذ الحيوانات الأليفة</small></span>
+      </a>
     </div>
   </header>
 
@@ -154,6 +158,7 @@
       <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
       <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
       <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="../quiver.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -186,6 +191,7 @@
           </div>
           <div class="gh__ctas">
             <a class="btn btn--game" href="#experimente" data-magnetic>العب مرحلة الآن <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="btn btn--glass" href="hub/free-games/quiver/" data-jogar-hub>العب مجانًا في المتصفح <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
             <a class="store" data-store="quiver" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>قريبًا على</small><b>Google Play</b></span></a>
           </div>
         </div>
@@ -200,7 +206,7 @@
           <span class="fl q-combo" data-depth="1.3" aria-hidden="true">كومبو<b>×4</b></span>
         </div>
       </div>
-      <div class="wrap gh__foot"><span>العالم 01 / 05</span><span>مرّر لتلعب</span></div>
+      <div class="wrap gh__foot"><span>العالم 01 / 06</span><span>مرّر لتلعب</span></div>
     </section>
 
     <!-- ============ SENSAÇÃO ============ -->
@@ -503,39 +509,27 @@
             <p class="eyebrow" data-reveal>أين تلعب</p>
             <h2 class="h2" id="onde-t" data-split>العب أينما <span class="txt-game">كنت.</span></h2>
           </div>
-          <p class="lead" data-reveal>على هاتفك، من المتجر الذي تستخدمه بالفعل — أو مباشرة في المتصفح، دون تثبيت أي شيء. يضيء كل زر في اليوم الذي تصل فيه Quiver إلى تلك المنصة.</p>
+          <p class="lead" data-reveal>العب مجانًا الآن مباشرة من المتصفح، من دون تثبيت أي شيء. أعجبتك اللعبة؟ خذ Quiver معك إلى هاتفك عبر Google Play.</p>
         </div>
-        <div class="onde__grupos">
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>المتصفح · دون تثبيت</p>
+            <div class="onde__lista">
+          <a class="plat glass plat--hub is-live" href="hub/free-games/quiver/" aria-label="العب Quiver مجانًا في المتصفح عبر Lipy Hub">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-seta"/></svg><b>Lipy Hub</b></span> <span class="plat__st">العب مجانًا</span>
+          </a>
+            </div>
+          </div>
           <div class="onde__grupo" data-reveal>
             <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>الهاتف · Android</p>
             <div class="onde__lista">
           <a class="plat glass" data-store="quiver:play" aria-disabled="true" aria-label="Quiver على Google Play: قريبًا">
             <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>قريبًا</span>
           </a>
-          <a class="plat glass" data-store="quiver:amazon" aria-disabled="true" aria-label="Quiver على Amazon Appstore: قريبًا">
-            <span class="plat__logo"><img src="../assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
-            <span class="plat__st" data-status>قريبًا</span>
-          </a>
-          <a class="plat glass" data-store="quiver:samsung" aria-disabled="true" aria-label="Quiver على Galaxy Store: قريبًا">
-            <span class="plat__logo"><img class="plat__gs" src="../assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>قريبًا</span>
-          </a>
-            </div>
-          </div>
-          <div class="onde__grupo" data-reveal>
-            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>المتصفح · دون تثبيت</p>
-            <div class="onde__lista">
-          <a class="plat glass" data-store="quiver:poki" aria-disabled="true" aria-label="Quiver على Poki: قريبًا">
-            <span class="plat__logo"><img class="plat__poki" src="../assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
-            <span class="plat__st" data-status>قريبًا</span>
-          </a>
-          <a class="plat glass" data-store="quiver:crazygames" aria-disabled="true" aria-label="Quiver على CrazyGames: قريبًا">
-            <span class="plat__logo"><img class="plat__cg" src="../assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
-            <span class="plat__st" data-status>قريبًا</span>
-          </a>
             </div>
           </div>
         </div>
-        <p class="onde__legal">تُعد Google Play علامة تجارية لشركة Google LLC. وتُعد Amazon و Amazon Appstore وشعار Amazon علامات تجارية لشركة Amazon.com, Inc. أو الشركات التابعة لها. وتُعد Samsung و Galaxy Store علامتين تجاريتين لشركة Samsung Electronics Co., Ltd. أما Poki و CrazyGames فهما علامتان تجاريتان لمالكيهما المعنيين.</p>
+        <p class="onde__legal">Google Play علامة تجارية لشركة Google LLC.</p>
       </div>
     </section>
 <!--/onde-->
@@ -594,7 +588,7 @@
     <a class="gn" href="this-level-hates-you.html" data-game="tlhy" data-vt-scope data-cursor="التالي">
       <div class="gn__bg" aria-hidden="true"><img src="../assets/media/tlhy/tela-grama.webp" width="720" height="1279" alt="" loading="lazy"></div>
       <div class="wrap gn__in">
-        <span class="gn__k">العالم التالي · 02 / 05</span> <span class="gn__name"><img data-vt="tlhy" src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">This Level Hates You</span> <span class="gn__go">ادخل العالم <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+        <span class="gn__k">العالم التالي · 02 / 06</span> <span class="gn__name"><img data-vt="tlhy" src="../assets/media/tlhy/icone.webp" width="512" height="512" alt="" loading="lazy">This Level Hates You</span> <span class="gn__go">ادخل العالم <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
       </div>
     </a>
   </main>
@@ -615,6 +609,7 @@
             <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
             <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
             <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
           </ul>
         </div>
         <div class="foot__col">
@@ -655,7 +650,7 @@
   <script src="../assets/vendor/CustomEase.min.js"></script>
   <script src="../assets/vendor/lenis.min.js"></script>
   <script src="../assets/js/textos/ar.js?v=fe1f0d3d"></script>
-  <script src="../assets/js/lipy.js?v=6f91ffce"></script>
+  <script src="../assets/js/lipy.js?v=997d1a4c"></script>
   <script src="../assets/js/jogo.js?v=721afa8f"></script>
   <script src="../assets/js/quiver.js?v=982b5c53"></script>
 </body>

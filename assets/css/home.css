@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* ---------------- palco: vídeo → celular ---------------- */
-.stage { position: relative; height: 780vh; }
+.stage { position: relative; height: 890vh; }
 .stage__sticky {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
   --px: 0px; --py: 0px; --pw: 320px; --ph: 672px; --pr: 50px; --pad: 11px;
@@ -200,6 +200,11 @@
 .cap__name--legion { font-size: clamp(2rem, 3.7vw, 4.2rem); background: linear-gradient(180deg, #fff 25%, #ffd23f 60%, #2f6bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .uni--legion .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
 .uni--legion .uni__bg img { object-position: 50% 45%; }
+/* Hoparade */
+.cap__name--hopa { font-size: clamp(2rem, 3.7vw, 4.2rem); background: linear-gradient(180deg, #fff 25%, #ffb347 60%, #7bd34a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uni--hopa .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
+.uni--hopa .uni__bg img { object-position: 50% 45%; }
+.fl--hp-arte { z-index: 1; width: 56%; left: 22%; top: 4%; border-radius: 28px; rotate: -6deg; opacity: .92; box-shadow: 0 40px 80px -30px #000, 0 0 0 1px rgba(255, 255, 255, .1); animation: none; }
 .fl--lt-arte { z-index: 1; width: 56%; left: 22%; top: 4%; border-radius: 28px; rotate: 7deg; opacity: .9; box-shadow: 0 40px 80px -30px #000, 0 0 0 1px rgba(255, 255, 255, .1); animation: none; }
 .fl--lt-giant { z-index: 3; width: clamp(80px, 8vw, 128px); left: 6%; bottom: 14%; rotate: -8deg; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .55)); }
 .fl--lt-archer { z-index: 3; width: clamp(64px, 6.4vw, 104px); right: 8%; top: 16%; rotate: 9deg; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .55)); }
@@ -335,7 +340,7 @@ html.no-js .wall__row, html.rm .wall__row { transform: translateX(-20%); }
   .contact__routes { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
-  .stage { height: 670vh; }
+  .stage { height: 765vh; }
   .hero { padding-bottom: 104px; }
   .hero__title { font-size: clamp(2.5rem, 11.5vw, 4.4rem); }
   .hud > li:nth-child(1), .hud > li:nth-child(4) { display: none; }

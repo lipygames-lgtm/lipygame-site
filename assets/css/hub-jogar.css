@@ -184,3 +184,26 @@
 .jg__espera.is-saindo { opacity: 0; }
 @keyframes gira { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .jg__espera p i { animation: none; } }
+
+/* ---------- faixa "Leve o jogo no celular": fica sempre abaixo do jogo, com as cores do jogo ---------- */
+.jg__app { position: relative; display: flex; align-items: center; gap: 16px; padding: 16px 18px; border-top: 1px solid var(--line); overflow: hidden; isolation: isolate;
+  background: radial-gradient(120% 220% at 0% 0%, color-mix(in srgb, var(--c1) 34%, transparent), transparent 62%), radial-gradient(90% 200% at 100% 100%, color-mix(in srgb, var(--c2) 30%, transparent), transparent 60%), rgba(255, 255, 255, .03); }
+.jg__app-ico { width: 62px; height: 62px; border-radius: 17px; flex: none; box-shadow: 0 10px 24px -10px #000, 0 0 0 1px rgba(255, 255, 255, .22); }
+.jg__app-txt { display: grid; gap: 3px; min-width: 0; flex: 1; line-height: 1.25; }
+.jg__app-txt b { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.02rem, 2.2vw, 1.3rem); letter-spacing: -.02em; }
+.jg__app-txt small { font-size: 13px; color: var(--txt-2); }
+.jg__app-play { height: 52px; padding: 0 24px; font-size: 16px; flex: none; animation: jgPulso 3.2s ease-in-out infinite; }
+.jg__app-play .ic { font-size: 19px; }
+.jg__app-breve { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--txt); background: rgba(255, 255, 255, .1); box-shadow: inset 0 0 0 1px var(--line-2); flex: none; }
+.jg__app-qr { display: none; flex-direction: column; align-items: center; gap: 4px; flex: none; }
+.jg__app-qr img { width: 84px; height: 84px; border-radius: 10px; background: #fff; padding: 4px; }
+.jg__app-qr small { font-size: 11px; color: var(--txt-3); }
+@media (hover: hover) and (pointer: fine) and (min-width: 900px) { .jg__app-qr { display: flex; } }
+@keyframes jgPulso { 0%, 100% { box-shadow: 0 12px 30px -12px color-mix(in srgb, var(--a1) 70%, transparent), inset 0 1px 0 rgba(255, 255, 255, .7); } 50% { box-shadow: 0 12px 38px -6px color-mix(in srgb, var(--a1) 95%, transparent), 0 0 0 5px color-mix(in srgb, var(--a1) 22%, transparent), inset 0 1px 0 rgba(255, 255, 255, .7); } }
+@media (prefers-reduced-motion: reduce) { .jg__app-play { animation: none; } }
+@media (max-width: 700px) {
+  .jg__app { flex-wrap: wrap; padding: 14px; gap: 12px; }
+  .jg__app-txt { flex: 1 1 calc(100% - 80px); }
+  .jg__app-play { width: 100%; justify-content: center; }
+  .jg__app-breve { order: 3; }
+}

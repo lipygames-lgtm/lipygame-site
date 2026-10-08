@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="assets/js/idioma.js?v=02c38426"></script>
+  <script src="assets/js/idioma.js?v=da53c194"></script>
   <title>LEGIONTIDE — Lipy Games</title>
   <meta name="description" content="LEGIONTIDE is Lipy Games' legion game for the browser: pick your gates, build the right army, topple giant bosses and raise your island kingdom. 30 levels across 3 biomes.">
   <meta name="theme-color" content="#0a0d2c">
@@ -135,6 +135,10 @@
         <img src="assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
         <span><b>LEGIONTIDE</b><small>A legion in your browser</small></span>
       </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>Pet rescue</small></span>
+      </a>
     </div>
   </header>
 
@@ -153,6 +157,7 @@
       <a href="nitrovenant.html" data-game="nitro"><img src="assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
       <a href="swarmoria.html" data-game="swarm"><img src="assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
       <a href="legiontide.html" data-game="legion"><img src="assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="legiontide.html" hreflang="en" lang="en" data-lang="en"><img src="assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -185,7 +190,8 @@
           </div>
           <div class="gh__ctas">
             <a class="btn btn--game" href="#como-se-joga" data-magnetic>Raise the legion <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
-            <a class="store" data-store="legion:crazygames" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 12.5v4.5l4-2.25z" fill="currentColor"/></svg><span><small>Coming soon to</small><b>CrazyGames</b></span></a>
+            <a class="btn btn--glass" href="hub/free-games/legiontide/" data-jogar-hub>Play free in your browser <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="legion" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Coming soon to</small><b>Google Play</b></span></a>
           </div>
         </div>
         <div class="gh__visual lt-visual" data-float>
@@ -202,7 +208,7 @@
           <img class="fl lt-fl lt-fl--coin" src="assets/media/legion/ic-coin.webp" width="160" height="160" alt="" data-depth="1.6">
         </div>
       </div>
-      <div class="wrap gh__foot"><span>Universe 05 / 05</span><span>Pick a gate · then scroll</span></div>
+      <div class="wrap gh__foot"><span>Universe 05 / 06</span><span>Pick a gate · then scroll</span></div>
     </section>
 
     <!-- ============ SENSAÇÃO ============ -->
@@ -444,19 +450,14 @@
             <p class="eyebrow" data-reveal>Where to play</p>
             <h2 class="h2" id="onde-t" data-split>Play wherever <span class="txt-game">you are.</span></h2>
           </div>
-          <p class="lead" data-reveal>Right in your browser, nothing to install — and later on mobile, through the store you already use. Each button lights up the day LEGIONTIDE lands on that platform.</p>
+          <p class="lead" data-reveal>Play free right now, straight in your browser, nothing to install. Hooked? Take LEGIONTIDE with you on your phone, on Google Play.</p>
         </div>
         <div class="onde__grupos onde__grupos--web">
           <div class="onde__grupo" data-reveal>
             <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Browser · no install</p>
             <div class="onde__lista">
-          <a class="plat glass" data-store="legion:poki" aria-disabled="true" aria-label="LEGIONTIDE on Poki: coming soon">
-            <span class="plat__logo"><img class="plat__poki" src="assets/media/plataformas/poki.svg" width="579" height="274" alt="Poki" loading="lazy"></span>
-            <span class="plat__st" data-status>Coming soon</span>
-          </a>
-          <a class="plat glass" data-store="legion:crazygames" aria-disabled="true" aria-label="LEGIONTIDE on CrazyGames: coming soon">
-            <span class="plat__logo"><img class="plat__cg" src="assets/media/plataformas/crazygames.svg" width="546" height="190" alt="CrazyGames" loading="lazy"></span>
-            <span class="plat__st" data-status>Coming soon</span>
+          <a class="plat glass plat--hub is-live" href="hub/free-games/legiontide/" aria-label="Play LEGIONTIDE free in your browser, on Lipy Hub">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-seta"/></svg><b>Lipy Hub</b></span> <span class="plat__st">Play free</span>
           </a>
             </div>
           </div>
@@ -466,17 +467,10 @@
           <a class="plat glass" data-store="legion:play" aria-disabled="true" aria-label="LEGIONTIDE on Google Play: coming soon">
             <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Coming soon</span>
           </a>
-          <a class="plat glass" data-store="legion:amazon" aria-disabled="true" aria-label="LEGIONTIDE on Amazon Appstore: coming soon">
-            <span class="plat__logo"><img src="assets/media/plataformas/amazon-appstore.webp" width="511" height="75" alt="Amazon Appstore" loading="lazy"></span>
-            <span class="plat__st" data-status>Coming soon</span>
-          </a>
-          <a class="plat glass" data-store="legion:samsung" aria-disabled="true" aria-label="LEGIONTIDE on Galaxy Store: coming soon">
-            <span class="plat__logo"><img class="plat__gs" src="assets/media/plataformas/galaxy-store.webp" width="113" height="113" alt="" loading="lazy"><b>Galaxy Store</b></span> <span class="plat__st" data-status>Coming soon</span>
-          </a>
             </div>
           </div>
         </div>
-        <p class="onde__legal">Google Play is a trademark of Google LLC. Amazon, Amazon Appstore and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates. Samsung and Galaxy Store are trademarks of Samsung Electronics Co., Ltd. Poki and CrazyGames are trademarks of their respective owners.</p>
+        <p class="onde__legal">Google Play is a trademark of Google LLC.</p>
       </div>
     </section>
 <!--/onde-->
@@ -532,10 +526,10 @@
     </section>
 
     <!-- ============ PRÓXIMO UNIVERSO ============ -->
-    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="Back">
-      <div class="gn__bg" aria-hidden="true"><img src="assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+    <a class="gn" href="hoparade.html" data-game="hopa" data-vt-scope data-cursor="Next">
+      <div class="gn__bg" aria-hidden="true"><img src="assets/media/hopa/capa-fundo.webp" width="1200" height="675" alt="" loading="lazy"></div>
       <div class="wrap gn__in">
-        <span class="gn__k">Back to the first universe · 01 / 05</span> <span class="gn__name"><img data-vt="quiver" src="assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">Enter the universe <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+        <span class="gn__k">Next universe · 06 / 06</span> <span class="gn__name"><img data-vt="hopa" src="assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy">Hoparade</span> <span class="gn__go">Enter the universe <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
       </div>
     </a>
   </main>
@@ -556,6 +550,7 @@
             <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
             <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
             <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
           </ul>
         </div>
         <div class="foot__col">
@@ -596,7 +591,7 @@
   <script src="assets/vendor/CustomEase.min.js"></script>
   <script src="assets/vendor/lenis.min.js"></script>
   <script src="assets/js/textos/en.js?v=86264a35"></script>
-  <script src="assets/js/lipy.js?v=6f91ffce"></script>
+  <script src="assets/js/lipy.js?v=997d1a4c"></script>
   <script src="assets/js/jogo.js?v=721afa8f"></script>
   <script src="assets/js/legion.js?v=bf3f3001"></script>
 </body>

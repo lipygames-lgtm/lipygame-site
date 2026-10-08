@@ -10,18 +10,15 @@
      LOJAS — quando um jogo chegar a uma loja, troque o null pelo link dele.
      O botão "Em breve" daquela loja vira link de verdade sozinho, em todas as páginas.
        play       Google Play       ex.: 'https://play.google.com/store/apps/details?id=com.lipy.quiver'
-       amazon     Amazon Appstore   ex.: 'https://www.amazon.com/dp/XXXXXXXXXX'
-       samsung    Galaxy Store      ex.: 'https://galaxystore.samsung.com/detail/com.lipy.quiver'
-       poki       Poki (navegador)  ex.: 'https://poki.com/br/g/quiver'
-       crazygames CrazyGames (nav.) ex.: 'https://www.crazygames.com/game/quiver'
      ------------------------------------------------------------------ */
   var LOJA = {
-    quiver: { play: 'https://play.google.com/store/apps/details?id=com.lipy.quiver', amazon: null, samsung: null, poki: null, crazygames: null },
-    tlhy: { play: 'https://play.google.com/store/apps/details?id=com.lipy.thislevel', amazon: null, samsung: null, poki: null, crazygames: null },
-    nitro: { play: 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant', amazon: null, samsung: null, poki: null, crazygames: null },
-    swarm: { play: 'https://play.google.com/store/apps/details?id=com.lipy.swarmoria', amazon: null, samsung: null, poki: null, crazygames: null },
-    // LEGIONTIDE: enviado ao CrazyGames em 04/10/2026 (aguardando revisão) — trocar o null quando for aprovado
-    legion: { play: null, amazon: null, samsung: null, poki: null, crazygames: null }
+    quiver: { play: 'https://play.google.com/store/apps/details?id=com.lipy.quiver' },
+    tlhy: { play: 'https://play.google.com/store/apps/details?id=com.lipy.thislevel' },
+    nitro: { play: 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant' },
+    swarm: { play: 'https://play.google.com/store/apps/details?id=com.lipy.swarmoria' },
+    legion: { play: 'https://play.google.com/store/apps/details?id=com.lipy.legiontide' },
+    // Hoparade: ainda sem link da Google Play (08/10) — trocar o null quando a ficha existir
+    hopa: { play: null }
   };
 
   /* ------------------------------------------------------------------
@@ -57,6 +54,7 @@
     nitro: { c1: '#120300', c2: '#c42a00', icon: 'assets/media/nitro/icone.webp' },
     swarm: { c1: '#02091a', c2: '#1c7cff', icon: 'assets/media/swarm/icone.webp' },
     legion: { c1: '#0a0d2c', c2: '#2f6bff', icon: 'assets/media/legion/icone.webp' },
+    hopa: { c1: '#0c2a1a', c2: '#ff9a3c', icon: 'assets/media/hopa/icone.webp' },
     lipy: { c1: '#03050b', c2: '#12245a', icon: '' }
   };
 
@@ -909,7 +907,7 @@
   function idiomas() {
     // "/quiver" e "/quiver.html" são a mesma página no GitHub Pages
     var arquivo = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
-    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|legiontide|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
+    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|legiontide|hoparade|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
     // caminhos a partir da raiz do site (BASE sobe das pastas de idioma até ela)
     // página inicial com endereço limpo (lipygame.com/ e lipygame.com/pt/); aberto direto do arquivo (file://) precisa do nome
     var pagina = arquivo === 'index.html' && location.protocol !== 'file:' ? '' : arquivo;

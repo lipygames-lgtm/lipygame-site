@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ja" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=da53c194"></script>
+  <title>Hoparade — Lipy Games</title>
+  <meta name="description" content="HoparadeはLipy Gamesのレーン跳びゲームです。道路・線路・川を渡り、ペットを助けて、できるだけ長い行列を作り、牧場でお世話しましょう。5つのワールドをブラウザで無料プレイ。">
+  <meta name="theme-color" content="#0c2a1a">
+  <link rel="canonical" href="https://lipygame.com/ja/hoparade.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/hoparade.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/hoparade.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/hoparade.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/hoparade.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/hoparade.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/hoparade.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/hoparade.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="Hoparade — 跳んで、助けて、みんなで帰ろう。">
+  <meta property="og:description" content="道路・線路・川を渡り、ペットを助けて、いちばん長いパレードを作ろう。Lipy Gamesの無料ゲームを、ブラウザですぐに。">
+  <meta property="og:url" content="https://lipygame.com/ja/hoparade.html">
+  <meta property="og:image" content="https://lipygame.com/og-hopa.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=M+PLUS+1p:wght@700;800&family=Noto+Sans+JP:wght@400..700&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=0779ecc1">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=35c7a340">
+  <link rel="stylesheet" href="../assets/css/hopa.css?v=a3fe9b7a">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Hoparade",
+    "description": "ブラウザで遊べるカジュアル3Dゲーム。車・電車・川をレーンごとに跳び越え、迷子のペットを助けて行列を伸ばし、牧場でお世話をします。5つのワールド、フリーズのパワー、6言語対応。",
+    "genre": ["Casual", "Arcade"],
+    "gamePlatform": "Navegador",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/hopa/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
+</head>
+<body class="jogo jogo--hopa" style="--c1:#ff9a3c;--c2:#7bd34a;--c3:#0c2a1a;--c4:#5ad1ff">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">本文へスキップ</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — ホーム"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="メイン">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">ゲーム <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
+        <a href="index.html#estudio">スタジオ</a>
+        <a href="index.html#como-criamos">ゲームづくり</a>
+        <a href="index.html#contato">お問い合わせ</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="言語"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../hoparade.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/hoparade.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/hoparade.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/hoparade.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/hoparade.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/hoparade.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">先行アクセス <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>矢印パズル</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>This Level Hates You</b><small>ドッキリ系アクション</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Nitrovenant</b><small>カーアクション</small></span>
+      </a>
+      <a class="mega__item" href="swarmoria.html" data-game="swarm" style="--c:#2a7bff">
+        <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>SWARMORIA</b><small>進化する群れ</small></span>
+      </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>ブラウザで軍団バトル</small></span>
+      </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>ペット救出</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="メニュー">
+      <a href="index.html#universos">ゲーム</a>
+      <a href="hub/">Lipy Hub</a>
+      <a href="index.html#estudio">スタジオ</a>
+      <a href="index.html#como-criamos">ゲームづくり</a>
+      <a href="index.html#lista">先行アクセス</a>
+      <a href="index.html#contato">お問い合わせ</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
+      <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../hoparade.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/hoparade.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/hoparade.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/hoparade.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/hoparade.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/hoparade.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh hp-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/hopa/capa.webp" width="1600" height="900" alt="" fetchpriority="high"></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="現在地"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">ユニバース</a><i>/</i><span aria-current="page">Hoparade</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="hopa" src="../assets/media/hopa/icone.webp" width="512" height="512" alt="Hoparadeのアイコン">
+            <img class="gh__logo hp-logo" src="../assets/media/hopa/logo.webp" width="900" height="335" alt="Hoparade">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">跳んで、助けて、</span><span class="l"><em class="txt-game">みんなで帰ろう。</em></span></h1>
+          <p class="lead gh__lead">Hoppyと一緒に道路・線路・川を渡り、迷子のペットを助けて、できるだけ長い行列を作ろう。そのあとは牧場でお世話をしてあげてください。</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">カジュアル3D</span> <span class="chip chip--line">ブラウザ</span> <span class="chip chip--line">PC・スマホ対応</span> <span class="chip chip--line">インストール不要</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#como-se-joga" data-magnetic>遊び方を見る <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="btn btn--glass" href="hub/free-games/hoparade/" data-jogar-hub>ブラウザで無料プレイ <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="hopa" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>近日公開</small><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual hp-visual" data-float>
+          <div class="tela hp-visual__tela" data-depth="0.15">
+            <div class="tela__screen">
+              <img src="../assets/media/hopa/tela-van-resgate.webp" width="1280" height="720" alt="Hoppyがペットの行列を連れて道路を渡り、救助バンへ向かっている" fetchpriority="high">
+              <i class="phone__glare"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>ユニバース 06 / 06</span><span>跳べ · そしてスクロール</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">この感覚</p>
+        <p class="gi__txt" data-scrub-words>車が両側からせまる瞬間、フリーズが発動。世界じゅうが<em>スローモーションになり</em>、ペットの行列があなたの後ろを渡っていきます。その瞬間こそがこのゲームです。</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section hp-gp" id="como-se-joga" data-gp aria-labelledby="gp-t" tabindex="-1">
+      <div class="wrap">
+        <p class="eyebrow">遊び方</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">跳べ。助けろ。<br><span class="txt-game">フリーズ。</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>車のあいだを跳ぼう。</h3>
+            <p>1タップで1マス進みます。車や電車、川の丸太のすき間を待ってからジャンプ。道の左右も必ずチェックしましょう。</p>
+            <span class="chip chip--line gp__gesture">矢印キー、WASD、スワイプ</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-cidade.webp" width="1280" height="720" alt="Hoppyが街の道路で車のあいだを跳んでいる" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>ペットを助けよう。</h3>
+            <p>迷子のペットはHoppyの後ろの行列に加わります。行列が長いほどリスクも報酬も大きくなります。全員を救助バンまで連れていけば、本当に助かります。</p>
+            <span class="chip chip--line gp__gesture">助けるたびに行列が伸びる</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-van-resgate.webp" width="1280" height="720" alt="ペットの行列が紫色の救助バンに到着する" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>フリーズを使おう。</h3>
+            <p>ペットを助けるとフリーズのゲージがたまります。交通がきびしくなったら、世界全体を数秒間ゆっくりにできます。電車のためにとっておきましょう。</p>
+            <span class="chip chip--line gp__gesture">ShiftまたはE · ゲージ満タンで</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-congela-desfile.webp" width="1280" height="720" alt="フリーズで世界がスローになり、ペットのパレードが道を渡っていく" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">04</span>
+            <h3>牧場をお世話しよう。</h3>
+            <p>助けたペットは牧場で暮らします。ランの合間に、種まき、水やり、収穫、お客さんの対応をしましょう。ほったらかしにするとペットが悲しみます。</p>
+            <span class="chip chip--line gp__gesture">ドラッグ · 道具をタップ</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-fazenda.webp" width="1280" height="720" alt="畑、柵、ペットがいるHoparadeの牧場" loading="lazy"></div></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="tela gp__phone">
+              <div class="tela__screen">
+                <img data-step="0" src="../assets/media/hopa/tela-cidade.webp" width="1280" height="720" alt="Hoppyが街の道路で車のあいだを跳んでいる" loading="lazy">
+                <img data-step="1" src="../assets/media/hopa/tela-van-resgate.webp" width="1280" height="720" alt="ペットの行列が紫色の救助バンに到着する" loading="lazy">
+                <img data-step="2" src="../assets/media/hopa/tela-congela-desfile.webp" width="1280" height="720" alt="フリーズで世界がスローになり、ペットのパレードが道を渡っていく" loading="lazy">
+                <img data-step="3" src="../assets/media/hopa/tela-fazenda.webp" width="1280" height="720" alt="畑、柵、ペットがいるHoparadeの牧場" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section hp-gg" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">スクリーンショット</p>
+          <h2 class="h1" id="gg-t">5つのワールドと<span class="txt-game">1つの牧場。</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="スクリーンショットを絞り込む" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">すべて</button>
+          <button role="tab" aria-selected="false" data-cat="mundos" aria-controls="gg-lista">ワールド</button>
+          <button role="tab" aria-selected="false" data-cat="corrida" aria-controls="gg-lista">ラン中</button>
+          <button role="tab" aria-selected="false" data-cat="fazenda" aria-controls="gg-lista">牧場</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="ドラッグ">
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/hopa/tela-cidade.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-cidade.webp" width="1280" height="720" alt="車やバスが走る街のワールド" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/hopa/tela-floresta.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-floresta.webp" width="1280" height="720" alt="木々と動物がいる野生の森" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/hopa/tela-pantano.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-pantano.webp" width="1280" height="720" alt="スイレンと丸太がある沼地" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/hopa/tela-praia.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-praia.webp" width="1280" height="720" alt="魚やカニがいる日差しのビーチ" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/hopa/tela-penhasco.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-penhasco.webp" width="1280" height="720" alt="霧がかかり、鳥が急降下する断崖" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="corrida"><a href="../assets/media/hopa/tela-van-resgate.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-van-resgate.webp" width="1280" height="720" alt="救助バンがペットの行列を迎える" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="corrida"><a href="../assets/media/hopa/tela-congela-desfile.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-congela-desfile.webp" width="1280" height="720" alt="フリーズのパワーで世界がスローになる" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="corrida"><a href="../assets/media/hopa/tela-manada-dormindo.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-manada-dormindo.webp" width="1280" height="720" alt="眠っている群れがレーンの半分をふさいでいる" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="corrida"><a href="../assets/media/hopa/tela-crocodilo.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-crocodilo.webp" width="1280" height="720" alt="沼の丸太に見えて、実はワニ" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="corrida"><a href="../assets/media/hopa/tela-morte-reviver.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-morte-reviver.webp" width="1280" height="720" alt="復活を選べるラン終了画面" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="fazenda"><a href="../assets/media/hopa/tela-fazenda.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/hopa/tela-fazenda.webp" width="1280" height="720" alt="畑、柵、ペットがいる牧場" loading="lazy"></div></div></a></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="前のスクリーンショット"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="次のスクリーンショット"><svg aria-hidden="true"><use href="#i-seta"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>基本情報</p>
+        <h2 class="h2" id="ficha-t" data-split>数字で見るHoparade。</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>ジャンル</dt><dd>カジュアル3D<small>ジャンプ、救助、牧場</small></dd></div>
+          <div><dt>対応機種</dt><dd>ブラウザ<small>PC・スマホ対応、インストール不要</small></dd></div>
+          <div><dt>ワールド</dt><dd>5<small>草原、森、沼地、ビーチ、断崖</small></dd></div>
+          <div><dt>パワー</dt><dd>フリーズ<small>世界を数秒間スローにする</small></dd></div>
+          <div><dt>牧場</dt><dd>あり<small>畑、ペット、お客さん</small></dd></div>
+          <div><dt>対応言語</dt><dd>6<small>ポルトガル語 · 英語 · スペイン語 · ヒンディー語 · 日本語 · アラビア語</small></dd></div>
+          <div><dt>価格</dt><dd>無料<small>広告はいつでも任意</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>プレイできる場所</p>
+            <h2 class="h2" id="onde-t" data-split>どこにいても、<span class="txt-game">プレイできる。</span></h2>
+          </div>
+          <p class="lead" data-reveal>インストール不要、ブラウザで今すぐ無料で遊べます。気に入ったら、Google PlayでHoparadeをスマホでも楽しもう。</p>
+        </div>
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>ブラウザ · インストール不要</p>
+            <div class="onde__lista">
+          <a class="plat glass plat--hub is-live" href="hub/free-games/hoparade/" aria-label="Lipy HubでブラウザからHoparadeを無料プレイ">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-seta"/></svg><b>Lipy Hub</b></span> <span class="plat__st">無料プレイ</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>スマホ · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="hopa:play" aria-disabled="true" aria-label="Google PlayのHoparade：近日公開">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>近日公開</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google PlayはGoogle LLCの商標です。</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">先行アクセス</p>
+            <h2 class="h2" id="lista-t">誰よりも早く<span class="txt-game">パレードに参加しよう。</span></h2>
+            <p class="lead">Lista Lipyに登録すると、HoparadeがGoogle Playに登場する日にお知らせします。牧場の最新情報もいち早くお届け。</p>
+            <form class="signup" method="post" data-signup data-origem="hopa" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>受け取りたいもの</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>ベータテスト</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>リリース情報</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>アップデート</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="hopa" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-hopa">メールアドレス</label>
+                <input id="email-hopa" type="email" name="email" autocomplete="email" inputmode="email" placeholder="your@email.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">お知らせを受け取る <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">登録すると、テスト・リリース・最新情報に関する Lipy Games からのメールの受信に同意したことになります。配信停止はいつでもできます。詳しくは<a href="privacidade.html">プライバシーポリシー</a>をご覧ください。</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>パレードに招集しました。登録完了です！</b>
+                <p>配信開始のお知らせと牧場の最新情報を<span data-ok-email></span>へお送りします。</p>
+                <button type="button" data-signup-outro>別のメールアドレスを登録</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="HoparadeのLipy Pass">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema-sm.webp" width="320" height="278" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">招集令<br><span translate="no">Hoparade</span></p>
+              <div class="pass__games"><img src="../assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>チュートリアル</small><b data-pass-nome>あなた？</b></div><div><small>牧場</small><b>Lv 1</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">HOPA<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">有効化済</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="戻る">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">最初のユニバースへ戻る · 01 / 06</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">ユニバースへ <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>ブラジルのモバイルゲームスタジオ。思い出になる数分間のために。</p>
+        </div>
+        <div class="foot__col">
+          <h4>ゲームの世界</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+            <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>スタジオ</h4>
+          <ul>
+            <li><a href="index.html#estudio">Lipy について</a></li>
+            <li><a href="index.html#como-criamos">ゲームづくり</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
+            <li><a href="index.html#lista">Lista Lipy（先行アクセス）</a></li>
+            <li><a href="index.html#contato">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>プライバシー</h4>
+          <ul>
+            <li><a href="privacidade.html">サイトと Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Quiver のアカウント削除</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — <strong>Lipy Serviços Digitais LTDA</strong> のブランド · CNPJ 65.260.227/0001-11</p>
+        <p>ブラジル生まれ · Google Play は Google LLC の商標です。</p>
+        <button class="foot__up glass" type="button" data-top aria-label="ページの先頭へ"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/ja.js?v=f59b8d33"></script>
+  <script src="../assets/js/lipy.js?v=997d1a4c"></script>
+  <script src="../assets/js/jogo.js?v=721afa8f"></script>
+  </body>
+</html>
