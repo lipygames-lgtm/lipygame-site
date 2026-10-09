@@ -207,3 +207,12 @@
   .jg__app-play { width: 100%; justify-content: center; }
   .jg__app-breve { order: 3; }
 }
+
+/* ---------- coleções, estúdio e mapa do site ---------- */
+.arc__cols { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.chip-col { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 999px; font-size: 13.5px; font-weight: 600; color: var(--txt); background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1px var(--line-2); transition: background .2s; }
+.chip-col:hover { background: rgba(255, 255, 255, .14); }
+.jg__mais--rel { margin: 8px 0 4px; }
+.mapa { columns: 2 260px; column-gap: 28px; padding-inline-start: 18px; margin: 8px 0 18px; }
+.mapa li { break-inside: avoid; margin: 4px 0; }
+.mapa a { text-decoration: underline; text-underline-offset: 3px; }
