@@ -130,6 +130,49 @@
   addEventListener('pagehide', function () { envia(true); });
   document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') envia(true); });
 
+  /* ---------- nota do jogo (gostei / não gostei): um voto por aparelho, dá para trocar ou tirar tocando de novo ---------- */
+  var lg = function (k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } };
+  var nota = document.querySelector('[data-nota]');
+  if (nota && API && CHAVE) {
+    var rpcNota = function (fn, args) {
+      return fetch(API + '/rest/v1/rpc/' + fn, { method: 'POST', headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json' }, body: JSON.stringify(args) })
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    };
+    var aparelhoNota = function () {
+      var a = lg('lipy-aparelho');
+      if (!/^[a-z0-9]{16,40}$/.test(a || '')) {
+        a = '';
+        var cr = window.crypto && window.crypto.getRandomValues ? window.crypto.getRandomValues(new Uint8Array(12)) : null;
+        for (var i = 0; i < 12; i++) a += ('0' + ((cr ? cr[i] : Math.floor(Math.random() * 256))).toString(16)).slice(-2);
+        lg('lipy-aparelho', a);
+      }
+      return a;
+    };
+    var pinta = function (sim, nao) {
+      var bs = nota.querySelectorAll('button'), meu = lg('lipy-nota-' + slug) || '';
+      bs[0].querySelector('b').textContent = sim > 0 ? sim : ''; bs[1].querySelector('b').textContent = nao > 0 ? nao : '';
+      bs[0].setAttribute('aria-pressed', String(meu === 'sim')); bs[1].setAttribute('aria-pressed', String(meu === 'nao'));
+    };
+    pinta(0, 0);
+    addEventListener('load', function () {
+      rpcNota('jogo_notas', {}).then(function (lista) {
+        var x = (lista || []).filter(function (n) { return n.slug === slug; })[0];
+        if (x) pinta(x.sim, x.nao);
+      });
+    });
+    nota.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('[data-voto]');
+      if (!b) return;
+      var v = b.getAttribute('data-voto'), novo = (lg('lipy-nota-' + slug) === v) ? '' : v;
+      rpcNota('jogo_votar', { p_slug: slug, p_voto: novo, p_dispositivo: aparelhoNota() }).then(function (r) {
+        if (!r || !r.ok) return;
+        lg('lipy-nota-' + slug, novo);
+        pinta(r.sim, r.nao);
+        mede('game_vote', { voto: novo || 'tirou' });
+      });
+    });
+  }
+
   /* ---------- convite "Continue no celular" ---------- */
   var cta = tela.querySelector('[data-cta]'), ctaTimer = 0, vitorias = 0;
   function mostraCta(momento) {
