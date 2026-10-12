@@ -17,8 +17,8 @@
     nitro: { play: 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant' },
     swarm: { play: 'https://play.google.com/store/apps/details?id=com.lipy.swarmoria' },
     legion: { play: 'https://play.google.com/store/apps/details?id=com.lipy.legiontide' },
-    // Hoparade: ainda sem link da Google Play (08/10) — trocar o null quando a ficha existir
-    hopa: { play: null }
+    // Hoparade: ficha da Play no ar (12/10)
+    hopa: { play: 'https://play.google.com/store/apps/details?id=com.lipy.hoparade' }
   };
 
   /* ------------------------------------------------------------------
