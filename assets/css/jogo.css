@@ -31,6 +31,7 @@ body.jogo .eyebrow::before { background: var(--c1); box-shadow: 0 0 0 4px color-
 .gh__logo { width: clamp(220px, 28vw, 420px); height: auto; filter: drop-shadow(0 16px 30px rgba(0, 0, 0, .55)); }
 .gh__title { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.3rem, 5.3vw, 5.6rem); line-height: .95; letter-spacing: -.045em; text-wrap: balance; }
 .gh__title .l { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.gh__title em { padding: .12em .06em .14em 0; }
 .gh__lead { margin-top: 24px; }
 .gh__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
 .gh__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
