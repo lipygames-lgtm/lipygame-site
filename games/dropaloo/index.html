@@ -1,0 +1,224 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<script src="toque.js"></script>
+<title>Dropaloo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Dropaloo: jogo de tela cheia, um visual só (o céu muda de cor pela emoção); menus em cartões brancos arredondados */
+@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(fonts/baloo2-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(fonts/baloo2-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(fonts/baloo2-devanagari.woff2) format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09}
+@font-face{font-family:'Baloo Bhaijaan 2';font-weight:400 800;font-display:swap;src:url(fonts/bhaijaan2-arabic.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:'M PLUS Rounded 1c';font-weight:800;font-display:swap;src:url(fonts/mplusrounded-ja.woff2) format('woff2')}
+:root{
+  --ink:#2b2d42;            /* contorno e texto: azul-tinta escuro */
+  --paper:#ffffff;          /* cartões */
+  --mist:#eef0f6;           /* trilhos, botões neutros */
+  --sky:#7ec8f2;            /* fundo antes do primeiro quadro */
+  --accent:#5DB7EA;         /* botão principal */
+  --gold:#FFC93C;           /* moedas, recorde */
+  --font:'Baloo 2','Baloo Bhaijaan 2','M PLUS Rounded 1c',system-ui,sans-serif;
+  --sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);--sal:env(safe-area-inset-left,0px);--sar:env(safe-area-inset-right,0px);
+  color-scheme:light
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+html,body{height:100%;overflow:hidden;background:var(--sky);font-family:var(--font);color:var(--ink);touch-action:manipulation;overscroll-behavior:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+#game{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;display:block;transition:filter .3s ease}
+#game.grey{filter:grayscale(1) brightness(.95);transition:filter .15s ease}
+.layer{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;
+  padding-top:calc(16px + var(--sat));padding-bottom:calc(16px + var(--sab));padding-left:max(16px,var(--sal));padding-right:max(16px,var(--sar));text-align:center}
+.layer .tap{pointer-events:auto}
+.hidden{display:none!important}
+b{font-weight:800}
+
+/* topo: moedas e som */
+.hud{position:fixed;top:calc(12px + var(--sat));left:max(12px,var(--sal));right:max(12px,var(--sar));display:flex;justify-content:space-between;align-items:center;pointer-events:none;z-index:5}
+.pill{display:flex;align-items:center;gap:6px;background:rgba(43,45,66,.38);color:#fff;border-radius:999px;padding:4px 14px 4px 6px;font-weight:800;font-size:20px;font-variant-numeric:tabular-nums}
+.pill img{width:30px;height:30px}
+.round{width:52px;height:52px;border-radius:50%;background:rgba(43,45,66,.38);display:flex;align-items:center;justify-content:center;pointer-events:auto}
+.round img{width:28px;height:28px}
+
+/* menu */
+#title{white-space:nowrap;font-weight:800;font-size:clamp(46px,16vw,124px);line-height:1;text-shadow:0 6px 0 rgba(43,45,66,.25)}
+#title span{display:inline-block;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){#title span{animation:none}}
+.hint{margin-top:10px;font-weight:800;font-size:clamp(20px,5.4vw,30px);color:#fff;text-shadow:0 3px 0 rgba(43,45,66,.45)}
+.rule{margin-top:8px;font-weight:600;font-size:clamp(15px,4vw,19px);background:rgba(255,255,255,.8);border-radius:999px;padding:6px 16px;max-width:92vw}
+#start{justify-content:flex-start;padding-top:calc(13vh + var(--sat))}
+.menuBar{position:fixed;left:0;right:0;bottom:calc(36px + var(--sab));display:flex;justify-content:center;gap:8px;padding-left:max(16px,var(--sal));padding-right:max(16px,var(--sar));pointer-events:none}
+.mbtn{pointer-events:auto;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--paper);border-radius:18px;padding:8px 6px 7px;flex:1 1 0;min-width:0;max-width:104px;box-shadow:0 5px 0 rgba(43,45,66,.22);font-weight:800;font-size:14px;line-height:1.1}
+.mbtn small{overflow-wrap:anywhere}
+.mbtn img{width:30px;height:30px;filter:brightness(0) saturate(100%) invert(16%) sepia(13%) saturate(1453%) hue-rotate(198deg)}
+.mbtn small{font-weight:600;font-size:12px;opacity:.7}
+.mbtn.glow{background:var(--gold)}
+.credit{position:fixed;left:0;right:0;bottom:calc(8px + var(--sab));font-size:12px;font-weight:600;color:rgba(43,45,66,.7);direction:ltr}
+
+/* cartões */
+.card{pointer-events:auto;background:var(--paper);border-radius:28px;padding:18px 22px 20px;box-shadow:0 10px 0 rgba(43,45,66,.18);width:min(380px,92vw);max-height:calc(100vh - 40px);overflow:auto}
+.card h2{font-weight:800;font-size:clamp(28px,8vw,40px);line-height:1.05;text-wrap:balance}
+.scores{display:flex;justify-content:center;gap:28px;margin:8px 0 2px}
+.scores div{font-weight:600;font-size:15px;opacity:.75}
+.scores b{display:block;font-size:42px;line-height:1;opacity:1;color:var(--ink);font-variant-numeric:tabular-nums}
+#msg{font-weight:800;font-size:clamp(17px,4.8vw,22px);margin-top:4px}
+.medal{display:flex;align-items:center;gap:12px;margin:10px 0 2px;text-align:start}
+.medal img{width:50px;height:50px;flex:none}
+.medal .info{flex:1;min-width:0}
+.medal .name{font-weight:800;font-size:16px;line-height:1.1}
+.bar{height:12px;border-radius:999px;background:var(--mist);margin-top:5px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:999px;background:var(--fill,#5DB7EA);width:0;transition:width .6s ease .2s}
+[dir=rtl] .bar i{margin-inline-start:auto}
+.next{font-weight:600;font-size:13px;opacity:.75;margin-top:3px}
+.shelf{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.shelf img{width:26px;height:26px}
+.earn{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:8px;font-weight:800;font-size:20px;color:#b8860b}
+.earn img{width:26px;height:26px}
+.row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.btn{pointer-events:auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:16px;padding:10px 16px;font-weight:800;font-size:17px;background:var(--mist);box-shadow:0 4px 0 rgba(43,45,66,.18)}
+.btn.main{background:var(--accent);color:#fff}
+.btn.ad{background:var(--gold)}
+.btn img{width:22px;height:22px}
+.btn.ad img{filter:brightness(0) saturate(100%) invert(16%) sepia(13%) saturate(1453%) hue-rotate(198deg)}
+.btn:disabled{opacity:.5}
+#again{margin-top:12px;font-weight:800;font-size:16px;opacity:.65}
+
+/* gotinhas */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.skin{display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--mist);border-radius:18px;padding:8px 4px;font-weight:800;font-size:14px;min-width:0}
+.skin canvas{width:64px;height:64px}
+.skin small{display:flex;align-items:center;gap:3px;font-size:13px;font-weight:800}
+.skin small img{width:16px;height:16px}
+.skin.sel{outline:3px solid var(--accent);background:#e6f4fd}
+.skin.locked canvas{opacity:.45}
+
+/* ajustes */
+.opt{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 4px;border-bottom:2px solid var(--mist);font-weight:800;font-size:17px;text-align:start}
+.opt:last-of-type{border-bottom:0}
+.tog{min-width:96px;border-radius:999px;padding:6px 12px;background:var(--mist);font-weight:800;font-size:15px}
+.tog.on{background:var(--accent);color:#fff}
+.ver{margin-top:10px;font-size:12px;font-weight:600;opacity:.6;direction:ltr}
+.toastDom{position:fixed;left:50%;bottom:calc(120px + var(--sab));transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:999px;padding:8px 18px;font-weight:800;font-size:16px;z-index:9;pointer-events:none}
+</style>
+
+<canvas id="game"></canvas>
+
+<div id="load" class="layer"><div class="hint" data-t="loading">Carregando…</div></div>
+
+<div class="hud" id="hud">
+  <div class="pill" id="coinPill"><img src="assets/img/coin.png" alt=""><span id="coins">0</span></div>
+  <button class="round" id="pauseBtn" aria-label="Pause"><img src="assets/img/ic_pause.png" alt=""></button>
+</div>
+
+<div id="start" class="layer hidden">
+  <div id="title" aria-label="Dropaloo"></div>
+  <div class="hint" data-t="tapToJump"></div>
+  <div class="rule" data-t="rule"></div>
+  <div class="menuBar">
+    <button class="mbtn" id="bDaily"><img src="assets/img/ic_trophy.png" alt=""><span data-t="daily"></span><small id="dailyInfo"></small></button>
+    <button class="mbtn" id="bSkins"><img src="assets/img/ic_shoppingBasket.png" alt=""><span data-t="skins"></span></button>
+    <button class="mbtn" id="bGift"><img src="assets/img/ic_star.png" alt=""><span data-t="gift"></span><small id="giftInfo"></small></button>
+    <button class="mbtn" id="bSettings"><img src="assets/img/ic_gear.png" alt=""><span data-t="settings"></span></button>
+  </div>
+  <div class="credit">Developed by Lipy Games</div>
+</div>
+
+<div id="over" class="layer hidden">
+  <div class="card">
+    <h2 id="overTitle"></h2>
+    <div class="scores">
+      <div><span data-t="points"></span><b id="oScore">0</b></div>
+      <div><span data-t="best"></span><b id="oBest">0</b></div>
+    </div>
+    <div id="msg"></div>
+    <div class="medal">
+      <img id="mImg" alt="">
+      <div class="info">
+        <div class="name" id="mName"></div>
+        <div class="bar"><i id="mBar"></i></div>
+        <div class="next" id="mNext"></div>
+      </div>
+    </div>
+    <div class="shelf" id="shelf"></div>
+    <div class="earn"><img src="assets/img/coin.png" alt=""><span id="earn"></span></div>
+    <div class="row">
+      <button class="btn ad hidden" id="bRevive"><img src="assets/img/ic_video.png" alt=""><span data-t="continueAd"></span></button>
+      <button class="btn ad hidden" id="bDouble"><img src="assets/img/ic_video.png" alt=""><span data-t="doubleAd"></span></button>
+      <button class="btn" id="bMenu"><span data-t="menu"></span></button>
+    </div>
+    <div id="again" data-t="again"></div>
+  </div>
+</div>
+
+<div id="shop" class="layer hidden">
+  <div class="card">
+    <h2 data-t="skins"></h2>
+    <div class="grid" id="grid"></div>
+    <div class="row"><button class="btn main" id="bShopClose" data-t="close"></button></div>
+  </div>
+</div>
+
+<div id="settingsBox" class="layer hidden">
+  <div class="card">
+    <h2 data-t="settings"></h2>
+    <div style="margin-top:8px">
+      <div class="opt"><span data-t="sound"></span><button class="tog" id="tSound"></button></div>
+      <div class="opt"><span data-t="effects"></span><button class="tog" id="tFx"></button></div>
+      <div class="opt app-only"><span data-t="notifs"></span><button class="tog" id="tNotif"></button></div>
+      <div class="opt"><span data-t="language"></span><button class="tog" id="tLang"></button></div>
+      <div class="opt app-only"><span data-t="privacy"></span><button class="tog" id="tPrivacy">›</button></div>
+    </div>
+    <div class="row">
+      <button class="btn app-only" id="bRate"><img src="assets/img/ic_star.png" alt="" style="filter:brightness(0)"><span data-t="rate"></span></button>
+      <button class="btn main" id="bSetClose" data-t="close"></button>
+    </div>
+    <div class="ver">Developed by Lipy Games · v1.0.0</div>
+  </div>
+</div>
+
+<div id="giftBox" class="layer hidden">
+  <div class="card">
+    <h2 data-t="gift"></h2>
+    <div class="earn" style="font-size:34px"><img src="assets/img/coin.png" alt="" style="width:40px;height:40px"><span id="giftAmt"></span></div>
+    <div class="row">
+      <button class="btn ad hidden" id="bGiftDouble"><img src="assets/img/ic_video.png" alt=""><span data-t="giftDouble"></span></button>
+      <button class="btn main" id="bGiftClose" data-t="close"></button>
+    </div>
+  </div>
+</div>
+
+<div id="invite" class="layer hidden">
+  <div class="card">
+    <h2 data-t="inviteTitle" style="font-size:26px"></h2>
+    <p data-t="inviteBody" style="margin-top:8px;font-weight:600"></p>
+    <div class="row">
+      <button class="btn" id="bInvNo" data-t="inviteNo"></button>
+      <button class="btn main" id="bInvYes" data-t="inviteYes"></button>
+    </div>
+  </div>
+</div>
+
+<div id="pauseBox" class="layer hidden">
+  <div class="card tap" id="pauseCard">
+    <h2 data-t="paused"></h2>
+    <p data-t="tapContinue" style="margin-top:6px;font-weight:800;opacity:.7"></p>
+  </div>
+</div>
+
+<div id="exitBox" class="layer hidden">
+  <div class="card">
+    <h2 data-t="exitQ" style="font-size:28px"></h2>
+    <div class="row">
+      <button class="btn" id="bExitNo" data-t="exitNo"></button>
+      <button class="btn main" id="bExitYes" data-t="exitYes"></button>
+    </div>
+  </div>
+</div>
+
+<script src="portal.js"></script>
+<script src="i18n.js"></script>
+<script src="i18n-extra.js"></script>
+<script src="game.js"></script>

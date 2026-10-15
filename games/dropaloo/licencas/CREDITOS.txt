@@ -1,0 +1,5 @@
+Dropaloo - creditos de terceiros
+Arte e efeitos sonoros: Kenney (www.kenney.nl) - Creative Commons Zero (CC0)
+  Shape Characters, Splat Pack, Background Elements, Particle Pack, Pattern Pack, UI Pack, Game Icons, Interface Sounds, Impact Sounds, Music Jingles
+Sons "bate na tinta e morre" e "Game over": fornecidos pela Lipy Games
+Fontes (SIL Open Font License 1.1): Baloo 2, Baloo Bhaijaan 2 (Ek Type), M PLUS Rounded 1c (M+ Project) - ver fonts/OFL-*.txt
