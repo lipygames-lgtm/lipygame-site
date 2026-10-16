@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Villadash — página do jogo
+   Jogo DEITADO (navegador, 16:9): as telas usam a moldura .tela em vez do celular.
+   Cores do logo e da capa: laranja dourado #FFB43A, azul lavanda #8FB0FF, céu de fim de tarde #150F26,
+   vermelho do Morvane #E8402F.
+   ========================================================================== */
+
+/* moldura de tela deitada (monitor/notebook sem pé) */
+.tela {
+  --rt: 18px;
+  position: relative; width: 100%; padding: 7px; border-radius: var(--rt);
+  background: linear-gradient(145deg, #3a3150, #120d1e 30%, #0a0712 70%, #352b4a);
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .16), 0 40px 80px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(0, 0, 0, .8);
+}
+.tela__screen { position: relative; aspect-ratio: 16 / 9; border-radius: calc(var(--rt) - 7px); overflow: hidden; background: #150f26; isolation: isolate; }
+.tela__screen > img, .tela__screen > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------------- herói ---------------- */
+.vl-hero .gh__bg img { object-position: 50% 40%; filter: blur(2px) saturate(1.15) brightness(.5); }
+.vl-hero::before {
+  /* brilho de fim de tarde vindo de baixo, como o céu da capa */
+  content: ""; position: absolute; inset: auto -10% -30% 30%; height: 70%; z-index: -1; pointer-events: none;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 140, 50, .2), transparent 70%);
+}
+.vl-logo { width: clamp(240px, 28vw, 420px); filter: drop-shadow(0 0 24px rgba(143, 176, 255, .28)) drop-shadow(0 16px 30px rgba(0, 0, 0, .6)); }
+.vl-visual { display: grid; place-items: center; }
+.vl-visual__tela { width: min(100%, 640px); rotate: -3deg; z-index: 2; }
+
+/* ---------------- como se joga: a tela deitada pede mais espaço ---------------- */
+.vl-gp .gp__grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+.vl-gp .gp__phone { width: min(100%, 720px); }
+.vl-gp .gp__phone .tela__screen img { transition: opacity .7s var(--ease-out), transform 1.2s var(--ease-out); opacity: 0; transform: scale(1.06); }
+.vl-gp .gp__phone .tela__screen .is-on { opacity: 1; transform: none; }
+html.no-js .vl-gp .gp__phone [data-step="0"] { opacity: 1; transform: none; }
+.vl-gp .gp__shot { width: 100%; max-width: 560px; }
+.vl-gp .gp__dots { right: -24px; }
+
+/* ---------------- heróis ---------------- */
+.vl-herois .h1 { margin: 20px 0 22px; }
+.vl-herois__lead { max-width: 62ch; }
+.vl-herois .feats { grid-template-columns: repeat(3, 1fr); }
+.vl-he { --g: rgba(143, 176, 255, .35); --hc: #8fb0ff; position: relative; overflow: hidden; transition: translate .6s var(--ease-out); }
+.vl-he::after { content: ""; position: absolute; right: -30%; top: -40%; width: 75%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--g), transparent 65%); pointer-events: none; opacity: .55; transition: opacity .5s; }
+.vl-he:hover { translate: 0 -6px; }
+.vl-he:hover::after { opacity: 1; }
+.vl-he--ronan { --g: rgba(80, 140, 255, .34); --hc: #7aa8ff; }
+.vl-he--lyra { --g: rgba(170, 100, 255, .36); --hc: #c49bff; }
+.vl-he--brann { --g: rgba(90, 220, 170, .32); --hc: #7fe3c0; }
+.vl-he svg.feat__ic { color: var(--hc); filter: drop-shadow(0 0 12px color-mix(in srgb, var(--hc) 60%, transparent)); }
+.vl-he h3 small { display: block; margin-top: 6px; font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--hc); }
+.vl-hab { margin-top: auto; display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .1); }
+.vl-hab b { font-family: var(--f-display); font-size: 1rem; letter-spacing: -.01em; color: var(--hc); }
+.vl-hab span { color: var(--txt-2); font-size: 14.5px; line-height: 1.45; }
+.vl-elenco { margin: clamp(36px, 5vw, 60px) 0 0; display: grid; gap: 12px; }
+.vl-elenco .tela { max-width: 980px; margin-inline: auto; }
+.vl-elenco figcaption { font-family: var(--f-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--txt-2); text-align: center; }
+
+/* ---------------- campanha: 7 vilas ---------------- */
+.vl-vilas .h1 { margin: 20px 0 22px; }
+.vl-vilas__lead { max-width: 62ch; margin-bottom: 44px; }
+.vl-vilas__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.vl-vila { --r: 26px; position: relative; overflow: hidden; padding: 24px 22px 26px; display: flex; flex-direction: column; gap: 10px; }
+.vl-vila__n { font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--c1); }
+.vl-vila h3 { font-family: var(--f-display); font-size: clamp(1.15rem, 1.5vw, 1.4rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; }
+.vl-vila p { color: var(--txt-2); font-size: 15px; }
+/* a batalha final fecha a grade ocupando duas colunas */
+.vl-vila--final { grid-column: span 2; background: linear-gradient(135deg, rgba(232, 64, 47, .16), rgba(255, 255, 255, .03) 60%); }
+.vl-vila--final .vl-vila__n { color: #ff7a66; }
+.vl-vila--final::after { content: ""; position: absolute; right: -10%; bottom: -60%; width: 55%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(232, 64, 47, .35), transparent 65%); pointer-events: none; }
+.vl-telas { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 26px); margin-top: clamp(40px, 5vw, 64px); }
+.vl-telas__it { margin: 0; display: grid; gap: 12px; }
+.vl-telas__it figcaption { font-family: var(--f-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--txt-2); text-align: center; }
+
+/* ---------------- galeria (telas deitadas) ---------------- */
+.vl-gg .gg__item .tela { width: clamp(280px, 40vw, 600px); transition: transform .7s var(--ease-out); }
+.vl-gg .gg__item:hover .tela { transform: translateY(-8px) rotate(-1deg); }
+.vl-gg .gg__item a { border-radius: 18px; }
+
+/* ---------------- onde jogar: o navegador vem primeiro ---------------- */
+.onde__grupos--web { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+
+/* ---------------- responsivo ---------------- */
+@media (max-width: 1100px) {
+  .vl-herois .feats { grid-template-columns: 1fr 1fr; }
+  .vl-vilas__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .vl-visual { height: auto; min-height: 0; padding: 26px 4% 34px; }
+  .vl-gp .gp__grid { grid-template-columns: 1fr; }
+  .vl-telas { grid-template-columns: 1fr 1fr; }
+  .onde__grupos--web { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .vl-herois .feats { grid-template-columns: 1fr; }
+  .vl-vilas__grid { grid-template-columns: 1fr; }
+  .vl-vila--final { grid-column: auto; }
+  .vl-telas { grid-template-columns: 1fr; }
+  .tela { --rt: 14px; padding: 5px; }
+}

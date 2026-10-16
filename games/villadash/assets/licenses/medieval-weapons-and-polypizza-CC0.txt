@@ -1,0 +1,23 @@
+License proof for CC0 models used in weapons.glb / props.glb / nature.glb (downloaded 2026-10-15)
+=====================================================================================
+
+1) "LowPoly Medieval Weapons" (Medieval Weapons Pack) by Quaternius
+   Page: https://quaternius.itch.io/lowpoly-medieval-weapons  (also https://quaternius.com/packs/medievalweapons.html)
+   License stated on the page: "CC0 License https://creativecommons.org/publicdomain/zero/1.0/"
+   The zip ("Medieval Weapons Pack by Quaternius.zip") ships without a license file.
+   Used (OBJ+MTL): Sword, Shield_Heater_2, Bow_Wooden, Arrow, Dagger, Axe_Small, Hammer_Small, Sword_Golden, Claymore, Scythe
+
+2) Single Quaternius models from poly.pizza — every page lists Creator "Quaternius" and Licence "CC0 1.0" (Public Domain)
+   Staff         https://poly.pizza/m/PnGRvO4Lwd   -> Weapon_Staff
+   Well          https://poly.pizza/m/QlqncKYxXb   -> Well
+   Hay           https://poly.pizza/m/Yu8TOERkpw   -> Hay
+   Wooden Torch  https://poly.pizza/m/pNsfJzhXiD   -> Torch_Standing
+   Post          https://poly.pizza/m/jnuIFJsXZJ   -> Stake
+   Wood Log      https://poly.pizza/m/L4E32Wee6C   -> Log
+   Tree Stump with Moss https://poly.pizza/m/nFvEbUX6LE -> Tree_Stump
+
+3) Fantasy Props MegaKit [Standard] and Stylized Nature MegaKit [Standard] by Quaternius — CC0 1.0,
+   see fantasy-props-megakit-License_Standard.txt and stylized-nature-megakit-License_Standard.txt
+   (https://quaternius.itch.io/fantasy-props-megakit , https://quaternius.itch.io/stylized-nature-megakit)
+
+CC0 1.0 Universal — Public Domain Dedication: https://creativecommons.org/publicdomain/zero/1.0/

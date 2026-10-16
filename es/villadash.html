@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="es" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=a46f50ea"></script>
+  <title>Villadash — Lipy Games</title>
+  <meta name="description" content="Villadash es el juego de acción 3D de Lipy Games: elige un héroe, libera a los aldeanos antes que Morvane y gana el duelo final. Siete aldeas, gratis en el navegador.">
+  <meta name="theme-color" content="#150f26">
+  <link rel="canonical" href="https://lipygame.com/es/villadash.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/villadash.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/villadash.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/villadash.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/villadash.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/villadash.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/villadash.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/villadash.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Villadash: salva la aldea antes que Morvane.">
+  <meta property="og:description" content="Elige a uno de tres héroes, corre por la aldea contra el reloj y libera a los aldeanos antes que Morvane. Un juego gratis de Lipy Games, directo en el navegador.">
+  <meta property="og:url" content="https://lipygame.com/es/villadash.html">
+  <meta property="og:image" content="https://lipygame.com/og-villa.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=c2430f99">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=3cb486e0">
+  <link rel="stylesheet" href="../assets/css/villa.css?v=45a84086">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Villadash",
+    "description": "Juego 3D de acción para el navegador: elige a Ronan, Lyra o Brann, corre por la aldea contra el reloj, derrota a los secuaces y libera a los aldeanos antes que Morvane. Al final de la ronda, duelo contra él. Campaña de 7 aldeas.",
+    "genre": ["Ação"],
+    "gamePlatform": "Navegador",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/villa/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
+</head>
+<body class="jogo jogo--villa" style="--c1:#ffb43a;--c2:#8fb0ff;--c3:#150f26;--c4:#e8402f">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Saltar al contenido</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — inicio"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Principal">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Juegos <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
+        <a href="index.html#estudio">Estudio</a>
+        <a href="index.html#como-criamos">Cómo creamos</a>
+        <a href="index.html#contato">Contacto</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Idioma"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../villadash.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/villadash.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/villadash.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/villadash.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/villadash.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/villadash.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Acceso anticipado <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Puzzle de flechas</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>This Level Hates You</b><small>Plataformas troll</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Nitrovenant</b><small>Acción sobre ruedas</small></span>
+      </a>
+      <a class="mega__item" href="swarmoria.html" data-game="swarm" style="--c:#2a7bff">
+        <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>SWARMORIA</b><small>Enjambre que evoluciona</small></span>
+      </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>Legión en el navegador</small></span>
+      </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>Rescate de mascotas</small></span>
+      </a>
+      <a class="mega__item" href="villadash.html" data-game="villa" style="--c:#ffb43a">
+        <img src="../assets/media/villa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Villadash</b><small>Rescate en la aldea</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menú">
+      <a href="index.html#universos">Juegos</a>
+      <a href="hub/">Lipy Hub</a>
+      <a href="index.html#estudio">Estudio</a>
+      <a href="index.html#como-criamos">Cómo creamos</a>
+      <a href="index.html#lista">Acceso anticipado</a>
+      <a href="index.html#contato">Contacto</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant</a>
+      <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
+      <a href="villadash.html" data-game="villa"><img src="../assets/media/villa/icone-sm.webp" width="160" height="160" alt="">Villadash</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../villadash.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/villadash.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/villadash.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/villadash.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/villadash.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/villadash.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh vl-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/villa/capa-fundo.webp" width="1200" height="675" alt="" fetchpriority="high"></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="Estás en"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">Universos</a><i>/</i><span aria-current="page">Villadash</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="villa" src="../assets/media/villa/icone.webp" width="512" height="512" alt="Ícono de Villadash">
+            <img class="gh__logo vl-logo" src="../assets/media/villa/logo.webp" width="900" height="231" alt="Villadash">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">Salva la aldea</span><span class="l"><em class="txt-game">antes que Morvane.</em></span></h1>
+          <p class="lead gh__lead">Morvane y sus bandidos atacan las aldeas del reino, y cada aldeano que se lleva lo vuelve más fuerte. Elige un héroe, corre contra el reloj y llega a los aldeanos antes que él.</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">Acción 3D</span> <span class="chip chip--line">Navegador</span> <span class="chip chip--line">Computadora y celular</span> <span class="chip chip--line">Sin instalar</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#como-se-joga" data-magnetic>Ver cómo se juega <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="btn btn--glass" href="hub/juegos-gratis/villadash/" data-jogar-hub>Jugar gratis en el navegador <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="store" data-store="villa" aria-disabled="true"><svg aria-hidden="true"><use href="#i-play-store"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a>
+          </div>
+        </div>
+        <div class="gh__visual vl-visual" data-float>
+          <div class="tela vl-visual__tela" data-depth="0.15">
+            <div class="tela__screen">
+              <video data-vl-video="../assets/media/villa/gameplay.mp4" poster="../assets/media/villa/gameplay-poster.webp" muted loop playsinline preload="none" aria-label="Partida de Villadash: elección de la heroína Lyra, aldeanos liberados, el ritual de Morvane, el secuaz dorado, una casa en llamas, el convoy nocturno y la batalla final"></video>
+              <i class="phone__glare"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>Universo 07 / 07</span><span>Corre · luego desplázate</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">La sensación</p>
+        <p class="gi__txt" data-scrub-words>Hay un momento en que el círculo rojo del ritual ya está encendido, cae el último guardia y liberas al grupo <em>un segundo antes que Morvane</em>. Ese momento es el juego.</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section vl-gp" id="como-se-joga" data-gp aria-labelledby="gp-t" tabindex="-1">
+      <div class="wrap">
+        <p class="eyebrow">Cómo se juega</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">Corre. Lucha.<br><span class="txt-game">Libera.</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>Corre por la aldea.</h3>
+            <p>El reloj corre desde el primer segundo. El minimapa muestra dónde están los grupos de aldeanos capturados, y el marcador muestra quién va ganando: tú o Morvane.</p>
+            <span class="chip chip--line gp__gesture">WASD, flechas o joystick</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/gameplay-poster.webp" width="960" height="540" alt="El caballero Ronan corre por la plaza de la aldea, con el reloj, el marcador y el minimapa en la parte superior de la pantalla" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>Derrota a los secuaces.</h3>
+            <p>Cada grupo de aldeanos está custodiado por secuaces. Ataca, esquiva cuando aparezca el aviso rojo y usa la habilidad de tu héroe en el momento justo.</p>
+            <span class="chip chip--line gp__gesture">J o clic · Espacio para esquivar</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-frost-wave.webp" width="1280" height="720" alt="El druida Brann usa Frost Wave y congela a los secuaces a su alrededor" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>Mantén presionado para liberar.</h3>
+            <p>Con los guardias en el suelo, mantén presionado hasta que el círculo se llene. Los aldeanos quedan libres y el punto es tuyo.</p>
+            <span class="chip chip--line gp__gesture">mantén F · en el celular, el botón de la mano</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-jail-rescue.webp" width="1280" height="720" alt="Ronan libera a un grupo de aldeanos encerrados dentro de una casa" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">04</span>
+            <h3>Llega antes que Morvane.</h3>
+            <p>Morvane también recorre la aldea en busca de los grupos y hace un ritual para llevárselos. Al final de la ronda, duelo contra él: cada grupo que salvaste te da más fuerza para la pelea.</p>
+            <span class="chip chip--line gp__gesture">marcador: tú × Morvane</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-morvane-ritual.webp" width="1280" height="720" alt="Morvane inicia un ritual en un círculo rojo alrededor de un grupo de aldeanos" loading="lazy"></div></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="tela gp__phone">
+              <div class="tela__screen">
+                <img data-step="0" src="../assets/media/villa/gameplay-poster.webp" width="960" height="540" alt="El caballero Ronan corre por la plaza de la aldea, con el reloj, el marcador y el minimapa en la parte superior de la pantalla" loading="lazy">
+                <img data-step="1" src="../assets/media/villa/tela-frost-wave.webp" width="1280" height="720" alt="El druida Brann usa Frost Wave y congela a los secuaces a su alrededor" loading="lazy">
+                <img data-step="2" src="../assets/media/villa/tela-jail-rescue.webp" width="1280" height="720" alt="Ronan libera a un grupo de aldeanos encerrados dentro de una casa" loading="lazy">
+                <img data-step="3" src="../assets/media/villa/tela-morvane-ritual.webp" width="1280" height="720" alt="Morvane inicia un ritual en un círculo rojo alrededor de un grupo de aldeanos" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HERÓIS ============ -->
+    <section class="section vl-herois" aria-labelledby="herois-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Héroes</p>
+        <h2 class="h1" id="herois-t" data-split>Tres héroes,<br><span class="txt-game">tres formas de salvar.</span></h2>
+        <p class="lead vl-herois__lead" data-reveal>Cada héroe tiene su arma, su habilidad y una ventaja en el rescate. Todos suben del nivel 1 al 10, y la habilidad se vuelve más fuerte en el camino.</p>
+        <div class="feats">
+          <article class="feat glass vl-he vl-he--ronan" data-reveal>
+            <svg class="feat__ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5l16 6v11c0 10-7 18-16 21C15 40 8 32 8 22V11l16-6Z"/><path d="M24 12v24M15 21h18"/></svg>
+            <h3><span translate="no">Ronan</span><small>El caballero</small></h3>
+            <p>Espada y escudo: el más fuerte de los tres. Libera a los aldeanos un 30% más rápido.</p>
+            <p class="vl-hab"><b>Shield Charge</b><span>Una embestida corta que derriba a los secuaces a su paso.</span></p>
+          </article>
+          <article class="feat glass vl-he vl-he--lyra" data-reveal>
+            <svg class="feat__ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 38L32 16l4-8-8 4L6 34"/><path d="M14 30l4 4M8 40l4-4"/><path d="M38 28c2 4 2 8 0 12M42 24c3 6 3 12 0 18" opacity=".6"/></svg>
+            <h3><span translate="no">Lyra</span><small>La pícara</small></h3>
+            <p>La más rápida de los tres. Ve a los aldeanos en el minimapa desde un 50% más lejos.</p>
+            <p class="vl-hab"><b>Shadow Roll</b><span>Un avance largo y unos segundos de invisibilidad frente a los secuaces.</span></p>
+          </article>
+          <article class="feat glass vl-he vl-he--brann" data-reveal>
+            <svg class="feat__ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4v40M6.7 14l34.6 20M6.7 34l34.6-20"/><path d="M19 7l5 5 5-5M19 41l5-5 5 5M7 21l7 1-3 6M41 27l-7-1 3-6M7 27l7-1-3-6M41 21l-7 1 3 6"/></svg>
+            <h3><span translate="no">Brann</span><small>El druida del hielo</small></h3>
+            <p>Controla la pelea con el hielo. Cada aldeano salvado suma 2 segundos al reloj.</p>
+            <p class="vl-hab"><b>Frost Wave</b><span>Congela a los secuaces cercanos durante 3 s.</span></p>
+          </article>
+        </div>
+        <figure class="vl-elenco" data-reveal>
+          <div class="tela"><div class="tela__screen"><img src="../assets/media/villa/capa-fundo.webp" width="1200" height="675" alt="Lyra, Ronan y Brann en la plaza de la aldea, con Morvane detrás de ellos" loading="lazy"></div></div>
+          <figcaption><span translate="no">Lyra · Ronan · Morvane · Brann</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ CAMPANHA ============ -->
+    <section class="section vl-vilas" aria-labelledby="vilas-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Campaña</p>
+        <h2 class="h1" id="vilas-t" data-split>Siete aldeas,<br><span class="txt-game">cada una con una regla nueva.</span></h2>
+        <p class="lead vl-vilas__lead" data-reveal>La campaña recorre el Mapa del Reino, aldea por aldea. Cada aldeano que Morvane se lleva en el camino lo hace más fuerte en la batalla final.</p>
+        <div class="vl-vilas__grid">
+          <article class="vl-vila glass" data-reveal>
+            <span class="vl-vila__n mono">Aldea 01</span>
+            <h3>Aldea de Aldermoor</h3>
+            <p>Donde todo empieza: los guardias, los aldeanos capturados, Morvane y el duelo.</p>
+          </article>
+          <article class="vl-vila glass" data-reveal>
+            <span class="vl-vila__n mono">Aldea 02</span>
+            <h3>Aldea del Molino</h3>
+            <p>El doble de grande, un río con puentes y arqueros disparando desde la otra orilla.</p>
+          </article>
+          <article class="vl-vila glass" data-reveal>
+            <span class="vl-vila__n mono">Aldea 03</span>
+            <h3 translate="no">Pedravale</h3>
+            <p>Aldeanos encerrados dentro de las casas. Entra para liberarlos.</p>
+          </article>
+          <article class="vl-vila glass" data-reveal>
+            <span class="vl-vila__n mono">Aldea 04</span>
+            <h3 translate="no">Brumaria</h3>
+            <p>Reclutas: algunos aldeanos liberados luchan a tu lado.</p>
+          </article>
+          <article class="vl-vila glass" data-reveal>
+            <span class="vl-vila__n mono">Aldea 05</span>
+            <h3>Aldea de la Hoguera</h3>
+            <p>Casas en llamas, cada una con su propio reloj. ¿Cuál salvas primero?</p>
+          </article>
+          <article class="vl-vila glass" data-reveal>
+            <span class="vl-vila__n mono">Aldea 06</span>
+            <h3>Noche de Cuervos</h3>
+            <p>Convoy nocturno: lleva en fila a los aldeanos liberados hasta las hogueras.</p>
+          </article>
+          <article class="vl-vila vl-vila--final glass" data-reveal>
+            <span class="vl-vila__n mono">Aldea 07 · batalla final</span>
+            <h3>Ciudadela de Morvane</h3>
+            <p>La pelea contra Morvane con los tres héroes juntos. Cambia de héroe al instante con las teclas 1, 2 y 3.</p>
+          </article>
+        </div>
+        <div class="vl-telas">
+          <figure class="vl-telas__it" data-reveal><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-burning-house.webp" width="1280" height="720" alt="En la Aldea de la Hoguera, una casa arde con aldeanos atrapados dentro" loading="lazy"></div></div><figcaption>Aldea de la Hoguera</figcaption></figure>
+          <figure class="vl-telas__it" data-reveal><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-night-convoy.webp" width="1280" height="720" alt="De noche, Brann guía una fila de aldeanos liberados por la aldea" loading="lazy"></div></div><figcaption>Noche de Cuervos</figcaption></figure>
+          <figure class="vl-telas__it" data-reveal><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-shadow-giant.webp" width="1280" height="720" alt="En la Ciudadela, los tres héroes enfrentan al gigantesco Morvane, rodeado de círculos rojos" loading="lazy"></div></div><figcaption>Ciudadela de Morvane</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section vl-gg" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">Capturas</p>
+          <h2 class="h1" id="gg-t">De la plaza <span class="txt-game">a la ciudadela.</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Filtrar capturas" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">Todas</button>
+          <button role="tab" aria-selected="false" data-cat="resgate" aria-controls="gg-lista">Rescate</button>
+          <button role="tab" aria-selected="false" data-cat="campanha" aria-controls="gg-lista">Campaña</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="Arrastra">
+          <figure class="gg__item" data-cat="resgate"><a href="../assets/media/villa/gameplay-poster.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/gameplay-poster.webp" width="960" height="540" alt="Ronan en la plaza de la aldea, justo después de liberar a un grupo de aldeanos" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="resgate"><a href="../assets/media/villa/tela-frost-wave.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-frost-wave.webp" width="1280" height="720" alt="La Frost Wave de Brann congela a los secuaces" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="resgate"><a href="../assets/media/villa/tela-morvane-ritual.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-morvane-ritual.webp" width="1280" height="720" alt="El ritual de Morvane alrededor de un grupo de aldeanos" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="resgate"><a href="../assets/media/villa/tela-jail-rescue.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-jail-rescue.webp" width="1280" height="720" alt="Aldeanos liberados dentro de una casa" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="campanha"><a href="../assets/media/villa/tela-burning-house.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-burning-house.webp" width="1280" height="720" alt="Una casa en llamas en la Aldea de la Hoguera" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="campanha"><a href="../assets/media/villa/tela-night-convoy.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-night-convoy.webp" width="1280" height="720" alt="El convoy nocturno de la Noche de Cuervos" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="campanha"><a href="../assets/media/villa/tela-shadow-giant.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/villa/tela-shadow-giant.webp" width="1280" height="720" alt="La batalla final contra el gigantesco Morvane" loading="lazy"></div></div></a></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="Capturas anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="Siguientes capturas"><svg aria-hidden="true"><use href="#i-seta"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Ficha técnica</p>
+        <h2 class="h2" id="ficha-t" data-split>Villadash en números.</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>Género</dt><dd>Acción 3D<small>Rescate contrarreloj y duelo</small></dd></div>
+          <div><dt>Plataforma</dt><dd>Navegador<small>Computadora y celular, sin instalar</small></dd></div>
+          <div><dt>Héroes</dt><dd>3<small>Ronan, Lyra y Brann, del nivel 1 al 10</small></dd></div>
+          <div><dt>Aldeas</dt><dd>7<small>Cada una con una regla nueva</small></dd></div>
+          <div><dt>Controles</dt><dd>Teclado y mouse<small>También táctil y control</small></dd></div>
+          <div><dt>Progreso</dt><dd>Estrellas y monedas<small>Entrenamiento de héroes y atuendos nuevos</small></dd></div>
+          <div><dt>Idiomas</dt><dd>2<small>Portugués · inglés</small></dd></div>
+          <div><dt>Precio</dt><dd>Gratis<small>Sin anuncios en Lipy Hub</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>Dónde jugar</p>
+            <h2 class="h2" id="onde-t" data-split>Juega donde <span class="txt-game">estés.</span></h2>
+          </div>
+          <p class="lead" data-reveal>Juega gratis ahora, directo en el navegador, sin instalar nada. ¿Te gustó? Llévate Villadash en tu celular, desde Google Play.</p>
+        </div>
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegador · sin instalar</p>
+            <div class="onde__lista">
+          <a class="plat glass plat--hub is-live" href="hub/juegos-gratis/villadash/" aria-label="Jugar Villadash gratis en el navegador, en Lipy Hub">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-seta"/></svg><b>Lipy Hub</b></span> <span class="plat__st">Jugar gratis</span>
+          </a>
+            </div>
+          </div>
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Celular · Android</p>
+            <div class="onde__lista">
+          <a class="plat glass" data-store="villa:play" aria-disabled="true" aria-label="Villadash en Google Play: próximamente">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-play-store"/></svg><b>Google Play</b></span> <span class="plat__st" data-status>Muy pronto</span>
+          </a>
+            </div>
+          </div>
+        </div>
+        <p class="onde__legal">Google Play es una marca de Google LLC.</p>
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ LISTA DO JOGO ============ -->
+    <section class="glista section" id="lista" aria-labelledby="lista-t" tabindex="-1">
+      <div class="wrap">
+        <div class="glista__card glass" data-lens="aro:34,escala:64,blur:10">
+          <div>
+            <p class="eyebrow">Acceso anticipado</p>
+            <h2 class="h2" id="lista-t">Llega a la aldea <span class="txt-game">antes que nadie.</span></h2>
+            <p class="lead">Únete a la Lista Lipy: te avisamos el día en que Villadash llegue a Google Play y recibes primero las novedades del juego.</p>
+            <form class="signup" method="post" data-signup data-origem="villa" novalidate style="margin-top:30px">
+              <fieldset>
+                <legend>Quiero recibir</legend>
+                <div class="tog-list">
+                  <label class="tog"><input type="checkbox" name="i" value="beta" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Pruebas beta</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="lancamentos" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Lanzamientos</span></label>
+                  <label class="tog"><input type="checkbox" name="i" value="atualizacoes" checked><span class="tog__ui glass"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 9.5l3 3 6-7"/></svg>Actualizaciones</span></label>
+                </div>
+              </fieldset>
+              <input type="checkbox" name="j" value="villa" checked hidden>
+              <div class="signup__field glass">
+                <label class="sr-only" for="email-villa">Tu correo</label>
+                <input id="email-villa" type="email" name="email" autocomplete="email" inputmode="email" placeholder="tu@correo.com" required>
+                <input class="signup__hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--game" type="submit">Quiero el aviso <span class="btn__ic"><svg class="i-seta" aria-hidden="true"><use href="#i-seta"/></svg><i class="i-load" aria-hidden="true"></i></span></button>
+              </div>
+              <p class="signup__msg" role="status" aria-live="polite"></p>
+              <p class="signup__legal">Al unirte, aceptas recibir correos de Lipy Games sobre pruebas, lanzamientos y novedades. Puedes darte de baja cuando quieras. Consulta la <a href="privacidade.html">política de privacidad</a>.</p>
+              <div class="signup__ok" hidden tabindex="-1">
+                <svg class="signup__check draw" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" pathLength="1"/><path d="M20 33l8 8 16-18" pathLength="1"/></svg>
+                <b>Héroe convocado. ¡Ya estás en la lista!</b>
+                <p>El aviso de lanzamiento y las novedades de Villadash llegarán a <span data-ok-email></span>.</p>
+                <button type="button" data-signup-outro>Registrar otro correo</button>
+              </div>
+            </form>
+          </div>
+          <div class="glista__art">
+            <div class="pass glass" data-tilt="9" role="img" aria-label="Lipy Pass de Villadash">
+              <div class="pass__foil" aria-hidden="true"></div>
+              <div class="pass__top"><img src="../assets/media/marca/emblema-sm.webp" width="320" height="278" alt=""><span class="mono">LIPY PASS</span><span class="pass__tag">BETA</span></div>
+              <p class="pass__title">Convocatoria<br><span translate="no">Villadash</span></p>
+              <div class="pass__games"><img src="../assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy"></div>
+              <div class="pass__row"><div><small>Héroe</small><b data-pass-nome>¿Tú?</b></div><div><small>Nivel</small><b>1</b></div></div>
+              <div class="pass__cut" aria-hidden="true"></div>
+              <div class="pass__bottom"><svg class="pass__bar" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg><span class="mono">VILLA<br>BETA</span></div>
+              <div class="pass__stamp" aria-hidden="true">ACTIVADO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="Volver">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">De vuelta al primer universo · 01 / 07</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">Entrar al universo <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>Estudio brasileño de juegos móviles. Hecho para los minutos que se vuelven historia.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universos</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant</a></li>
+            <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
+            <li><a href="villadash.html" data-game="villa">Villadash</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Estudio</h4>
+          <ul>
+            <li><a href="index.html#estudio">Sobre Lipy</a></li>
+            <li><a href="/downloads/">Descargar los juegos</a></li>
+            <li><a href="index.html#como-criamos">Cómo creamos</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
+            <li><a href="index.html#lista">Lista Lipy (acceso anticipado)</a></li>
+            <li><a href="index.html#contato">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacidad</h4>
+          <ul>
+            <li><a href="privacidade.html">Sitio y Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Eliminar cuenta de Quiver</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — marca de <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Hecho en Brasil · Google Play es una marca de Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Volver arriba"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/es.js?v=c33b5721"></script>
+  <script src="../assets/js/lipy.js?v=0dccb010"></script>
+  <script src="../assets/js/jogo.js?v=c5b033fe"></script>
+  <script src="../assets/js/villa.js?v=d45ed079"></script>
+  </body>
+</html>

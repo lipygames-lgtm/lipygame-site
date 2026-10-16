@@ -18,7 +18,9 @@
     swarm: { play: 'https://play.google.com/store/apps/details?id=com.lipy.swarmoria' },
     legion: { play: 'https://play.google.com/store/apps/details?id=com.lipy.legiontide' },
     // Hoparade: ficha da Play no ar (12/10)
-    hopa: { play: 'https://play.google.com/store/apps/details?id=com.lipy.hoparade' }
+    hopa: { play: 'https://play.google.com/store/apps/details?id=com.lipy.hoparade' },
+    // Villadash: jogo de navegador; a ficha da Play ainda não existe (botão "Em breve")
+    villa: { play: null }
   };
 
   /* ------------------------------------------------------------------
@@ -55,6 +57,7 @@
     swarm: { c1: '#02091a', c2: '#1c7cff', icon: 'assets/media/swarm/icone.webp' },
     legion: { c1: '#0a0d2c', c2: '#2f6bff', icon: 'assets/media/legion/icone.webp' },
     hopa: { c1: '#0c2a1a', c2: '#ff9a3c', icon: 'assets/media/hopa/icone.webp' },
+    villa: { c1: '#150f26', c2: '#ffb43a', icon: 'assets/media/villa/icone.webp' },
     lipy: { c1: '#03050b', c2: '#12245a', icon: '' }
   };
 
@@ -907,7 +910,7 @@
   function idiomas() {
     // "/quiver" e "/quiver.html" são a mesma página no GitHub Pages
     var arquivo = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
-    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|legiontide|hoparade|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
+    arquivo = /^(index|quiver|this-level-hates-you|nitrovenant|swarmoria|legiontide|hoparade|villadash|privacidade)$/.test(arquivo) ? arquivo + '.html' : 'index.html';
     // caminhos a partir da raiz do site (BASE sobe das pastas de idioma até ela)
     // página inicial com endereço limpo (lipygame.com/ e lipygame.com/pt/); aberto direto do arquivo (file://) precisa do nome
     var pagina = arquivo === 'index.html' && location.protocol !== 'file:' ? '' : arquivo;

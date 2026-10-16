@@ -1,0 +1,8 @@
+Source page : https://opengameart.org/content/medieval-battle
+Page title  : Medieval: Battle | OpenGameArt.org
+Author      : RandomMind (https://opengameart.org/users/randommind)
+Posted      : Friday, May 15, 2020
+License     : CC0 1.0 Universal (Public Domain Dedication) - https://creativecommons.org/publicdomain/zero/1.0/
+Verified    : 2026-10-15, License(s) field on the page reads 'CC0'
+Raw license field from page HTML: href='http://creativecommons.org/publicdomain/zero/1.0/' license-name'>CC0 
+Page description: My medieval battle track. Can be freely used for your projects. Credits are appreciated but not required! 
