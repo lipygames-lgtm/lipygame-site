@@ -87,7 +87,7 @@
     mensagem(t('Entre na sua conta'), texto, [[t('Entrar'), function () { C.abreEntrar(); }, 1], [t('Voltar ao Lipy Hub'), R.hub]]);
   }
   function semPerfil(eu) {
-    if (eu && eu.banido) return mensagem(t('Conta suspensa'), t('Esta conta foi suspensa pela moderação do Lipy Hub. Se acha que foi engano, fale com a gente pelo contato do Hub.'), [[t('Sair'), function () { C.sair(); }]]);
+    if (eu && eu.banido) return mensagem(t('Conta suspensa'), t('Esta conta foi suspensa pela moderação do Lipy Hub. Se acha que foi engano, fale com a gente pelo contato do Hub.'), [[t('Sair da conta'), function () { C.sair(); }]]);
     mensagem(t('Falta criar o seu perfil'), t('Escolha um apelido e um avatar para usar a parte de amigos do Lipy Hub.'), [[t('Criar perfil'), R.entrar, 1]]);
   }
   // página que só funciona com login + perfil: chama fn(eu) quando estiver tudo certo
@@ -466,7 +466,7 @@
     ul.textContent = '';
     var lista = p.conquistas || [];
     $('[data-n]', cq).textContent = sou && euFull && euFull.conquistas > lista.length ? num(euFull.conquistas) : num(lista.length);
-    var legenda = function (c) { return [C.nomeConquista(c.codigo), c.jogo ? C.nomeJogo(D, c.jogo) : '', dataCurta(c.quando)].filter(Boolean).join(' · '); };
+    var legenda = function (c) { return [C.nomeConquista(c.codigo), c.jogo ? C.nomeJogo(D, c.jogo) : '', c.quando ? dataCurta(c.quando) : ''].filter(Boolean).join(' · '); };
     lista.forEach(function (c) {
       var m = MEDALHA.filter(function (x) { return x[0].test(c.codigo); })[0] || MEDALHA[0];
       var li = el('li'), b = el('button', 'pf-med');
@@ -479,7 +479,7 @@
       ['mouseenter', 'focus', 'click'].forEach(function (ev) { b.addEventListener(ev, function () { leg.textContent = legenda(c); }); });
       li.appendChild(b); ul.appendChild(li);
     });
-    leg.textContent = lista[0] ? t('Mais nova: {c}', { c: legenda(lista[0]) }) : (sou ? t('Jogue os jogos grátis do Hub para ganhar as primeiras conquistas.') : t('Nenhuma conquista ainda.'));
+    leg.textContent = lista[0] ? (lista[0].quando ? t('Mais nova: {c}', { c: legenda(lista[0]) }) : legenda(lista[0])) : (sou ? t('Jogue os jogos grátis do Hub para ganhar as primeiras conquistas.') : t('Nenhuma conquista ainda.'));
     cq.hidden = false;
     // jogos e tempo (biblioteca)
     var at = $('[data-pf-ativ]'), box = $('[data-lista]', at);
@@ -498,7 +498,7 @@
       var nome = el('a', 'pf-rec__nome', C.nomeJogo(D, j.jogo)); nome.href = linkJogo(D, j.jogo);
       if (j.favorito) nome.appendChild(el('span', 'pf-rec__fav', '★')).setAttribute('aria-hidden', 'true');
       topo.appendChild(nome);
-      topo.appendChild(el('span', 'pf-rec__horas' + (agora ? ' is-agora' : ''), t('{t} jogados', { t: tempo(j.segundos) }) + ' · ' + (agora ? t('jogando agora') : t('jogou {quando}', { quando: C.ha(j.ultima) }))));
+      topo.appendChild(el('span', 'pf-rec__horas' + (agora ? ' is-agora' : ''), t('{t} jogados', { t: tempo(j.segundos) }) + (agora ? ' · ' + t('jogando agora') : j.ultima ? ' · ' + t('jogou {quando}', { quando: C.ha(j.ultima) }) : '')));
       info.appendChild(topo);
       info.appendChild(el('p', 'pf-rec__num', t('Partidas: {p} · Vitórias: {v}', { p: num(j.partidas), v: num(j.vitorias) })));
       if (porJogo) {

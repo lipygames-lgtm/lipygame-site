@@ -159,7 +159,7 @@
         <p class="eyebrow">Privacidade</p>
         <h1 class="h1" data-split>Seus dados, <span class="txt-cool">sem letra miúda.</span></h1>
         <p class="lead">Esta página explica o que acontece com as suas informações no site da Lipy Games (incluindo o Lipy Hub) e na Lista Lipy — a lista de e-mails de testes beta, lançamentos e atualizações. Cada jogo tem a própria política, com os detalhes do que acontece dentro dele.</p>
-        <p class="legal__data" style="margin-top:24px">Atualizada em 9 de outubro de 2026</p>
+        <p class="legal__data" style="margin-top:24px">Atualizada em 23 de outubro de 2026</p>
       </header>
 
       <div class="legal__grid">
@@ -167,6 +167,7 @@
           <a href="#quem">Quem somos</a>
           <a href="#site">O que o site guarda</a>
           <a href="#hub">Lipy Hub</a>
+          <a href="#conta-hub">Conta do Lipy Hub</a>
           <a href="#alertas">Alertas de códigos novos</a>
           <a href="#anuncios">Anúncios no Lipy Hub</a>
           <a href="#medicao">Contagem de visitas</a>
@@ -198,13 +199,34 @@
           <p>Na primeira visita, para abrir o site no seu idioma, o seu navegador pergunta ao nosso servidor (Supabase) de que país vem a conexão. O servidor só lê a sigla do país que a própria rede informa e responde na hora: essa consulta não é guardada nem ligada a você.</p>
 
           <h2 id="hub">Lipy Hub</h2>
-          <p>O Lipy Hub é a parte do site com códigos de jogos conferidos, ferramentas e guias. Nele não existe conta, login nem cadastro.</p>
+          <p>O Lipy Hub é a parte do site com códigos de jogos conferidos, ferramentas, guias e jogos grátis. Tudo isso funciona sem conta: a conta é opcional e está explicada logo abaixo, em “Conta do Lipy Hub”.</p>
           <ul>
             <li>No seu aparelho, o Hub guarda a região escolhida nas abas de códigos, em qual botão você tocou em cada código (“funcionou” ou “não funcionou”), para mostrar o botão aceso quando você voltar, e um código aleatório do aparelho, que só serve para contar um voto por aparelho.</li>
             <li>Quando você vota, o nosso servidor (Supabase) recebe o código votado, o voto, o motivo do “não funcionou” (se você escolher um) e o <strong>país aproximado</strong> da conexão. Ele guarda também dois pseudônimos cifrados, que não revelam o endereço: um derivado do código aleatório do aparelho, para contar um voto por aparelho, e outro derivado do endereço de conexão, para barrar robôs e contar como um só os votos repetidos da mesma rede. O seu endereço de IP não é guardado.</li>
             <li>Os votos servem para tirar da lista, rápido, o código que parou de funcionar, e são apagados em até 60 dias. A base é o nosso legítimo interesse em manter a lista correta (LGPD, art. 7º, IX). Para retirar o seu voto, toque de novo no mesmo botão.</li>
             <li>Nas páginas dos jogos, o botão de gostei (👍 ou 👎) guarda o seu voto no nosso servidor, ligado apenas a um pseudônimo cifrado do aparelho e ao país aproximado, sem e-mail e sem endereço. Esses votos formam a nota do jogo e ficam guardados enquanto o jogo existir. Para retirar o seu voto, toque de novo no mesmo botão.</li>
+            <li>Nos jogos grátis do Hub, com ou sem conta, o navegador guarda um código aleatório do aparelho, sem nome nem e-mail. A cada vez que você abre um jogo, o nosso servidor guarda esse código com o jogo, o idioma, se é celular ou computador, o tipo de navegador, o <strong>país aproximado</strong>, o site ou a campanha de onde você veio, quanto tempo o jogo levou para carregar, o tempo jogado, as fases e as vitórias, se apareceu o convite para continuar no celular, os toques em baixar o app e, se houver, o primeiro erro técnico do jogo. Isso serve para consertar erros, montar a lista “Em alta” e saber quais jogos agradam. O seu endereço de IP não é guardado, e esses registros são apagados depois de 13 meses. A base é o nosso legítimo interesse em melhorar os jogos (LGPD, art. 7º, IX).</li>
           </ul>
+
+          <h2 id="conta-hub">Conta do Lipy Hub (opcional)</h2>
+          <p>Ninguém precisa de conta para ler, votar ou jogar no Lipy Hub. Quem quiser pode criar uma, de graça, para ter um perfil de jogador, adicionar amigos e ver quem está jogando agora. Não há chat, mensagens entre jogadores nem envio de foto. O Lipy Hub também não tem senha própria: você entra com uma conta que já tem, como a do Google.</p>
+          <ul>
+            <li><strong>Login:</strong> a conta que você usa para entrar (a do Google, por exemplo) nos informa o seu e-mail, o seu nome e a sua foto de perfil. Isso fica guardado no serviço de login (Supabase Auth), junto com os dados técnicos de cada sessão, como a data de acesso, o navegador e o endereço de conexão, que servem para manter você conectado com segurança. O nome e a foto não aparecem no seu perfil do Hub, e nenhum outro jogador vê o seu e-mail.</li>
+            <li><strong>Perfil:</strong> o apelido; o avatar, escolhido numa galeria pronta (não existe envio de foto); a faixa de idade que você declara (menos de 18 anos, ou 18 ou mais); o nível e o XP; as conquistas; o seu código de convite; as configurações de privacidade, inclusive o modo invisível; e as datas de criação do perfil, da declaração da faixa de idade e da última troca de apelido.</li>
+            <li><strong>Jogos:</strong> nos jogos grátis do Hub, com a conta aberta, guardamos quais jogos você jogou, as partidas, as vitórias, o tempo de jogo, as datas da primeira e da última vez e os seus favoritos. Quem mede o tempo é o nosso servidor, com um sinal enviado a cada minuto enquanto o jogo está aberto e visível na tela.</li>
+            <li><strong>Presença:</strong> o jogo aberto, a hora em que você começou a jogar e a do último sinal, para mostrar aos amigos “jogando agora”, “online” ou quando você foi visto pela última vez. Com o modo invisível ligado, os amigos veem você offline, sem a hora em que você jogou por último nem as datas das suas conquistas, e os avisos da sua atividade (jogo novo, nível e conquistas) não aparecem para eles. Esse registro é apagado depois de 14 dias sem sinal.</li>
+            <li><strong>Amigos:</strong> os seus amigos, os pedidos de amizade enviados e recebidos, as pessoas que você bloqueou e a atividade que os seus amigos veem por 7 dias (quando você começa um jogo novo, sobe de nível ou ganha uma conquista). Pedido não aceito é apagado depois de 30 dias, e a atividade, depois de 8 dias.</li>
+            <li><strong>Quem vê o quê:</strong> perfis só aparecem para quem também tem conta. Se você declarou ter menos de 18 anos, o seu perfil, os seus jogos e o “jogando agora” aparecem só para amigos, sempre: você não aparece na busca e só recebe pedido de amizade de quem tem o seu código de convite, e ainda escolhe aceitar ou não. Com 18 anos ou mais, o perfil começa visível só para amigos e aparece na busca por apelido, onde quem não é amigo vê só o apelido e o avatar; nas configurações, você pode abrir o perfil para todos com conta ou sair da busca. Quem declarou menos de 18 anos só passa para “18 ou mais” pedindo à equipe. Bloquear esconde vocês dois um do outro em tudo. A sua faixa de idade e a sua lista de amigos não aparecem para outros jogadores.</li>
+            <li><strong>Denúncias e moderação:</strong> todo perfil tem os botões Denunciar e Bloquear. A denúncia guarda quem denunciou, quem foi denunciado, o motivo e o detalhe que você escrever (até 300 caracteres), e vai só para a equipe da Lipy Games, que analisa cada caso. Quem foi denunciado não fica sabendo quem denunciou. A equipe pode trocar um apelido ofensivo ou suspender a conta. Denúncias já analisadas são apagadas 180 dias depois da análise.</li>
+            <li><strong>Segurança:</strong> para limitar abusos, como criar muitos perfis ou tentar adivinhar códigos de convite, o nosso servidor conta as ações de cada conta e de cada endereço de conexão. O endereço não é guardado: vira um código cifrado (um pseudônimo), e esses contadores são apagados em até 3 dias.</li>
+            <li><strong>No seu aparelho:</strong> com a conta aberta, o navegador guarda o acesso à sua sessão e uma cópia resumida do seu perfil (apelido, avatar, nível e faixa de idade), para o topo da página aparecer na hora. Ao tocar em Sair da conta, a sessão é encerrada e isso é apagado do aparelho.</li>
+            <li><strong>Onde fica:</strong> a conta fica no banco de dados da Lipy Games no Supabase (Supabase, Inc.), com servidores nos Estados Unidos (transferência internacional, LGPD, art. 33), numa área fechada: o site só chega aos dados por funções que aplicam as regras de privacidade acima.</li>
+            <li><strong>Para que usamos:</strong> só para a conta funcionar (perfil, amigos, nível, conquistas e “jogando agora”) e para manter a comunidade segura. Nada da conta é usado para anúncios nem para montar perfil de publicidade, e não vendemos nem passamos esses dados para outras empresas fazerem marketing.</li>
+            <li><strong>Por quanto tempo:</strong> enquanto a conta existir, com os prazos menores citados acima (presença, pedidos, atividade, denúncias e contadores de segurança).</li>
+            <li><strong>Excluir a conta:</strong> em Configurações, “Excluir a conta” apaga na hora o perfil e tudo o que está ligado a ele (jogos, tempo, conquistas, amigos, pedidos, bloqueios, atividade e denúncias recebidas) e também o login, com o e-mail, o nome, a foto e o vínculo com a conta usada para entrar. As denúncias que você fez continuam com a equipe, mas anônimas: deixam de estar ligadas a você. Se o login não puder ser apagado na hora, a equipe apaga em até 2 dias úteis. Se você entrar e desistir antes de criar o perfil, o botão Cancelar também apaga o login na hora; se você só fechar a página, o login é apagado sozinho 7 dias depois do último acesso.</li>
+            <li><strong>Seus direitos:</strong> nas configurações, você troca o apelido e o avatar, muda quem vê o seu perfil e exclui a conta. Para os outros direitos da LGPD (art. 18), como saber quais dados temos, corrigi-los ou pedir a exclusão, escreva para o e-mail do início desta página com o seu apelido: respondemos em até 2 dias úteis. Pais e responsáveis podem fazer o mesmo pedido sobre a conta de um filho.</li>
+          </ul>
+          <p>A base para a conta é a execução do serviço que você mesmo pediu ao criá-la (LGPD, art. 7º, V). A segurança, as denúncias e os limites contra abuso se baseiam no nosso legítimo interesse em proteger quem usa o Hub (LGPD, art. 7º, IX). Os dados de crianças e adolescentes são tratados sempre no melhor interesse deles (LGPD, art. 14, e Lei 15.211/2025, o ECA Digital): por isso, o perfil de quem tem menos de 18 anos fica sempre na configuração mais protetiva, não há chat nem envio de foto, e nada da conta é usado para publicidade. Quem tem menos de 18 anos deve combinar com os pais ou responsáveis antes de criar a conta.</p>
 
           
           <h2 id="alertas">Alertas de códigos novos</h2>
@@ -242,7 +264,7 @@
             <li>Os dados ficam em servidores do Umami na União Europeia (transferência internacional, LGPD, art. 33) e são guardados por até 6 meses.</li>
           </ul>
           <p>A base é o nosso legítimo interesse em entender o uso do site e melhorá-lo (LGPD, art. 7º, IX), sempre na configuração mais protetiva, porque o site é usado também por adolescentes. Se o seu navegador pedir para não ser rastreado (“Do Not Track”), a visita não é contada.</p>
-          <p>Nas páginas de jogo do Lipy Hub (e só nelas) usamos também o Pixel da Meta (Meta Platforms, Inc.), para medir se os anúncios dos nossos jogos no Facebook e no Instagram trazem visitas. Ele registra a visita à página e pode usar cookies da Meta. Ele não carrega se o seu navegador pedir para não ser rastreado nem para quem está em fuso horário da Europa, e não aparece nas páginas de códigos nem na página do estúdio.</p>
+          <p>Nas páginas de jogo do Lipy Hub (e só nelas) usamos também o Pixel da Meta (Meta Platforms, Inc.), para medir se os anúncios dos nossos jogos no Facebook e no Instagram trazem visitas. Ele registra a visita à página, quando você começa a jogar, quando completa 30 segundos, 1 minuto e 3 minutos de jogo e quando toca em baixar o app, e pode usar cookies da Meta. Ele não carrega se o seu navegador pedir para não ser rastreado nem para quem está em fuso horário da Europa, e não aparece nas páginas de códigos nem na página do estúdio.</p>
 
           <h2 id="lista-dados">O que a Lista Lipy recebe</h2>
           <p>Quando você entra na lista, guardamos:</p>
@@ -252,7 +274,7 @@
             <li>a página e o idioma em que se inscreveu, a data e o <strong>país aproximado</strong> da conexão (informado pela rede; o seu endereço de IP não é guardado);</li>
             <li>contra abuso, um código cifrado derivado do endereço de conexão (um pseudônimo, não o endereço em si), usado só para limitar inscrições repetidas e apagado em até dois dias.</li>
           </ul>
-          <p>Não pedimos nome, telefone, idade nem senha. Não existe conta para criar.</p>
+          <p>Não pedimos nome, telefone, idade nem senha, e a lista não exige conta.</p>
 
           <h2 id="para-que">Para que usamos</h2>
           <p>Só para o que você pediu: enviar convites para testar nossos jogos antes do lançamento, avisar quando um jogo chegar às lojas e contar novidades dos nossos jogos. A base é o seu <strong>consentimento</strong> (Lei Geral de Proteção de Dados, art. 7º, I), que você pode retirar quando quiser.</p>
