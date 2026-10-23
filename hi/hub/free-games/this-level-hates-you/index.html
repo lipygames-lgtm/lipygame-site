@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,41 +101,61 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/this-level-hates-you/?lang=hi" data-nome="This Level Hates You" data-slug="this-level-hates-you" data-cta-tempo="100" data-video="/assets/media/tlhy/gameplay.mp4" data-carregando="गेम लोड हो रहा है…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/tlhy/poster-1.webp" width="720" height="1279" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">This Level Hates You</span></nav>
+    <h1 class="t-display">This Level Hates You<span class="jg__h1-sub">फ़्री ट्रोल गेम, Level Devil जैसा</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/this-level-hates-you/?lang=hi" data-nome="This Level Hates You" data-slug="this-level-hates-you" data-cta-tempo="100" data-video="/assets/media/tlhy/gameplay.mp4" data-carregando="गेम लोड हो रहा है…">
         <img class="jg__capa" src="/assets/media/tlhy/poster-1.webp" width="720" height="1279" alt="This Level Hates You: गेम की स्क्रीन" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/tlhy/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">This Level Hates You</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</button><small>फ़्री · बिना डाउनलोड · बिना साइन-अप</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/tlhy/icone-sm.webp" width="160" height="160" alt=""><span><b>पसंद आया? फ़ोन पर खेलते रहें</b><small>ऐप में हर नए प्लेयर को मिलता है: 1 नई स्किन अनलॉक।</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" data-baixar="fase3" rel="noopener" target="_blank">फ़्री डाउनलोड करें</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="बंद करें">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/tlhy/icone-sm.webp" width="160" height="160" alt=""><span><b>This Level Hates You</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="this-level-hates-you"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Play से डाउनलोड करें</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/tlhy/icone-sm.webp" width="160" height="160" alt=""><span><b>This Level Hates You</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="this-level-hates-you"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Play से डाउनलोड करें</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#ff4d5e;--c2:#8a5cff" aria-label="This Level Hates You को अपने फ़ोन में ले जाइए">
         <img class="jg__app-ico" src="/assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>This Level Hates You को अपने फ़ोन में ले जाइए</b><small>ऐप में हर नए प्लेयर को मिलता है: 1 नई स्किन अनलॉक।</small></div>
         <a class="bt bt--luz jg__app-play" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" rel="noopener" target="_blank" data-baixar="faixa"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Play से डाउनलोड करें</span></a>
         <div class="jg__app-qr"><img src="/assets/media/hub/qr/this-level-hates-you.svg" width="84" height="84" alt="Google Play पर This Level Hates You का QR कोड" loading="lazy"><small>फ़ोन से स्कैन करें</small></div>
       </section>
+      </div>
+      <section class="lj-gal lj-gal--alta" aria-label="This Level Hates You"><h2 class="sr-only">गेम का वीडियो</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video lj-gal__item--retrato"><video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/tlhy/gameplay-poster.webp"><source src="/assets/media/tlhy/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/tlhy/hi/real-1.webp" data-ampliar><img src="/assets/media/tlhy/hi/real-1-sm.webp" srcset="/assets/media/tlhy/hi/real-1-sm.webp 304w, /assets/media/tlhy/hi/real-1.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/tlhy/hi/real-2.webp" data-ampliar><img src="/assets/media/tlhy/hi/real-2-sm.webp" srcset="/assets/media/tlhy/hi/real-2-sm.webp 304w, /assets/media/tlhy/hi/real-2.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/tlhy/hi/real-3.webp" data-ampliar><img src="/assets/media/tlhy/hi/real-3-sm.webp" srcset="/assets/media/tlhy/hi/real-3-sm.webp 304w, /assets/media/tlhy/hi/real-3.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/tlhy/hi/real-4.webp" data-ampliar><img src="/assets/media/tlhy/hi/real-4-sm.webp" srcset="/assets/media/tlhy/hi/real-4-sm.webp 304w, /assets/media/tlhy/hi/real-4.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">ये भी खेलें</h2>
-      <div class="jg__mais"><a class="tl" href="/hi/hub/free-games/villadash/" style="--c1:#f6a21a;--c2:#8fb3ff" data-slug="villadash" data-cats="acao" data-novo><img src="/assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Villadash</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/legiontide/" style="--c1:#ffc21a;--c2:#2f6bff" data-slug="legiontide" data-cats="estrategia acao" data-novo><img src="/assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">LEGIONTIDE</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/dropaloo/" style="--c1:#5BB8F0;--c2:#F28DB8" data-slug="dropaloo" data-cats="casual" data-novo><img src="/assets/media/drop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dropaloo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo><img src="/assets/media/spad/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Spadorable</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+    <aside class="lj-ficha" aria-label="This Level Hates You">
+      <span class="lj-ficha__capa"><span class="lj-arte lj-arte--retrato"><img class="lj-arte__fundo" src="/assets/media/tlhy/poster-1.webp" width="720" height="1279" alt="" decoding="async" aria-hidden="true"><img src="/assets/media/tlhy/poster-1.webp" width="720" height="1279" alt="" decoding="async"></span></span>
+      <p class="lj-ficha__desc">Level Devil जैसा ट्रोल प्लेटफ़ॉर्म गेम: दरवाज़ा सामने है, पर नज़ारा झूठ बोलता है। 3 दुनियाओं में 66 लेवल, कोई जाल दोहराया नहीं।</p>
+      <dl class="lj-dados">
+        <div><dt>रिलीज़ डेट</dt><dd><time datetime="2026-10-04">4 अक्टू॰ 2026</time></dd></div>
+        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>जॉनर</dt><dd>ट्रोल प्लेटफ़ॉर्मर</dd></div>
+      </dl>
+      <p class="lj-tags"><span class="lj-tag">प्लेटफ़ॉर्मर</span><span class="lj-tag">Google Play</span></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>ब्राउज़र में फ़्री खेलें</button>
+        <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/tlhy/icone-sm.webp" width="160" height="160" alt=""><span><small>Android के लिए उपलब्ध</small><b>Google Play से डाउनलोड करें</b><em>🎁 ऐप में हर नए प्लेयर को मिलता है: 1 नई स्किन अनलॉक।</em></span></a>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">This Level Hates You</span></nav>
-      <h1 class="t-display">This Level Hates You<span class="jg__h1-sub">फ़्री ट्रोल गेम, Level Devil जैसा</span></h1>
-      <p class="jg__genero">ट्रोल प्लेटफ़ॉर्मर</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>इस गेम के बारे में</h2>
       <p>This Level Hates You एक कॉमेडी प्लेटफ़ॉर्मर है। बाहर निकलने का दरवाज़ा शुरू से ही आपके सामने दिखता है। दिक़्क़त यह है कि सीन झूठ बोलता है: ज़मीन गायब हो जाती है, बादल बिजली गिराता है और दरवाज़ा राक्षस बन सकता है।</p>
       <p>कंट्रोल जानबूझकर आसान हैं: दाएँ-बाएँ चलना और जंप करना। मुश्किल ट्रैप में है। मर गए तो तुरंत फिर से शुरू, और अगली कोशिश में सब बिल्कुल वैसा ही होता है। लेवल चीटिंग नहीं करता, बस बहुत ज़ालिम है।</p>
       <p>3 दुनियाओं में 66 लेवल हैं, और कोई भी ट्रैप दोहराया नहीं जाता। एक छोटी चिड़िया हर मौत पर कमेंट करती है, और DAILY HELL है, जिसमें हर दिन तीन नए कमरे आते हैं।</p>
-      <h2>गेम का वीडियो</h2>
-      <video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/tlhy/gameplay-poster.webp"><source src="/assets/media/tlhy/gameplay.mp4" type="video/mp4"></video>
       <h2>अगर आपको Level Devil पसंद है</h2>
       <p>अगर आपको Level Devil और खिलाड़ी को ट्रोल करने वाले नामुमकिन गेम पसंद हैं, तो This Level Hates You भी उसी तरह का गेम है: ज़मीन गायब हो जाती है, काँटा अचानक निकल आता है और दरवाज़ा भाग जाता है। हर लेवल के अपने जाल हैं, और हर मौत पर गेम आपका मज़ाक उड़ाता है।</p>
       <h2>कैसे खेलें</h2><ol><li>बाहर निकलने वाले दरवाज़े तक चलें।</li><li>हर चीज़ पर शक करें: ज़मीन, पुल, बादल और दरवाज़ा भी।</li><li>मर गए? गेम तुरंत फिर से शुरू होता है।</li><li>याद रखें ट्रैप कहाँ था और अगली कोशिश में उससे बचकर निकलें।</li><li>दरवाज़े तक पहुँचें और अगले लेवल पर जाएँ।</li></ol>
@@ -142,20 +163,55 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>टिप्स</h2><ul><li>लेवल हमेशा एक जैसा रहता है: जिसने अभी मारा, वो अगली कोशिश में उसी जगह होगा।</li><li>नए हिस्सों में धीरे चलें ताकि गिरने से पहले ट्रैप दिख जाए।</li><li>मदद पर शक करें: जो क्यूट कैरेक्टर आपको दरवाज़े तक ले जाने का ऑफ़र देता है, उस पर भरोसा मत करना।</li><li>पत्थरों के पास रुककर खड़े न रहें: कुछ बस आपके रुकने का इंतज़ार करते हैं।</li><li>बहुत बार मरकर अटक गए? एक वीडियो देखने पर Ghost रास्ता दिखाता है।</li><li>स्ट्रीक बनाए रखने और कॉइन कमाने के लिए रोज़ DAILY HELL में आएँ।</li></ul>
       <h2>गेम में क्या है</h2><ul><li>66 लेवल, एक भी ट्रैप रिपीट नहीं</li><li>3 दुनियाएँ, हर एक में 22 लेवल: गुस्से का मैदान, चिड़चिड़ा मैग्मा और बदले की बर्फ़</li><li>DAILY HELL: हर दिन 3 नए कमरे, सबके लिए एक जैसे</li><li>9 स्किन और 5 डेथ इफ़ेक्ट, सिर्फ़ दिखावटी</li><li>ओरिजिनल साउंडट्रैक</li><li>6 भाषाएँ और ऑफ़लाइन गेम</li></ul>
       <h2>अक्सर पूछे जाने वाले सवाल</h2><details class="faq"><summary>क्या This Level Hates You फ़्री है?</summary><p>हाँ। यहाँ ब्राउज़र में यह फ़्री है और कोई खरीदारी नहीं है। Google Play ऐप में भी यह फ़्री है, जिसमें विज्ञापन और वैकल्पिक खरीदारी हैं।</p></details><details class="faq"><summary>डाउनलोड करना पड़ेगा?</summary><p>नहीं। आप सीधे इसी पेज पर, फ़ोन या कंप्यूटर पर खेलते हैं। फ़ोन पर चाहिए तो यह Android के लिए Google Play पर भी है।</p></details><details class="faq"><summary>क्या यह मोबाइल पर चलता है?</summary><p>हाँ। मोबाइल ब्राउज़र में चलने और कूदने के लिए टच बटन दिखते हैं। कंप्यूटर पर आप कीबोर्ड या माउस से खेल सकते हैं।</p></details><details class="faq"><summary>इंटरनेट चाहिए?</summary><p>यहाँ ब्राउज़र में हाँ, पेज खोलने के लिए। Google Play ऐप में नहीं: बिना इंटरनेट के खेल सकते हैं, और प्रोग्रेस Google Play Games में सेव रहती है।</p></details><details class="faq"><summary>क्या ऐड हटा सकते हैं?</summary><p>यहाँ ब्राउज़र में अभी कोई विज्ञापन नहीं है। ऐप में, Peace Treaty की एक बार की खरीदारी लेवल्स के बीच के विज्ञापन हटा देती है।</p></details><details class="faq"><summary>क्या स्किन से गेम आसान हो जाता है?</summary><p>नहीं। स्किन और डेथ इफ़ेक्ट सिर्फ़ दिखावटी हैं, मुश्किल नहीं बदलते।</p></details>
-      <h2>This Level Hates You जैसे और गेम</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/hi/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
     </article>
-    <aside class="jg__ficha">
-      <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/tlhy/icone-sm.webp" width="160" height="160" alt=""><span><small>Android के लिए उपलब्ध</small><b>Google Play से डाउनलोड करें</b><em>🎁 ऐप में हर नए प्लेयर को मिलता है: 1 नई स्किन अनलॉक।</em></span></a>
-      <dl class="card">
-        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>जॉनर</dt><dd>ट्रोल प्लेटफ़ॉर्मर</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>कहाँ खेलें</dt><dd>ब्राउज़र (मोबाइल और कंप्यूटर) · Android (Google Play)</dd></div>
         <div><dt>कीमत</dt><dd>फ़्री</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/tlhy/hi/real-1.webp" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/tlhy/hi/real-2.webp" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/tlhy/hi/real-3.webp" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/tlhy/hi/real-4.webp" width="720" height="1280" alt="This Level Hates You: गेम की स्क्रीन" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">ये भी खेलें</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/hi/hub/free-games/villadash/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/villa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Villadash</b><small>3D एक्शन: टाइमर के साथ रेस्क्यू और ड्यूल</small></span></a><a class="lj-mini" href="/hi/hub/free-games/legiontide/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/legion/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>LEGIONTIDE</b><small>3D लीजन: एक्शन और स्ट्रैटेजी</small></span></a><a class="lj-mini" href="/hi/hub/free-games/dropaloo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/drop/capa-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Dropaloo</b><small>एक टैप वाला कैज़ुअल गेम: रंग और रिफ़्लेक्स</small></span></a><a class="lj-mini" href="/hi/hub/free-games/spadorable/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/spad/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Spadorable</b><small>सुकून भरा ASMR स्पा</small></span></a><a class="lj-mini" href="/hi/hub/free-games/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>सीन वाली तरकीब पहेलियाँ</small></span></a><a class="lj-mini" href="/hi/hub/free-games/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>सुकून भरा तीर पज़ल</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">This Level Hates You जैसे और गेम</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/hi/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fidgetlume</span><span class="lj-cap__gen">सुकून देने वाले फ़िजेट खिलौने</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">कैज़ुअल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Blockamigo</span><span class="lj-cap__gen">सुकून भरा ब्लॉक पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Tintapix</span><span class="lj-cap__gen">सुकून भरा नंबर से रंग भरो</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">लॉजिक पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">सुकून भरा पार्किंग पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">आरामदायक 3D पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">सुकून भरा साँप पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">रंगों की पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+  </section>
 </section>
 <dialog class="jg__qr" data-qr>
   <img src="/assets/media/hub/qr/this-level-hates-you.svg" width="240" height="240" alt="Google Play पर This Level Hates You का QR कोड">
@@ -164,6 +220,8 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   <p class="jg__qr-ios" data-ios hidden>iPhone पर: अभी This Level Hates You सिर्फ़ Android के लिए है।</p>
   <div class="jg__qr-bts"><a class="bt bt--vidro" href="https://play.google.com/store/apps/details?id=com.lipy.thislevel" rel="noopener" target="_blank" data-baixar="qr">Google Play खोलें</a><button type="button" class="bt bt--luz" data-fecha-qr>बंद करें</button></div>
 </dialog>
+<dialog class="lj-zoom" data-zoom aria-label="This Level Hates You"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="बंद करें">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -194,6 +252,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"कोड {c} कॉपी हो गया","Não deu para copiar. Selecione o código e copie à mão.":"कॉपी नहीं हो पाया। कोड सिलेक्ट करके ख़ुद कॉपी करें।","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"कई प्लेयर्स ने बताया कि यह कोड काम करना बंद कर चुका है (पिछले 48 घंटे)।","Por quê?":"क्यों?","Expirou":"एक्सपायर हो गया","Já tinha usado":"पहले ही इस्तेमाल किया था","Deu inválido":"इनवैलिड कोड","Obrigado! Isso ajuda a conferir mais rápido.":"शुक्रिया! इससे हमें जल्दी जाँच करने में मदद मिलती है।","Obrigado! Seu voto ajuda outros jogadores.":"शुक्रिया! आपका वोट दूसरे प्लेयर्स की मदद करता है।","Voto retirado.":"वोट हटा दिया गया।","Muitos votos seguidos. Tente de novo mais tarde.":"लगातार बहुत ज़्यादा वोट। थोड़ी देर बाद फिर से कोशिश करें।","Não deu para registrar o voto agora. Tente de novo em instantes.":"अभी आपका वोट दर्ज नहीं हो पाया। थोड़ी देर में फिर से कोशिश करें।","Nada encontrado. Tente o nome do jogo.":"कुछ नहीं मिला। गेम का नाम लिखकर देखें।","Carregando…":"लोड हो रहा है…","Sair":"बाहर निकलें"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

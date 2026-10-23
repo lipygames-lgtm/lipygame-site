@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,35 +101,54 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/busbloom/?lang=hi" data-nome="Busbloom" data-slug="busbloom" data-video="/assets/media/busb/gameplay.mp4" data-carregando="गेम लोड हो रहा है…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/busb/capa.webp" width="1600" height="900" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">Busbloom</span></nav>
+    <h1 class="t-display">Busbloom<span class="jg__h1-sub">फ्री बस पज़ल गेम</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/busbloom/?lang=hi" data-nome="Busbloom" data-slug="busbloom" data-video="/assets/media/busb/gameplay.mp4" data-carregando="गेम लोड हो रहा है…">
         <img class="jg__capa" src="/assets/media/busb/capa.webp" width="1600" height="900" alt="Busbloom: गेम की स्क्रीन" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/busb/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Busbloom</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</button><small>फ़्री · बिना डाउनलोड · बिना साइन-अप</small></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/busb/icone-sm.webp" width="160" height="160" alt=""><span><b>Busbloom</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="busbloom"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        <div class="jg__barra">
+          <img src="/assets/media/busb/icone-sm.webp" width="160" height="160" alt=""><span><b>Busbloom</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="busbloom"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       </div>
+      <section class="lj-gal" aria-label="Busbloom"><h2 class="sr-only">गेम का वीडियो</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video lj-gal__item--retrato"><video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/busb/gameplay-poster.webp"><source src="/assets/media/busb/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item" href="/assets/media/busb/tela-praia.webp" data-ampliar><img src="/assets/media/busb/tela-praia-sm.webp" srcset="/assets/media/busb/tela-praia-sm.webp 540w, /assets/media/busb/tela-praia.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/busb/tela-parque.webp" data-ampliar><img src="/assets/media/busb/tela-parque-sm.webp" srcset="/assets/media/busb/tela-parque-sm.webp 540w, /assets/media/busb/tela-parque.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/busb/tela-feira.webp" data-ampliar><img src="/assets/media/busb/tela-feira-sm.webp" srcset="/assets/media/busb/tela-feira-sm.webp 540w, /assets/media/busb/tela-feira.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/busb/tela-estacao.webp" data-ampliar><img src="/assets/media/busb/tela-estacao-sm.webp" srcset="/assets/media/busb/tela-estacao-sm.webp 540w, /assets/media/busb/tela-estacao.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/busb/tela-escola.webp" data-ampliar><img src="/assets/media/busb/tela-escola-sm.webp" srcset="/assets/media/busb/tela-escola-sm.webp 540w, /assets/media/busb/tela-escola.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/busb/tela-vitoria.webp" data-ampliar><img src="/assets/media/busb/tela-vitoria-sm.webp" srcset="/assets/media/busb/tela-vitoria-sm.webp 540w, /assets/media/busb/tela-vitoria.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">ये भी खेलें</h2>
-      <div class="jg__mais"><a class="tl" href="/hi/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+    <aside class="lj-ficha" aria-label="Busbloom">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/busb/capa.webp" width="1600" height="900" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">ब्राउज़र में फ्री गेम: गाड़ियों को सही क्रम में पार्किंग से निकालें और हर यात्री को उसके रंग में चढ़ाएँ। 36 लेवल, सबका हल मौजूद।</p>
+      <dl class="lj-dados">
+        <div><dt>रिलीज़ डेट</dt><dd><time datetime="2026-10-09">9 अक्टू॰ 2026</time></dd></div>
+        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>जॉनर</dt><dd>सुकून भरा पार्किंग पज़ल</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/hi/hub/free-games/puzzle/">पज़ल</a><a class="lj-tag" href="/hi/hub/free-games/casual/">कैज़ुअल</a></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>ब्राउज़र में फ़्री खेलें</button>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">Busbloom</span></nav>
-      <h1 class="t-display">Busbloom<span class="jg__h1-sub">फ्री बस पज़ल गेम</span></h1>
-      <p class="jg__genero">सुकून भरा पार्किंग पज़ल</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>इस गेम के बारे में</h2>
       <p>Busbloom एक पार्किंग पज़ल है। हर गाड़ी पर एक तीर है और वह सिर्फ़ आगे चलती है। उसे टैप करें: अगर किनारे तक रास्ता खुला है, तो वह बाहर निकलकर बोर्डिंग की किसी जगह पर रुक जाती है।</p>
       <p>लाइन में यात्री अपनी बारी का इंतज़ार करते हैं। लाइन का पहला यात्री उसी रंग और आकार की गाड़ी में चढ़ता है जो किसी जगह पर खड़ी हो। गाड़ी भरते ही हॉर्न बजाती है, चली जाती है और जगह खाली कर देती है। अगर एक ही रंग की दो गाड़ियाँ इंतज़ार कर रही हों, तो पहले आई गाड़ी पहले भरती है।</p>
       <p>सिर्फ़ चार जगहें हैं। गाड़ी को बहुत जल्दी बुलाने से वह जगह भर जाती है जिसकी बाद में ज़रूरत पड़ेगी। राज़ यह है कि लाइन देखें और गाड़ियाँ सही क्रम में निकालें।</p>
       <p>छह मोहल्लों में 36 लेवल: चौक, स्कूल, समुद्र तट, पार्क, मेला और स्टेशन। हर मोहल्ला कुछ नया लाता है: वैन और बड़ी बसें, सरप्राइज़ गाड़ियाँ, क्यारियाँ, नंबर वाली गाड़ियाँ और गैराज। हर जीता हुआ लेवल मोहल्ले में कुछ रोशन कर देता है।</p>
-      <h2>गेम का वीडियो</h2>
-      <video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/busb/gameplay-poster.webp"><source src="/assets/media/busb/gameplay.mp4" type="video/mp4"></video>
       <h2>अगर आपको Bus Jam, Parking Jam, Car Out पसंद है</h2>
       <p>अगर आपको पार्किंग से कारें निकालने और रंग के हिसाब से बसें भरने वाले गेम पसंद हैं, तो आपको यहाँ घर जैसा लगेगा। फ़र्क़ यह है कि यहाँ हर लेवल चार जगहों से हल हो जाता है, अनडू फ्री है और हर रंग का अपना आकार है।</p>
       <h2>कैसे खेलें</h2><ol><li>गाड़ी को टैप करें ताकि वह तीर की दिशा में चले।</li><li>अगर रास्ता खुला है, तो वह निकलकर पहली खाली जगह पर रुकती है।</li><li>यात्री अपने आप उसी रंग और आकार की गाड़ी में चढ़ जाते हैं।</li><li>भरी हुई गाड़ी चली जाती है और जगह खाली कर देती है।</li><li>जीतने के लिए पार्किंग और लाइन दोनों खाली करें।</li><li>तीन स्टार पाने के लिए कम से कम जितनी जगहें चाहिए, उससे ज़्यादा इस्तेमाल न करें।</li></ol>
@@ -136,21 +156,59 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>टिप्स</h2><ul><li>टैप करने से पहले लाइन के अगले यात्रियों को देखें: पहले उन्हीं रंगों की गाड़ियाँ बुलाएँ।</li><li>वैन में 6 और बस में 10 यात्री आते हैं। जगह पर खड़ी बस भरने में समय लेती है।</li><li>अगर कोई गाड़ी नहीं चलती, तो उसके आगे वाली गाड़ी चमकती है: पहले उसे निकालें।</li><li>सरप्राइज़ गाड़ी का रंग तब दिखता है जब उसके आगे का रास्ता खाली हो जाता है।</li><li>आइस-ब्लू गाड़ी पर लिखा नंबर बताता है कि उससे पहले कितनी गाड़ियों को निकलना है।</li><li>अटक गए? अनडू फ्री है और स्टार नहीं काटता।</li></ul>
       <h2>गेम में क्या है</h2><ul><li>36 अलग-अलग लेवल, सबको एक प्रोग्राम ने जाँचा है जो हर एक को 4 जगहों से हल करता है</li><li>छह मोहल्ले, हर एक में नया नियम</li><li>फ्री और असीमित अनडू, न टाइमर, न लाइफ़</li><li>हर रंग का अपना आकार, उनके लिए जिन्हें रंग पहचानने में दिक़्क़त होती है</li><li>सबसे कम जगहें इस्तेमाल करने पर तीन स्टार</li><li>हर जीते हुए लेवल के साथ शहर खिल उठता है</li><li>6 भाषाएँ</li></ul>
       <h2>अक्सर पूछे जाने वाले सवाल</h2><details class="faq"><summary>क्या Busbloom फ़्री है?</summary><p>हाँ। आप इसे सीधे ब्राउज़र में मुफ़्त खेलते हैं।</p></details><details class="faq"><summary>खेलने के लिए डाउनलोड करना पड़ेगा?</summary><p>नहीं। आप इसी पेज पर खेलते हैं, कुछ इंस्टॉल करने या साइन-अप करने की ज़रूरत नहीं।</p></details><details class="faq"><summary>क्या कोई लेवल नामुमकिन है?</summary><p>नहीं। हर लेवल को एक प्रोग्राम ने चार सामान्य जगहों के साथ हल किया है, और लाइन में हर रंग की गाड़ियों में जितने यात्री आते हैं, ठीक उतने ही हैं।</p></details><details class="faq"><summary>अगर ग़लत गाड़ी टैप हो जाए तो?</summary><p>अनडू इस्तेमाल करें। यह फ्री है, इसकी कोई सीमा नहीं और इससे स्टार नहीं कटता।</p></details><details class="faq"><summary>क्या प्रोग्रेस सेव रहती है?</summary><p>हाँ, आपके डिवाइस पर। बीच में निकल जाएँ तो लेवल ठीक वहीं से शुरू होता है जहाँ आपने छोड़ा था।</p></details>
-      <h2>Busbloom जैसे और गेम</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo><img src="/assets/media/dune/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dunevella</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo><img src="/assets/media/fint/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fintriva</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo><img src="/assets/media/pict/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictascade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo><img src="/assets/media/crumb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Crumbivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/pictovela/" style="--c1:#c46a4a;--c2:#4a7fc4" data-slug="pictovela" data-cats="puzzle casual" data-novo><img src="/assets/media/pictv/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictovela</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/puzzle/">फ्री पज़ल गेम्स</a><a class="chip-col" href="/hi/hub/free-games/casual/">फ्री कैज़ुअल गेम्स</a></p>
     </article>
-    <aside class="jg__ficha">
-      <dl class="card">
-        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>जॉनर</dt><dd>सुकून भरा पार्किंग पज़ल</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>कहाँ खेलें</dt><dd>ब्राउज़र (मोबाइल और कंप्यूटर)</dd></div>
         <div><dt>कीमत</dt><dd>फ़्री</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/busb/tela-praia.webp" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/busb/tela-parque.webp" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/busb/tela-feira.webp" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/busb/tela-estacao.webp" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/busb/tela-escola.webp" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/busb/tela-vitoria.webp" width="1280" height="720" alt="Busbloom: गेम की स्क्रीन" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">ये भी खेलें</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/hi/hub/free-games/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>सीन वाली तरकीब पहेलियाँ</small></span></a><a class="lj-mini" href="/hi/hub/free-games/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>सुकून भरा तीर पज़ल</small></span></a><a class="lj-mini" href="/hi/hub/free-games/fidgetlume/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Fidgetlume</b><small>सुकून देने वाले फ़िजेट खिलौने</small></span></a><a class="lj-mini" href="/hi/hub/free-games/blockamigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Blockamigo</b><small>सुकून भरा ब्लॉक पज़ल</small></span></a><a class="lj-mini" href="/hi/hub/free-games/tintapix/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tintapix</b><small>सुकून भरा नंबर से रंग भरो</small></span></a><a class="lj-mini" href="/hi/hub/free-games/snoozegrid/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Snoozegrid</b><small>लॉजिक पज़ल</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Busbloom जैसे और गेम</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">आरामदायक 3D पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">सुकून भरा साँप पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">रंगों की पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/dune/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Dunevella</span><span class="lj-cap__gen">टुकड़े खिसकाने वाली पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fint/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fintriva</span><span class="lj-cap__gen">तीन मिलाने वाली पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pict/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictascade</span><span class="lj-cap__gen">तस्वीरों की पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/crumb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Crumbivana</span><span class="lj-cap__gen">पिक्सल पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/pictovela/" style="--c1:#c46a4a;--c2:#4a7fc4" data-slug="pictovela" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pictv/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictovela</span><span class="lj-cap__gen">कार्ड पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/puzzle/">फ्री पज़ल गेम्स</a><a class="chip-col" href="/hi/hub/free-games/casual/">फ्री कैज़ुअल गेम्स</a></p>
+  </section>
 </section>
+<dialog class="lj-zoom" data-zoom aria-label="Busbloom"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="बंद करें">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -181,6 +239,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"कोड {c} कॉपी हो गया","Não deu para copiar. Selecione o código e copie à mão.":"कॉपी नहीं हो पाया। कोड सिलेक्ट करके ख़ुद कॉपी करें।","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"कई प्लेयर्स ने बताया कि यह कोड काम करना बंद कर चुका है (पिछले 48 घंटे)।","Por quê?":"क्यों?","Expirou":"एक्सपायर हो गया","Já tinha usado":"पहले ही इस्तेमाल किया था","Deu inválido":"इनवैलिड कोड","Obrigado! Isso ajuda a conferir mais rápido.":"शुक्रिया! इससे हमें जल्दी जाँच करने में मदद मिलती है।","Obrigado! Seu voto ajuda outros jogadores.":"शुक्रिया! आपका वोट दूसरे प्लेयर्स की मदद करता है।","Voto retirado.":"वोट हटा दिया गया।","Muitos votos seguidos. Tente de novo mais tarde.":"लगातार बहुत ज़्यादा वोट। थोड़ी देर बाद फिर से कोशिश करें।","Não deu para registrar o voto agora. Tente de novo em instantes.":"अभी आपका वोट दर्ज नहीं हो पाया। थोड़ी देर में फिर से कोशिश करें।","Nada encontrado. Tente o nome do jogo.":"कुछ नहीं मिला। गेम का नाम लिखकर देखें।","Carregando…":"लोड हो रहा है…","Sair":"बाहर निकलें"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

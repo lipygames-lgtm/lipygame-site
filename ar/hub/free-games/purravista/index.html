@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=Alexandria:wght@500..800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -99,54 +100,112 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/purravista/?lang=ar" data-nome="Purravista" data-slug="purravista">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/purr/capa.webp" width="1280" height="720" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="أنت هنا"><a href="/ar/hub/">Hub</a><i>/</i><a href="/ar/hub/free-games/">ألعاب مجانية</a><i>/</i><span aria-current="page">Purravista</span></nav>
+    <h1 class="t-display">Purravista<span class="jg__h1-sub">اعثر على القطط المختبئة، مجانًا</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/purravista/?lang=ar" data-nome="Purravista" data-slug="purravista">
         <img class="jg__capa" src="/assets/media/purr/capa.webp" width="1280" height="720" alt="Purravista: شاشة اللعبة" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/purr/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Purravista</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</button><small>مجانية · بلا تنزيل · بلا تسجيل</small></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/purr/icone-sm.webp" width="160" height="160" alt=""><span><b>Purravista</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="purravista"><button type="button" data-voto="sim" aria-pressed="false" aria-label="أعجبتني اللعبة" title="أعجبتني اللعبة"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="لم تعجبني اللعبة" title="لم تعجبني اللعبة"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="ملء الشاشة" title="ملء الشاشة"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        <div class="jg__barra">
+          <img src="/assets/media/purr/icone-sm.webp" width="160" height="160" alt=""><span><b>Purravista</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="purravista"><button type="button" data-voto="sim" aria-pressed="false" aria-label="أعجبتني اللعبة" title="أعجبتني اللعبة"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="لم تعجبني اللعبة" title="لم تعجبني اللعبة"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="ملء الشاشة" title="ملء الشاشة"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       </div>
+      <section class="lj-gal" aria-label="Purravista">
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><a class="lj-gal__item" href="/assets/media/purr/tela-1.webp" data-ampliar><img src="/assets/media/purr/tela-1-sm.webp" srcset="/assets/media/purr/tela-1-sm.webp 540w, /assets/media/purr/tela-1.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Purravista: شاشة اللعبة" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/purr/tela-2.webp" data-ampliar><img src="/assets/media/purr/tela-2-sm.webp" srcset="/assets/media/purr/tela-2-sm.webp 540w, /assets/media/purr/tela-2.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Purravista: شاشة اللعبة" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/purr/tela-3.webp" data-ampliar><img src="/assets/media/purr/tela-3-sm.webp" srcset="/assets/media/purr/tela-3-sm.webp 540w, /assets/media/purr/tela-3.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Purravista: شاشة اللعبة" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="السابق"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="التالي"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">العب أيضًا</h2>
-      <div class="jg__mais"><a class="tl" href="/ar/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/ar/hub/free-games/">كل الألعاب</a></p>
+    <aside class="lj-ficha" aria-label="Purravista">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/purr/capa.webp" width="1280" height="720" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">لعبة مجانية في المتصفح: ابحث عن القطط المختبئة في خمسة مشاهد مليئة بالتفاصيل، مع التكبير والتلميحات. بلا وقت محدد. بلا تنزيل.</p>
+      <dl class="lj-dados">
+        <div><dt>تاريخ الإصدار</dt><dd><time datetime="2026-10-09">9 أكتوبر 2026</time></dd></div>
+        <div><dt>الاستوديو</dt><dd><a href="/ar/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>النوع</dt><dd>لعبة البحث عن الأشياء</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/ar/hub/free-games/casual/">خفيفة</a><a class="lj-tag" href="/ar/hub/free-games/puzzle/">ألغاز</a></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب مجانًا في المتصفح</button>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="أنت هنا"><a href="/ar/hub/">Hub</a><i>/</i><a href="/ar/hub/free-games/">ألعاب مجانية</a><i>/</i><span aria-current="page">Purravista</span></nav>
-      <h1 class="t-display">Purravista<span class="jg__h1-sub">اعثر على القطط المختبئة، مجانًا</span></h1>
-      <p class="jg__genero">لعبة البحث عن الأشياء</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>عن هذه اللعبة</h2>
       <p>قطط Vila Bem-te-vi تعشق الاختباء.</p>
       <p>ابحث في خمسة مشاهد مليئة بالتفاصيل: الساحة ذات الرصيف المموّج، والمقهى، والورشة، وسوق الشارع، وحديقة منصة الموسيقى ليلًا.</p>
       <p>علقت؟ يُظهر التلميح المنطقة أولًا، ثم دائرة، وأخيرًا حدود القطة.</p>
-      
       
       <h2>طريقة اللعب</h2><ol><li>المس القطة عندما تجدها.</li><li>استخدم إصبعين أو عجلة الماوس أو الأزرار للتكبير.</li><li>اسحب لتتجول في المشهد.</li><li>استخدم التلميح إذا علقت.</li></ol>
       <h2>التحكم</h2><ul class="jg__controles"><li>الماوس: انقر على القطة، والعجلة للتكبير، واسحب للتحريك</li><li>على الهاتف: المس القطة، وقرّب إصبعين للتكبير، واسحب للتحريك</li></ul>
       <h2>نصائح</h2><ul><li>كبّر الزوايا المظلمة وما خلف الأشياء.</li><li>يصبح التلميح أدق مع كل لمسة.</li></ul>
       <h2>ماذا في اللعبة</h2><ul><li>5 مشاهد مرسومة مليئة بالتفاصيل</li><li>تكبير وتلميح بثلاثة مستويات</li><li>التقدم محفوظ على الجهاز</li></ul>
       <h2>الأسئلة الشائعة</h2><details class="faq"><summary>هل Purravista مجانية؟</summary><p>نعم. تلعب مجانًا مباشرةً في المتصفح.</p></details><details class="faq"><summary>هل يجب التنزيل للعب؟</summary><p>لا. تلعب من هذه الصفحة، دون تثبيت أي شيء ودون تسجيل.</p></details><details class="faq"><summary>هل تعمل على الجوال؟</summary><p>نعم. تعمل باللمس على الهاتف وبالفأرة على الكمبيوتر.</p></details><details class="faq"><summary>هل يُحفظ التقدّم؟</summary><p>نعم، على جهازك. عُد متى شئت وتابع من المشهد الذي توقفت عنده.</p></details>
-      <h2>ألعاب أخرى مثل Purravista</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/ar/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo><img src="/assets/media/dune/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dunevella</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo><img src="/assets/media/fint/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fintriva</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo><img src="/assets/media/pict/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictascade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a><a class="tl" href="/ar/hub/free-games/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo><img src="/assets/media/crumb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Crumbivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>العب الآن</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/ar/hub/free-games/casual/">ألعاب كاجوال مجانية</a><a class="chip-col" href="/ar/hub/free-games/puzzle/">ألعاب ألغاز مجانية</a></p>
     </article>
-    <aside class="jg__ficha">
-      <dl class="card">
-        <div><dt>الاستوديو</dt><dd><a href="/ar/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>النوع</dt><dd>لعبة البحث عن الأشياء</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>أين تلعب</dt><dd>المتصفح (الجوال والكمبيوتر)</dd></div>
         <div><dt>السعر</dt><dd>مجانية</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/purr/tela-1.webp" width="1280" height="720" alt="Purravista: شاشة اللعبة" loading="lazy"><img src="/assets/media/purr/tela-2.webp" width="1280" height="720" alt="Purravista: شاشة اللعبة" loading="lazy"><img src="/assets/media/purr/tela-3.webp" width="1280" height="720" alt="Purravista: شاشة اللعبة" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">العب أيضًا</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/ar/hub/free-games/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>ألغاز حيل في مشاهد</small></span></a><a class="lj-mini" href="/ar/hub/free-games/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>لغز أسهم مريح</small></span></a><a class="lj-mini" href="/ar/hub/free-games/fidgetlume/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Fidgetlume</b><small>ألعاب فيدجت مريحة</small></span></a><a class="lj-mini" href="/ar/hub/free-games/blockamigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Blockamigo</b><small>لغز مكعبات مريح</small></span></a><a class="lj-mini" href="/ar/hub/free-games/tintapix/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tintapix</b><small>تلوين بالأرقام مريح</small></span></a><a class="lj-mini" href="/ar/hub/free-games/snoozegrid/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Snoozegrid</b><small>لغز منطق</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/ar/hub/free-games/">كل الألعاب</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">ألعاب أخرى مثل Purravista</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/ar/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">لغز مواقف سيارات مريح</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a><a class="lj-cap" href="/ar/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">لعبة ألغاز ثلاثية الأبعاد مريحة</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a><a class="lj-cap" href="/ar/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">لعبة ألغاز ثعابين مريحة</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a><a class="lj-cap" href="/ar/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">لغز الألوان</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a><a class="lj-cap" href="/ar/hub/free-games/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/dune/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Dunevella</span><span class="lj-cap__gen">لغز تحريك القطع</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a><a class="lj-cap" href="/ar/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fint/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fintriva</span><span class="lj-cap__gen">لغز مطابقة الثلاثيات</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a><a class="lj-cap" href="/ar/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pict/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictascade</span><span class="lj-cap__gen">لغز الصور</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a><a class="lj-cap" href="/ar/hub/free-games/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/crumb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Crumbivana</span><span class="lj-cap__gen">لغز البكسلات</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">ألغاز</span><span class="lj-gratis">مجانية</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="السابق"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="التالي"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/ar/hub/free-games/casual/">ألعاب كاجوال مجانية</a><a class="chip-col" href="/ar/hub/free-games/puzzle/">ألعاب ألغاز مجانية</a></p>
+  </section>
 </section>
+<dialog class="lj-zoom" data-zoom aria-label="Purravista"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="إغلاق">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -177,6 +236,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"تم نسخ الكود {c}","Não deu para copiar. Selecione o código e copie à mão.":"تعذّر النسخ. حدّد الكود وانسخه يدويًا.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"أفاد عدد من اللاعبين بأن هذا الكود توقف عن العمل (خلال آخر 48 ساعة).","Por quê?":"لماذا؟","Expirou":"انتهت صلاحيته","Já tinha usado":"استخدمته من قبل","Deu inválido":"كود غير صالح","Obrigado! Isso ajuda a conferir mais rápido.":"شكرًا! هذا يساعدنا على التحقق بسرعة أكبر.","Obrigado! Seu voto ajuda outros jogadores.":"شكرًا! تصويتك يساعد اللاعبين الآخرين.","Voto retirado.":"تم إلغاء تصويتك.","Muitos votos seguidos. Tente de novo mais tarde.":"تصويتات كثيرة متتالية. حاول مرة أخرى لاحقًا.","Não deu para registrar o voto agora. Tente de novo em instantes.":"تعذّر تسجيل تصويتك الآن. حاول مرة أخرى بعد قليل.","Nada encontrado. Tente o nome do jogo.":"لا توجد نتائج. جرّب اسم اللعبة.","Carregando…":"جارٍ التحميل…","Sair":"خروج"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

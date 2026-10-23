@@ -49,37 +49,115 @@
   });
   if (qr) qr.addEventListener('click', function (e) { if (e.target === qr && qr.close) qr.close(); });
 
-  /* ---------- página "Jogos grátis": filtros (Em alta, Novos, categorias) e "Continue jogando" ---------- */
+  /* ---------- página "Jogos grátis": filtros (Em alta, Novos, categorias, Google Play) e "Continue jogando" ---------- */
   var mos = document.querySelector('[data-mosaico]');
   if (mos) {
     var nada = document.querySelector('[data-nada]');
-    document.querySelectorAll('[data-filtro]').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var f = b.getAttribute('data-filtro'), vistos = 0;
-        document.querySelectorAll('[data-filtro]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-        mos.querySelectorAll('.tl').forEach(function (t) {
-          var ok = f === 'todos' || (f === 'alta' && t.hasAttribute('data-alta')) || (f === 'novos' && t.hasAttribute('data-novo')) || (' ' + t.getAttribute('data-cats') + ' ').indexOf(' ' + f + ' ') >= 0;
-          t.hidden = !ok; if (ok) vistos++;
-        });
-        mos.classList.toggle('mos--filtrado', f !== 'todos');
-        if (nada) nada.hidden = vistos > 0;
-        mede('filtro', { filtro: f });
+    var filtra = function (b) {
+      var f = b.getAttribute('data-filtro'), vistos = 0;
+      document.querySelectorAll('[data-filtro]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      mos.querySelectorAll('[data-slug]').forEach(function (t) {
+        var ok = f === 'todos' || (f === 'alta' && t.hasAttribute('data-alta')) || (f === 'novos' && t.hasAttribute('data-novo')) || (f === 'play' && t.hasAttribute('data-play')) || (' ' + t.getAttribute('data-cats') + ' ').indexOf(' ' + f + ' ') >= 0;
+        t.hidden = !ok; if (ok) vistos++;
       });
+      mos.classList.toggle('mos--filtrado', f !== 'todos');
+      if (nada) nada.hidden = vistos > 0;
+      mede('filtro', { filtro: f });
+    };
+    document.querySelectorAll('[data-filtro]').forEach(function (b) { b.addEventListener('click', function () { filtra(b); }); });
+    // atalhos da vitrine ("Google Play", "Todos os jogos" em Explore por categoria): filtram a grade lá embaixo
+    document.querySelectorAll('[data-filtro-ir]').forEach(function (a) {
+      a.addEventListener('click', function () { var b = document.querySelector('[data-filtro="' + a.getAttribute('data-filtro-ir') + '"]'); if (b) filtra(b); });
     });
     var jogados = [];
     try { jogados = JSON.parse(localStorage.getItem('lipy-jogados') || '[]'); } catch (e) {}
     var cont = document.querySelector('[data-continue]');
     if (cont && jogados.length) {
-      var lista = cont.querySelector('.arc__continue-lista');
+      var lista = cont.querySelector('[data-continue-lista]');
       jogados.slice(0, 6).forEach(function (s) {
-        var t = mos.querySelector('.tl[data-slug="' + s + '"]');
+        var t = mos.querySelector('[data-slug="' + s + '"]');
         if (!t) return;
-        var c = t.cloneNode(true); c.classList.remove('tl--g'); c.removeAttribute('data-alta');
-        var al = c.querySelector('.tl__alta'); if (al) al.remove();
+        var c = t.cloneNode(true); c.hidden = false; c.removeAttribute('data-alta');
+        var al = c.querySelector('.lj-cap__etq'); if (al) al.remove();
         lista.appendChild(c);
       });
       cont.hidden = !lista.children.length;
     }
+  }
+
+  /* ---------- carrosséis (CSS scroll-snap): setas e pontinhos; o deslize com o dedo é do próprio navegador ---------- */
+  document.querySelectorAll('[data-trilho]').forEach(function (raiz) {
+    var tr = raiz.querySelector('.lj-trilho');
+    if (!tr) return;
+    var lado = getComputedStyle(tr).direction === 'rtl' ? -1 : 1;   // árabe: o "próximo" fica à esquerda
+    var gap = function () { return parseFloat(getComputedStyle(tr).columnGap) || 0; };
+    var item = function () { var f = tr.firstElementChild; return f ? f.offsetWidth + gap() : tr.clientWidth; };
+    var pos = function () { return Math.abs(tr.scrollLeft); }, max = function () { return tr.scrollWidth - tr.clientWidth; };
+    var passo = function () { return Math.max(1, Math.floor((tr.clientWidth + gap() + 2) / item())) * item(); };
+    var ir = function (d) {
+      if (d > 0 && pos() >= max() - 6) tr.scrollTo({ left: 0 });
+      else if (d < 0 && pos() <= 6) tr.scrollTo({ left: lado * max() });
+      else tr.scrollBy({ left: lado * d * passo() });
+    };
+    var ant = raiz.querySelector('[data-ant]'), prox = raiz.querySelector('[data-prox]');
+    if (ant) ant.addEventListener('click', function () { ir(-1); });
+    if (prox) prox.addEventListener('click', function () { ir(1); });
+    var cabe = function () { raiz.classList.toggle('is-cabe', max() < 6); };
+    cabe(); addEventListener('resize', cabe); addEventListener('load', cabe);
+    var pts = raiz.querySelector('[data-pontos]');
+    if (pts) {
+      var bs = pts.querySelectorAll('button');
+      tr.addEventListener('scroll', function () { var i = Math.round(pos() / item()); bs.forEach(function (b, k) { b.setAttribute('aria-current', String(k === i)); }); }, { passive: true });
+      bs.forEach(function (b, k) { b.addEventListener('click', function () { tr.scrollTo({ left: lado * k * item() }); }); });
+    }
+  });
+
+  /* ---------- abas da vitrine (Novos / Em destaque / Google Play) e a prévia ao lado (telas do jogo apontado) ---------- */
+  var abas = document.querySelector('[data-abas]'), previa = document.querySelector('[data-previa]');
+  var escH = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var mostraPrevia = function (li) {
+    if (!li || !previa) return;
+    document.querySelectorAll('.lj-linha.is-ativa').forEach(function (x) { if (x !== li) x.classList.remove('is-ativa'); });
+    li.classList.add('is-ativa');
+    var telas = []; try { telas = JSON.parse(li.getAttribute('data-telas') || '[]'); } catch (e) {}
+    var nome = li.querySelector('.lj-linha__nome'), gen = li.querySelector('.lj-linha__gen');
+    previa.innerHTML = '<b class="lj-previa__nome">' + escH(nome ? nome.textContent : '') + '</b><span class="lj-previa__gen">' + escH(gen ? gen.textContent : '') + '</span><span class="lj-previa__telas">' +
+      telas.map(function (t) { var s = escH(t[0]); return '<span class="lj-quadro">' + (t[1] ? '<span class="lj-arte lj-arte--retrato"><img class="lj-arte__fundo" src="' + s + '" alt=""><img src="' + s + '" alt=""></span>' : '<img class="lj-arte" src="' + s + '" alt="">') + '</span>'; }).join('') + '</span>';
+  };
+  if (abas) {
+    var botoes = abas.querySelectorAll('[role="tab"]');
+    var ativa = function (b, foco) {
+      botoes.forEach(function (x) { var on = x === b, pn = document.getElementById(x.getAttribute('aria-controls')); x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; if (pn) pn.hidden = !on; });
+      if (foco) b.focus();
+      var pn = document.getElementById(b.getAttribute('aria-controls'));
+      mostraPrevia(pn && pn.querySelector('.lj-linha'));
+    };
+    botoes.forEach(function (b, i) {
+      b.addEventListener('click', function () { ativa(b); });
+      b.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        if (document.documentElement.dir === 'rtl') d = -d;
+        e.preventDefault(); ativa(botoes[(i + d + botoes.length) % botoes.length], true);
+      });
+    });
+    document.querySelectorAll('.lj-lista').forEach(function (ls) {
+      ['mouseover', 'focusin'].forEach(function (ev) { ls.addEventListener(ev, function (e) { var li = e.target.closest && e.target.closest('.lj-linha'); if (li && !li.classList.contains('is-ativa')) mostraPrevia(li); }); });
+    });
+  }
+
+  /* ---------- telas da galeria em tamanho grande (sem JS, o link abre a imagem) ---------- */
+  var zoom = document.querySelector('[data-zoom]');
+  if (zoom && zoom.showModal) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('[data-ampliar]');
+      if (!a) return;
+      e.preventDefault();
+      var im = zoom.querySelector('img'), mini = a.querySelector('img');
+      im.src = a.getAttribute('href'); im.alt = mini ? mini.alt : '';
+      zoom.showModal();
+    });
+    zoom.addEventListener('click', function (e) { if (e.target === zoom || (e.target.closest && e.target.closest('[data-fecha-zoom]'))) zoom.close(); });
   }
   function anotaJogado() {
     try {
@@ -259,6 +337,10 @@
     setTimeout(function () { try { frame.focus(); } catch (e) {} }, 50);
   }
   tela.querySelector('[data-abrir]').addEventListener('click', abrir);
+  // "Jogar grátis no navegador" da ficha (coluna da direita): leva até o palco e abre o jogo nele
+  document.querySelectorAll('[data-abrir-jogo]').forEach(function (b) {
+    b.addEventListener('click', function () { try { tela.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {} abrir(); });
+  });
   var bt = document.querySelector('[data-tela-cheia]');
   if (bt) bt.addEventListener('click', function () { if (!frame) abrir(); cheia(true); });
   document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement) tela.classList.remove('is-cheia'); });
@@ -271,5 +353,7 @@
     // robôs (Google, Bing, prévia de link) NÃO abrem o jogo sozinho: seriam 30–90 MB baixados para nada
     var robo = /bot|crawl|spider|slurp|facebookexternalhit|bingpreview|lighthouse|headless|pagespeed|preview/i.test(navigator.userAgent || '');
     if (!robo && (qs.get('jogar') === '1' || /^(paid|pago|cpc)$/i.test(qs.get('utm_medium') || ''))) { mede('campanha_entrada', { criativo: qs.get('utm_content') || '' }); abrir(); }
+    // botão "Jogar" do banner da vitrine (…/<jogo>/#jogar): a pessoa já pediu para jogar, o jogo abre no palco
+    else if (!robo && location.hash === '#jogar') { mede('vitrine_jogar'); abrir(); }
   } catch (e) {}
 })();

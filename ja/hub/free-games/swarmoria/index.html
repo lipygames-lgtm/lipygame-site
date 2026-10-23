@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=M+PLUS+1p:wght@700;800&family=Noto+Sans+JP:wght@400..700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,41 +101,61 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/swarmoria/?lang=ja" data-nome="SWARMORIA" data-slug="swarmoria" data-cta-tempo="100" data-video="/assets/media/swarm/gameplay.mp4" data-carregando="ゲームを読み込み中…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="現在地"><a href="/ja/hub/">Hub</a><i>/</i><a href="/ja/hub/free-games/">無料ゲーム</a><i>/</i><span aria-current="page">SWARMORIA</span></nav>
+    <h1 class="t-display">SWARMORIA<span class="jg__h1-sub">無料オンラインの群れゲーム、Hole io風</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/swarmoria/?lang=ja" data-nome="SWARMORIA" data-slug="swarmoria" data-cta-tempo="100" data-video="/assets/media/swarm/gameplay.mp4" data-carregando="ゲームを読み込み中…">
         <img class="jg__capa" src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="SWARMORIAのゲーム画面" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">SWARMORIA</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</button><small>無料・DL不要・登録不要</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><b>気に入った？スマホで続きを</b><small>SWARMORIAを無料でインストールして、いつでもスマホで遊べます。</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" data-baixar="fase3" rel="noopener" target="_blank">無料でダウンロード</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="閉じる">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><b>SWARMORIA</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="swarmoria"><button type="button" data-voto="sim" aria-pressed="false" aria-label="気に入った" title="気に入った"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="合わなかった" title="合わなかった"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Playでダウンロード</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="全画面" title="全画面"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><b>SWARMORIA</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="swarmoria"><button type="button" data-voto="sim" aria-pressed="false" aria-label="気に入った" title="気に入った"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="合わなかった" title="合わなかった"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Playでダウンロード</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="全画面" title="全画面"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#2ad8ff;--c2:#8a5cff" aria-label="SWARMORIAをスマホで遊ぼう">
         <img class="jg__app-ico" src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>SWARMORIAをスマホで遊ぼう</b><small>ホーム画面からそのまま全画面で開きます。ブラウザも、アドレスの入力も不要です。</small></div>
         <a class="bt bt--luz jg__app-play" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="faixa"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Playでダウンロード</span></a>
         <div class="jg__app-qr"><img src="/assets/media/hub/qr/swarmoria.svg" width="84" height="84" alt="Google PlayのSWARMORIA QRコード" loading="lazy"><small>スマホでスキャン</small></div>
       </section>
+      </div>
+      <section class="lj-gal lj-gal--alta" aria-label="SWARMORIA"><h2 class="sr-only">ゲーム動画</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video lj-gal__item--retrato"><video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/swarm/gameplay-poster.webp"><source src="/assets/media/swarm/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-fase.webp" data-ampliar><img src="/assets/media/swarm/tela-fase-sm.webp" srcset="/assets/media/swarm/tela-fase-sm.webp 304w, /assets/media/swarm/tela-fase.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-boss.webp" data-ampliar><img src="/assets/media/swarm/tela-boss-sm.webp" srcset="/assets/media/swarm/tela-boss-sm.webp 304w, /assets/media/swarm/tela-boss.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-fase2.webp" data-ampliar><img src="/assets/media/swarm/tela-fase2-sm.webp" srcset="/assets/media/swarm/tela-fase2-sm.webp 304w, /assets/media/swarm/tela-fase2.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-menu.webp" data-ampliar><img src="/assets/media/swarm/tela-menu-sm.webp" srcset="/assets/media/swarm/tela-menu-sm.webp 304w, /assets/media/swarm/tela-menu.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="前へ"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="次へ"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">こちらもおすすめ</h2>
-      <div class="jg__mais"><a class="tl" href="/ja/hub/free-games/hoparade/" style="--c1:#7bd34a;--c2:#ff8a3d" data-slug="hoparade" data-cats="casual acao" data-novo><img src="/assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Hoparade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/villadash/" style="--c1:#f6a21a;--c2:#8fb3ff" data-slug="villadash" data-cats="acao" data-novo><img src="/assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Villadash</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/legiontide/" style="--c1:#ffc21a;--c2:#2f6bff" data-slug="legiontide" data-cats="estrategia acao" data-novo><img src="/assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">LEGIONTIDE</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/dropaloo/" style="--c1:#5BB8F0;--c2:#F28DB8" data-slug="dropaloo" data-cats="casual" data-novo><img src="/assets/media/drop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dropaloo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo><img src="/assets/media/spad/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Spadorable</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/ja/hub/free-games/">すべてのゲーム</a></p>
+    <aside class="lj-ficha" aria-label="SWARMORIA">
+      <span class="lj-ficha__capa"><span class="lj-arte lj-arte--retrato"><img class="lj-arte__fundo" src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="" decoding="async" aria-hidden="true"><img src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="" decoding="async"></span></span>
+      <p class="lj-ficha__desc">Hole io風の無料ブラウザ群れゲーム。物を飲み込んで成長し、突然変異を選び、巨大なTitanを倒そう。ダウンロード不要。</p>
+      <dl class="lj-dados">
+        <div><dt>リリース日</dt><dd><time datetime="2026-10-04">2026年10月4日</time></dd></div>
+        <div><dt>スタジオ</dt><dd><a href="/ja/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>ジャンル</dt><dd>3Dの群れゲーム</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/ja/hub/free-games/action/">アクション</a><a class="lj-tag" href="/ja/hub/free-games/casual/">カジュアル</a><span class="lj-tag">Google Play</span></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>ブラウザで無料プレイ</button>
+        <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><small>Android版あり</small><b>Google Playでダウンロード</b></span></a>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="現在地"><a href="/ja/hub/">Hub</a><i>/</i><a href="/ja/hub/free-games/">無料ゲーム</a><i>/</i><span aria-current="page">SWARMORIA</span></nav>
-      <h1 class="t-display">SWARMORIA<span class="jg__h1-sub">無料オンラインの群れゲーム、Hole io風</span></h1>
-      <p class="jg__genero">3Dの群れゲーム</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>このゲームについて</h2>
       <p>SWARMORIA: Consume &amp; Evolveは3Dの群れゲームです。Coreを動かすと、ロボットの群れがついてきます。群れより小さいものはすべて分解され、分解したものはさらにロボットになります。</p>
       <p>プレイ中に3枚の変異カードが現れ、ワンタップで今回の群れの成長の仕方が決まります。2枚、3枚と組み合わせると、同じステージがまるで別のゲームになります。</p>
       <p>Titan Huntモードでは、最初は絶対に勝てなさそうなタイタンと戦います。群れは成長し、装甲を一枚ずつはがしてコアをむき出しにします。プレイの最後には、マテリアルが永続アップグレードで育つ基地「Nexus」に送られます。</p>
-      <h2>ゲーム動画</h2>
-      <video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/swarm/gameplay-poster.webp"><source src="/assets/media/swarm/gameplay.mp4" type="video/mp4"></video>
       <h2>Hole ioが好きなら</h2>
       <p>Hole ioや、何でも飲み込んで大きくなるゲームが好きなら、SWARMORIAでも同じ爽快感を味わえます。ただし主役はロボットの群れ。食べるほど群れは大きくなり、変異によってプレイスタイルが変わり、タイタンとの戦いへと続きます。</p>
       <h2>遊び方</h2><ol><li>指でドラッグしてCoreを動かそう。群れがついてきます。</li><li>群れより小さいものに触れて取り込もう。</li><li>取り込んだものはロボットになります。大きなものに届くまで成長しよう。</li><li>3枚の変異カードが出たら、1枚選ぼう。</li><li>最後はNexusでマテリアルを使って、次のプレイに向けて強くなろう。</li></ol>
@@ -142,21 +163,56 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>コツ</h2><ul><li>まずは小さいものから。ひとつごとに群れが大きくなり、大きなものに手が届くようになります。</li><li>今は大きすぎる？群れが育ってから戻ってこよう。</li><li>Replicatorは素早い成長に、Armoredは危険でロボットを失いにくくするのに役立ちます。</li><li>Magneticは遠くのマテリアルを引き寄せるので、取りこぼしがなくなります。</li><li>タイタン戦では、最初の攻撃が来る前にアリーナを取り込んで成長しよう。</li><li>タイタンの反撃エリアから出よう。ロボットが消されてしまいます。</li><li>マテリアルはNexusに投資しよう。アップグレードはずっと有効です。</li></ul>
       <h2>ゲームの中身</h2><ul><li>2つのモード：Assimilation RunとTitan Hunt</li><li>タイタン3体、各ワールドの最後に1体</li><li>6種の変異：Replicator、Corrosive、Rapid、Armored、Magnetic、Salvager</li><li>複製、機動力、耐久、回復の永続アップグレードがあるNexus</li><li>群れのスキン4種：Base、Void、Nano、Plasma</li><li>1回2〜4分、指1本で遊べる</li></ul>
       <h2>よくある質問</h2><details class="faq"><summary>SWARMORIAは無料ですか？</summary><p>はい。このブラウザ版は無料で、課金もありません。</p></details><details class="faq"><summary>SWARMORIAはどこで遊べますか？</summary><p>このページで、スマホやパソコンのブラウザからそのまま遊べます。AndroidならGoogle Playからインストールもできます。</p></details><details class="faq"><summary>ダウンロードは必要ですか？</summary><p>いいえ。インストール不要で、このページですぐに遊べます。</p></details><details class="faq"><summary>スマホでも遊べますか？</summary><p>はい。スマホの縦画面向けに作られていて、指1本で遊べます。パソコンではマウスを使ってください。</p></details><details class="faq"><summary>1回のプレイ時間は？</summary><p>2〜4分です。</p></details>
-      <h2>SWARMORIAに似たゲーム</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/ja/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a><a class="tl" href="/ja/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>今すぐプレイ</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/ja/hub/free-games/action/">無料アクションゲーム</a><a class="chip-col" href="/ja/hub/free-games/casual/">無料カジュアルゲーム</a></p>
     </article>
-    <aside class="jg__ficha">
-      <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><small>Android版あり</small><b>Google Playでダウンロード</b></span></a>
-      <dl class="card">
-        <div><dt>スタジオ</dt><dd><a href="/ja/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>ジャンル</dt><dd>3Dの群れゲーム</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>プレイ環境</dt><dd>ブラウザ（スマホ・PC） · Android (Google Play)</dd></div>
         <div><dt>価格</dt><dd>無料</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/swarm/tela-fase.webp" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy"><img src="/assets/media/swarm/tela-boss.webp" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy"><img src="/assets/media/swarm/tela-fase2.webp" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy"><img src="/assets/media/swarm/tela-menu.webp" width="720" height="1279" alt="SWARMORIAのゲーム画面" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">こちらもおすすめ</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/ja/hub/free-games/hoparade/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/hopa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Hoparade</b><small>3Dカジュアル：ジャンプ、救出、農場</small></span></a><a class="lj-mini" href="/ja/hub/free-games/villadash/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/villa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Villadash</b><small>3Dアクション：時間内の救出と決闘</small></span></a><a class="lj-mini" href="/ja/hub/free-games/legiontide/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/legion/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>LEGIONTIDE</b><small>3D軍団：アクション＆戦略</small></span></a><a class="lj-mini" href="/ja/hub/free-games/dropaloo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/drop/capa-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Dropaloo</b><small>ワンタップカジュアル：色と反射神経</small></span></a><a class="lj-mini" href="/ja/hub/free-games/spadorable/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/spad/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Spadorable</b><small>癒やしのASMRスパ</small></span></a><a class="lj-mini" href="/ja/hub/free-games/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>場面で解くひっかけパズル</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/ja/hub/free-games/">すべてのゲーム</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">SWARMORIAに似たゲーム</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/ja/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Arrowmigo</span><span class="lj-cap__gen">癒やし系矢印パズル</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">パズル</span><span class="lj-gratis">無料</span></span></span>
+    </a><a class="lj-cap" href="/ja/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fidgetlume</span><span class="lj-cap__gen">癒やしのフィジェットトイ</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">カジュアル</span><span class="lj-gratis">無料</span></span></span>
+    </a><a class="lj-cap" href="/ja/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Blockamigo</span><span class="lj-cap__gen">癒やし系ブロックパズル</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">パズル</span><span class="lj-gratis">無料</span></span></span>
+    </a><a class="lj-cap" href="/ja/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Tintapix</span><span class="lj-cap__gen">癒やしの数字ぬり絵</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">パズル</span><span class="lj-gratis">無料</span></span></span>
+    </a><a class="lj-cap" href="/ja/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">ロジックパズル</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">パズル</span><span class="lj-gratis">無料</span></span></span>
+    </a><a class="lj-cap" href="/ja/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">癒やし系駐車場パズル</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">パズル</span><span class="lj-gratis">無料</span></span></span>
+    </a><a class="lj-cap" href="/ja/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">癒やしの3Dパズル</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">パズル</span><span class="lj-gratis">無料</span></span></span>
+    </a><a class="lj-cap" href="/ja/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">癒やし系ヘビパズル</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">パズル</span><span class="lj-gratis">無料</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="前へ"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="次へ"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/ja/hub/free-games/action/">無料アクションゲーム</a><a class="chip-col" href="/ja/hub/free-games/casual/">無料カジュアルゲーム</a></p>
+  </section>
 </section>
 <dialog class="jg__qr" data-qr>
   <img src="/assets/media/hub/qr/swarmoria.svg" width="240" height="240" alt="Google PlayのSWARMORIA QRコード">
@@ -164,6 +220,8 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   <p class="jg__qr-ios" data-ios hidden>iPhoneの方へ：SWARMORIAは現在Android版のみです。</p>
   <div class="jg__qr-bts"><a class="bt bt--vidro" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="qr">Google Playを開く</a><button type="button" class="bt bt--luz" data-fecha-qr>閉じる</button></div>
 </dialog>
+<dialog class="lj-zoom" data-zoom aria-label="SWARMORIA"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="閉じる">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -194,6 +252,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"コード「{c}」をコピーしました","Não deu para copiar. Selecione o código e copie à mão.":"コピーできませんでした。コードを選択して、手動でコピーしてください。","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"このコードは使えなくなったという声が、複数のプレイヤーから寄せられています（直近48時間）。","Por quê?":"理由は？","Expirou":"期限切れ","Já tinha usado":"使用済み","Deu inválido":"無効と表示された","Obrigado! Isso ajuda a conferir mais rápido.":"ありがとうございます！より早く確認するのに役立ちます。","Obrigado! Seu voto ajuda outros jogadores.":"ありがとうございます！あなたの投票がほかのプレイヤーの役に立ちます。","Voto retirado.":"投票を取り消しました。","Muitos votos seguidos. Tente de novo mais tarde.":"短時間に投票が多すぎます。しばらくしてからもう一度お試しください。","Não deu para registrar o voto agora. Tente de novo em instantes.":"投票を記録できませんでした。少し時間をおいて、もう一度お試しください。","Nada encontrado. Tente o nome do jogo.":"見つかりませんでした。ゲーム名で検索してみてください。","Carregando…":"読み込み中…","Sair":"終了"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

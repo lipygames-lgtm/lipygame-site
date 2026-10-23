@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,42 +101,62 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/legiontide/?lang=en" data-nome="LEGIONTIDE" data-slug="legiontide" data-cta-tempo="100" data-video="/assets/media/legion/gameplay.mp4" data-carregando="Loading the game…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/legion/capa.webp" width="1600" height="900" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="You are here"><a href="/hub/">Hub</a><i>/</i><a href="/hub/free-games/">Free games</a><i>/</i><span aria-current="page">LEGIONTIDE</span></nav>
+    <h1 class="t-display">LEGIONTIDE<span class="jg__h1-sub">Free Army Game Like Count Masters</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/legiontide/?lang=en" data-nome="LEGIONTIDE" data-slug="legiontide" data-cta-tempo="100" data-video="/assets/media/legion/gameplay.mp4" data-carregando="Loading the game…">
         <img class="jg__capa" src="/assets/media/legion/capa.webp" width="1600" height="900" alt="LEGIONTIDE: gameplay screenshot" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/legion/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">LEGIONTIDE</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</button><small>Free · no download · no sign-up</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/legion/icone-sm.webp" width="160" height="160" alt=""><span><b>Enjoying it? Keep playing on your phone</b><small>In the app, every new player gets: 1 extra builder in the kingdom and 20K coins.</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" data-baixar="fase3" rel="noopener" target="_blank">Get it free</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="Close">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/legion/icone-sm.webp" width="160" height="160" alt=""><span><b>LEGIONTIDE</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="legiontide"><button type="button" data-voto="sim" aria-pressed="false" aria-label="I like this game" title="I like this game"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="I don&#39;t like this game" title="I don&#39;t like this game"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Get it on Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Full screen" title="Full screen"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/legion/icone-sm.webp" width="160" height="160" alt=""><span><b>LEGIONTIDE</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="legiontide"><button type="button" data-voto="sim" aria-pressed="false" aria-label="I like this game" title="I like this game"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="I don&#39;t like this game" title="I don&#39;t like this game"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Get it on Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Full screen" title="Full screen"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#ffc21a;--c2:#2f6bff" aria-label="Take LEGIONTIDE on your phone">
         <img class="jg__app-ico" src="/assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>Take LEGIONTIDE on your phone</b><small>In the app, every new player gets: 1 extra builder in the kingdom and 20K coins.</small></div>
         <a class="bt bt--luz jg__app-play" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" rel="noopener" target="_blank" data-baixar="faixa"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Get it on Google Play</span></a>
         <div class="jg__app-qr"><img src="/assets/media/hub/qr/legiontide.svg" width="84" height="84" alt="LEGIONTIDE QR code on Google Play" loading="lazy"><small>Scan with your phone</small></div>
       </section>
+      </div>
+      <section class="lj-gal" aria-label="LEGIONTIDE"><h2 class="sr-only">Gameplay video</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video"><video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/legion/gameplay-poster.webp"><source src="/assets/media/legion/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item" href="/assets/media/legion/en/corrida-campos.webp" data-ampliar><img src="/assets/media/legion/en/corrida-campos-sm.webp" srcset="/assets/media/legion/en/corrida-campos-sm.webp 540w, /assets/media/legion/en/corrida-campos.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/legion/en/corrida-cogumelos.webp" data-ampliar><img src="/assets/media/legion/en/corrida-cogumelos-sm.webp" srcset="/assets/media/legion/en/corrida-cogumelos-sm.webp 540w, /assets/media/legion/en/corrida-cogumelos.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/legion/en/corrida-gelo.webp" data-ampliar><img src="/assets/media/legion/en/corrida-gelo-sm.webp" srcset="/assets/media/legion/en/corrida-gelo-sm.webp 540w, /assets/media/legion/en/corrida-gelo.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/legion/en/luta.webp" data-ampliar><img src="/assets/media/legion/en/luta-sm.webp" srcset="/assets/media/legion/en/luta-sm.webp 540w, /assets/media/legion/en/luta.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/legion/en/reino.webp" data-ampliar><img src="/assets/media/legion/en/reino-sm.webp" srcset="/assets/media/legion/en/reino-sm.webp 540w, /assets/media/legion/en/reino.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/legion/en/mapa.webp" data-ampliar><img src="/assets/media/legion/en/mapa-sm.webp" srcset="/assets/media/legion/en/mapa-sm.webp 540w, /assets/media/legion/en/mapa.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Previous"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Next"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">You might also like</h2>
-      <div class="jg__mais"><a class="tl" href="/hub/free-games/villadash/" style="--c1:#f6a21a;--c2:#8fb3ff" data-slug="villadash" data-cats="acao" data-novo><img src="/assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Villadash</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/tumbleforge/" style="--c1:#f2a33a;--c2:#5a8fd6" data-slug="tumbleforge" data-cats="puzzle acao" data-novo><img src="/assets/media/tumb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tumbleforge</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/hoparade/" style="--c1:#7bd34a;--c2:#ff8a3d" data-slug="hoparade" data-cats="casual acao" data-novo><img src="/assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Hoparade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/nitrovenant/" style="--c1:#ff7a1a;--c2:#b3122e" data-slug="nitrovenant" data-cats="acao corrida" data-novo><img src="/assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Nitrovenant</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/swarmoria/" style="--c1:#2ad8ff;--c2:#8a5cff" data-slug="swarmoria" data-cats="acao casual" data-novo><img src="/assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">SWARMORIA</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/dropaloo/" style="--c1:#5BB8F0;--c2:#F28DB8" data-slug="dropaloo" data-cats="casual" data-novo><img src="/assets/media/drop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dropaloo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hub/free-games/">All games</a></p>
+    <aside class="lj-ficha" aria-label="LEGIONTIDE">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/legion/capa.webp" width="1600" height="900" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">Free army game in your browser, like Count Masters and Mob Control: multiply your legion at the gates and take down 6 bosses. No download.</p>
+      <dl class="lj-dados">
+        <div><dt>Release date</dt><dd><time datetime="2026-10-04">Oct 4, 2026</time></dd></div>
+        <div><dt>Studio</dt><dd><a href="/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>Genre</dt><dd>3D legion: action and strategy</dd></div>
+      </dl>
+      <p class="lj-tags"><span class="lj-tag">Strategy</span><a class="lj-tag" href="/hub/free-games/action/">Action</a><span class="lj-tag">Google Play</span></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play free in your browser</button>
+        <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/legion/icone-sm.webp" width="160" height="160" alt=""><span><small>Available for Android</small><b>Get it on Google Play</b><em>🎁 In the app, every new player gets: 1 extra builder in the kingdom and 20K coins.</em></span></a>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="You are here"><a href="/hub/">Hub</a><i>/</i><a href="/hub/free-games/">Free games</a><i>/</i><span aria-current="page">LEGIONTIDE</span></nav>
-      <h1 class="t-display">LEGIONTIDE<span class="jg__h1-sub">Free Army Game Like Count Masters</span></h1>
-      <p class="jg__genero">3D legion: action and strategy</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
       <p><a class="chip-col" href="/hub/free-games/legiontide/guide/">LEGIONTIDE complete guide</a></p>
+      <h2>About this game</h2>
       <p>LEGIONTIDE is a 3D legion game: you lead an army down a track and pick the gates that add, multiply or change your troop type. Only the troops that go through the gate count.</p>
       <p>What sets it apart is picking the right army for each fight. Before every clash, the enemy shows its size and what beats it: mages against swarms, archers against exploding mushrooms, giants against armored foes. At the end of the track, a giant boss is waiting, with attacks marked on the ground and a weak spot.</p>
       <p>Between battles, you look after an island kingdom: crown your monarch, build structures that make your troops stronger and defend the wall from skeleton hordes. The kingdom keeps making gold even when the game is closed.</p>
-      <h2>Gameplay video</h2>
-      <video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/legion/gameplay-poster.webp"><source src="/assets/media/legion/gameplay.mp4" type="video/mp4"></video>
       <h2>If you like Count Masters, Mob Control, Crowd City</h2>
       <p>If you like Count Masters, Mob Control or Crowd City, you&#39;ll feel right at home: the gates multiply your army the same way. The difference is that here the type of troop matters. Shieldbearers, archers, giants and mages each beat different enemies, every track ends with a giant boss, and between levels you build your own kingdom.</p>
       <h2>How to play</h2><ol><li>Steer the legion toward the gates that grow your army the most.</li><li>Squeeze the formation into a thin column to slip past hammers, saws, boulders and arrow rain.</li><li>Before each fight, check the enemy&#39;s strength and send in the right troops.</li><li>Use each class&#39;s power and the Golden Legion at the right moment.</li><li>In the arena, dodge the boss&#39;s attacks and hit its weak spot.</li><li>Take the gold back to your kingdom and power up your troops.</li></ol>
@@ -143,21 +164,56 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>Tips</h2><ul><li>Not every gate helps: some take troops away. Check the number before you go through.</li><li>Read the warning before each fight: it shows the enemy&#39;s size and which troop beats it.</li><li>Shield bearers block enemy arrows. Keeping a few up front protects the rest of the legion.</li><li>In the Mushroom Forest, archers take out the exploding mushrooms from a distance.</li><li>Save the Golden Legion for a tough moment: your army becomes invincible for a few seconds.</li><li>In the boss fight, every attack is marked on the ground. Get out of the marked area.</li><li>Finish on the staircase, the gold wall or the cannon to multiply your gold.</li></ul>
       <h2>What&#39;s in the game</h2><ul><li>30 levels, 10 in each biome</li><li>3 biomes: Green Fields, Mushroom Forest and Frozen Peaks</li><li>6 bosses, two in each biome</li><li>5 troop types, 4 powers and the Golden Legion</li><li>Island kingdom with buildings, offline gold and skeleton defense</li><li>6 languages: Portuguese, English, Spanish, Hindi, Japanese and Arabic</li></ul>
       <h2>Frequently asked questions</h2><details class="faq"><summary>Is LEGIONTIDE free?</summary><p>Yes. It&#39;s free and has no purchases.</p></details><details class="faq"><summary>Do I need to download it?</summary><p>No. You play right in your browser, on this page, without installing anything.</p></details><details class="faq"><summary>Does it work on mobile?</summary><p>Yes, in your phone&#39;s browser, with touch controls. You can play in landscape or portrait. There&#39;s no Google Play version yet.</p></details><details class="faq"><summary>How many bosses are in the game?</summary><p>There are 6 bosses, two in each biome: Orc Brute, Stone Golem, Mushroom King, Forest Warlock, Yeti and Blizzard Ghost.</p></details><details class="faq"><summary>What is the kingdom for?</summary><p>The gold from each run goes to your kingdom, where you build structures that make your troops stronger. Every kingdom you conquer becomes an island.</p></details><details class="faq"><summary>Will there be more biomes?</summary><p>The fourth kingdom, the Volcano, already shows up on the map, locked and marked as coming soon.</p></details>
-      <h2>More games like LEGIONTIDE</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/hub/free-games/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo><img src="/assets/media/spad/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Spadorable</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a><a class="tl" href="/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Play now</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hub/free-games/action/">Free action games</a></p>
     </article>
-    <aside class="jg__ficha">
-      <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/legion/icone-sm.webp" width="160" height="160" alt=""><span><small>Available for Android</small><b>Get it on Google Play</b><em>🎁 In the app, every new player gets: 1 extra builder in the kingdom and 20K coins.</em></span></a>
-      <dl class="card">
-        <div><dt>Studio</dt><dd><a href="/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>Genre</dt><dd>3D legion: action and strategy</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>Where to play</dt><dd>Browser (mobile and computer) · Android (Google Play)</dd></div>
         <div><dt>Price</dt><dd>Free</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/legion/en/corrida-campos.webp" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy"><img src="/assets/media/legion/en/corrida-cogumelos.webp" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy"><img src="/assets/media/legion/en/corrida-gelo.webp" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy"><img src="/assets/media/legion/en/luta.webp" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy"><img src="/assets/media/legion/en/reino.webp" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy"><img src="/assets/media/legion/en/mapa.webp" width="1280" height="720" alt="LEGIONTIDE: gameplay screenshot" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">You might also like</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/hub/free-games/villadash/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/villa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Villadash</b><small>3D action: timed rescue and duel</small></span></a><a class="lj-mini" href="/hub/free-games/tumbleforge/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tumb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tumbleforge</b><small>Physics puzzle</small></span></a><a class="lj-mini" href="/hub/free-games/hoparade/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/hopa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Hoparade</b><small>Casual 3D: hop, rescue and farm</small></span></a><a class="lj-mini" href="/hub/free-games/nitrovenant/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/nitro/destaque-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Nitrovenant</b><small>Action on wheels</small></span></a><a class="lj-mini" href="/hub/free-games/swarmoria/"><span class="lj-mini__arte"><span class="lj-arte lj-arte--retrato"><img class="lj-arte__fundo" src="/assets/media/swarm/tela-abertura-sm.webp" width="360" height="640" alt="" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/media/swarm/tela-abertura-sm.webp" width="360" height="640" alt="" loading="lazy" decoding="async"></span></span><span class="lj-mini__txt"><b>SWARMORIA</b><small>3D swarm</small></span></a><a class="lj-mini" href="/hub/free-games/dropaloo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/drop/capa-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Dropaloo</b><small>One-tap casual: colors and reflexes</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/hub/free-games/">All games</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">More games like LEGIONTIDE</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/hub/free-games/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/spad/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Spadorable</span><span class="lj-cap__gen">Relaxing ASMR spa</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Casual</span><span class="lj-gratis">Free</span></span></span>
+    </a><a class="lj-cap" href="/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Trickwink</span><span class="lj-cap__gen">Trick puzzle in scenes</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Free</span></span></span>
+    </a><a class="lj-cap" href="/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Arrowmigo</span><span class="lj-cap__gen">Relaxing arrow puzzle</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Free</span></span></span>
+    </a><a class="lj-cap" href="/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fidgetlume</span><span class="lj-cap__gen">Relaxing fidget toys</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Casual</span><span class="lj-gratis">Free</span></span></span>
+    </a><a class="lj-cap" href="/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Blockamigo</span><span class="lj-cap__gen">Relaxing block puzzle</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Free</span></span></span>
+    </a><a class="lj-cap" href="/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Tintapix</span><span class="lj-cap__gen">Relaxing color by number</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Free</span></span></span>
+    </a><a class="lj-cap" href="/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">Logic puzzle</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Free</span></span></span>
+    </a><a class="lj-cap" href="/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">Relaxing parking puzzle</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Free</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Previous"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Next"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/hub/free-games/action/">Free action games</a></p>
+  </section>
 </section>
 <dialog class="jg__qr" data-qr>
   <img src="/assets/media/hub/qr/legiontide.svg" width="240" height="240" alt="LEGIONTIDE QR code on Google Play">
@@ -166,6 +222,8 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   <p class="jg__qr-ios" data-ios hidden>On iPhone: for now, LEGIONTIDE is Android-only.</p>
   <div class="jg__qr-bts"><a class="bt bt--vidro" href="https://play.google.com/store/apps/details?id=com.lipy.legiontide" rel="noopener" target="_blank" data-baixar="qr">Open Google Play</a><button type="button" class="bt bt--luz" data-fecha-qr>Close</button></div>
 </dialog>
+<dialog class="lj-zoom" data-zoom aria-label="LEGIONTIDE"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="Close">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -196,6 +254,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"Code {c} copied","Não deu para copiar. Selecione o código e copie à mão.":"Couldn't copy. Select the code and copy it manually.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Several players reported that this code stopped working (last 48 hours).","Por quê?":"Why?","Expirou":"Expired","Já tinha usado":"Already used","Deu inválido":"Invalid code","Obrigado! Isso ajuda a conferir mais rápido.":"Thanks! This helps us check codes faster.","Obrigado! Seu voto ajuda outros jogadores.":"Thanks! Your vote helps other players.","Voto retirado.":"Vote removed.","Muitos votos seguidos. Tente de novo mais tarde.":"Too many votes in a row. Try again later.","Não deu para registrar o voto agora. Tente de novo em instantes.":"Couldn't save your vote right now. Try again in a moment.","Nada encontrado. Tente o nome do jogo.":"Nothing found. Try the game's name.","Carregando…":"Loading…","Sair":"Exit"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

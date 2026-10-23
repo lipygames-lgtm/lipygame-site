@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,41 +101,61 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/swarmoria/?lang=id" data-nome="SWARMORIA" data-slug="swarmoria" data-cta-tempo="100" data-video="/assets/media/swarm/gameplay.mp4" data-carregando="Memuat game…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="Kamu berada di"><a href="/id/hub/">Hub</a><i>/</i><a href="/id/hub/game-gratis/">Game gratis</a><i>/</i><span aria-current="page">SWARMORIA</span></nav>
+    <h1 class="t-display">SWARMORIA<span class="jg__h1-sub">game swarm gratis online, gaya Hole io</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/swarmoria/?lang=id" data-nome="SWARMORIA" data-slug="swarmoria" data-cta-tempo="100" data-video="/assets/media/swarm/gameplay.mp4" data-carregando="Memuat game…">
         <img class="jg__capa" src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="SWARMORIA: tampilan game" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">SWARMORIA</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</button><small>Gratis · tanpa unduh · tanpa daftar</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><b>Suka? Lanjut main di HP</b><small>Pasang gratis dan mainkan SWARMORIA kapan saja, langsung dari HP kamu.</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" data-baixar="fase3" rel="noopener" target="_blank">Unduh gratis</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="Tutup">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><b>SWARMORIA</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="swarmoria"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Suka gamenya" title="Suka gamenya"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Tidak suka gamenya" title="Tidak suka gamenya"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Unduh di Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Layar penuh" title="Layar penuh"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><b>SWARMORIA</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="swarmoria"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Suka gamenya" title="Suka gamenya"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Tidak suka gamenya" title="Tidak suka gamenya"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Unduh di Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Layar penuh" title="Layar penuh"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#2ad8ff;--c2:#8a5cff" aria-label="Bawa SWARMORIA ke ponselmu">
         <img class="jg__app-ico" src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>Bawa SWARMORIA ke ponselmu</b><small>Terbuka langsung dari layar utama, dalam layar penuh, tanpa browser dan tanpa mengetik alamat.</small></div>
         <a class="bt bt--luz jg__app-play" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="faixa"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Unduh di Google Play</span></a>
         <div class="jg__app-qr"><img src="/assets/media/hub/qr/swarmoria.svg" width="84" height="84" alt="Kode QR SWARMORIA di Google Play" loading="lazy"><small>Pindai dengan ponsel</small></div>
       </section>
+      </div>
+      <section class="lj-gal lj-gal--alta" aria-label="SWARMORIA"><h2 class="sr-only">Video gameplay</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video lj-gal__item--retrato"><video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/swarm/gameplay-poster.webp"><source src="/assets/media/swarm/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-fase.webp" data-ampliar><img src="/assets/media/swarm/tela-fase-sm.webp" srcset="/assets/media/swarm/tela-fase-sm.webp 304w, /assets/media/swarm/tela-fase.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-boss.webp" data-ampliar><img src="/assets/media/swarm/tela-boss-sm.webp" srcset="/assets/media/swarm/tela-boss-sm.webp 304w, /assets/media/swarm/tela-boss.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-fase2.webp" data-ampliar><img src="/assets/media/swarm/tela-fase2-sm.webp" srcset="/assets/media/swarm/tela-fase2-sm.webp 304w, /assets/media/swarm/tela-fase2.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/swarm/tela-menu.webp" data-ampliar><img src="/assets/media/swarm/tela-menu-sm.webp" srcset="/assets/media/swarm/tela-menu-sm.webp 304w, /assets/media/swarm/tela-menu.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Sebelumnya"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Berikutnya"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">Main juga</h2>
-      <div class="jg__mais"><a class="tl" href="/id/hub/game-gratis/hoparade/" style="--c1:#7bd34a;--c2:#ff8a3d" data-slug="hoparade" data-cats="casual acao" data-novo><img src="/assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Hoparade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/villadash/" style="--c1:#f6a21a;--c2:#8fb3ff" data-slug="villadash" data-cats="acao" data-novo><img src="/assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Villadash</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/legiontide/" style="--c1:#ffc21a;--c2:#2f6bff" data-slug="legiontide" data-cats="estrategia acao" data-novo><img src="/assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">LEGIONTIDE</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/dropaloo/" style="--c1:#5BB8F0;--c2:#F28DB8" data-slug="dropaloo" data-cats="casual" data-novo><img src="/assets/media/drop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dropaloo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo><img src="/assets/media/spad/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Spadorable</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/id/hub/game-gratis/">Semua game</a></p>
+    <aside class="lj-ficha" aria-label="SWARMORIA">
+      <span class="lj-ficha__capa"><span class="lj-arte lj-arte--retrato"><img class="lj-arte__fundo" src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="" decoding="async" aria-hidden="true"><img src="/assets/media/swarm/tela-abertura.webp" width="720" height="1279" alt="" decoding="async"></span></span>
+      <p class="lj-ficha__desc">Game swarm gratis di browser, gaya Hole io: lahap benda untuk tumbuh, pilih mutasi, dan hancurkan Titan raksasa. Tanpa unduh.</p>
+      <dl class="lj-dados">
+        <div><dt>Tanggal rilis</dt><dd><time datetime="2026-10-04">4 Okt 2026</time></dd></div>
+        <div><dt>Studio</dt><dd><a href="/id/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>Genre</dt><dd>Kawanan 3D</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/id/hub/game-gratis/aksi/">Aksi</a><a class="lj-tag" href="/id/hub/game-gratis/kasual/">Kasual</a><span class="lj-tag">Google Play</span></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main gratis di browser</button>
+        <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><small>Tersedia untuk Android</small><b>Unduh di Google Play</b></span></a>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="Kamu berada di"><a href="/id/hub/">Hub</a><i>/</i><a href="/id/hub/game-gratis/">Game gratis</a><i>/</i><span aria-current="page">SWARMORIA</span></nav>
-      <h1 class="t-display">SWARMORIA<span class="jg__h1-sub">game swarm gratis online, gaya Hole io</span></h1>
-      <p class="jg__genero">Kawanan 3D</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>Tentang game ini</h2>
       <p>SWARMORIA: Consume &amp; Evolve adalah game kawanan 3D. Kamu memandu Core dan kawanan robot mengikutinya. Semua yang lebih kecil dari kawanan akan dibongkar, dan setiap objek menjadi lebih banyak robot.</p>
       <p>Di tengah permainan muncul tiga kartu mutasi, dan satu ketukan menentukan cara kawanan tumbuh kali ini. Dengan menggabungkan dua atau tiga, level yang sama terasa seperti game lain.</p>
       <p>Di mode Titan Hunt, kamu menghadapi Titan yang awalnya tampak mustahil. Kawanan tumbuh, mencopot zirahnya keping demi keping, dan membuka intinya. Di akhir setiap permainan, materi dikirim ke Nexus, markas yang berkembang dengan upgrade permanen.</p>
-      <h2>Video gameplay</h2>
-      <video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/swarm/gameplay-poster.webp"><source src="/assets/media/swarm/gameplay.mp4" type="video/mp4"></video>
       <h2>Kalau kamu suka Hole io</h2>
       <p>Kalau kamu suka Hole io dan game menelan segalanya untuk tumbuh besar, SWARMORIA memberi sensasi yang sama, tapi dengan kawanan robot. Makin banyak yang kamu lahap, makin besar kawananmu, dan mutasi mengubah gaya bermainmu sampai pertarungan melawan para Titan.</p>
       <h2>Cara bermain</h2><ol><li>Geser jari untuk menggerakkan Core. Kawanan akan mengikutinya.</li><li>Sentuh objek yang lebih kecil dari kawanan untuk melahapnya.</li><li>Setiap objek menjadi lebih banyak robot. Tumbuh sampai bisa meraih objek yang lebih besar.</li><li>Pilih satu dari tiga kartu mutasi saat muncul.</li><li>Di akhir, pakai materi di Nexus agar lebih kuat di permainan berikutnya.</li></ol>
@@ -142,21 +163,56 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>Tips</h2><ul><li>Mulai dari objek kecil: masing-masing menambah kawanan dan membuka yang lebih besar.</li><li>Objeknya masih terlalu besar? Kembali lagi setelah kawanan tumbuh.</li><li>Replicator membantu tumbuh cepat; Armored membuat kawanan kehilangan lebih sedikit robot saat kena bahaya.</li><li>Magnetic menarik materi dari jauh, jadi tidak ada yang tertinggal.</li><li>Melawan Titan, lahap arena dan tumbuh sebelum serangan pertama.</li><li>Keluar dari zona serangan balik Titan: zona itu menghapus robot.</li><li>Investasikan materi di Nexus: upgrade-nya berlaku selamanya.</li></ul>
       <h2>Isi game</h2><ul><li>2 mode: Assimilation Run dan Titan Hunt</li><li>3 Titan, satu di akhir setiap dunia</li><li>6 mutasi: Replicator, Corrosive, Rapid, Armored, Magnetic, dan Salvager</li><li>Nexus dengan upgrade permanen Replikasi, Mobilitas, Ketahanan, dan Pemulihan</li><li>4 skin kawanan: Base, Void, Nano, dan Plasma</li><li>Permainan 2 sampai 4 menit, dimainkan dengan satu jari</li></ul>
       <h2>Pertanyaan umum</h2><details class="faq"><summary>Apakah SWARMORIA gratis?</summary><p>Ya. Di browser ini gratis dan tanpa pembelian.</p></details><details class="faq"><summary>Di mana saya bisa main SWARMORIA?</summary><p>Di sini saja, di browser HP atau komputer. Di Android, kamu juga bisa memasangnya dari Google Play.</p></details><details class="faq"><summary>Perlu diunduh?</summary><p>Tidak. Kamu langsung bermain di halaman ini, tanpa memasang apa pun.</p></details><details class="faq"><summary>Bisa dimainkan di HP?</summary><p>Ya. Game ini dibuat untuk ponsel, dengan layar tegak, dan dimainkan dengan satu jari. Di komputer, gunakan mouse.</p></details><details class="faq"><summary>Berapa lama satu permainan?</summary><p>2 sampai 4 menit.</p></details>
-      <h2>Game lain seperti SWARMORIA</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/id/hub/game-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a><a class="tl" href="/id/hub/game-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Main sekarang</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/id/hub/game-gratis/aksi/">Game aksi gratis</a><a class="chip-col" href="/id/hub/game-gratis/kasual/">Game casual gratis</a></p>
     </article>
-    <aside class="jg__ficha">
-      <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/swarm/icone-sm.webp" width="160" height="160" alt=""><span><small>Tersedia untuk Android</small><b>Unduh di Google Play</b></span></a>
-      <dl class="card">
-        <div><dt>Studio</dt><dd><a href="/id/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>Genre</dt><dd>Kawanan 3D</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>Tempat main</dt><dd>Browser (HP dan komputer) · Android (Google Play)</dd></div>
         <div><dt>Harga</dt><dd>Gratis</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/swarm/tela-fase.webp" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy"><img src="/assets/media/swarm/tela-boss.webp" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy"><img src="/assets/media/swarm/tela-fase2.webp" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy"><img src="/assets/media/swarm/tela-menu.webp" width="720" height="1279" alt="SWARMORIA: tampilan game" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">Main juga</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/id/hub/game-gratis/hoparade/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/hopa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Hoparade</b><small>Game kasual 3D: lompat, selamatkan, beternak</small></span></a><a class="lj-mini" href="/id/hub/game-gratis/villadash/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/villa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Villadash</b><small>Aksi 3D: penyelamatan melawan waktu dan duel</small></span></a><a class="lj-mini" href="/id/hub/game-gratis/legiontide/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/legion/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>LEGIONTIDE</b><small>Legiun 3D: aksi dan strategi</small></span></a><a class="lj-mini" href="/id/hub/game-gratis/dropaloo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/drop/capa-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Dropaloo</b><small>Game kasual satu ketukan: warna dan refleks</small></span></a><a class="lj-mini" href="/id/hub/game-gratis/spadorable/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/spad/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Spadorable</b><small>Spa ASMR yang santai</small></span></a><a class="lj-mini" href="/id/hub/game-gratis/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>Puzzle trik dalam adegan</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/id/hub/game-gratis/">Semua game</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Game lain seperti SWARMORIA</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/id/hub/game-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Arrowmigo</span><span class="lj-cap__gen">Puzzle panah yang santai</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/id/hub/game-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fidgetlume</span><span class="lj-cap__gen">Mainan fidget yang santai</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Kasual</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/id/hub/game-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Blockamigo</span><span class="lj-cap__gen">Puzzle balok yang santai</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/id/hub/game-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Tintapix</span><span class="lj-cap__gen">Mewarnai dengan angka yang santai</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/id/hub/game-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">Puzzle logika</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/id/hub/game-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">Puzzle parkir yang santai</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/id/hub/game-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">Puzzle 3D yang menenangkan</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/id/hub/game-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">Puzzle ular yang santai</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Sebelumnya"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Berikutnya"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/id/hub/game-gratis/aksi/">Game aksi gratis</a><a class="chip-col" href="/id/hub/game-gratis/kasual/">Game casual gratis</a></p>
+  </section>
 </section>
 <dialog class="jg__qr" data-qr>
   <img src="/assets/media/hub/qr/swarmoria.svg" width="240" height="240" alt="Kode QR SWARMORIA di Google Play">
@@ -164,6 +220,8 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   <p class="jg__qr-ios" data-ios hidden>Di iPhone: untuk sekarang, SWARMORIA hanya ada untuk Android.</p>
   <div class="jg__qr-bts"><a class="bt bt--vidro" href="https://play.google.com/store/apps/details?id=com.lipy.swarmoria" rel="noopener" target="_blank" data-baixar="qr">Buka Google Play</a><button type="button" class="bt bt--luz" data-fecha-qr>Tutup</button></div>
 </dialog>
+<dialog class="lj-zoom" data-zoom aria-label="SWARMORIA"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="Tutup">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -194,6 +252,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"Kode {c} disalin","Não deu para copiar. Selecione o código e copie à mão.":"Gagal menyalin. Pilih kodenya dan salin secara manual.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Banyak pemain bilang kode ini sudah tidak berfungsi (48 jam terakhir).","Por quê?":"Kenapa?","Expirou":"Kedaluwarsa","Já tinha usado":"Sudah pernah kupakai","Deu inválido":"Tidak valid","Obrigado! Isso ajuda a conferir mais rápido.":"Terima kasih! Ini membantu kami mengecek lebih cepat.","Obrigado! Seu voto ajuda outros jogadores.":"Terima kasih! Suaramu membantu pemain lain.","Voto retirado.":"Suara dibatalkan.","Muitos votos seguidos. Tente de novo mais tarde.":"Terlalu banyak vote beruntun. Coba lagi nanti.","Não deu para registrar o voto agora. Tente de novo em instantes.":"Vote belum bisa dicatat. Coba lagi sebentar lagi.","Nada encontrado. Tente o nome do jogo.":"Tidak ada hasil. Coba nama game-nya.","Carregando…":"Memuat…","Sair":"Keluar"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

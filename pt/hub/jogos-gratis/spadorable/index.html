@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,35 +101,54 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/spadorable/?lang=pt-BR" data-nome="Spadorable" data-slug="spadorable" data-video="/assets/media/spad/gameplay.mp4" data-carregando="Carregando o jogo…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/spad/capa.webp" width="1600" height="900" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="Você está em"><a href="/pt/hub/">Hub</a><i>/</i><a href="/pt/hub/jogos-gratis/">Jogos grátis</a><i>/</i><span aria-current="page">Spadorable</span></nav>
+    <h1 class="t-display">Spadorable<span class="jg__h1-sub">spa ASMR dos bichinhos, grátis</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/spadorable/?lang=pt-BR" data-nome="Spadorable" data-slug="spadorable" data-video="/assets/media/spad/gameplay.mp4" data-carregando="Carregando o jogo…">
         <img class="jg__capa" src="/assets/media/spad/capa.webp" width="1600" height="900" alt="Spadorable: tela do jogo" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/spad/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Spadorable</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</button><small>Grátis · sem baixar · sem cadastro</small></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/spad/icone-sm.webp" width="160" height="160" alt=""><span><b>Spadorable</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="spadorable"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Gostei do jogo" title="Gostei do jogo"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Não gostei do jogo" title="Não gostei do jogo"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="Tela cheia" title="Tela cheia"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        <div class="jg__barra">
+          <img src="/assets/media/spad/icone-sm.webp" width="160" height="160" alt=""><span><b>Spadorable</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="spadorable"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Gostei do jogo" title="Gostei do jogo"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Não gostei do jogo" title="Não gostei do jogo"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="Tela cheia" title="Tela cheia"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       </div>
+      <section class="lj-gal lj-gal--alta" aria-label="Spadorable"><h2 class="sr-only">Vídeo do jogo</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video lj-gal__item--retrato"><video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/spad/gameplay-poster.webp"><source src="/assets/media/spad/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/spad/tela-chuveiro.webp" data-ampliar><img src="/assets/media/spad/tela-chuveiro-sm.webp" srcset="/assets/media/spad/tela-chuveiro-sm.webp 304w, /assets/media/spad/tela-chuveiro.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/spad/tela-espuma.webp" data-ampliar><img src="/assets/media/spad/tela-espuma-sm.webp" srcset="/assets/media/spad/tela-espuma-sm.webp 304w, /assets/media/spad/tela-espuma.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/spad/tela-pinca.webp" data-ampliar><img src="/assets/media/spad/tela-pinca-sm.webp" srcset="/assets/media/spad/tela-pinca-sm.webp 304w, /assets/media/spad/tela-pinca.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/spad/tela-enfeites.webp" data-ampliar><img src="/assets/media/spad/tela-enfeites-sm.webp" srcset="/assets/media/spad/tela-enfeites-sm.webp 304w, /assets/media/spad/tela-enfeites.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/spad/tela-vitoria.webp" data-ampliar><img src="/assets/media/spad/tela-vitoria-sm.webp" srcset="/assets/media/spad/tela-vitoria-sm.webp 304w, /assets/media/spad/tela-vitoria.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/spad/tela-meu-spa.webp" data-ampliar><img src="/assets/media/spad/tela-meu-spa-sm.webp" srcset="/assets/media/spad/tela-meu-spa-sm.webp 304w, /assets/media/spad/tela-meu-spa.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Próximo"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">Jogue também</h2>
-      <div class="jg__mais"><a class="tl" href="/pt/hub/jogos-gratis/dropaloo/" style="--c1:#5BB8F0;--c2:#F28DB8" data-slug="dropaloo" data-cats="casual" data-novo><img src="/assets/media/drop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dropaloo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/">Todos os jogos</a></p>
+    <aside class="lj-ficha" aria-label="Spadorable">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/spad/capa.webp" width="1600" height="900" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">Jogo grátis no navegador: dê banho, espuma e carinho em 36 bichinhos fofos num spa com sons ASMR. Sem cronômetro, sem nojeira e sem baixar.</p>
+      <dl class="lj-dados">
+        <div><dt>Lançamento</dt><dd><time datetime="2026-10-09">9 de out. de 2026</time></dd></div>
+        <div><dt>Estúdio</dt><dd><a href="/pt/hub/estudio/">Lipy Games</a></dd></div>
+        <div><dt>Gênero</dt><dd>Spa ASMR relaxante</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/pt/hub/jogos-gratis/casual/">Casual</a></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar grátis no navegador</button>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="Você está em"><a href="/pt/hub/">Hub</a><i>/</i><a href="/pt/hub/jogos-gratis/">Jogos grátis</a><i>/</i><span aria-current="page">Spadorable</span></nav>
-      <h1 class="t-display">Spadorable<span class="jg__h1-sub">spa ASMR dos bichinhos, grátis</span></h1>
-      <p class="jg__genero">Spa ASMR relaxante</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>Sobre este jogo</h2>
       <p>Spadorable é um spa para bichinhos. Cada cliente chega com uma sujeira de brincadeira: lama do lago, mel grudado, tinta da aula de arte, areia da praia ou neve no pelo. Você usa uma ferramenta por vez, na ordem do ritual, até ele ficar limpinho e relaxado.</p>
       <p>Cada ferramenta tem o seu jeito: o chuveirinho tira a lama por onde passa, a esponja faz espuma quando você desenha círculos, o pente só desembaraça de cima para baixo, a pinça puxa folhinhas e gravetos até soltar, e a massagem só relaxa se for devagar. O som acompanha a velocidade do seu dedo.</p>
       <p>Não tem relógio nem como perder. Quando falta pouco, a etapa termina sozinha com um brilho, e ninguém fica caçando o último pontinho de sujeira. No fim, você enfeita o cliente com laço, óculos ou coroa e tira a foto para o álbum.</p>
       <p>São 36 clientes em quatro lugares: o Recanto da Lagoa, o Bosque Encantado, a Praia Ensolarada e a Montanha Nevada. Alguns voltam depois para uma nova visita. Com as conchinhas que você ganha, decora o seu próprio spa.</p>
-      <h2>Vídeo do jogo</h2>
-      <video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/spad/gameplay-poster.webp"><source src="/assets/media/spad/gameplay.mp4" type="video/mp4"></video>
       <h2>Se você gosta de Skincare ASMR, Pet Salon, Satisfying Cleaning</h2>
       <p>Se você gosta de jogos de skincare e limpeza ASMR, vai se sentir em casa. A diferença é que aqui os clientes são bichinhos, a sujeira é fofa, cada ferramenta tem um gesto próprio e não tem cronômetro.</p>
       <h2>Como jogar</h2><ol><li>Toque em ATENDER para receber o próximo cliente.</li><li>Leia a etapa no alto da tela e arraste a ferramenta sobre o bichinho.</li><li>Na pinça, segure a folhinha e puxe para longe até ela soltar.</li><li>Nas bolhas e no barro seco, toque em cada um.</li><li>No fim da rotina, aceite o carinho extra para ganhar o terceiro coração.</li><li>Arraste enfeites para o cliente e toque em Foto para terminar.</li></ol>
@@ -136,21 +156,59 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>Dicas</h2><ul><li>Na espuma, faça círculos: a espuma cresce mais rápido e as bolhas sobem.</li><li>Com o pente, passe sempre de cima para baixo, na direção do pelo.</li><li>A preguiça Pituca só gosta de escova bem devagar.</li><li>Na massagem, mexa devagar em círculos. Rápido demais faz cócegas.</li><li>Durante a espuma, às vezes aparece uma bolha dourada: passe a esponja nela para ganhar conchinhas.</li><li>Se ficar parado, as partes que faltam começam a brilhar.</li></ul>
       <h2>O que tem no jogo</h2><ul><li>36 clientes em 4 lugares, com visitas de retorno</li><li>20 ferramentas com gestos diferentes</li><li>Sons de água, espuma e escova que respondem à velocidade do dedo</li><li>Sem cronômetro, sem derrota e sem conteúdo nojento</li><li>Meu Spa para decorar com conchinhas, Álbum de fotos e Spa Livre</li><li>6 idiomas</li></ul>
       <h2>Perguntas frequentes</h2><details class="faq"><summary>Spadorable é grátis?</summary><p>Sim. Você joga de graça, direto no navegador.</p></details><details class="faq"><summary>Precisa baixar para jogar?</summary><p>Não. Você joga nesta página, sem instalar nada e sem cadastro.</p></details><details class="faq"><summary>É bom para crianças?</summary><p>Sim. Os clientes são bichinhos, a sujeira é de brincadeira, como lama, mel e tinta, e não tem nada nojento, nem relógio, nem como perder.</p></details><details class="faq"><summary>Funciona no celular?</summary><p>Sim. Funciona com o dedo no celular em pé e com o mouse no computador.</p></details><details class="faq"><summary>O progresso fica salvo?</summary><p>Sim, no seu aparelho. Se você sair no meio de um atendimento, volta na mesma etapa.</p></details>
-      <h2>Mais jogos como Spadorable</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/pt/hub/jogos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo><img src="/assets/media/dune/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dunevella</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo><img src="/assets/media/fint/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fintriva</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo><img src="/assets/media/pict/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictascade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/casual/">Jogos casuais grátis</a></p>
     </article>
-    <aside class="jg__ficha">
-      <dl class="card">
-        <div><dt>Estúdio</dt><dd><a href="/pt/hub/estudio/">Lipy Games</a></dd></div>
-        <div><dt>Gênero</dt><dd>Spa ASMR relaxante</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>Onde jogar</dt><dd>Navegador (celular e computador)</dd></div>
         <div><dt>Preço</dt><dd>Grátis</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/spad/tela-chuveiro.webp" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy"><img src="/assets/media/spad/tela-espuma.webp" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy"><img src="/assets/media/spad/tela-pinca.webp" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy"><img src="/assets/media/spad/tela-enfeites.webp" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy"><img src="/assets/media/spad/tela-vitoria.webp" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy"><img src="/assets/media/spad/tela-meu-spa.webp" width="720" height="1280" alt="Spadorable: tela do jogo" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">Jogue também</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/pt/hub/jogos-gratis/dropaloo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/drop/capa-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Dropaloo</b><small>Casual de um toque: cores e reflexo</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>Quebra-cabeça de pegadinhas em cenas</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>Quebra-cabeça de setas relaxante</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/fidgetlume/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Fidgetlume</b><small>Brinquedos relaxantes (fidget)</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/blockamigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Blockamigo</b><small>Quebra-cabeça de blocos relaxante</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/tintapix/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tintapix</b><small>Pintar por números relaxante</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/">Todos os jogos</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Mais jogos como Spadorable</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/pt/hub/jogos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">Quebra-cabeça de lógica</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">Quebra-cabeça de estacionamento relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">Quebra-cabeça 3D relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">Quebra-cabeça de cobrinhas relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">Quebra-cabeça de cores</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/dune/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Dunevella</span><span class="lj-cap__gen">Quebra-cabeça de deslizar peças</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fint/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fintriva</span><span class="lj-cap__gen">Quebra-cabeça de trios</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pict/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictascade</span><span class="lj-cap__gen">Quebra-cabeça de imagens</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Próximo"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/casual/">Jogos casuais grátis</a></p>
+  </section>
 </section>
+<dialog class="lj-zoom" data-zoom aria-label="Spadorable"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="Fechar">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -180,6 +238,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

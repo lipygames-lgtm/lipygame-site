@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -99,54 +100,112 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/tumbleforge/?lang=es" data-nome="Tumbleforge" data-slug="tumbleforge">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/tumb/capa.webp" width="1280" height="720" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="Estás en"><a href="/es/hub/">Hub</a><i>/</i><a href="/es/hub/juegos-gratis/">Juegos gratis</a><i>/</i><span aria-current="page">Tumbleforge</span></nav>
+    <h1 class="t-display">Tumbleforge<span class="jg__h1-sub">derriba las pilas de la fábrica, gratis</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/tumbleforge/?lang=es" data-nome="Tumbleforge" data-slug="tumbleforge">
         <img class="jg__capa" src="/assets/media/tumb/capa.webp" width="1280" height="720" alt="Tumbleforge: pantalla del juego" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/tumb/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Tumbleforge</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</button><small>Gratis · sin descargar · sin registro</small></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/tumb/icone-sm.webp" width="160" height="160" alt=""><span><b>Tumbleforge</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="tumbleforge"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Me gustó el juego" title="Me gustó el juego"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="No me gustó el juego" title="No me gustó el juego"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="Pantalla completa" title="Pantalla completa"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        <div class="jg__barra">
+          <img src="/assets/media/tumb/icone-sm.webp" width="160" height="160" alt=""><span><b>Tumbleforge</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="tumbleforge"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Me gustó el juego" title="Me gustó el juego"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="No me gustó el juego" title="No me gustó el juego"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="Pantalla completa" title="Pantalla completa"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       </div>
+      <section class="lj-gal" aria-label="Tumbleforge">
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><a class="lj-gal__item" href="/assets/media/tumb/tela-1.webp" data-ampliar><img src="/assets/media/tumb/tela-1-sm.webp" srcset="/assets/media/tumb/tela-1-sm.webp 540w, /assets/media/tumb/tela-1.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Tumbleforge: pantalla del juego" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/tumb/tela-2.webp" data-ampliar><img src="/assets/media/tumb/tela-2-sm.webp" srcset="/assets/media/tumb/tela-2-sm.webp 540w, /assets/media/tumb/tela-2.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Tumbleforge: pantalla del juego" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/tumb/tela-3.webp" data-ampliar><img src="/assets/media/tumb/tela-3-sm.webp" srcset="/assets/media/tumb/tela-3-sm.webp 540w, /assets/media/tumb/tela-3.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Tumbleforge: pantalla del juego" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Siguiente"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">Juega también</h2>
-      <div class="jg__mais"><a class="tl" href="/es/hub/juegos-gratis/villadash/" style="--c1:#f6a21a;--c2:#8fb3ff" data-slug="villadash" data-cats="acao" data-novo><img src="/assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Villadash</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/legiontide/" style="--c1:#ffc21a;--c2:#2f6bff" data-slug="legiontide" data-cats="estrategia acao" data-novo><img src="/assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">LEGIONTIDE</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/">Todos los juegos</a></p>
+    <aside class="lj-ficha" aria-label="Tumbleforge">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/tumb/capa.webp" width="1280" height="720" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">Juego gratis en el navegador: apunta, dispara y tira los juguetes de las pilas de la fábrica con pocos tiros. 15 niveles con física real. Sin descargar.</p>
+      <dl class="lj-dados">
+        <div><dt>Lanzamiento</dt><dd><time datetime="2026-10-09">9 oct 2026</time></dd></div>
+        <div><dt>Estudio</dt><dd><a href="/es/hub/estudio/">Lipy Games</a></dd></div>
+        <div><dt>Género</dt><dd>Rompecabezas de física</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/es/hub/juegos-gratis/puzzle/">Puzzle</a><a class="lj-tag" href="/es/hub/juegos-gratis/accion/">Acción</a></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar gratis en el navegador</button>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="Estás en"><a href="/es/hub/">Hub</a><i>/</i><a href="/es/hub/juegos-gratis/">Juegos gratis</a><i>/</i><span aria-current="page">Tumbleforge</span></nav>
-      <h1 class="t-display">Tumbleforge<span class="jg__h1-sub">derriba las pilas de la fábrica, gratis</span></h1>
-      <p class="jg__genero">Rompecabezas de física</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>Acerca de este juego</h2>
       <p>Los bichitos de juguete escaparon de la línea de montaje y se subieron a las pilas de la fábrica.</p>
       <p>Usa pocos tiros para derribar cajas de madera, esquivar el metal pesado y activar cargas de impulso hasta dejar la mesa limpia.</p>
       <p>Son 15 niveles con física real. Reiniciar es gratis e instantáneo.</p>
-      
       
       <h2>Cómo jugar</h2><ol><li>Arrastra en la pantalla para apuntar.</li><li>Suelta para disparar.</li><li>Saca todos los juguetes de la mesa antes de quedarte sin tiros.</li><li>Reiniciar es gratis e instantáneo.</li></ol>
       <h2>Controles</h2><ul class="jg__controles"><li>Mouse: arrastra para apuntar y suelta para disparar</li><li>En el celular: arrastra con el dedo y suelta</li></ul>
       <h2>Consejos</h2><ul><li>La madera cae fácil; el metal pesado casi no se mueve.</li><li>Dale a las cargas de impulso para tirar varios juguetes a la vez.</li></ul>
       <h2>Qué tiene el juego</h2><ul><li>15 niveles con física real</li><li>Cajas de madera, metal pesado y cargas de impulso</li><li>Progreso guardado en tu dispositivo</li></ul>
       <h2>Preguntas frecuentes</h2><details class="faq"><summary>¿Tumbleforge es gratis?</summary><p>Sí. Juegas gratis, directo en el navegador.</p></details><details class="faq"><summary>¿Hay que descargarlo para jugar?</summary><p>No. Juegas en esta página, sin instalar nada y sin registrarte.</p></details><details class="faq"><summary>¿Funciona en el celular?</summary><p>Sí. Funciona con el dedo en el celular y con el mouse en la computadora.</p></details><details class="faq"><summary>¿Se guarda el progreso?</summary><p>Sí, en tu dispositivo. Vuelve cuando quieras y sigue desde el nivel donde te quedaste.</p></details>
-      <h2>Más juegos como Tumbleforge</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/es/hub/juegos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo><img src="/assets/media/dune/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dunevella</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo><img src="/assets/media/fint/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fintriva</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/puzzle/">Juegos de puzzle gratis</a><a class="chip-col" href="/es/hub/juegos-gratis/accion/">Juegos de acción gratis</a></p>
     </article>
-    <aside class="jg__ficha">
-      <dl class="card">
-        <div><dt>Estudio</dt><dd><a href="/es/hub/estudio/">Lipy Games</a></dd></div>
-        <div><dt>Género</dt><dd>Rompecabezas de física</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>Dónde jugar</dt><dd>Navegador (celular y computadora)</dd></div>
         <div><dt>Precio</dt><dd>Gratis</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/tumb/tela-1.webp" width="1280" height="720" alt="Tumbleforge: pantalla del juego" loading="lazy"><img src="/assets/media/tumb/tela-2.webp" width="1280" height="720" alt="Tumbleforge: pantalla del juego" loading="lazy"><img src="/assets/media/tumb/tela-3.webp" width="1280" height="720" alt="Tumbleforge: pantalla del juego" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">Juega también</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/es/hub/juegos-gratis/villadash/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/villa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Villadash</b><small>Acción 3D: rescate contrarreloj y duelo</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/legiontide/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/legion/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>LEGIONTIDE</b><small>Legión 3D: acción y estrategia</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>Puzzle de trucos en escenas</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>Puzzle de flechas relajante</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/fidgetlume/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Fidgetlume</b><small>Juguetes relajantes (fidget)</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/blockamigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Blockamigo</b><small>Puzzle de bloques relajante</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/">Todos los juegos</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Más juegos como Tumbleforge</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/es/hub/juegos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Tintapix</span><span class="lj-cap__gen">Pintar por números relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">Puzzle de lógica</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">Puzzle de estacionamiento relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">Rompecabezas 3D relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">Puzzle de serpientes relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">Rompecabezas de colores</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/dune/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Dunevella</span><span class="lj-cap__gen">Rompecabezas de deslizar piezas</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fint/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fintriva</span><span class="lj-cap__gen">Rompecabezas de tríos</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Siguiente"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/puzzle/">Juegos de puzzle gratis</a><a class="chip-col" href="/es/hub/juegos-gratis/accion/">Juegos de acción gratis</a></p>
+  </section>
 </section>
+<dialog class="lj-zoom" data-zoom aria-label="Tumbleforge"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="Cerrar">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -177,6 +236,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"Código {c} copiado","Não deu para copiar. Selecione o código e copie à mão.":"No se pudo copiar. Selecciona el código y cópialo a mano.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Varios jugadores dijeron que este código dejó de funcionar (últimas 48 h).","Por quê?":"¿Por qué?","Expirou":"Expiró","Já tinha usado":"Ya lo había usado","Deu inválido":"Código inválido","Obrigado! Isso ajuda a conferir mais rápido.":"¡Gracias! Esto ayuda a verificar más rápido.","Obrigado! Seu voto ajuda outros jogadores.":"¡Gracias! Tu voto ayuda a otros jugadores.","Voto retirado.":"Voto retirado.","Muitos votos seguidos. Tente de novo mais tarde.":"Demasiados votos seguidos. Inténtalo de nuevo más tarde.","Não deu para registrar o voto agora. Tente de novo em instantes.":"No se pudo registrar tu voto ahora. Inténtalo de nuevo en unos instantes.","Nada encontrado. Tente o nome do jogo.":"No encontramos nada. Prueba con el nombre del juego.","Carregando…":"Cargando…","Sair":"Salir"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

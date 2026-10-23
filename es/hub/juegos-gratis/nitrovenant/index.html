@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,42 +101,62 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/nitrovenant/?lang=es" data-nome="Nitrovenant" data-slug="nitrovenant" data-cta-tempo="100" data-video="/assets/media/nitro/gameplay.mp4" data-carregando="Cargando el juego…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/nitro/destaque.webp" width="1024" height="500" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="Estás en"><a href="/es/hub/">Hub</a><i>/</i><a href="/es/hub/juegos-gratis/">Juegos gratis</a><i>/</i><span aria-current="page">Nitrovenant</span></nav>
+    <h1 class="t-display">Nitrovenant<span class="jg__h1-sub">juego de zombies con autos, estilo Earn to Die</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/nitrovenant/?lang=es" data-nome="Nitrovenant" data-slug="nitrovenant" data-cta-tempo="100" data-video="/assets/media/nitro/gameplay.mp4" data-carregando="Cargando el juego…">
         <img class="jg__capa" src="/assets/media/nitro/destaque.webp" width="1024" height="500" alt="Nitrovenant: pantalla del juego" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Nitrovenant</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</button><small>Gratis · sin descargar · sin registro</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><span><b>¿Te gustó? Sigue jugando en el celular</b><small>En la app, todo jugador nuevo recibe: 5.000 monedas y el auto Overlord.</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" data-baixar="fase3" rel="noopener" target="_blank">Descargar gratis</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="Cerrar">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><span><b>Nitrovenant</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="nitrovenant"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Me gustó el juego" title="Me gustó el juego"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="No me gustó el juego" title="No me gustó el juego"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Descargar en Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Pantalla completa" title="Pantalla completa"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><span><b>Nitrovenant</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="nitrovenant"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Me gustó el juego" title="Me gustó el juego"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="No me gustó el juego" title="No me gustó el juego"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Descargar en Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Pantalla completa" title="Pantalla completa"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#ff7a1a;--c2:#b3122e" aria-label="Lleva Nitrovenant en tu celular">
         <img class="jg__app-ico" src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>Lleva Nitrovenant en tu celular</b><small>En la app, todo jugador nuevo recibe: 5.000 monedas y el auto Overlord.</small></div>
         <a class="bt bt--luz jg__app-play" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" rel="noopener" target="_blank" data-baixar="faixa"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Descargar en Google Play</span></a>
         <div class="jg__app-qr"><img src="/assets/media/hub/qr/nitrovenant.svg" width="84" height="84" alt="Código QR de Nitrovenant en Google Play" loading="lazy"><small>Escanea con tu celular</small></div>
       </section>
+      </div>
+      <section class="lj-gal lj-gal--alta" aria-label="Nitrovenant"><h2 class="sr-only">Video del juego</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video"><video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/nitro/gameplay-poster.webp"><source src="/assets/media/nitro/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/nitro/tela-horda.webp" data-ampliar><img src="/assets/media/nitro/tela-horda-sm.webp" srcset="/assets/media/nitro/tela-horda-sm.webp 338w, /assets/media/nitro/tela-horda.webp 720w" sizes="(max-width: 640px) 144px, 175px" width="720" height="1152" alt="Nitrovenant: pantalla del juego" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/nitro/tela-chefe.webp" data-ampliar><img src="/assets/media/nitro/tela-chefe-sm.webp" srcset="/assets/media/nitro/tela-chefe-sm.webp 304w, /assets/media/nitro/tela-chefe.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1280" alt="Nitrovenant: pantalla del juego" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/nitro/tela-garagem.webp" data-ampliar><img src="/assets/media/nitro/tela-garagem-sm.webp" srcset="/assets/media/nitro/tela-garagem-sm.webp 338w, /assets/media/nitro/tela-garagem.webp 720w" sizes="(max-width: 640px) 144px, 175px" width="720" height="1152" alt="Nitrovenant: pantalla del juego" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/nitro/tela-vitoria.webp" data-ampliar><img src="/assets/media/nitro/tela-vitoria-sm.webp" srcset="/assets/media/nitro/tela-vitoria-sm.webp 338w, /assets/media/nitro/tela-vitoria.webp 720w" sizes="(max-width: 640px) 144px, 175px" width="720" height="1152" alt="Nitrovenant: pantalla del juego" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Siguiente"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">Juega también</h2>
-      <div class="jg__mais"><a class="tl" href="/es/hub/juegos-gratis/villadash/" style="--c1:#f6a21a;--c2:#8fb3ff" data-slug="villadash" data-cats="acao" data-novo><img src="/assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Villadash</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/legiontide/" style="--c1:#ffc21a;--c2:#2f6bff" data-slug="legiontide" data-cats="estrategia acao" data-novo><img src="/assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">LEGIONTIDE</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/tumbleforge/" style="--c1:#f2a33a;--c2:#5a8fd6" data-slug="tumbleforge" data-cats="puzzle acao" data-novo><img src="/assets/media/tumb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tumbleforge</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/hoparade/" style="--c1:#7bd34a;--c2:#ff8a3d" data-slug="hoparade" data-cats="casual acao" data-novo><img src="/assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Hoparade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/swarmoria/" style="--c1:#2ad8ff;--c2:#8a5cff" data-slug="swarmoria" data-cats="acao casual" data-novo><img src="/assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">SWARMORIA</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/dropaloo/" style="--c1:#5BB8F0;--c2:#F28DB8" data-slug="dropaloo" data-cats="casual" data-novo><img src="/assets/media/drop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dropaloo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/">Todos los juegos</a></p>
+    <aside class="lj-ficha" aria-label="Nitrovenant">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/nitro/destaque.webp" width="1024" height="500" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">Juego de zombies con autos gratis en el navegador, estilo Earn to Die: atropella hordas, enfrenta 4 jefes y mejora 13 vehículos en 120 niveles. Sin descargar.</p>
+      <dl class="lj-dados">
+        <div><dt>Lanzamiento</dt><dd><time datetime="2026-10-04">4 oct 2026</time></dd></div>
+        <div><dt>Estudio</dt><dd><a href="/es/hub/estudio/">Lipy Games</a></dd></div>
+        <div><dt>Género</dt><dd>Acción sobre ruedas</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/es/hub/juegos-gratis/accion/">Acción</a><span class="lj-tag">Carreras</span><span class="lj-tag">Google Play</span></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar gratis en el navegador</button>
+        <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><span><small>Disponible para Android</small><b>Descargar en Google Play</b><em>🎁 En la app, todo jugador nuevo recibe: 5.000 monedas y el auto Overlord.</em></span></a>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="Estás en"><a href="/es/hub/">Hub</a><i>/</i><a href="/es/hub/juegos-gratis/">Juegos gratis</a><i>/</i><span aria-current="page">Nitrovenant</span></nav>
-      <h1 class="t-display">Nitrovenant<span class="jg__h1-sub">juego de zombies con autos, estilo Earn to Die</span></h1>
-      <p class="jg__genero">Acción sobre ruedas</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
       <p><a class="chip-col" href="/es/hub/juegos-gratis/nitrovenant/guia/">Guía completa de Nitrovenant</a></p>
+      <h2>Acerca de este juego</h2>
       <p>Nitrovenant es un juego de acción sobre ruedas: manejas por una carretera tomada por zombis, en tres carriles. El auto dispara solo con el lanzador del techo. Tu trabajo es elegir el carril, saltar los peligros y decidir cuándo soltar el nitro.</p>
       <p>La ametralladora y el nitro gastan el mismo tanque azul, así que cada carrera tiene una decisión: despejar el camino a tiros o salir disparado inmune y arrollar todo. Los jefes no esperan a que pase la horda: pelean en medio de ella.</p>
       <p>Son 120 niveles que se vuelven más difíciles poco a poco, un garaje con 13 vehículos (12 autos y la moto Blade) y el Infierno: del nivel 45 en adelante, perder te lleva ahí, y vencer al jefe del Infierno te devuelve exactamente a donde estabas.</p>
-      <h2>Video del juego</h2>
-      <video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/nitro/gameplay-poster.webp"><source src="/assets/media/nitro/gameplay.mp4" type="video/mp4"></video>
       <h2>Si te gusta Earn to Die</h2>
       <p>Si te gustan Earn to Die y los juegos de zombies con autos, Nitrovenant sigue la misma idea de atravesar la horda y mejorar tu vehículo en el garaje. La diferencia es el ritmo de acción: la carretera tiene tres carriles, el auto dispara solo, saltas peligros, activas el nitro y enfrentas jefes al final de los niveles.</p>
       <h2>Cómo jugar</h2><ol><li>Cambia de carril para esquivar los peligros y elegir la línea de tiro.</li><li>Salta baches, zombis y la onda expansiva del jefe.</li><li>Mantén la ametralladora para abrirte paso entre la horda.</li><li>Cuando el tanque azul se llene, suelta el nitro: el auto se vuelve inmune y arrolla todo.</li><li>Derrota al jefe al final del nivel.</li><li>Usa los créditos de la pista para comprar y mejorar autos en el garaje.</li></ol>
@@ -143,21 +164,56 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>Consejos</h2><ul><li>No gastes todo el tanque azul en la ametralladora: guarda nitro para cuando la pantalla se llene.</li><li>Con el nitro activado el auto es inmune, así que úsalo para cruzar tramos que no podrías esquivar.</li><li>Atento a la onda expansiva del jefe y salta en el momento justo.</li><li>Arma, blindaje y tracción suben hasta 8 niveles y nunca retroceden: mejorar el auto vale la pena.</li><li>Del nivel 10 en adelante, un jefe de mitad de pista se suma al jefe final. Prepara el auto antes.</li><li>Del nivel 45 en adelante, perder no es el final: vence al jefe del Infierno y vuelves a donde estabas.</li></ul>
       <h2>Qué tiene el juego</h2><ul><li>120 niveles con dificultad creciente</li><li>13 vehículos en el garaje: 12 autos y la moto Blade</li><li>4 jefes: Agente de Tránsito, Especialista en Pits, Piloto de Élite y Jefe Mecánico</li><li>Infierno a partir del nivel 45, e Infierno furioso a partir del nivel 50</li><li>Arma, blindaje y tracción con hasta 8 niveles de mejora</li><li>Piezas de misil que liberan hasta 10 disparos a la vez</li></ul>
       <h2>Preguntas frecuentes</h2><details class="faq"><summary>¿Nitrovenant es gratis?</summary><p>Sí. Aquí en el navegador es gratis y todos los vehículos se compran con los créditos del juego. En Google Play, la app es gratis y tiene 2 vehículos opcionales de pago.</p></details><details class="faq"><summary>¿Hay que descargarlo para jugar?</summary><p>No. Juegas directo en el navegador, en esta página. Si prefieres, también está la versión para Android en Google Play.</p></details><details class="faq"><summary>¿Funciona en el celular?</summary><p>Sí. En el celular juegas con toques y deslizamientos. En Android también puedes instalarlo desde Google Play.</p></details><details class="faq"><summary>¿Hay que crear una cuenta?</summary><p>No. No pide registro ni correo.</p></details><details class="faq"><summary>¿Qué pasa si pierdo después del nivel 45?</summary><p>Caes en el Infierno. Si vences al jefe de ahí, vuelves exactamente a donde estabas, con todo lo que tenías.</p></details><details class="faq"><summary>¿Cuántos autos tiene el juego?</summary><p>Son 13 vehículos: 12 autos, del compacto Rook al Overlord, y la moto Blade.</p></details>
-      <h2>Más juegos como Nitrovenant</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/es/hub/juegos-gratis/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo><img src="/assets/media/spad/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Spadorable</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a><a class="tl" href="/es/hub/juegos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jugar ahora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/accion/">Juegos de acción gratis</a></p>
     </article>
-    <aside class="jg__ficha">
-      <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/nitro/icone-sm.webp" width="160" height="160" alt=""><span><small>Disponible para Android</small><b>Descargar en Google Play</b><em>🎁 En la app, todo jugador nuevo recibe: 5.000 monedas y el auto Overlord.</em></span></a>
-      <dl class="card">
-        <div><dt>Estudio</dt><dd><a href="/es/hub/estudio/">Lipy Games</a></dd></div>
-        <div><dt>Género</dt><dd>Acción sobre ruedas</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>Dónde jugar</dt><dd>Navegador (celular y computadora) · Android (Google Play)</dd></div>
         <div><dt>Precio</dt><dd>Gratis</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/nitro/tela-horda.webp" width="720" height="1152" alt="Nitrovenant: pantalla del juego" loading="lazy"><img src="/assets/media/nitro/tela-chefe.webp" width="720" height="1280" alt="Nitrovenant: pantalla del juego" loading="lazy"><img src="/assets/media/nitro/tela-garagem.webp" width="720" height="1152" alt="Nitrovenant: pantalla del juego" loading="lazy"><img src="/assets/media/nitro/tela-vitoria.webp" width="720" height="1152" alt="Nitrovenant: pantalla del juego" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">Juega también</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/es/hub/juegos-gratis/villadash/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/villa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Villadash</b><small>Acción 3D: rescate contrarreloj y duelo</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/legiontide/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/legion/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>LEGIONTIDE</b><small>Legión 3D: acción y estrategia</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/tumbleforge/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tumb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tumbleforge</b><small>Rompecabezas de física</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/hoparade/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/hopa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Hoparade</b><small>Casual 3D: saltos, rescate y granja</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/swarmoria/"><span class="lj-mini__arte"><span class="lj-arte lj-arte--retrato"><img class="lj-arte__fundo" src="/assets/media/swarm/tela-abertura-sm.webp" width="360" height="640" alt="" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/media/swarm/tela-abertura-sm.webp" width="360" height="640" alt="" loading="lazy" decoding="async"></span></span><span class="lj-mini__txt"><b>SWARMORIA</b><small>Enjambre 3D</small></span></a><a class="lj-mini" href="/es/hub/juegos-gratis/dropaloo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/drop/capa-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Dropaloo</b><small>Casual de un toque: colores y reflejos</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/">Todos los juegos</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Más juegos como Nitrovenant</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/es/hub/juegos-gratis/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/spad/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Spadorable</span><span class="lj-cap__gen">Spa ASMR relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Casual</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Trickwink</span><span class="lj-cap__gen">Puzzle de trucos en escenas</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Arrowmigo</span><span class="lj-cap__gen">Puzzle de flechas relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fidgetlume</span><span class="lj-cap__gen">Juguetes relajantes (fidget)</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Casual</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Blockamigo</span><span class="lj-cap__gen">Puzzle de bloques relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Tintapix</span><span class="lj-cap__gen">Pintar por números relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">Puzzle de lógica</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a><a class="lj-cap" href="/es/hub/juegos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">Puzzle de estacionamiento relajante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Gratis</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Siguiente"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/es/hub/juegos-gratis/accion/">Juegos de acción gratis</a></p>
+  </section>
 </section>
 <dialog class="jg__qr" data-qr>
   <img src="/assets/media/hub/qr/nitrovenant.svg" width="240" height="240" alt="Código QR de Nitrovenant en Google Play">
@@ -166,6 +222,8 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   <p class="jg__qr-ios" data-ios hidden>En iPhone: por ahora, Nitrovenant solo está para Android.</p>
   <div class="jg__qr-bts"><a class="bt bt--vidro" href="https://play.google.com/store/apps/details?id=com.lipy.nitrovenant" rel="noopener" target="_blank" data-baixar="qr">Abrir Google Play</a><button type="button" class="bt bt--luz" data-fecha-qr>Cerrar</button></div>
 </dialog>
+<dialog class="lj-zoom" data-zoom aria-label="Nitrovenant"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="Cerrar">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -196,6 +254,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"Código {c} copiado","Não deu para copiar. Selecione o código e copie à mão.":"No se pudo copiar. Selecciona el código y cópialo a mano.","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"Varios jugadores dijeron que este código dejó de funcionar (últimas 48 h).","Por quê?":"¿Por qué?","Expirou":"Expiró","Já tinha usado":"Ya lo había usado","Deu inválido":"Código inválido","Obrigado! Isso ajuda a conferir mais rápido.":"¡Gracias! Esto ayuda a verificar más rápido.","Obrigado! Seu voto ajuda outros jogadores.":"¡Gracias! Tu voto ayuda a otros jugadores.","Voto retirado.":"Voto retirado.","Muitos votos seguidos. Tente de novo mais tarde.":"Demasiados votos seguidos. Inténtalo de nuevo más tarde.","Não deu para registrar o voto agora. Tente de novo em instantes.":"No se pudo registrar tu voto ahora. Inténtalo de nuevo en unos instantes.","Nada encontrado. Tente o nome do jogo.":"No encontramos nada. Prueba con el nombre del juego.","Carregando…":"Cargando…","Sair":"Salir"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

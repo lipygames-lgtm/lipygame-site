@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,63 +101,121 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/villadash/?lang=pt-BR" data-nome="Villadash" data-slug="villadash" data-cta-tempo="100" data-video="/assets/media/villa/gameplay.mp4" data-carregando="Carregando o jogo…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/villa/capa.webp" width="1600" height="900" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="Você está em"><a href="/pt/hub/">Hub</a><i>/</i><a href="/pt/hub/jogos-gratis/">Jogos grátis</a><i>/</i><span aria-current="page">Villadash</span></nav>
+    <h1 class="t-display">Villadash<span class="jg__h1-sub">jogo de ação 3D de resgate na vila, grátis</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/villadash/?lang=pt-BR" data-nome="Villadash" data-slug="villadash" data-cta-tempo="100" data-video="/assets/media/villa/gameplay.mp4" data-carregando="Carregando o jogo…">
         <img class="jg__capa" src="/assets/media/villa/capa.webp" width="1600" height="900" alt="Villadash: tela do jogo" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/villa/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Villadash</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</button><small>Grátis · sem baixar · sem cadastro</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/villa/icone-sm.webp" width="160" height="160" alt=""><span><b>Gostou? Villadash vai chegar ao Android</b><small>Entre na lista e receba o aviso no dia em que sair na Google Play.</small></span><a class="bt bt--luz" href="/pt/villadash.html#lista" data-avise>Avise-me</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="Fechar">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/villa/icone-sm.webp" width="160" height="160" alt=""><span><b>Villadash</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="villadash"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Gostei do jogo" title="Gostei do jogo"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Não gostei do jogo" title="Não gostei do jogo"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="Tela cheia" title="Tela cheia"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/villa/icone-sm.webp" width="160" height="160" alt=""><span><b>Villadash</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="villadash"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Gostei do jogo" title="Gostei do jogo"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Não gostei do jogo" title="Não gostei do jogo"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="Tela cheia" title="Tela cheia"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#f6a21a;--c2:#8fb3ff" aria-label="Leve Villadash no celular">
         <img class="jg__app-ico" src="/assets/media/villa/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>Leve Villadash no celular</b><small>Abre direto da tela inicial, em tela cheia, sem navegador e sem digitar endereço.</small></div>
         <span class="jg__app-breve">Em breve na Google Play</span>
         <a class="bt bt--luz jg__app-play" href="/pt/villadash.html#lista" data-avise>Avise-me quando sair</a>
       </section>
+      </div>
+      <section class="lj-gal" aria-label="Villadash"><h2 class="sr-only">Vídeo do jogo</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video"><video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/villa/gameplay-poster.webp"><source src="/assets/media/villa/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item" href="/assets/media/villa/tela-frost-wave.webp" data-ampliar><img src="/assets/media/villa/tela-frost-wave-sm.webp" srcset="/assets/media/villa/tela-frost-wave-sm.webp 540w, /assets/media/villa/tela-frost-wave.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/villa/tela-morvane-ritual.webp" data-ampliar><img src="/assets/media/villa/tela-morvane-ritual-sm.webp" srcset="/assets/media/villa/tela-morvane-ritual-sm.webp 540w, /assets/media/villa/tela-morvane-ritual.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/villa/tela-jail-rescue.webp" data-ampliar><img src="/assets/media/villa/tela-jail-rescue-sm.webp" srcset="/assets/media/villa/tela-jail-rescue-sm.webp 540w, /assets/media/villa/tela-jail-rescue.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/villa/tela-burning-house.webp" data-ampliar><img src="/assets/media/villa/tela-burning-house-sm.webp" srcset="/assets/media/villa/tela-burning-house-sm.webp 540w, /assets/media/villa/tela-burning-house.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/villa/tela-night-convoy.webp" data-ampliar><img src="/assets/media/villa/tela-night-convoy-sm.webp" srcset="/assets/media/villa/tela-night-convoy-sm.webp 540w, /assets/media/villa/tela-night-convoy.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/villa/tela-shadow-giant.webp" data-ampliar><img src="/assets/media/villa/tela-shadow-giant-sm.webp" srcset="/assets/media/villa/tela-shadow-giant-sm.webp 540w, /assets/media/villa/tela-shadow-giant.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Próximo"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">Jogue também</h2>
-      <div class="jg__mais"><a class="tl" href="/pt/hub/jogos-gratis/legiontide/" style="--c1:#ffc21a;--c2:#2f6bff" data-slug="legiontide" data-cats="estrategia acao" data-novo><img src="/assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">LEGIONTIDE</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/tumbleforge/" style="--c1:#f2a33a;--c2:#5a8fd6" data-slug="tumbleforge" data-cats="puzzle acao" data-novo><img src="/assets/media/tumb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tumbleforge</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/hoparade/" style="--c1:#7bd34a;--c2:#ff8a3d" data-slug="hoparade" data-cats="casual acao" data-novo><img src="/assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Hoparade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/nitrovenant/" style="--c1:#ff7a1a;--c2:#b3122e" data-slug="nitrovenant" data-cats="acao corrida" data-novo><img src="/assets/media/nitro/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Nitrovenant</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/swarmoria/" style="--c1:#2ad8ff;--c2:#8a5cff" data-slug="swarmoria" data-cats="acao casual" data-novo><img src="/assets/media/swarm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">SWARMORIA</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/dropaloo/" style="--c1:#5BB8F0;--c2:#F28DB8" data-slug="dropaloo" data-cats="casual" data-novo><img src="/assets/media/drop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dropaloo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/">Todos os jogos</a></p>
+    <aside class="lj-ficha" aria-label="Villadash">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/villa/capa.webp" width="1600" height="900" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">Jogo de ação 3D grátis no navegador: escolha um de 3 heróis, salve os aldeões antes do vilão Morvane e enfrente-o num duelo. 7 vilas. Sem baixar.</p>
+      <dl class="lj-dados">
+        <div><dt>Lançamento</dt><dd><time datetime="2026-10-16">16 de out. de 2026</time></dd></div>
+        <div><dt>Estúdio</dt><dd><a href="/pt/hub/estudio/">Lipy Games</a></dd></div>
+        <div><dt>Gênero</dt><dd>Ação 3D: resgate contra o relógio e duelo</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/pt/hub/jogos-gratis/acao/">Ação</a></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar grátis no navegador</button>
+        <span class="lj-breve">Em breve na Google Play</span>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="Você está em"><a href="/pt/hub/">Hub</a><i>/</i><a href="/pt/hub/jogos-gratis/">Jogos grátis</a><i>/</i><span aria-current="page">Villadash</span></nav>
-      <h1 class="t-display">Villadash<span class="jg__h1-sub">jogo de ação 3D de resgate na vila, grátis</span></h1>
-      <p class="jg__genero">Ação 3D: resgate contra o relógio e duelo</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>Sobre este jogo</h2>
       <p>Villadash é um jogo de ação em 3D. Morvane e seus bandidos estão atacando as vilas do reino, e cada aldeão que ele leva o deixa mais forte. Você tem um round, contra o relógio, para chegar antes dele.</p>
       <p>Escolha Ronan, o cavaleiro, Lyra, a ladina, ou Brann, o druida do gelo. Corra pelas ruas da vila, derrube os capangas que vigiam cada grupo de aldeões presos e segure o botão para soltá-los. O Morvane também anda pela vila atrás dos grupos: o placar mostra quantos você salvou e quantos ele levou, e o minimapa mostra onde ele está.</p>
       <p>No fim do round vem o duelo contra o Morvane. Cada grupo que você salvou deixa o seu herói mais forte para essa luta. Os que ele levou deixam o vilão mais forte.</p>
       <p>A campanha tem 7 vilas, e cada uma muda as regras: arqueiros atirando do outro lado do rio, aldeões trancados dentro das casas, recrutas libertados que lutam ao seu lado, casas pegando fogo, um comboio noturno até as fogueiras e a batalha final na cidadela do Morvane, trocando entre os três heróis.</p>
-      <h2>Vídeo do jogo</h2>
-      <video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/villa/gameplay-poster.webp"><source src="/assets/media/villa/gameplay.mp4" type="video/mp4"></video>
       
       <h2>Como jogar</h2><ol><li>Escolha o herói. Cada um tem uma arma, uma habilidade e uma vantagem própria.</li><li>Ande pela vila e siga o minimapa até um grupo de aldeões presos.</li><li>Derrube os capangas que guardam o grupo com ataques, a habilidade e a esquiva.</li><li>Segure o botão de soltar perto dos aldeões até a barra encher. Se você levar um golpe no meio, a libertação recomeça.</li><li>Fique de olho no Morvane: quando ele partir para um grupo, chegue antes ou passe para o próximo.</li><li>Quando o tempo acabar ou não sobrar ninguém para salvar, vença o duelo contra o Morvane para passar de vila.</li></ol>
       <h2>Controles</h2><ul class="jg__controles"><li>W A S D ou setas: andar</li><li>Clique esquerdo ou J: atacar</li><li>Clique direito, R ou K: habilidade do herói</li><li>Espaço, Shift ou L: esquivar</li><li>Segurar F: soltar os aldeões</li><li>Q e E: girar a câmera · roda do mouse: zoom · P: pausar</li><li>Batalha final: 1, 2 e 3 trocam de herói</li><li>No celular: joystick à esquerda para andar, botões na tela para atacar, usar a habilidade e esquivar, e segurar o botão da mão para soltar os aldeões</li><li>Controle de videogame também funciona</li></ul>
       <h2>Dicas</h2><ul><li>Limpe os capangas antes de começar a soltar os aldeões: um golpe no meio reinicia a libertação.</li><li>Use a esquiva na hora do ataque forte do inimigo, quando o aviso aparece no chão.</li><li>Ronan solta os aldeões 30% mais rápido. Lyra enxerga os reféns mais longe no minimapa. Brann ganha 2 segundos a mais por aldeão salvo.</li><li>A Onda de Gelo do Brann congela os capangas em volta por 3 segundos: ótima para soltar um grupo cercado.</li><li>O capanga dourado aparece pouco, dá 15 segundos a mais no relógio e foge se você demorar. Vale correr atrás dele.</li><li>Quebre os barris: alguns têm moedas e poções de vida ou de especial.</li><li>Quanto mais aldeões você salvar no round, mais fácil fica o duelo no fim.</li></ul>
       <h2>O que tem no jogo</h2><ul><li>3 heróis com arma, habilidade e vantagem próprias: Ronan, Lyra e Brann</li><li>Corrida contra o vilão até cada grupo de aldeões, com placar e minimapa</li><li>Duelo contra o Morvane no fim de cada vila</li><li>Campanha de 7 vilas, cada uma com uma regra nova, até a batalha final na cidadela</li><li>Heróis que sobem do nível 1 ao 10, estrelas por fase e moedas para treino e roupas novas</li><li>Teclado e mouse, toque e controle, deitado e em pé</li><li>Em português e inglês</li></ul>
       <h2>Perguntas frequentes</h2><details class="faq"><summary>Villadash é grátis?</summary><p>Sim. Você joga de graça, direto no navegador, sem cadastro.</p></details><details class="faq"><summary>Precisa baixar para jogar?</summary><p>Não. Você joga nesta página, sem instalar nada. O jogo é em 3D e carrega cerca de 18 MB na primeira vez.</p></details><details class="faq"><summary>Funciona no celular?</summary><p>Sim. No celular aparecem um joystick e botões na tela, e dá para jogar deitado ou em pé.</p></details><details class="faq"><summary>Quantas fases tem?</summary><p>São 7 vilas, cada uma com uma regra nova, e a última é a batalha final contra o Morvane na cidadela dele.</p></details><details class="faq"><summary>Qual herói é melhor para começar?</summary><p>O Ronan é o mais resistente e solta os aldeões mais rápido, bom para aprender. A Lyra é a mais rápida e o Brann controla os grupos de capangas com o gelo.</p></details><details class="faq"><summary>O progresso fica salvo?</summary><p>Sim. Vilas liberadas, estrelas, níveis e moedas ficam salvos neste navegador, neste aparelho.</p></details>
-      <h2>Mais jogos como Villadash</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/pt/hub/jogos-gratis/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo><img src="/assets/media/spad/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Spadorable</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/acao/">Jogos de ação grátis</a></p>
     </article>
-    <aside class="jg__ficha">
-      <dl class="card">
-        <div><dt>Estúdio</dt><dd><a href="/pt/hub/estudio/">Lipy Games</a></dd></div>
-        <div><dt>Gênero</dt><dd>Ação 3D: resgate contra o relógio e duelo</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>Onde jogar</dt><dd>Navegador (celular e computador)</dd></div>
         <div><dt>Preço</dt><dd>Grátis</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/villa/tela-frost-wave.webp" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy"><img src="/assets/media/villa/tela-morvane-ritual.webp" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy"><img src="/assets/media/villa/tela-jail-rescue.webp" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy"><img src="/assets/media/villa/tela-burning-house.webp" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy"><img src="/assets/media/villa/tela-night-convoy.webp" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy"><img src="/assets/media/villa/tela-shadow-giant.webp" width="1280" height="720" alt="Villadash: tela do jogo" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">Jogue também</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/pt/hub/jogos-gratis/legiontide/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/legion/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>LEGIONTIDE</b><small>Legião 3D: ação e estratégia</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/tumbleforge/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tumb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tumbleforge</b><small>Quebra-cabeça de física</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/hoparade/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/hopa/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Hoparade</b><small>Casual 3D: pulo, resgate e fazenda</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/nitrovenant/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/nitro/destaque-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Nitrovenant</b><small>Ação sobre rodas</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/swarmoria/"><span class="lj-mini__arte"><span class="lj-arte lj-arte--retrato"><img class="lj-arte__fundo" src="/assets/media/swarm/tela-abertura-sm.webp" width="360" height="640" alt="" loading="lazy" decoding="async" aria-hidden="true"><img src="/assets/media/swarm/tela-abertura-sm.webp" width="360" height="640" alt="" loading="lazy" decoding="async"></span></span><span class="lj-mini__txt"><b>SWARMORIA</b><small>Enxame 3D</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/dropaloo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/drop/capa-sm.webp" width="640" height="312" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Dropaloo</b><small>Casual de um toque: cores e reflexo</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/">Todos os jogos</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Mais jogos como Villadash</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/pt/hub/jogos-gratis/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/spad/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Spadorable</span><span class="lj-cap__gen">Spa ASMR relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Casual</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Trickwink</span><span class="lj-cap__gen">Quebra-cabeça de pegadinhas em cenas</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Arrowmigo</span><span class="lj-cap__gen">Quebra-cabeça de setas relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fidgetlume</span><span class="lj-cap__gen">Brinquedos relaxantes (fidget)</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Casual</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Blockamigo</span><span class="lj-cap__gen">Quebra-cabeça de blocos relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Tintapix</span><span class="lj-cap__gen">Pintar por números relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">Quebra-cabeça de lógica</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">Quebra-cabeça de estacionamento relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Próximo"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/acao/">Jogos de ação grátis</a></p>
+  </section>
 </section>
+<dialog class="lj-zoom" data-zoom aria-label="Villadash"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="Fechar">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -186,6 +245,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

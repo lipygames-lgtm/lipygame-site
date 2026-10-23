@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,42 +101,62 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/dropaloo/?lang=hi" data-nome="Dropaloo" data-slug="dropaloo" data-cta-tempo="100" data-video="/assets/media/drop/gameplay.mp4" data-carregando="गेम लोड हो रहा है…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/drop/capa.webp" width="1024" height="500" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">Dropaloo</span></nav>
+    <h1 class="t-display">Dropaloo<span class="jg__h1-sub">एक टैप वाला फ्री कलर गेम</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/dropaloo/?lang=hi" data-nome="Dropaloo" data-slug="dropaloo" data-cta-tempo="100" data-video="/assets/media/drop/gameplay.mp4" data-carregando="गेम लोड हो रहा है…">
         <img class="jg__capa" src="/assets/media/drop/capa.webp" width="1024" height="500" alt="Dropaloo: गेम की स्क्रीन" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/drop/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Dropaloo</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</button><small>फ़्री · बिना डाउनलोड · बिना साइन-अप</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/drop/icone-sm.webp" width="160" height="160" alt=""><span><b>पसंद आया? फ़ोन पर खेलते रहें</b><small>फ़्री में इंस्टॉल करें और Dropaloo जब चाहें, सीधे अपने फ़ोन से खेलें।</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.dropaloo" data-baixar="fase3" rel="noopener" target="_blank">फ़्री डाउनलोड करें</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="बंद करें">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/drop/icone-sm.webp" width="160" height="160" alt=""><span><b>Dropaloo</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="dropaloo"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.dropaloo" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Play से डाउनलोड करें</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/drop/icone-sm.webp" width="160" height="160" alt=""><span><b>Dropaloo</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="dropaloo"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.dropaloo" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Play से डाउनलोड करें</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#5BB8F0;--c2:#F28DB8" aria-label="Dropaloo को अपने फ़ोन में ले जाइए">
         <img class="jg__app-ico" src="/assets/media/drop/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>Dropaloo को अपने फ़ोन में ले जाइए</b><small>होम स्क्रीन से सीधे खुलता है, फ़ुल स्क्रीन में, बिना ब्राउज़र और बिना पता टाइप किए।</small></div>
         <a class="bt bt--luz jg__app-play" href="https://play.google.com/store/apps/details?id=com.lipy.dropaloo" rel="noopener" target="_blank" data-baixar="faixa"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Google Play से डाउनलोड करें</span></a>
         <div class="jg__app-qr"><img src="/assets/media/hub/qr/dropaloo.svg" width="84" height="84" alt="Google Play पर Dropaloo का QR कोड" loading="lazy"><small>फ़ोन से स्कैन करें</small></div>
       </section>
+      </div>
+      <section class="lj-gal lj-gal--alta" aria-label="Dropaloo"><h2 class="sr-only">गेम का वीडियो</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video"><video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/drop/gameplay-poster.webp"><source src="/assets/media/drop/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/drop/hi/tela-1.webp" data-ampliar><img src="/assets/media/drop/hi/tela-1-sm.webp" srcset="/assets/media/drop/hi/tela-1-sm.webp 304w, /assets/media/drop/hi/tela-1.webp 540w" sizes="(max-width: 640px) 129px, 158px" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/drop/hi/tela-2.webp" data-ampliar><img src="/assets/media/drop/hi/tela-2-sm.webp" srcset="/assets/media/drop/hi/tela-2-sm.webp 304w, /assets/media/drop/hi/tela-2.webp 540w" sizes="(max-width: 640px) 129px, 158px" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/drop/hi/tela-3.webp" data-ampliar><img src="/assets/media/drop/hi/tela-3-sm.webp" srcset="/assets/media/drop/hi/tela-3-sm.webp 304w, /assets/media/drop/hi/tela-3.webp 540w" sizes="(max-width: 640px) 129px, 158px" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/drop/hi/tela-4.webp" data-ampliar><img src="/assets/media/drop/hi/tela-4-sm.webp" srcset="/assets/media/drop/hi/tela-4-sm.webp 304w, /assets/media/drop/hi/tela-4.webp 540w" sizes="(max-width: 640px) 129px, 158px" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/drop/hi/tela-5.webp" data-ampliar><img src="/assets/media/drop/hi/tela-5-sm.webp" srcset="/assets/media/drop/hi/tela-5-sm.webp 304w, /assets/media/drop/hi/tela-5.webp 540w" sizes="(max-width: 640px) 129px, 158px" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/drop/hi/tela-6.webp" data-ampliar><img src="/assets/media/drop/hi/tela-6-sm.webp" srcset="/assets/media/drop/hi/tela-6-sm.webp 304w, /assets/media/drop/hi/tela-6.webp 540w" sizes="(max-width: 640px) 129px, 158px" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">ये भी खेलें</h2>
-      <div class="jg__mais"><a class="tl" href="/hi/hub/free-games/spadorable/" style="--c1:#7FD8CF;--c2:#FF8F7A" data-slug="spadorable" data-cats="casual" data-novo><img src="/assets/media/spad/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Spadorable</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+    <aside class="lj-ficha" aria-label="Dropaloo">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/drop/capa.webp" width="1024" height="500" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">ब्राउज़र में फ्री गेम: टैप करके कूदें और सिर्फ़ बैकग्राउंड के रंग वाले ब्लॉक से गुज़रें। मेडल, सरप्राइज़ दुनिया और 12 बूँदें। बिना डाउनलोड।</p>
+      <dl class="lj-dados">
+        <div><dt>रिलीज़ डेट</dt><dd><time datetime="2026-10-14">14 अक्टू॰ 2026</time></dd></div>
+        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>जॉनर</dt><dd>एक टैप वाला कैज़ुअल गेम: रंग और रिफ़्लेक्स</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/hi/hub/free-games/casual/">कैज़ुअल</a><span class="lj-tag">Google Play</span></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>ब्राउज़र में फ़्री खेलें</button>
+        <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.dropaloo" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/drop/icone-sm.webp" width="160" height="160" alt=""><span><small>Android के लिए उपलब्ध</small><b>Google Play से डाउनलोड करें</b></span></a>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">Dropaloo</span></nav>
-      <h1 class="t-display">Dropaloo<span class="jg__h1-sub">एक टैप वाला फ्री कलर गेम</span></h1>
-      <p class="jg__genero">एक टैप वाला कैज़ुअल गेम: रंग और रिफ़्लेक्स</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>इस गेम के बारे में</h2>
       <p>Dropaloo एक टैप वाला गेम है। आप पेंट की एक नन्ही बूँद हैं जो कूदते हुए आगे बढ़ती है, और सामने से रंग-बिरंगे ब्लॉकों के कॉलम आते हैं, ऊपर से नीचे तक। ब्लॉक अलग-अलग रंगों के होते हैं, पर सिर्फ़ बैकग्राउंड के रंग वाले ब्लॉक ही आपको आगे जाने देते हैं। दूसरे रंग के ब्लॉक को छुआ या ज़मीन पर गिरे, तो गेम ख़त्म।</p>
       <p>नियम आसान लगता है, जब तक पेंट की बारिश नहीं होती। बारिश होते ही पूरी दुनिया नए रंग में रंग जाती है, और सही ब्लॉक भी साथ में बदल जाता है। हर छलाँग पर बैकग्राउंड को फिर से देखना पड़ता है, बिना रिदम खोए।</p>
       <p>रंग गेम के साथ-साथ बदलते हैं। शुरुआत शांत, हल्के रंगों में होती है, फिर आता है फ़ोकस और फिर टेंशन। जब आप अपने रिकॉर्ड के क़रीब पहुँचते हैं, तो सब कुछ सुनहरा हो जाता है, ताकि आपको पता चले कि अब पूरा ज़ोर लगाने का वक़्त है।</p>
       <p>हर 25 पॉइंट पर एक सरप्राइज़ दुनिया आती है: पहाड़ियाँ, जंगल, राज्य, रेगिस्तान और गाँव। रास्ते में आप ब्रॉन्ज़ से इंद्रधनुष तक के मेडल जीतते हैं, और सिक्के भी, जिनसे गेम की शॉप में नई बूँदें ख़रीद सकते हैं।</p>
-      <h2>गेम का वीडियो</h2>
-      <video class="jg__video" controls muted playsinline preload="none" width="960" height="540" poster="/assets/media/drop/gameplay-poster.webp"><source src="/assets/media/drop/gameplay.mp4" type="video/mp4"></video>
       <h2>अगर आपको Flappy Bird, Color Switch पसंद है</h2>
       <p>अगर आपको Flappy Bird या Color Switch पसंद है, तो एक टैप वाली छलाँग और रंग वाले नियम के साथ आपको यहाँ घर जैसा लगेगा। फ़र्क़ है पेंट की बारिश, जो गेम के बीच में ही दुनिया को नए रंग में रंग देती है और सही ब्लॉक बदल देती है। साथ में सरप्राइज़ दुनिया, मेडल और इकट्ठा करने के लिए 12 बूँदें भी हैं।</p>
       <h2>कैसे खेलें</h2><ol><li>बूँद को कुदाने के लिए स्क्रीन पर टैप करें (या क्लिक करें)। टैप न करें, तो वह नीचे गिरती है।</li><li>बैकग्राउंड का रंग देखें और हर कॉलम में उसी रंग का ब्लॉक ढूँढें।</li><li>उसी ब्लॉक के अंदर से गुज़रें। दूसरे रंग के ब्लॉक को छूने या ज़मीन पर गिरने से गेम ख़त्म हो जाता है।</li><li>जब पेंट की बारिश हो, तो बैकग्राउंड का नया रंग देखें: सही ब्लॉक भी बदल गया है।</li><li>हर कॉलम पार करने पर 1 पॉइंट मिलता है। 5 पॉइंट होते ही पहला मेडल मिलता है।</li><li>गेम ख़त्म होने पर सिक्के आपके पास जमा हो जाते हैं। बूँद बदलने के लिए इन्हें शॉप में इस्तेमाल करें।</li></ol>
@@ -143,21 +164,56 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>टिप्स</h2><ul><li>एक के बाद एक कई टैप करने से बेहतर है रिदम में छोटे-छोटे टैप। अगली छलाँग से पहले बूँद को थोड़ा गिरने दें।</li><li>कॉलम तक पहुँचने से पहले ही तय कर लें कि सही ब्लॉक कौन-सा है। कॉलम दिखते ही बैकग्राउंड का रंग देखें।</li><li>पेंट की बारिश के बाद एक साँस लें: ब्लॉक पर निशाना लगाने से पहले नया रंग देख लें।</li><li>अगर आपको रंग पहचानने में दिक़्क़त होती है, तो पैटर्न पर ध्यान दें। हर रंग का अपना पैटर्न है, और वह बैकग्राउंड और ब्लॉक पर एक जैसा होता है।</li><li>जब सब कुछ सुनहरा हो जाए, तो समझिए आप रिकॉर्ड के क़रीब हैं। जल्दबाज़ी करने के बजाय आराम से खेलें।</li><li>आज का चैलेंज सबके लिए एक ही ट्रैक पर होता है और इसमें डबल सिक्के मिलते हैं: रोज़ एक कोशिश तो बनती है।</li></ul>
       <h2>गेम में क्या है</h2><ul><li>बस एक टैप वाला कंट्रोल, मोबाइल और कंप्यूटर दोनों पर</li><li>पेंट की बारिश, जो दुनिया को नए रंग में रंगती है और सही ब्लॉक बदल देती है</li><li>7 मेडल: ब्रॉन्ज़, सिल्वर, गोल्ड, प्लैटिनम, पन्ना, माणिक और इंद्रधनुष</li><li>5 सरप्राइज़ दुनिया, हर 25 पॉइंट पर एक नई</li><li>सिक्कों से इकट्ठा करने के लिए 12 बूँदें, हर 4 घंटे में तोहफ़ा और आज का चैलेंज</li><li>कलर-ब्लाइंड खिलाड़ियों के लिए हर रंग का अपना पैटर्न, और इफ़ेक्ट्स कम करने का ऑप्शन</li><li>6 भाषाएँ: पुर्तगाली, अंग्रेज़ी, स्पेनिश, अरबी, हिंदी और जापानी</li></ul>
       <h2>अक्सर पूछे जाने वाले सवाल</h2><details class="faq"><summary>क्या Dropaloo फ़्री है?</summary><p>हाँ। आप सीधे ब्राउज़र में फ़्री खेलते हैं, बिना साइन-अप के।</p></details><details class="faq"><summary>खेलने के लिए डाउनलोड करना पड़ेगा?</summary><p>नहीं। आप इसी पेज पर खेलते हैं, कुछ इंस्टॉल किए बिना। अगर आप ऐप में खेलना पसंद करते हैं, तो Dropaloo Android के लिए Google Play पर भी है।</p></details><details class="faq"><summary>क्या यह मोबाइल पर चलता है?</summary><p>हाँ। गेम फ़ोन को सीधा पकड़कर खेलने के लिए बना है: कूदने के लिए बस स्क्रीन पर टैप करें। कंप्यूटर पर क्लिक या स्पेसबार इस्तेमाल करें।</p></details><details class="faq"><summary>क्या कलर-ब्लाइंड खिलाड़ी भी इसे खेल सकते हैं?</summary><p>हाँ। हर रंग का अपना पैटर्न है, जो बैकग्राउंड और ब्लॉक पर एक जैसा दिखता है। इसलिए सिर्फ़ रंग पर निर्भर रहे बिना, आप पैटर्न देखकर सही ब्लॉक ढूँढ सकते हैं।</p></details><details class="faq"><summary>क्या ब्राउज़र वाली मेरी प्रोग्रेस ऐप में आ जाएगी?</summary><p>नहीं। ब्राउज़र में आपका रिकॉर्ड, सिक्के और बूँदें इसी डिवाइस और इसी ब्राउज़र में सेव रहते हैं। Android ऐप की अपनी अलग प्रोग्रेस होती है।</p></details>
-      <h2>Dropaloo जैसे और गेम</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/hi/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo><img src="/assets/media/dune/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dunevella</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo><img src="/assets/media/fint/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fintriva</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo><img src="/assets/media/pict/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictascade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/casual/">फ्री कैज़ुअल गेम्स</a></p>
     </article>
-    <aside class="jg__ficha">
-      <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.dropaloo" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/drop/icone-sm.webp" width="160" height="160" alt=""><span><small>Android के लिए उपलब्ध</small><b>Google Play से डाउनलोड करें</b></span></a>
-      <dl class="card">
-        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>जॉनर</dt><dd>एक टैप वाला कैज़ुअल गेम: रंग और रिफ़्लेक्स</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>कहाँ खेलें</dt><dd>ब्राउज़र (मोबाइल और कंप्यूटर) · Android (Google Play)</dd></div>
         <div><dt>कीमत</dt><dd>फ़्री</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/drop/hi/tela-1.webp" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/drop/hi/tela-2.webp" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/drop/hi/tela-3.webp" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/drop/hi/tela-4.webp" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/drop/hi/tela-5.webp" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/drop/hi/tela-6.webp" width="540" height="960" alt="Dropaloo: गेम की स्क्रीन" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">ये भी खेलें</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/hi/hub/free-games/spadorable/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/spad/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Spadorable</b><small>सुकून भरा ASMR स्पा</small></span></a><a class="lj-mini" href="/hi/hub/free-games/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>सीन वाली तरकीब पहेलियाँ</small></span></a><a class="lj-mini" href="/hi/hub/free-games/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>सुकून भरा तीर पज़ल</small></span></a><a class="lj-mini" href="/hi/hub/free-games/fidgetlume/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Fidgetlume</b><small>सुकून देने वाले फ़िजेट खिलौने</small></span></a><a class="lj-mini" href="/hi/hub/free-games/blockamigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Blockamigo</b><small>सुकून भरा ब्लॉक पज़ल</small></span></a><a class="lj-mini" href="/hi/hub/free-games/tintapix/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tintapix</b><small>सुकून भरा नंबर से रंग भरो</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Dropaloo जैसे और गेम</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/hi/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snoozegrid</span><span class="lj-cap__gen">लॉजिक पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">सुकून भरा पार्किंग पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">आरामदायक 3D पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">सुकून भरा साँप पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">रंगों की पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/dune/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Dunevella</span><span class="lj-cap__gen">टुकड़े खिसकाने वाली पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fint/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fintriva</span><span class="lj-cap__gen">तीन मिलाने वाली पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pict/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictascade</span><span class="lj-cap__gen">तस्वीरों की पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/casual/">फ्री कैज़ुअल गेम्स</a></p>
+  </section>
 </section>
 <dialog class="jg__qr" data-qr>
   <img src="/assets/media/hub/qr/dropaloo.svg" width="240" height="240" alt="Google Play पर Dropaloo का QR कोड">
@@ -165,6 +221,8 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   <p class="jg__qr-ios" data-ios hidden>iPhone पर: अभी Dropaloo सिर्फ़ Android के लिए है।</p>
   <div class="jg__qr-bts"><a class="bt bt--vidro" href="https://play.google.com/store/apps/details?id=com.lipy.dropaloo" rel="noopener" target="_blank" data-baixar="qr">Google Play खोलें</a><button type="button" class="bt bt--luz" data-fecha-qr>बंद करें</button></div>
 </dialog>
+<dialog class="lj-zoom" data-zoom aria-label="Dropaloo"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="बंद करें">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -195,6 +253,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"कोड {c} कॉपी हो गया","Não deu para copiar. Selecione o código e copie à mão.":"कॉपी नहीं हो पाया। कोड सिलेक्ट करके ख़ुद कॉपी करें।","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"कई प्लेयर्स ने बताया कि यह कोड काम करना बंद कर चुका है (पिछले 48 घंटे)।","Por quê?":"क्यों?","Expirou":"एक्सपायर हो गया","Já tinha usado":"पहले ही इस्तेमाल किया था","Deu inválido":"इनवैलिड कोड","Obrigado! Isso ajuda a conferir mais rápido.":"शुक्रिया! इससे हमें जल्दी जाँच करने में मदद मिलती है।","Obrigado! Seu voto ajuda outros jogadores.":"शुक्रिया! आपका वोट दूसरे प्लेयर्स की मदद करता है।","Voto retirado.":"वोट हटा दिया गया।","Muitos votos seguidos. Tente de novo mais tarde.":"लगातार बहुत ज़्यादा वोट। थोड़ी देर बाद फिर से कोशिश करें।","Não deu para registrar o voto agora. Tente de novo em instantes.":"अभी आपका वोट दर्ज नहीं हो पाया। थोड़ी देर में फिर से कोशिश करें।","Nada encontrado. Tente o nome do jogo.":"कुछ नहीं मिला। गेम का नाम लिखकर देखें।","Carregando…":"लोड हो रहा है…","Sair":"बाहर निकलें"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

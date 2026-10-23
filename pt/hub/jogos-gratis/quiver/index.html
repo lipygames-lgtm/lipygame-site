@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -100,41 +101,61 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/quiver/?lang=pt-BR" data-nome="Quiver: Arrow Puzzle" data-slug="quiver" data-cta-tempo="100" data-video="/assets/media/quiver/gameplay.mp4" data-carregando="Carregando o jogo…">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/quiver/capa.webp" width="1794" height="876" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="Você está em"><a href="/pt/hub/">Hub</a><i>/</i><a href="/pt/hub/jogos-gratis/">Jogos grátis</a><i>/</i><span aria-current="page">Quiver: Arrow Puzzle</span></nav>
+    <h1 class="t-display">Quiver: Arrow Puzzle<span class="jg__h1-sub">jogo de setas grátis online, estilo Arrow Escape</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/quiver/?lang=pt-BR" data-nome="Quiver: Arrow Puzzle" data-slug="quiver" data-cta-tempo="100" data-video="/assets/media/quiver/gameplay.mp4" data-carregando="Carregando o jogo…">
         <img class="jg__capa" src="/assets/media/quiver/capa.webp" width="1794" height="876" alt="Quiver: Arrow Puzzle: tela do jogo" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/quiver/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Quiver: Arrow Puzzle</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</button><small>Grátis · sem baixar · sem cadastro</small></div>
         <div class="jg__cta" data-cta hidden role="status"><img src="/assets/media/quiver/icone-sm.webp" width="160" height="160" alt=""><span><b>Gostou? Continue no celular</b><small>No app, todo jogador novo ganha: o chefe Noel com a fase dele liberada e 5.000 moedas.</small></span><a class="bt bt--luz" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" data-baixar="fase3" rel="noopener" target="_blank">Baixar grátis</a><button type="button" class="jg__cta-x" data-fecha-cta aria-label="Fechar">✕</button></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/quiver/icone-sm.webp" width="160" height="160" alt=""><span><b>Quiver: Arrow Puzzle</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="quiver"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Gostei do jogo" title="Gostei do jogo"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Não gostei do jogo" title="Não gostei do jogo"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Baixar na Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Tela cheia" title="Tela cheia"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
-      </div>
+        <div class="jg__barra">
+          <img src="/assets/media/quiver/icone-sm.webp" width="160" height="160" alt=""><span><b>Quiver: Arrow Puzzle</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="quiver"><button type="button" data-voto="sim" aria-pressed="false" aria-label="Gostei do jogo" title="Gostei do jogo"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="Não gostei do jogo" title="Não gostei do jogo"><span aria-hidden="true">👎</span><b></b></button></span><a class="bt bt--vidro jg__loja" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" rel="noopener" target="_blank" data-baixar="fixo"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Baixar na Google Play</span></a><button class="jg__bt" type="button" data-tela-cheia aria-label="Tela cheia" title="Tela cheia"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       <section class="jg__app" style="--c1:#3ef08a;--c2:#2170ff" aria-label="Leve Quiver: Arrow Puzzle no celular">
         <img class="jg__app-ico" src="/assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
         <div class="jg__app-txt"><b>Leve Quiver: Arrow Puzzle no celular</b><small>No app, todo jogador novo ganha: o chefe Noel com a fase dele liberada e 5.000 moedas.</small></div>
         <a class="bt bt--luz jg__app-play" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" rel="noopener" target="_blank" data-baixar="faixa"><svg class="ic" aria-hidden="true"><use href="#i-baixar"/></svg><span>Baixar na Google Play</span></a>
         <div class="jg__app-qr"><img src="/assets/media/hub/qr/quiver.svg" width="84" height="84" alt="QR code de Quiver: Arrow Puzzle na Google Play" loading="lazy"><small>Escaneie com o celular</small></div>
       </section>
+      </div>
+      <section class="lj-gal lj-gal--alta" aria-label="Quiver: Arrow Puzzle"><h2 class="sr-only">Vídeo do jogo</h2>
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><div class="lj-gal__item lj-gal__item--video lj-gal__item--retrato"><video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/quiver/gameplay-poster.webp"><source src="/assets/media/quiver/gameplay.mp4" type="video/mp4"></video></div><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/quiver/tela-rush.webp" data-ampliar><img src="/assets/media/quiver/tela-rush-sm.webp" srcset="/assets/media/quiver/tela-rush-sm.webp 304w, /assets/media/quiver/tela-rush.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/quiver/tela-mapa-classic.webp" data-ampliar><img src="/assets/media/quiver/tela-mapa-classic-sm.webp" srcset="/assets/media/quiver/tela-mapa-classic-sm.webp 305w, /assets/media/quiver/tela-mapa-classic.webp 720w" sizes="(max-width: 640px) 130px, 158px" width="720" height="1276" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/quiver/tela-magumbi.webp" data-ampliar><img src="/assets/media/quiver/tela-magumbi-sm.webp" srcset="/assets/media/quiver/tela-magumbi-sm.webp 304w, /assets/media/quiver/tela-magumbi.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy" decoding="async"></a><a class="lj-gal__item lj-gal__item--retrato" href="/assets/media/quiver/tela-natal.webp" data-ampliar><img src="/assets/media/quiver/tela-natal-sm.webp" srcset="/assets/media/quiver/tela-natal-sm.webp 304w, /assets/media/quiver/tela-natal.webp 720w" sizes="(max-width: 640px) 129px, 158px" width="720" height="1279" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Próximo"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">Jogue também</h2>
-      <div class="jg__mais"><a class="tl" href="/pt/hub/jogos-gratis/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/">Todos os jogos</a></p>
+    <aside class="lj-ficha" aria-label="Quiver: Arrow Puzzle">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/quiver/capa.webp" width="1794" height="876" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">Jogo de setas grátis no navegador, no estilo Arrow Escape: toque na seta com caminho livre e limpe o tabuleiro. 360 fases, modos Rush e Classic e chefes.</p>
+      <dl class="lj-dados">
+        <div><dt>Lançamento</dt><dd><time datetime="2026-10-04">4 de out. de 2026</time></dd></div>
+        <div><dt>Estúdio</dt><dd><a href="/pt/hub/estudio/">Lipy Games</a></dd></div>
+        <div><dt>Gênero</dt><dd>Puzzle de setas</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/pt/hub/jogos-gratis/puzzle/">Puzzle</a><span class="lj-tag">Google Play</span></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar grátis no navegador</button>
+        <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/quiver/icone-sm.webp" width="160" height="160" alt=""><span><small>Disponível para Android</small><b>Baixar na Google Play</b><em>🎁 No app, todo jogador novo ganha: o chefe Noel com a fase dele liberada e 5.000 moedas.</em></span></a>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="Você está em"><a href="/pt/hub/">Hub</a><i>/</i><a href="/pt/hub/jogos-gratis/">Jogos grátis</a><i>/</i><span aria-current="page">Quiver: Arrow Puzzle</span></nav>
-      <h1 class="t-display">Quiver: Arrow Puzzle<span class="jg__h1-sub">jogo de setas grátis online, estilo Arrow Escape</span></h1>
-      <p class="jg__genero">Puzzle de setas</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>Sobre este jogo</h2>
       <p>Quiver: Arrow Puzzle é um quebra-cabeça de setas. Uma seta só sai voando se nada estiver no caminho dela até a borda. Descubra a ordem certa e limpe o tabuleiro.</p>
       <p>Tem dois jeitos de jogar: o Rush, contra o relógio, e o Classic, com calma e corações no lugar do tempo. No Classic, cada arena termina com um chefe que ataca o seu tabuleiro, e a vida dele cai junto com a última seta.</p>
       <p>Também há chefes de datas especiais, quatro poderes para quando o tabuleiro travar, desafios semanais, ranking e missões diárias. Dá para jogar sem internet.</p>
-      <h2>Vídeo do jogo</h2>
-      <video class="jg__video jg__video--retrato" controls muted playsinline preload="none" width="540" height="960" poster="/assets/media/quiver/gameplay-poster.webp"><source src="/assets/media/quiver/gameplay.mp4" type="video/mp4"></video>
       <h2>Se você gosta de Arrow Escape</h2>
       <p>Se você gosta de Arrow Escape e de outros jogos de setas, Quiver é o mesmo tipo de quebra-cabeça: cada seta só sai se o caminho até a borda estiver livre. A diferença está nos modos Rush e Classic, nos chefes e nos poderes que ajudam nas fases mais difíceis.</p>
       <h2>Como jogar</h2><ol><li>Olhe o tabuleiro e procure uma seta com o caminho livre até a borda.</li><li>Toque nela: a seta sai voando e libera espaço para as outras.</li><li>Repita até limpar o tabuleiro inteiro.</li><li>No Rush, termine antes do tempo acabar. No Classic, cuide dos corações.</li><li>No fim de cada arena do Classic, vença o chefe limpando a fase.</li></ol>
@@ -142,21 +163,56 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <h2>Dicas</h2><ul><li>Comece pelas setas que apontam para a borda mais próxima.</li><li>Antes de tocar, confira se nenhuma peça bloqueia o caminho da seta.</li><li>No Rush, errar acelera o relógio. Vale pensar meio segundo antes de tocar.</li><li>Faça combos no Rush para acender o modo FEVER.</li><li>Use o Desfazer para voltar uma jogada errada.</li><li>Contra o chefe, o Raio apaga a seta que ele travou.</li></ul>
       <h2>O que tem no jogo</h2><ul><li>360 fases: 200 no Rush e 160 no Classic</li><li>5 arenas no Classic, com chefe no fim</li><li>8 chefes: 4 de arena e 4 de datas especiais</li><li>4 poderes: Desfazer, Explosão, Congelar e Raio</li><li>Ranking mundial, do seu país e entre amigos</li><li>6 idiomas e jogo sem internet</li></ul>
       <h2>Perguntas frequentes</h2><details class="faq"><summary>Quiver é grátis?</summary><p>Sim. É grátis, com anúncios e compras opcionais.</p></details><details class="faq"><summary>Precisa baixar?</summary><p>Não. Você joga direto nesta página, no celular ou no computador. Se quiser o jogo no celular, ele também está na Google Play para Android.</p></details><details class="faq"><summary>Funciona no celular?</summary><p>Sim. Aqui no navegador funciona no celular e no computador. No Android, também dá para instalar pela Google Play.</p></details><details class="faq"><summary>Precisa de internet?</summary><p>Não. O ranking só funciona quando você está online.</p></details><details class="faq"><summary>Qual a diferença entre Rush e Classic?</summary><p>O Rush tem 200 fases contra o relógio. O Classic tem 160 fases em 5 arenas, com corações no lugar do tempo e chefes no fim de cada arena.</p></details><details class="faq"><summary>Perco o progresso se trocar de celular?</summary><p>No app da Google Play, não: o progresso fica salvo no Google Play Games. Aqui no navegador, o progresso fica salvo neste aparelho.</p></details>
-      <h2>Mais jogos como Quiver: Arrow Puzzle</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/pt/hub/jogos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo><img src="/assets/media/dune/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Dunevella</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo><img src="/assets/media/fint/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fintriva</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo><img src="/assets/media/pict/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictascade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a><a class="tl" href="/pt/hub/jogos-gratis/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo><img src="/assets/media/crumb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Crumbivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>Jogar agora</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/puzzle/">Jogos de puzzle grátis</a></p>
     </article>
-    <aside class="jg__ficha">
-      <a class="jg__play card" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" rel="noopener" target="_blank" data-baixar="ficha"><img src="/assets/media/quiver/icone-sm.webp" width="160" height="160" alt=""><span><small>Disponível para Android</small><b>Baixar na Google Play</b><em>🎁 No app, todo jogador novo ganha: o chefe Noel com a fase dele liberada e 5.000 moedas.</em></span></a>
-      <dl class="card">
-        <div><dt>Estúdio</dt><dd><a href="/pt/hub/estudio/">Lipy Games</a></dd></div>
-        <div><dt>Gênero</dt><dd>Puzzle de setas</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>Onde jogar</dt><dd>Navegador (celular e computador) · Android (Google Play)</dd></div>
         <div><dt>Preço</dt><dd>Grátis</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/quiver/tela-rush.webp" width="720" height="1279" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy"><img src="/assets/media/quiver/tela-mapa-classic.webp" width="720" height="1276" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy"><img src="/assets/media/quiver/tela-magumbi.webp" width="720" height="1279" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy"><img src="/assets/media/quiver/tela-natal.webp" width="720" height="1279" alt="Quiver: Arrow Puzzle: tela do jogo" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">Jogue também</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/pt/hub/jogos-gratis/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>Quebra-cabeça de pegadinhas em cenas</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>Quebra-cabeça de setas relaxante</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/fidgetlume/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Fidgetlume</b><small>Brinquedos relaxantes (fidget)</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/blockamigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Blockamigo</b><small>Quebra-cabeça de blocos relaxante</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/tintapix/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tintapix</b><small>Pintar por números relaxante</small></span></a><a class="lj-mini" href="/pt/hub/jogos-gratis/snoozegrid/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Snoozegrid</b><small>Quebra-cabeça de lógica</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/">Todos os jogos</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Mais jogos como Quiver: Arrow Puzzle</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/pt/hub/jogos-gratis/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">Quebra-cabeça de estacionamento relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">Quebra-cabeça 3D relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">Quebra-cabeça de cobrinhas relaxante</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">Quebra-cabeça de cores</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/dunevella/" style="--c1:#e9b45a;--c2:#5aa8d6" data-slug="dunevella" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/dune/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Dunevella</span><span class="lj-cap__gen">Quebra-cabeça de deslizar peças</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fint/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fintriva</span><span class="lj-cap__gen">Quebra-cabeça de trios</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pict/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictascade</span><span class="lj-cap__gen">Quebra-cabeça de imagens</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a><a class="lj-cap" href="/pt/hub/jogos-gratis/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/crumb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Crumbivana</span><span class="lj-cap__gen">Quebra-cabeça de pixels</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">Puzzle</span><span class="lj-gratis">Grátis</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="Anterior"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="Próximo"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/pt/hub/jogos-gratis/puzzle/">Jogos de puzzle grátis</a></p>
+  </section>
 </section>
 <dialog class="jg__qr" data-qr>
   <img src="/assets/media/hub/qr/quiver.svg" width="240" height="240" alt="QR code de Quiver: Arrow Puzzle na Google Play">
@@ -165,6 +221,8 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   <p class="jg__qr-ios" data-ios hidden>No iPhone: por enquanto, Quiver: Arrow Puzzle existe só para Android.</p>
   <div class="jg__qr-bts"><a class="bt bt--vidro" href="https://play.google.com/store/apps/details?id=com.lipy.quiver" rel="noopener" target="_blank" data-baixar="qr">Abrir a Google Play</a><button type="button" class="bt bt--luz" data-fecha-qr>Fechar</button></div>
 </dialog>
+<dialog class="lj-zoom" data-zoom aria-label="Quiver: Arrow Puzzle"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="Fechar">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -194,6 +252,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>

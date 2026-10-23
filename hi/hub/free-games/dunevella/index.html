@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
 <link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -99,54 +100,112 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
   </div>
 </header>
 <main id="conteudo">
-<section class="wrap jg">
-  <div class="jg__grid">
-    <div class="jg__palco">
-      <div class="jg__tela" data-jogo="/games/dunevella/?lang=hi" data-nome="Dunevella" data-slug="dunevella">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-celular" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-esq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg><div class="lj lj--jogo">
+<div class="lj-jogo-fundo" aria-hidden="true"><img src="/assets/media/dune/capa.webp" width="1280" height="720" alt="" decoding="async"></div>
+<section class="wrap lj-jogo">
+  <header class="lj-jogo__cab">
+    <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">Dunevella</span></nav>
+    <h1 class="t-display">Dunevella<span class="jg__h1-sub">रेत और साँचों की पहेली, फ्री</span></h1>
+  </header>
+  <div class="lj-topo">
+    <div class="lj-topo__esq">
+      <div class="jg__palco">
+        <div class="jg__tela" data-jogo="/games/dunevella/?lang=hi" data-nome="Dunevella" data-slug="dunevella">
         <img class="jg__capa" src="/assets/media/dune/capa.webp" width="1280" height="720" alt="Dunevella: गेम की स्क्रीन" fetchpriority="high">
         <div class="jg__abre"><img src="/assets/media/dune/icone-sm.webp" width="160" height="160" alt=""><p class="jg__abre-nome">Dunevella</p><button class="bt bt--luz jg__jogar" type="button" data-abrir><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</button><small>फ़्री · बिना डाउनलोड · बिना साइन-अप</small></div>
       </div>
-      <div class="jg__barra">
-        <img src="/assets/media/dune/icone-sm.webp" width="160" height="160" alt=""><span><b>Dunevella</b><small>Lipy Games</small></span>
-        <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="dunevella"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        <div class="jg__barra">
+          <img src="/assets/media/dune/icone-sm.webp" width="160" height="160" alt=""><span><b>Dunevella</b><small>Lipy Games</small></span>
+          <span class="jg__acoes"><span class="jg__nota" data-nota data-slug="dunevella"><button type="button" data-voto="sim" aria-pressed="false" aria-label="गेम पसंद आया" title="गेम पसंद आया"><span aria-hidden="true">👍</span><b></b></button><button type="button" data-voto="nao" aria-pressed="false" aria-label="गेम पसंद नहीं आया" title="गेम पसंद नहीं आया"><span aria-hidden="true">👎</span><b></b></button></span><button class="jg__bt" type="button" data-tela-cheia aria-label="फ़ुल स्क्रीन" title="फ़ुल स्क्रीन"><svg class="ic" aria-hidden="true"><use href="#i-tela"/></svg></button></span>
+        </div>
       </div>
+      <section class="lj-gal" aria-label="Dunevella">
+        <div class="lj-faixa" data-trilho><div class="lj-trilho lj-gal__trilho"><a class="lj-gal__item" href="/assets/media/dune/tela-1.webp" data-ampliar><img src="/assets/media/dune/tela-1-sm.webp" srcset="/assets/media/dune/tela-1-sm.webp 540w, /assets/media/dune/tela-1.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Dunevella: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/dune/tela-2.webp" data-ampliar><img src="/assets/media/dune/tela-2-sm.webp" srcset="/assets/media/dune/tela-2-sm.webp 540w, /assets/media/dune/tela-2.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Dunevella: गेम की स्क्रीन" loading="lazy" decoding="async"></a><a class="lj-gal__item" href="/assets/media/dune/tela-3.webp" data-ampliar><img src="/assets/media/dune/tela-3-sm.webp" srcset="/assets/media/dune/tela-3-sm.webp 540w, /assets/media/dune/tela-3.webp 1280w" sizes="(max-width: 640px) 267px, 356px" width="1280" height="720" alt="Dunevella: गेम की स्क्रीन" loading="lazy" decoding="async"></a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+      </section>
     </div>
-    <aside class="jg__lado" aria-labelledby="mais-t">
-      <h2 id="mais-t">ये भी खेलें</h2>
-      <div class="jg__mais"><a class="tl" href="/hi/hub/free-games/trickwink/" style="--c1:#8E6CFF;--c2:#FF8A5B" data-slug="trickwink" data-cats="puzzle casual" data-novo><img src="/assets/media/trwk/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Trickwink</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/arrowmigo/" style="--c1:#5CC8A7;--c2:#23395B" data-slug="arrowmigo" data-cats="puzzle casual" data-novo><img src="/assets/media/arwm/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Arrowmigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/fidgetlume/" style="--c1:#FFE9A8;--c2:#6D5BA8" data-slug="fidgetlume" data-cats="casual puzzle" data-novo><img src="/assets/media/fidg/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fidgetlume</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/blockamigo/" style="--c1:#3FB0EA;--c2:#F9C93A" data-slug="blockamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/blka/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Blockamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/tintapix/" style="--c1:#2BB3A8;--c2:#FF7A6B" data-slug="tintapix" data-cats="puzzle casual" data-novo><img src="/assets/media/tinta/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Tintapix</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/snoozegrid/" style="--c1:#3E3B6E;--c2:#FFD27F" data-slug="snoozegrid" data-cats="puzzle casual" data-novo><img src="/assets/media/snooz/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snoozegrid</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+    <aside class="lj-ficha" aria-label="Dunevella">
+      <span class="lj-ficha__capa"><img class="lj-arte" src="/assets/media/dune/capa.webp" width="1280" height="720" alt="" decoding="async"></span>
+      <p class="lj-ficha__desc">ब्राउज़र में फ्री गेम: काँच के साँचों को उसी रंग की कीप तक खिसकाएँ और रेत से हर टुकड़ा भरते देखें। 20 लेवल, कोई टाइमर नहीं। डाउनलोड की ज़रूरत नहीं।</p>
+      <dl class="lj-dados">
+        <div><dt>रिलीज़ डेट</dt><dd><time datetime="2026-10-09">9 अक्टू॰ 2026</time></dd></div>
+        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
+        <div><dt>जॉनर</dt><dd>टुकड़े खिसकाने वाली पहेली</dd></div>
+      </dl>
+      <p class="lj-tags"><a class="lj-tag" href="/hi/hub/free-games/puzzle/">पज़ल</a><a class="lj-tag" href="/hi/hub/free-games/casual/">कैज़ुअल</a></p>
+      <div class="lj-ficha__bts">
+        <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>ब्राउज़र में फ़्री खेलें</button>
+      </div>
     </aside>
   </div>
-  <div class="jg__info">
-    <article class="card jg__texto">
-      <nav class="migalhas" aria-label="आप यहाँ हैं"><a href="/hi/hub/">Hub</a><i>/</i><a href="/hi/hub/free-games/">फ्री गेम्स</a><i>/</i><span aria-current="page">Dunevella</span></nav>
-      <h1 class="t-display">Dunevella<span class="jg__h1-sub">रेत और साँचों की पहेली, फ्री</span></h1>
-      <p class="jg__genero">टुकड़े खिसकाने वाली पहेली</p>
+  <div class="lj-corpo">
+    <article class="jg__texto lj-texto">
+      <h2>इस गेम के बारे में</h2>
       <p>वर्कशॉप में काँच के साँचों को उसी रंग की कीप तक खिसकाएँ और रेत से हर टुकड़ा भरते देखें। भरा साँचा बोर्ड से हट जाता है और बाकी के लिए जगह बनती है।</p>
       <p>न टाइमर, न जल्दी: चुनौती है टुकड़ों के एक-दूसरे को रोकने पर सही रास्ता ढूँढना। धीरे-धीरे काँच के गेट आते हैं जो चरणों में खुलते हैं।</p>
       <p>20 लेवल हैं, हर एक को गेम में आने से पहले एक प्रोग्राम ने हल करके जाँचा है। अनडू और रीस्टार्ट फ्री हैं।</p>
-      
       
       <h2>कैसे खेलें</h2><ol><li>उंगली या माउस से साँचा खिसकाएँ।</li><li>साँचे को उसी रंग और निशान वाली कीप के नीचे ले जाएँ।</li><li>रेत साँचा भर देती है और वह बोर्ड से हट जाता है।</li><li>कुछ साँचे भरने के बाद गेट खुलते हैं।</li><li>अनडू और रीस्टार्ट फ्री हैं।</li></ol>
       <h2>कंट्रोल</h2><ul class="jg__controles"><li>माउस: साँचा खींचें</li><li>फ़ोन पर: उंगली से खींचें</li><li>हिंट: अगली चाल दिखाता है</li><li>अनडू और रीस्टार्ट: फ्री</li></ul>
       <h2>टिप्स</h2><ul><li>पहले वे टुकड़े हटाएँ जो बाकी का रास्ता रोकते हैं।</li><li>हर कीप का एक रंग और निशान है: दोनों मिलाएँ।</li><li>कम चालें, ज़्यादा स्टार।</li></ul>
       <h2>गेम में क्या है</h2><ul><li>20 जाँचे हुए लेवल, सबका हल मौजूद</li><li>चरणों में खुलने वाले काँच के गेट</li><li>कोई टाइमर नहीं, अनडू फ्री</li><li>प्रोग्रेस डिवाइस पर सेव होती है</li></ul>
       <h2>अक्सर पूछे जाने वाले सवाल</h2><details class="faq"><summary>क्या Dunevella फ्री है?</summary><p>हाँ। आप इसे सीधे ब्राउज़र में मुफ़्त खेलते हैं।</p></details><details class="faq"><summary>खेलने के लिए डाउनलोड करना पड़ेगा?</summary><p>नहीं। आप इसी पेज पर खेलते हैं, कुछ इंस्टॉल करने या साइन-अप करने की ज़रूरत नहीं।</p></details><details class="faq"><summary>क्या यह मोबाइल पर चलता है?</summary><p>हाँ। फ़ोन पर उंगली से और कंप्यूटर पर माउस से चलता है।</p></details><details class="faq"><summary>क्या प्रोग्रेस सेव रहती है?</summary><p>हाँ, आपके डिवाइस पर। जब चाहें लौटें और उसी लेवल से आगे खेलें जहाँ रुके थे।</p></details>
-      <h2>Dunevella जैसे और गेम</h2>
-      <div class="jg__mais jg__mais--rel"><a class="tl" href="/hi/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo><img src="/assets/media/busb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Busbloom</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo><img src="/assets/media/ring/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Ringamigo</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo><img src="/assets/media/snak/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Snakoodle</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo><img src="/assets/media/loop/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Loopivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo><img src="/assets/media/fint/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Fintriva</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo><img src="/assets/media/pict/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictascade</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo><img src="/assets/media/crumb/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Crumbivana</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a><a class="tl" href="/hi/hub/free-games/pictovela/" style="--c1:#c46a4a;--c2:#4a7fc4" data-slug="pictovela" data-cats="puzzle casual" data-novo><img src="/assets/media/pictv/icone.webp" width="512" height="512" alt="" loading="lazy"><span class="tl__nome">Pictovela</span><span class="tl__selo tl__selo--ok"><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>अभी खेलें</span></a></div>
-      <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/puzzle/">फ्री पज़ल गेम्स</a><a class="chip-col" href="/hi/hub/free-games/casual/">फ्री कैज़ुअल गेम्स</a></p>
     </article>
-    <aside class="jg__ficha">
-      <dl class="card">
-        <div><dt>स्टूडियो</dt><dd><a href="/hi/hub/studio/">Lipy Games</a></dd></div>
-        <div><dt>जॉनर</dt><dd>टुकड़े खिसकाने वाली पहेली</dd></div>
+    <aside class="lj-lado">
+      <dl class="lj-dados lj-caixa">
         <div><dt>कहाँ खेलें</dt><dd>ब्राउज़र (मोबाइल और कंप्यूटर)</dd></div>
         <div><dt>कीमत</dt><dd>फ़्री</dd></div>
       </dl>
-      <div class="jg__telas"><img src="/assets/media/dune/tela-1.webp" width="1280" height="720" alt="Dunevella: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/dune/tela-2.webp" width="1280" height="720" alt="Dunevella: गेम की स्क्रीन" loading="lazy"><img src="/assets/media/dune/tela-3.webp" width="1280" height="720" alt="Dunevella: गेम की स्क्रीन" loading="lazy"></div>
+      <section class="lj-caixa" aria-labelledby="mais-t">
+        <h2 id="mais-t">ये भी खेलें</h2>
+        <div class="lj-minis"><a class="lj-mini" href="/hi/hub/free-games/trickwink/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/trwk/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Trickwink</b><small>सीन वाली तरकीब पहेलियाँ</small></span></a><a class="lj-mini" href="/hi/hub/free-games/arrowmigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/arwm/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Arrowmigo</b><small>सुकून भरा तीर पज़ल</small></span></a><a class="lj-mini" href="/hi/hub/free-games/fidgetlume/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/fidg/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Fidgetlume</b><small>सुकून देने वाले फ़िजेट खिलौने</small></span></a><a class="lj-mini" href="/hi/hub/free-games/blockamigo/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/blka/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Blockamigo</b><small>सुकून भरा ब्लॉक पज़ल</small></span></a><a class="lj-mini" href="/hi/hub/free-games/tintapix/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/tinta/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Tintapix</b><small>सुकून भरा नंबर से रंग भरो</small></span></a><a class="lj-mini" href="/hi/hub/free-games/snoozegrid/"><span class="lj-mini__arte"><img class="lj-arte" src="/assets/media/snooz/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span><span class="lj-mini__txt"><b>Snoozegrid</b><small>लॉजिक पज़ल</small></span></a></div>
+        <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/">सभी गेम</a></p>
+      </section>
     </aside>
   </div>
+  <section class="lj-sec lj-simil" aria-labelledby="simil-t">
+    <h2 class="lj-sec__t" id="simil-t">Dunevella जैसे और गेम</h2>
+    <div class="lj-faixa" data-trilho><div class="lj-trilho lj-trilho--caps"><a class="lj-cap" href="/hi/hub/free-games/busbloom/" style="--c1:#F7A61E;--c2:#FF74AC" data-slug="busbloom" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/busb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Busbloom</span><span class="lj-cap__gen">सुकून भरा पार्किंग पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/ringamigo/" style="--c1:#FFB547;--c2:#4E8CF5" data-slug="ringamigo" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/ring/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Ringamigo</span><span class="lj-cap__gen">आरामदायक 3D पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/snakoodle/" style="--c1:#6CCB5F;--c2:#FF9F43" data-slug="snakoodle" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/snak/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Snakoodle</span><span class="lj-cap__gen">सुकून भरा साँप पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/loopivana/" style="--c1:#ff7a59;--c2:#3fb6e8" data-slug="loopivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/loop/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Loopivana</span><span class="lj-cap__gen">रंगों की पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/fintriva/" style="--c1:#2ec4d6;--c2:#ff8f5a" data-slug="fintriva" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/fint/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Fintriva</span><span class="lj-cap__gen">तीन मिलाने वाली पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/pictascade/" style="--c1:#c9a04a;--c2:#5a6fd6" data-slug="pictascade" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pict/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictascade</span><span class="lj-cap__gen">तस्वीरों की पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/crumbivana/" style="--c1:#f28ab2;--c2:#71d1b0" data-slug="crumbivana" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/crumb/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Crumbivana</span><span class="lj-cap__gen">पिक्सल पहेली</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a><a class="lj-cap" href="/hi/hub/free-games/pictovela/" style="--c1:#c46a4a;--c2:#4a7fc4" data-slug="pictovela" data-cats="puzzle casual" data-novo>
+      <span class="lj-cap__arte"><img class="lj-arte" src="/assets/media/pictv/capa-sm.webp" width="640" height="360" alt="" loading="lazy" decoding="async"></span>
+      <span class="lj-cap__nome">Pictovela</span><span class="lj-cap__gen">कार्ड पज़ल</span>
+      <span class="lj-cap__pe"><span class="lj-cap__plat" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-globo"/></svg></span><span class="lj-precos"><span class="lj-selo">पज़ल</span><span class="lj-gratis">फ़्री</span></span></span>
+    </a></div><button type="button" class="lj-seta lj-seta--ant" data-ant aria-label="पिछला"><svg class="ic" aria-hidden="true"><use href="#i-esq"/></svg></button><button type="button" class="lj-seta lj-seta--prox" data-prox aria-label="अगला"><svg class="ic" aria-hidden="true"><use href="#i-dir"/></svg></button></div>
+    <p class="arc__cols"><a class="chip-col" href="/hi/hub/free-games/puzzle/">फ्री पज़ल गेम्स</a><a class="chip-col" href="/hi/hub/free-games/casual/">फ्री कैज़ुअल गेम्स</a></p>
+  </section>
 </section>
+<dialog class="lj-zoom" data-zoom aria-label="Dunevella"><img alt=""><button type="button" class="lj-zoom__x" data-fecha-zoom aria-label="बंद करें">✕</button></dialog>
+</div>
 </main>
 <footer class="hr">
   <div class="wrap">
@@ -177,6 +236,6 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 
 <script>window.HUB_TEXTOS = {"Código {c} copiado":"कोड {c} कॉपी हो गया","Não deu para copiar. Selecione o código e copie à mão.":"कॉपी नहीं हो पाया। कोड सिलेक्ट करके ख़ुद कॉपी करें।","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"कई प्लेयर्स ने बताया कि यह कोड काम करना बंद कर चुका है (पिछले 48 घंटे)।","Por quê?":"क्यों?","Expirou":"एक्सपायर हो गया","Já tinha usado":"पहले ही इस्तेमाल किया था","Deu inválido":"इनवैलिड कोड","Obrigado! Isso ajuda a conferir mais rápido.":"शुक्रिया! इससे हमें जल्दी जाँच करने में मदद मिलती है।","Obrigado! Seu voto ajuda outros jogadores.":"शुक्रिया! आपका वोट दूसरे प्लेयर्स की मदद करता है।","Voto retirado.":"वोट हटा दिया गया।","Muitos votos seguidos. Tente de novo mais tarde.":"लगातार बहुत ज़्यादा वोट। थोड़ी देर बाद फिर से कोशिश करें।","Não deu para registrar o voto agora. Tente de novo em instantes.":"अभी आपका वोट दर्ज नहीं हो पाया। थोड़ी देर में फिर से कोशिश करें।","Nada encontrado. Tente o nome do jogo.":"कुछ नहीं मिला। गेम का नाम लिखकर देखें।","Carregando…":"लोड हो रहा है…","Sair":"बाहर निकलें"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=094ce04c" defer></script>
+<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
 </body>
 </html>
