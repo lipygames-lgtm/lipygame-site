@@ -682,3 +682,72 @@ html:lang(ar) .olho, html:lang(hi) .olho, html:lang(ja) .olho { font-size: 12.5p
 .bj__jogos a:hover img { transform: translateY(-3px) scale(1.06); }
 .bj .bt .ic { fill: currentColor; stroke: none; }
 @media (max-width: 600px) { .bj .bt { width: 100%; } }
+
+/* ==========================================================================
+   CONTA (hub-conta.js): "Entrar" / avatar + apelido + nível no cabeçalho, menu, janela de entrar e aviso na tela.
+   O resto da parte social (páginas de perfil, amigos, configurações) fica no hub-social.css.
+   ========================================================================== */
+.conta { position: relative; display: flex; align-items: center; }
+html.com-conta .conta[hidden] { display: block !important; width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 255, 255, .06); }
+html.com-conta .conta[hidden] > * { display: none; }
+.conta__entrar { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 12px; border-radius: 12px; font-size: 14px; font-weight: 600; color: #02040a; background: linear-gradient(115deg, #effcff, #2ad8ff 58%, #7aa6ff); box-shadow: 0 10px 26px -14px rgba(42, 216, 255, .9), inset 0 1px 0 rgba(255, 255, 255, .7); transition: transform .3s var(--ease-spring); }
+.conta__entrar:hover { transform: translateY(-1px); }
+.conta__entrar .ic { font-size: 18px; stroke-width: 2; }
+.conta__bt { display: inline-flex; align-items: center; gap: 9px; height: 42px; max-width: 230px; padding: 0 10px 0 4px; border-radius: 999px; background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1px rgba(170, 205, 255, .18); transition: background .2s; }
+.conta__bt:hover, .conta__bt[aria-expanded="true"] { background: rgba(255, 255, 255, .1); }
+.conta__bt > .ic { font-size: 14px; opacity: .7; transition: transform .25s var(--ease-out); }
+.conta__bt[aria-expanded="true"] > .ic { transform: rotate(180deg); }
+.conta__av { position: relative; flex: none; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(145deg, rgba(42, 216, 255, .35), rgba(33, 112, 255, .35)); box-shadow: 0 0 0 2px rgba(42, 216, 255, .55); }
+.conta__av > .ic { position: absolute; inset: 7px; width: 20px; height: 20px; color: rgba(226, 236, 255, .8); }
+.conta__av img { position: relative; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.conta__ponto { position: absolute; top: -2px; inset-inline-end: -2px; width: 11px; height: 11px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 2px var(--ink-1); }
+.conta__txt { min-width: 0; display: grid; line-height: 1.15; text-align: start; }
+.conta__txt b { font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.conta__txt small { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: #ffd27a; }
+.conta__menu { position: absolute; top: calc(100% + 12px); inset-inline-end: 0; z-index: 60; display: grid; gap: 2px; min-width: 230px; padding: 6px; border-radius: 16px; background: rgba(8, 12, 26, .97); box-shadow: inset 0 0 0 1px var(--line-2), 0 30px 60px -20px #000; }
+.conta__menu a, .conta__menu button { display: flex; align-items: center; gap: 10px; width: 100%; height: 44px; padding: 0 12px; border-radius: 11px; font-size: 15px; color: var(--txt-2); text-align: start; transition: background .2s, color .2s; }
+.conta__menu a:hover, .conta__menu button:hover, .conta__menu a:focus-visible, .conta__menu button:focus-visible { background: rgba(255, 255, 255, .07); color: var(--txt); }
+.conta__menu .ic { font-size: 18px; opacity: .85; }
+.conta__menu span { flex: 1; }
+.conta__menu button[data-sair] { margin-top: 4px; border-top: 1px solid var(--line); border-radius: 0 0 11px 11px; }
+.conta__n { min-width: 22px; height: 22px; padding: 0 6px; display: inline-grid; place-items: center; border-radius: 999px; font-family: var(--f-mono); font-size: 11.5px; color: #fff; background: var(--red); }
+@media (max-width: 1060px) { .conta__txt { display: none; } .conta__bt { padding: 0 4px; } .conta__bt > .ic { display: none; } }
+@media (max-width: 600px) {
+  .conta__entrar { width: 42px; height: 42px; padding: 0; justify-content: center; border-radius: 50%; }
+  .conta__entrar span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .conta__entrar .ic { font-size: 20px; }
+}
+
+/* janela "Entrar" */
+.conta-dlg { width: min(440px, calc(100% - 32px)); max-height: calc(100svh - 32px); padding: 26px 24px 22px; border: 0; border-radius: 26px; color: var(--txt); background: radial-gradient(120% 70% at 50% 0%, rgba(42, 216, 255, .14), transparent 60%), rgba(8, 12, 26, .98); box-shadow: inset 0 0 0 1px var(--line-2), 0 40px 80px -30px #000; overflow-y: auto; }
+.conta-dlg[open] { animation: sobe .4s var(--ease-out); }
+.conta-dlg::backdrop { background: rgba(2, 4, 10, .7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.conta-dlg__x { position: absolute; top: 12px; inset-inline-end: 12px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; font-size: 15px; color: var(--txt-2); background: rgba(255, 255, 255, .06); }
+.conta-dlg__x:hover { color: #fff; background: rgba(255, 255, 255, .12); }
+.conta-dlg__marca { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px; }
+.conta-dlg__marca img { height: 30px; width: auto; }
+.conta-dlg h2 { font-family: var(--f-display); font-weight: 700; font-size: 1.4rem; letter-spacing: -.03em; line-height: 1.15; text-align: center; }
+.conta-dlg__lead { margin: 8px 0 18px; font-size: 15px; line-height: 1.5; color: var(--txt-2); text-align: center; }
+.conta-provs { display: grid; gap: 10px; }
+.conta-prov { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; height: 52px; padding: 0 18px; border-radius: 14px; font-size: 16px; font-weight: 600; transition: transform .3s var(--ease-spring), filter .2s; }
+.conta-prov:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.conta-prov__ic { width: 22px; height: 22px; flex: none; }
+.conta-prov--google { color: #1f1f1f; background: #fff; box-shadow: inset 0 0 0 1px #dadce0; }
+.conta-prov--discord { color: #fff; background: #5865f2; }
+.conta-provs__inapp { padding: 12px 14px; border-radius: 14px; font-size: 13.5px; line-height: 1.45; color: #ffe0a3; background: rgba(255, 182, 39, .1); box-shadow: inset 0 0 0 1px rgba(255, 182, 39, .35); }
+.conta-provs__nada { padding: 12px 14px; border-radius: 14px; font-size: 14px; text-align: center; color: var(--txt-2); background: rgba(255, 255, 255, .05); }
+.conta-priv { display: grid; gap: 8px; margin: 18px 0 14px; padding: 14px; border-radius: 16px; background: rgba(255, 255, 255, .04); box-shadow: inset 0 0 0 1px var(--line); }
+.conta-priv li { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; line-height: 1.45; color: var(--txt-2); }
+.conta-priv .ic { margin-top: 2px; font-size: 16px; color: var(--green); stroke-width: 2.4; }
+.conta-letra { font-size: 12.5px; line-height: 1.5; color: var(--txt-3); text-align: center; }
+.conta-letra a { color: var(--txt-2); text-decoration: underline; text-underline-offset: 3px; }
+.conta-letra a:hover { color: #fff; }
+
+/* aviso na tela (conquista, nível, pedido enviado…): por cima de tudo, também com o jogo em tela cheia */
+.conta-aviso { position: fixed; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); z-index: 2147483000; width: max-content; max-width: min(520px, calc(100% - 32px)); padding: 12px 18px; border-radius: 16px; font-size: 14.5px; font-weight: 500; line-height: 1.4; text-align: center; color: var(--txt); background: rgba(8, 12, 26, .96); box-shadow: inset 0 0 0 1px var(--line-2), 0 24px 50px -16px #000; transform: translate(-50%, 24px); opacity: 0; pointer-events: none; transition: transform .35s var(--ease-out), opacity .3s; }
+.conta-aviso.is-on { transform: translate(-50%, 0); opacity: 1; }
+.conta-aviso--conquista { box-shadow: inset 0 0 0 1.5px rgba(255, 182, 39, .7), 0 0 30px -6px rgba(255, 182, 39, .5), 0 24px 50px -16px #000; }
+.conta-aviso--conquista::before { content: "🏆 "; }
+.conta-aviso--nivel { box-shadow: inset 0 0 0 1.5px rgba(42, 216, 255, .7), 0 0 30px -6px rgba(42, 216, 255, .5), 0 24px 50px -16px #000; }
+.conta-aviso--nivel::before { content: "⬆ "; }
+.conta-aviso--erro { box-shadow: inset 0 0 0 1.5px rgba(255, 77, 94, .6), 0 24px 50px -16px #000; }

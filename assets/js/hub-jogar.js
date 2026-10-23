@@ -166,6 +166,108 @@
     } catch (e) {}
   }
 
+  /* ---------- conta do Hub (hub-conta.js / servidor/hub-social.sql): SÓ com login e perfil; sem conta, nada disso roda ----------
+     - "jogando agora" + tempo de jogo: hub_presenca(slug) ao abrir o jogo e a cada 60 s, só com a aba visível
+       (quem mede o tempo é o servidor: no máximo 60 s por batida, 1 que conta a cada 45 s);
+     - partidas: os avisos do jogo (fase / venceu / perdeu) viram hub_evento, com folga no limite do banco
+       (fase 1 a cada 10 s, venceu 1 a cada 5 s, perdeu 1 a cada 10 s, até 30 por minuto; "devagar" = pausa de 1 min);
+     - "Seus amigos estão jogando" (vitrine) e "Amigos que jogam isto" (página do jogo): só amigos jogando DE VERDADE agora. */
+  var C = window.LipyConta;
+  var troca = function (s, v) { return s.replace(/\{(\w+)\}/g, function (m, k) { return v[k] != null ? v[k] : m; }); };
+  var batT = 0, batUlt = 0, evUlt = {}, evJanela = [], evPausa = 0;
+  var MIN_EV = { fase: 10000, venceu: 5000, perdeu: 10000 };
+  function batida(saindo) {
+    if (!C || !C.temPerfil() || !frame || !slug) return;
+    if (!saindo && document.visibilityState !== 'visible') return;
+    batUlt = Date.now();
+    C.jogando(slug);   // marca no aparelho: as outras abas do Hub não mandam "online" por cima
+    C.rpc('hub_presenca', { p_jogo: slug }, { keepalive: !!saindo }).then(C.premios);
+  }
+  function comecaPresenca() {
+    if (!C || batT) return;
+    C.jogando(slug);
+    C.pronto.then(function () { batida(false); });
+    batT = setInterval(function () { batida(false); }, 60000);
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible' && Date.now() - batUlt > 50000) batida(false); });
+    addEventListener('pagehide', function () { if (Date.now() - batUlt > 45000) batida(true); });
+  }
+  function eventoPartida(tipo) {
+    if (!C || !C.temPerfil() || !MIN_EV[tipo] || !slug) return;
+    var agora = Date.now();
+    if (agora < evPausa || agora - (evUlt[tipo] || 0) < MIN_EV[tipo]) return;
+    evJanela = evJanela.filter(function (x) { return agora - x < 60000; });
+    if (evJanela.length >= 30) return;
+    evUlt[tipo] = agora; evJanela.push(agora);
+    C.rpc('hub_evento', { p_jogo: slug, p_tipo: tipo }).then(function (r) {
+      if (r && r.erro === 'devagar') evPausa = Date.now() + 60000;
+      C.premios(r);
+    });
+  }
+  var blocoVit = document.querySelector('[data-amigos-jogando]'), blocoJogo = document.querySelector('[data-amigos-jogo]');
+  function amigosJogando() {
+    if (!C || !C.temPerfil() || (!blocoVit && !blocoJogo) || document.visibilityState !== 'visible') return;
+    Promise.all([C.rpc('hub_amigos'), C.dados()]).then(function (x) {
+      var r = x[0], D = x[1];
+      if (!r || !r.ok) return;
+      var jog = (r.amigos || []).filter(function (a) { return a.status === 'jogando' && a.jogo; });
+      if (blocoVit) pintaAmigosVitrine(jog, D);
+      if (blocoJogo) pintaAmigosJogo(jog.filter(function (a) { return a.jogo === slug; }), D);
+    });
+  }
+  var cria = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  function avatarAmigo(D, a) { var i = cria('img', 'lj-amg__av'); i.src = C.avatarDe(D, a.avatar); i.alt = ''; i.width = i.height = 64; i.loading = 'lazy'; return i; }
+  function pintaAmigosVitrine(jog, D) {
+    blocoVit.textContent = '';
+    blocoVit.hidden = !jog.length;
+    if (!jog.length) return;
+    var cab = cria('div', 'lj-amg__cab'), h = cria('h2', 'lj-sec__t', t('Seus amigos estão jogando'));
+    h.id = 'lj-amg-t'; blocoVit.setAttribute('aria-labelledby', 'lj-amg-t');
+    var ver = cria('a', 'chip-col', t('Ver amigos')); ver.href = C.rotas.amigos;
+    cab.appendChild(h); cab.appendChild(ver); blocoVit.appendChild(cab);
+    var fila = cria('div', 'lj-amg__fila');
+    jog.slice(0, 8).forEach(function (a) {
+      var g = D.jogos[a.jogo], c = cria('a', 'lj-amg__card');
+      c.href = (D.jogar || '') + a.jogo + '/';
+      var arte = cria('span', 'lj-amg__arte' + (g && g[3] ? ' is-retrato' : ''));
+      if (g) { var im = cria('img'); im.src = g[2]; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; arte.appendChild(im); }
+      c.appendChild(arte);
+      var corpo = cria('span', 'lj-amg__corpo');
+      corpo.appendChild(avatarAmigo(D, a));
+      var tx = cria('span', 'lj-amg__txt'), b = cria('b', '', a.apelido);
+      b.setAttribute('translate', 'no'); b.dir = 'ltr';
+      tx.appendChild(b);
+      tx.appendChild(cria('span', 'lj-amg__st', troca(t('Jogando {jogo}'), { jogo: C.nomeJogo(D, a.jogo) })));
+      if (a.desde) tx.appendChild(cria('small', '', troca(t('Começou {quando}'), { quando: C.ha(a.desde) })));
+      corpo.appendChild(tx); c.appendChild(corpo);
+      fila.appendChild(c);
+    });
+    blocoVit.appendChild(fila);
+  }
+  function pintaAmigosJogo(jog, D) {
+    blocoJogo.textContent = '';
+    blocoJogo.hidden = !jog.length;
+    if (!jog.length) return;
+    var h = cria('h2', '', t('Amigos que jogam isto'));
+    h.id = 'lj-amg-jogo-t'; blocoJogo.setAttribute('aria-labelledby', 'lj-amg-jogo-t');
+    blocoJogo.appendChild(h);
+    var ul = cria('ul', 'lj-amg__lista');
+    jog.slice(0, 8).forEach(function (a) {
+      var li = cria('li'), ln = cria('a', 'lj-amg__pessoa');
+      ln.href = C.rotas.perfil + '?u=' + encodeURIComponent(a.apelido);
+      ln.appendChild(avatarAmigo(D, a));
+      var tx = cria('span', 'lj-amg__txt'), b = cria('b', '', a.apelido);
+      b.setAttribute('translate', 'no'); b.dir = 'ltr';
+      tx.appendChild(b);
+      tx.appendChild(cria('span', 'lj-amg__st', a.desde ? troca(t('Jogando agora · começou {quando}'), { quando: C.ha(a.desde) }) : t('Jogando agora')));
+      ln.appendChild(tx); li.appendChild(ln); ul.appendChild(li);
+    });
+    blocoJogo.appendChild(ul);
+  }
+  if (C && (blocoVit || blocoJogo)) {
+    C.pronto.then(amigosJogando);
+    setInterval(amigosJogando, 120000);
+  }
+
   if (!tela) return;
 
   /* ---------- métricas privadas da sessão (servidor/metricas-jogos.sql) ----------
@@ -278,6 +380,7 @@
   addEventListener('message', function (e) {
     if (e.origin !== location.origin || !frame || e.source !== frame.contentWindow) return;
     var d = e.data || {};
+    if (d.lipy === 'fase' || d.lipy === 'venceu' || d.lipy === 'perdeu') eventoPartida(d.lipy);   // conta do Hub (só com login)
     if (d.lipy === 'carregou') { tiraEspera(); agendaCtaTempo(); if (!jaPronto) { jaPronto = true; window.lipyJogou = 1; try { document.dispatchEvent(new Event('lipy:jogou')); } catch (e) {} try { document.dispatchEvent(new CustomEvent('lipy:jogo-pronto', { detail: { jogo: slug } })); } catch (e) {} } }
     if (d.lipy === 'carregou' && S && S.carregou == null) { S.carregou = Date.now() - S.t0; envia(false); }
     if (d.lipy === 'erro' && S && !S.erro) { S.erro = String(d.msg || '').slice(0, 160); envia(true); }
@@ -332,6 +435,7 @@
       // avisa o Pixel da Meta (hub.mjs): o jogo também abre sozinho no link de campanha, sem clique
       iniciaSessao();
       anotaJogado();
+      comecaPresenca();   // "jogando agora" e tempo de jogo na conta do Hub (só com login)
     }
     if (celular) cheia(true);
     setTimeout(function () { try { frame.focus(); } catch (e) {} }, 50);

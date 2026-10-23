@@ -29,9 +29,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@500..800&family=M+PLUS+1p:wght@700;800&family=Noto+Sans+JP:wght@400..700&display=swap">
-<link rel="stylesheet" href="/assets/css/hub.css?v=7b8d7f12">
+<link rel="stylesheet" href="/assets/css/hub.css?v=1fcda4d6">
 <link rel="stylesheet" href="/assets/css/hub-jogar.css?v=ee835a61">
-<link rel="stylesheet" href="/assets/css/hub-loja.css?v=ec0ce291">
+<link rel="stylesheet" href="/assets/css/hub-loja.css?v=a940709c">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
 <script>(function(){try{if(navigator.doNotTrack==="1"||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||""))return;}catch(e){}
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
@@ -47,7 +47,7 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 <meta name="google-adsense-account" content="ca-pub-8464565309616696">
 <script>(window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;</script>
 <script>(function(){var f=0;function c(){if(f)return;f=1;var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464565309616696';document.head.appendChild(s)}document.addEventListener('lipy:jogo-pronto',function(){setTimeout(c,2000)});setTimeout(c,15000)})()</script>
-<script>document.documentElement.className = 'js';</script>
+<script>document.documentElement.className = 'js';try{if(localStorage.getItem('lipy-hub-sessao'))document.documentElement.classList.add('com-conta')}catch(e){}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hub","item":"https://lipygame.com/ja/hub/"},{"@type":"ListItem","position":2,"name":"無料ゲーム","item":"https://lipygame.com/ja/hub/free-games/"},{"@type":"ListItem","position":3,"name":"Ringamigo","item":"https://lipygame.com/ja/hub/free-games/ringamigo/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Ringamigo","url":"https://lipygame.com/ja/hub/free-games/ringamigo/","image":"https://lipygame.com/assets/media/ring/capa.webp","description":"ブラウザで遊べる無料パズル。色とりどりのリングを正しい順番で回して、ひとつずつ外そう。ルールの異なる4つの場所、制限時間なし。ダウンロード不要。","genre":"癒やしの3Dパズル","inLanguage":"ja","author":{"@type":"Organization","name":"Lipy Games","url":"https://lipygame.com/","logo":{"@type":"ImageObject","url":"https://lipygame.com/icon-512.png"}},"publisher":{"@type":"Organization","name":"Lipy Games","url":"https://lipygame.com/","logo":{"@type":"ImageObject","url":"https://lipygame.com/icon-512.png"}},"gamePlatform":["Web browser"],"offers":{"@type":"Offer","price":0,"priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Ringamigo：ゲーム動画","description":"ブラウザで遊べる無料パズル。色とりどりのリングを正しい順番で回して、ひとつずつ外そう。ルールの異なる4つの場所、制限時間なし。ダウンロード不要。","thumbnailUrl":"https://lipygame.com/assets/media/ring/gameplay-poster.webp","contentUrl":"https://lipygame.com/assets/media/ring/gameplay.mp4","uploadDate":"2026-10-09T12:00:00-03:00","duration":"PT18S","inLanguage":"ja"}</script>
@@ -79,6 +79,10 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
 <symbol id="i-texto" viewBox="0 0 24 24"><path d="M5 6h14M12 6v13M9 19h6"/></symbol>
 <symbol id="i-raio" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7Z"/></symbol>
 <symbol id="i-troca" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></symbol>
+<symbol id="i-pessoa" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20.5c1.4-3.8 4.4-5.5 8-5.5s6.6 1.7 8 5.5"/></symbol>
+<symbol id="i-amigos" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 19.5c1-3.2 3.4-4.8 6.5-4.8s5.5 1.6 6.5 4.8M15.5 4.8a3.5 3.5 0 0 1 0 6.4M17.5 14.9c2 .6 3.3 2.1 4 4.6"/></symbol>
+<symbol id="i-engrenagem" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+<symbol id="i-sair" viewBox="0 0 24 24"><path d="M9 20H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3M16 16l4-4-4-4M20 12H9"/></symbol>
 </svg>
 <a class="pular" href="#conteudo">本文へスキップ</a>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -96,6 +100,19 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
         <summary aria-label="言語: 日本語"><img src="/assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>JA</span><svg class="ic" aria-hidden="true"><use href="#i-baixo"/></svg></summary>
         <ul class="hh__idiomas"><li><a href="/hub/free-games/ringamigo/" hreflang="en" lang="en"><img src="/assets/media/bandeiras/us.webp" width="64" height="64" alt="" loading="lazy">English</a></li><li><a href="/pt/hub/jogos-gratis/ringamigo/" hreflang="pt-BR" lang="pt-BR"><img src="/assets/media/bandeiras/br.webp" width="64" height="64" alt="" loading="lazy">Português</a></li><li><a href="/es/hub/juegos-gratis/ringamigo/" hreflang="es" lang="es"><img src="/assets/media/bandeiras/mx.webp" width="64" height="64" alt="" loading="lazy">Español</a></li><li><a href="/ar/hub/free-games/ringamigo/" hreflang="ar" lang="ar"><img src="/assets/media/bandeiras/eg.webp" width="64" height="64" alt="" loading="lazy">العربية</a></li><li><a href="/hi/hub/free-games/ringamigo/" hreflang="hi" lang="hi"><img src="/assets/media/bandeiras/in.webp" width="64" height="64" alt="" loading="lazy">हिन्दी</a></li><li><a href="/id/hub/game-gratis/ringamigo/" hreflang="id" lang="id"><img src="/assets/media/bandeiras/id.webp" width="64" height="64" alt="" loading="lazy">Bahasa Indonesia</a></li><li><a href="/ja/hub/free-games/ringamigo/" hreflang="ja" lang="ja" aria-current="true"><img src="/assets/media/bandeiras/jp.webp" width="64" height="64" alt="" loading="lazy">日本語</a></li></ul>
       </details>
+      <div class="conta" data-conta hidden data-rota-entrar="/ja/hub/sign-in/" data-rota-perfil="/ja/hub/profile/" data-rota-amigos="/ja/hub/friends/" data-rota-config="/ja/hub/settings/" data-dados="/ja/hub/social.json?v=2d32127c">
+        <button class="conta__entrar" type="button" data-entrar hidden><svg class="ic" aria-hidden="true"><use href="#i-pessoa"/></svg><span>ログイン</span></button>
+        <div class="conta__eu" data-eu hidden>
+          <button class="conta__bt" type="button" aria-expanded="false" aria-controls="conta-menu" data-eu-bt><span class="sr-only">アカウントメニュー: </span><span class="conta__av"><svg class="ic" aria-hidden="true"><use href="#i-pessoa"/></svg><img data-eu-av width="64" height="64" alt="" hidden><i class="conta__ponto" data-eu-pedidos hidden></i></span><span class="conta__txt"><b data-eu-nome translate="no"></b><small data-eu-nv hidden></small></span><svg class="ic" aria-hidden="true"><use href="#i-baixo"/></svg></button>
+          <div class="conta__menu" id="conta-menu" data-eu-menu hidden>
+            <a href="/ja/hub/profile/" data-eu-perfil data-so-perfil><svg class="ic" aria-hidden="true"><use href="#i-pessoa"/></svg><span>マイプロフィール</span></a>
+            <a href="/ja/hub/sign-in/" data-eu-criar hidden><svg class="ic" aria-hidden="true"><use href="#i-pessoa"/></svg><span>プロフィールを作成</span></a>
+            <a href="/ja/hub/friends/" data-so-perfil><svg class="ic" aria-hidden="true"><use href="#i-amigos"/></svg><span>フレンド</span><b class="conta__n" data-eu-pedidos-n hidden></b></a>
+            <a href="/ja/hub/settings/" data-so-perfil><svg class="ic" aria-hidden="true"><use href="#i-engrenagem"/></svg><span>設定</span></a>
+            <button type="button" data-sair><svg class="ic" aria-hidden="true"><use href="#i-sair"/></svg><span>終了</span></button>
+          </div>
+        </div>
+      </div>
       <button class="hh__menu" type="button" aria-expanded="false" aria-controls="hub-nav" aria-label="メニューを開く"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -140,6 +157,7 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
       <div class="lj-ficha__bts">
         <button type="button" class="bt lj-bt-jogar lj-bt-grande" data-abrir-jogo><svg class="ic" aria-hidden="true"><use href="#i-jogar"/></svg>ブラウザで無料プレイ</button>
       </div>
+      <section class="lj-amg-jogo" data-amigos-jogo hidden></section>
     </aside>
   </div>
   <div class="lj-corpo">
@@ -235,10 +253,29 @@ var antes=Date.now();setInterval(function(){var agora=Date.now(),passo=Math.min(
     <div class="paleta__rodape" aria-hidden="true"><span>↑↓ 移動</span><span>Enter 開く</span><span>Esc 閉じる</span></div>
   </div>
 </div>
+<dialog class="conta-dlg" data-entrar-dlg aria-labelledby="conta-dlg-t">
+  <form method="dialog"><button class="conta-dlg__x" aria-label="閉じる">✕</button></form>
+  <p class="conta-dlg__marca"><img src="/assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games" loading="lazy"><span class="hh__hub">HUB</span></p>
+  <h2 id="conta-dlg-t">Lipy Hubにログイン</h2>
+  <p class="conta-dlg__lead">プレイヤープロフィールを作って、フレンドを追加し、今だれがプレイ中かを見られます。無料です。</p>
+  <div class="conta-provs">
+    <button class="conta-prov conta-prov--google" type="button" data-provedor="google" hidden><svg class="conta-prov__ic" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9Z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7Z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A11.9 11.9 0 0 1 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44Z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9Z"/></svg><span>Googleでログイン</span></button>
+    <button class="conta-prov conta-prov--discord" type="button" data-provedor="discord" hidden><svg class="conta-prov__ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.3 18.3 0 0 0-5.5 0L8.7 3a19.7 19.7 0 0 0-4.9 1.4C.7 9-.1 13.6.3 18.1a19.9 19.9 0 0 0 6 3c.5-.7.9-1.4 1.3-2.1-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12.1 0l.5.4c-.6.4-1.3.7-2 1 .4.7.8 1.4 1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.5-13.7ZM8 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg><span>Discordでログイン</span></button>
+    <p class="conta-provs__nada" data-sem-provedor hidden>現在ログインできません。しばらくしてからお試しください。</p>
+    <p class="conta-provs__inapp" data-inapp hidden>Instagram、Facebook、TikTokのアプリ内では、Googleでログインできません。このページをChromeかSafariで開いてください（メニュー⋯ ›「ブラウザで開く」）。</p>
+  </div>
+  <ul class="conta-priv">
+    <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>新しいパスワードは不要です。すでに持っているアカウントでログインします。</span></li>
+    <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>写真もチャットもなし。ニックネーム、アバター、フレンドだけです。</span></li>
+    <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>18歳未満の人は、フレンドにだけ表示されます。</span></li>
+  </ul>
+  <p class="conta-letra"><a href="/ja/hub/pais-e-responsaveis/">保護者の方へ</a> · <a href="/ja/privacidade.html#hub">プライバシーポリシー</a></p>
+</dialog>
 <p class="sr-only" data-aviso aria-live="polite"></p>
 
-<script>window.HUB_TEXTOS = {"Código {c} copiado":"コード「{c}」をコピーしました","Não deu para copiar. Selecione o código e copie à mão.":"コピーできませんでした。コードを選択して、手動でコピーしてください。","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"このコードは使えなくなったという声が、複数のプレイヤーから寄せられています（直近48時間）。","Por quê?":"理由は？","Expirou":"期限切れ","Já tinha usado":"使用済み","Deu inválido":"無効と表示された","Obrigado! Isso ajuda a conferir mais rápido.":"ありがとうございます！より早く確認するのに役立ちます。","Obrigado! Seu voto ajuda outros jogadores.":"ありがとうございます！あなたの投票がほかのプレイヤーの役に立ちます。","Voto retirado.":"投票を取り消しました。","Muitos votos seguidos. Tente de novo mais tarde.":"短時間に投票が多すぎます。しばらくしてからもう一度お試しください。","Não deu para registrar o voto agora. Tente de novo em instantes.":"投票を記録できませんでした。少し時間をおいて、もう一度お試しください。","Nada encontrado. Tente o nome do jogo.":"見つかりませんでした。ゲーム名で検索してみてください。","Carregando…":"読み込み中…","Sair":"終了"};</script>
+<script>window.HUB_TEXTOS = {"Código {c} copiado":"コード「{c}」をコピーしました","Não deu para copiar. Selecione o código e copie à mão.":"コピーできませんでした。コードを選択して、手動でコピーしてください。","Vários jogadores disseram que este código parou de funcionar (últimas 48 h).":"このコードは使えなくなったという声が、複数のプレイヤーから寄せられています（直近48時間）。","Por quê?":"理由は？","Expirou":"期限切れ","Já tinha usado":"使用済み","Deu inválido":"無効と表示された","Obrigado! Isso ajuda a conferir mais rápido.":"ありがとうございます！より早く確認するのに役立ちます。","Obrigado! Seu voto ajuda outros jogadores.":"ありがとうございます！あなたの投票がほかのプレイヤーの役に立ちます。","Voto retirado.":"投票を取り消しました。","Muitos votos seguidos. Tente de novo mais tarde.":"短時間に投票が多すぎます。しばらくしてからもう一度お試しください。","Não deu para registrar o voto agora. Tente de novo em instantes.":"投票を記録できませんでした。少し時間をおいて、もう一度お試しください。","Nada encontrado. Tente o nome do jogo.":"見つかりませんでした。ゲーム名で検索してみてください。","Carregando…":"読み込み中…","Seus amigos estão jogando":"フレンドがプレイ中","Ver amigos":"フレンドを見る","Jogando {jogo}":"{jogo}をプレイ中","Começou {quando}":"開始：{quando}","Amigos que jogam isto":"このゲームをプレイ中のフレンド","Jogando agora · começou {quando}":"プレイ中・開始：{quando}","Jogando agora":"プレイ中","Sair":"終了","Primeira partida":"初プレイ","10 partidas":"10回プレイ","100 partidas":"100回プレイ","Primeira vitória":"初勝利","25 vitórias":"25勝","1 hora de jogo":"プレイ時間1時間","10 horas de jogo":"プレイ時間10時間","5 jogos diferentes":"5種類のゲームをプレイ","10 jogos diferentes":"10種類のゲームをプレイ","20 jogos diferentes":"20種類のゲームをプレイ","Primeiro amigo":"はじめてのフレンド","10 amigos":"フレンド10人","Conquista: {nome}":"実績解除：{nome}","Você chegou ao nível {n}!":"レベル{n}になりました！","Este navegador não consegue entrar com segurança. Atualize o navegador e tente de novo.":"このブラウザでは安全にログインできません。ブラウザをアップデートして、もう一度お試しください。","Você saiu da sua conta.":"ログアウトしました。","Conta suspensa":"アカウント停止中","Criar perfil":"プロフィールを作成","Nv. {n}":"Lv.{n}","{n} pedido(s) de amizade":"フレンド申請{n}件"};</script>
 <script src="/assets/js/hub.js?v=ceb70774" defer></script>
-<script src="/assets/js/hub-jogar.js?v=4817ebcf" defer></script>
+<script src="/assets/js/hub-conta.js?v=5a1058ab" defer></script>
+<script src="/assets/js/hub-jogar.js?v=e86e2070" defer></script>
 </body>
 </html>
