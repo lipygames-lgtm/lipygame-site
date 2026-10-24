@@ -19,8 +19,8 @@
     legion: { play: 'https://play.google.com/store/apps/details?id=com.lipy.legiontide' },
     // Hoparade: ficha da Play no ar (12/10)
     hopa: { play: 'https://play.google.com/store/apps/details?id=com.lipy.hoparade' },
-    // Villadash: jogo de navegador; a ficha da Play ainda não existe (botão "Em breve")
-    villa: { play: null }
+    // Villadash: ficha da Play no ar (23/10)
+    villa: { play: 'https://play.google.com/store/apps/details?id=com.lipy.villadash' }
   };
 
   /* ------------------------------------------------------------------
