@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="hi" class="no-js" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="../assets/js/idioma.js?v=bc0eb8cc"></script>
+  <title>Kingmoon — Lipy Games</title>
+  <meta name="description" content="Kingmoon, Lipy Games का आज़ाद उड़ान वाला गेम है: बेजान ग्रहों के ऊपर यान उड़ाओ, अपना झंडा गाड़ो, रोबोट व एलियन राज्यों से भिड़ो और राजा के चाँद तक पहुँचो। 25 मिशन, ब्राउज़र में मुफ़्त।">
+  <meta name="theme-color" content="#0d1630">
+  <link rel="canonical" href="https://lipygame.com/hi/kingmoon.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/kingmoon.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/kingmoon.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/kingmoon.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/kingmoon.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/kingmoon.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/kingmoon.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/kingmoon.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:title" content="Kingmoon — आज़ाद उड़ो, झंडा गाड़ो और राज्य जीत लो।">
+  <meta property="og:description" content="बेजान ग्रहों के ऊपर यान उड़ाओ, झंडे गाड़ो और रोबोट व एलियन राज्यों को जीत लो। Lipy Games का मुफ़्त गेम, सीधे ब्राउज़र में।">
+  <meta property="og:url" content="https://lipygame.com/hi/kingmoon.html">
+  <meta property="og:image" content="https://lipygame.com/og-king.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&family=Baloo+2:wght@500..800&family=Noto+Sans+Devanagari:wght@400..700&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="../assets/css/lipy.css?v=c2430f99">
+  <link rel="stylesheet" href="../assets/css/jogo.css?v=3cb486e0">
+  <link rel="stylesheet" href="../assets/css/king.css?v=bd36b762">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Kingmoon",
+    "description": "ब्राउज़र के लिए 3D एक्शन और आज़ाद उड़ान वाला गेम: बेजान ग्रहों के ऊपर यान उड़ाओ, झंडे गाड़ो, रोबोट व एलियन राज्यों से भिड़ो और राजा के चाँद तक पहुँचो। 25 मिशन, विशाल बॉस और 6 भाषाएँ।",
+    "genre": ["Ação", "Aventura"],
+    "gamePlatform": "Navegador",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/king/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
+</head>
+<body class="jogo jogo--king" style="--c1:#ff9a5a;--c2:#35c8ff;--c3:#0d1630;--c4:#ffd27a">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">सीधे कंटेंट पर जाएँ</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — होम"><img src="../assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="मुख्य">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">गेम्स <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
+        <a href="index.html#estudio">स्टूडियो</a>
+        <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+        <a href="index.html#contato">संपर्क</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="भाषा"><img class="idioma__flag" data-idioma-flag src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="../kingmoon.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="../pt/kingmoon.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="../es/kingmoon.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="../hi/kingmoon.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="../ja/kingmoon.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="../ar/kingmoon.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">अर्ली एक्सेस <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="मेन्यू खोलें" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>तीरों की पहेली</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>This Level Hates You</b><small>शरारतों भरा प्लेटफ़ॉर्मर</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Nitrovenant 2</b><small>पहियों पर एक्शन</small></span>
+      </a>
+      <a class="mega__item" href="swarmoria.html" data-game="swarm" style="--c:#2a7bff">
+        <img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>SWARMORIA</b><small>इवॉल्व होता झुंड</small></span>
+      </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>ब्राउज़र में सेना</small></span>
+      </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>जानवरों का बचाव</small></span>
+      </a>
+      <a class="mega__item" href="villadash.html" data-game="villa" style="--c:#ffb43a">
+        <img src="../assets/media/villa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Villadash</b><small>गाँव का बचाव</small></span>
+      </a>
+      <a class="mega__item" href="kingmoon.html" data-game="king" style="--c:#ff9a5a">
+        <img src="../assets/media/king/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Kingmoon</b><small>ग्रहों के बीच आज़ाद उड़ान</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="मेन्यू">
+      <a href="index.html#universos">गेम्स</a>
+      <a href="hub/">Lipy Hub</a>
+      <a href="index.html#estudio">स्टूडियो</a>
+      <a href="index.html#como-criamos">हम कैसे बनाते हैं</a>
+      <a href="index.html#lista">अर्ली एक्सेस</a>
+      <a href="index.html#contato">संपर्क</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="../assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="../assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="../assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant 2</a>
+      <a href="swarmoria.html" data-game="swarm"><img src="../assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
+      <a href="villadash.html" data-game="villa"><img src="../assets/media/villa/icone-sm.webp" width="160" height="160" alt="">Villadash</a>
+      <a href="kingmoon.html" data-game="king"><img src="../assets/media/king/icone-sm.webp" width="160" height="160" alt="">Kingmoon</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="../kingmoon.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="../pt/kingmoon.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="../assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="../es/kingmoon.html" hreflang="es" lang="es" data-lang="es"><img src="../assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="../hi/kingmoon.html" hreflang="hi" lang="hi" data-lang="hi"><img src="../assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="../ja/kingmoon.html" hreflang="ja" lang="ja" data-lang="ja"><img src="../assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="../ar/kingmoon.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="../assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh km-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="../assets/media/king/capa.webp" width="1600" height="900" alt="" fetchpriority="high"></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="आप यहाँ हैं"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">यूनिवर्स</a><i>/</i><span aria-current="page">Kingmoon</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="king" src="../assets/media/king/icone.webp" width="512" height="512" alt="Kingmoon का आइकन">
+            <img class="gh__logo km-logo" src="../assets/media/king/logo.webp" width="900" height="180" alt="Kingmoon">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">आज़ाद उड़ो, झंडा गाड़ो</span><span class="l"><em class="txt-game">और राज्य जीत लो।</em></span></h1>
+          <p class="lead gh__lead">बेजान ग्रहों के ऊपर यान उड़ाओ, उतरो, अपना झंडा गाड़ो और रोबोट व एलियन राज्यों को जीतते हुए राजा के चाँद तक पहुँचो।</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">3D एक्शन</span> <span class="chip chip--line">ब्राउज़र</span> <span class="chip chip--line">कंप्यूटर और आड़ा फ़ोन</span> <span class="chip chip--line">बिना इंस्टॉल</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#como-se-joga" data-magnetic>देखें कैसे खेलते हैं <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="btn btn--glass" href="hub/free-games/kingmoon/" data-jogar-hub>ब्राउज़र में मुफ़्त खेलें <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+          </div>
+        </div>
+        <div class="gh__visual km-visual" data-float>
+          <div class="tela km-visual__tela" data-depth="0.15">
+            <div class="tela__screen">
+              <img src="../assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="यान Veyra ग्रह पर अपने राज्य की राजधानी के ऊपर से उड़ रहा है, जहाँ गुंबद और लैंडिंग प्लेटफ़ॉर्म दिख रहे हैं" fetchpriority="high">
+              <i class="phone__glare"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>यूनिवर्स 08 / 08</span><span>उड़ें · फिर स्क्रॉल करें</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">एहसास</p>
+        <p class="gi__txt" data-scrub-words>एक पल आता है जब रडार पर अलर्ट जलता है, तुम नाइट्रो दबाते हो, <em>ज़मीन चीरते हुए</em> पूरी रफ़्तार से निकलते हो और ठीक समय पर पहुँचकर देखते हो कि तुम्हारा झंडा अब भी खड़ा है। वही पल इस गेम की जान है।</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section km-gp" id="como-se-joga" data-gp aria-labelledby="gp-t" tabindex="-1">
+      <div class="wrap">
+        <p class="eyebrow">कैसे खेलें</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">उड़ो। गाड़ो।<br><span class="txt-game">जीत लो।</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>सच में उड़ो।</h3>
+            <p>कीबोर्ड से यान उड़ता है और माउस से निशाना लगता है। ऑटो-एम नहीं है: तुम खुद यान को घुमाते हो और खुद वहाँ निशाना लगाते हो जहाँ वार करना है। नाइट्रो करीब 4 सेकंड चलता है और ज़मीन के एकदम पास उड़ने से रिचार्ज होता है।</p>
+            <span class="chip chip--line gp__gesture">W गति बढ़ाता है · माउस से निशाना · Shift नाइट्रो</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="यान राज्य की राजधानी के ऊपर नीची उड़ान भर रहा है, स्क्रीन पर रडार, गति और नाइट्रो दिख रहे हैं" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>अपना झंडा गाड़ो।</h3>
+            <p>उतरो, यान से बाहर आओ, दुश्मन का झंडा गिराओ और अपना झंडा उठने तक थामे रखो। सेक्टर तुम्हारा राज्य बन जाता है। हर ग्रह पर जीतने के लिए 24 सेक्टर हैं।</p>
+            <span class="chip chip--line gp__gesture">E से उतरो · F दबाए रखो</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-setor-conquistado.webp" width="1280" height="720" alt='झंडा गाड़ने के बाद "सेक्टर जीत लिया" का संदेश दिखता है और रोशनी आसमान की ओर उठती है' loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>रोबोट और एलियन से भिड़ो।</h3>
+            <p>हर दुश्मन सेक्टर का एक हवाई संरक्षक है, और लड़ाकू विमानों के दस्ते तुम्हारे झंडों पर हमला करते हैं। रडार हर हमले की चेतावनी देता है और नाइट्रो से पहुँचने का समय मिल जाता है। लड़ाई कठिन हो जाए तो मेक बुला लो।</p>
+            <span class="chip chip--line gp__gesture">माउस से फ़ायर · Q से मेक बुलाओ</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-nucleon-reino-alien.webp" width="1280" height="720" alt="यान Nucleon के एलियन राज्य के ऊपर उड़ रहा है, जहाँ बैंगनी घोंसले और खंडहर हैं" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">04</span>
+            <h3>बॉस को गिराएँ।</h3>
+            <p>5 सिस्टम में से हर एक एक विशाल बॉस पर खत्म होता है, जैसे टिक कोलोसस, जिसके 4 चरणों में यान और पैदल लड़ाई बारी-बारी से आती हैं। उनके बाद रास्ता राजा के चाँद तक जाता है।</p>
+            <span class="chip chip--line gp__gesture">चमकते हिस्सों पर वार करो</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-chefe-tick-colossus.webp" width="1280" height="720" alt="यान रेगिस्तान में चार पैरों वाले विशाल रोबोट टिक कोलोसस से भिड़ रहा है" loading="lazy"></div></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="tela gp__phone">
+              <div class="tela__screen">
+                <img data-step="0" src="../assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="यान राज्य की राजधानी के ऊपर नीची उड़ान भर रहा है, स्क्रीन पर रडार, गति और नाइट्रो दिख रहे हैं" loading="lazy">
+                <img data-step="1" src="../assets/media/king/tela-setor-conquistado.webp" width="1280" height="720" alt='झंडा गाड़ने के बाद "सेक्टर जीत लिया" का संदेश दिखता है और रोशनी आसमान की ओर उठती है' loading="lazy">
+                <img data-step="2" src="../assets/media/king/tela-nucleon-reino-alien.webp" width="1280" height="720" alt="यान Nucleon के एलियन राज्य के ऊपर उड़ रहा है, जहाँ बैंगनी घोंसले और खंडहर हैं" loading="lazy">
+                <img data-step="3" src="../assets/media/king/tela-chefe-tick-colossus.webp" width="1280" height="720" alt="यान रेगिस्तान में चार पैरों वाले विशाल रोबोट टिक कोलोसस से भिड़ रहा है" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section km-gg" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">स्क्रीनशॉट</p>
+          <h2 class="h1" id="gg-t">पाँच सिस्टम <span class="txt-game">और एक चाँद।</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="स्क्रीनशॉट फ़िल्टर करें" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">सभी</button>
+          <button role="tab" aria-selected="false" data-cat="mundos" aria-controls="gg-lista">दुनिया</button>
+          <button role="tab" aria-selected="false" data-cat="acao" aria-controls="gg-lista">एक्शन में</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="खींचें">
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/king/tela-capital-veyra.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="Veyra, वह हरा ग्रह जहाँ से राज्य की शुरुआत होती है" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/king/tela-glacia-neve.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-glacia-neve.webp" width="1280" height="720" alt="Nivalis, Glacia सिस्टम की बर्फ़ीली दुनिया, तारों भरे आसमान के साथ" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="../assets/media/king/tela-nucleon-reino-alien.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-nucleon-reino-alien.webp" width="1280" height="720" alt="हरे आसमान के नीचे एक बैंगनी एलियन राज्य" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="acao"><a href="../assets/media/king/tela-setor-conquistado.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-setor-conquistado.webp" width="1280" height="720" alt="सेक्टर जीत लिया: झंडा उठता है और इलाके का मालिक बदल जाता है" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="acao"><a href="../assets/media/king/tela-combate-a-pe.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-combate-a-pe.webp" width="1280" height="720" alt="हीरो पैदल दुश्मन सेक्टर के रक्षकों से लड़ रहा है" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="acao"><a href="../assets/media/king/tela-chefe-tick-colossus.webp"><div class="tela"><div class="tela__screen"><img src="../assets/media/king/tela-chefe-tick-colossus.webp" width="1280" height="720" alt="बॉस टिक कोलोसस, स्क्रीन के ऊपर हेल्थ बार के साथ" loading="lazy"></div></div></a></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="पिछले स्क्रीनशॉट"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="अगले स्क्रीनशॉट"><svg aria-hidden="true"><use href="#i-seta"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>एक नज़र में</p>
+        <h2 class="h2" id="ficha-t" data-split>Kingmoon आँकड़ों में।</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>शैली</dt><dd>3D एक्शन<small>आज़ाद उड़ान और ग्रहों पर विजय</small></dd></div>
+          <div><dt>प्लेटफ़ॉर्म</dt><dd>ब्राउज़र<small>कंप्यूटर और आड़े फ़ोन पर, बिना इंस्टॉल</small></dd></div>
+          <div><dt>मिशन</dt><dd>25<small>5 सिस्टम, हर एक का अपना बॉस</small></dd></div>
+          <div><dt>हैंगर</dt><dd>4 + 4<small>हीरो और यान, हथियार, मेक और पार्ट्स के साथ</small></dd></div>
+          <div><dt>कंट्रोल</dt><dd>कीबोर्ड, टच और कंट्रोलर<small>माउस से निशाना, कीबोर्ड से उड़ान</small></dd></div>
+          <div><dt>भाषाएँ</dt><dd>6<small>सबटाइटल पुर्तगाली, अंग्रेज़ी, स्पैनिश, हिंदी, जापानी और अरबी में; आवाज़ें अंग्रेज़ी में</small></dd></div>
+          <div><dt>क़ीमत</dt><dd>मुफ़्त<small>ब्राउज़र में न विज्ञापन, न खरीदारी</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>कहाँ खेलें</p>
+            <h2 class="h2" id="onde-t" data-split>जहाँ भी हों, <span class="txt-game">वहीं खेलें।</span></h2>
+          </div>
+          <p class="lead" data-reveal>अभी मुफ़्त खेलें, सीधे ब्राउज़र में, कुछ भी इंस्टॉल किए बिना। कंप्यूटर और फ़ोन पर चलता है, फ़ोन को आड़ा करके।</p>
+        </div>
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>ब्राउज़र · बिना इंस्टॉल</p>
+            <div class="onde__lista">
+          <a class="plat glass plat--hub is-live" href="hub/free-games/kingmoon/" aria-label="Lipy Hub पर ब्राउज़र में Kingmoon मुफ़्त खेलें">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-seta"/></svg><b>Lipy Hub</b></span> <span class="plat__st">मुफ़्त खेलें</span>
+          </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="वापस">
+      <div class="gn__bg" aria-hidden="true"><img src="../assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">पहले यूनिवर्स पर वापस · 01 / 08</span> <span class="gn__name"><img data-vt="quiver" src="../assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">यूनिवर्स में उतरें <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="../assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>ब्राज़ील का मोबाइल गेम स्टूडियो। उन मिनटों के लिए, जो क़िस्से बन जाते हैं।</p>
+        </div>
+        <div class="foot__col">
+          <h4>यूनिवर्स</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant 2</a></li>
+            <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
+            <li><a href="villadash.html" data-game="villa">Villadash</a></li>
+            <li><a href="kingmoon.html" data-game="king">Kingmoon</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>स्टूडियो</h4>
+          <ul>
+            <li><a href="index.html#estudio">Lipy के बारे में</a></li>
+            <li><a href="/downloads/">हमारे गेम डाउनलोड करें</a></li>
+            <li><a href="index.html#como-criamos">हम कैसे बनाते हैं</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
+            <li><a href="index.html#lista">Lista Lipy (अर्ली एक्सेस)</a></li>
+            <li><a href="index.html#contato">संपर्क</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>गोपनीयता</h4>
+          <ul>
+            <li><a href="privacidade.html">साइट और Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Quiver खाता मिटाएँ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — <strong>Lipy Serviços Digitais LTDA</strong> का ब्रांड · CNPJ 65.260.227/0001-11</p>
+        <p>ब्राज़ील में बना · Google Play, Google LLC का ट्रेडमार्क है।</p>
+        <button class="foot__up glass" type="button" data-top aria-label="ऊपर जाएँ"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+  <script src="../assets/vendor/gsap.min.js"></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="../assets/vendor/SplitText.min.js"></script>
+  <script src="../assets/vendor/CustomEase.min.js"></script>
+  <script src="../assets/vendor/lenis.min.js"></script>
+  <script src="../assets/js/textos/hi.js?v=8450047c"></script>
+  <script src="../assets/js/lipy.js?v=7fe1089c"></script>
+  <script src="../assets/js/jogo.js?v=ff53c4ce"></script>
+  </body>
+</html>

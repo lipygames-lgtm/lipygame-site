@@ -234,3 +234,10 @@
 .gtab th, .gtab td { padding: 9px 12px; text-align: start; border-bottom: 1px solid var(--line); vertical-align: top; }
 .gtab thead th { font-weight: 700; color: var(--txt); background: rgba(255, 255, 255, .05); }
 .gtab tbody th { font-weight: 600; }
+
+/* jogo só deitado: com o celular em pé e o jogo aberto, o aviso cobre a tela (some sozinho ao deitar) */
+.jg__gire { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  .jg__tela[data-orient="paisagem"].is-jogando .jg__gire, .jg__tela[data-orient="paisagem"]:fullscreen .jg__gire { display: flex; position: absolute; inset: 0; z-index: 4; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; text-align: center; background: rgba(5, 8, 20, .92); color: #fff; font-size: 17px; font-weight: 600; }
+  .jg__gire span { font-size: 54px; line-height: 1; animation: gira 2.4s linear infinite; }
+}

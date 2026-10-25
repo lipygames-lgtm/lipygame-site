@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* ---------------- palco: vídeo → celular ---------------- */
-.stage { position: relative; height: 1000vh; }
+.stage { position: relative; height: 1110vh; }
 .stage__sticky {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
   --px: 0px; --py: 0px; --pw: 320px; --ph: 672px; --pr: 50px; --pad: 11px;
@@ -204,6 +204,11 @@
 .cap__name--hopa { font-size: clamp(2rem, 3.7vw, 4.2rem); background: linear-gradient(180deg, #fff 25%, #ffb347 60%, #7bd34a); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .uni--hopa .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
 .uni--hopa .uni__bg img { object-position: 50% 45%; }
+/* Kingmoon (jogo deitado: mesma moldura 16:9 do Villadash) */
+.cap__name--king { font-size: clamp(2rem, 3.7vw, 4.2rem); background: linear-gradient(180deg, #fff 25%, #ff9a5a 60%, #35c8ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uni--king .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
+.uni--king .uni__bg img { object-position: 50% 40%; }
+.fl--km-arte { z-index: 1; width: 50%; left: 25%; top: 2%; border-radius: 28px; rotate: -6deg; opacity: .92; box-shadow: 0 40px 80px -30px #000, 0 0 0 1px rgba(255, 255, 255, .1); animation: none; }
 /* Villadash (jogo deitado: a tela do cartão é uma moldura 16:9, não um celular) */
 .cap__name--villa { font-size: clamp(2rem, 3.7vw, 4.2rem); background: linear-gradient(180deg, #fff 25%, #ffb43a 60%, #8fb0ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .uni--villa .uni__name { font-size: clamp(2.2rem, 4vw, 4.2rem); }
@@ -214,6 +219,7 @@
 /* palco: a capa em pé é 2:3 e o celular é mais estreito. Inteira (logo sem corte), encostada embaixo,
    e o espaço de cima vira o mesmo céu de fim de tarde da capa */
 .stage__app--villa { object-position: 50% 30%; }
+.stage__app--king { object-position: 50% 30%; }
 .fl--hp-arte { z-index: 1; width: 56%; left: 22%; top: 4%; border-radius: 28px; rotate: -6deg; opacity: .92; box-shadow: 0 40px 80px -30px #000, 0 0 0 1px rgba(255, 255, 255, .1); animation: none; }
 .fl--lt-arte { z-index: 1; width: 56%; left: 22%; top: 4%; border-radius: 28px; rotate: 7deg; opacity: .9; box-shadow: 0 40px 80px -30px #000, 0 0 0 1px rgba(255, 255, 255, .1); animation: none; }
 .fl--lt-giant { z-index: 3; width: clamp(80px, 8vw, 128px); left: 6%; bottom: 14%; rotate: -8deg; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .55)); }
@@ -350,7 +356,7 @@ html.no-js .wall__row, html.rm .wall__row { transform: translateX(-20%); }
   .contact__routes { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
-  .stage { height: 860vh; }
+  .stage { height: 950vh; }
   .hero { padding-bottom: 104px; }
   .hero__title { font-size: clamp(2.5rem, 11.5vw, 4.4rem); }
   .hud > li:nth-child(1), .hud > li:nth-child(4) { display: none; }

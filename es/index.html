@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="facebook-domain-verification" content="e59au97mdkcdeujxgss4q535uqdoif">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="../assets/js/idioma.js?v=a46f50ea"></script>
+  <script src="../assets/js/idioma.js?v=bc0eb8cc"></script>
   <title>Lipy Games — Estudio de juegos móviles</title>
   <meta name="description" content="Lipy Games es un estudio brasileño de juegos móviles. Creamos Quiver: Arrow Puzzle, This Level Hates You, Nitrovenant 2, SWARMORIA, LEGIONTIDE, Hoparade y Villadash: juegos para los minutos que se vuelven historia.">
   <meta name="theme-color" content="#05070f">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Lipy Games">
   <meta property="og:locale" content="es_LA">
   <meta property="og:title" content="Lipy Games — El mundo se pausa. Tú le das play.">
-  <meta property="og:description" content="Estudio brasileño de juegos móviles. Siete universos, 619 niveles, seis idiomas.">
+  <meta property="og:description" content="Estudio brasileño de juegos móviles. Ocho universos, 644 niveles, seis idiomas.">
   <meta property="og:url" content="https://lipygame.com/es/">
   <meta property="og:image" content="https://lipygame.com/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@
   <link rel="preload" as="image" href="../assets/media/video/hero-poster-movel.webp" media="(max-width: 599px)" fetchpriority="high">
   <link rel="preload" as="image" href="../assets/media/video/hero-poster.webp" media="(min-width: 600px)" fetchpriority="high">
   <link rel="stylesheet" href="../assets/css/lipy.css?v=c2430f99">
-  <link rel="stylesheet" href="../assets/css/home.css?v=8103b3d4">
+  <link rel="stylesheet" href="../assets/css/home.css?v=be935786">
   <script>
     /* antes da 1ª pintura: liga o JS, decide pré-carregador / véu de chegada */
     (function (h) {
@@ -153,6 +153,10 @@
         <img src="../assets/media/villa/icone-sm.webp" width="160" height="160" alt="">
         <span><b>Villadash</b><small>Rescate en la aldea</small></span>
       </a>
+      <a class="mega__item" href="kingmoon.html" data-game="king" style="--c:#ff9a5a">
+        <img src="../assets/media/king/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Kingmoon</b><small>Vuelo libre entre planetas</small></span>
+      </a>
     </div>
   </header>
 
@@ -173,6 +177,7 @@
       <a href="legiontide.html" data-game="legion"><img src="../assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
       <a href="hoparade.html" data-game="hopa"><img src="../assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
       <a href="villadash.html" data-game="villa"><img src="../assets/media/villa/icone-sm.webp" width="160" height="160" alt="">Villadash</a>
+      <a href="kingmoon.html" data-game="king"><img src="../assets/media/king/icone-sm.webp" width="160" height="160" alt="">Kingmoon</a>
     </div>
     <ul class="menu__idiomas" translate="no" aria-label="Idioma">
       <li><a href="../index.html" hreflang="en" lang="en" data-lang="en"><img src="../assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
@@ -199,8 +204,9 @@
           <div class="amb" data-amb="4" data-bg="../assets/media/legion/capa.webp" style="--tint:rgba(255,170,30,.5)"></div>
           <div class="amb" data-amb="5" data-bg="../assets/media/hopa/capa-fundo.webp" style="--tint:rgba(255,150,60,.5)"></div>
           <div class="amb" data-amb="6" data-bg="../assets/media/villa/capa-fundo.webp" style="--tint:rgba(150,90,255,.45)"></div>
+          <div class="amb" data-amb="7" data-bg="../assets/media/king/capa-fundo.webp" style="--tint:rgba(255,154,90,.5)"></div>
           <div class="stage__words">
-            <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span> <span data-word="3">SWARM</span> <span data-word="4">LEGION</span> <span data-word="5">HOPA</span> <span data-word="6">VILLA</span>
+            <span data-word="0">QUIVER</span> <span data-word="1">HATES YOU</span> <span data-word="2">NITRO</span> <span data-word="3">SWARM</span> <span data-word="4">LEGION</span> <span data-word="5">HOPA</span> <span data-word="6">VILLA</span> <span data-word="7">KING</span>
           </div>
         </div>
 
@@ -233,6 +239,7 @@
             <img class="stage__app" data-app="4" src="../assets/media/legion/es/retrato.webp" width="720" height="1280" alt="" loading="lazy" decoding="async">
             <img class="stage__app" data-app="5" src="../assets/media/hopa/retrato.webp" width="720" height="1280" alt="" loading="lazy" decoding="async">
             <img class="stage__app stage__app--villa" data-app="6" src="../assets/media/villa/retrato.webp" width="720" height="1560" alt="" loading="lazy" decoding="async">
+            <img class="stage__app stage__app--king" data-app="7" src="../assets/media/king/retrato.webp" width="720" height="1560" alt="" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -261,7 +268,7 @@
 
           <div class="hero__foot wrap">
             <span class="hero__scroll"><i class="hero__phone"><i></i></i>Desliza para entrar</span>
-            <span class="hero__fim"><span class="hero__stats mono">07 universos <i></i> 619 niveles <i></i> 06 idiomas</span><button class="hero__pausa glass glass--pill" type="button" data-pausa aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg><svg class="i-toca" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg><span>Pausar video</span></button></span>
+            <span class="hero__fim"><span class="hero__stats mono">08 universos <i></i> 644 niveles <i></i> 06 idiomas</span><button class="hero__pausa glass glass--pill" type="button" data-pausa aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg><svg class="i-toca" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z" fill="currentColor"/></svg><span>Pausar video</span></button></span>
           </div>
         </div>
 
@@ -341,9 +348,19 @@
               <a class="link-arrow u-line" href="villadash.html" data-game="villa">Entrar al universo <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
             </div>
           </div>
+          <div class="cap" data-cap="8">
+            <div class="cap__l">
+              <span class="cap__idx mono">08 — Conquista</span>
+              <h2 class="cap__name cap__name--king">Kingmoon</h2>
+            </div>
+            <div class="cap__r">
+              <p class="cap__line">El orgullo de aterrizar en pleno reino enemigo y ver cómo sube tu bandera.</p>
+              <a class="link-arrow u-line" href="kingmoon.html" data-game="king">Entrar al universo <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </div>
+          </div>
         </div>
 
-        <ol class="stage__dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+        <ol class="stage__dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
       </div>
     </section>
 
@@ -364,7 +381,7 @@
       <div class="wrap unis__head">
         <div>
           <p class="eyebrow" data-reveal>Nuestros universos</p>
-          <h2 class="h1" id="unis-t" data-split>Siete universos.<br><span class="txt-cool">Cero repetición.</span></h2>
+          <h2 class="h1" id="unis-t" data-split>Ocho universos.<br><span class="txt-cool">Cero repetición.</span></h2>
         </div>
         <p class="lead" data-reveal>Cada título de Lipy nace con sus propias reglas, sus propios personajes y una sensación que solo él puede dar.</p>
       </div>
@@ -599,6 +616,35 @@
             </div>
           </div>
         </article>
+        <!-- KINGMOON -->
+        <article class="uni uni--king" data-vt-scope style="--c1:#ff9a5a;--c2:#35c8ff;--c3:#0d1630">
+          <div class="uni__bg" aria-hidden="true"><img src="../assets/media/king/capa-fundo.webp" width="1200" height="675" alt="" loading="lazy" decoding="async"></div>
+          <div class="uni__dim" aria-hidden="true"></div>
+          <div class="uni__grid">
+            <div class="uni__text">
+              <div class="uni__top">
+                <span class="uni__n mono">08</span> <span class="chip glass glass--thin glass--pill">Acción</span> <span class="chip chip--line">Navegador</span>
+              </div>
+              <a class="uni__id" href="kingmoon.html" data-game="king" data-cursor="Entrar" tabindex="-1" aria-hidden="true">
+                <img class="uni__icon" data-vt="king" src="../assets/media/king/icone.webp" width="512" height="512" alt="" loading="lazy">
+              </a>
+              <h3 class="uni__name">Kingmoon<small>Acción 3D</small></h3>
+              <p class="uni__tag">Vuela libre sobre planetas inhabitables, planta tu bandera y toma los reinos de robots y aliens, hasta llegar a la Luna del Rey.</p>
+              <ul class="uni__facts glass glass--dark">
+                <li><b>25</b><span>misiones</span></li>
+                <li><b>5</b><span>sistemas</span></li>
+                <li><b>5</b><span>jefes</span></li>
+              </ul>
+              <div class="uni__ctas">
+                <a class="btn btn--warm" href="kingmoon.html" data-game="king" data-magnetic>Entrar al universo <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+              </div>
+            </div>
+            <div class="uni__visual" data-float>
+              <img class="fl fl--km-arte" data-depth="0.3" src="../assets/media/king/capa-vertical.webp" width="720" height="1080" alt="" loading="lazy">
+              <div class="uni__tela" data-depth="0.15"><img src="../assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="Pantalla de Kingmoon: la nave sobrevuela la capital del reino, con el radar, la velocidad y el nitro" loading="lazy"></div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -621,9 +667,9 @@
       <div class="wall__fade" aria-hidden="true"></div>
       <div class="wall__card glass" data-lens="aro:30,escala:60,blur:8">
         <p class="eyebrow">Biblioteca</p>
-        <p class="wall__num"><span data-count="619">619</span></p>
-        <h2 class="h3" id="wall-t">niveles para perder la noción del tiempo.</h2>
-        <p class="wall__split mono"><span>360 · Quiver</span><span>66 · This Level Hates You</span><span>120 · Nitrovenant 2</span><span>36 · SWARMORIA</span><span>30 · LEGIONTIDE</span><span>5 · Hoparade</span><span>7 · Villadash</span></p>
+        <p class="wall__num"><span data-count="644">644</span></p>
+        <h2 class="h3" id="wall-t">niveles y misiones para perder la noción del tiempo.</h2>
+        <p class="wall__split mono"><span>360 · Quiver</span><span>66 · This Level Hates You</span><span>120 · Nitrovenant 2</span><span>36 · SWARMORIA</span><span>30 · LEGIONTIDE</span><span>5 · Hoparade</span><span>7 · Villadash</span><span>25 · Kingmoon</span></p>
       </div>
     </section>
 
@@ -637,8 +683,8 @@
           <p class="studio__p" data-reveal>Creemos que un buen juego para celular se entiende en tres segundos y se recuerda durante años. Por eso empezamos por la sensación —el susto, la risa, el “¡casi!”— y solo después escribimos la primera línea de código.</p>
         </div>
         <div class="studio__stats">
-          <div class="stat glass" data-reveal="scale"><b data-count="7" data-pad="2">07</b><span>universos<br>originales</span></div>
-          <div class="stat glass" data-reveal="scale"><b data-count="619">619</b><span>niveles<br>hechos a mano</span></div>
+          <div class="stat glass" data-reveal="scale"><b data-count="8" data-pad="2">08</b><span>universos<br>originales</span></div>
+          <div class="stat glass" data-reveal="scale"><b data-count="644">644</b><span>niveles y misiones<br>de verdad</span></div>
           <div class="stat glass" data-reveal="scale"><b data-count="6" data-pad="2">06</b><span>idiomas con<br>sello Lipy</span></div>
           <div class="stat glass" data-reveal="scale"><b>100<small>%</small></b><span>jugable<br>sin internet</span></div>
         </div>
@@ -793,6 +839,7 @@
               <img src="../assets/media/legion/icone.webp" width="512" height="512" alt="" loading="lazy">
               <img src="../assets/media/hopa/icone.webp" width="512" height="512" alt="" loading="lazy">
               <img src="../assets/media/villa/icone.webp" width="512" height="512" alt="" loading="lazy">
+              <img src="../assets/media/king/icone.webp" width="512" height="512" alt="" loading="lazy">
             </div>
             <div class="pass__row">
               <div><small>Titular</small><b data-pass-nome>¿Tú?</b></div>
@@ -847,6 +894,7 @@
             <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
             <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
             <li><a href="villadash.html" data-game="villa">Villadash</a></li>
+            <li><a href="kingmoon.html" data-game="king">Kingmoon</a></li>
           </ul>
         </div>
         <div class="foot__col">
@@ -888,7 +936,7 @@
   <script src="../assets/vendor/CustomEase.min.js"></script>
   <script src="../assets/vendor/lenis.min.js"></script>
   <script src="../assets/js/textos/es.js?v=556a2016"></script>
-  <script src="../assets/js/lipy.js?v=da38742a"></script>
+  <script src="../assets/js/lipy.js?v=7fe1089c"></script>
   <script src="../assets/js/home.js?v=3322d279"></script>
 </body>
 </html>

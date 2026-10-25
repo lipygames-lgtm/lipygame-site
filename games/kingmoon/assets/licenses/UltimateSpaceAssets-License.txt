@@ -1,0 +1,8 @@
+Ultimate Space Assets - LOW POLY Pack
+by BananaMyst Games (itch.io)
+Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Changes made for KINGMOON (Lipy Games): models converted to glTF/GLB, recolored to the game palette
+(flat color blocks, emissive cockpits/engines/crystals), recentered, mesh-compressed (meshopt) and quantized.
+Used: the 20 spaceships, the 2 space stations, the asteroids (including crystal asteroids) and the asteroid rings.

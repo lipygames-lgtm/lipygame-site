@@ -438,6 +438,12 @@
       comecaPresenca();   // "jogando agora" e tempo de jogo na conta do Hub (só com login)
     }
     if (celular) cheia(true);
+    // jogo só deitado (data-orient="paisagem"): trava a tela deitada quando o navegador deixa (Android, em tela cheia);
+    // no iPhone e onde a trava falha, o aviso "Gire o celular" (jg__gire, só com a tela em pé) cobre o jogo
+    if (celular && tela.getAttribute('data-orient') === 'paisagem') {
+      if (!tela.querySelector('.jg__gire')) { var g = document.createElement('div'); g.className = 'jg__gire'; g.innerHTML = '<span aria-hidden="true">↻</span><p></p>'; g.querySelector('p').textContent = tela.getAttribute('data-gire') || ''; g.addEventListener('click', function () { g.remove(); }); tela.appendChild(g); }
+      try { var lk = screen.orientation && screen.orientation.lock && screen.orientation.lock('landscape'); if (lk && lk.catch) lk.catch(function () {}); } catch (e) {}
+    }
     setTimeout(function () { try { frame.focus(); } catch (e) {} }, 50);
   }
   tela.querySelector('[data-abrir]').addEventListener('click', abrir);

@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" class="no-js" data-raiz>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="assets/js/idioma.js?v=bc0eb8cc"></script>
+  <title>Kingmoon — Lipy Games</title>
+  <meta name="description" content="Kingmoon is the free-flight game from Lipy Games: pilot a ship over uninhabitable planets, plant your flag, take on kingdoms of robots and aliens and reach the King's Moon. 25 missions, free in your browser.">
+  <meta name="theme-color" content="#0d1630">
+  <link rel="canonical" href="https://lipygame.com/kingmoon.html">
+  <link rel="alternate" hreflang="en" href="https://lipygame.com/kingmoon.html">
+  <link rel="alternate" hreflang="pt" href="https://lipygame.com/pt/kingmoon.html">
+  <link rel="alternate" hreflang="es" href="https://lipygame.com/es/kingmoon.html">
+  <link rel="alternate" hreflang="hi" href="https://lipygame.com/hi/kingmoon.html">
+  <link rel="alternate" hreflang="ja" href="https://lipygame.com/ja/kingmoon.html">
+  <link rel="alternate" hreflang="ar" href="https://lipygame.com/ar/kingmoon.html">
+  <link rel="alternate" hreflang="x-default" href="https://lipygame.com/kingmoon.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lipy Games">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Kingmoon — fly free, plant your flag and conquer the kingdom.">
+  <meta property="og:description" content="Pilot a ship over uninhabitable planets, plant flags and take the kingdoms of robots and aliens. A free game from Lipy Games, right in your browser.">
+  <meta property="og:url" content="https://lipygame.com/kingmoon.html">
+  <meta property="og:image" content="https://lipygame.com/og-king.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&family=Unbounded:wght@300..800&display=swap">
+  <link rel="expect" href="#vt-alvo" blocking="render">
+  <link rel="stylesheet" href="assets/css/lipy.css?v=c2430f99">
+  <link rel="stylesheet" href="assets/css/jogo.css?v=3cb486e0">
+  <link rel="stylesheet" href="assets/css/king.css?v=bd36b762">
+  <script>
+    (function (h) {
+      h.className = h.className.replace('no-js', 'js');
+      try {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.classList.add('rm'); return; }
+        var s = sessionStorage, v = s.getItem('lipy:veil');
+        if (v) { var o = JSON.parse(v); h.classList.add('is-entering'); h.style.setProperty('--vc1', o.c1); h.style.setProperty('--vc2', o.c2); }
+        addEventListener('pagereveal', function (e) {
+          if (!e.viewTransition) return;
+          var g = s.getItem('lipy:vt'); s.removeItem('lipy:vt');
+          var el = g && document.querySelector('[data-vt="' + g + '"]');
+          if (!el) return;
+          el.style.viewTransitionName = 'game-icon';
+          e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+        });
+      } catch (e) {}
+      setTimeout(function () { if (!window.Lipy || !window.Lipy.isReady) h.classList.remove('is-loading', 'is-entering'); }, 9000);
+    })(document.documentElement);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Kingmoon",
+    "description": "A 3D free-flight action game for the browser: pilot a ship over uninhabitable planets, plant flags, take on kingdoms of robots and aliens and reach the King's Moon. 25 missions, giant bosses and 6 languages.",
+    "genre": ["Ação", "Aventura"],
+    "gamePlatform": "Navegador",
+    "applicationCategory": "Game",
+    "image": "https://lipygame.com/assets/media/king/icone.webp",
+    "author": { "@type": "Organization", "name": "Lipy Games", "url": "https://lipygame.com/" },
+    "publisher": { "@type": "Organization", "name": "Lipy Serviços Digitais LTDA" }
+  }
+  </script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="deac8e0b-6aac-49d6-945f-0a0c851fbf8a" data-domains="lipygame.com" data-do-not-track="true" data-exclude-search="true"></script>
+</head>
+<body class="jogo jogo--king" style="--c1:#ff9a5a;--c2:#35c8ff;--c3:#0d1630;--c4:#ffd27a">
+  <!--#topo-->
+  <a class="skip" href="#conteudo">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play-store" viewBox="0 0 24 24"><path fill="#34A853" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2Z"/><path fill="#FBBC04" d="m17.2 8.6-3.4 3.4 3.4 3.4 3.9-2.2c.8-.5.8-1.8 0-2.3l-3.9-2.3Z"/><path fill="#4285F4" d="M3.6 22.2 13.8 12l3.4 3.4L5 22.3c-.5.3-1 .2-1.4-.1Z"/><path fill="#EA4335" d="M3.6 1.8c.4-.3.9-.4 1.4-.1l12.2 6.9-3.4 3.4L3.6 1.8Z"/></symbol>
+    <symbol id="i-copia" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- véu das transições entre páginas -->
+  <div class="veil" aria-hidden="true"><div class="veil__fill"></div><div class="veil__icon"><img alt=""></div></div>
+
+  <!-- navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__bar glass">
+      <a class="nav__brand" href="index.html" aria-label="Lipy Games — home"><img src="assets/media/marca/logo-sm.webp" width="420" height="211" alt="Lipy Games"></a>
+      <nav class="nav__links" aria-label="Main">
+        <span class="nav__blob" aria-hidden="true"></span>
+        <button type="button" data-mega aria-expanded="false" aria-controls="mega">Games <svg aria-hidden="true"><use href="#i-baixo"/></svg></button>
+        <a href="hub/">Lipy Hub</a>
+        <a href="index.html#estudio">Studio</a>
+        <a href="index.html#como-criamos">How we build</a>
+        <a href="index.html#contato">Contact</a>
+      </nav>
+      <div class="nav__end">
+        <div class="idioma" data-idioma>
+          <button class="idioma__bt" type="button" aria-expanded="false" aria-controls="idiomas" aria-label="Language"><img class="idioma__flag" data-idioma-flag src="assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span class="idioma__atual" translate="no" data-idioma-atual>PT</span><svg class="idioma__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="idioma__lista glass" id="idiomas" translate="no">
+            <li><a href="kingmoon.html" hreflang="en" lang="en" data-lang="en"><img src="assets/media/bandeiras/us.webp" width="64" height="64" alt=""><span>English</span><b>EN</b></a></li>
+            <li><a href="pt/kingmoon.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="assets/media/bandeiras/br.webp" width="64" height="64" alt=""><span>Português</span><b>PT</b></a></li>
+            <li><a href="es/kingmoon.html" hreflang="es" lang="es" data-lang="es"><img src="assets/media/bandeiras/mx.webp" width="64" height="64" alt=""><span>Español</span><b>ES</b></a></li>
+            <li><a href="hi/kingmoon.html" hreflang="hi" lang="hi" data-lang="hi"><img src="assets/media/bandeiras/in.webp" width="64" height="64" alt=""><span>हिन्दी</span><b>HI</b></a></li>
+            <li><a href="ja/kingmoon.html" hreflang="ja" lang="ja" data-lang="ja"><img src="assets/media/bandeiras/jp.webp" width="64" height="64" alt=""><span>日本語</span><b>JA</b></a></li>
+            <li><a href="ar/kingmoon.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="assets/media/bandeiras/eg.webp" width="64" height="64" alt=""><span>العربية</span><b>AR</b></a></li>
+          </ul>
+        </div>
+        <a class="btn btn--warm btn--sm nav__cta" href="index.html#lista" data-magnetic="0.2">Early access <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+        <button class="nav__burger glass glass--thin" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+      <div class="nav__progress" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="mega glass" id="mega">
+      <a class="mega__item" href="quiver.html" data-game="quiver" style="--c:#ff9a1a">
+        <img src="assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Quiver: Arrow Puzzle</b><small>Arrow puzzle</small></span>
+      </a>
+      <a class="mega__item" href="this-level-hates-you.html" data-game="tlhy" style="--c:#2a6bff">
+        <img src="assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>This Level Hates You</b><small>Troll platformer</small></span>
+      </a>
+      <a class="mega__item" href="nitrovenant.html" data-game="nitro" style="--c:#ff3d1a">
+        <img src="assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Nitrovenant 2</b><small>Action on wheels</small></span>
+      </a>
+      <a class="mega__item" href="swarmoria.html" data-game="swarm" style="--c:#2a7bff">
+        <img src="assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>SWARMORIA</b><small>Evolving swarm</small></span>
+      </a>
+      <a class="mega__item" href="legiontide.html" data-game="legion" style="--c:#ffc21a">
+        <img src="assets/media/legion/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>LEGIONTIDE</b><small>A legion in your browser</small></span>
+      </a>
+      <a class="mega__item" href="hoparade.html" data-game="hopa" style="--c:#ff9a3c">
+        <img src="assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Hoparade</b><small>Pet rescue</small></span>
+      </a>
+      <a class="mega__item" href="villadash.html" data-game="villa" style="--c:#ffb43a">
+        <img src="assets/media/villa/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Villadash</b><small>Village rescue</small></span>
+      </a>
+      <a class="mega__item" href="kingmoon.html" data-game="king" style="--c:#ff9a5a">
+        <img src="assets/media/king/icone-sm.webp" width="160" height="160" alt="">
+        <span><b>Kingmoon</b><small>Free flight between planets</small></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Menu">
+      <a href="index.html#universos">Games</a>
+      <a href="hub/">Lipy Hub</a>
+      <a href="index.html#estudio">Studio</a>
+      <a href="index.html#como-criamos">How we build</a>
+      <a href="index.html#lista">Early access</a>
+      <a href="index.html#contato">Contact</a>
+    </nav>
+    <div class="menu__games">
+      <a href="quiver.html" data-game="quiver"><img src="assets/media/quiver/icone-sm.webp" width="160" height="160" alt="">Quiver</a>
+      <a href="this-level-hates-you.html" data-game="tlhy"><img src="assets/media/tlhy/icone-sm.webp" width="160" height="160" alt="">This Level</a>
+      <a href="nitrovenant.html" data-game="nitro"><img src="assets/media/nitro/icone-sm.webp" width="160" height="160" alt="">Nitrovenant 2</a>
+      <a href="swarmoria.html" data-game="swarm"><img src="assets/media/swarm/icone-sm.webp" width="160" height="160" alt="">SWARMORIA</a>
+      <a href="legiontide.html" data-game="legion"><img src="assets/media/legion/icone-sm.webp" width="160" height="160" alt="">LEGIONTIDE</a>
+      <a href="hoparade.html" data-game="hopa"><img src="assets/media/hopa/icone-sm.webp" width="160" height="160" alt="">Hoparade</a>
+      <a href="villadash.html" data-game="villa"><img src="assets/media/villa/icone-sm.webp" width="160" height="160" alt="">Villadash</a>
+      <a href="kingmoon.html" data-game="king"><img src="assets/media/king/icone-sm.webp" width="160" height="160" alt="">Kingmoon</a>
+    </div>
+    <ul class="menu__idiomas" translate="no" aria-label="Idioma">
+      <li><a href="kingmoon.html" hreflang="en" lang="en" data-lang="en"><img src="assets/media/bandeiras/us.webp" width="64" height="64" alt="">EN</a></li>
+      <li><a href="pt/kingmoon.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><img src="assets/media/bandeiras/br.webp" width="64" height="64" alt="">PT</a></li>
+      <li><a href="es/kingmoon.html" hreflang="es" lang="es" data-lang="es"><img src="assets/media/bandeiras/mx.webp" width="64" height="64" alt="">ES</a></li>
+      <li><a href="hi/kingmoon.html" hreflang="hi" lang="hi" data-lang="hi"><img src="assets/media/bandeiras/in.webp" width="64" height="64" alt="">हिन्दी</a></li>
+      <li><a href="ja/kingmoon.html" hreflang="ja" lang="ja" data-lang="ja"><img src="assets/media/bandeiras/jp.webp" width="64" height="64" alt="">日本語</a></li>
+      <li><a href="ar/kingmoon.html" hreflang="ar" lang="ar" dir="rtl" data-lang="ar"><img src="assets/media/bandeiras/eg.webp" width="64" height="64" alt="">العربية</a></li>
+    </ul>
+    <p class="menu__legal">Lipy Serviços Digitais LTDA · CNPJ 65.260.227/0001-11</p>
+  </div>
+
+<!--/topo-->
+
+  <main id="conteudo">
+    <!-- ============ HERÓI ============ -->
+    <section class="gh km-hero" aria-labelledby="gh-t">
+      <div class="gh__bg" aria-hidden="true"><img src="assets/media/king/capa.webp" width="1600" height="900" alt="" fetchpriority="high"></div>
+      <div class="wrap gh__grid">
+        <div class="gh__text">
+          <nav class="gh__crumb" aria-label="You are here"><a href="index.html">Lipy Games</a><i>/</i><a href="index.html#universos">Universes</a><i>/</i><span aria-current="page">Kingmoon</span></nav>
+          <div class="gh__id">
+            <img class="gh__icon" id="vt-alvo" data-vt="king" src="assets/media/king/icone.webp" width="512" height="512" alt="Kingmoon icon">
+            <img class="gh__logo km-logo" src="assets/media/king/logo.webp" width="900" height="180" alt="Kingmoon">
+          </div>
+          <h1 class="gh__title" id="gh-t"><span class="l">Fly free, plant your flag</span><span class="l"><em class="txt-game">and conquer the kingdom.</em></span></h1>
+          <p class="lead gh__lead">Pilot a ship over uninhabitable planets, land, plant your flag and take the kingdoms of robots and aliens, all the way to the King's Moon.</p>
+          <div class="gh__meta">
+            <span class="chip glass glass--thin glass--pill">3D Action</span> <span class="chip chip--line">Browser</span> <span class="chip chip--line">Computer and phone in landscape</span> <span class="chip chip--line">No install</span>
+          </div>
+          <div class="gh__ctas">
+            <a class="btn btn--game" href="#como-se-joga" data-magnetic>See how it plays <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+            <a class="btn btn--glass" href="hub/free-games/kingmoon/" data-jogar-hub>Play free in your browser <span class="btn__ic"><svg aria-hidden="true"><use href="#i-seta"/></svg></span></a>
+          </div>
+        </div>
+        <div class="gh__visual km-visual" data-float>
+          <div class="tela km-visual__tela" data-depth="0.15">
+            <div class="tela__screen">
+              <img src="assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="The ship flies over the capital of your kingdom, with domes and a landing pad, on the planet Veyra" fetchpriority="high">
+              <i class="phone__glare"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap gh__foot"><span>Universe 08 / 08</span><span>Fly · then scroll</span></div>
+    </section>
+
+    <!-- ============ SENSAÇÃO ============ -->
+    <section class="gi section">
+      <div class="wrap">
+        <p class="eyebrow">The feeling</p>
+        <p class="gi__txt" data-scrub-words>There's a moment when the alert lights up on your radar, you hit the nitro, <em>skim the ground</em> at full speed and make it in time to see your flag still standing. That moment is the game.</p>
+      </div>
+    </section>
+
+    <!-- ============ COMO SE JOGA ============ -->
+    <section class="gp section km-gp" id="como-se-joga" data-gp aria-labelledby="gp-t" tabindex="-1">
+      <div class="wrap">
+        <p class="eyebrow">How to play</p>
+        <h2 class="h1" id="gp-t" style="margin-top:20px">Fly. Plant.<br><span class="txt-game">Conquer.</span></h2>
+      </div>
+      <div class="wrap gp__grid">
+        <div class="gp__steps">
+          <article class="gp__step">
+            <span class="gp__n">01</span>
+            <h3>Real flying.</h3>
+            <p>The keyboard flies and the mouse aims. There is no auto-aim: you point the ship and the crosshair where you want to hit. The nitro lasts about 4 seconds and recharges with low passes skimming the ground.</p>
+            <span class="chip chip--line gp__gesture">W accelerates · mouse aims · Shift nitro</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="The ship flies low over the kingdom's capital, with the radar, speed and nitro on screen" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">02</span>
+            <h3>Plant your flag.</h3>
+            <p>Land, step out of the ship, tear down the enemy flag and hold yours until it rises. The sector becomes your kingdom. Each planet has 24 sectors to conquer.</p>
+            <span class="chip chip--line gp__gesture">E lands · hold F</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-setor-conquistado.webp" width="1280" height="720" alt="The Sector conquered notice appears after planting the flag, with a beam of light rising into the sky" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">03</span>
+            <h3>Take on robots and aliens.</h3>
+            <p>Every enemy sector has an aerial Guardian, and squadrons of fighters attack your flags. The radar warns you of every attack and gives you time to arrive on nitro. If the fight gets rough, call the mech.</p>
+            <span class="chip chip--line gp__gesture">fire with the mouse · Q calls the mech</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-nucleon-reino-alien.webp" width="1280" height="720" alt="The ship flies over the alien kingdom of Nucleon, with nests and purple ruins" loading="lazy"></div></div></div>
+          </article>
+          <article class="gp__step">
+            <span class="gp__n">04</span>
+            <h3>Topple the boss.</h3>
+            <p>Each of the 5 systems ends with a giant boss, like the Tick Colossus, with 4 phases that alternate between ship and on-foot combat. Beyond them, the road leads to the King's Moon.</p>
+            <span class="chip chip--line gp__gesture">hit the glowing weak points</span>
+            <div class="gp__shot"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-chefe-tick-colossus.webp" width="1280" height="720" alt="The ship faces the Tick Colossus, a giant four-legged robot, in a desert" loading="lazy"></div></div></div>
+          </article>
+        </div>
+        <div class="gp__side">
+          <div class="gp__sticky">
+            <div class="gp__glow" aria-hidden="true"></div>
+            <div class="tela gp__phone">
+              <div class="tela__screen">
+                <img data-step="0" src="assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="The ship flies low over the kingdom's capital, with the radar, speed and nitro on screen" loading="lazy">
+                <img data-step="1" src="assets/media/king/tela-setor-conquistado.webp" width="1280" height="720" alt="The Sector conquered notice appears after planting the flag, with a beam of light rising into the sky" loading="lazy">
+                <img data-step="2" src="assets/media/king/tela-nucleon-reino-alien.webp" width="1280" height="720" alt="The ship flies over the alien kingdom of Nucleon, with nests and purple ruins" loading="lazy">
+                <img data-step="3" src="assets/media/king/tela-chefe-tick-colossus.webp" width="1280" height="720" alt="The ship faces the Tick Colossus, a giant four-legged robot, in a desert" loading="lazy">
+                <i class="phone__glare"></i>
+              </div>
+            </div>
+            <div class="gp__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gg section km-gg" id="telas" data-gg aria-labelledby="gg-t">
+      <div class="wrap gg__head">
+        <div>
+          <p class="eyebrow">Screenshots</p>
+          <h2 class="h1" id="gg-t">Five systems <span class="txt-game">and one moon.</span></h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Filter screenshots" data-filtros>
+          <span class="tabs__blob" aria-hidden="true"></span>
+          <button role="tab" aria-selected="true" data-cat="todas" aria-controls="gg-lista">All</button>
+          <button role="tab" aria-selected="false" data-cat="mundos" aria-controls="gg-lista">Worlds</button>
+          <button role="tab" aria-selected="false" data-cat="acao" aria-controls="gg-lista">In action</button>
+        </div>
+      </div>
+      <div class="gg__rail">
+        <div class="gg__track" id="gg-lista" data-gallery data-cursor="Drag">
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/king/tela-capital-veyra.webp"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-capital-veyra.webp" width="1280" height="720" alt="Veyra, the green planet where the kingdom begins" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/king/tela-glacia-neve.webp"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-glacia-neve.webp" width="1280" height="720" alt="Nivalis, an icy world under a starry sky in the Glacia system" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="mundos"><a href="assets/media/king/tela-nucleon-reino-alien.webp"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-nucleon-reino-alien.webp" width="1280" height="720" alt="A purple alien kingdom under a green sky" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="acao"><a href="assets/media/king/tela-setor-conquistado.webp"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-setor-conquistado.webp" width="1280" height="720" alt="Sector conquered: the flag rises and the territory changes hands" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="acao"><a href="assets/media/king/tela-combate-a-pe.webp"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-combate-a-pe.webp" width="1280" height="720" alt="The hero fights on foot against the defenders of an enemy sector" loading="lazy"></div></div></a></figure>
+          <figure class="gg__item" data-cat="acao"><a href="assets/media/king/tela-chefe-tick-colossus.webp"><div class="tela"><div class="tela__screen"><img src="assets/media/king/tela-chefe-tick-colossus.webp" width="1280" height="720" alt="The Tick Colossus boss, with its health bar at the top of the screen" loading="lazy"></div></div></a></figure>
+        </div>
+      </div>
+      <div class="wrap gg__foot">
+        <div class="gg__progress"><i></i></div>
+        <div class="gg__nav"><button class="glass" type="button" data-gg-dir="-1" aria-label="Previous screenshots"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="glass" type="button" data-gg-dir="1" aria-label="Next screenshots"><svg aria-hidden="true"><use href="#i-seta"/></svg></button></div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="section section--tight" aria-labelledby="ficha-t">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Fact sheet</p>
+        <h2 class="h2" id="ficha-t" data-split>Kingmoon by the numbers.</h2>
+        <dl class="ficha glass" data-reveal>
+          <div><dt>Genre</dt><dd>3D Action<small>Free flight and planetary conquest</small></dd></div>
+          <div><dt>Platform</dt><dd>Browser<small>Computer and phone in landscape, no install</small></dd></div>
+          <div><dt>Missions</dt><dd>25<small>5 systems, each with a boss</small></dd></div>
+          <div><dt>Hangar</dt><dd>4 + 4<small>Heroes and ships, with weapons, mech and parts</small></dd></div>
+          <div><dt>Controls</dt><dd>Keyboard, touch and gamepad<small>The mouse aims, the keyboard flies</small></dd></div>
+          <div><dt>Languages</dt><dd>6<small>Subtitles in Portuguese, English, Spanish, Hindi, Japanese and Arabic; voices in English</small></dd></div>
+          <div><dt>Price</dt><dd>Free<small>No ads or purchases in the browser</small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!--#onde-->
+    <!-- ============ ONDE JOGAR ============ -->
+    <section class="onde section section--tight" id="onde-jogar" aria-labelledby="onde-t">
+      <div class="wrap">
+        <div class="onde__head">
+          <div>
+            <p class="eyebrow" data-reveal>Where to play</p>
+            <h2 class="h2" id="onde-t" data-split>Play wherever <span class="txt-game">you are.</span></h2>
+          </div>
+          <p class="lead" data-reveal>Play free right now, straight in your browser, with nothing to install. Works on computer and on phone, held in landscape.</p>
+        </div>
+        <div class="onde__grupos onde__grupos--web">
+          <div class="onde__grupo" data-reveal>
+            <p class="onde__rot mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Browser · no install</p>
+            <div class="onde__lista">
+          <a class="plat glass plat--hub is-live" href="hub/free-games/kingmoon/" aria-label="Play Kingmoon free in your browser, in the Lipy Hub">
+            <span class="plat__logo"><svg class="plat__gp" aria-hidden="true"><use href="#i-seta"/></svg><b>Lipy Hub</b></span> <span class="plat__st">Play free</span>
+          </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+<!--/onde-->
+
+    <!-- ============ PRÓXIMO UNIVERSO ============ -->
+    <a class="gn" href="quiver.html" data-game="quiver" data-vt-scope data-cursor="Back">
+      <div class="gn__bg" aria-hidden="true"><img src="assets/media/quiver/capa-fundo.webp" width="1200" height="586" alt="" loading="lazy"></div>
+      <div class="wrap gn__in">
+        <span class="gn__k">Back to the first universe · 01 / 08</span> <span class="gn__name"><img data-vt="quiver" src="assets/media/quiver/icone.webp" width="512" height="512" alt="" loading="lazy">Quiver</span> <span class="gn__go">Enter the universe <i><svg aria-hidden="true"><use href="#i-seta"/></svg></i></span>
+      </div>
+    </a>
+  </main>
+
+
+  <!--#rodape-->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <img src="assets/media/marca/logo.webp" width="1200" height="603" alt="Lipy Games" loading="lazy">
+          <p>A Brazilian mobile game studio. Made for the minutes that become stories.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Universes</h4>
+          <ul>
+            <li><a href="quiver.html" data-game="quiver">Quiver: Arrow Puzzle</a></li>
+            <li><a href="this-level-hates-you.html" data-game="tlhy">This Level Hates You</a></li>
+            <li><a href="nitrovenant.html" data-game="nitro">Nitrovenant 2</a></li>
+            <li><a href="swarmoria.html" data-game="swarm">SWARMORIA</a></li>
+            <li><a href="legiontide.html" data-game="legion">LEGIONTIDE</a></li>
+            <li><a href="hoparade.html" data-game="hopa">Hoparade</a></li>
+            <li><a href="villadash.html" data-game="villa">Villadash</a></li>
+            <li><a href="kingmoon.html" data-game="king">Kingmoon</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="index.html#estudio">About Lipy</a></li>
+            <li><a href="/downloads/">Download our games</a></li>
+            <li><a href="index.html#como-criamos">How we build</a></li>
+            <li><a href="hub/">Lipy Hub</a></li>
+            <li><a href="index.html#lista">Lista Lipy (early access)</a></li>
+            <li><a href="index.html#contato">Contact</a></li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h4>Privacy</h4>
+          <ul>
+            <li><a href="privacidade.html">Website and Lista Lipy</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/" target="_blank" rel="noopener">Quiver</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/" target="_blank" rel="noopener">Nitrovenant</a></li>
+            <li><a href="https://lipygames-lgtm.github.io/nitrovenant-site/quiver/excluir-conta.html" target="_blank" rel="noopener">Delete your Quiver account</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__word" aria-hidden="true"><span>LIPY GAMES</span><span>LIPY GAMES</span></p>
+      <div class="foot__legal">
+        <p>© <span data-year>2026</span> <strong>Lipy Games</strong> — a brand of <strong>Lipy Serviços Digitais LTDA</strong> · CNPJ 65.260.227/0001-11</p>
+        <p>Made in Brazil · Google Play is a trademark of Google LLC.</p>
+        <button class="foot__up glass" type="button" data-top aria-label="Back to top"><svg aria-hidden="true"><use href="#i-cima"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+<!--/rodape-->
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/CustomEase.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/textos/en.js?v=fa7aa84d"></script>
+  <script src="assets/js/lipy.js?v=7fe1089c"></script>
+  <script src="assets/js/jogo.js?v=ff53c4ce"></script>
+  </body>
+</html>
