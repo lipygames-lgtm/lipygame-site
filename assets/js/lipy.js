@@ -14,7 +14,9 @@
   var LOJA = {
     quiver: { play: 'https://play.google.com/store/apps/details?id=com.lipy.quiver' },
     tlhy: { play: 'https://play.google.com/store/apps/details?id=com.lipy.thislevel' },
-    nitro: { play: 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant' },
+    // Nitrovenant 2 (troca do NV1 em 25/10): ainda não está na Play. Quando a ficha sair, trocar null por
+    // 'https://play.google.com/store/apps/details?id=com.lipy.nitrovenant2' (e o play/playBreve em hub/dados/arcade.json + QR).
+    nitro: { play: null },
     swarm: { play: 'https://play.google.com/store/apps/details?id=com.lipy.swarmoria' },
     legion: { play: 'https://play.google.com/store/apps/details?id=com.lipy.legiontide' },
     // Hoparade: ficha da Play no ar (12/10)

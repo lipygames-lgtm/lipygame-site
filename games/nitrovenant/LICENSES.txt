@@ -1,0 +1,913 @@
+Nitrovenant 2 - (c) 2026 Lipy Games. All rights reserved.
+
+Third-party software and assets used in this game, with their licenses:
+
+three.js (r169) - MIT License - Copyright (c) 2010-2024 three.js authors - https://threejs.org
+Kenney assets (kenney.nl) - CC0 1.0 Universal (public domain)
+Quaternius assets (quaternius.com) - CC0 1.0 Universal (public domain)
+ithappy assets - Free Asset Usage Policy (commercial use allowed, no attribution required)
+
+------------------------------------------------------------------------------
+LICENSES-MUNDO.txt
+------------------------------------------------------------------------------
+==== World / scenery (assets/models/biomes) ====
+
+All scenery models were converted for this game: merged into one mesh, texture colors baked into vertex colors,
+recolored to the biome palette, optimized (meshopt). Pieces marked "procedural" were made in code for this game.
+
+Holiday Kit by Kenney (www.kenney.nl) - CC0 1.0 Universal (public domain)
+  bench                                -> sw_bench
+  cabin-corner-logs                    -> rn_cabin, sw_cabin, sw_cabin_b
+  cabin-door-rotate                    -> rn_cabin, sw_cabin, sw_cabin_b
+  cabin-doorway                        -> rn_cabin, sw_cabin, sw_cabin_b
+  cabin-roof                           -> rn_cabin
+  cabin-roof-chimney                   -> rn_cabin
+  cabin-roof-snow                      -> sw_cabin, sw_cabin_b
+  cabin-roof-snow-chimney              -> sw_cabin, sw_cabin_b
+  cabin-roof-snow-point                -> sw_cabin_b
+  cabin-wall                           -> rn_cabin, sw_cabin, sw_cabin_b
+  cabin-wall-roof                      -> rn_cabin, sw_cabin, sw_cabin_b
+  cabin-wall-roof-center               -> sw_cabin_b
+  cabin-window-a                       -> rn_cabin, sw_cabin, sw_cabin_b
+  cabin-window-b                       -> rn_cabin, sw_cabin, sw_cabin_b
+  lantern                              -> sw_lantern
+  reindeer                             -> sw_reindeer
+  rocks-large                          -> sw_rocks
+  rocks-medium                         -> sw_rocks_small
+  sled                                 -> sw_sled
+  snow-bunker                          -> sw_snow_bank
+  snowman-hat                          -> sw_snowman_b
+  tree-snow-a                          -> sw_pine_a
+  tree-snow-b                          -> sw_pine_b, sw_pine_giant_b
+  tree-snow-c                          -> sw_pine_c
+
+Nature Kit by Kenney (www.kenney.nl) - CC0 1.0 Universal (public domain)
+  cactus_short                         -> ds_cactus_b
+  cactus_tall                          -> ds_cactus_d
+  crops_cornStageD                     -> sn_corn
+  fence_planks                         -> rn_fence, sn_fence_planks
+  fence_simple                         -> sn_fence
+  flower_purpleB                       -> sn_flowers
+  flower_redA                          -> sn_flowers
+  flower_yellowA                       -> sn_flowers
+  flower_yellowC                       -> sn_flowers
+  grass                                -> sn_flowers
+  grass_large                          -> sn_flowers
+  log_large                            -> rn_log
+  log_stack                            -> sn_logs
+  log_stackLarge                       -> sw_logs
+  mushroom_redGroup                    -> rn_mushrooms
+  plant_bush                           -> sn_bush
+  plant_bushDetailed                   -> rn_bush, sn_bush
+  plant_bushLarge                      -> sn_bush
+  rock_largeB                          -> ds_rock_a
+  rock_largeC                          -> sn_rock_flat
+  rock_largeD                          -> sn_rock
+  rock_tallC                           -> ds_rock_b
+  stone_largeD                         -> rn_rock_low
+  stone_tallB                          -> rn_rock
+  stone_tallG                          -> ds_rock_c
+  stump_roundDetailed                  -> rn_stump
+  tree_default                         -> sn_tree_round
+  tree_default_dark                    -> rn_tree_dark
+  tree_detailed                        -> sn_tree_detailed
+  tree_fat                             -> sn_tree_fat
+  tree_oak                             -> sn_tree_oak
+  tree_pineDefaultA                    -> rn_pine_d
+  tree_pineRoundB                      -> sw_pine_round
+  tree_pineRoundC                      -> rn_pine_c
+  tree_pineSmallB                      -> rn_pine_small
+  tree_pineTallA                       -> rn_pine_a
+  tree_pineTallB                       -> sw_pine_giant
+  tree_pineTallB_detailed              -> rn_pine_b
+  tree_pineTallC                       -> rn_pine_giant
+  tree_pineTallD                       -> rn_pine_giant_b
+  tree_pineTallD_detailed              -> sw_pine_tall
+  tree_tall                            -> sn_tree_tall
+
+Zombie Apocalypse Kit by Quaternius (quaternius.com) - CC0 1.0 Universal (public domain)
+  Barrel                               -> ct_barrel
+  Container_Green                      -> ct_container_g, ds_container
+  Container_Red                        -> ct_container_r
+  Couch                                -> ct_couch
+  FireHydrant                          -> ct_hydrant
+  Pallet_Broken                        -> ct_pallet
+  PlasticBarrier                       -> ct_barrier_b
+  StreetLights                         -> ct_streetlight
+  TrafficBarrier_1                     -> ct_barrier_a
+  TrafficLight_1                       -> ct_trafficlight
+  TrashBag_2                           -> ct_trashbags
+  WaterTower                           -> ct_watertower
+  Wheels_Stack                         -> ct_tires
+
+Animals Free by ithappy - ithappy Free Asset Usage Policy
+  Horse_001                            -> sn_horse
+
+Apocalypse Free by ithappy - ithappy Free Asset Usage Policy
+  Concrete_Fence                       -> ct_junk_barricade
+  Pine_01                              -> rn_pine_tall
+  Road_Barrier_01                      -> ct_road_barrier
+
+Cartoon City Free by ithappy - ithappy Free Asset Usage Policy (commercial use allowed, no attribution required, no redistribution of the source files)
+  Billboard_2x1_03                     -> ct_billboard
+  Bus_Stop_02                          -> ct_busstop
+  Bush_10                              -> sn_bush_low
+  Car_06                               -> ct_car_a
+  Car_16                               -> ct_car_b
+  Eco_Building_Grid                    -> ct_bld_grid
+  Eco_Building_Slope                   -> ct_bld_slope
+  Eco_Building_Terrace                 -> ct_bld_terrace
+  Regular_Building_TwistedTower_Large  -> ct_bld_tower
+  Trash_06                             -> ct_trash
+  Trash_Can_04                         -> ct_dumpster
+  Van                                  -> ct_van
+
+Christmas Pack Free by ithappy - ithappy Free Asset Usage Policy
+  Christmass_tree_outdoor_002          -> sw_xmas_tree
+  Fence_001                            -> sw_fence
+  Snow_002                             -> sw_snow_lump
+  Snowman_001                          -> sw_snowman
+
+Fantasy Free by ithappy - ithappy Free Asset Usage Policy
+  barrel_001                           -> sn_barrel
+  cactus_001                           -> ds_cactus_c
+  cart_001                             -> sn_cart
+  fir_001                              -> rn_fir, rn_fir_giant
+  house_002                            -> rn_house_b, sn_house_b, sw_house_b
+  house_003                            -> rn_house_c, sn_house_c, sw_house_c
+  log_001                              -> rn_logpile
+  pointer_001                          -> sn_signpost
+  stall_001                            -> sn_stall
+  tree_001                             -> sn_tree_big
+
+Inferno World Free by ithappy - ithappy Free Asset Usage Policy
+  Bone_003                             -> hl_bone_a
+  Bone_004                             -> hl_bone_b
+  Bone_006                             -> hl_bone_c
+  Brazier_002                          -> hl_brazier
+  Brazier_004                          -> hl_brazier_low
+  Cliff_004                            -> hl_cliff
+  ColumnBigBroken_001                  -> hl_column_broken
+  ColumnBigBroken_002                  -> hl_column_stump
+  ColumnBig_001                        -> hl_column
+  Crag_001                             -> hl_crag
+  Gem_001                              -> hl_gems
+  Gem_002                              -> hl_gems
+  Gem_003                              -> hl_gems
+  Gem_004                              -> hl_gems
+  GoldPileSmall_001                    -> hl_goldpile
+  Grass_004                            -> hl_grass
+  Mound_005                            -> hl_mound
+  RockBig_001                          -> hl_rockbig_a
+  RockBig_003                          -> hl_rockbig_b
+  RockBig_004                          -> hl_rockbig_c
+  RockMid_002                          -> hl_rockmid, rn_cliff
+  RockMid_003                          -> sw_rock_big
+  RockSmall_001                        -> hl_rock_a
+  RockSmall_002                        -> hl_rock_b
+  RockSmall_003                        -> hl_rock_c
+  StatueKnight_002                     -> hl_statue
+  Stone_006                            -> hl_stone_flat
+  TowerBig_001                         -> hl_tower
+  Vase_001                             -> hl_vase
+  WellSmall_001                        -> hl_well
+
+Military Free by ithappy - ithappy Free Asset Usage Policy
+  Barrel_005                           -> ds_barrel
+  Barrier_004                          -> ds_hesco
+  Barrier_006                          -> ds_sandbags
+  Barrier_007                          -> ds_barrier
+  Box_003                              -> ds_crates
+  Box_022                              -> ds_crate
+  Generator_004                        -> ds_generator
+  Grass_008                            -> ds_bush_dry
+  Hedgehog_001                         -> ds_hedgehog
+  Helicopter_001                       -> ds_heli
+  Hummer_003                           -> ds_humvee
+  Radiostation_001                     -> ds_radio
+  Tank_006                             -> ds_tank
+  Target_002                           -> ds_target
+  Tent_002                             -> ds_tent_a
+  Tent_010                             -> ds_tent_b
+  Tires_001                            -> ds_tires
+  Tower_003                            -> ds_tower
+
+Procedural (made in code for Nitrovenant 2, (c) 2026 Lipy Games)
+  ct_hz_a, ct_hz_b, ct_ruin_a, ct_ruin_b, ct_ruin_c, ct_ruin_d, ct_trk_cone, ct_trk_curb, ct_trk_delineator,
+  ct_trk_guardrail, ct_trk_jersey, ct_trk_lamppost, ct_trk_sign_chevron, ct_trk_sign_noentry, ct_trk_sign_warning,
+  ct_trk_sign_zombie, ds_hz_a, ds_hz_b, ds_trk_cone, ds_trk_curb, ds_trk_delineator, ds_trk_guardrail, ds_trk_jersey,
+  ds_trk_lamppost, ds_trk_sign_chevron, ds_trk_sign_noentry, ds_trk_sign_warning, ds_trk_sign_zombie, hl_hz_a,
+  hl_hz_b, hl_trk_cone, hl_trk_curb, hl_trk_delineator, hl_trk_guardrail, hl_trk_jersey, hl_trk_lamppost,
+  hl_trk_sign_chevron, hl_trk_sign_noentry, hl_trk_sign_warning, hl_trk_sign_zombie, rn_hz_a, rn_hz_b, rn_trk_cone,
+  rn_trk_curb, rn_trk_delineator, rn_trk_guardrail, rn_trk_jersey, rn_trk_lamppost, rn_trk_sign_chevron,
+  rn_trk_sign_noentry, rn_trk_sign_warning, rn_trk_sign_zombie, sn_barn, sn_hay, sn_hz_a, sn_hz_b, sn_trk_cone,
+  sn_trk_curb, sn_trk_delineator, sn_trk_guardrail, sn_trk_jersey, sn_trk_lamppost, sn_trk_sign_chevron,
+  sn_trk_sign_noentry, sn_trk_sign_warning, sn_trk_sign_zombie, sn_windmill, sw_hz_a, sw_hz_b, sw_trk_cone,
+  sw_trk_curb, sw_trk_delineator, sw_trk_guardrail, sw_trk_jersey, sw_trk_lamppost, sw_trk_sign_chevron,
+  sw_trk_sign_noentry, sw_trk_sign_warning, sw_trk_sign_zombie
+
+==== User interface, fonts, icons and effects ====
+
+UI Pack (2.0) by Kenney (www.kenney.nl) — CC0 1.0 Universal (public domain)
+  https://creativecommons.org/publicdomain/zero/1.0/
+  Used for: assets/ui/*.png (recolored and outlined)
+
+Particle Pack by Kenney (www.kenney.nl) — CC0 1.0 Universal (public domain)
+  Used for: assets/fx/fx_atlas_white.png
+
+Smoke Particles by Kenney (www.kenney.nl) — CC0 1.0 Universal (public domain)
+  Used for: assets/fx/fx_atlas.png
+
+Racing Sans One — SIL Open Font License, Version 1.1 (https://openfontlicense.org)
+  Copyright (c) 2012, Pablo Impallari (www.impallari.com|impallari@gmail.com),Rodrigo Fuenzalida (www.rfuenzalida.com|hello@rfuenzalida.com), with Reserved Font Name Racing Sans. This Font Software is licensed under the SIL Open Font License, Version 1.1.
+  Used for: assets/fonts/racing-sans-one-latin.woff2 (subset) and the game logo (assets/ui/logo_nv2*)
+  Full license: assets/fonts/OFL-RacingSansOne.txt
+
+Lilita One — SIL Open Font License, Version 1.1 (https://openfontlicense.org)
+  Copyright (c) 2011 Juan Montoreano (juan@remolacha.biz), with Reserved Font Name Lilita
+  Used for: assets/fonts/lilita-one-latin.woff2 (subset)
+  Full license: assets/fonts/OFL-LilitaOne.txt
+
+(only if the Hindi / Japanese / Arabic fonts are shipped)
+Noto Sans Devanagari — SIL Open Font License, Version 1.1
+  Copyright 2022 The Noto Project Authors (https://github.com/notofonts/devanagari) This Font Software is licensed under the SIL Open Font License, Version 1.1.
+Noto Sans JP — SIL Open Font License, Version 1.1
+  Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source' This Font Software is licensed under the SIL Open Font License, Version 1.1.
+Noto Sans Arabic — SIL Open Font License, Version 1.1
+  Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic) This Font Software is licensed under the SIL Open Font License, Version 1.1.
+
+Icons in this folder (assets/icons/*.svg and assets/icons/cream/*.svg) are from game-icons.net
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+https://creativecommons.org/licenses/by/3.0/
+Source repository: https://github.com/game-icons/icons
+
+All icons were modified: recolored and given an outer outline (stroke).
+
+missile.svg
+  original: "rocket" by Lorc
+  source: https://game-icons.net/1x1/lorc/rocket.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/rocket.svg
+  modified: recolored / outline
+nitro.svg
+  original: "flame" by Carl Olsen
+  source: https://game-icons.net/1x1/carl-olsen/flame.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/carl-olsen/flame.svg
+  modified: recolored / outline
+fuel.svg
+  original: "jerrycan" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/jerrycan.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/jerrycan.svg
+  modified: recolored / outline
+shield.svg
+  original: "shield" by Sbed
+  source: https://game-icons.net/1x1/sbed/shield.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/sbed/shield.svg
+  modified: recolored / outline
+explosion.svg
+  original: "spiky-explosion" by Lorc
+  source: https://game-icons.net/1x1/lorc/spiky-explosion.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/spiky-explosion.svg
+  modified: recolored / outline
+coin.svg
+  original: "two-coins" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/two-coins.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/two-coins.svg
+  modified: recolored / outline
+wrench.svg
+  original: "spanner" by Lorc
+  source: https://game-icons.net/1x1/lorc/spanner.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/spanner.svg
+  modified: recolored / outline
+tire.svg
+  original: "car-wheel" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/car-wheel.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/car-wheel.svg
+  modified: recolored / outline
+boss.svg
+  original: "crowned-skull" by Lorc
+  source: https://game-icons.net/1x1/lorc/crowned-skull.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/crowned-skull.svg
+  modified: recolored / outline
+zombie.svg
+  original: "shambling-zombie" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/shambling-zombie.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/shambling-zombie.svg
+  modified: recolored / outline
+parachute.svg
+  original: "parachute" by Lorc
+  source: https://game-icons.net/1x1/lorc/parachute.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/parachute.svg
+  modified: recolored / outline
+star.svg
+  original: "round-star" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/round-star.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/round-star.svg
+  modified: recolored / outline
+trophy.svg
+  original: "trophy" by Lorc
+  source: https://game-icons.net/1x1/lorc/trophy.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/trophy.svg
+  modified: recolored / outline
+medal.svg
+  original: "medal" by Lorc
+  source: https://game-icons.net/1x1/lorc/medal.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/medal.svg
+  modified: recolored / outline
+target.svg
+  original: "archery-target" by Lorc
+  source: https://game-icons.net/1x1/lorc/archery-target.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/archery-target.svg
+  modified: recolored / outline
+calendar.svg
+  original: "calendar" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/calendar.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/calendar.svg
+  modified: recolored / outline
+gift.svg
+  original: "present" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/present.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/present.svg
+  modified: recolored / outline
+settings.svg
+  original: "cog" by Lorc
+  source: https://game-icons.net/1x1/lorc/cog.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/cog.svg
+  modified: recolored / outline
+pause.svg
+  original: "pause-button" by Guard13007
+  source: https://game-icons.net/1x1/guard13007/pause-button.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/guard13007/pause-button.svg
+  modified: recolored / outline
+play.svg
+  original: "play-button" by Guard13007
+  source: https://game-icons.net/1x1/guard13007/play-button.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/guard13007/play-button.svg
+  modified: recolored / outline
+sound.svg
+  original: "speaker" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/speaker.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/speaker.svg
+  modified: recolored / outline
+sound_off.svg
+  original: "speaker-off" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/speaker-off.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/speaker-off.svg
+  modified: recolored / outline
+music.svg
+  original: "musical-notes" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/musical-notes.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/musical-notes.svg
+  modified: recolored / outline
+home.svg
+  original: "house" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/house.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/house.svg
+  modified: recolored / outline
+replay.svg
+  original: "anticlockwise-rotation" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/anticlockwise-rotation.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/anticlockwise-rotation.svg
+  modified: recolored / outline
+lock.svg
+  original: "padlock" by Lorc
+  source: https://game-icons.net/1x1/lorc/padlock.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/padlock.svg
+  modified: recolored / outline
+bolt.svg
+  original: "electric" by Sbed
+  source: https://game-icons.net/1x1/sbed/electric.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/sbed/electric.svg
+  modified: recolored / outline
+heart.svg
+  original: "hearts" by Skoll
+  source: https://game-icons.net/1x1/skoll/hearts.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/skoll/hearts.svg
+  modified: recolored / outline
+paint.svg
+  original: "large-paint-brush" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/large-paint-brush.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/large-paint-brush.svg
+  modified: recolored / outline
+
+------------------------------------------------------------------------------
+fonts/OFL-LilitaOne.txt
+------------------------------------------------------------------------------
+Copyright (c) 2011 Juan Montoreano (juan@remolacha.biz), 
+with Reserved Font Name Lilita
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+------------------------------------------------------------------------------
+fonts/OFL-NotoSans.txt
+------------------------------------------------------------------------------
+Copyright 2022 The Noto Project Authors (https://github.com/notofonts/devanagari)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+https://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+------------------------------------------------------------------------------
+fonts/OFL-RacingSansOne.txt
+------------------------------------------------------------------------------
+Copyright (c) 2012, Pablo Impallari (www.impallari.com|impallari@gmail.com),Rodrigo Fuenzalida (www.rfuenzalida.com|hello@rfuenzalida.com), with Reserved Font Name Racing Sans.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+------------------------------------------------------------------------------
+icons/LICENSE-game-icons.txt
+------------------------------------------------------------------------------
+Icons in this folder (assets/icons/*.svg and assets/icons/cream/*.svg) are from game-icons.net
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+https://creativecommons.org/licenses/by/3.0/
+Source repository: https://github.com/game-icons/icons
+
+All icons were modified: recolored and given an outer outline (stroke).
+
+missile.svg
+  original: "rocket" by Lorc
+  source: https://game-icons.net/1x1/lorc/rocket.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/rocket.svg
+  modified: recolored / outline
+nitro.svg
+  original: "flame" by Carl Olsen
+  source: https://game-icons.net/1x1/carl-olsen/flame.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/carl-olsen/flame.svg
+  modified: recolored / outline
+fuel.svg
+  original: "jerrycan" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/jerrycan.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/jerrycan.svg
+  modified: recolored / outline
+shield.svg
+  original: "shield" by Sbed
+  source: https://game-icons.net/1x1/sbed/shield.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/sbed/shield.svg
+  modified: recolored / outline
+explosion.svg
+  original: "spiky-explosion" by Lorc
+  source: https://game-icons.net/1x1/lorc/spiky-explosion.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/spiky-explosion.svg
+  modified: recolored / outline
+coin.svg
+  original: "two-coins" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/two-coins.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/two-coins.svg
+  modified: recolored / outline
+wrench.svg
+  original: "spanner" by Lorc
+  source: https://game-icons.net/1x1/lorc/spanner.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/spanner.svg
+  modified: recolored / outline
+tire.svg
+  original: "car-wheel" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/car-wheel.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/car-wheel.svg
+  modified: recolored / outline
+boss.svg
+  original: "crowned-skull" by Lorc
+  source: https://game-icons.net/1x1/lorc/crowned-skull.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/crowned-skull.svg
+  modified: recolored / outline
+zombie.svg
+  original: "shambling-zombie" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/shambling-zombie.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/shambling-zombie.svg
+  modified: recolored / outline
+parachute.svg
+  original: "parachute" by Lorc
+  source: https://game-icons.net/1x1/lorc/parachute.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/parachute.svg
+  modified: recolored / outline
+star.svg
+  original: "round-star" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/round-star.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/round-star.svg
+  modified: recolored / outline
+trophy.svg
+  original: "trophy" by Lorc
+  source: https://game-icons.net/1x1/lorc/trophy.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/trophy.svg
+  modified: recolored / outline
+medal.svg
+  original: "medal" by Lorc
+  source: https://game-icons.net/1x1/lorc/medal.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/medal.svg
+  modified: recolored / outline
+target.svg
+  original: "archery-target" by Lorc
+  source: https://game-icons.net/1x1/lorc/archery-target.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/archery-target.svg
+  modified: recolored / outline
+calendar.svg
+  original: "calendar" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/calendar.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/calendar.svg
+  modified: recolored / outline
+gift.svg
+  original: "present" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/present.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/present.svg
+  modified: recolored / outline
+settings.svg
+  original: "cog" by Lorc
+  source: https://game-icons.net/1x1/lorc/cog.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/cog.svg
+  modified: recolored / outline
+pause.svg
+  original: "pause-button" by Guard13007
+  source: https://game-icons.net/1x1/guard13007/pause-button.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/guard13007/pause-button.svg
+  modified: recolored / outline
+play.svg
+  original: "play-button" by Guard13007
+  source: https://game-icons.net/1x1/guard13007/play-button.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/guard13007/play-button.svg
+  modified: recolored / outline
+sound.svg
+  original: "speaker" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/speaker.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/speaker.svg
+  modified: recolored / outline
+sound_off.svg
+  original: "speaker-off" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/speaker-off.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/speaker-off.svg
+  modified: recolored / outline
+music.svg
+  original: "musical-notes" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/musical-notes.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/musical-notes.svg
+  modified: recolored / outline
+home.svg
+  original: "house" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/house.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/house.svg
+  modified: recolored / outline
+replay.svg
+  original: "anticlockwise-rotation" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/anticlockwise-rotation.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/anticlockwise-rotation.svg
+  modified: recolored / outline
+lock.svg
+  original: "padlock" by Lorc
+  source: https://game-icons.net/1x1/lorc/padlock.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/lorc/padlock.svg
+  modified: recolored / outline
+bolt.svg
+  original: "electric" by Sbed
+  source: https://game-icons.net/1x1/sbed/electric.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/sbed/electric.svg
+  modified: recolored / outline
+heart.svg
+  original: "hearts" by Skoll
+  source: https://game-icons.net/1x1/skoll/hearts.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/skoll/hearts.svg
+  modified: recolored / outline
+paint.svg
+  original: "large-paint-brush" by Delapouite
+  source: https://game-icons.net/1x1/delapouite/large-paint-brush.html
+  file: https://raw.githubusercontent.com/game-icons/icons/master/delapouite/large-paint-brush.svg
+  modified: recolored / outline
+
+------------------------------------------------------------------------------
+models/LICENSES-3D.txt
+------------------------------------------------------------------------------
+NITROVENANT 2 - 3D models (characters, cars, launcher, items): origin and license
+=============================================================================
+
+All files below were rebuilt by Lipy Games from the source packs listed here (recoloured, reduced, re-rigged parts
+merged, combined with parts modelled in code). None of the source packs is redistributed as loose files.
+
+Licenses of the source packs
+----------------------------
+[CC0]      Kenney "Car Kit"                       - kenney.nl - Creative Commons Zero (public domain).
+[CC0]      Quaternius "Zombie Apocalypse Kit"     - quaternius.com - Creative Commons Zero (public domain).
+[CC0]      Quaternius "Turret Pack"               - quaternius.com - Creative Commons Zero (public domain).
+[ITHAPPY]  ithappy free packs: "Creative Characters FREE", "Weapons FREE", "Apocalypse FREE", "Military FREE",
+           "Inferno World FREE", "Cartoon City FREE" - ithappy Free Asset Usage Policy: commercial use allowed,
+           attribution not required, the original files may not be resold or redistributed on their own.
+[CODE]     Parts modelled in code by Lipy Games (tools/assets3d) - property of Lipy Games.
+
+Per file (assets/models/...)
+----------------------------
+chars/zombie_walker.glb    Quaternius Zombie_Basic + Zombie_Atlas [CC0]; cap and badge [CODE]
+chars/zombie_runner.glb    Quaternius Zombie_Basic [CC0]; hard hat and reflective stripes [CODE]
+chars/zombie_thrower.glb   Quaternius Zombie_Basic [CC0]; wrench and rag [CODE]
+chars/zombie_bomber.glb    Quaternius Zombie_Basic [CC0]; dynamite vest and detonator [CODE]
+chars/zombie_small.glb     Quaternius Zombie_Basic [CC0]
+chars/zombie_bruiser.glb   Quaternius Zombie_Chubby [CC0]; suspenders [CODE]
+chars/boss_guarda.glb      ithappy Creative Characters (body, face, hair, moustache, t-shirt, pants, sneakers, gloves,
+                           animations) [ITHAPPY]; baton = ithappy Weapons baseball_bat_001 [ITHAPPY];
+                           shield = ithappy Apocalypse Signs_Shield [ITHAPPY]; cap [CODE]
+chars/boss_pit.glb         ithappy Creative Characters (outerwear, pants, headphones, gloves...) [ITHAPPY];
+                           tyre = ithappy Military Tire_001 [ITHAPPY]
+chars/boss_piloto.glb      ithappy Creative Characters (helmet Hat_057, jacket, gloves...) [ITHAPPY]; steering wheel [CODE]
+chars/boss_mecanico.glb    ithappy Creative Characters [ITHAPPY]; torch = ithappy Apocalypse Gas_Burner [ITHAPPY];
+                           giant wrench, cap, overall details [CODE]
+chars/guide_milo.glb       ithappy Creative Characters [ITHAPPY]; cap, overall details [CODE]
+chars/milo_portrait.png    rendered from chars/guide_milo.glb
+cars/car_rook.glb          Kenney sedan [CC0]; armour = ithappy Apocalypse_Car armour pieces + spare tyre [ITHAPPY]
+cars/car_milo.glb          Kenney hatchback-sports [CC0]; armour as above [ITHAPPY]
+cars/car_vela.glb          Kenney sedan-sports [CC0]; armour as above [ITHAPPY]
+cars/car_stride.glb        Kenney suv [CC0]; armour as above [ITHAPPY]
+cars/car_nomad.glb         ithappy Apocalypse_Car with its own armour and supplies [ITHAPPY]
+cars/car_titan.glb         Quaternius Vehicle_Pickup [CC0]; armour = ithappy Apocalypse_Car pieces [ITHAPPY]
+cars/car_fury.glb          Quaternius Vehicle_Sports + armour parts of Vehicle_Sports_Armored [CC0]
+cars/car_velocity.glb      Kenney race-future [CC0]; armour as car_rook [ITHAPPY]
+cars/car_vortex.glb        Kenney race [CC0]; armour as car_rook [ITHAPPY]
+cars/car_sentinel.glb      Kenney suv-luxury [CC0]; armour as car_rook [ITHAPPY]
+cars/car_overlord.glb      Quaternius Vehicle_Truck + armour parts of Vehicle_Truck_Armored [CC0]
+cars/car_golden.glb        ithappy Cartoon City Futuristic_Car_1 (gold paint) [ITHAPPY]; armour as car_rook [ITHAPPY]
+cars/wreck_police.glb      Kenney police [CC0] (darkened, dented)
+cars/wreck_taxi.glb        Kenney taxi [CC0] (darkened, dented)
+cars/wreck_van.glb         Kenney van [CC0] (darkened, dented)
+cars/wreck_delivery.glb    Kenney delivery [CC0] (darkened, dented)
+cars/wreck_ambulance.glb   Kenney ambulance [CC0] (darkened, dented)
+cars/wreck_city.glb        ithappy Cartoon City Car_06 [ITHAPPY] (darkened, dented)
+cars/launcher_frame.glb    Quaternius Turret Pack Bomber_1 head (repainted) [CC0]; mounting plate and ammo box [CODE]
+cars/launcher_missile.glb  [CODE]
+cars/launcher_mg.glb       ithappy Military Machine_gun_004 (without the tripod) [ITHAPPY]
+items/item_coin.glb        ithappy Inferno GoldPileSmall_001 [ITHAPPY]
+items/item_nos.glb         ithappy Apocalypse Fuel_Canister (repainted) [ITHAPPY]; stripe and bolt [CODE]
+items/item_repair.glb      ithappy Apocalypse First_Aid (repainted) [ITHAPPY]; cross [CODE]
+items/item_multi.glb       ithappy Military Box_005 [ITHAPPY]; mini missiles [CODE]
+items/item_damage.glb      ithappy Inferno Gear_001 (repainted) [ITHAPPY]
+items/item_weak.glb        padlock [CODE]
+items/item_minus.glb       ithappy Military Box_005 (repainted) [ITHAPPY]; minus sign [CODE]
+items/item_spike.glb       ithappy Military Hedgehog_001 (repainted) [ITHAPPY]
+items/item_leak.glb        ithappy Apocalypse Fuel_Canister (repainted) [ITHAPPY]; puddle and hole [CODE]
+items/item_loss.glb        Quaternius TrashBag_1 (repainted) [CC0] + ithappy Inferno Coin_001 [ITHAPPY]
+items/item_ally_crate.glb  ithappy Military Box_003 [ITHAPPY]; parachute [CODE]
+items/item_barrel.glb      Quaternius Barrel (repainted) [CC0]; hazard band [CODE]
+items/survivor_lis.glb     Quaternius Characters_Lis (without weapons) [CC0]
+items/survivor_matt.glb    Quaternius Characters_Matt (without weapons) [CC0]
+items/survivor_sam.glb     Quaternius Characters_Sam (without weapons) [CC0]
+items/survivor_shaun.glb   Quaternius Characters_Shaun (without weapons) [CC0]

@@ -79,15 +79,16 @@
     btn.addEventListener('contextmenu', function (e) { e.preventDefault(); });
   }
 
-  /* ---------------- garagem 3D (mesma montagem do jogo) ---------------- */
+  /* ---------------- garagem 3D (os modelos do Nitrovenant 2: GLB do jogo, com meshopt) ---------------- */
+  // cor = cor da lataria do jogo (material "paint" do GLB; no jogo ela vem do código, src/game/engine.js CARS)
   var CARROS = {
-    rook: { nome: 'Rook', classe: L.t('Compacto'), n: 1, preco: L.t('O primeiro da garagem'), desc: L.t('Pequeno, valente e o ponto de partida de toda corrida.'), lanc: { y: 0.415, z: -0.083 } },
-    fury: { nome: 'Fury', classe: L.t('Muscle'), n: 7, preco: L.t('{n} créditos', { n: L.numero(95000) }), desc: L.t('Motor grande, paciência pequena. Feito para abrir caminho.'), lanc: { y: 0.341, z: -0.083 } },
-    velocity: { nome: 'Velocity', classe: L.t('Elétrico'), n: 8, preco: L.t('{n} créditos', { n: L.numero(155000) }), desc: L.t('Silencioso, rápido e com o lançador sempre carregado.'), lanc: { y: 0.334, z: -0.083 } },
-    vortex: { nome: 'Vortex', classe: L.t('Super'), n: 9, preco: L.t('{n} créditos', { n: L.numero(240000) }), desc: L.t('Baixo, largo e feito para cortar a horda ao meio.'), lanc: { y: 0.305, z: -0.021 } },
-    overlord: { nome: 'Overlord', classe: L.t('Caminhão'), n: 11, preco: L.t('{n} créditos', { n: L.numero(540000) }), desc: L.t('Quando a horda vê o Overlord, é ela que troca de faixa.'), lanc: { y: 0.422, z: 0 } },
-    golden: { nome: 'Golden', classe: L.t('Ultimate'), n: 12, preco: L.t('Compra única'), desc: L.t('Dourado, raro e o topo da garagem.'), lanc: { y: 0.315, z: -0.083 } },
-    moto: { nome: 'Blade', classe: L.t('Moto'), n: 13, preco: L.t('Compra única'), desc: L.t('Troca couraça por força bruta. O lançador já vem no corpo.'), lanc: null }
+    rook: { nome: 'Rook', classe: L.t('Compacto'), n: 1, cor: 0xe8eaec, preco: L.t('O primeiro da garagem'), desc: L.t('Pequeno, valente e o ponto de partida de toda corrida.') },
+    nomad: { nome: 'Nomad', classe: L.t('Off-road'), n: 5, cor: 0x6d7a4a, preco: L.t('{n} créditos', { n: L.numero(30000) }), desc: L.t('Alto, robusto e pronto para a estrada de terra.') },
+    fury: { nome: 'Fury', classe: L.t('Muscle'), n: 7, cor: 0xd32c2c, preco: L.t('{n} créditos', { n: L.numero(95000) }), desc: L.t('Motor grande, paciência pequena. Feito para abrir caminho.') },
+    velocity: { nome: 'Velocity', classe: L.t('Elétrico'), n: 8, cor: 0x1a1d21, preco: L.t('{n} créditos', { n: L.numero(155000) }), desc: L.t('Silencioso, rápido e com o lançador sempre carregado.') },
+    vortex: { nome: 'Vortex', classe: L.t('Super'), n: 9, cor: 0xf2c313, preco: L.t('{n} créditos', { n: L.numero(240000) }), desc: L.t('Baixo, largo e feito para cortar a horda ao meio.') },
+    overlord: { nome: 'Overlord', classe: L.t('Caminhão'), n: 11, cor: 0x232629, preco: L.t('{n} créditos', { n: L.numero(540000) }), desc: L.t('Quando a horda vê o Overlord, é ela que troca de faixa.') },
+    golden: { nome: 'Golden', classe: L.t('Ultimate'), n: 12, cor: 0xe0a92a, preco: L.t('{n} créditos', { n: L.numero(800000) }), desc: L.t('Dourado, raro e o topo da garagem.') }
   };
   var gar = $('#garagem'), view = $('[data-garagem]');
   if (gar && view) {
@@ -99,7 +100,7 @@
 
     function mostraInfo(k) {
       var c = CARROS[k];
-      info.n.textContent = L.t('Nº {n} / 13', { n: ('0' + c.n).slice(-2) });
+      info.n.textContent = L.t('Nº {n} / 12', { n: ('0' + c.n).slice(-2) });
       info.nome.textContent = c.nome;
       info.classe.textContent = c.classe;
       info.preco.textContent = c.preco;
@@ -128,8 +129,10 @@
       if (pronto) return pronto;
       load.hidden = false;
       pronto = carrega(L.base + 'assets/vendor/three.min.js').then(function () {
+        return carrega(L.base + 'assets/vendor/meshopt.min.js');
+      }).then(function () { return window.MeshoptDecoder && window.MeshoptDecoder.ready; }).then(function () {
         T = window.THREE;
-        if (!T || !T.GLTFLoader) throw new Error('three');
+        if (!T || !T.GLTFLoader || !window.MeshoptDecoder) throw new Error('three');
         renderer = new T.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
         renderer.outputColorSpace = T.SRGBColorSpace;
@@ -174,23 +177,33 @@
         delete window.NV_MODEL_DATA[nome];
         var bin = atob(data.model), buf = new Uint8Array(bin.length);
         for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
-        return new Promise(function (res, rej) { new T.GLTFLoader().parse(buf.buffer, '', res, rej); });
+        return new Promise(function (res, rej) { var ld = new T.GLTFLoader(); ld.setMeshoptDecoder(window.MeshoptDecoder); ld.parse(buf.buffer, '', res, rej); });
       }).then(function (gltf) {
-        var root = gltf.scene, box = new T.Box3().setFromObject(root), dim = box.getSize(new T.Vector3()), s;
-        var peca = nome === 'lancador';
+        var root = gltf.scene, peca = nome === 'lancador', teto = null;
+        // blindagem (armor_1..3) só aparece no jogo com a melhoria comprada; o ponto do lançador é o mount_roof
+        var fora = [];
+        root.traverse(function (o) { if (/^armor_/i.test(o.name)) fora.push(o); if (/mount_roof/i.test(o.name)) teto = o; });
+        fora.forEach(function (o) { o.parent && o.parent.remove(o); });
+        root.updateMatrixWorld(true);
+        var tp = teto ? teto.getWorldPosition(new T.Vector3()) : null; // antes da escala (getWorldPosition recalcula a matriz)
+        var box = new T.Box3().setFromObject(root), dim = box.getSize(new T.Vector3()), s;
         if (peca) { s = 1 / Math.max(dim.x, dim.y, dim.z, 1e-6); var c = box.getCenter(new T.Vector3()); root.scale.setScalar(s); root.position.copy(c).multiplyScalar(-s); }
         else { s = 1 / Math.max(dim.x, dim.z, 1e-6); root.scale.setScalar(s); root.position.set(-(box.min.x + box.max.x) / 2 * s, -box.min.y * s, -(box.min.z + box.max.z) / 2 * s); }
         root.traverse(function (o) {
           if (!o.isMesh) return;
-          var src = [].concat(o.material)[0], map = src && src.map || null;
-          o.material = new T.MeshStandardMaterial({ map: map, normalMap: src && src.normalMap || null, color: src && src.color ? src.color.clone() : 0xffffff, roughness: 0.38, metalness: 0.32, envMapIntensity: 1.1, emissiveMap: map, emissive: new T.Color(0.08, 0.08, 0.08) });
+          var src = [].concat(o.material)[0], map = src && src.map || null, cfg0 = CARROS[nome];
+          var tinta = src && /paint/i.test(src.name) && cfg0 ? new T.Color(cfg0.cor) : (src && src.color ? src.color.clone() : new T.Color(0xffffff));
+          o.material = new T.MeshStandardMaterial({ map: map, color: tinta, roughness: 0.5, metalness: 0.15, envMapIntensity: 1, emissiveMap: map, emissive: new T.Color(0.06, 0.06, 0.06) });
         });
         var g = new T.Group();
-        if (!peca) g.rotation.y = Math.PI; // os carros olham para -Z no arquivo (yaw do manifesto do jogo)
+        g.rotation.y = Math.PI; // os carros olham para -Z no arquivo (frente −Z, manifesto do jogo)
         g.add(root);
-        if (peca) { lancador = g; cache[nome] = g; return g; }
-        var cfg = CARROS[nome];
-        if (cfg.lanc && lancador) { var l = lancador.clone(true); l.position.set(0, cfg.lanc.y, cfg.lanc.z); l.scale.setScalar(0.4); g.add(l); }
+        if (peca) { g.rotation.y = 0; lancador = g; cache[nome] = g; return g; }
+        if (tp && lancador) {
+          // lançador no ponto do teto, na mesma escala do carro (o tamanho dele vem do maior lado do lançador)
+          var pt = tp.clone().multiplyScalar(s);
+          var l = lancador.clone(true); l.position.set(pt.x + root.position.x, pt.y + root.position.y + 0.05, pt.z + root.position.z); l.scale.setScalar(0.32); root.parent.add(l);
+        }
         cache[nome] = g;
         return g;
       });
