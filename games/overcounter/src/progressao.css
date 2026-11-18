@@ -1,0 +1,90 @@
+/* PROGRESSAO (B2): aviso de nivel no combate, bloco de XP no fim, Arsenal. Estilo A "Vidro Neon": tudo pelos
+   tokens --oc-* de interface.css (os valores depois da virgula sao os mesmos do estilo A, so para quando a folha
+   da Interface ainda nao estiver carregada). */
+#progAviso {
+  position: fixed; left: 50%; top: 13%; z-index: 60; pointer-events: none;
+  transform: translate(-50%, -14px) skewX(var(--oc-inclina, -8deg)); opacity: 0;
+  padding: 8px 26px 9px; min-width: 260px; text-align: center;
+  background: var(--oc-vidro-forte, rgba(8, 12, 38, 0.72));
+  backdrop-filter: blur(var(--oc-blur, 14px)); -webkit-backdrop-filter: blur(var(--oc-blur, 14px));
+  border-top: 2px solid var(--oc-borda-sup, #2ee6ff); border-bottom: 2px solid var(--oc-borda-inf, #8a3dff);
+  clip-path: polygon(var(--oc-corte, 12px) 0, 100% 0, 100% calc(100% - var(--oc-corte, 12px)), calc(100% - var(--oc-corte, 12px)) 100%, 0 100%, 0 var(--oc-corte, 12px));
+  color: var(--oc-texto, #f2fbff); text-shadow: var(--oc-sombra-texto, 0 1px 2px rgba(3, 6, 24, 0.9));
+  transition: opacity 0.22s, transform 0.22s;
+}
+#progAviso.on { opacity: 1; transform: translate(-50%, 0) skewX(var(--oc-inclina, -8deg)); }
+#progAviso > div { transform: skewX(calc(-1 * var(--oc-inclina, -8deg))); }
+#progAviso .pgAvT { font: var(--oc-titulo-estilo, italic) var(--oc-titulo-peso, 700) 17px var(--oc-fonte-titulo, 'OC Chakra', sans-serif); letter-spacing: var(--oc-titulo-espaco, 0.06em); }
+#progAviso .pgAvT b { color: var(--oc-acento, #2ee6ff); }
+#progAviso .pgAvS { font: 600 14px var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); color: var(--oc-texto-suave, rgba(214, 238, 255, 0.72)); margin-top: 1px; }
+#progAviso.grande { padding: 11px 34px 12px; box-shadow: var(--oc-brilho, 0 0 12px rgba(46, 230, 255, 0.55)); }
+#progAviso.grande .pgAvT { font-size: 24px; }
+#progAviso.grande .pgAvT b { color: var(--oc-amarelo, #ffe14a); }
+
+/* ---------- bloco do fim ---------- */
+#progFim {
+  margin: 4px auto 12px; max-width: 620px; text-align: start;
+  background: var(--oc-vidro, rgba(9, 14, 44, 0.46));
+  border-top: 1px solid var(--oc-borda-sup, #2ee6ff); border-bottom: 1px solid var(--oc-borda-inf, #8a3dff);
+  clip-path: polygon(var(--oc-corte, 12px) 0, 100% 0, 100% calc(100% - var(--oc-corte, 12px)), calc(100% - var(--oc-corte, 12px)) 100%, 0 100%, 0 var(--oc-corte, 12px));
+  padding: 10px 16px 10px; color: var(--oc-texto, #f2fbff); font-family: var(--oc-fonte-texto, 'OC Rajdhani', sans-serif);
+}
+.pgCab { display: flex; align-items: center; gap: 12px; }
+.pgNv { display: flex; flex-direction: column; align-items: center; min-width: 58px; transform: skewX(var(--oc-inclina, -8deg)); }
+.pgNv span { font: 600 11px var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); letter-spacing: 0.18em; color: var(--oc-texto-suave, rgba(214, 238, 255, 0.72)); }
+.pgNv b { font: var(--oc-titulo-estilo, italic) 700 30px/1 var(--oc-fonte-num, 'OC Chakra', sans-serif); color: var(--oc-num, #f2fbff); text-shadow: var(--oc-brilho, 0 0 12px rgba(46, 230, 255, 0.55)); }
+.pgNv.pulso b { animation: pgPulso 0.6s ease-out; }
+@keyframes pgPulso { 0% { transform: scale(1.7); color: var(--oc-amarelo, #ffe14a); } 100% { transform: scale(1); } }
+.pgBarra { position: relative; flex: 1; height: 16px; background: var(--oc-vidro-claro, rgba(160, 220, 255, 0.10)); border: 1px solid var(--oc-linha, rgba(150, 225, 255, 0.22)); transform: skewX(var(--oc-inclina, -8deg)); overflow: hidden; }
+.pgEnche { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--oc-botao-bg, linear-gradient(100deg, #ff2bd6 0%, #8a3dff 55%, #2ee6ff 100%)); box-shadow: var(--oc-brilho, 0 0 12px rgba(46, 230, 255, 0.55)); }
+.pgBarraNum { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 700 12px var(--oc-fonte-num, 'OC Chakra', sans-serif); color: var(--oc-texto, #f2fbff); text-shadow: var(--oc-sombra-texto, 0 1px 2px rgba(3, 6, 24, 0.9)); transform: skewX(calc(-1 * var(--oc-inclina, -8deg))); }
+.pgTotal { display: flex; flex-direction: column; align-items: flex-end; min-width: 86px; }
+.pgTotal span { font: 600 11px var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); letter-spacing: 0.14em; color: var(--oc-texto-suave, rgba(214, 238, 255, 0.72)); }
+.pgTotal b { font: var(--oc-titulo-estilo, italic) 700 24px/1 var(--oc-fonte-num, 'OC Chakra', sans-serif); color: var(--oc-acento, #2ee6ff); }
+.pgLinhas { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; margin: 8px 0 2px; }
+.pgLinha { display: flex; justify-content: space-between; font: 600 14px/1.55 var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); border-bottom: 1px solid var(--oc-linha, rgba(150, 225, 255, 0.22)); opacity: 0; animation: pgEntra 0.25s ease-out forwards; }
+.pgLinha span { color: var(--oc-texto-suave, rgba(214, 238, 255, 0.72)); }
+.pgLinha b { font-family: var(--oc-fonte-num, 'OC Chakra', sans-serif); color: var(--oc-texto, #f2fbff); }
+.pgLinha.dobro b, .pgLinha.dobro span { color: var(--oc-amarelo, #ffe14a); }
+@keyframes pgEntra { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+.pgSubiu { margin: 8px 0 2px; padding: 6px 10px; border-left: 3px solid var(--oc-amarelo, #ffe14a); background: linear-gradient(90deg, rgba(255, 225, 74, 0.14), transparent); animation: pgEntra 0.3s 0.4s ease-out both; }
+.pgSubiuArma { border-left-color: var(--oc-acento, #2ee6ff); background: linear-gradient(90deg, rgba(46, 230, 255, 0.12), transparent); }
+.pgSubiuT { font: var(--oc-titulo-estilo, italic) 700 18px var(--oc-fonte-titulo, 'OC Chakra', sans-serif); letter-spacing: var(--oc-titulo-espaco, 0.06em); }
+.pgSubiuT b { color: var(--oc-amarelo, #ffe14a); }
+.pgDes { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 3px; font: 600 14px var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); }
+.pgDesR { font-size: 11px; letter-spacing: 0.16em; color: var(--oc-acento-2, #ff2bd6); }
+.pgDesI { display: inline-flex; align-items: center; gap: 6px; }
+.pgMini { display: inline-block; width: 20px; height: 20px; background-size: cover; border: 1px solid var(--oc-linha, rgba(150, 225, 255, 0.22)); transform: skewX(var(--oc-inclina, -8deg)); font-style: normal; }
+.pgMiniTxt { display: inline-flex; align-items: center; justify-content: center; font-size: 13px; color: var(--oc-acento, #2ee6ff); }
+.pgRodape { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; }
+.pgProx { font: 600 14px var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); color: var(--oc-texto, #f2fbff); }
+.pgProxR { font-size: 11px; letter-spacing: 0.16em; color: var(--oc-acento, #2ee6ff); margin-inline-end: 4px; }
+.pgCol { display: flex; align-items: center; gap: 10px; white-space: nowrap; font: 600 13px var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); color: var(--oc-texto-suave, rgba(214, 238, 255, 0.72)); }
+.pgCol .btn, #pgBtnPausa { margin: 0; padding: 6px 14px; font-size: 13px; }
+
+/* ---------- ARSENAL ---------- */
+#progArsenal { z-index: 70; }
+.pgArsJanela { width: min(880px, 94vw); max-height: 92vh; overflow-y: auto; text-align: start; }
+.pgArsTopo { display: flex; align-items: center; gap: 18px; }
+.pgArsTopo h2 { margin: 0; font: var(--oc-titulo-estilo, italic) 700 26px var(--oc-fonte-titulo, 'OC Chakra', sans-serif); letter-spacing: var(--oc-titulo-espaco, 0.06em); }
+.pgArsTopo .pgCab { flex: 1; }
+.pgArsProx { margin: 8px 0 12px; }
+.pgAbas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.pgAba, .pgAcc, .pgPin { cursor: pointer; color: var(--oc-texto, #f2fbff); background: var(--oc-vidro, rgba(9, 14, 44, 0.46)); border: 1px solid var(--oc-linha, rgba(150, 225, 255, 0.22)); padding: 7px 10px; text-align: start; font-family: var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); }
+.pgAba b, .pgAcc b { display: block; font: var(--oc-titulo-estilo, italic) 700 15px var(--oc-fonte-titulo, 'OC Chakra', sans-serif); }
+.pgAba small, .pgAcc small, .pgPin small { display: block; font-size: 12px; color: var(--oc-texto-suave, rgba(214, 238, 255, 0.72)); }
+.pgAba.sel, .pgAcc.on, .pgPin.sel { border-color: var(--oc-acento, #2ee6ff); box-shadow: var(--oc-brilho, 0 0 12px rgba(46, 230, 255, 0.55)); }
+.pgAba.sel { border-bottom: 2px solid var(--oc-borda-inf, #8a3dff); }
+.trava { opacity: 0.45; cursor: default; }
+.pgArmaCab { display: flex; align-items: center; gap: 12px; margin: 14px 0 4px; }
+.pgArmaCab > b { font: var(--oc-titulo-estilo, italic) 700 20px var(--oc-fonte-titulo, 'OC Chakra', sans-serif); }
+.pgArmaNv { font: 700 13px var(--oc-fonte-num, 'OC Chakra', sans-serif); color: var(--oc-acento, #2ee6ff); }
+.pgSec { margin: 12px 0 6px; font: 600 12px var(--oc-fonte-texto, 'OC Rajdhani', sans-serif); letter-spacing: 0.18em; color: var(--oc-texto-suave, rgba(214, 238, 255, 0.72)); }
+.pgConta { margin-inline-start: 8px; color: var(--oc-acento, #2ee6ff); letter-spacing: 0.06em; }
+.pgAccs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.pgAcc.on b::after { content: ' ✓'; color: var(--oc-ok, #3dffb0); }
+.pgPins { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.pgPin { padding: 5px; text-align: center; }
+.pgPin i { display: block; aspect-ratio: 1; background: linear-gradient(135deg, #3a3f47, #1d2026); background-size: cover; border: 1px solid var(--oc-linha, rgba(150, 225, 255, 0.22)); }
+.pgPin small { margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgFechar { display: block; margin: 16px auto 0; }

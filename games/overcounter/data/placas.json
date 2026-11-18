@@ -1,0 +1,12 @@
+{
+  "_doc": "PLACAS DE IDENTIFICACAO: o abate da pontosAbate; coletar a placa (passar perto ou atirar nela) confirma +pontosConfirmar e conta como abate (ev abate_confirmado). atividades: onde vale (true/false). missoes: ids das Operacoes que usam placas (ex.: [\"op1\"]). duracao/piscar em s; raios em m.",
+  "pontosAbate": 50,
+  "pontosConfirmar": 50,
+  "duracao": 30,
+  "piscar": 5,
+  "raioColeta": 1.5,
+  "raioTiro": 0.45,
+  "altura": 1.0,
+  "atividades": { "batalha": true, "desafios": true, "ondas": false, "resgate": false, "operacoes": false },
+  "missoes": []
+}

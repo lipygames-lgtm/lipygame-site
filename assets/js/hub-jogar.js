@@ -409,7 +409,15 @@
   }
   var espera = null;
   function tiraEspera() { if (!espera) return; var e = espera; espera = null; e.classList.add('is-saindo'); setTimeout(function () { e.remove(); }, 400); }
+  // jogo só de computador (data-sopc, texto já traduzido): aparelho só de toque (sem mouse) não abre o jogo, que precisa de
+  // teclado e mouse; o palco mostra o aviso no lugar do botão. Notebook com tela de toque (tem mouse) joga normalmente.
+  var soPc = tela.hasAttribute('data-sopc') && matchMedia('(pointer: coarse)').matches && !matchMedia('(any-pointer: fine)').matches;
+  if (soPc) {
+    var smPc = tela.querySelector('.jg__abre small'); if (smPc) smPc.textContent = tela.getAttribute('data-sopc');
+    document.querySelectorAll('.jg__abre [data-abrir], [data-abrir-jogo], [data-tela-cheia]').forEach(function (b) { b.style.display = 'none'; });
+  }
   function abrir() {
+    if (soPc) return;
     if (!frame) {
       frame = document.createElement('iframe');
       frame.src = tela.getAttribute('data-jogo');

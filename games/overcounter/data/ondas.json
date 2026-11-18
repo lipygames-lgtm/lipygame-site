@@ -1,0 +1,110 @@
+{
+  "versao": 1,
+  "descricao": "Modo ONDAS (sem fim). Curva balanceada com tools/simular-ondas.cjs: jogador medio chega a onda 6-10 em 6-10 min. mira/reacao = multiplicador do erro/tempo de reacao dos bots (maior = mais facil), aplicado POR CIMA do Diretor; agressao = escolha de tatica (flanco/avanco); dano = dano por tiro do bot no jogador.",
+  "intervalo": 10,
+  "intervaloPrimeira": 5,
+  "nascerCada": 2.2,
+  "quantidade": {
+    "base": 3,
+    "porOnda": 1.1,
+    "max": 40
+  },
+  "simultaneos": {
+    "base": 2,
+    "porOnda": 0.55,
+    "max": 8
+  },
+  "mira": {
+    "inicio": 1.4,
+    "porOnda": -0.09,
+    "min": 0.75
+  },
+  "reacao": {
+    "inicio": 1.35,
+    "porOnda": -0.05,
+    "min": 0.85
+  },
+  "agressao": {
+    "inicio": 0.75,
+    "porOnda": 0.07,
+    "max": 1.4
+  },
+  "dano": {
+    "inicio": 6,
+    "porOnda": 0.85,
+    "max": 15
+  },
+  "armas": {
+    "rifle": {
+      "cadencia": 1
+    },
+    "smg": {
+      "cadencia": 0.6
+    },
+    "escopeta": {
+      "cadencia": 1.7
+    },
+    "sniper": {
+      "cadencia": 2.4
+    }
+  },
+  "mistura": [
+    {
+      "ate": 2,
+      "rifle": 1
+    },
+    {
+      "ate": 5,
+      "rifle": 0.7,
+      "smg": 0.3
+    },
+    {
+      "ate": 9,
+      "rifle": 0.55,
+      "smg": 0.25,
+      "escopeta": 0.12,
+      "sniper": 0.08
+    },
+    {
+      "ate": 999,
+      "rifle": 0.45,
+      "smg": 0.3,
+      "escopeta": 0.15,
+      "sniper": 0.1
+    }
+  ],
+  "especiais": [
+    {
+      "id": "escopetas",
+      "nome": "ondas_esp_escopetas",
+      "arma": "escopeta",
+      "simultaneosMais": 1,
+      "agressaoMais": 0.25
+    },
+    {
+      "id": "noite",
+      "nome": "ondas_esp_noite",
+      "clima": "noite"
+    },
+    {
+      "id": "lajes",
+      "nome": "ondas_esp_lajes",
+      "arma": "sniper",
+      "lajes": 0.6
+    }
+  ],
+  "especialCada": 5,
+  "municao": {
+    "reporFracao": 0.5
+  },
+  "caixa": {
+    "raioPegar": 1.7,
+    "distMin": 14,
+    "distMax": 40
+  },
+  "pontosOnda": 60,
+  "segundaChance": {
+    "ondaMin": 3,
+    "margemRecorde": 1
+  }
+}

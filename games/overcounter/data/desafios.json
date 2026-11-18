@@ -1,0 +1,29 @@
+{
+  "_leia": "DESAFIOS (B5): 3 diarios sorteados com semente da data (o mesmo para todos no dia) e 3 semanais (semente da segunda-feira). Tipos: abates, cabeca, faca, granada, pistola, sniper (somam em qualquer atividade); seq e pontos (melhor numa partida); partidas; refens (salvos); onda (maior onda alcancada); estrelas (novas nas Operacoes); missoes (operacoes vencidas). Texto: data/i18n des_<tipo> com {n}.",
+  "diarios": [
+    { "id": "d_abates", "tipo": "abates", "n": 20, "xp": 150 },
+    { "id": "d_cabeca", "tipo": "cabeca", "n": 6, "xp": 200 },
+    { "id": "d_faca", "tipo": "faca", "n": 2, "xp": 200 },
+    { "id": "d_granada", "tipo": "granada", "n": 2, "xp": 200 },
+    { "id": "d_pistola", "tipo": "pistola", "n": 6, "xp": 180 },
+    { "id": "d_seq", "tipo": "seq", "n": 5, "xp": 200 },
+    { "id": "d_pontos", "tipo": "pontos", "n": 2500, "xp": 180 },
+    { "id": "d_partidas", "tipo": "partidas", "n": 3, "xp": 120 },
+    { "id": "d_refens", "tipo": "refens", "n": 2, "xp": 180 },
+    { "id": "d_onda", "tipo": "onda", "n": 5, "xp": 200 },
+    { "id": "d_estrelas", "tipo": "estrelas", "n": 2, "xp": 200 },
+    { "id": "d_missoes", "tipo": "missoes", "n": 1, "xp": 150 }
+  ],
+  "semanais": [
+    { "id": "s_abates", "tipo": "abates", "n": 150, "xp": 800 },
+    { "id": "s_cabeca", "tipo": "cabeca", "n": 40, "xp": 900 },
+    { "id": "s_partidas", "tipo": "partidas", "n": 20, "xp": 700 },
+    { "id": "s_estrelas", "tipo": "estrelas", "n": 8, "xp": 900 },
+    { "id": "s_refens", "tipo": "refens", "n": 10, "xp": 800 },
+    { "id": "s_onda", "tipo": "onda", "n": 10, "xp": 900 },
+    { "id": "s_faca", "tipo": "faca", "n": 10, "xp": 800 },
+    { "id": "s_sniper", "tipo": "sniper", "n": 15, "xp": 800 }
+  ],
+  "porDia": 3,
+  "porSemana": 3
+}

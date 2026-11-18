@@ -1,0 +1,144 @@
+/* =============================== TODAS AS TELAS no estilo A (VIDRO NEON, escolhido pelo dono) ===============================
+   Sobrepoe o CSS antigo do index.html usando so os tokens --oc-* de interface.css (trocar estilo = trocar tokens). */
+body { font-family: var(--oc-fonte-texto); }
+:root { --ac: var(--oc-ciano); --ac2: var(--oc-gelo); --vidro: var(--oc-vidro-forte); --linha: var(--oc-linha); }
+/* botoes: principal = paralelogramo com o degrade do raio; secundario = placa de vidro */
+.btn { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: var(--oc-titulo-espaco); text-transform: uppercase; color: var(--oc-botao-txt); background: var(--oc-botao-bg); border: 0; border-radius: 0; box-shadow: none; clip-path: polygon(0.8em 0, 100% 0, calc(100% - 0.8em) 100%, 0 100%); padding: 0.62em 2.1em; }
+.btn:active { transform: translateY(1px); box-shadow: none; }
+.btn:hover { filter: brightness(1.12) saturate(1.1); }
+.btn.sec { color: var(--oc-texto); font-size: 15px; padding: 0.75em 1.4em; border: 0; background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 50%), var(--oc-vidro); -webkit-backdrop-filter: blur(var(--oc-blur)); backdrop-filter: blur(var(--oc-blur)); clip-path: polygon(0.6em 0, 100% 0, 100% calc(100% - 0.6em), calc(100% - 0.6em) 100%, 0 100%, 0 0.6em); box-shadow: inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); }
+select { background: var(--oc-vidro-forte); color: var(--oc-texto); border: 1px solid var(--oc-linha); border-radius: 0; font-family: var(--oc-fonte-texto); font-weight: 700; }
+input[type=range] { accent-color: var(--oc-ciano); }
+.pequeno { font-family: var(--oc-fonte-texto); font-weight: 600; }
+/* fundos de pausa/fim/licencas: o jogo desfocado, sem breu */
+.escuro { background: radial-gradient(ellipse at 50% 40%, rgba(20,28,80,0.20), rgba(6,9,30,0.55) 80%); -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2); }
+/* janelas (pausa, fim, licencas) = placa de vidro com canto cortado */
+.janela { background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 40%), var(--oc-vidro-forte); border: 0; border-radius: 0; clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px); box-shadow: inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); color: var(--oc-texto); }
+.janela h2 { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: var(--oc-titulo-espaco); text-transform: uppercase; font-size: 34px; margin-bottom: 14px; }
+.janela h2::after { content: ''; display: block; height: 3px; width: 58%; margin: 10px auto 0; background: linear-gradient(90deg, var(--oc-magenta), var(--oc-violeta) 60%, var(--oc-ciano) 92%, var(--oc-amarelo)); clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%); }
+.opcoes { font-size: 15px; font-weight: 600; }
+.ctrl b { color: var(--oc-ciano); font-family: var(--oc-fonte-num); }
+#fimTotal { font-family: var(--oc-fonte-num); font-style: italic; font-size: 76px; text-shadow: 0 0 18px rgba(46,230,255,0.45); }
+#fimNovo { color: var(--oc-amarelo); }
+.placarFim { font-weight: 600; }
+.placarFim b { font-family: var(--oc-fonte-num); font-style: italic; color: var(--oc-texto); }
+.desafio { background: var(--oc-vidro); border: 0; border-radius: 0; box-shadow: inset 0 -2px 0 var(--oc-ok); }
+.desafio b { color: var(--oc-ok); }
+/* ---------- carregamento e menu inicial ---------- */
+#abertura .abMapa { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: var(--oc-titulo-espaco); text-transform: uppercase; text-shadow: 0 2px 4px rgba(3,6,24,0.9), 0 0 26px rgba(3,6,24,0.6); }
+#abertura .abLocal { color: var(--oc-ciano); font-weight: 700; letter-spacing: 0.24em; text-shadow: 0 1px 3px #000; }
+#abertura .abModo { font-weight: 600; }
+.barra { height: 4px; border-radius: 0; background: rgba(255,255,255,0.14); }
+.barra > div { background: linear-gradient(90deg, var(--oc-magenta), var(--oc-violeta) 55%, var(--oc-ciano)); box-shadow: 0 0 10px rgba(46,230,255,0.7); }
+#abContinuar { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: 0.22em; text-shadow: 0 0 12px rgba(46,230,255,0.8), 0 2px 4px #000; }
+/* titulo do mapa no carregamento: uma linha, escala pela largura E pela altura, nunca sai da tela */
+#abertura.carregando .abBloco { top: max(4vh, 20px); max-width: 90vw; }
+#abertura.carregando .abMapa { font-size: clamp(30px, min(6.2vw, 9.5vh), 96px); white-space: nowrap; line-height: 1.05; }
+/* carregamento terminou: a barra some e entra o BOTAO GRANDE central JOGAR (pulso + brilho), com a dica embaixo */
+#abertura.carregando.pronta { cursor: pointer; }
+#abertura.carregando.pronta #abCarga { left: 0; right: 0; bottom: max(10vh, 60px); display: flex; flex-direction: column; align-items: center; gap: 14px; text-shadow: none; }
+#abertura.carregando.pronta #abCarga .barra { display: none; }
+#abertura.carregando.pronta #abCarga .pequeno { display: contents; }
+#abertura.carregando.pronta #abContinuar { display: block; cursor: pointer; font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: 0.08em; text-transform: uppercase; font-size: clamp(26px, min(3.4vw, 5.4vh), 54px); color: #fff; padding: 0.42em 2.4em; background: linear-gradient(100deg, #ff2bd6 0%, #8a3dff 55%, #2ee6ff 100%); clip-path: polygon(0.7em 0, 100% 0, calc(100% - 0.7em) 100%, 0 100%); text-shadow: 0 2px 6px rgba(7,11,42,0.55); animation: oc-pulso 1.6s ease-in-out infinite; filter: drop-shadow(0 0 18px rgba(46,230,255,0.55)) drop-shadow(0 0 30px rgba(255,43,214,0.35)); }
+#abertura.carregando.pronta #abContinuar:hover { animation-play-state: paused; transform: scale(1.06); }
+@keyframes oc-pulso { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 14px rgba(46,230,255,0.45)) drop-shadow(0 0 24px rgba(255,43,214,0.25)); } 50% { transform: scale(1.055); filter: drop-shadow(0 0 26px rgba(46,230,255,0.85)) drop-shadow(0 0 40px rgba(255,43,214,0.45)); } }
+#abDicaTecla { display: none; font: 600 clamp(13px, 1.6vh, 18px) var(--oc-fonte-texto); letter-spacing: 0.12em; color: rgba(242,251,255,0.9); text-shadow: 0 1px 3px #000, 0 0 10px rgba(0,0,0,0.7); }
+#abertura.carregando.pronta #abDicaTecla { display: block; }
+html[lang="ar"] #abDicaTecla, html[lang="ar"] #abertura.carregando.pronta #abContinuar { letter-spacing: 0; }
+@media (prefers-reduced-motion: reduce) { #abertura.carregando.pronta #abContinuar { animation: none; } }
+/* menu (depois de sair da partida): sem texto de tutorial; controles numa placa organizada a direita */
+#abertura:not(.carregando) .abDica { display: none; }
+#abertura:not(.carregando) #abCtrl:not(.oculto) { position: fixed; right: 5vw; bottom: 9vh; width: min(500px, 40vw); box-sizing: border-box; margin: 0; padding: 18px 22px; display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 9px 12px; align-items: center; font-size: 15px; font-weight: 600; color: var(--oc-texto-suave); text-shadow: none; opacity: 1;
+  background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 40%), var(--oc-vidro); -webkit-backdrop-filter: blur(var(--oc-blur)); backdrop-filter: blur(var(--oc-blur)); clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); box-shadow: inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); }
+#abertura:not(.carregando) #abCtrl b { display: inline-grid; place-items: center; min-width: 3.2em; height: 1.7em; padding: 0 0.4em; box-sizing: border-box; font: 700 13px var(--oc-fonte-num); color: var(--oc-texto); border: 1px solid var(--oc-linha); background: rgba(255,255,255,0.06); transform: skewX(var(--oc-inclina)); }
+[dir=rtl] #abertura:not(.carregando) #abCtrl:not(.oculto) { right: auto; left: 5vw; }
+#abertura .abAcoes .btn:not(.sec) { font-size: 26px; }
+.cred { font-family: var(--oc-fonte-texto); font-weight: 600; }
+/* ---------- contagem, medalha, aviso, +100, renascer, cartao "abatido por" ---------- */
+#contNum { font-family: var(--oc-fonte-num); font-style: italic; color: #fff; text-shadow: 0 0 30px rgba(46,230,255,0.75), 0 4px 0 var(--oc-violeta), 0 6px 24px rgba(0,0,0,0.6); }
+#contTxt { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); color: var(--oc-ciano); letter-spacing: 0.3em; }
+#medalha { padding: 10px 22px 10px 12px; background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 40%), var(--oc-vidro); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); box-shadow: inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); text-shadow: none; }
+#medalha .icone { border: 0; border-radius: 0; background: linear-gradient(135deg, var(--oc-magenta), var(--oc-violeta) 55%, var(--oc-ciano)); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); color: #fff; font-family: var(--oc-fonte-num); font-style: italic; }
+#medalha .nome { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); color: var(--oc-texto); }
+#medalha .desc { color: var(--oc-texto-suave); font-weight: 600; opacity: 1; }
+#pop100 { font-family: var(--oc-fonte-num); font-style: italic; color: var(--oc-amarelo); }
+#aviso { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); letter-spacing: 0.18em; text-shadow: 0 0 10px rgba(46,230,255,0.6), 0 2px 6px #000; }
+#respawn { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); }
+#respawn small { color: var(--oc-ciano); font-family: var(--oc-fonte-texto); }
+#cartaoMorte { border: 0; background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 40%), var(--oc-vidro-forte); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); box-shadow: inset 4px 0 0 var(--oc-alerta), inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); }
+#cartaoNome { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); color: #ff7a9a; }
+#cartaoArma { font-weight: 600; }
+/* ---------- cutscene: legendas e escolha RESGATAR / ELIMINAR (o cutscene.js usa estilo inline: !important) ---------- */
+#cutscene { font-family: var(--oc-fonte-texto) !important; }
+#csLegenda { font-family: var(--oc-fonte-texto) !important; font-weight: 700 !important; }
+#csMensagem { font-family: var(--oc-fonte-titulo) !important; font-style: var(--oc-titulo-estilo); text-transform: uppercase; text-shadow: 0 0 18px rgba(46,230,255,0.6), 0 2px 8px #000 !important; }
+#btnResgatar, #btnEliminar { font-family: var(--oc-fonte-titulo) !important; font-style: var(--oc-titulo-estilo) !important; text-transform: uppercase; border: 0 !important; border-radius: 0 !important; padding: 18px 34px !important; color: #fff !important; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); }
+#btnResgatar { background: linear-gradient(180deg, rgba(255,225,74,0.18), rgba(255,255,255,0) 50%), var(--oc-vidro-forte) !important; box-shadow: inset 0 1px 0 var(--oc-amarelo), inset 0 -3px 0 var(--oc-amarelo); }
+#btnEliminar { background: linear-gradient(180deg, rgba(255,43,214,0.18), rgba(255,255,255,0) 50%), var(--oc-vidro-forte) !important; box-shadow: inset 0 1px 0 var(--oc-ciano), inset 0 -3px 0 var(--oc-magenta); }
+#btnResgatar:hover, #btnEliminar:hover { filter: brightness(1.2); }
+#csPular { font-family: var(--oc-fonte-texto) !important; font-weight: 700; }
+/* ---------- PAINEL DE OPERACOES (painel.js do arquiteto), lembrete "Tab" e aviso do radio ---------- */
+#painelOps .opsJanela { width: min(1120px, 94vw); }
+#painelOps .opsTopo h2::after { margin-inline-start: 0; }
+.opsTecla { font-weight: 600; color: var(--oc-texto-suave); opacity: 1; }
+#radioDica kbd, #opsLembrete kbd, .opsTecla kbd { border: 1px solid var(--oc-ciano); border-radius: 0; background: rgba(46,230,255,0.12); color: #fff; font: 700 13px var(--oc-fonte-num); box-shadow: 0 0 8px rgba(46,230,255,0.45); transform: skewX(var(--oc-inclina)); }
+.opsCartao { border: 0; border-radius: 0; color: var(--oc-texto); font-family: var(--oc-fonte-texto); background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 50%), var(--oc-vidro); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); box-shadow: inset 0 1px 0 rgba(46,230,255,0.45), inset 0 -2px 0 rgba(138,61,255,0.7); }
+.opsCartao:hover:not(:disabled) { transform: translateY(-3px); background: linear-gradient(180deg, rgba(46,230,255,0.22), rgba(46,230,255,0.03) 70%), var(--oc-vidro-forte); box-shadow: inset 0 1px 0 var(--oc-ciano), inset 0 -2px 0 var(--oc-magenta), 0 0 18px rgba(46,230,255,0.25); }
+.opsCartao.atual { box-shadow: inset 0 0 0 1px var(--oc-ciano), inset 0 -2px 0 var(--oc-magenta); }
+.opsIco { color: var(--oc-ciano); text-shadow: 0 0 12px rgba(46,230,255,0.7); }
+.opsNome { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: var(--oc-titulo-espaco); text-transform: uppercase; font-size: 18px; }
+.opsDesc { color: var(--oc-texto-suave); opacity: 1; font-weight: 600; font-size: 14px; }
+.opsSt { color: var(--oc-ciano); font-family: var(--oc-fonte-texto); }
+.opsTag { border-radius: 0; background: var(--oc-botao-bg); color: #fff; transform: skewX(var(--oc-inclina)); }
+.fimOutrasT { font-family: var(--oc-fonte-texto); font-weight: 700; color: var(--oc-texto-suave); opacity: 1; }
+#opsLembrete { font-family: var(--oc-fonte-texto); font-weight: 700; letter-spacing: 0.16em; opacity: 0.9; padding: 5px 10px; background: var(--oc-vidro); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); box-shadow: inset 0 -2px 0 var(--oc-borda-inf); clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px); text-shadow: none; }
+#radioDica { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: 0.12em; padding: 10px 18px; background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 50%), var(--oc-vidro-forte); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); text-shadow: none; }
+#resgateHud { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); }
+#resgateHud span { border-radius: 0; border-color: var(--oc-linha); background: var(--oc-vidro); }
+#resgateHud i { background: linear-gradient(90deg, var(--oc-ciano), var(--oc-amarelo)); }
+/* ---------- FIM compacto em 2 colunas, sem rolagem: placar a esquerda; XP (progressao), botoes e outras operacoes a direita ---------- */
+#fim .janela { --u: clamp(9.5px, 1.2vh, 15px); width: min(76em, 95vw); max-height: 94vh; overflow: hidden; box-sizing: border-box; padding: 1.8em 2.2em; display: grid; grid-template-columns: 1fr 1.15fr; grid-auto-flow: row dense; column-gap: 2.4em; row-gap: 0.7em; align-items: start; align-content: center; text-align: start; font-size: var(--u); }
+#fim .janela > * { grid-column: 1; margin: 0; }
+#fim .janela > :first-child { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); text-transform: uppercase; font-size: 1.6em; letter-spacing: 0.08em !important; opacity: 1 !important; color: var(--oc-ciano); }
+#fim #fimTotal { font-size: 6em; line-height: 0.95; margin: 0; }
+#fim #fimFalta { font-size: 1.1em; font-weight: 600; color: var(--oc-texto-suave); }
+#fim .placarFim { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6em; margin: 0.4em 0 0; max-width: none; font-size: 1em; }
+#fim .placarFim > div { border-top: 1px solid var(--oc-linha); padding-top: 0.4em; }
+#fim .placarFim b { font-size: 2em; }
+#fim .placarFim span { font-size: 0.85em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--oc-texto-suave); }
+#fim #fimDesafio { display: block !important; margin: 0 !important; font-size: 1.05em; }
+#fim #progFim, #fim .janela > div:has(#btnDeNovo), #fim #fimOutras, #fim .janela > div:has(#btnMenu) { grid-column: 2; }
+/* linhas casadas: XP ao lado de titulo+total+recorde; JOGAR DE NOVO ao lado da falta; outras operacoes ao lado do placar */
+#fim .janela > :nth-child(1) { grid-row: 1; } #fim #fimTotal { grid-row: 2; } #fim #fimNovo { grid-row: 3; } #fim #fimFalta { grid-row: 4; } #fim .placarFim { grid-row: 5; } #fim #fimDesafio { grid-row: 6; }
+#fim #progFim { grid-row: 1 / span 4; } #fim .janela > div:has(#btnDeNovo) { grid-row: 5; } #fim #fimOutras { grid-row: 6; } #fim .janela > div:has(#btnMenu) { grid-row: 7; }
+#fim .janela > div:has(#btnDeNovo) .btn { font-size: 1.9em; margin: 0.2em 0; width: 100%; }
+#fim #fimOutras { margin: 0; max-width: none; }
+#fim #fimCartoes { justify-content: flex-start; }
+#fim .janela > div:has(#btnMenu) { display: flex; gap: 0.6em; }
+#fim .janela > div:has(#btnMenu) .btn { margin: 0; flex: 1; }
+@media (max-width: 760px) { #fim .janela { grid-template-columns: 1fr; } #fim .janela > * { grid-column: 1 !important; } }
+/* ---------- aviso grande das ONDAS (ondas.js usa estilo inline: !important) ---------- */
+#ondasAviso { font-family: var(--oc-fonte-titulo) !important; }
+#ondasAviso .oaT { font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso) !important; text-transform: uppercase; color: #fff !important; text-shadow: 0 0 34px rgba(46,230,255,0.75), 0 5px 0 var(--oc-violeta), 0 8px 28px rgba(0,0,0,0.6) !important; }
+#ondasAviso .oaS { font-family: var(--oc-fonte-texto); color: var(--oc-ciano) !important; text-shadow: 0 0 12px rgba(46,230,255,0.6), 0 2px 4px #000 !important; }
+#ondasAviso .oaS::before, #ondasAviso .oaS::after { content: ''; display: inline-block; width: 3.2em; height: 3px; margin: 0 0.8em; vertical-align: middle; background: linear-gradient(90deg, var(--oc-magenta), var(--oc-ciano)); }
+html[lang="ar"] #ondasAviso .oaT, html[lang="ar"] #ondasAviso .oaS { letter-spacing: 0 !important; }
+/* cadeado na escolha de classe (progressao) */
+#classes .armaOp.preso, #classes .vant.preso { opacity: 0.55; cursor: not-allowed; position: relative; }
+#classes .preso .cad { display: inline-flex; align-items: center; gap: 0.3em; font: 700 0.8em var(--oc-fonte-texto); color: var(--oc-amarelo); letter-spacing: 0.04em; }
+#classes .cad svg { width: 1em; height: 1.1em; }
+#classes .clItem .cad { position: absolute; top: 0.5em; inset-inline-end: 0.8em; display: inline-flex; align-items: center; gap: 0.3em; font: 700 0.8em var(--oc-fonte-texto); color: var(--oc-amarelo); }
+[dir=rtl] #opsLembrete { left: auto; right: 18px; } /* o mini-mapa fica a esquerda tambem no arabe */
+html[lang="ar"] #opsLembrete, html[lang="ar"] #radioDica, html[lang="ar"] .opsNome { letter-spacing: 0; }
+html[lang="ar"] .btn, html[lang="ar"] #abContinuar, html[lang="ar"] #contTxt, html[lang="ar"] #aviso { letter-spacing: 0; }
+
+/* [som/vitrine] arma presa no nivel: cadeado grande Vidro Neon sobre o pedestal + selo; miniatura do cartao apagada */
+#classes .vtCadeado { position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%) scale(0.9); display: none; flex-direction: column; align-items: center; gap: 0.5em; padding: 1em 1.4em; border-radius: 18px; pointer-events: none; color: #eaf6ff; background: rgba(14, 22, 52, 0.38); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid var(--oc-acento); box-shadow: 0 0 18px color-mix(in srgb, var(--oc-acento) 55%, transparent), inset 0 0 14px color-mix(in srgb, var(--oc-acento) 25%, transparent); opacity: 0; transition: opacity 0.35s, transform 0.35s; }
+#classes .vtCadeado.on { display: flex; opacity: 1; transform: translate(-50%, -50%) scale(1); }
+#classes .vtCadeado svg { width: 3.4em; height: 3.8em; color: var(--oc-acento); filter: drop-shadow(0 0 8px var(--oc-acento)); }
+#classes .vtCadeado b { font: 800 0.95em var(--oc-fonte-texto); letter-spacing: 0.12em; }
+#classes .vtPresa { display: flex; align-items: center; gap: 0.4em; margin-top: 0.3em; font: 700 0.85em var(--oc-fonte-texto); color: var(--oc-amarelo); }
+#classes .vtPresa svg { width: 1em; height: 1.1em; }
+#classes .vtAba .cad svg { width: 0.9em; height: 1em; margin-inline-start: 0.3em; color: var(--oc-amarelo); }
+#classes .vtAba .cad { display: inline-flex; align-items: center; font-size: 0.8em; color: var(--oc-amarelo); }
+#classes .clItem.presa > :not(.clItTxt):not(.cad) { filter: grayscale(1) brightness(0.45); opacity: 0.75; }

@@ -1,0 +1,39 @@
+{
+  "_leia": "OPERACOES (campanha B5): 12 missoes curtas no mesmo mapa. Cada missao = lista de etapas (eliminar, defender, vip, plantar, sobreviver, coletar, extrair). Pontos sao ANCORAS [x, z]: o jogo usa o no do grafo de navegacao mais perto (livre de movel e alcancavel a partir do inicio). Estrelas: concluir | semMorrer | tempo {s} | cabeca {n} | vida {n} | abates {n}. Textos em data/i18n (op_<id>_nome, op_<id>_brief).",
+  "inicio": [24, 6],
+  "xpEstrela": 100,
+  "marcos": [
+    { "estrelas": 6, "xp": 500 },
+    { "estrelas": 12, "pintura": "tigre" },
+    { "estrelas": 18, "xp": 1000 },
+    { "estrelas": 24, "pintura": "digital" },
+    { "estrelas": 30, "pintura": "violeta" },
+    { "estrelas": 36, "pintura": "ouro", "xp": 2000 }
+  ],
+  "missoes": [
+    { "id": "op1", "duracao": 180, "etapas": [{ "tipo": "eliminar", "meta": 12 }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 120 }] },
+    { "id": "op2", "duracao": 240, "etapas": [{ "tipo": "defender", "ponto": [0, 6], "raio": 7, "segurar": 75 }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 150 }] },
+    { "id": "op3", "duracao": 240, "etapas": [{ "tipo": "vip" }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 150 }] },
+    { "id": "op4", "duracao": 240, "etapas": [{ "tipo": "plantar", "alvos": [[46, -30], [-30, 10]], "segurar": 4 }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 150 }] },
+    { "id": "op5", "duracao": 180, "etapas": [{ "tipo": "eliminar", "meta": 4, "arma": "faca" }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 120 }] },
+    { "id": "op6", "duracao": 180, "etapas": [{ "tipo": "eliminar", "meta": 10, "arma": "pistola" }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "cabeca", "n": 4 }] },
+    { "id": "op7", "duracao": 240, "insercao": [22, 66], "arma": "sniper", "etapas": [{ "tipo": "eliminar", "meta": 5, "arma": "sniper", "distMin": 60 }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "cabeca", "n": 2 }] },
+    { "id": "op8", "duracao": 181, "semRegen": true, "semRenascer": true, "etapas": [{ "tipo": "sobreviver", "s": 180 }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "vida", "n": 50 }, { "tipo": "abates", "n": 8 }] },
+    { "id": "op9", "duracao": 300, "etapas": [{ "tipo": "coletar", "pontos": [[0, 42], [48, -34], [-36, 6]] }, { "tipo": "extrair" }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 180 }] },
+    { "id": "op10", "duracao": 180, "clima": "noite", "lanterna": true, "etapas": [{ "tipo": "eliminar", "meta": 10 }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 120 }] },
+    { "id": "op11", "duracao": 240, "clima": "chuva", "etapas": [{ "tipo": "eliminar", "meta": 8, "zona": { "x": 108, "z": -13, "r": 16 } }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 150 }] },
+    { "id": "op12", "duracao": 300, "etapas": [{ "tipo": "eliminar", "meta": 6 }, { "tipo": "plantar", "alvos": [[74, 22]], "segurar": 4 }, { "tipo": "extrair" }],
+      "estrelas": [{ "tipo": "concluir" }, { "tipo": "semMorrer" }, { "tipo": "tempo", "s": 240 }] }
+  ]
+}

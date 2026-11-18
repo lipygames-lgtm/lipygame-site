@@ -1,0 +1,252 @@
+{
+    "_sobre":  "Diretor (codigo vivo): a cada \u0027tick\u0027 s mede o jogador numa janela deslizante e move a PRESSAO (0..1) ate o alvo da onda atual + o ajuste da 1a regra que bate (no maximo \u0027passo\u0027 por tick; alivio desce mais rapido). Os \u0027fatores\u0027 sao [valor com pressao 0, valor com pressao 1]. Sem trapaca: bots nao veem atraves de parede, nao ganham vida nem dano; fatorMira \u003e 1 = erram mais; fatorReacao \u003e 1 = demoram mais; fatorAgressao muda so a escolha de tatica. Medidas: vida_media (0..1), dano_s, desde_contato (s), abates_min, abates_janela, mortes_janela, mortes_seguidas, kd_janela, precisao. REFORCO: sequencia 3/5/7.. ou dominando (4 abates em 20 s) ou degrau de objetivo (degraus) chama esquadrao de 2-4 cacando por reforcoDur s (reforco: cacadoresMax, esperaRespawn, nascimento) e depois respiroDur s de respiro.",
+    "limites":  {
+                    "fatorMira":  [
+                                      0.8,
+                                      1.6
+                                  ],
+                    "fatorReacao":  [
+                                        0.85,
+                                        1.5
+                                    ],
+                    "fatorAgressao":  [
+                                          0.6,
+                                          1.4
+                                      ]
+                },
+    "inicio":  [
+                   {
+                       "se":  {
+                                  "partidas_max":  1
+                              },
+                       "entao":  {
+                                     "pressao":  0.2
+                                 },
+                       "nome":  "primeira partida: comeca leve"
+                   },
+                   {
+                       "se":  {
+                                  "kd_historico_min":  2.5
+                              },
+                       "entao":  {
+                                     "pressao":  0.55
+                                 },
+                       "nome":  "veterano: comeca mais apertado"
+                   },
+                   {
+                       "se":  {
+
+                              },
+                       "entao":  {
+                                     "pressao":  0.35
+                                 },
+                       "nome":  "padrao"
+                   }
+               ],
+    "ritmo":  {
+                  "tick":  2,
+                  "janelaSeg":  30,
+                  "pressaoInicial":  0.35,
+                  "passo":  0.06,
+                  "passoAlivio":  0.08,
+                  "subidaPorCiclo":  0.05,
+                  "ondas":  [
+                                {
+                                    "nome":  "tensao",
+                                    "dur":  50,
+                                    "alvo":  0.45
+                                },
+                                {
+                                    "nome":  "alivio",
+                                    "dur":  22,
+                                    "alvo":  0.25
+                                },
+                                {
+                                    "nome":  "tensao maior",
+                                    "dur":  50,
+                                    "alvo":  0.65
+                                },
+                                {
+                                    "nome":  "alivio",
+                                    "dur":  22,
+                                    "alvo":  0.35
+                                },
+                                {
+                                    "nome":  "pico",
+                                    "dur":  40,
+                                    "alvo":  0.8
+                                },
+                                {
+                                    "nome":  "respiro",
+                                    "dur":  26,
+                                    "alvo":  0.3
+                                }
+                            ],
+                  "regras":  [
+                                 {
+                                     "se":  {
+                                                "mortes_seguidas_min":  3
+                                            },
+                                     "entao":  {
+                                                   "pressao":  -0.4
+                                               },
+                                     "nome":  "3 mortes seguidas: alivio forte"
+                                 },
+                                 {
+                                     "se":  {
+                                                "mortes_janela_min":  2
+                                            },
+                                     "entao":  {
+                                                   "pressao":  -0.3
+                                               },
+                                     "nome":  "morrendo seguido: alivio"
+                                 },
+                                 {
+                                     "se":  {
+                                                "vida_media_max":  0.45
+                                            },
+                                     "entao":  {
+                                                   "pressao":  -0.25
+                                               },
+                                     "nome":  "quase morrendo: alivio leve"
+                                 },
+                                 {
+                                     "se":  {
+                                                "dano_s_min":  5
+                                            },
+                                     "entao":  {
+                                                   "pressao":  -0.15
+                                               },
+                                     "nome":  "tomando muito dano: segura"
+                                 },
+                                 {
+                                     "se":  {
+                                                "abates_min_min":  4,
+                                                "vida_media_min":  0.7
+                                            },
+                                     "entao":  {
+                                                   "pressao":  0.3
+                                               },
+                                     "nome":  "matando facil: aperta"
+                                 },
+                                 {
+                                     "se":  {
+                                                "abates_min_min":  2,
+                                                "mortes_janela_max":  0
+                                            },
+                                     "entao":  {
+                                                   "pressao":  0.15
+                                               },
+                                     "nome":  "dominando: aperta um pouco"
+                                 },
+                                 {
+                                     "se":  {
+                                                "desde_contato_min":  22
+                                            },
+                                     "entao":  {
+                                                   "pressao":  0.1
+                                               },
+                                     "nome":  "sem contato: aproxima"
+                                 },
+                                 {
+                                     "se":  {
+
+                                            },
+                                     "entao":  {
+                                                   "pressao":  0
+                                               },
+                                     "nome":  "equilibrado: segue a onda"
+                                 }
+                             ],
+                  "fatores":  {
+                                  "cacadoresMax":  [
+                                                       1,
+                                                       3
+                                                   ],
+                                  "intervaloContato":  [
+                                                           20,
+                                                           8
+                                                       ],
+                                  "distNascMin":  [
+                                                      42,
+                                                      24
+                                                  ],
+                                  "distNascMax":  [
+                                                      80,
+                                                      50
+                                                  ],
+                                  "botsAtivos":  [
+                                                     5,
+                                                     9
+                                                 ],
+                                  "fatorMira":  [
+                                                    1.45,
+                                                    0.85
+                                                ],
+                                  "fatorReacao":  [
+                                                      1.3,
+                                                      0.9
+                                                  ],
+                                  "fatorAgressao":  [
+                                                        0.7,
+                                                        1.3
+                                                    ],
+                                  "esperaRespawn":  [
+                                                        3.5,
+                                                        1.2
+                                                    ]
+                              },
+                  "degraus":  {
+                                  "refem_libertado":  0.15,
+                                  "refem_salvo":  0.05,
+                                  "onda_inicio":  0.1,
+                                  "objetivo":  0.12,
+                                  "alarme":  0.2
+                              },
+                  "reforco":  {
+                                  "cacadoresMax":  5,
+                                  "esperaRespawn":  0.4,
+                                  "nascimento":  [
+                                                     25,
+                                                     45
+                                                 ]
+                              },
+                  "reforcoDur":  35,
+                  "reforcoIntervalo":  14,
+                  "respiroDur":  12,
+                  "fases":  {
+                                "patrulha":  35,
+                                "contato":  110,
+                                "cacaFinal":  60,
+                                "intervaloEsquadrao":  25
+                            },
+                  "papeis":  {
+                                 "patrulha":  {
+                                                  "fuzileiro":  60,
+                                                  "atirador":  25,
+                                                  "batedor":  10,
+                                                  "granadeiro":  5
+                                              },
+                                 "contato":  {
+                                                 "fuzileiro":  45,
+                                                 "atirador":  20,
+                                                 "batedor":  20,
+                                                 "granadeiro":  15
+                                             },
+                                 "esquadroes":  {
+                                                    "fuzileiro":  35,
+                                                    "atirador":  15,
+                                                    "batedor":  25,
+                                                    "granadeiro":  15,
+                                                    "lider":  10
+                                                },
+                                 "caca final":  {
+                                                    "fuzileiro":  30,
+                                                    "atirador":  10,
+                                                    "batedor":  30,
+                                                    "granadeiro":  15,
+                                                    "lider":  15
+                                                }
+                             }
+              }
+}

@@ -1,0 +1,275 @@
+/* ============================================================================================
+   SISTEMA VISUAL OVERCOUNTER (a partir da logo): tokens + fontes + componentes novos.
+   Tudo que e cor/fonte/forma sai de --oc-*; as 3 opcoes (A, B, C) so trocam tokens
+   (html[data-ui="b"], html[data-ui="c"]). Telas de outros modulos podem usar os mesmos tokens.
+   Fontes: OFL, empacotadas em assets/fontes (licencas OFL-*.txt ao lado).
+   ============================================================================================ */
+@font-face { font-family: 'OC Chakra'; src: url(../assets/fontes/chakra-petch-latin-700-italic.woff2) format('woff2'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'OC Chakra'; src: url(../assets/fontes/chakra-petch-latin-700-normal.woff2) format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'OC Chakra'; src: url(../assets/fontes/chakra-petch-latin-600-normal.woff2) format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'OC Rajdhani'; src: url(../assets/fontes/rajdhani-latin-500-normal.woff2) format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0000-024F, U+2000-206F, U+20AC, U+2122; }
+@font-face { font-family: 'OC Rajdhani'; src: url(../assets/fontes/rajdhani-latin-600-normal.woff2) format('woff2'); font-weight: 600; font-display: swap; unicode-range: U+0000-024F, U+2000-206F, U+20AC, U+2122; }
+@font-face { font-family: 'OC Rajdhani'; src: url(../assets/fontes/rajdhani-latin-700-normal.woff2) format('woff2'); font-weight: 700; font-display: swap; unicode-range: U+0000-024F, U+2000-206F, U+20AC, U+2122; }
+@font-face { font-family: 'OC Rajdhani'; src: url(../assets/fontes/rajdhani-devanagari-500-normal.woff2) format('woff2'); font-weight: 400 600; font-display: swap; unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF; }
+@font-face { font-family: 'OC Rajdhani'; src: url(../assets/fontes/rajdhani-devanagari-700-normal.woff2) format('woff2'); font-weight: 700 900; font-display: swap; unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF; }
+@font-face { font-family: 'OC Exo'; src: url(../assets/fontes/exo-2-latin-800-italic.woff2) format('woff2'); font-weight: 800; font-style: italic; font-display: swap; }
+@font-face { font-family: 'OC Exo'; src: url(../assets/fontes/exo-2-latin-600-normal.woff2) format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'OC Russo'; src: url(../assets/fontes/russo-one-latin-400-normal.woff2) format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'OC Orbitron'; src: url(../assets/fontes/orbitron-latin-800-normal.woff2) format('woff2'); font-weight: 800; font-display: swap; }
+
+:root {
+  /* cores da logo */
+  --oc-marinho: #070b2a;      /* contorno das letras */
+  --oc-gelo: #d8f6ff;         /* degrade das letras */
+  --oc-ciano: #2ee6ff;        /* borda de cima */
+  --oc-violeta: #8a3dff;      /* borda de baixo */
+  --oc-magenta: #ff2bd6;      /* raio */
+  --oc-amarelo: #ffe14a;      /* ponta do raio */
+  /* opcao A (padrao): VIDRO NEON - vidro marinho translucido, ciano em cima, violeta embaixo */
+  --oc-vidro: rgba(9, 14, 44, 0.46);
+  --oc-vidro-forte: rgba(8, 12, 38, 0.72);
+  --oc-vidro-claro: rgba(160, 220, 255, 0.10);
+  --oc-blur: 14px;
+  --oc-borda-sup: var(--oc-ciano);
+  --oc-borda-inf: var(--oc-violeta);
+  --oc-linha: rgba(150, 225, 255, 0.22);
+  --oc-texto: #f2fbff;
+  --oc-texto-suave: rgba(214, 238, 255, 0.72);
+  --oc-acento: var(--oc-ciano);          /* selecao / slot ativo */
+  --oc-acento-2: var(--oc-magenta);      /* detalhe (raio) */
+  --oc-alerta: #ff4d6d;
+  --oc-ok: #3dffb0;
+  --oc-num: var(--oc-texto);
+  --oc-brilho: 0 0 12px rgba(46, 230, 255, 0.55);
+  --oc-sombra-texto: 0 1px 2px rgba(3, 6, 24, 0.9), 0 0 10px rgba(3, 6, 24, 0.55);
+  --oc-corte: 12px;            /* canto cortado em angulo */
+  --oc-raio: 3px;
+  --oc-inclina: -8deg;         /* inclinacao dos selos/numeros (italico da logo) */
+  --oc-fonte-titulo: 'OC Chakra', 'Segoe UI', system-ui, sans-serif;
+  --oc-titulo-estilo: italic;
+  --oc-titulo-peso: 700;
+  --oc-titulo-espaco: 0.06em;
+  --oc-fonte-texto: 'OC Rajdhani', 'Segoe UI', system-ui, 'Nirmala UI', sans-serif;
+  --oc-fonte-num: 'OC Chakra', 'Segoe UI', system-ui, sans-serif;
+  --oc-icone-a: #ffffff;
+  --oc-icone-b: #bdefff;
+  --oc-icone-contorno: rgba(4, 8, 30, 0.9);
+  --oc-botao-bg: linear-gradient(100deg, #ff2bd6 0%, #8a3dff 55%, #2ee6ff 100%);
+  --oc-botao-txt: #ffffff;
+}
+/* opcao B: GELO CROMADO - vidro claro gelado, texto marinho, raio magenta; a mais clara */
+html[data-ui="b"] {
+  --oc-vidro: rgba(235, 248, 255, 0.40);
+  --oc-vidro-forte: rgba(236, 248, 255, 0.78);
+  --oc-vidro-claro: rgba(255, 255, 255, 0.35);
+  --oc-blur: 18px;
+  --oc-borda-sup: #ffffff;
+  --oc-borda-inf: var(--oc-magenta);
+  --oc-linha: rgba(10, 20, 70, 0.16);
+  --oc-texto: #0a1240;
+  --oc-texto-suave: rgba(10, 18, 64, 0.66);
+  --oc-acento: var(--oc-magenta);
+  --oc-acento-2: #00b7e0;
+  --oc-num: #0a1240;
+  --oc-brilho: 0 0 14px rgba(255, 43, 214, 0.45);
+  --oc-sombra-texto: 0 1px 0 rgba(255, 255, 255, 0.6);
+  --oc-corte: 16px;
+  --oc-raio: 10px;
+  --oc-fonte-titulo: 'OC Exo', 'Segoe UI', system-ui, sans-serif;
+  --oc-titulo-peso: 800;
+  --oc-titulo-espaco: 0.03em;
+  --oc-fonte-num: 'OC Exo', 'Segoe UI', system-ui, sans-serif;
+  --oc-icone-a: #0d1a5a;
+  --oc-icone-b: #2a3f9a;
+  --oc-icone-contorno: rgba(255, 255, 255, 0.85);
+  --oc-botao-bg: linear-gradient(100deg, #ff2bd6, #b23dff);
+}
+/* opcao C: VOLT - placas marinho solidas inclinadas, faixa magenta->ciano, amarelo nos numeros */
+html[data-ui="c"] {
+  --oc-vidro: rgba(7, 11, 42, 0.78);
+  --oc-vidro-forte: rgba(6, 9, 34, 0.92);
+  --oc-vidro-claro: rgba(255, 43, 214, 0.10);
+  --oc-blur: 6px;
+  --oc-borda-sup: var(--oc-magenta);
+  --oc-borda-inf: var(--oc-ciano);
+  --oc-linha: rgba(255, 43, 214, 0.28);
+  --oc-texto: #ffffff;
+  --oc-texto-suave: rgba(220, 225, 255, 0.70);
+  --oc-acento: var(--oc-amarelo);
+  --oc-acento-2: var(--oc-magenta);
+  --oc-num: var(--oc-amarelo);
+  --oc-brilho: 0 0 12px rgba(255, 225, 74, 0.5);
+  --oc-corte: 0px;
+  --oc-raio: 0px;
+  --oc-inclina: -12deg;
+  --oc-fonte-titulo: 'OC Russo', 'Segoe UI', system-ui, sans-serif;
+  --oc-titulo-estilo: normal;
+  --oc-titulo-peso: 400;
+  --oc-titulo-espaco: 0.05em;
+  --oc-fonte-num: 'OC Russo', 'Segoe UI', system-ui, sans-serif;
+  --oc-botao-bg: linear-gradient(100deg, #ffe14a, #ffb800);
+  --oc-botao-txt: #070b2a;
+}
+/* idiomas sem latim: fontes do sistema com o glifo certo; arabe e japones sem espacamento de letra nem italico */
+html[lang="ar"] { --oc-fonte-titulo: 'Segoe UI', 'Noto Kufi Arabic', 'Noto Sans Arabic', Tahoma, sans-serif; --oc-fonte-texto: 'Segoe UI', 'Noto Sans Arabic', Tahoma, sans-serif; --oc-titulo-estilo: normal; --oc-titulo-espaco: 0; --oc-titulo-peso: 800; }
+html[lang="ja"] { --oc-fonte-titulo: 'Yu Gothic UI', 'Meiryo', 'Noto Sans JP', sans-serif; --oc-fonte-texto: 'Yu Gothic UI', 'Meiryo', 'Noto Sans JP', sans-serif; --oc-titulo-estilo: normal; --oc-titulo-espaco: 0.02em; --oc-titulo-peso: 800; }
+html[lang="hi"] { --oc-titulo-estilo: normal; --oc-titulo-espaco: 0; }
+
+/* ---------- forma base: placa de vidro com canto cortado, ciano em cima e violeta embaixo ---------- */
+.oc-placa {
+  position: relative;
+  background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 40%), var(--oc-vidro);
+  -webkit-backdrop-filter: blur(var(--oc-blur)) saturate(150%);
+  backdrop-filter: blur(var(--oc-blur)) saturate(150%);
+  clip-path: polygon(var(--oc-corte) 0, 100% 0, 100% calc(100% - var(--oc-corte)), calc(100% - var(--oc-corte)) 100%, 0 100%, 0 var(--oc-corte));
+  border-radius: var(--oc-raio);
+  box-shadow: inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf), inset 1px 0 0 rgba(255,255,255,0.06), inset -1px 0 0 rgba(255,255,255,0.06);
+  color: var(--oc-texto);
+}
+/* reflexo do vidro (faixa diagonal sutil) */
+.oc-placa.reflexo::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.03) 28%, rgba(255,255,255,0) 29%, rgba(255,255,255,0) 100%); }
+.oc-titulo { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: var(--oc-titulo-espaco); text-transform: uppercase; }
+.oc-rotulo { font-family: var(--oc-fonte-texto); font-weight: 700; font-size: 0.78em; letter-spacing: 0.16em; text-transform: uppercase; color: var(--oc-texto-suave); }
+html[lang="ar"] .oc-rotulo, html[lang="ja"] .oc-rotulo { letter-spacing: 0; }
+.oc-tecla { display: inline-grid; place-items: center; min-width: 1.5em; height: 1.5em; padding: 0 0.3em; box-sizing: border-box; font: 700 0.72em/1 var(--oc-fonte-num); color: var(--oc-texto); border: 1px solid var(--oc-linha); background: rgba(255,255,255,0.06); transform: skewX(var(--oc-inclina)); direction: ltr; }
+.oc-botao { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: var(--oc-titulo-espaco); text-transform: uppercase; color: var(--oc-botao-txt); background: var(--oc-botao-bg); border: 0; padding: 0.7em 2.2em; clip-path: polygon(0.9em 0, 100% 0, calc(100% - 0.9em) 100%, 0 100%); cursor: pointer; text-shadow: none; box-shadow: none; border-radius: 0; }
+.oc-botao:hover { filter: brightness(1.12) saturate(1.1); }
+.oc-raio { height: 3px; background: linear-gradient(90deg, var(--oc-acento-2), var(--oc-violeta) 60%, var(--oc-ciano) 92%, var(--oc-amarelo)); clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%); }
+
+/* =============================== HUD DE SLOTS (hud-slots.js) =============================== */
+/* escala por resolucao: 9px em 1280x720, ~12px em 1920x1080, 15px em 2560x1440 */
+#hudSlots { --u: clamp(9px, 1.12vh, 15px); position: absolute; right: 22px; bottom: calc(22px + 6.2 * var(--u)); font-size: var(--u); width: 21em; padding: 0.7em 0.8em 0.75em; display: grid; gap: 0.35em; font-family: var(--oc-fonte-texto); transition: opacity .35s ease, transform .35s ease; opacity: 0.78; pointer-events: none; }
+#hudSlots.acordado { opacity: 1; }
+#hudSlots .hsLinha { position: relative; display: grid; grid-template-columns: 1.9em 1fr auto; align-items: center; gap: 0.5em; height: 3.1em; padding: 0 0.6em; color: var(--oc-texto); opacity: 0.5; transition: opacity .2s, background-color .2s; }
+#hudSlots .hsLinha.vazio { opacity: 0.22; }
+#hudSlots .hsLinha .ocIcone { height: 2.35em; width: auto; max-width: 100%; justify-self: end; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.6)); transition: transform .25s cubic-bezier(.2,1.4,.4,1); }
+#hudSlots .hsNome { font: 700 0.95em/1.35 var(--oc-fonte-texto); letter-spacing: 0.1em; text-transform: uppercase; color: var(--oc-texto-suave); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: var(--oc-sombra-texto); }
+html[lang="ar"] #hudSlots .hsNome, html[lang="ja"] #hudSlots .hsNome { letter-spacing: 0; }
+#hudSlots .hsLinha.ativo { opacity: 1; background: linear-gradient(90deg, rgba(255,255,255,0), var(--oc-vidro-claro) 70%); }
+#hudSlots .hsLinha.ativo .hsNome { color: var(--oc-texto); }
+#hudSlots .hsLinha.ativo .oc-tecla { border-color: var(--oc-acento); color: var(--oc-acento); box-shadow: var(--oc-brilho); }
+/* barra do slot ativo: desliza para a linha nova */
+#hudSlots .hsBarra { position: absolute; right: 0.25em; width: 3px; height: 2.6em; top: 0; background: var(--oc-acento); box-shadow: var(--oc-brilho); transition: transform .22s cubic-bezier(.3,1.3,.5,1); }
+#hudSlots .hsItens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.35em; margin-top: 0.15em; }
+#hudSlots .hsItem { position: relative; display: grid; grid-template-rows: 2.3em auto; justify-items: center; align-items: center; padding: 0.35em 0 0.3em; opacity: 0.5; transition: opacity .2s; border-top: 1px solid var(--oc-linha); }
+#hudSlots .hsItem .ocIcone { height: 2em; width: auto; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.6)); transition: transform .25s cubic-bezier(.2,1.4,.4,1); }
+#hudSlots .hsItem .hsRod { display: flex; gap: 0.35em; align-items: center; font: 700 0.9em/1 var(--oc-fonte-num); color: var(--oc-texto); }
+#hudSlots .hsItem .hsQtd { font-style: italic; color: var(--oc-num); text-shadow: var(--oc-sombra-texto); direction: ltr; }
+#hudSlots .hsItem.zero { opacity: 0.25; }
+#hudSlots .hsItem.zero .hsQtd { color: var(--oc-alerta); }
+#hudSlots .hsItem.ativo { opacity: 1; border-top: 2px solid var(--oc-acento); }
+#hudSlots .hsItem.ativo .oc-tecla { border-color: var(--oc-acento); color: var(--oc-acento); box-shadow: var(--oc-brilho); }
+/* troca: o icone novo entra com um salto curto e um brilho que passa */
+#hudSlots .entrou .ocIcone { animation: hsEntra .32s cubic-bezier(.2,1.5,.4,1); }
+#hudSlots .entrou::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.32) 50%, rgba(255,255,255,0) 70%); animation: hsVarre .45s ease-out forwards; }
+@keyframes hsEntra { 0% { transform: translateX(-0.9em) scale(0.86); opacity: .3; } 100% { transform: none; opacity: 1; } }
+@keyframes hsVarre { 0% { transform: translateX(-60%); opacity: 1; } 100% { transform: translateX(60%); opacity: 0; } }
+/* arabe: a tela fica do mesmo lado da municao, leitura e icones espelhados */
+[dir=rtl] #hudSlots .hsLinha .ocIcone, [dir=rtl] #hudSlots .hsItem .ocIcone { transform: scaleX(-1); }
+[dir=rtl] #hudSlots .hsLinha.ativo { background: linear-gradient(270deg, rgba(255,255,255,0), var(--oc-vidro-claro) 70%); }
+[dir=rtl] #hudSlots .hsBarra { right: auto; left: 0.25em; }
+[dir=rtl] #hudSlots .entrou .ocIcone { animation-name: hsEntraR; }
+@keyframes hsEntraR { 0% { transform: scaleX(-1) translateX(-0.9em) scale(0.86); opacity: .3; } 100% { transform: scaleX(-1); opacity: 1; } }
+body.balacam #hudSlots { visibility: hidden; }
+#hudSlots .oc-tecla { font-size: 0.95em; }
+#hudSlots .hsRod { font-size: 1.05em; }
+
+/* =============================== ESCOLHA DE CLASSE (tela-classe.js) =============================== */
+/* fundo: o proprio mapa desfocado e clareado (sem escurecer) */
+#classes.oc-classes { --u: clamp(10.5px, 1.25vh, 16px); font-size: var(--u); font-family: var(--oc-fonte-texto); background: radial-gradient(ellipse at 50% 30%, rgba(255,236,220,0.10), rgba(10,14,44,0.22) 75%); -webkit-backdrop-filter: blur(16px) saturate(1.25) brightness(1.08); backdrop-filter: blur(16px) saturate(1.25) brightness(1.08); }
+#classes .caixa { width: min(112em, 95vw); height: min(64em, 94vh); max-height: none; overflow: hidden; box-sizing: border-box; padding: 1.8em 2.1em 1.6em; display: grid; grid-template-rows: auto 1fr auto; gap: 1.2em; border: 0; }
+#classes .clTopo { display: flex; justify-content: space-between; align-items: flex-end; gap: 1em; }
+#classes .clTitulo { font-size: 2.8em; line-height: 1; text-shadow: var(--oc-sombra-texto); }
+#classes #clAuto { font-size: 1.15em; font-weight: 600; color: var(--oc-texto-suave); opacity: 1; }
+#classes .clGrade { display: grid; grid-template-columns: 21em 1fr 23em; gap: 1.5em; margin: 0; min-height: 0; }
+#classes .clLista { display: flex; flex-direction: column; gap: 0.55em; min-height: 0; overflow: hidden; }
+#classes .clItem { position: relative; display: grid; grid-template-columns: 1fr 6em; align-items: center; gap: 0.5em; text-align: start; font: inherit; color: var(--oc-texto); padding: 0.7em 1em; border: 0; border-radius: 0; cursor: pointer; letter-spacing: 0; background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 50%), var(--oc-vidro); clip-path: polygon(0.6em 0, 100% 0, 100% calc(100% - 0.6em), calc(100% - 0.6em) 100%, 0 100%, 0 0.6em); box-shadow: inset 0 1px 0 rgba(46,230,255,0.35), inset 0 -2px 0 rgba(138,61,255,0.55); transition: transform .15s; }
+#classes .clItem:hover { filter: brightness(1.18); }
+#classes .clItem.sel { background: linear-gradient(90deg, rgba(46,230,255,0.24), rgba(46,230,255,0.02) 70%), var(--oc-vidro-forte); box-shadow: inset 0.25em 0 0 var(--oc-acento), inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); }
+[dir=rtl] #classes .clItem.sel { box-shadow: inset -0.25em 0 0 var(--oc-acento), inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); }
+#classes .clItNome { display: block; font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: var(--oc-titulo-espaco); text-transform: uppercase; font-size: 1.4em; line-height: 1.05; }
+#classes .clItem small { display: block; font-size: 0.95em; font-weight: 600; color: var(--oc-texto-suave); opacity: 1; margin-top: 0.2em; line-height: 1.2; letter-spacing: 0; }
+#classes .clItem .ocIcone { height: 1.6em; width: 100%; }
+[dir=rtl] #classes .ocIcone { transform: scaleX(-1); }
+#classes .clVitrine { position: relative; overflow: hidden; min-height: 0; background: radial-gradient(ellipse 60% 52% at 50% 46%, rgba(235,245,255,0.34), rgba(255,255,255,0) 72%), radial-gradient(ellipse 85% 40% at 50% 100%, rgba(46,230,255,0.20), rgba(0,0,0,0) 70%), var(--oc-vidro); }
+#classes .vtPalco { position: absolute; inset: 0; }
+#classes .vtPalco canvas { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+#classes .vtPalco canvas:active { cursor: grabbing; }
+#classes .vtInfo { position: absolute; top: 1.3em; inset-inline-start: 1.6em; pointer-events: none; }
+#classes .vtNome { font-size: 3.4em; line-height: 1; text-shadow: var(--oc-sombra-texto); }
+#classes .vtSkins { position: absolute; top: 1.3em; inset-inline-end: 1.6em; text-align: end; }
+#classes .vtSw { display: flex; gap: 0.4em; justify-content: flex-end; margin-top: 0.4em; }
+#classes .vtSkin { width: 2em; height: 2em; border: 0; cursor: pointer; transform: skewX(var(--oc-inclina)); box-shadow: 0 0 0 1px var(--oc-linha); }
+#classes .vtSkin.sel { box-shadow: 0 0 0 2px var(--oc-acento), var(--oc-brilho); }
+#classes .vtSkNome { font-size: 0.95em; font-weight: 700; margin-top: 0.3em; }
+#classes .vtAbas { position: absolute; bottom: 1.2em; inset-inline-start: 1.6em; display: flex; gap: 0.5em; }
+#classes .vtAba { display: flex; align-items: center; gap: 0.6em; font: 700 1em var(--oc-fonte-texto); letter-spacing: 0.1em; text-transform: uppercase; color: var(--oc-texto); padding: 0.6em 1em; border: 0; cursor: pointer; --oc-corte: 0.5em; }
+#classes .vtAba .ocIcone { height: 1.3em; width: auto; }
+#classes .vtAba.sel { box-shadow: inset 0 -2px 0 var(--oc-acento), inset 0 1px 0 var(--oc-borda-sup), var(--oc-brilho); }
+#classes .vtAba:disabled { opacity: 0.35; cursor: default; }
+#classes .vtGiro { position: absolute; bottom: 1.5em; inset-inline-end: 1.6em; font-size: 0.9em; font-weight: 700; letter-spacing: 0.14em; color: var(--oc-texto-suave); pointer-events: none; }
+html[lang="ar"] #classes .vtGiro, html[lang="ja"] #classes .vtGiro, html[lang="ar"] #classes .vtAba { letter-spacing: 0; }
+#classes .clDet { display: flex; flex-direction: column; gap: 0.6em; min-height: 0; overflow: hidden; }
+#classes .clVant { display: flex; flex-direction: column; gap: 0.55em; }
+#classes .clVant.edita { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4em; }
+#classes .vant { padding: 0.75em 1em; font-size: 1.02em; font-weight: 600; color: var(--oc-texto-suave); line-height: 1.25; border: 0; --oc-corte: 0.6em; }
+#classes .clVant.edita .vant { padding: 0.5em 0.7em; font-size: 0.85em; }
+#classes .vant b { display: block; font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); color: var(--oc-acento); font-size: 1.25em; margin-bottom: 0.15em; }
+#classes .vant.extra { box-shadow: inset 0 1px 0 var(--oc-ok), inset 0 -2px 0 var(--oc-ok); }
+#classes .vant.off { opacity: 0.4; }
+#classes .clCampo { padding: 0.75em 1em; border: 0; --oc-corte: 0.6em; }
+#classes .clCampo .val { display: flex; align-items: center; gap: 0.6em; font-size: 1.1em; font-weight: 700; margin-top: 0.35em; }
+#classes .clCampo .val .ocIcone { height: 1.3em; width: 2.6em; }
+#classes .armaOps { display: flex; gap: 0.4em; margin-top: 0.5em; flex-wrap: wrap; }
+#classes .armaOp { flex: 1 1 0; min-width: 5em; display: grid; justify-items: center; gap: 0.3em; font: 700 0.85em var(--oc-fonte-texto); color: var(--oc-texto); background: rgba(255,255,255,0.05); border: 1px solid var(--oc-linha); border-radius: 0; padding: 0.5em 0.3em; cursor: pointer; }
+#classes .armaOp .ocIcone { height: 1.4em; width: 100%; }
+#classes .armaOp.sel { border-color: var(--oc-acento); box-shadow: var(--oc-brilho); background: rgba(46,230,255,0.12); }
+#classes .oc-sec { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); font-weight: var(--oc-titulo-peso); letter-spacing: 0.05em; text-transform: uppercase; color: var(--oc-texto); font-size: 1.1em; padding: 0.85em 1.4em; border: 0; cursor: pointer; --oc-corte: 0.6em; white-space: nowrap; }
+#classes .oc-sec:hover { filter: brightness(1.2); }
+#classes .clRodape { display: flex; align-items: center; gap: 0.8em; margin: 0; flex-wrap: nowrap; }
+#classes .desafio { flex: 1; min-width: 0; font-size: 1.1em; font-weight: 600; padding: 0.85em 1.2em; border: 0; --oc-corte: 0.6em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#classes .desafio b { color: var(--oc-ok); letter-spacing: 0.14em; margin-inline-end: 0.6em; }
+#classes .desafio:empty { visibility: hidden; }
+#classes #btnClasseJogar { font-size: 2em; padding: 0.45em 1.9em; margin: 0; }
+html[lang="ar"] #classes .desafio b, html[lang="ja"] #classes .desafio b { letter-spacing: 0; }
+
+#classes .vtPalco.esperando { background: center 46% / 52% auto no-repeat; }
+
+/* =============================== MINI-MAPA HOLOGRAMA (minimapa-holo.js) =============================== */
+#miniHolo { --u: clamp(9px, 1.12vh, 15px); position: absolute; left: 22px; top: 22px; width: calc(21.5 * var(--u)); }
+#miniHolo .mhTela { padding: 0; overflow: hidden; --oc-corte: calc(1 * var(--u)); }
+#miniHolo #minimapa { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1; border: 0; border-radius: 0; background: none; box-shadow: none; }
+#miniHolo .mhBusCx { margin-top: calc(0.45 * var(--u)); height: calc(2 * var(--u)); --oc-corte: calc(0.5 * var(--u)); }
+#miniHolo .mhBussola { display: block; width: 100%; height: 100%; }
+#hud #feed { top: calc(50px + 24 * clamp(9px, 1.12vh, 15px)); }
+body.balacam #miniHolo { visibility: hidden; }
+
+/* =============================== PAINEL DO OBJETIVO (hud-objetivo.js) + MUNICAO no estilo da logo =============================== */
+#hud .placarHud { display: none; } /* icone do jogo antigo: saiu; tempo/pontos/abates vao para o painel do objetivo */
+#hudObj { --u: clamp(9px, 1.12vh, 15px); font-size: var(--u); position: absolute; left: 22px; bottom: 22px; min-width: 22em; max-width: 30em; padding: 0.9em 1.2em 1em; font-family: var(--oc-fonte-texto); pointer-events: none; }
+#hudObj .hoTopo { display: flex; align-items: baseline; justify-content: space-between; gap: 1.2em; }
+#hudObj .hoTit { display: flex; align-items: center; gap: 0.6em; font-size: 1.55em; line-height: 1.1; text-shadow: var(--oc-sombra-texto); }
+#hudObj .hoTit i { width: 0.5em; height: 0.5em; background: var(--oc-acento-2); transform: rotate(45deg); box-shadow: 0 0 0.7em var(--oc-acento-2); flex: none; }
+#hudObj .hoTempo { font: italic 700 2.1em/1 var(--oc-fonte-num); font-variant-numeric: tabular-nums; direction: ltr; text-shadow: var(--oc-sombra-texto); }
+#hudObj .hoSub { font-size: 1.05em; font-weight: 600; color: var(--oc-texto-suave); margin-top: 0.25em; }
+#hudObj .hoItens { display: flex; gap: 0.9em; margin-top: 0.6em; }
+#hudObj .hoIt { min-width: 4.4em; border-top: 1px solid var(--oc-linha); padding-top: 0.4em; }
+#hudObj .hoV { font: italic 700 1.7em/1 var(--oc-fonte-num); color: var(--oc-num); direction: ltr; unicode-bidi: isolate; text-shadow: var(--oc-sombra-texto); }
+#hudObj .hoV small { font-size: 0.6em; font-style: normal; color: var(--oc-texto-suave); }
+#hudObj .hoIt.dest .hoV { color: var(--oc-amarelo); }
+#hudObj .hoR { font-size: 0.82em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oc-texto-suave); margin-top: 0.25em; }
+html[lang="ar"] #hudObj .hoR, html[lang="ja"] #hudObj .hoR { letter-spacing: 0; }
+#hudObj .hoProg { height: 0.3em; margin-top: 0.7em; background: rgba(255,255,255,0.14); }
+#hudObj .hoProg i { display: block; height: 100%; background: linear-gradient(90deg, var(--oc-acento-2), var(--oc-acento)); box-shadow: var(--oc-brilho); transition: width .3s; }
+body.balacam #hudObj { visibility: hidden; }
+/* municao: placa de vidro com a mesma largura dos slots, numero grande italico */
+#hud .munic { --u: clamp(9px, 1.12vh, 15px); font-size: var(--u); right: 22px; bottom: 22px; width: 21em; box-sizing: border-box; padding: 0.6em 1.1em 0.7em; display: flex; align-items: flex-end; justify-content: space-between; flex-direction: row-reverse; text-shadow: none;
+  background: linear-gradient(180deg, var(--oc-vidro-claro), rgba(255,255,255,0) 40%), var(--oc-vidro); -webkit-backdrop-filter: blur(var(--oc-blur)) saturate(150%); backdrop-filter: blur(var(--oc-blur)) saturate(150%);
+  clip-path: polygon(var(--oc-corte) 0, 100% 0, 100% calc(100% - var(--oc-corte)), calc(100% - var(--oc-corte)) 100%, 0 100%, 0 var(--oc-corte)); box-shadow: inset 0 1px 0 var(--oc-borda-sup), inset 0 -2px 0 var(--oc-borda-inf); }
+#hud #arma { font: 700 1.05em var(--oc-fonte-texto); letter-spacing: 0.16em; color: var(--oc-texto-suave); opacity: 1; padding-bottom: 0.3em; }
+#hud #muni { font: italic 700 4.2em/0.95 var(--oc-fonte-num); color: var(--oc-num); text-shadow: var(--oc-sombra-texto); }
+#hud #muni small { font-size: 0.45em; font-style: normal; color: var(--oc-texto-suave); opacity: 1; }
+#hudSlots { bottom: calc(30px + 6.4 * var(--u)); }
+/* textos do HUD no alto */
+#hud .objetivo .o1 { font-family: var(--oc-fonte-titulo); font-style: var(--oc-titulo-estilo); letter-spacing: 0.12em; text-shadow: var(--oc-sombra-texto); }
+#hud #feed .linha { font-family: var(--oc-fonte-texto); font-weight: 700; font-size: 14px; background: var(--oc-vidro); border-radius: 0; box-shadow: inset 0 -2px 0 var(--oc-borda-inf); }

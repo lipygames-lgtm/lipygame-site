@@ -1,0 +1,35 @@
+{
+  "_leia": "Motor de retencao e anuncios (B7, PRINCIPIOS B/C/E). Regras nomeadas: 'se' = condicoes sobre o contexto (valor exato, '>x', '<x', true/false, ou lista de valores aceitos); 'faz' = ofertas (em ordem de preferencia) ou intersticial false. 'grupo' (opcional) limita a regra ao grupo A/B do jogador. Editar aqui muda o jogo sem mexer em codigo.",
+  "maxOfertasPorMomento": 2,
+  "intersticial": {
+    "minDesdeUltimoAnuncio": 3,
+    "minPartidasNaSessao": 2,
+    "porGrupo": { "B": { "minDesdeUltimoAnuncio": 4 } }
+  },
+  "radar": { "segundos": 60 },
+  "humor": { "derrotasFrustrado": 3, "partidaCurtaS": 90, "vitoriasEntediado": 3, "fatorEntediado": 1.2 },
+  "partidaBoa": { "fatorMedia": 1.0, "quaseRecorde": 0.85 },
+  "diario": {
+    "premioBase": 150,
+    "premioPorDia": 50,
+    "diasTeto": 7,
+    "protetorACada": 7,
+    "protetorMax": 1,
+    "boasVindasDias": 3,
+    "boasVindasXP": 600,
+    "marcoHappytime": 7
+  },
+  "regras": [
+    { "nome": "segunda_chance_partida_boa", "se": { "momento": ["derrota", "vitoria"], "partidaBoa": true }, "faz": { "ofertas": ["segunda_chance"] } },
+    { "nome": "quase_recorde", "se": { "momento": ["derrota", "vitoria"], "quaseRecorde": true }, "faz": { "ofertas": ["segunda_chance", "xp_dobro"] } },
+    { "nome": "manter_sequencia", "se": { "momento": ["derrota", "vitoria"] }, "faz": { "ofertas": ["manter_sequencia"] } },
+    { "nome": "alivio_frustrado", "se": { "momento": ["derrota", "vitoria"], "humor": "frustrado" }, "faz": { "ofertas": ["radar", "testar_arma"] } },
+    { "nome": "novidade_entediado", "se": { "momento": ["derrota", "vitoria"], "humor": "entediado" }, "faz": { "ofertas": ["testar_arma"] } },
+    { "nome": "xp_em_dobro", "se": { "momento": ["derrota", "vitoria"], "temXP": true }, "faz": { "ofertas": ["xp_dobro"] } },
+    { "nome": "salvar_quem_sai", "se": { "momento": ["derrota", "vitoria"], "riscoDeSair": ">0.6" }, "faz": { "ofertas": ["radar"] } },
+    { "nome": "freio_anuncio", "se": { "momento": "transicao", "minDesdeAnuncio": "<3" }, "faz": { "intersticial": false } },
+    { "nome": "freio_anuncio_b", "grupo": "B", "se": { "momento": "transicao", "minDesdeAnuncio": "<4" }, "faz": { "intersticial": false } },
+    { "nome": "nunca_1a_atividade", "se": { "momento": "transicao", "partidasSessao": "<2" }, "faz": { "intersticial": false } },
+    { "nome": "nunca_apos_premiado", "se": { "momento": "transicao", "ultimoFoiPremiado": true }, "faz": { "intersticial": false } }
+  ]
+}

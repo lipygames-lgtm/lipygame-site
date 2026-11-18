@@ -1,0 +1,7 @@
+{
+  "_doc": "Recompensas por sequencia de abates sem morrer (B4). abates = sequencia necessaria; valem em Batalha, Ondas e Resgate.",
+  "radar": { "abates": 3, "duracao": 20 },
+  "morteiro": { "abates": 5, "projeteis": 3, "intervalo": 1.0, "primeiro": 1.2, "espalhar": 3.0, "raio": 7.5, "danoMax": 160, "alcance": 90 },
+  "apoio": { "abates": 7, "atraso": 2.6, "pontos": 8, "passo": 4.0, "cadencia": 0.16, "raio": 5.5, "danoMax": 170, "alcance": 90 },
+  "manter": { "minimo": 5, "porPartida": 1 }
+}

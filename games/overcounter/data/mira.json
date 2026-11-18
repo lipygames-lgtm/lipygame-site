@@ -1,0 +1,16 @@
+{
+  "_doc": "Precisao (radianos de meio-angulo do cone). Hipfire = espalhamento[estado] + bloom; ADS multiplica por adsFator. Bloom sobe a cada tiro e decai com 'recuperacao' (por segundo).",
+  "espalhamento": { "parado": 0.014, "agachado": 0.009, "deitado": 0.005, "andando": 0.04, "correndo": 0.09, "pulando": 0.13 },
+  "bloomPorTiro": { "rifle": 0.011, "pistola": 0.018 },
+  "bloomMax": 0.07,
+  "recuperacao": 5,
+  "adsFator": 0.06,
+  "adsBloomFator": 0.15,
+  "fovBase": 80,
+  "fovAds": 50,
+  "fovCorrida": 88,
+  "recuoVertical": { "rifle": 0.011, "pistola": 0.03 },
+  "recuoLateral": 0.004,
+  "botEspalhamento": { "parado": 0.022, "andando": 0.06 },
+  "botPorMetro": 0.0032
+}
